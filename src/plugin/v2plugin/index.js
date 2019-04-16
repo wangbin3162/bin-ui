@@ -1,6 +1,3 @@
-import 'normalize.css'
-import 'flex.css'
-// 指令
 import waves from '../../directive/waves'
 
 // 功能插件

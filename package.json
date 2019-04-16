@@ -13,11 +13,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name bin-ui --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name bin-ui --dest lib src/index.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.4"
@@ -29,7 +28,6 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "flex.css": "^1.1.7",
     "highlight.js": "^9.15.6",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",

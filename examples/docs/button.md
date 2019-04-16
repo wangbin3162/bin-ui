@@ -6,7 +6,7 @@
 ```html  
 <template>
     <div class="demo-button">
-      <b-button>默认按钮</b-button>
+      <b-button v-waves>默认按钮</b-button>
       <b-button type="primary">主要按钮</b-button>
       <b-button type="success">成功按钮</b-button>
       <b-button type="info">信息按钮</b-button>
