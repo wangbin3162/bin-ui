@@ -1,29 +1,37 @@
-# wb-ui
+# bin-ui
 
-## Project setup
-```
-npm install
-```
+封装自定义组件库,基础操作等
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 基础组件
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- 图标组件
+- 滚动条组件
+- 按钮组件
+- 后期慢慢维护补全如输入框、form、弹窗等
 
-### Run your tests
-```
-npm run test
-```
+## 功能
 
-### Lints and fixes files
-```
-npm run lint
-```
+- 指令
+  - v-waves 水波纹
+  - 超出文字显示...
+- 帮助工具
+  - 打印优化
+  - lodash 库
+  - velocity 动画库
+  - flex.css 布局库
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## 发布lib库
+
+> "lib": "vue-cli-service build --target lib --name bin-ui --dest lib packages/index.js"
+
+    # 以下是新增的
+    # 要忽略目录和指定文件
+    examples/
+    packages/
+    public/
+    vue.config.js
+    babel.config.js
+    *.map
+    *.html
+
