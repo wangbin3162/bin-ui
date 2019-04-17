@@ -1,4 +1,4 @@
-@import "./common/var.styl"
+@import "common/var.styl"
 $root = bin
 
 .{$root}-button {
@@ -14,7 +14,7 @@ $root = bin
   box-sizing: border-box;
   outline: none;
   margin: 0;
-  transition: .1s;
+  transition: .3s;
   font-weight: 500;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -26,6 +26,11 @@ $root = bin
     color: $--color-primary;
     border-color: #c6e2ff;
     background-color: #ecf5ff;
+  }
+  &:active {
+    color: #3a8ee6;
+    border-color: #3a8ee6;
+    outline: none;
   }
   &.is-round {
     border-radius: 20px;
@@ -55,6 +60,30 @@ $root = bin
     cursor: not-allowed;
     background-image: none;
     border-color: transparent;
+  }
+}
+.{$root}-button--medium {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  &.is-round {
+    padding: 10px 20px;
+  }
+}
+.{$root}-button--small {
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+  &.is-round {
+    padding: 9px 15px;
+  }
+}
+.{$root}-button--mini {
+  padding: 7px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+  &.is-round {
+    padding: 7px 15px;
   }
 }
 .{$root}-button--primary {
@@ -218,6 +247,52 @@ $root = bin
     color: $--color-white;
     background-color: #fab6b6;
     border-color: #fab6b6;
+  }
+}
+
+//  button-group
+.{$root}-button-group {
+  display: inline-block;
+  vertical-align: middle;
+  & > .{$root}-button {
+    float: left;
+    position: relative;
+  }
+  & > .{$root}-button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  & > .{$root}-button:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  & > .{$root}-button:not(:last-child) {
+    margin-right: -1px;
+  }
+  & > .{$root}-button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  .{$root}-button--primary:first-child,
+  .{$root}-button--info:first-child,
+  .{$root}-button--success:first-child,
+  .{$root}-button--warning:first-child,
+  .{$root}-button--danger:first-child {
+    border-right-color: hsla(0, 0%, 100%, .5);
+  }
+  .{$root}-button--primary:last-child
+  .{$root}-button--info:last-child,
+  .{$root}-button--success:last-child,
+  .{$root}-button--warning:last-child,
+  .{$root}-button--danger:last-child {
+    border-left-color: hsla(0, 0%, 100%, .5);
+  }
+  .{$root}-button--primary:not(:first-child):not(:last-child),
+  .{$root}-button--info:not(:first-child):not(:last-child),
+  .{$root}-button--success:not(:first-child):not(:last-child),
+  .{$root}-button--warning:not(:first-child):not(:last-child),
+  .{$root}-button--danger:not(:first-child):not(:last-child) {
+    border-left-color: hsla(0, 0%, 100%, .5);
+    border-right-color: hsla(0, 0%, 100%, .5);
   }
 }
 

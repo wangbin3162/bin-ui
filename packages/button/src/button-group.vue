@@ -1,5 +1,5 @@
 <template>
-  <div class="el-button-group">
+  <div class="bin-button-group">
     <slot></slot>
   </div>
 </template>

@@ -75,3 +75,49 @@
 ```
 :::
 
+
+## 按钮组
+
+以按钮组的方式出现，常用于多项类似操作。
+
+::: demo  使用`<b-button-group>`标签来嵌套你的按钮。
+```html  
+<template>
+    <div class="demo-button">
+       <b-button-group>
+         <b-button type="primary" icon="icon-return">上一页</b-button>
+         <b-button type="primary">下一页<i class="iconfont icon-next"></i></b-button>
+       </b-button-group>
+       <b-button-group>
+         <b-button type="success" icon="icon-edit"></b-button>
+         <b-button type="info" icon="icon-turnvoice"></b-button>
+         <b-button type="danger" icon="icon-delete"></b-button>
+       </b-button-group>
+    </div>
+</template>
+```
+:::
+
+## 不同尺寸
+
+Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
+
+::: demo 
+```html  
+<template>
+    <div class="demo-button">
+       <b-button>默认按钮</b-button>
+       <b-button size="medium">中等按钮</b-button>
+       <b-button size="small">小型按钮</b-button>
+       <b-button size="mini">超小按钮</b-button>
+    </div>
+    <div class="demo-button">
+       <b-button round>默认按钮</b-button>
+       <b-button size="medium" round>中等按钮</b-button>
+       <b-button size="small" round>小型按钮</b-button>
+       <b-button size="mini" round>超小按钮</b-button>
+    </div>
+</template>
+```
+:::
+
