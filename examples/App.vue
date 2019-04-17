@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div>header</div>
+    <div class="main-cnt">
+      <side-nav class="nav"></side-nav>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -9,7 +13,3 @@
     name: 'app'
   }
 </script>
-
-<style lang="stylus">
-  @import './style/index.styl'
-</style>

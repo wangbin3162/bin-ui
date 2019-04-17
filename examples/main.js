@@ -1,18 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import './assets/styles/color-brewer.css'
+import './assets/styles/fonts/iconfont.css'
+import './assets/styles/index.styl'
+
 import BinUI from '../src/index'
 import '../packages/theme/src/index.styl'
-import './assets/styles/color-brewer.css'
-import './assets/styles/common.styl'
-import './assets/styles/fonts/iconfont.css'
-
-import DemoBlock from './components/demo-block.vue'
 
 Vue.use(BinUI)
-Vue.component('DemoBlock', DemoBlock)
 
-Vue.config.productionTip = false
+import DemoBlock from './components/demo-block.vue'
+import SideNav from './components/side-nav.vue'
+
+Vue.component('DemoBlock', DemoBlock)
+Vue.component('SideNav', SideNav)
 
 new Vue({
   router,
