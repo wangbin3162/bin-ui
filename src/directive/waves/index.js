@@ -21,14 +21,19 @@ export default {
         } else {
           ripple.className = 'waves-ripple'
         }
+        //获得页面向左、向上卷动的距离
+        const pageScroll = {
+          left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+          top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        }
         switch (opts.type) {
           case 'center':
             ripple.style.top = (rect.height / 2 - ripple.offsetHeight / 2) + 'px'
             ripple.style.left = (rect.width / 2 - ripple.offsetWidth / 2) + 'px'
             break
           default:
-            ripple.style.top = (e.pageY - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop) + 'px'
-            ripple.style.left = (e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft) + 'px'
+            ripple.style.top = (e.pageY - rect.top - ripple.offsetHeight / 2 - pageScroll.top) + 'px'
+            ripple.style.left = (e.pageX - rect.left - ripple.offsetWidth / 2 - pageScroll.left) + 'px'
         }
         ripple.style.backgroundColor = opts.color
         ripple.className = 'waves-ripple z-active'

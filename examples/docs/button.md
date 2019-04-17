@@ -7,11 +7,11 @@
 <template>
     <div class="demo-button">
       <b-button v-waves>默认按钮</b-button>
-      <b-button type="primary">主要按钮</b-button>
-      <b-button type="success">成功按钮</b-button>
-      <b-button type="info">信息按钮</b-button>
-      <b-button type="warning">警告按钮</b-button>
-      <b-button type="danger">危险按钮</b-button>
+      <b-button type="primary" v-waves>主要按钮</b-button>
+      <b-button type="success" v-waves>成功按钮</b-button>
+      <b-button type="info" v-waves>信息按钮</b-button>
+      <b-button type="warning" v-waves>警告按钮</b-button>
+      <b-button type="danger" v-waves>危险按钮</b-button>
     </div>
     <div class="demo-button">
        <b-button plain>朴素按钮</b-button>
@@ -22,7 +22,7 @@
        <b-button type="danger" plain>危险按钮</b-button>
     </div>
     <div class="demo-button">
-       <b-button round>圆角按钮</b-button>
+       <b-button>圆角按钮</b-button>
        <b-button type="primary" round>主要按钮</b-button>
        <b-button type="success" round>成功按钮</b-button>
        <b-button type="info" round>信息按钮</b-button>
