@@ -2,7 +2,7 @@ import waves from '../../directive/waves'
 import ellipsis from '../../directive/ellipsis'
 
 // 功能插件
-import util from '../../common/util/util'
+import util from '../../utils/util'
 
 export default {
   async install (Vue, options) {

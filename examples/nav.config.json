@@ -35,6 +35,11 @@
         "desc": "Directive 指令",
         "name": "directive",
         "path": "/directive"
+      },
+      {
+        "desc": "console 控制台",
+        "name": "console",
+        "path": "/console"
       }
     ]
   }

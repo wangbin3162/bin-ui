@@ -266,8 +266,8 @@
 
 "@babel/plugin-proposal-object-rest-spread@^7.3.4":
   version "7.4.3"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-proposal-object-rest-spread/download/@babel/plugin-proposal-object-rest-spread-7.4.3.tgz#be27cd416eceeba84141305b93c282f5de23bbb4"
-  integrity sha1-vifNQW7O66hBQTBbk8KC9d4ju7Q=
+  resolved "https://registry.npmjs.org/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.4.3.tgz#be27cd416eceeba84141305b93c282f5de23bbb4"
+  integrity sha512-xC//6DNSSHVjq8O2ge0dyYlhshsH4T7XdCVoxbi5HzLYWfsC5ooFlJjrXk8RcAT+hjHAK9UjBXdylzSoDK3t4g==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-object-rest-spread" "^7.2.0"
@@ -305,8 +305,8 @@
 
 "@babel/plugin-syntax-dynamic-import@^7.0.0":
   version "7.2.0"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-syntax-dynamic-import/download/@babel/plugin-syntax-dynamic-import-7.2.0.tgz#69c159ffaf4998122161ad8ebc5e6d1f55df8612"
-  integrity sha1-acFZ/69JmBIhYa2OvF5tH1XfhhI=
+  resolved "https://registry.npmjs.org/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.2.0.tgz#69c159ffaf4998122161ad8ebc5e6d1f55df8612"
+  integrity sha512-mVxuJ0YroI/h/tbFTPGZR8cv6ai+STMKNBq0f8hFxsxWjl94qqhsb+wXbpNMDPU3cfR1TIsVFzU3nXyZMqyK4w==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -516,8 +516,8 @@
 
 "@babel/plugin-transform-runtime@^7.4.0":
   version "7.4.3"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-transform-runtime/download/@babel/plugin-transform-runtime-7.4.3.tgz#4d6691690ecdc9f5cb8c3ab170a1576c1f556371"
-  integrity sha1-TWaRaQ7NyfXLjDqxcKFXbB9VY3E=
+  resolved "https://registry.npmjs.org/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.4.3.tgz#4d6691690ecdc9f5cb8c3ab170a1576c1f556371"
+  integrity sha512-7Q61bU+uEI7bCUFReT1NKn7/X6sDQsZ7wL1sJ9IYMAO7cI+eg6x9re1cEw2fCRMbbTVyoeUKWSV1M6azEfKCfg==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -729,8 +729,8 @@
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0-beta.3":
   version "1.0.0-beta.3"
-  resolved "http://registry.npm.taobao.org/@vue/babel-helper-vue-jsx-merge-props/download/@vue/babel-helper-vue-jsx-merge-props-1.0.0-beta.3.tgz#e4c2e7125b3e0d2a9d493e457850b2abb0fd3cad"
-  integrity sha1-5MLnEls+DSqdST5FeFCyq7D9PK0=
+  resolved "https://registry.npmjs.org/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0-beta.3.tgz#e4c2e7125b3e0d2a9d493e457850b2abb0fd3cad"
+  integrity sha512-cbFQnd3dDPsfWuxbWW2phynX2zsckwC4GfAkcE1QH1lZL2ZAD2V97xY3BmvTowMkjeFObRKQt1P3KKA6AoB0hQ==
 
 "@vue/babel-plugin-transform-vue-jsx@^1.0.0-beta.3":
   version "1.0.0-beta.3"
@@ -764,8 +764,8 @@
 
 "@vue/babel-preset-jsx@^1.0.0-beta.2":
   version "1.0.0-beta.3"
-  resolved "http://registry.npm.taobao.org/@vue/babel-preset-jsx/download/@vue/babel-preset-jsx-1.0.0-beta.3.tgz#15c584bd62c0286a80f0196749ae38cde5cd703b"
-  integrity sha1-FcWEvWLAKGqA8BlnSa44zeXNcDs=
+  resolved "https://registry.npmjs.org/@vue/babel-preset-jsx/-/babel-preset-jsx-1.0.0-beta.3.tgz#15c584bd62c0286a80f0196749ae38cde5cd703b"
+  integrity sha512-qMKGRorTI/0nE83nLEM7MyQiBZUqc62sZyjkBdVaaU7S61MHI8RKHPtbLMMZlWXb2NCJ0fQci8xJWUK5JE+TFA==
   dependencies:
     "@vue/babel-helper-vue-jsx-merge-props" "^1.0.0-beta.3"
     "@vue/babel-plugin-transform-vue-jsx" "^1.0.0-beta.3"
@@ -1453,8 +1453,8 @@ babel-eslint@^10.0.1:
 
 babel-loader@^8.0.5:
   version "8.0.5"
-  resolved "http://registry.npm.taobao.org/babel-loader/download/babel-loader-8.0.5.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fbabel-loader%2Fdownload%2Fbabel-loader-8.0.5.tgz#225322d7509c2157655840bba52e46b6c2f2fe33"
-  integrity sha1-IlMi11CcIVdlWEC7pS5GtsLy/jM=
+  resolved "https://registry.npmjs.org/babel-loader/-/babel-loader-8.0.5.tgz#225322d7509c2157655840bba52e46b6c2f2fe33"
+  integrity sha512-NTnHnVRd2JnRqPC0vW+iOQWU5pchDbYXsG2E6DMXEpMfUcQKclF9gmf3G3ZMhzG7IG9ji4coL0cm+FxeWxDpnw==
   dependencies:
     find-cache-dir "^2.0.0"
     loader-utils "^1.0.2"

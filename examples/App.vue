@@ -4,8 +4,10 @@
     <div class="main-cnt" flex>
       <side-nav class="nav" flex-box="0"></side-nav>
       <div class="page-container" flex-box="1">
-        <router-view></router-view>
-        <main-footer></main-footer>
+        <b-scrollbar style="height:100%;">
+          <router-view></router-view>
+          <main-footer></main-footer>
+        </b-scrollbar>
       </div>
     </div>
   </div>
@@ -29,9 +31,12 @@
       background-color: #fff;
       box-shadow: 0 4px 30px 0 rgba(223, 225, 230, .5);
       .page-container {
-        padding: 20px 20px 0 0
-        overflow-y: auto;
-        overflow-x: hidden;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        .bin-scrollbar__wrap {
+          overflow-x: auto;
+        }
         p, ul li {
           font-size: 14px;
           color: #5e6d82;

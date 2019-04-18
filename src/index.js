@@ -3,9 +3,10 @@ import V2Plugin from './plugin/v2plugin'
 import Icon from '../packages/icon/index.js'
 import Button from '../packages/button/index.js'
 import ButtonGroup from '../packages/button-group/index.js'
+import ScrollBar from '../packages/scrollbar/index.js'
 
 const components = [
-  Icon, Button, ButtonGroup
+  Icon, Button, ButtonGroup, ScrollBar
 ]
 
 const install = function (Vue) {
@@ -25,5 +26,6 @@ export default {
   install,
   Icon,
   Button,
-  ButtonGroup
+  ButtonGroup,
+  ScrollBar
 }

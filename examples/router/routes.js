@@ -12,8 +12,6 @@ Object.keys(navConf).forEach((header) => {
   routes = routes.concat(navConf[header])
 })
 
-console.log(routes)
-
 let addComponent = (router) => {
   router.forEach((route) => {
     if (route.items) {
