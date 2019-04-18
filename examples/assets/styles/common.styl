@@ -8,33 +8,6 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
-#app {
-  color: #444444;
-  font-size: 14px;
-  width: 100%;
-  height: 100%;
-
-  .main-cnt {
-    margin: 48px auto;
-    width: 90%;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 30px 0 rgba(223,225,230,.5);
-  }
-
-  .headerWrapper {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1500;
-
-    .container {
-      padding: 0;
-    }
-  }
-}
-
 a {
   color: #409EFF;
   text-decoration: none;
@@ -54,112 +27,16 @@ button, input, select, textarea {
   color: inherit;
 }
 
+
 .hljs {
   line-height: 1.8;
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
   font-size: 12px;
   padding: 18px 24px;
   background-color: #fafafa;
-  border: solid 1px #eaeefb;
+  border: 1px solid #eaeefb;
   margin-bottom: 25px;
   border-radius: 4px;
   -webkit-font-smoothing: auto;
 }
 
-.main-cnt {
-  margin-top: -80px;
-  padding: 80px 0 340px;
-  box-sizing: border-box;
-  min-height: 100%;
-}
-
-.container,
-.page-container {
-  width: 1140px;
-  padding: 0;
-  margin: 0 auto;
-}
-
-.page-container {
-  padding-top: 55px;
-
-  h2 {
-    font-size: 28px;
-    color: #1f2d3d;
-    margin: 0;
-  }
-  h3 {
-    font-size: 22px;
-  }
-  h2, h3, h4, h5 {
-    font-weight: normal;
-    color: #1f2f3d;
-
-    &:hover a {
-      opacity: .4;
-    }
-
-    a {
-      float: left;
-      margin-left: -20px;
-      opacity: 0;
-      cursor: pointer;
-
-      &:hover {
-        opacity: .4;
-      }
-    }
-  }
-
-  p {
-    font-size: 14px;
-    color: #5e6d82;
-    line-height: 1.5em;
-  }
-
-  .tip {
-    padding: 8px 16px;
-    background-color: #ECF8FF;
-    border-radius: 4px;
-    border-left: #50bfff 5px solid;
-    margin: 20px 0;
-
-    code {
-      background-color: rgba(255, 255, 255, .7);
-      color: #445368;
-    }
-  }
-
-  .warning {
-    padding: 8px 16px;
-    background-color: #fff6f7;
-    border-radius: 4px;
-    border-left: #FE6C6F 5px solid;
-    margin: 20px 0;
-
-    code {
-      background-color: rgba(255, 255, 255, .7);
-      color: #445368;
-    }
-  }
-}
-.demo {
-  margin: 20px 0;
-}
-@media (max-width: 1140px) {
-  .container,
-  .page-container {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .container,
-  .page-container {
-    padding: 0 20px;
-  }
-
-  #app.is-component .headerWrapper .container {
-    padding: 0 12px;
-  }
-}

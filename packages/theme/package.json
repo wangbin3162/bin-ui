@@ -1,7 +1,7 @@
 {
-  "name": "bin-theme-chalk",
-  "version": "0.1.1",
-  "description": "bin component chalk theme.",
+  "name": "bin-theme",
+  "version": "1.0.0",
+  "description": "bin component theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",
   "files": [
