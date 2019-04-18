@@ -21,6 +21,24 @@
       "desc": "更新日志"
     }
   ],
+  "工具": [
+  {
+    "desc": "tools",
+    "path": "/tools",
+    "items": [
+      {
+        "desc": "Layout 布局",
+        "name": "layout",
+        "path": "/layout"
+      },
+      {
+        "desc": "Directive 指令",
+        "name": "directive",
+        "path": "/directive"
+      }
+    ]
+  }
+],
   "组件": [
     {
       "desc": "Basic",
