@@ -2,7 +2,13 @@
 
 是一个一致性、模块化、高性能的 JavaScript 实用工具库。[官网地址](https://www.lodashjs.com/)
 
-已经添加依赖，不用额外引入,更多使用文档请参考[API](https://www.lodashjs.com/docs/4.17.5.html#constant)
+更多使用文档请参考[API](https://www.lodashjs.com/docs/4.17.5.html#constant)
+
+### 安装
+
+```
+yarn add lodash
+```
 
 ### 引入
 

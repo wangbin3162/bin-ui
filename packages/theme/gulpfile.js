@@ -13,13 +13,13 @@ function compile () {
       cascade: false
     }))
     .pipe(cssmin())
-    .pipe(dest('./lib'))
+    .pipe(dest('../../lib/theme'))
 }
 
 function copyfont () {
   return src('./src/fonts/**')
     .pipe(cssmin())
-    .pipe(dest('./lib/fonts'))
+    .pipe(dest('../../lib/theme/fonts'))
 }
 
 exports.build = series(compile, copyfont)

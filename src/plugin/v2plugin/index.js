@@ -1,5 +1,3 @@
-// 第三方库
-import Velocity from 'velocity-animate/velocity.min'
 import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 // 指令
 import waves from '../../directive/waves'
@@ -25,5 +23,6 @@ export default {
     Vue.prototype.$util = util
     Vue.prototype.$resize = {addResizeListener, removeResizeListener}
     Vue.prototype.$Velocity = Velocity
+    Vue.prototype.$lodash = _
   }
 }

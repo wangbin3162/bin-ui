@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试页面</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <link rel="stylesheet" href="lib/theme/index.css">
+  <script src="lib/bin-ui.umd.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="demo-button" style="padding: 30px;" flex="main:center">
+    <b-button v-waves @click="getNow">默认按钮</b-button>
+  </div>
+</div>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data () {
+      return {
+        show: false
+      }
+    },
+    methods: {
+      getNow () {
+        this.$clog.primary(_.now())
+      }
+    }
+  })
+</script>
+</body>
+</html>

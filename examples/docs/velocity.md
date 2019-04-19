@@ -3,6 +3,12 @@
 [Velocity.js](https://github.com/julianshapiro/velocity/wiki)是一个轻量级的前端js动画库。已经引入无须额外引入
 
 
+### 安装
+
+```
+yarn add velocity-animat@beta
+```
+
 ### Velocity.js功能概览
 
 Velocity.js是一个功能强大的库，它将DOM置于你的指尖！它的动画涵盖：
