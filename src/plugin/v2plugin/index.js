@@ -22,7 +22,5 @@ export default {
     Vue.prototype.$open = util.open
     Vue.prototype.$util = util
     Vue.prototype.$resize = {addResizeListener, removeResizeListener}
-    Vue.prototype.$Velocity = Velocity
-    Vue.prototype.$lodash = _
   }
 }
