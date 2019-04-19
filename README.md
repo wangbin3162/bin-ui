@@ -2,6 +2,8 @@
 
 封装自定义组件库,基础操作等
 
+组件示例请跳转[bin-ui](https://wangbin3162.github.io/bin-ui-doc/)
+
 ## 基础组件
 
 - 图标组件
@@ -21,17 +23,31 @@
   - flex.css 布局库
 
 
-## 发布lib库
+## 发布到npm
 
-> "lib": "vue-cli-service build --target lib --name bin-ui --dest lib packages/index.js"
+1.打包库文件
 
-    # 以下是新增的
-    # 要忽略目录和指定文件
-    examples/
-    packages/
-    public/
-    vue.config.js
-    babel.config.js
-    *.map
-    *.html
+    "lib": "vue-cli-service build --target lib --name bin-ui --dest lib src/index.js"
+    
+2.打包样式文件
+
+    gulp build
+    
+3.添加忽略
+
+   # 以下是新增的
+   # 要忽略目录和指定文件
+   examples/
+   packages/
+   src/
+   public/
+   vue.config.js
+   babel.config.js
+   *.map
+   *.html
+   
+4.发包 
+
+    npm login 
+    npm publish
 
