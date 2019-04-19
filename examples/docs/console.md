@@ -1,14 +1,8 @@
-## 控制台打印优化
+## 控制台优化
 
-<style>
- .page-container section p img{
-    width:260px;
- }
-</style>
+使用 `$clog` 可以在控制台输出美观的日志信息
 
-使用 `$log` 可以在控制台输出美观的日志信息
-
-![Image text](../assets/images/console.png)
+打开控制台查看输出效果
 
 ### 胶囊
 

@@ -1,8 +1,56 @@
 .bin-scrollbar {
   overflow: hidden;
   position: relative;
+  &:active, &:focus, &:hover {
+    > .bin-scrollbar__bar {
+      opacity: 1;
+      transition: opacity .34s ease-out;
+    }
+  }
 }
+
 .bin-scrollbar__wrap {
   overflow: scroll;
   height: 100%;
+}
+
+// 默认隐藏原生滚动条宽度
+.bin-scrollbar__wrap--hidden-default {
+  margin-bottom: -17px;
+  margin-right: -17px;
+}
+
+.bin-scrollbar__bar {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  z-index: 1;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity .12s ease-out;
+  &.is-horizontal {
+    height: 6px;
+    left: 2px;
+    > div {
+      height: 100%;
+    }
+  }
+  &.is-vertical {
+    width: 6px;
+    top: 2px;
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+.bin-scrollbar__thumb {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(144, 147, 153, .3);
+  transition: background-color .3s;
 }

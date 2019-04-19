@@ -4,18 +4,70 @@
     <div class="main-cnt" flex>
       <side-nav class="nav" flex-box="0"></side-nav>
       <div class="page-container" flex-box="1">
-        <b-scrollbar style="height:100%;">
+        <b-scrollbar style="height:100%;" ref="componentScrollBar">
           <router-view></router-view>
           <main-footer></main-footer>
         </b-scrollbar>
+        <b-back-top :show="showBackToTop" @handleToTop="toTop"></b-back-top>
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
   export default {
-    name: 'app'
+    name: 'app',
+    data () {
+      return {
+        showBackToTop: false,
+        componentScrollBar: null
+      }
+    },
+    watch: {
+      '$route.path' () {
+        // 触发伪滚动条更新
+        this.componentScrollBox.scrollTop = 0
+        this.$nextTick(() => {
+          this.componentScrollBar.update()
+        })
+      }
+    },
+    mounted () {
+      this.componentScrollBar = this.$refs.componentScrollBar
+      this.componentScrollBox = this.componentScrollBar.$el.querySelector('.bin-scrollbar__wrap')
+      // 监听滚动事件
+      this.throttledScrollHandler = this.$util.throttle(this.handleScroll, 300)
+      this.componentScrollBox.addEventListener('scroll', this.throttledScrollHandler)
+    },
+    methods: {
+      toTop () {
+        let timer
+        if (timer) {
+          cancelAnimationFrame(timer)
+          timer = null
+        }
+
+        const fn = () => {
+          if (this.componentScrollBox.scrollTop > 0) {
+            this.componentScrollBox.scrollTop -= 50
+            timer = requestAnimationFrame(fn)
+          } else {
+            cancelAnimationFrame(timer)
+            this.showBackToTop = false
+          }
+        }
+
+        timer = requestAnimationFrame(fn)
+      },
+      // 滚动监听事件
+      handleScroll () {
+        this.showBackToTop = this.componentScrollBox.scrollTop >= 150
+      }
+    },
+    beforeDestroy () {
+      this.componentScrollBox.removeEventListener('scroll', this.throttledScrollHandler)
+    },
   }
 </script>
 
@@ -31,11 +83,14 @@
       background-color: #fff;
       box-shadow: 0 4px 30px 0 rgba(223, 225, 230, .5);
       .page-container {
-        padding: 0;
+        box-sizing: border-box;
         overflow: hidden;
         height: 100%;
         .bin-scrollbar__wrap {
-          overflow-x: auto;
+          overflow-x: hidden;
+        }
+        section {
+          padding: 20px 20px 0 0;
         }
         p, ul li {
           font-size: 14px;
@@ -87,6 +142,7 @@
             border-bottom: 1px solid #dcdfe6;
             padding: 15px;
             max-width: 250px;
+            text-align: left;
           }
           th {
             background-color: #fafbfc;
@@ -95,5 +151,4 @@
       }
     }
   }
-
 </style>

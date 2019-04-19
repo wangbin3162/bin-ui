@@ -1,3 +1,7 @@
+// 第三方库
+import Velocity from 'velocity-animate/velocity.min'
+import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
+// 指令
 import waves from '../../directive/waves'
 import ellipsis from '../../directive/ellipsis'
 
@@ -18,6 +22,8 @@ export default {
     }
     Vue.prototype.$clog = util.log
     Vue.prototype.$open = util.open
-    Vue.prototype.$Util = util
+    Vue.prototype.$util = util
+    Vue.prototype.$resize = {addResizeListener, removeResizeListener}
+    Vue.prototype.$Velocity = Velocity
   }
 }
