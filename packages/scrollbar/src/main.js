@@ -32,19 +32,19 @@ export default {
     let gutter = 17
     let style = this.wrapStyle
     // 如果宽度获取成功
-    // if (gutter) {
-    //   const gutterWith = `-${gutter}px`
-    //   const gutterStyle = `margin-bottom: ${gutterWith}; margin-right: ${gutterWith};`
-    //   // 设置margin隐藏原有滚动条
-    //   if (Array.isArray(this.wrapStyle)) {
-    //     style = toObject(this.wrapStyle)
-    //     style.marginRight = style.marginBottom = gutterWith
-    //   } else if (typeof this.wrapStyle === 'string') {
-    //     style += gutterStyle
-    //   } else {
-    //     style = gutterStyle
-    //   }
-    // }
+    if (gutter) {
+      const gutterWith = `-${gutter}px`
+      const gutterStyle = `margin-bottom: ${gutterWith}; margin-right: ${gutterWith};`
+      // 设置margin隐藏原有滚动条
+      if (Array.isArray(this.wrapStyle)) {
+        style = toObject(this.wrapStyle)
+        style.marginRight = style.marginBottom = gutterWith
+      } else if (typeof this.wrapStyle === 'string') {
+        style += gutterStyle
+      } else {
+        style = gutterStyle
+      }
+    }
     let nodes
     // 创建slots视图
     const view = h(this.tag, {

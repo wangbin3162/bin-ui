@@ -23,6 +23,7 @@
 <template>
     <ul class="icon-list">
       <li v-for="name in [
+        'full-screen','down-arrow','up-arrow','fangda','loading','blow-up',
         'dashboard','edit-square','export','save','Import','close-square',
         'layout','areachart','linechart','barchart','pointmap','bulb',
         'bell','skin','home','bank','filter','funnelplot',
