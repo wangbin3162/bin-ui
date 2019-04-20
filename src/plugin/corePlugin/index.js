@@ -5,6 +5,7 @@ import ellipsis from '../../directive/ellipsis'
 
 // 功能插件
 import util from '../../utils/util'
+import log from '../../utils/log'
 
 export default {
   async install (Vue, options) {
@@ -18,7 +19,7 @@ export default {
     Vue.prototype.$global = {
       zIndex: 2000
     }
-    Vue.prototype.$clog = util.log
+    Vue.prototype.$log = log
     Vue.prototype.$open = util.open
     Vue.prototype.$util = util
     Vue.prototype.$resize = {addResizeListener, removeResizeListener}

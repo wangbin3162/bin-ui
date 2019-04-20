@@ -1,16 +1,12 @@
 ## 控制台优化
 
-使用 `$clog` 可以在控制台输出美观的日志信息
+使用 `$log` 可以在控制台输出颜色信息
 
 打开控制台查看输出效果
 
-### 胶囊
-
-此方法打印一行“胶囊”样式的信息，即上图前四条
-
 ### 参数：
 
-    $clog.capsule( 左侧文字, 右侧文字, 主题样式 )
+    $log.print( 文字, 样式/颜色, 是否是背景模式 )
 
 ### 所有实例
 
@@ -18,36 +14,23 @@
 ```html  
 <template>
     <div class="demo-button">
-      <b-button @click="logCapsule" v-waves>胶囊样式</b-button>
-      <b-button @click="logColorful" v-waves>彩色文字</b-button>
-      <b-button @click="$clog.default('default style')" type="default" v-waves>default</b-button>
-      <b-button @click="$clog.primary('primary style')" type="primary" v-waves>primary</b-button>
-      <b-button @click="$clog.success('success style')" type="success" v-waves>success</b-button>
-      <b-button @click="$clog.warning('warning style')" type="warning" v-waves>warning</b-button>
-      <b-button @click="$clog.danger('danger style')" type="danger" v-waves>danger</b-button>
+      <b-button @click="$log.print('default print','#df85ff')" v-waves>custom</b-button>
+      <b-button @click="$log.print('default print')" v-waves>default</b-button>
+      <b-button @click="$log.print('primary print','primary')" type="primary" v-waves>primary</b-button>
+      <b-button @click="$log.print('success print','success')" type="success" v-waves>success</b-button>
+      <b-button @click="$log.print('info print','info')" type="info" v-waves>info</b-button>
+      <b-button @click="$log.print('warning print','warning')" type="warning" v-waves>warning</b-button>
+      <b-button @click="$log.print('danger print','danger')" type="danger" v-waves>danger</b-button>
+    </div>
+    <div class="demo-button">
+      <b-button @click="$log.print('primary print','primary',true)" type="primary" v-waves>primary-back</b-button>
+      <b-button @click="$log.print('success print','success',true)" type="success" v-waves>primary-back</b-button>
+      <b-button @click="$log.print('info print','info',true)" type="info" v-waves>primary-back</b-button>
+      <b-button @click="$log.print('warning print','warning',true)" type="warning" v-waves>primary-back</b-button>
+      <b-button @click="$log.print('danger print','danger',true)" type="danger" v-waves>primary-back</b-button>
+      
     </div>
 </template>
-<script>
-  export  default {
-    methods:{
-      logCapsule(){
-        this.$clog.capsule('title', 'primary', 'primary')
-        this.$clog.capsule('title', 'success', 'success')
-        this.$clog.capsule('title', 'warning', 'warning')
-        this.$clog.capsule('title', 'danger', 'danger')
-      },
-      logColorful(){
-        this.$clog.colorful([
-          { text: 'H', type: 'default' },
-          { text: 'e', type: 'primary' },
-          { text: 'l', type: 'success' },
-          { text: 'l', type: 'warning' },
-          { text: 'o', type: 'danger' }
-        ])
-      }
-    }
-  }
-</script>
 ```
 :::
 

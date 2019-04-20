@@ -7,85 +7,43 @@ const log = {}
 function typeColor (type = 'default') {
   let color = ''
   switch (type) {
+    case 'primary':
+      color = '#2d8cf0'
+      break
+    case 'success':
+      color = '#19be6b'
+      break
+    case 'info':
+      color = '#909399'
+      break
+    case 'warning':
+      color = '#ff9900'
+      break
+    case 'danger':
+      color = '#f03f14'
+      break
     case 'default':
       color = '#35495E'
       break
-    case 'primary':
-      color = '#3488ff'
-      break
-    case 'success':
-      color = '#43B883'
-      break
-    case 'warning':
-      color = '#e6a23c'
-      break
-    case 'danger':
-      color = '#f56c6c'
-      break
     default:
+      color = type
       break
   }
   return color
 }
 
-/**
- * @description 打印一个 [ title | text ] 样式的信息
- * @param {String} title title text
- * @param {String} info info text
- * @param {String} type style
- */
-log.capsule = function (title, info, type = 'primary') {
-  console.log(
-    `%c ${title} %c ${info} %c`,
-    'background:#35495E; padding: 1px; border-radius: 3px 0 0 3px; color: #fff;',
-    `background:${typeColor(type)}; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff;`,
-    'background:transparent'
-  )
-}
-
-/**
- * @description 打印彩色文字
- */
-log.colorful = function (textArr) {
-  console.log(
-    `%c${textArr.map(t => t.text || '').join('%c')}`,
-    ...textArr.map(t => `color: ${typeColor(t.type)};`)
-  )
-}
-
-/**
- * @description 打印 default 样式的文字
- */
-log.default = function (text) {
-  log.colorful([{text}])
-}
-
-/**
- * @description 打印 primary 样式的文字
- */
-log.primary = function (text) {
-  log.colorful([{text, type: 'primary'}])
-}
-
-/**
- * @description 打印 success 样式的文字
- */
-log.success = function (text) {
-  log.colorful([{text, type: 'success'}])
-}
-
-/**
- * @description 打印 warning 样式的文字
- */
-log.warning = function (text) {
-  log.colorful([{text, type: 'warning'}])
-}
-
-/**
- * @description 打印 danger 样式的文字
- */
-log.danger = function (text) {
-  log.colorful([{text, type: 'danger'}])
+log.print = function (text, type = 'default', back = false) {
+  if (back) { // 如果是打印带背景图的
+    console.log(
+      `%c ${text} `,
+      `background:${typeColor(type)}; padding: 2px; border-radius: 4px;color: #fff;`,
+    )
+  } else {
+    console.log(
+      `%c ${text} `,
+      `color: ${typeColor(type)};`,
+    )
+  }
 }
 
 export default log

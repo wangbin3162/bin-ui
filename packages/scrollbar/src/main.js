@@ -6,7 +6,7 @@ export default {
   name: 'BScrollbar',
   components: {Bar},
   props: {
-    native: {
+    normal: {
       type: Boolean,
       default: false
     },  // 是否采用原生滚动（即只是隐藏掉了原生滚动条，但并没有使用自定义的滚动条）
@@ -69,7 +69,7 @@ export default {
 
     let nodes
     // 如果不需要显示滚动条
-    if (!this.native) {
+    if (!this.normal) {
       nodes = [
         wrap,
         h('bar', {props: {move: this.moveX, size: this.sizeWidth}}),
@@ -107,12 +107,12 @@ export default {
     }
   },
   mounted () {
-    if (this.native) return
+    if (this.normal) return
     this.$nextTick(this.update)
     !this.noresize && addResizeListener(this.$refs.resize, this.update)
   },
   beforeDestroy () {
-    if (this.native) return
+    if (this.normal) return
     !this.noresize && removeResizeListener(this.$refs.resize, this.update)
   }
 }

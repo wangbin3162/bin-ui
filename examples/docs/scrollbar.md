@@ -20,15 +20,15 @@
 
 ### 使用贴士
 
-    1.el-scrollbar的父层要有固定高度
-    2.el-scrollbar的高度要设成100%
+    1.b-scrollbar的父层要有固定高度
+    2.b-scrollbar的高度要设成100%
     3.如果出现横滚动条，请添加css（.bin-scrollbar__wrap{overflow-x:hidden;}）
     
 ### Attributes
     
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| native    | 是否采用原生滚动 (隐藏原生滚动条)  | boolean    | true | false   |
+| normal    | 是否采用原生滚动 (隐藏原生滚动条)  | boolean    | true | false   |
 | wrapStyle    | 内联方式 自定义wrap容器的样式  | Object    | - | {}   |
 | wrapClass    | 类名方式 自定义wrap容器的样式  | Object    | - | {}   |
 | viewClass    | 内联方式 自定义view容器的样式  | Object    | - | {}   |

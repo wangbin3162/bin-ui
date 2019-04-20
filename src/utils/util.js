@@ -1,8 +1,4 @@
-import log from './log'
-
-const util = {
-  log
-}
+const util = {}
 
 /**
  * @description 更新标题

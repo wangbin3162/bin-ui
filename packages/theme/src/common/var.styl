@@ -1,162 +1,56 @@
-/* Transition
--------------------------- */
-$--all-transition = all .3s cubic-bezier(.645, .045, .355, 1) !default;
-$--fade-transition = opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
-$--fade-linear-transition = opacity 200ms linear !default;
-$--md-fade-transition = transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
-$--border-transition-base = border-color .2s cubic-bezier(.645, .045, .355, 1) !default;
-$--color-transition-base = color .2s cubic-bezier(.645, .045, .355, 1) !default;
-
 /* Color
 -------------------------- */
-/// color|1|BrandColor|0
-$--color-primary = #409EFF;
-/// color|1|BackgroundColor|4
-$--color-white = #FFFFFF;
-/// color|1|BackgroundColor|4
-$--color-black = #000000;
-/// color|1|SecondaryColor|1
-$--color-success = #67C23A;
-/// color|1|SecondaryColor|1
-$--color-warning = #E6A23C;
-/// color|1|SecondaryColor|1
-$--color-danger = #F56C6C;
-/// color|1|SecondaryColor|1
-$--color-info = #909399;
-/// color|1|FontColor|2
-$--color-text-primary = #303133;
-/// color|1|FontColor|2
-$--color-text-regular = #606266;
-/// color|1|FontColor|2
-$--color-text-secondary = #909399;
-/// color|1|FontColor|2
-$--color-text-placeholder = #C0C4CC;
-/// color|1|BorderColor|3
-$--border-color-base = #DCDFE6;
-/// color|1|BorderColor|3
-$--border-color-light = #E4E7ED;
-/// color|1|BorderColor|3
-$--border-color-lighter = #EBEEF5;
-/// color|1|BorderColor|3
-$--border-color-extra-light = #F2F6FC;
+$color-white = #FFFFFF;
 
-// Background
-/// color|1|BackgroundColor|4
-$--background-color-base = #f5f7fa;
+$color-primary = #2d8cf0;
+$color-primary-light1 = #2d96fa;
+$color-primary-light2 = #58aeff;
+$color-primary-light3 = #74bbff;
+$color-primary-light4 = #6ab7ff;
+$color-primary-light5 = #ace2ff;
+$color-primary-light6 = #ecf5ff;
 
-/* Link
+$color-success = #19be6b;
+$color-success-light1 = #3fce65;
+$color-success-light2 = #82d994;
+$color-success-light3 = #9be1a1;
+$color-success-light4 = #d9f3db;
+$color-success-light5 = #f0f9eb;
+
+$color-info = #909399;
+$color-info-light1 = #a6a9ad;
+$color-info-light2 = #bcbec2;
+$color-info-light3 = #c8c9cc;
+$color-info-light4 = #d3d4d6;
+$color-info-light5 = #e9e9eb;
+$color-info-light6 = #f4f4f5;
+
+$color-warning = #ff9900;
+$color-warning-light1 = #ffae2c;
+$color-warning-light2 = #f0a64f;
+$color-warning-light3 = #f3bd81;
+$color-warning-light4 = #f5cc97;
+$color-warning-light5 = #fdf4e2;
+
+$color-danger = #f03f14;
+$color-danger-light1 = #f75e2f;
+$color-danger-light2 = #f96948;
+$color-danger-light3 = #fa7e65;
+$color-danger-light4 = #fb7b68;
+$color-danger-light5 = #fdc1b2;
+$color-danger-light6 = #fee7e5;
+/* text-Color
 -------------------------- */
-$--link-color = $--color-primary-light-2;
-$--link-hover-color = $--color-primary;
+$color-text-primary = #303133;
+$color-text-regular = #606266;
+$color-text-secondary = #909399;
+$color-text-placeholder = #C0C4CC;
+$border-color-base = #DCDFE6;
+$border-color-light = #E4E7ED;
+$border-color-lighter = #EBEEF5;
+$border-color-extra-light = #F2F6FC;
 
 /* Border
 -------------------------- */
-$--border-width-base = 1px;
-$--border-style-base = solid;
-$--border-color-hover = $--color-text-placeholder;
-$--border-base = $--border-width-base $--border-style-base $--border-color-base;
-/// borderRadius|1|Radius|0
-$--border-radius-base = 4px;
-/// borderRadius|1|Radius|0
-$--border-radius-small = 2px;
-/// borderRadius|1|Radius|0
-$--border-radius-circle = 100%;
+$border-base = 1px solid $border-color-base;
 
-// Box-shadow
-/// boxShadow|1|Shadow|1
-$--box-shadow-base = 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-// boxShadow|1|Shadow|1
-$--box-shadow-dark = 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
-/// boxShadow|1|Shadow|1
-$--box-shadow-light = 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-
-
-/* Button
--------------------------- */
-/// fontSize||Font|1
-$--button-font-size = $--font-size-base;
-/// fontWeight||Font|1
-$--button-font-weight = $--font-weight-primary;
-/// borderRadius||Border|2
-$--button-border-radius = $--border-radius-base;
-/// padding||Spacing|3
-$--button-padding-vertical = 12px;
-/// padding||Spacing|3
-$--button-padding-horizontal = 20px;
-
-/// fontSize||Font|1
-$--button-medium-font-size = $--font-size-base;
-/// borderRadius||Border|2
-$--button-medium-border-radius = $--border-radius-base;
-/// padding||Spacing|3
-$--button-medium-padding-vertical = 10px;
-/// padding||Spacing|3
-$--button-medium-padding-horizontal = 20px;
-
-/// fontSize||Font|1
-$--button-small-font-size = 12px;
-$--button-small-border-radius = 3px;
-/// padding||Spacing|3
-$--button-small-padding-vertical = 9px;
-/// padding||Spacing|3
-$--button-small-padding-horizontal = 15px;
-/// fontSize||Font|1
-$--button-mini-font-size = 12px;
-$--button-mini-border-radius = 3px;
-/// padding||Spacing|3
-$--button-mini-padding-vertical = 7px;
-/// padding||Spacing|3
-$--button-mini-padding-horizontal = 15px;
-
-/// color||Color|0
-$--button-default-font-color = $--color-text-regular;
-/// color||Color|0
-$--button-default-background-color = $--color-white;
-/// color||Color|0
-$--button-default-border-color = $--border-color-base;
-
-/// color||Color|0
-$--button-disabled-font-color = $--color-text-placeholder;
-/// color||Color|0
-$--button-disabled-background-color = $--color-white;
-/// color||Color|0
-$--button-disabled-border-color = $--border-color-lighter;
-
-/// color||Color|0
-$--button-primary-border-color = $--color-primary;
-/// color||Color|0
-$--button-primary-font-color = $--color-white;
-/// color||Color|0
-$--button-primary-background-color = $--color-primary;
-/// color||Color|0
-$--button-success-border-color = $--color-success;
-/// color||Color|0
-$--button-success-font-color = $--color-white;
-/// color||Color|0
-$--button-success-background-color = $--color-success;
-/// color||Color|0
-$--button-warning-border-color = $--color-warning;
-/// color||Color|0
-$--button-warning-font-color = $--color-white;
-/// color||Color|0
-$--button-warning-background-color = $--color-warning;
-/// color||Color|0
-$--button-danger-border-color = $--color-danger;
-/// color||Color|0
-$--button-danger-font-color = $--color-white;
-/// color||Color|0
-$--button-danger-background-color = $--color-danger;
-/// color||Color|0
-$--button-info-border-color = $--color-info;
-/// color||Color|0
-$--button-info-font-color = $--color-white;
-/// color||Color|0
-$--button-info-background-color = $--color-info;
-
-$--button-hover-tint-percent = 20%;
-$--button-active-shade-percent = 10%;
-
-/* Scrollbar
---------------------------*/
-$--scrollbar-background-color = rgba(144, 147, 153, 0.3);
-$--scrollbar-hover-background-color = rgba(144, 147, 153, 0.5);

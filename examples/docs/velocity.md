@@ -1,6 +1,6 @@
 ## Velocity 动画库
 
-[Velocity.js](https://github.com/julianshapiro/velocity/wiki)是一个轻量级的前端js动画库。已经引入无须额外引入
+[Velocity.js](https://github.com/julianshapiro/velocity/wiki)是一个轻量级的前端js动画库。
 
 
 ### 安装

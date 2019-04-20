@@ -1,5 +1,5 @@
 // 核心插件
-import V2Plugin from './plugin/v2plugin'
+import corePlugin from './plugin/corePlugin'
 import Icon from '../packages/icon/index.js'
 import Button from '../packages/button/index.js'
 import ButtonGroup from '../packages/button-group/index.js'
@@ -15,7 +15,7 @@ const install = function (Vue) {
     Vue.component(component.name, component)
   })
 
-  Vue.use(V2Plugin)
+  Vue.use(corePlugin)
 }
 
 /* istanbul ignore if */
