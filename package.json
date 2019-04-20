@@ -1,6 +1,6 @@
 {
   "name": "bin-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 vue-cli3 的 UI 组件库",
   "main": "lib/wb-ui.umd.min.js",
   "keywords": [
