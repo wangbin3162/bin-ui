@@ -90,7 +90,7 @@
           overflow-x: hidden;
         }
         section {
-          padding: 20px 20px 0 0;
+          padding: 20px;
         }
         p, ul li {
           font-size: 14px;

@@ -5,9 +5,11 @@ import Button from '../packages/button/index.js'
 import ButtonGroup from '../packages/button-group/index.js'
 import ScrollBar from '../packages/scrollbar/index.js'
 import BackTop from '../packages/back-top/index.js'
+import Card from '../packages/card/index.js'
+import Divider from '../packages/divider/index.js'
 
 const components = [
-  Icon, Button, ButtonGroup, ScrollBar, BackTop
+  Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider
 ]
 
 const install = function (Vue) {
@@ -29,5 +31,7 @@ export default {
   Button,
   ButtonGroup,
   ScrollBar,
-  BackTop
+  BackTop,
+  Card,
+  Divider
 }

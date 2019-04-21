@@ -1,5 +1,5 @@
 <template>
-  <i :class="'icon-' + name"></i>
+  <i :class="['iconfont','icon-' + name]" :style="{'fontSize':size}"></i>
 </template>
 
 <script>
@@ -7,7 +7,8 @@
     name: 'BIcon',
 
     props: {
-      name: String
+      name: String,
+      size: String
     }
-  };
+  }
 </script>

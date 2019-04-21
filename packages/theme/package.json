@@ -1,6 +1,6 @@
 {
   "name": "bin-theme",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "bin component theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",

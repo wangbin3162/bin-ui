@@ -1,6 +1,6 @@
 <template>
   <div class="side-nav">
-    <b-scrollbar style="height:100%;">
+    <b-scrollbar style="height:100%;" normal>
       <div v-for="title in (Object.keys(data))" class="group-container" :key="title">
         <p class="side-nav-title">{{ title }}</p>
         <div class="side-nav-items" v-for="(nav,index) in data[title]" :key="index">
@@ -40,17 +40,19 @@
     box-sizing: border-box;
     color: #3F536E;
     background-color: #fff;
+    border-right: 1px solid #dcdee2;
     z-index: 99;
     .bin-scrollbar__wrap {
       overflow-x: hidden;
     }
     .group-container {
-      margin-bottom: 32px;
+      margin-bottom: 12px;
     }
     .side-nav-title {
-      padding: 0 24px;
+      margin: 5px 0;
+      padding: 0 15px;
       color: #8DABC4;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -67,6 +69,9 @@
         font-weight: normal;
         line-height: 1.5;
         cursor: pointer;
+        &:hover {
+          color: #2d8cf0;
+        }
       }
       .side-nav-group {
         padding: 6px 0 6px 24px;
@@ -77,12 +82,23 @@
       .slid-nav-component {
         display: block;
         position: relative;
-        padding: 6px 24px 6px 32px;
+        padding: 10px 24px 10px 30px;
         color: #616367;
         font-size: 14px;
       }
       .active {
-        color: #3FAAF5;
+        color: #2d8cf0;
+        background: #f0faff;
+        &::after {
+          content: "";
+          display: block;
+          width: 2px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          background: #2d8cf0;
+        }
       }
     }
   }

@@ -21,42 +21,9 @@
       "desc": "更新日志"
     }
   ],
-  "工具": [
-  {
-    "desc": "tools",
-    "path": "/tools",
-    "items": [
-      {
-        "desc": "Layout 布局",
-        "name": "layout",
-        "path": "/layout"
-      },
-      {
-        "desc": "Directive 指令",
-        "name": "directive",
-        "path": "/directive"
-      },
-      {
-        "desc": "Console 控制台",
-        "name": "console",
-        "path": "/console"
-      },
-      {
-        "desc": "Velocity 动画库",
-        "name": "velocity",
-        "path": "/velocity"
-      },
-      {
-        "desc": "Lodash 工具库",
-        "name": "lodash",
-        "path": "/lodash"
-      }
-    ]
-  }
-],
   "组件": [
     {
-      "desc": "Basic",
+      "desc": "基础",
       "path": "/component",
       "items": [
         {
@@ -70,6 +37,27 @@
           "path": "/button"
         },
         {
+          "desc": "Card 卡片",
+          "name": "card",
+          "path": "/card"
+        },
+        {
+          "desc": "Divider 分割线",
+          "name": "divider",
+          "path": "/divider"
+        }
+      ]
+    },
+    {
+      "desc": "布局",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Layout 布局",
+          "name": "layout",
+          "path": "/layout"
+        },
+        {
           "desc": "ScrollBar 滚动",
           "name": "scrollbar",
           "path": "/scrollbar"
@@ -78,6 +66,32 @@
           "desc": "BackTop 返回顶部",
           "name": "backtop",
           "path": "/backtop"
+        }
+      ]
+    },
+    {
+      "desc": "其他",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Directive 指令",
+          "name": "directive",
+          "path": "/directive"
+        },
+        {
+          "desc": "Console 控制台",
+          "name": "console",
+          "path": "/console"
+        },
+        {
+          "desc": "Velocity 动画库",
+          "name": "velocity",
+          "path": "/velocity"
+        },
+        {
+          "desc": "Lodash 工具库",
+          "name": "lodash",
+          "path": "/lodash"
         }
       ]
     }
