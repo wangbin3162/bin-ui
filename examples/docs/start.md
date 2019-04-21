@@ -12,7 +12,7 @@
 
 ```javascript
 import Vue from 'vue';
-import BinUI from 'bin-ui';
+import BinUI from 'bin-ui/src/index.js';
 import 'bin-ui/lib/style/index.css';
 import App from './App.vue';
 
