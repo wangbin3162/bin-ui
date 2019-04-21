@@ -38,8 +38,6 @@
    # 以下是新增的
    # 要忽略目录和指定文件
    examples/
-   packages/
-   src/
    public/
    vue.config.js
    babel.config.js
