@@ -77,6 +77,11 @@
           "desc": "Modal 模态框",
           "name": "modal",
           "path": "/modal"
+        },
+        {
+          "desc": "Drawer 抽屉",
+          "name": "drawer",
+          "path": "/drawer"
         }
       ]
     },

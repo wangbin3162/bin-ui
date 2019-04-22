@@ -8,9 +8,10 @@ import BackTop from './components/back-top/index.js'
 import Card from './components/card/index.js'
 import Divider from './components/divider/index.js'
 import Modal from './components/modal/index.js'
+import Drawer from './components/drawer/index.js'
 
 const components = [
-  Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider, Modal
+  Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider, Modal, Drawer
 ]
 
 const install = function (Vue) {
@@ -35,5 +36,5 @@ export default {
   BackTop,
   Card,
   Divider,
-  Modal
+  Modal, Drawer
 }
