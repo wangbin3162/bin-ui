@@ -125,6 +125,21 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 ```
 :::
 
+### 加载状态
+
+Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
+
+::: demo 
+```html  
+<template>
+    <div class="demo-button">
+       <b-button loading>默认按钮</b-button>
+       <b-button type="primary" loading>primary</b-button>
+    </div>
+</template>
+```
+:::
+
 ### Attributes
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |

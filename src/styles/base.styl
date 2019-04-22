@@ -21,7 +21,18 @@
 [v-cloak] {
   display: none;
 }
+.icon-loading {
+  animation: rotating 2s linear infinite;
+}
 
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
 // 填满父元素
 // 组要父元素 position: relative | absolute;
 $full {

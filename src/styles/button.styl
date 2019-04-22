@@ -22,6 +22,10 @@ $root = bin
   padding: 12px 20px;
   font-size: 14px;
   border-radius: 4px;
+  .icon-loading {
+    font-size: 14px;
+    margin-right: 5px;
+  }
   &:focus, &:hover {
     color: $color-primary;
     border-color: $color-primary-light5;
@@ -36,6 +40,9 @@ $root = bin
   &.is-round {
     border-radius: 20px;
     padding: 12px 23px;
+  }
+  &.is-loading {
+    pointer-events: none;
   }
   &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
     color: #c0c4cc;
@@ -111,7 +118,7 @@ $root = bin
       border-color: $color-primary-light5;
     }
   }
-  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover, &.is-loading {
     cursor: not-allowed;
     color: $color-white;
     background-color: $color-primary-light4;
@@ -142,7 +149,7 @@ $root = bin
       border-color: $color-success-light4;
     }
   }
-  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover, &.is-loading {
     cursor: not-allowed;
     color: $color-white;
     background-color: $color-success-light3;
@@ -173,7 +180,7 @@ $root = bin
       border-color: $color-info-light5;
     }
   }
-  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover, &.is-loading {
     cursor: not-allowed;
     color: $color-white;
     background-color: $color-info-light3;
@@ -204,7 +211,7 @@ $root = bin
       border-color: $color-warning-light5;
     }
   }
-  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover, &.is-loading {
     cursor: not-allowed;
     color: $color-white;
     background-color: $color-warning-light3;
@@ -234,7 +241,7 @@ $root = bin
       border-color: $color-danger-light5;
     }
   }
-  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover, &.is-loading {
     cursor: not-allowed;
     color: $color-white;
     background-color: $color-danger-light3;
@@ -287,5 +294,20 @@ $root = bin
     border-right-color: hsla(0, 0%, 100%, .5);
   }
 }
+
+.iconfont icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+
 
 

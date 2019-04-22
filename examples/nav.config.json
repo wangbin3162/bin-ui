@@ -70,6 +70,17 @@
       ]
     },
     {
+      "desc": "视图",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Modal 模态框",
+          "name": "modal",
+          "path": "/modal"
+        }
+      ]
+    },
+    {
       "desc": "其他",
       "path": "/component",
       "items": [

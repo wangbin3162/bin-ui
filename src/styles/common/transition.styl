@@ -37,3 +37,22 @@
   opacity: 0;
   transform: scale(0.8);
 }
+
+// 过渡动画 缩放渐变
+.fade-scale-move-leave-active,
+.fade-scale-move-enter-active {
+  transition: all .35s;
+}
+.fade-scale-move-enter, .fade-scale-move-leave-to {
+  opacity: 0;
+  transform: scale(.9) translateY(-30px);
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

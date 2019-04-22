@@ -1,0 +1,137 @@
+.bin-modal-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(55, 55, 55, .6);
+  height: 100%;
+  z-index: 1000;
+}
+
+.bin-modal-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  outline: 0;
+  &.bin-modal-hidden {
+    display: none !important;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+.bin-modal {
+  width: auto;
+  margin: 0 auto;
+  position: relative;
+  outline: 0;
+  top: 100px;
+}
+.bin-modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 0;
+  border-radius: 6px;
+  background-clip: padding-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.bin-modal-close {
+  z-index: 1;
+  font-size: 12px;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  .icon-close {
+    font-size: 24px;
+    color: #999;
+    transition: color .2s ease;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.bin-modal-header {
+  border-bottom: 1px solid #e8eaec;
+  padding: 14px 16px;
+  line-height: 1;
+  .bin-modal-header-inner, .ivu-modal-header p {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: #17233d;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.bin-modal-body {
+  padding: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.bin-modal-footer {
+  border-top: 1px solid #e8eaec;
+  padding: 12px 18px;
+  text-align: right;
+}
+
+//  垂直居中
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .bin-modal {
+    top: 0;
+  }
+}
+//  全屏
+.bin-modal-fullscreen {
+  width: 100% !important;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  .bin-modal-content {
+    width: 100%;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .bin-modal-body {
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 50px;
+    bottom: 60px;
+  }
+  .bin-modal-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+//  可拖拽时
+.bin-modal-content-drag .bin-modal-header {
+  cursor: move;
+}
+.bin-modal-no-mask {
+  pointer-events: none;
+}
+.bin-modal-content-no-mask {
+  pointer-events: auto;
+}
+.bin-modal-content-drag {
+  position: absolute;
+}

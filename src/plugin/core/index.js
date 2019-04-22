@@ -15,7 +15,6 @@ export default {
     Vue.directive('waves', waves)
     Vue.directive('ellipsis', ellipsis)
 
-    // Vue.prototype.$message = Message
     Vue.prototype.$global = {
       zIndex: 2000
     }
