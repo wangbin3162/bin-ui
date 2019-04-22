@@ -32,19 +32,8 @@
 2.打包样式文件
 
     gulp build
-    
-3.添加忽略
-
-   # 以下是新增的
-   # 要忽略目录和指定文件
-   examples/
-   public/
-   vue.config.js
-   babel.config.js
-   *.map
-   *.html
    
-4.发包 
+3.发包 
 
     npm login 
     npm publish

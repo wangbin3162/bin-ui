@@ -11,6 +11,10 @@
     "vue",
     "components"
   ],
+  "files": [
+    "lib",
+    "src"
+  ],
   "private": false,
   "license": "MIT",
   "scripts": {

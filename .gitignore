@@ -20,11 +20,4 @@ yarn-error.log*
 *.sln
 *.sw*
 
-# 发布npm时将lib下的解除注释
 lib
-# examples/
-# public/
-# vue.config.js
-# babel.config.js
-# *.map
-# *.html
