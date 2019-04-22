@@ -1,12 +1,12 @@
 // 核心插件
 import corePlugin from './plugin/corePlugin'
-import Icon from '../packages/icon/index.js'
-import Button from '../packages/button/index.js'
-import ButtonGroup from '../packages/button-group/index.js'
-import ScrollBar from '../packages/scrollbar/index.js'
-import BackTop from '../packages/back-top/index.js'
-import Card from '../packages/card/index.js'
-import Divider from '../packages/divider/index.js'
+import Icon from './components/icon/index.js'
+import Button from './components/button/index.js'
+import ButtonGroup from './components/button-group/index.js'
+import ScrollBar from './components/scrollbar/index.js'
+import BackTop from './components/back-top/index.js'
+import Card from './components/card/index.js'
+import Divider from './components/divider/index.js'
 
 const components = [
   Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider

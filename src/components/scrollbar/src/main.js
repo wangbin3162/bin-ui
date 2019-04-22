@@ -1,4 +1,4 @@
-import { addResizeListener, removeResizeListener } from '../../../src/utils/resize-event'
+import { addResizeListener, removeResizeListener } from '../../../utils/resize-event'
 import { toObject } from './util'
 import Bar from './bar'
 

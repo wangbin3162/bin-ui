@@ -1,11 +1,15 @@
 {
   "name": "bin-ui",
-  "version": "1.1.1",
-  "description": "基于 vue-cli3 的 UI 组件库",
-  "main": "lib/wb-ui.umd.min.js",
+  "version": "1.1.2",
+  "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
+  "main": "lib/bin-ui.common.js",
   "keywords": [
     "bin-ui",
-    "bin"
+    "bin",
+    "ui",
+    "vue",
+    "vue",
+    "components"
   ],
   "private": false,
   "license": "MIT",
@@ -13,8 +17,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name bin-ui --dest lib src/index.js"
+    "build:lib": "npm run lib && npm run build:style",
+    "lib": "vue-cli-service build --target lib --name bin-ui --dest lib src/index.js",
+    "build:style": "gulp build"
   },
+  "homepage": "https://wangbin3162.github.io/bin-ui-doc/#/giud",
   "dependencies": {
     "core-js": "^2.6.5",
     "nprogress": "^0.2.0",
@@ -36,7 +43,11 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-markdown-loader": "^2.4.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-stylus": "^2.7.0"
   },
   "eslintConfig": {
     "root": true,

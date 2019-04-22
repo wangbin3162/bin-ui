@@ -6,7 +6,7 @@ import './assets/styles/fonts/iconfont.css'
 import './assets/styles/index.styl'
 
 import BinUI from '../src/index'
-import '../packages/theme/src/index.styl'
+import '../src/styles/index.styl'
 
 Vue.use(BinUI)
 

@@ -6,6 +6,8 @@
 
 ```shell
 npm i bin-ui -S
+# or 
+yarn add bin-ui
 ```
 
 ### CDN 安装
@@ -13,9 +15,9 @@ npm i bin-ui -S
 可以查看源码中的lib目录引入地址使用
 
     <!-- 引入样式 -->
-    <link rel="stylesheet" href="xxx/bin-ui/lib/theme/index.css">
+    <link rel="stylesheet" href="xxx/bin-ui/lib/styles/index.css">
     <!-- 引入组件库 -->
-    <script src="xxx/bin-ui/li/index.js"></script>
+    <script src="xxx/bin-ui/bin-ui.umd.min.js"></script>
     
 
 **我们强烈建议使用npm安装，可以按需引入**
