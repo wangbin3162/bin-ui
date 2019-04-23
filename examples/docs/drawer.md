@@ -76,3 +76,35 @@
 </script>
 ```
 :::
+
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| value     | 是否显示，可使用 v-model 双向绑定数据。   | Boolean  |    —       |    false    |
+| title     | 标题，如果使用 slot 自定义了页头，则 title 无效   | String  |     —       |     —     |
+| placement | 方向   | String  |    left/right      |     right    |
+| append-to-body    | 是否将对话框放置于 body 内 | Boolean  |      —      |  true  |
+| ok-text     | 确定按钮文字 | String  |      —      | 确定 |
+| cancel-text     | 取消按钮文字 | String  |      —      | 取消 |
+| fullscreen     | 是否全屏显示 | Boolean  |      —      | false |
+| width     | 抽屉宽度 | String  |      —      | 300px |
+| mask-closable    | 是否允许点击遮罩层关闭 | Boolean  |      —      | true |
+
+### 事件
+
+| 事件名      | 说明    | 返回值      |
+|---------- |-------- |---------- |
+| on-ok     | 点击确定的回调   | 无  |
+| on-cancel    | 点击取消的回调   | 无  |
+| on-visible-change    | 显示状态发生变化时触发   | true / false  |
+
+
+### slot
+
+| 名称      | 说明    |
+|---------- |-------- |
+| header     | 自定义页头   |
+| footer     | 自定义页脚内容   |
+| close     | 自定义右上角关闭内容   |

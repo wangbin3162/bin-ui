@@ -5,13 +5,17 @@
            v-show="visible" :style="mainStyle" @click.self="handleMaskClick">
         <transition name="move">
           <div class="drawer-box" :style="boxStyle" v-show="visible" flex="dir:top">
-            <div class="header" flex="main:justify">
-              <div class="title" flex-box="1">
-                {{ title }}
-              </div>
-              <div class="close" @click.stop="close()">
-                <b-icon name="close"></b-icon>
-              </div>
+            <div class="header">
+              <slot name="header">
+                <div flex="main:justify">
+                  <div class="title" flex-box="1">
+                    {{ title }}
+                  </div>
+                  <div class="close" @click.stop="close()">
+                    <b-icon name="close"></b-icon>
+                  </div>
+                </div>
+              </slot>
             </div>
             <div class="body" flex-box="1">
               <b-scrollbar style="height: 100%;">
@@ -74,7 +78,7 @@
         type: Boolean,
         default: false
       },
-      maskClose: {
+      maskClosable: {
         type: Boolean,
         default: true
       }
@@ -98,13 +102,12 @@
     },
     methods: {
       close () {
-        console.log('on-close')
         this.visible = false
         this.$emit('input', false)
-        this.$emit('on-close')
+        this.$emit('on-cancel')
       },
       handleMaskClick () {
-        if (this.maskClose) {
+        if (this.maskClosable) {
           this.close()
         }
       },

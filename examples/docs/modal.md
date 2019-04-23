@@ -56,7 +56,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ```html  
 <template>
   <b-button  v-waves size="small" @click="modal2 = true">自定义页头页脚</b-button>
-  <b-button  v-waves size="small" @click="modal3 = true">不带标题栏</b-button>
+  <b-button  v-waves size="small" @click="modal3 = true">不带标题栏和页脚</b-button>
   <b-button  v-waves size="small" @click="modal4 = true">设置宽</b-button>
   <b-modal v-model="modal2">
      <p slot="header" style="color:#f60;text-align:center">
@@ -69,7 +69,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
           <b-button type="error" size="mini" @click="$log.print('delete click','danger')" >Delete</b-button>
       </div>
   </b-modal>
-  <b-modal v-model="modal3">
+  <b-modal v-model="modal3" footer-hide>
         <p>我是弹窗内容...</p>
         <p>我是弹窗内容...</p>
         <p>我是弹窗内容...</p>
@@ -235,7 +235,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | value     | 是否显示，可使用 v-model 双向绑定数据。   | Boolean  |    —       |    false    |
-| title     | 标题，如果使用 slot 自定义了页头，则 title 无效   | Boolean  |    String      |     —     |
+| title     | 标题，如果使用 slot 自定义了页头，则 title 无效   | String  |    —    |     —     |
 | closable     | 右上角的关闭按钮 | Boolean  |      —      | true |
 | mask-closable     | 是否允许点击遮罩层关闭 | Boolean  |      —      | true |
 | loading     | 确定按钮时，确定按钮是否显示 loading 状态，开启则需手动设置value来关闭对话框 | Boolean  |      —      | false |
