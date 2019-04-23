@@ -19,11 +19,11 @@
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:lib": "npm run lib && npm run build:style",
+    "build": "vue-cli-service build",
+    "build:lib": "npm run lib && npm run style",
     "lib": "vue-cli-service build --target lib --name bin-ui --dest lib src/index.js",
-    "build:style": "gulp build"
+    "style": "gulp build"
   },
   "homepage": "https://wangbin3162.github.io/bin-ui-doc/#/giud",
   "dependencies": {
