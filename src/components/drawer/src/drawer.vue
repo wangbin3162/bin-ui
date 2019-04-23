@@ -1,5 +1,5 @@
 <template>
-  <div class="v-drawer" v-transfer-dom :data-transfer="appendToBody">
+  <div class="bin-drawer" v-transfer-dom :data-transfer="appendToBody">
     <transition name="fade">
       <div class="bin-drawer-wrapper" :class="'is-'+placement"
            v-show="visible" :style="mainStyle" @click.self="handleMaskClick">

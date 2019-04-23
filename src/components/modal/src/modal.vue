@@ -1,5 +1,5 @@
 <template>
-  <div class="v-modal" v-transfer-dom :data-transfer="appendToBody">
+  <div class="bin-modal" v-transfer-dom :data-transfer="appendToBody">
     <transition name="fade-in-linear">
       <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click="handleMask"></div>
     </transition>
@@ -270,7 +270,6 @@
         on(window, 'mousemove', this.handleMoveMove)
         on(window, 'mouseup', this.handleMoveEnd)
       },
-
       handleMoveMove (event) {
         if (!this.dragData.dragging) return false
 
