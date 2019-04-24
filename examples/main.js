@@ -7,6 +7,7 @@ import './assets/styles/index.styl'
 
 import BinUI from '../src/index'
 import '../src/styles/index.styl'
+import BCollapseTransition from '../src/components/transitions/collapse-transition'
 
 Vue.use(BinUI)
 
@@ -19,6 +20,7 @@ Vue.component('DemoBlock', DemoBlock)
 Vue.component('MainHeader', MainHeader)
 Vue.component('MainFooter', MainFooter)
 Vue.component('SideNav', SideNav)
+Vue.component('BCollapseTransition', BCollapseTransition)
 
 new Vue({
   router,

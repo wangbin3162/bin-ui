@@ -10,7 +10,7 @@ bin-ui 是一款基于 Vue.js 2.0 的前端 UI 组件库，主要用于快速开
     - [Icon 图标](/#/icon)
 - 集成了常用的工具库如
     - normalize.css
-    - [flex.css](https://github.com/lzxb/flex.css
+  -   [flex.css](https://github.com/lzxb/flex.css)
 - 封装了常用的指令
     - [水波纹指令](/#/directive)
     - [字数限制指令](/#/directive)

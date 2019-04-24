@@ -35,6 +35,21 @@
           "desc": "Button 按钮",
           "name": "button",
           "path": "/button"
+        },
+        {
+          "desc": "Directive 指令",
+          "name": "directive",
+          "path": "/directive"
+        },
+        {
+          "desc": "Console 控制台",
+          "name": "console",
+          "path": "/console"
+        },
+        {
+          "desc": "Transition 过渡",
+          "name": "transition",
+          "path": "/transition"
         }
       ]
     },
@@ -104,16 +119,6 @@
       "desc": "其他",
       "path": "/component",
       "items": [
-        {
-          "desc": "Directive 指令",
-          "name": "directive",
-          "path": "/directive"
-        },
-        {
-          "desc": "Console 控制台",
-          "name": "console",
-          "path": "/console"
-        },
         {
           "desc": "Velocity 动画库",
           "name": "velocity",
