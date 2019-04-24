@@ -87,6 +87,11 @@
           "desc": "Tag 标签",
           "name": "tag",
           "path": "/tag"
+        },
+        {
+          "desc": "Circle 进度环",
+          "name": "circle",
+          "path": "/circle"
         }
       ]
     },

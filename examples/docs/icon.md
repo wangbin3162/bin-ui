@@ -46,7 +46,8 @@
         'visible','telephone','th_internet','callout','withdraw','call',
         'video1','hangup','mute','eye_protection','distance','voice',
         'nickname','return','payment','privacy_closed','movie','wifi',
-        'random','problem'
+        'random','problem','check','plus','minus','drag',
+        'ellipsis','number','plus-circle','minus-circle'
       ]" :key="name">
         <span>
           <i :class="'iconfont icon-' + name"></i>

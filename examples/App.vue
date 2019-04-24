@@ -74,7 +74,7 @@
 <style lang="stylus">
   #app {
     color: #444444;
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
     height: 100%;
     .main-cnt {
@@ -129,19 +129,19 @@
           width: 100%;
           background-color: #fff;
           color: #5e6d82;
-          font-size: 14px;
+          font-size: 12px;
           border-collapse: collapse;
           overflow: auto;
           margin-bottom: 50px;
+          border: 1px solid #e9e9e9;
           thead, tbody {
             width: 100%;
           }
           th, td {
-            border-top: 1px solid #f3f7fa;
-            border-bottom: 1px solid #dcdfe6;
-            padding: 15px;
+            padding: 8px 16px;
             max-width: 250px;
             text-align: left;
+            border: 1px solid #e9e9e9;
           }
           th {
             background-color: #fafbfc;

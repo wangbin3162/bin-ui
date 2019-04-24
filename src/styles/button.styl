@@ -257,6 +257,9 @@ $root = bin
     float: left;
     position: relative;
   }
+  &.{$root}-button + .{$root}-button {
+    margin-left: -1px;
+  }
   & > .{$root}-button:first-child {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -295,7 +298,7 @@ $root = bin
   }
 }
 
-.iconfont icon-loading {
+.iconfont .icon-loading {
   animation: rotating 2s linear infinite;
 }
 
