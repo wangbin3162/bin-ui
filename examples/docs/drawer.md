@@ -92,7 +92,7 @@
 | width     | 抽屉宽度 | String  |      —      | 300px |
 | mask-closable    | 是否允许点击遮罩层关闭 | Boolean  |      —      | true |
 
-### 事件
+### Events
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
@@ -101,7 +101,7 @@
 | on-visible-change    | 显示状态发生变化时触发   | true / false  |
 
 
-### slot
+### Slot
 
 | 名称      | 说明    |
 |---------- |-------- |

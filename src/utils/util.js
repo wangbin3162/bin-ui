@@ -230,5 +230,15 @@ util.getWaterMark = function (str) {
   return canvas
 }
 
+// 一个值是否在列表中
+export function oneOf (value, validList) {
+  for (let i = 0; i < validList.length; i++) {
+    if (value === validList[i]) {
+      return true
+    }
+  }
+  return false
+}
+
 export default util
 

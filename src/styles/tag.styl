@@ -1,0 +1,127 @@
+@import "common/var.styl"
+.bin-tag {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  border: 1px solid #e8eaec;
+  background: #f7f7f7;
+  font-size: 12px;
+  vertical-align: middle;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 30px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  .icon-close {
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    top: -1px;
+    right: -5px;
+    color: $color-info;
+    transition: .3s
+    &:hover {
+      background-color: $color-info-light3;
+      color: #fff;
+    }
+  }
+}
+.is-primary {
+  background-color: $color-primary-light6;
+  color: $color-primary;
+  border: 1px solid $color-primary-light5;
+  .icon-close {
+    color: $color-primary;
+    &:hover {
+      background-color: $color-primary;
+      color: #fff;
+    }
+  }
+}
+.is-success {
+  background-color: $color-success-light5;
+  border-color: $color-success-light3;
+  color: $color-success;
+  .icon-close {
+    color: $color-success;
+    &:hover {
+      background-color: $color-success;
+      color: #fff;
+    }
+  }
+}
+.is-info {
+  background-color: $color-info-light6;
+  border-color: $color-info-light4;
+  color: $color-info;
+  .icon-close {
+    color: $color-info;
+    &:hover {
+      background-color: $color-info;
+      color: #fff;
+    }
+  }
+}
+.is-warning {
+  background-color: $color-warning-light5;
+  border-color: $color-warning-light4;
+  color: $color-warning;
+  .icon-close {
+    color: $color-warning;
+    &:hover {
+      background-color: $color-warning;
+      color: #fff;
+    }
+  }
+}
+.is-danger {
+  background-color: $color-danger-light6;
+  border-color: $color-danger-light5;
+  color: $color-danger;
+  .icon-close {
+    color: $color-danger;
+    &:hover {
+      background-color: $color-danger;
+      color: #fff;
+    }
+  }
+}
+.no-border {
+  border: none;
+}
+.is-medium {
+  height: 28px;
+  line-height: 26px;
+}
+.is-small {
+  height: 24px;
+  padding: 0 8px;
+  line-height: 22px;
+}
+.is-mini {
+  height: 20px;
+  padding: 0 5px;
+  line-height: 19px;
+  .icon-close {
+    margin-left: -3px;
+    transform: scale(.7);
+  }
+}
+.bin-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #e8eaec;
+  position: relative;
+  top: 2px;
+}

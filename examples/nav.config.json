@@ -35,16 +35,6 @@
           "desc": "Button 按钮",
           "name": "button",
           "path": "/button"
-        },
-        {
-          "desc": "Card 卡片",
-          "name": "card",
-          "path": "/card"
-        },
-        {
-          "desc": "Divider 分割线",
-          "name": "divider",
-          "path": "/divider"
         }
       ]
     },
@@ -66,6 +56,16 @@
           "desc": "BackTop 返回顶部",
           "name": "backtop",
           "path": "/backtop"
+        },
+        {
+          "desc": "Card 卡片",
+          "name": "card",
+          "path": "/card"
+        },
+        {
+          "desc": "Divider 分割线",
+          "name": "divider",
+          "path": "/divider"
         }
       ]
     },
@@ -82,6 +82,11 @@
           "desc": "Drawer 抽屉",
           "name": "drawer",
           "path": "/drawer"
+        },
+        {
+          "desc": "Tag 标签",
+          "name": "tag",
+          "path": "/tag"
         }
       ]
     },
