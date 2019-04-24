@@ -22,5 +22,8 @@ export default {
     Vue.prototype.$open = util.open
     Vue.prototype.$util = util
     Vue.prototype.$resize = {addResizeListener, removeResizeListener}
+    // 打印地址
+    log.print('welcome to use bin-ui', 'primary', true)
+    log.print('API Link==> ' + 'https://wangbin3162.github.io/bin-ui-doc/', 'danger')
   }
 }

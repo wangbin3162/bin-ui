@@ -74,6 +74,11 @@
       "path": "/component",
       "items": [
         {
+          "desc": "Alert 警告提示",
+          "name": "alert",
+          "path": "/alert"
+        },
+        {
           "desc": "Modal 模态框",
           "name": "modal",
           "path": "/modal"

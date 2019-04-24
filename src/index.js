@@ -11,9 +11,10 @@ import Modal from './components/modal/index.js'
 import Drawer from './components/drawer/index.js'
 import Tag from './components/tag/index.js'
 import Circle from './components/circle/index.js'
+import Alert from './components/alert/index.js'
 
 const components = [
-  Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider, Modal, Drawer, Tag, Circle
+  Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider, Modal, Drawer, Tag, Circle, Alert
 ]
 
 const install = function (Vue) {
@@ -41,5 +42,6 @@ export default {
   Modal,
   Drawer,
   Tag,
-  Circle
+  Circle,
+  Alert
 }
