@@ -29,10 +29,22 @@ function compileCommon () {
     .pipe(dest('./lib/styles/common'))
 }
 
+// 打包common
+function compileModule () {
+  return src('./src/styles/modules/*.styl')
+    .pipe(stylus())
+    .pipe(autoprefixer({
+      browsers: ['ie > 9', 'last 2 versions'],
+      cascade: false
+    }))
+    .pipe(cssmin())
+    .pipe(dest('./lib/styles/modules'))
+}
+
 function copyfont () {
   return src('./src/styles/fonts/**')
     .pipe(cssmin())
     .pipe(dest('./lib/styles/fonts'))
 }
 
-exports.build = series(compile,  compileCommon, copyfont)
+exports.build = series(compileCommon, compileModule, compile, copyfont)
