@@ -19,6 +19,7 @@
 <style lang="stylus">
   .page-header {
     background-color: #fff;
+    box-shadow: 0 10px 60px 0 rgba(29, 29, 31, 0.07);
     opacity: 0.98;
     position: relative !important;
     top: 0;
@@ -27,7 +28,6 @@
     height: 80px;
     transition: all .3s;
     z-index: 100;
-    box-shadow: 0 1px 1px rgba(0,0,0,.08);
     .header-container {
       width: 100%;
       margin: 0 auto;

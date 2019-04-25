@@ -78,8 +78,10 @@
     width: 100%;
     height: 100%;
     .main-cnt {
+      margin-top: 20px ;
       width: 100%;
       background-color: #fff;
+      box-shadow: 0 4px 30px 0 rgba(223, 225, 230, .5);
       .page-container {
         box-sizing: border-box;
         overflow: hidden;
@@ -88,7 +90,8 @@
           overflow-x: hidden;
         }
         section {
-          width: 1140px;
+          width: 1000px;
+          margin: 0 auto;
           padding: 20px 150px 0 20px;
         }
         p, ul li {
