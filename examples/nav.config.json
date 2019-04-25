@@ -28,26 +28,19 @@
       "items": [
         {
           "desc": "Icon 图标",
+          "icon": "ios-heart-empty",
           "name": "icon",
           "path": "/icon"
         },
         {
           "desc": "Button 按钮",
+          "icon": "logo-youtube",
           "name": "button",
           "path": "/button"
         },
         {
-          "desc": "Directive 指令",
-          "name": "directive",
-          "path": "/directive"
-        },
-        {
-          "desc": "Console 控制台",
-          "name": "console",
-          "path": "/console"
-        },
-        {
           "desc": "Transition 过渡",
+          "icon": "logo-codepen",
           "name": "transition",
           "path": "/transition"
         }
@@ -59,26 +52,31 @@
       "items": [
         {
           "desc": "Layout 布局",
+          "icon": "ios-browsers",
           "name": "layout",
           "path": "/layout"
         },
         {
           "desc": "ScrollBar 滚动",
+          "icon": "ios-infinite",
           "name": "scrollbar",
           "path": "/scrollbar"
         },
         {
           "desc": "BackTop 返回顶部",
+          "icon": "ios-arrow-up",
           "name": "backtop",
           "path": "/backtop"
         },
         {
           "desc": "Card 卡片",
+          "icon": "ios-card",
           "name": "card",
           "path": "/card"
         },
         {
           "desc": "Divider 分割线",
+          "icon": "ios-code-working",
           "name": "divider",
           "path": "/divider"
         }
@@ -90,26 +88,31 @@
       "items": [
         {
           "desc": "Alert 警告提示",
+          "icon": "ios-alert",
           "name": "alert",
           "path": "/alert"
         },
         {
           "desc": "Modal 模态框",
+          "icon": "ios-text",
           "name": "modal",
           "path": "/modal"
         },
         {
           "desc": "Drawer 抽屉",
+          "icon": "ios-albums",
           "name": "drawer",
           "path": "/drawer"
         },
         {
           "desc": "Tag 标签",
+          "icon": "ios-pricetag",
           "name": "tag",
           "path": "/tag"
         },
         {
           "desc": "Circle 进度环",
+          "icon": "ios-radio-button-off",
           "name": "circle",
           "path": "/circle"
         }
@@ -120,12 +123,26 @@
       "path": "/component",
       "items": [
         {
+          "desc": "Directive 指令",
+          "icon": "ios-hand",
+          "name": "directive",
+          "path": "/directive"
+        },
+        {
+          "desc": "Console 控制台",
+          "icon": "ios-bug",
+          "name": "console",
+          "path": "/console"
+        },
+        {
           "desc": "Velocity 动画库",
+          "icon": "ios-paper-plane",
           "name": "velocity",
           "path": "/velocity"
         },
         {
           "desc": "Lodash 工具库",
+          "icon": "logo-dropbox",
           "name": "lodash",
           "path": "/lodash"
         }

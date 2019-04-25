@@ -22,6 +22,12 @@ $root = bin
   padding: 12px 20px;
   font-size: 14px;
   border-radius: 4px;
+  > span {
+    vertical-align: middle;
+    > .iconfont {
+      vertical-align: baseline;
+    }
+  }
   .icon-loading {
     font-size: 14px;
     margin-right: 5px;
@@ -297,20 +303,3 @@ $root = bin
     border-right-color: hsla(0, 0%, 100%, .5);
   }
 }
-
-.iconfont .icon-loading {
-  animation: rotating 2s linear infinite;
-}
-
-@keyframes rotating {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-
-
-

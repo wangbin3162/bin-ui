@@ -13,7 +13,7 @@
       <template v-slot:header>
           <div flex="main:justify cross:center">
             <span>卡片名称</span>
-            <b-icon name="blow-up" size="20px" style="cursor: pointer;"></b-icon>
+            <b-icon name="ios-qr-scanner" size="20" style="cursor: pointer;"></b-icon>
           </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">

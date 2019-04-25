@@ -10,7 +10,9 @@
           <p v-else class="side-nav-group">{{nav.desc}}</p>
           <div v-for="item in nav.items" :key="item.name">
             <router-link :to="{name: item.name}" :class="$route.name===item.name ? 'active' : ''"
-                         class="slid-nav-component">{{item.desc}}
+                         class="slid-nav-component">
+              <b-icon :name="item.icon" v-if="item.icon" style="margin-right: 5px;" size="16"></b-icon>
+              {{item.desc}}
             </router-link>
           </div>
         </div>
@@ -33,7 +35,7 @@
 
 <style lang="stylus">
   .side-nav {
-    width: 240px;
+    width: 260px;
     height: 100%;
     overflow: hidden;
     padding-top: 20px
@@ -49,8 +51,8 @@
       margin-bottom: 12px;
     }
     .side-nav-title {
-      margin: 5px 0;
-      padding: 0 15px;
+      margin: 6px 0;
+      padding: 0 12px;
       color: #8DABC4;
       font-size: 16px;
       font-weight: bold;
@@ -75,14 +77,14 @@
       }
       .side-nav-group {
         padding: 6px 0 6px 24px;
-        font-size: 12px;
+        font-size: 15px;
         color: #999;
         margin: 0;
       }
       .slid-nav-component {
         display: block;
         position: relative;
-        padding: 10px 24px 10px 30px;
+        padding: 10px 24px 10px 35px;
         color: #616367;
         font-size: 14px;
       }

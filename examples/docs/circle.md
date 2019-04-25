@@ -35,12 +35,12 @@
 <template>
    <div flex="main:justify" style="width:300px;" class="demo-button">
     <b-circle :percent="percent" :stroke-color="color">
-        <b-icon name="check" size="50" style="color:#5cb85c" v-if="percent == 100"></b-icon>
+        <b-icon name="check" size="50" style="color:#5cb85c" v-if="percent === 100"></b-icon>
         <span v-else style="font-size:24px">{{ percent }}%</span>
     </b-circle>
     <b-button-group>
-         <b-button icon="icon-minus" @click="minus"></b-button>
-         <b-button icon="icon-plus" @click="add"></b-button>
+         <b-button icon="ios-remove" @click="minus"></b-button>
+         <b-button icon="ios-add" @click="add"></b-button>
     </b-button-group>
   </div>
 </template>
@@ -54,7 +54,7 @@
         computed: {
             color () {
                 let color = '#2db7f5';
-                if (this.percent == 100) {
+                if (this.percent === 100) {
                     color = '#5cb85c';
                 }
                 return color;

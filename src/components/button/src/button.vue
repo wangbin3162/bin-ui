@@ -15,7 +15,7 @@
     ]"
   >
     <b-icon name="loading" v-if="loading"></b-icon>
-    <i :class="['iconfont',icon]" v-if="icon && !loading"></i>
+    <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>

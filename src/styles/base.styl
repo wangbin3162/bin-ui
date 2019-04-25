@@ -4,6 +4,10 @@
 @import "common/waves.styl";
 @import "common/transition.styl";
 
+*, :after, :before {
+  box-sizing: border-box;
+}
+
 [border-box] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -21,7 +25,13 @@
 [v-cloak] {
   display: none;
 }
-.icon-loading {
+// 字体优化
+.iconfont {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+.icon-loading, icon-is-rotating {
   display: inline-block;
   animation: rotating 2s linear infinite;
 }

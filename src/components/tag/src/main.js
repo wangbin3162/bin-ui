@@ -51,7 +51,7 @@ export default {
       style: {backgroundColor: this.dotColor},
     })
     const closeEl = h('i', {
-      class: ['iconfont', 'icon-close'],
+      class: ['iconfont', 'icon-ios-close'],
       style: this.dot ? {backgroundColor: '#fff', color: this.color} : {},
       on: {
         click: this.handleClose

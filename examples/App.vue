@@ -7,12 +7,11 @@
         <b-scrollbar style="height:100%;" ref="componentScrollBar">
           <router-view></router-view>
           <main-footer></main-footer>
+          <b-back-top></b-back-top>
         </b-scrollbar>
-        <b-back-top :show="showBackToTop" @handleToTop="toTop"></b-back-top>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -36,38 +35,7 @@
     mounted () {
       this.componentScrollBar = this.$refs.componentScrollBar
       this.componentScrollBox = this.componentScrollBar.$el.querySelector('.bin-scrollbar__wrap')
-      // 监听滚动事件
-      this.throttledScrollHandler = this.$util.throttle(this.handleScroll, 300)
-      this.componentScrollBox.addEventListener('scroll', this.throttledScrollHandler)
-    },
-    methods: {
-      toTop () {
-        let timer
-        if (timer) {
-          cancelAnimationFrame(timer)
-          timer = null
-        }
-
-        const fn = () => {
-          if (this.componentScrollBox.scrollTop > 0) {
-            this.componentScrollBox.scrollTop -= 50
-            timer = requestAnimationFrame(fn)
-          } else {
-            cancelAnimationFrame(timer)
-            this.showBackToTop = false
-          }
-        }
-
-        timer = requestAnimationFrame(fn)
-      },
-      // 滚动监听事件
-      handleScroll () {
-        this.showBackToTop = this.componentScrollBox.scrollTop >= 150
-      }
-    },
-    beforeDestroy () {
-      this.componentScrollBox.removeEventListener('scroll', this.throttledScrollHandler)
-    },
+    }
   }
 </script>
 
@@ -78,7 +46,7 @@
     width: 100%;
     height: 100%;
     .main-cnt {
-      margin-top: 20px ;
+      margin-top: 20px;
       width: 100%;
       background-color: #fff;
       box-shadow: 0 4px 30px 0 rgba(223, 225, 230, .5);
@@ -90,9 +58,9 @@
           overflow-x: hidden;
         }
         section {
-          width: 1000px;
+          width: 1100px;
           margin: 0 auto;
-          padding: 20px 150px 0 20px;
+          padding: 20px 60px 0 20px;
         }
         p, ul li {
           font-size: 14px;

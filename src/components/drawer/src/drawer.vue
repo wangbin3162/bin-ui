@@ -12,7 +12,7 @@
                     {{ title }}
                   </div>
                   <div class="close" @click.stop="close()">
-                    <b-icon name="close"></b-icon>
+                    <b-icon name="ios-close" size="22"></b-icon>
                   </div>
                 </div>
               </slot>

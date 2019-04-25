@@ -1,27 +1,25 @@
-.bin-back-top-up {
-  background-color: #fff;
+.bin-back-top {
   position: fixed;
-  right: 100px;
-  bottom: 150px;
-  width: 40px;
-  height: 40px;
-  size: 40px;
-  border-radius: 20px;
+  z-index: 10;
   cursor: pointer;
-  transition: .3s;
-  box-shadow: 0 0 6px rgba(0, 0, 0, .12);
-  z-index: 5;
-  i {
-    color: #409eff;
-    display: block;
-    line-height: 40px;
-    text-align: center;
-    font-size: 18px;
+  .bin-back-top-inner {
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    transition: all .2s ease-in-out;
+    i {
+      color: #fff;
+      font-size: 24px;
+      padding: 8px 12px;
+    }
   }
 }
-
+.back-top-fade-enter-active,
+.back-top-fade-leave-active {
+  transition: .3s
+}
 .back-top-fade-enter,
 .back-top-fade-leave-to {
-  transform: translateY(-30px);
+  transform: translateY(-20px);
   opacity: 0;
 }

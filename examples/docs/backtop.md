@@ -1,91 +1,51 @@
 ## BackTop 返回顶部
 
-滚动时常与backtop返回顶部共同使用，这里也封装了一个返回顶部的按钮，但是使用起来需要手动编写其事件来实现联动
+当页面内容比较长滚动后需要快捷返回顶部时使用，一般放置在页面右下角位置。
+
+注意：如嵌套在自定义滚动组件中使用则需要将 `BackTop` 组件放置于 `Scrollbar` 组件内部
 
 ### 用法
 
-首先仍然是HTML的引入，这里需要传入一个是否显示的bool值来开启或隐藏这个按钮
+默认位置距离页面右部和底部 50px，滚动至距顶端 150px 时显示。可以自定义样式或者按钮触发
 
-```html  
+```html 
 <div class="page-container" flex-box="1">
     <b-scrollbar style="height:100%;" ref="componentScrollBar">
       <router-view></router-view>
       <main-footer></main-footer>
+      <b-back-top></b-back-top>
     </b-scrollbar>
-    <b-back-top :show="showBackToTop" @handleToTop="toTop"></b-back-top>
 </div>
 ```
 
-然后一般会在mounted钩子函数中去初始化监听函数
+### 自定义样式
 
-```javascript
-  export default {
-    name: 'app',
-    data () {
-      return {
-        showBackToTop: false,
-        componentScrollBar: null
-      }
-    },
-    watch: {
-      '$route.path' () {
-        // 触发伪滚动条更新
-        this.componentScrollBox.scrollTop = 0
-        this.$nextTick(() => {
-          this.componentScrollBar.update()
-        })
-      }
-    },
-    mounted () {
-      this.componentScrollBar = this.$refs.componentScrollBar
-      this.componentScrollBox = this.componentScrollBar.$el.querySelector('.bin-scrollbar__wrap')
-      // 监听滚动事件 ,这里使用封装好的节流函数
-      this.throttledScrollHandler = this.$util.throttle(this.handleScroll, 300)
-      this.componentScrollBox.addEventListener('scroll', this.throttledScrollHandler)
-    },
-    methods: {
-      toTop () {
-        let timer
-        if (timer) {
-          cancelAnimationFrame(timer)
-          timer = null
-        }
+自定义了位置在页面底部 200px,滚动至距顶端 200px 时显示。
 
-        const fn = () => {
-          if (this.componentScrollBox.scrollTop > 0) {
-            this.componentScrollBox.scrollTop -= 50
-            timer = requestAnimationFrame(fn)
-          } else {
-            cancelAnimationFrame(timer)
-            this.showBackToTop = false
-          }
-        }
-
-        timer = requestAnimationFrame(fn)
-      },
-      // 滚动监听事件
-      handleScroll () {
-        // 什么时候显示返回顶部按钮
-        this.showBackToTop = this.componentScrollBox.scrollTop >= 150
-      }
-    },
-    beforeDestroy () {
-      this.componentScrollBox.removeEventListener('scroll', this.throttledScrollHandler)
-    },
-  }
+```html 
+<div class="page-container" flex-box="1">
+    <b-scrollbar style="height:100%;" ref="componentScrollBar">
+      <router-view></router-view>
+      <main-footer></main-footer>
+      <b-back-top :height="200" :bottom="200">
+        <b-button size="mini" type="success">返回顶端</b-button>
+      </b-back-top>
+    </b-scrollbar>
+</div>
 ```
-
-根据实际需要可以扩展不同区域的滚动返回顶部
-
-如果你对返回顶部的位置有所调整，则可以使用viewStyle来控制显示位置调整如
-
-    <b-back-top :show="showBackToTop" @handleToTop="toTop"
-                :view-style="{right:'100px',bottom:'100px'}"></b-back-top>
 
 ### Attributes
     
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| show    | 是否显示  | boolean    | true | false   |
-| viewStyle    | 内联方式 自定义返回顶部的位置容器的样式  | Object    | - | {}   |
+| height    | 页面滚动高度达到该值时才显示BackTop | Number    | — | 150   |
+| bottom    | 组件距离底部的距离  | Number    | — | 50   |
+| right    | 组件距离右部的距离  | Number    | — | 50   |
+| duration    | 滚动动画持续时间，单位 毫秒  | Number    | — | 1000   |
+
+### Events
+    
+| 事件名      | 说明    | 返回值      |
+|---------- |-------- |---------- |
+| on-click    | 点击按钮时触发 | 无    |
 

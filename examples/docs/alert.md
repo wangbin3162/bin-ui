@@ -56,7 +56,7 @@
     </b-alert>
     <b-alert show-icon>
        自定义icon
-        <b-icon name="CodeSandbox" slot="icon"></b-icon>
+        <b-icon name="ios-basketball" slot="icon"></b-icon>
         <template slot="desc">自定义icon描述</template>
     </b-alert>
 </template>

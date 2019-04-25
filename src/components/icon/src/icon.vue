@@ -1,5 +1,5 @@
 <template>
-  <i :class="['iconfont','icon-' + name]" :style="iconSize"></i>
+  <i :class="['iconfont','icon-' + name]" :style="style"></i>
 </template>
 
 <script>
@@ -7,11 +7,19 @@
     name: 'BIcon',
     props: {
       name: String,
-      size: String
+      size: [Number, String],
+      color: String
     },
     computed: {
-      iconSize () {
-        return this.size ? {'fontSize': this.size.indexOf('px') > -1 ? this.size : `${this.size}px`} : {}
+      style () {
+        let style = {}
+        if (this.size) {
+          style['font-size'] = `${this.size}px`
+        }
+        if (this.color) {
+          style.color = this.color
+        }
+        return style
       }
     }
   }

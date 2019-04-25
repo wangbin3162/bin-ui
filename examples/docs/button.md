@@ -89,13 +89,13 @@
 <template>
     <div class="demo-button">
        <b-button-group>
-         <b-button type="primary" icon="icon-return">上一页</b-button>
-         <b-button type="primary">下一页<i class="iconfont icon-next"></i></b-button>
+         <b-button type="primary" icon="ios-arrow-back">上一页</b-button>
+         <b-button type="primary">下一页<i class="iconfont icon-ios-arrow-forward"></i></b-button>
        </b-button-group>
        <b-button-group>
-         <b-button type="success" icon="icon-edit"></b-button>
-         <b-button type="info" icon="icon-turnvoice"></b-button>
-         <b-button type="danger" icon="icon-delete"></b-button>
+         <b-button type="success" icon="ios-basketball"></b-button>
+         <b-button type="info" icon="ios-barcode"></b-button>
+         <b-button type="danger" icon="ios-call"></b-button>
        </b-button-group>
     </div>
 </template>

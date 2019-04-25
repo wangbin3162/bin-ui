@@ -9,7 +9,7 @@
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
             <a :class="[prefixCls + '-close']" v-if="closable" @click="close">
               <slot name="close">
-                <b-icon name="close"></b-icon>
+                <b-icon name="ios-close"></b-icon>
               </slot>
             </a>
             <div :class="[prefixCls + '-header']"
