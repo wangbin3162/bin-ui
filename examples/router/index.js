@@ -2,9 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import hljs from 'highlight.js'
 
-// 进度条
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import BinUI from '../../src/index'
+
+Vue.use(BinUI)
 
 // 路由数据
 import routes from './routes'
@@ -19,16 +19,17 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  NProgress.start()
+  BinUI.LoadingBar.start()
   next()
 })
 router.afterEach(() => {
   Vue.nextTick(() => {
-    const blocks = document.querySelectorAll('pre code:not(.hljs)');
-    Array.prototype.forEach.call(blocks, hljs.highlightBlock);
-  });
-  NProgress.done()
-  // util.title(to.meta.title)
+    const blocks = document.querySelectorAll('pre code:not(.hljs)')
+    Array.prototype.forEach.call(blocks, hljs.highlightBlock)
+  })
+  setTimeout(() => {
+    BinUI.LoadingBar.done()
+  }, 200)
 })
 
 export default router

@@ -14,6 +14,7 @@ import Circle from './components/circle/index.js'
 import Progress from './components/progress/index.js'
 import Alert from './components/alert/index.js'
 import Loading from './components/loading/index.js'
+import LoadingBar from './components/loadingbar/index.js'
 
 const components = [
   Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider, Modal, Drawer, Tag, Progress, Circle, Alert, Loading
@@ -23,7 +24,7 @@ const install = function (Vue) {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
-
+  Vue.prototype.$Loading = LoadingBar
   Vue.use(corePlugin)
 }
 
@@ -47,5 +48,6 @@ export default {
   Progress,
   Circle,
   Alert,
-  Loading
+  Loading,
+  LoadingBar
 }

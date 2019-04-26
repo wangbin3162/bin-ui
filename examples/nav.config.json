@@ -133,6 +133,12 @@
           "icon": "ios-hourglass",
           "name": "loading",
           "path": "/loading"
+        },
+        {
+          "desc": "LoadingBar 加载进度",
+          "icon": "ios-remove",
+          "name": "loadingbar",
+          "path": "/loadingbar"
         }
       ]
     },

@@ -80,3 +80,12 @@
   </script>
 ```
 :::
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| showIcon     |  显示加载图标   | String  |   loading        |   —   |
+| showText   |  显示加载的文字   | String  |   loading  |  —    |
+| fix   |  是否固定于父级中心   | Boolean  |   —   | false   |
+| size  |  文字显示的大小  | Number  |   —   |  —    |

@@ -1,6 +1,5 @@
 <template>
   <div
-      class="el-progress"
       :class="[
       'bin-progress',
       status ? 'progress-' + status : '',
