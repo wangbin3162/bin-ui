@@ -111,10 +111,28 @@
           "path": "/tag"
         },
         {
+          "desc": "Progress 进度条",
+          "icon": "ios-reorder",
+          "name": "progress",
+          "path": "/progress"
+        },
+        {
           "desc": "Circle 进度环",
           "icon": "ios-radio-button-off",
           "name": "circle",
           "path": "/circle"
+        }
+      ]
+    },
+    {
+      "desc": "导航",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Loading 加载",
+          "icon": "ios-hourglass",
+          "name": "loading",
+          "path": "/loading"
         }
       ]
     },
