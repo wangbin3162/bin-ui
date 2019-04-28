@@ -16,12 +16,14 @@ import Progress from './components/progress/index.js'
 import Alert from './components/alert/index.js'
 import Loading from './components/loading/index.js'
 import LoadingBar from './components/loadingbar/index.js'
+import Collapse from './components/collapse'
+import CollapsePanel from './components/collapse/panel'
 
 const components = [
   Icon, Button, ButtonGroup, ScrollBar,
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
-  CollapseTransition
+  CollapseTransition, Collapse, CollapsePanel
 ]
 
 const install = function (Vue) {
@@ -54,5 +56,7 @@ export default {
   Alert,
   Loading,
   LoadingBar,
-  CollapseTransition
+  CollapseTransition,
+  Collapse,
+  CollapsePanel
 }
