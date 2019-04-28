@@ -1,5 +1,6 @@
 // 核心插件
 import corePlugin from './plugin/core'
+import CollapseTransition from './components/base/collapse-transition'
 import Icon from './components/icon/index.js'
 import Button from './components/button/index.js'
 import ButtonGroup from './components/button-group/index.js'
@@ -17,7 +18,10 @@ import Loading from './components/loading/index.js'
 import LoadingBar from './components/loadingbar/index.js'
 
 const components = [
-  Icon, Button, ButtonGroup, ScrollBar, BackTop, Card, Divider, Modal, Drawer, Tag, Progress, Circle, Alert, Loading
+  Icon, Button, ButtonGroup, ScrollBar,
+  BackTop, Card, Divider, Modal, Drawer,
+  Tag, Progress, Circle, Alert, Loading,
+  CollapseTransition
 ]
 
 const install = function (Vue) {
@@ -49,5 +53,6 @@ export default {
   Circle,
   Alert,
   Loading,
-  LoadingBar
+  LoadingBar,
+  CollapseTransition
 }

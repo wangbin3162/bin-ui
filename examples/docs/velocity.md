@@ -6,7 +6,7 @@
 ### 安装
 
 ```
-yarn add velocity-animat@beta
+yarn add velocity-animate
 ```
 
 ### Velocity.js功能概览
@@ -63,15 +63,14 @@ Velocity(elements, {property: value}, {option: optionValue});
 
 对于选项值单位，你可以使用px，％，rem，em，vw/vh和deg。如果不添加单位，Velocity将提供适当的单位，通常为px。
 
-
 ### 官网的例子
 :::demo 
 ```html
 <template>
     <div>
-      <button @click="show = !show">
+      <b-button @click="show = !show" size="mini">
         Toggle
-      </button>
+      </b-button>
       <transition
         v-on:before-enter="beforeEnter"
         v-on:enter="enter"
@@ -85,6 +84,7 @@ Velocity(elements, {property: value}, {option: optionValue});
     </div>
 </template>
 <script>
+require('velocity-animate')
 export default {
     data(){
       return{

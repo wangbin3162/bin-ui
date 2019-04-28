@@ -45,15 +45,15 @@ var _ = require('lodash');
 export default {
   methods:{
     getNow(){
-      this.$clog.primary(_.now())
+      this.$log.print(_.now())
     },
     forDemo(){
       _.forEach([1, 2], (value) =>{
-          this.$clog.primary(value)
+          this.$log.print(value)
       });
       // => Logs `1` then `2`.
       _.forEach({ 'a': 1, 'b': 2 }, (value, key) =>{
-         this.$clog.capsule(key,value)
+         this.$log.print(key,value)
       });
     },
     lianClick(){
@@ -62,7 +62,7 @@ export default {
           .at([0,1])
           .value();
       //[ 'a', 'b' ]
-      this.$clog.primary('对字符串数组链式')
+      this.$log.print('对字符串数组链式')
       console.log(result);
     }
   }

@@ -88,3 +88,23 @@
 ```
 :::
 
+### 展开折叠
+
+::: demo 
+```html  
+<template>
+ <div class="demo-transition">
+    <b-button @click="show4= !show4" size="medium" v-waves>查看效果</b-button>
+    <div style="margin-top: 20px; height: 200px;">
+        <collapse-transition>
+          <div v-show="show4">
+            <div class="transition-box">collapse-transition</div>
+            <div class="transition-box">collapse-transition</div>
+          </div>
+        </collapse-transition>
+      </div>
+   </div>
+</template>
+```
+:::
+

@@ -1,7 +1,7 @@
 import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 // 指令
-import waves from '../../directive/waves'
 import ellipsis from '../../directive/ellipsis'
+import waves from '../../directive/waves'
 
 // 功能插件
 import util from '../../utils/util'

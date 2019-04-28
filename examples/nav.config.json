@@ -28,7 +28,7 @@
       "items": [
         {
           "desc": "Icon 图标",
-          "icon": "ios-heart-empty",
+          "icon": "ios-leaf",
           "name": "icon",
           "path": "/icon"
         },
@@ -40,7 +40,7 @@
         },
         {
           "desc": "Transition 过渡",
-          "icon": "logo-codepen",
+          "icon": "ios-fastforward",
           "name": "transition",
           "path": "/transition"
         }
@@ -75,6 +75,12 @@
           "path": "/card"
         },
         {
+          "desc": "Collapse 折叠面板",
+          "icon": "ios-albums",
+          "name": "collapse",
+          "path": "/collapse"
+        },
+        {
           "desc": "Divider 分割线",
           "icon": "ios-code-working",
           "name": "divider",
@@ -100,7 +106,7 @@
         },
         {
           "desc": "Drawer 抽屉",
-          "icon": "ios-albums",
+          "icon": "ios-filing",
           "name": "drawer",
           "path": "/drawer"
         },

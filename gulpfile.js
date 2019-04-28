@@ -29,7 +29,7 @@ function compileCommon () {
     .pipe(dest('./lib/styles/common'))
 }
 
-// 打包common
+// 打包modules
 function compileModule () {
   return src('./src/styles/modules/*.styl')
     .pipe(stylus())
@@ -41,6 +41,7 @@ function compileModule () {
     .pipe(dest('./lib/styles/modules'))
 }
 
+// 复制字体包
 function copyfont () {
   return src('./src/styles/fonts/**')
     .pipe(cssmin())
