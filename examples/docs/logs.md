@@ -1,6 +1,6 @@
 ## 更新日志
 
-小版本修复bug或修改文档，
+*1.3.6* 增加collapse展开伸缩组件，增加展开伸缩公共样式，修复部分bug
 
 *1.3.5* 增加progressbar组件。loading组件和loadingBar组件
 
