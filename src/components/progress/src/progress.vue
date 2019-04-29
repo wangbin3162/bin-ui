@@ -52,6 +52,10 @@
         type: Boolean,
         default: true
       },
+      bgColor: {
+        type: String,
+        default: ''
+      },
       color: {
         type: String,
         default: ''
@@ -63,7 +67,8 @@
       barOutStyle () {
         return {
           height: this.strokeWidth + 'px',
-          borderRadius: this.radius
+          borderRadius: this.radius,
+          backgroundColor: this.bgColor
         }
       },
       barStyle () {

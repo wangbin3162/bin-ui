@@ -37,7 +37,7 @@ Progress 组件设置 `percent` 属性即可，表示进度条对应的百分比
 
 可以根据不同指标来设置样式
 
-:::demo 可以设置 `color` 和 `radius` 来配置属性
+:::demo 可以设置 `color` 和 `radius`等 来配置属性
 ```html
 <template>
    <b-progress :percent="70" :show-text="false"></b-progress>
@@ -45,6 +45,7 @@ Progress 组件设置 `percent` 属性即可，表示进度条对应的百分比
    <b-progress text-inside :stroke-width="20" :percent="60" color="#df52ff"></b-progress>
    <b-progress radius="5px" :stroke-width="20" :percent="30" color="#ffcf2f"></b-progress>
    <b-progress radius="5px" :stroke-width="20" :percent="90" active></b-progress>
+   <b-progress radius="5px" :stroke-width="20" :percent="90" bg-color="#fff"></b-progress>
 </template>
 ```
 :::
@@ -100,6 +101,7 @@ Progress 组件设置 `percent` 属性即可，表示进度条对应的百分比
 | stroke-width   |  进度环的线宽，单位 px   | Number  |   —   | 6   |
 | text-inside  |  进度条显示文字内置在进度条内  | boolean  |   —   |  false   |
 | show-text |  是否显示进度文字   | Boolean  |   —   |  true   |
+| bg-color |  进度条背景颜色   | String  |   —   |  #f3f3f3   |
 | color  |  进度条的颜色   | String  |   —   |  #2d8cf0   |
 | radius |  进度条的圆角   | String  |   —   |  100px   |
 | active |  进度条背景动画   | Boolean  |   —   |  false   |

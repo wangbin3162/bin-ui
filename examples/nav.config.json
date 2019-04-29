@@ -94,9 +94,15 @@
       "items": [
         {
           "desc": "Alert 警告提示",
-          "icon": "ios-alert",
+          "icon": "ios-information-circle-outline",
           "name": "alert",
           "path": "/alert"
+        },
+        {
+          "desc": "Notice 通知",
+          "icon": "ios-notifications-outline",
+          "name": "notice",
+          "path": "/notice"
         },
         {
           "desc": "Modal 模态框",

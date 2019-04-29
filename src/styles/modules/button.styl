@@ -22,21 +22,21 @@ $root = bin
   padding: 12px 20px;
   font-size: 14px;
   border-radius: 4px;
-  > span {
-    vertical-align: middle;
-    > .iconfont {
-      vertical-align: baseline;
-    }
+  .iconfont {
+    vertical-align: baseline;
   }
   .icon-loading {
     font-size: 14px;
     margin-right: 5px;
   }
-  &:focus, &:hover {
+  &:hover {
     color: $color-primary;
     border-color: $color-primary-light5;
     background-color: $color-primary-light6;
     box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
   }
   &:active {
     color: $color-primary-light1;
@@ -105,10 +105,13 @@ $root = bin
   color: $color-white;
   background-color: $color-primary;
   border-color: $color-primary;
-  &:focus, &:hover {
+  &:hover {
     background: $color-primary-light1;
     border-color: $color-primary-light1;
     color: #fff;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
   }
   &.is-plain {
     color: $color-primary;
@@ -136,10 +139,13 @@ $root = bin
   color: #fff;
   background-color: $color-success;
   border-color: $color-success;
-  &:focus, &:hover {
+  &:hover {
     background: $color-success-light1;
     border-color: $color-success-light1;
     color: #fff;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(25,190,107,.2);
   }
   &.is-plain {
     color: $color-success;
@@ -167,10 +173,13 @@ $root = bin
   color: #fff;
   background-color: $color-info;
   border-color: $color-info;
-  &:focus, &:hover {
+  &:hover {
     background: $color-info-light1;
     border-color: $color-info-light1;
     color: #fff;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(144, 147, 153, 0.2);
   }
   &.is-plain {
     color: $color-info;
@@ -198,10 +207,13 @@ $root = bin
   color: #fff;
   background-color: $color-warning;
   border-color: $color-warning;
-  &:focus, &:hover {
+  &:hover {
     background: $color-warning-light1;
     border-color: $color-warning-light1;
     color: #fff;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 153, 0, .2);
   }
   &.is-plain {
     color: $color-warning;
@@ -228,10 +240,13 @@ $root = bin
   color: #fff;
   background-color: $color-danger;
   border-color: $color-danger;
-  &:focus, &:hover {
+  &:hover {
     background: $color-danger-light1;
     border-color: $color-danger-light1;
     color: #fff;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(237, 64, 20, .2);
   }
   &.is-plain {
     color: $color-danger;
