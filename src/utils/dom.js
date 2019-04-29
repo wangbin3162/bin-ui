@@ -138,13 +138,3 @@ export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
   scroll(from, to, step)
 }
 
-let dom = {}
-
-dom.scrollTop = scrollTop()
-dom.on = on()
-dom.off = off()
-dom.once = once()
-dom.addClass = addClass()
-dom.removeClass = removeClass()
-
-export default dom
