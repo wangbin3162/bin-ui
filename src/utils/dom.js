@@ -102,38 +102,49 @@ export function removeClass (el, cls) {
 }
 
 // scrollTop animation
-export function scrollTop(el, from = 0, to, duration = 500, endCallback) {
+export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
   if (!window.requestAnimationFrame) {
     window.requestAnimationFrame = (
       window.webkitRequestAnimationFrame ||
       window.mozRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
       function (callback) {
-        return window.setTimeout(callback, 1000/60);
+        return window.setTimeout(callback, 1000 / 60)
       }
-    );
+    )
   }
-  const difference = Math.abs(from - to);
-  const step = Math.ceil(difference / duration * 50);
+  const difference = Math.abs(from - to)
+  const step = Math.ceil(difference / duration * 50)
 
-  function scroll(start, end, step) {
+  function scroll (start, end, step) {
     if (start === end) {
-      endCallback && endCallback();
-      return;
+      endCallback && endCallback()
+      return
     }
 
-    let d = (start + step > end) ? end : start + step;
+    let d = (start + step > end) ? end : start + step
     if (start > end) {
-      d = (start - step < end) ? end : start - step;
+      d = (start - step < end) ? end : start - step
     }
 
     if (el === window) {
-      window.scrollTo(d, d);
+      window.scrollTo(d, d)
     } else {
-      el.scrollTop = d;
+      el.scrollTop = d
     }
-    window.requestAnimationFrame(() => scroll(d, end, step));
+    window.requestAnimationFrame(() => scroll(d, end, step))
   }
-  scroll(from, to, step);
+
+  scroll(from, to, step)
 }
 
+let dom = {}
+
+dom.scrollTop = scrollTop()
+dom.on = on()
+dom.off = off()
+dom.once = once()
+dom.addClass = addClass()
+dom.removeClass = removeClass()
+
+export default dom

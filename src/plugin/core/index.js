@@ -6,6 +6,7 @@ import waves from '../../directive/waves'
 // 功能插件
 import util from '../../utils/util'
 import log from '../../utils/log'
+import dom from '../../utils/dom'
 
 export default {
   async install (Vue, options) {
@@ -18,9 +19,13 @@ export default {
     Vue.prototype.$global = {
       zIndex: 2000
     }
+    Vue.prototype.$dom = dom
     Vue.prototype.$log = log
-    Vue.prototype.$open = util.open
     Vue.prototype.$util = util
+
+    Vue.prototype.$open = util.open
+    Vue.prototype.$scrollTop = dom.scrollTop
+    Vue.prototype.$print = log.print
     Vue.prototype.$resize = {addResizeListener, removeResizeListener}
     // 打印地址
     log.print('welcome to use bin-ui', 'primary')
