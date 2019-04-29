@@ -99,10 +99,10 @@
           "path": "/alert"
         },
         {
-          "desc": "Notice 通知",
+          "desc": "Message 提示",
           "icon": "ios-notifications-outline",
-          "name": "notice",
-          "path": "/notice"
+          "name": "message",
+          "path": "/message"
         },
         {
           "desc": "Modal 模态框",

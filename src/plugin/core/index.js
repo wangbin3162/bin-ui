@@ -12,6 +12,10 @@ export default {
   async install (Vue, options) {
     // 设置为 false 以阻止 vue 在启动时生成生产提示 https://cn.vuejs.org/v2/api/#productionTip
     Vue.config.productionTip = false
+    // 全局过滤器
+    Vue.filter('filterTime', function (time) {
+      return util.parseTime(time, '{y}-{m}-{d}')
+    })
     // 全局指令
     Vue.directive('waves', waves)
     Vue.directive('ellipsis', ellipsis)

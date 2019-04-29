@@ -1,0 +1,83 @@
+@import "../common/var.styl"
+.bin-message {
+  font-size: 14px;
+  position: fixed;
+  z-index: 1010;
+  width: 100%;
+  top: 16px;
+  left: 0;
+  pointer-events: none;
+}
+.bin-message-notice {
+  box-sizing: border-box;
+  padding: 8px;
+  text-align: center;
+  transition: height .3s ease-in-out, padding .3s ease-in-out;
+}
+.bin-message-notice-closable {
+  .bin-message-notice-content {
+    position: relative;
+    padding-right: 32px;
+  }
+}
+.bin-message-notice-info {
+  i {
+    color: $color-primary;
+  }
+}
+.bin-message-notice-success {
+  i {
+    color: $color-success;
+  }
+}
+.bin-message-notice-warning {
+  i {
+    color: $color-warning;
+  }
+}
+.bin-message-notice-error {
+  i {
+    color: $color-danger;
+  }
+}
+.bin-message-notice-content {
+  display: inline-block;
+  pointer-events: all;
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  background: #fff;
+  position: relative;
+  i {
+    vertical-align: baseline;
+    margin-right: 10px;
+  }
+}
+
+.bin-message-notice-close {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  color: #999;
+  outline: 0;
+  cursor: pointer;
+  i {
+    font-size: 22px;
+    color: #999;
+    transition: color .2s ease;
+    position: relative;
+    top: -3px;
+  }
+}
+
+// move-up
+.move-up-enter-active,
+.move-up-leave-active {
+  transition: all .3s cubic-bezier(.55, 0, .1, 1);
+}
+.move-up-enter,
+.move-up-leave-to {
+  transform-origin: 0 0;
+  transform: translateY(-100%);
+  opacity: 0;
+}

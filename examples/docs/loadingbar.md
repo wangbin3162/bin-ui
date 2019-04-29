@@ -41,19 +41,19 @@ LoadingBar 只会在全局创建一个，因此在任何位置调用的方法都
       export default {
         methods: {
             start () {
-             this.$Loading.start();
+             this.$loading.start();
             },
             update (val) {
-             this.$Loading.update(val);
+             this.$loading.update(val);
             },
             done () {
-             this.$Loading.done();
+             this.$loading.done();
             },
             error () {
-             this.$Loading.error();
+             this.$loading.error();
             },
             config() {
-              this.$Loading.config({
+              this.$loading.config({
                   color: '#5cb85c',
                   failedColor: '#f0ad4e',
                   height: 5
@@ -69,13 +69,13 @@ LoadingBar 只会在全局创建一个，因此在任何位置调用的方法都
 
 通过直接调用以下方法来使用组件：
 
-    this.$Loading.start()
+    this.$loading.start()
     
-    this.$Loading.finish()
+    this.$loading.finish()
     
-    this.$Loading.error()
+    this.$loading.error()
     
-    this.$Loading.update(percent)
+    this.$loading.update(percent)
     
 以上方法隐式的创建及维护Vue组件。函数及参数说明如下：
 

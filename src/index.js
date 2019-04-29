@@ -15,9 +15,11 @@ import Circle from './components/circle/index.js'
 import Progress from './components/progress/index.js'
 import Alert from './components/alert/index.js'
 import Loading from './components/loading/index.js'
-import LoadingBar from './components/loadingbar/index.js'
 import Collapse from './components/collapse'
 import CollapsePanel from './components/collapse/panel'
+// 全局注册的实例不需要放入components下
+import LoadingBar from './components/loadingbar/index.js'
+import Message from './components/message/index.js'
 
 const components = [
   Icon, Button, ButtonGroup, ScrollBar,
@@ -30,7 +32,9 @@ const install = function (Vue) {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
-  Vue.prototype.$Loading = LoadingBar
+  Vue.prototype.$loading = LoadingBar
+  Vue.prototype.$message = Message.message
+
   Vue.use(corePlugin)
 }
 
@@ -55,8 +59,9 @@ export default {
   Circle,
   Alert,
   Loading,
-  LoadingBar,
   CollapseTransition,
   Collapse,
-  CollapsePanel
+  CollapsePanel,
+  LoadingBar,
+  Message
 }
