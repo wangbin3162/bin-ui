@@ -20,6 +20,7 @@ import CollapsePanel from './components/collapse/panel'
 import Breadcrumb from './components/breadcrumb'
 import breadcrumbItem from './components/breadcrumb/item'
 import Badge from './components/badge/index.js'
+import Input from './components/input/index.js'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar/index.js'
 import Message from './components/message/index.js'
@@ -28,7 +29,8 @@ const components = [
   Icon, Button, ButtonGroup, ScrollBar,
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
-  CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem
+  CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
+  Input
 ]
 
 const install = function (Vue) {
@@ -72,5 +74,6 @@ export default {
   Breadcrumb, breadcrumbItem,
   LoadingBar,
   Message,
-  Badge
+  Badge,
+  Input
 }

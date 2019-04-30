@@ -51,12 +51,6 @@
       "path": "/component",
       "items": [
         {
-          "desc": "Tabs 标签页",
-          "icon": "ios-paper",
-          "name": "tabs",
-          "path": "/tabs"
-        },
-        {
           "desc": "Breadcrumb 面包屑",
           "icon": "ios-apps",
           "name": "breadcrumb",
@@ -79,6 +73,18 @@
           "icon": "ios-remove",
           "name": "loadingbar",
           "path": "/loadingbar"
+        }
+      ]
+    },
+    {
+      "desc": "表单",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Input 输入框",
+          "icon": "ios-create",
+          "name": "input",
+          "path": "/input"
         }
       ]
     },
