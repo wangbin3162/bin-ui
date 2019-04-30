@@ -27,9 +27,7 @@ router.afterEach(() => {
     const blocks = document.querySelectorAll('pre code:not(.hljs)')
     Array.prototype.forEach.call(blocks, hljs.highlightBlock)
   })
-  setTimeout(() => {
-    BinUI.LoadingBar.done()
-  }, 200)
+  BinUI.LoadingBar.done()
 })
 
 export default router
