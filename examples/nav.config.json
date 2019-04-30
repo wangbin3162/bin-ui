@@ -51,6 +51,18 @@
       "path": "/component",
       "items": [
         {
+          "desc": "Tabs 标签页",
+          "icon": "ios-paper",
+          "name": "tabs",
+          "path": "/tabs"
+        },
+        {
+          "desc": "Breadcrumb 面包屑",
+          "icon": "ios-apps",
+          "name": "breadcrumb",
+          "path": "/breadcrumb"
+        },
+        {
           "desc": "Badge 徽标",
           "icon": "ios-square",
           "name": "badge",
