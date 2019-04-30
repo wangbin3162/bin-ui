@@ -17,6 +17,7 @@ import Alert from './components/alert/index.js'
 import Loading from './components/loading/index.js'
 import Collapse from './components/collapse'
 import CollapsePanel from './components/collapse/panel'
+import Badge from './components/badge/index.js'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar/index.js'
 import Message from './components/message/index.js'
@@ -25,7 +26,7 @@ const components = [
   Icon, Button, ButtonGroup, ScrollBar,
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
-  CollapseTransition, Collapse, CollapsePanel
+  CollapseTransition, Collapse, CollapsePanel, Badge
 ]
 
 const install = function (Vue) {
@@ -68,5 +69,6 @@ export default {
   Collapse,
   CollapsePanel,
   LoadingBar,
-  Message
+  Message,
+  Badge
 }

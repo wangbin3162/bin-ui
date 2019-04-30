@@ -47,6 +47,30 @@
       ]
     },
     {
+      "desc": "导航",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Badge 徽标",
+          "icon": "ios-square",
+          "name": "badge",
+          "path": "/badge"
+        },
+        {
+          "desc": "Loading 加载",
+          "icon": "ios-hourglass",
+          "name": "loading",
+          "path": "/loading"
+        },
+        {
+          "desc": "LoadingBar 加载进度",
+          "icon": "ios-remove",
+          "name": "loadingbar",
+          "path": "/loadingbar"
+        }
+      ]
+    },
+    {
       "desc": "布局",
       "path": "/component",
       "items": [
@@ -139,24 +163,6 @@
           "icon": "ios-radio-button-off",
           "name": "circle",
           "path": "/circle"
-        }
-      ]
-    },
-    {
-      "desc": "导航",
-      "path": "/component",
-      "items": [
-        {
-          "desc": "Loading 加载",
-          "icon": "ios-hourglass",
-          "name": "loading",
-          "path": "/loading"
-        },
-        {
-          "desc": "LoadingBar 加载进度",
-          "icon": "ios-remove",
-          "name": "loadingbar",
-          "path": "/loadingbar"
         }
       ]
     },
