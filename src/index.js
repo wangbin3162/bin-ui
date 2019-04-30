@@ -32,8 +32,13 @@ const install = function (Vue) {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
+  // 注册全局的组件实例
   Vue.prototype.$loading = LoadingBar
   Vue.prototype.$message = Message.message
+  // 模态框实例及快捷方法
+  Vue.prototype.$modal = Modal
+  Vue.prototype.$alert = Modal.alert
+  Vue.prototype.$confirm = Modal.confirm
 
   Vue.use(corePlugin)
 }

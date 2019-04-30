@@ -17,7 +17,7 @@
      <b-button size="small" type="warning" v-waves
         @click="$message({type:'warning',content:'warning 的提示'})">warning</b-button>
      <b-button size="small" type="danger" v-waves
-        @click="$message({type:'error',content:'error 的提示'})">error</b-button>
+        @click="$message({type:'danger',content:'danger 的提示'})">danger</b-button>
   </template>
 ```
 :::
@@ -85,7 +85,7 @@ render函数调用
 
 ### Attributes
 
-| 函数      | 说明    |  类型      | 类型      |
+| 函数      | 说明    |  类型      | 默认值      |
 |---------- |-------- |---------- |---------|
 | content     |  提示内容   | String  | —  |
 | render     |  自定义描述内容，使用 Vue 的 Render 函数   | Function  | —  |

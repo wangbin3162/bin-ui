@@ -1,3 +1,4 @@
+@import "../common/var.styl"
 .bin-modal-mask {
   position: fixed;
   top: 0;
@@ -64,7 +65,7 @@
   border-bottom: 1px solid #e8eaec;
   padding: 14px 16px;
   line-height: 1;
-  .bin-modal-header-inner, .ivu-modal-header p {
+  .bin-modal-header-inner, .bin-modal-header p {
     display: inline-block;
     width: 100%;
     font-size: 14px;
@@ -136,3 +137,56 @@
 .bin-modal-content-drag {
   position: absolute;
 }
+//  confirm弹窗的样式
+.bin-modal-confirm {
+  padding: 0 4px;
+}
+.bin-modal-confirm-head {
+  padding: 0 12px 0 0;
+}
+.bin-modal-confirm-head-icon {
+  display: inline-block;
+  font-size: 28px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+.bin-modal-confirm-head-icon-confirm {
+  color: #f90;
+}
+.bin-modal-confirm-head-icon-info {
+  color: $color-primary;
+}
+.bin-modal-confirm-head-icon-success {
+  color: $color-success;
+}
+.bin-modal-confirm-head-icon-warning {
+  color: $color-warning;
+}
+.bin-modal-confirm-head-icon-danger {
+  color: $color-danger;
+}
+.bin-modal-confirm-head-title {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  font-size: 16px;
+  color: #17233d;
+  font-weight: 700;
+}
+
+.bin-modal-confirm-body {
+  padding-left: 42px;
+  font-size: 14px;
+  color: #515a6e;
+  position: relative;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+.bin-modal-confirm-footer {
+  margin-top: 10px;
+  text-align: right;
+}
+

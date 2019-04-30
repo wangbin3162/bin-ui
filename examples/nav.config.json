@@ -105,6 +105,12 @@
           "path": "/message"
         },
         {
+          "desc": "MessageBox 弹框",
+          "icon": "md-text",
+          "name": "messageBox",
+          "path": "/messageBox"
+        },
+        {
           "desc": "Modal 模态框",
           "icon": "ios-text",
           "name": "modal",

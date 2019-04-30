@@ -80,7 +80,7 @@
           'info': 'ios-information-circle',
           'success': 'ios-checkmark-circle',
           'warning': 'ios-alert',
-          'error': 'ios-close-circle'
+          'danger': 'ios-close-circle'
         }
         return iconMap[this.type]
       }

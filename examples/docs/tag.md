@@ -82,7 +82,7 @@ dot 模式简单显示
       @on-close="handleCloseTag(tag)">
       {{tag}}
     </b-tag>
-    <b-button class="button-new-tag" size="small" @click="addOne">+ New Tag</el-button>
+    <b-button class="button-new-tag" size="small" @click="addOne">+ New Tag</b-button>
 </template>
 <script>
     export default {

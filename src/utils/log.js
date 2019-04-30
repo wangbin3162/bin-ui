@@ -46,20 +46,20 @@ log.print = function (text, type = 'default', back = false) {
   }
 }
 
-log.primary = function (text) {
-  this.print(text, 'primary')
+log.primary = function (text, back = false) {
+  this.print(text, 'primary', back)
 }
-log.success = function (text) {
-  this.print(text, 'success')
+log.success = function (text, back = false) {
+  this.print(text, 'success', back)
 }
-log.info = function (text) {
-  this.print(text, 'info')
+log.info = function (text, back = false) {
+  this.print(text, 'info', back)
 }
-log.warning = function (text) {
-  this.danger(text, 'warning')
+log.warning = function (text, back = false) {
+  this.print(text, 'warning', back)
 }
-log.danger = function (text) {
-  this.danger(text, 'danger')
+log.danger = function (text, back = false) {
+  this.print(text, 'danger', back)
 }
 
 export default log

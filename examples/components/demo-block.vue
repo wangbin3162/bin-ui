@@ -17,7 +17,7 @@
     <div class="demo-block-control"
          ref="control"
          @click="isExpanded = !isExpanded">
-      <i :class="[iconClass, { 'hovering': hovering }]"></i>
+      <i :class="[iconClass, { 'hovering': hovering }]" style="font-size: 18px;"></i>
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
@@ -40,7 +40,7 @@
         return `demo-${this.$router.currentRoute.path.split('/').pop()}`
       },
       iconClass () {
-        return this.isExpanded ? 'iconfont icon-caret-up' : 'iconfont icon-caret-down'
+        return this.isExpanded ? 'iconfont icon-md-arrow-dropup' : 'iconfont icon-md-arrow-dropdown'
       },
       controlText () {
         return this.isExpanded ? '隐藏代码' : '显示代码'
