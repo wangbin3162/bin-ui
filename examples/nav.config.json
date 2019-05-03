@@ -85,6 +85,12 @@
           "icon": "ios-create",
           "name": "input",
           "path": "/input"
+        },
+        {
+          "desc": "Rate 评分",
+          "icon": "ios-star",
+          "name": "rate",
+          "path": "/rate"
         }
       ]
     },
