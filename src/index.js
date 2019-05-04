@@ -21,6 +21,7 @@ import Breadcrumb from './components/breadcrumb'
 import breadcrumbItem from './components/breadcrumb/item'
 import Badge from './components/badge/index.js'
 import Input from './components/input/index.js'
+import InputNumber from './components/input-number/index.js'
 import Rate from './components/rate/index.js'
 import Switch from './components/switch/index.js'
 // 全局注册的实例不需要放入components下
@@ -32,7 +33,7 @@ const components = [
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
-  Input, Rate, Switch
+  Input, InputNumber, Rate, Switch
 ]
 
 const install = function (Vue) {
@@ -78,6 +79,7 @@ export default {
   Message,
   Badge,
   Input,
+  InputNumber,
   Rate,
   Switch
 }

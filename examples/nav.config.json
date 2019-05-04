@@ -87,10 +87,28 @@
           "path": "/input"
         },
         {
+          "desc": "Radio 单选框",
+          "icon": "ios-radio-button-on",
+          "name": "radio",
+          "path": "/radio"
+        },
+        {
+          "desc": "Checkbox 多选框",
+          "icon": "ios-checkbox-outline",
+          "name": "checkbox",
+          "path": "/checkbox"
+        },
+        {
           "desc": "Switch 开关",
           "icon": "ios-switch",
           "name": "switch",
           "path": "/switch"
+        },
+        {
+          "desc": "InputNumber 数字输入",
+          "icon": "ios-calculator",
+          "name": "inputNumber",
+          "path": "/inputNumber"
         },
         {
           "desc": "Rate 评分",
