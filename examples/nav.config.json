@@ -87,6 +87,12 @@
           "path": "/input"
         },
         {
+          "desc": "Switch 开关",
+          "icon": "ios-switch",
+          "name": "switch",
+          "path": "/switch"
+        },
+        {
           "desc": "Rate 评分",
           "icon": "ios-star",
           "name": "rate",
