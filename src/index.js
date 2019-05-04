@@ -24,6 +24,8 @@ import Input from './components/input/index.js'
 import InputNumber from './components/input-number/index.js'
 import Rate from './components/rate/index.js'
 import Switch from './components/switch/index.js'
+import Checkbox from './components/checkbox/index.js'
+import CheckboxGroup from './components/checkbox-group/index.js'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar/index.js'
 import Message from './components/message/index.js'
@@ -33,7 +35,7 @@ const components = [
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
-  Input, InputNumber, Rate, Switch
+  Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup
 ]
 
 const install = function (Vue) {
@@ -81,5 +83,5 @@ export default {
   Input,
   InputNumber,
   Rate,
-  Switch
+  Switch, Checkbox, CheckboxGroup
 }
