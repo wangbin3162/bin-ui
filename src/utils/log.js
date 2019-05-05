@@ -50,11 +50,12 @@ log.print = function (text, type = 'default', back = false) {
   }
 }
 // 漂亮的
-log.pretty = function (title, text, type = 'default') {
+log.pretty = function (title, text, type = 'primary') {
   console.log(
-    `%c ${title} %c ${text} `,
-    `background:${typeColor('default')}; padding: 1px; border-radius: 4px 0 0 4px; color: #fff;`,
-    `background:${typeColor(type)}; padding: 1px; border-radius: 0 4px 4px 0;  color: #fff;`
+    `%c ${title} %c ${text} %c`,
+    `background:${typeColor(type)};border:1px solid ${typeColor(type)}; padding: 1px; border-radius: 4px 0 0 4px; color: #fff;`,
+    `border:1px solid ${typeColor(type)}; padding: 1px; border-radius: 0 4px 4px 0; color: ${typeColor(type)};`,
+    'background:transparent'
   )
 }
 
