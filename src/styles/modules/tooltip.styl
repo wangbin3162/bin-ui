@@ -1,0 +1,274 @@
+$arrow-width = 5px;
+$arrow-distance = $arrow-width - 1 + 4;
+$bg = rgba(30, 30, 30, .9);
+$arrow-width = 5px;
+$bg-light = hsla(0, 0%, 85%, .5);
+$tooltip-arrow-width-light = 7px;
+.bin-tooltip, .bin-tooltip-rel {
+  display: inline-block;
+}
+
+.bin-tooltip-rel {
+  position: relative;
+  width: inherit;
+}
+//  气泡
+.bin-tooltip-popper {
+  display: block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.5;
+  position: absolute;
+  z-index: 1060;
+  &[x-placement^="top"] {
+    padding: $arrow-width 0 $arrow-distance 0;
+  }
+  &[x-placement^="right"] {
+    padding: 0 $arrow-width 0 $arrow-distance;
+  }
+  &[x-placement^="bottom"] {
+    padding: $arrow-distance 0 $arrow-width 0;
+  }
+  &[x-placement^="left"] {
+    padding: 0 $arrow-distance 0 $arrow-width;
+  }
+
+  &[x-placement^="top"] .bin-tooltip-arrow {
+    bottom: $arrow-distance - $arrow-width;
+    border-width: $arrow-width $arrow-width 0;
+    border-top-color: $bg;
+  }
+  &[x-placement="top"] .bin-tooltip-arrow {
+    left: 50%;
+    margin-left: - $arrow-width;
+  }
+  &[x-placement="top-start"] .bin-tooltip-arrow {
+    left: 16px;
+  }
+  &[x-placement="top-end"] .bin-tooltip-arrow {
+    right: 16px;
+  }
+
+  &[x-placement^="right"] .bin-tooltip-arrow {
+    left: $arrow-distance - $arrow-width;
+    border-width: $arrow-width $arrow-width $arrow-width 0;
+    border-right-color: $bg;
+  }
+  &[x-placement="right"] .bin-tooltip-arrow {
+    top: 50%;
+    margin-top: - $arrow-width;
+  }
+  &[x-placement="right-start"] .bin-tooltip-arrow {
+    top: 8px;
+  }
+  &[x-placement="right-end"] .bin-tooltip-arrow {
+    bottom: 8px;
+  }
+
+  &[x-placement^="left"] .bin-tooltip-arrow {
+    right: $arrow-distance - $arrow-width;
+    border-width: $arrow-width 0 $arrow-width $arrow-width;
+    border-left-color: $bg;
+  }
+  &[x-placement="left"] .bin-tooltip-arrow {
+    top: 50%;
+    margin-top: - $arrow-width;
+  }
+  &[x-placement="left-start"] .bin-tooltip-arrow {
+    top: 8px;
+  }
+  &[x-placement="left-end"] .bin-tooltip-arrow {
+    bottom: 8px;
+  }
+
+  &[x-placement^="bottom"] .bin-tooltip-arrow {
+    top: $arrow-distance - $arrow-width;
+    border-width: 0 $arrow-width $arrow-width;
+    border-bottom-color: $bg;
+  }
+  &[x-placement="bottom"] .bin-tooltip-arrow {
+    left: 50%;
+    margin-left: - $arrow-width;
+  }
+  &[x-placement="bottom-start"] .bin-tooltip-arrow {
+    left: 16px;
+  }
+  &[x-placement="bottom-end"] .bin-tooltip-arrow {
+    right: 16px;
+  }
+}
+//  气泡内部样式
+.bin-tooltip-inner {
+  max-width: 250px;
+  min-height: 34px;
+  padding: 8px 12px;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  background-color: $bg;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  white-space: nowrap;
+  p, div {
+    margin: 5px;
+    font-size: 14px;
+  }
+}
+// 气泡箭头
+.bin-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+//样式主题
+.bin-tooltip-light {
+  &.bin-tooltip-popper {
+    display: block;
+    visibility: visible;
+    font-size: 12px;
+    line-height: 1.5;
+    position: absolute;
+    z-index: 1060;
+    &[x-placement^="top"] {
+      padding: $arrow-width 0 $arrow-distance 0;
+    }
+    &[x-placement^="right"] {
+      padding: 0 $arrow-width 0 $arrow-distance;
+    }
+    &[x-placement^="bottom"] {
+      padding: $arrow-distance 0 $arrow-width 0;
+    }
+    &[x-placement^="left"] {
+      padding: 0 $arrow-distance 0 $arrow-width;
+    }
+
+    &[x-placement^="top"] .bin-tooltip-arrow {
+      bottom: 1px;
+      border-width: $tooltip-arrow-width-light $tooltip-arrow-width-light 0;
+      border-top-color: $bg-light;
+    }
+    &[x-placement="top"] .bin-tooltip-arrow {
+      left: 50%;
+      margin-left: - $tooltip-arrow-width-light;
+    }
+    &[x-placement="top-start"] .bin-tooltip-arrow {
+      left: 16px;
+    }
+    &[x-placement="top-end"] .bin-tooltip-arrow {
+      right: 16px;
+    }
+
+    &[x-placement^="right"] .bin-tooltip-arrow {
+      left: 1px;
+      border-width: $tooltip-arrow-width-light $tooltip-arrow-width-light $tooltip-arrow-width-light 0;
+      border-right-color: $bg-light;
+    }
+    &[x-placement="right"] .bin-tooltip-arrow {
+      top: 50%;
+      margin-top: - $tooltip-arrow-width-light;
+    }
+    &[x-placement="right-start"] .bin-tooltip-arrow {
+      top: 8px;
+    }
+    &[x-placement="right-end"] .bin-tooltip-arrow {
+      bottom: 8px;
+    }
+
+    &[x-placement^="left"] .bin-tooltip-arrow {
+      right: 1px;
+      border-width: $tooltip-arrow-width-light 0 $tooltip-arrow-width-light $tooltip-arrow-width-light;
+      border-left-color: $bg-light;
+    }
+    &[x-placement="left"] .bin-tooltip-arrow {
+      top: 50%;
+      margin-top: - $tooltip-arrow-width-light;
+    }
+    &[x-placement="left-start"] .bin-tooltip-arrow {
+      top: 8px;
+    }
+    &[x-placement="left-end"] .bin-tooltip-arrow {
+      bottom: 8px;
+    }
+
+    &[x-placement^="bottom"] .bin-tooltip-arrow {
+      top: 1px;
+      border-width: 0 $tooltip-arrow-width-light $tooltip-arrow-width-light;
+      border-bottom-color: $bg-light;
+    }
+    &[x-placement="bottom"] .bin-tooltip-arrow {
+      left: 50%;
+      margin-left: - $tooltip-arrow-width-light;
+    }
+    &[x-placement="bottom-start"] .bin-tooltip-arrow {
+      left: 16px;
+    }
+    &[x-placement="bottom-end"] .bin-tooltip-arrow {
+      right: 16px;
+    }
+
+
+    &[x-placement^="top"] .bin-tooltip-arrow:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: - $tooltip-arrow-width-light;
+      border-bottom-width: 0;
+      border-top-width: $tooltip-arrow-width-light;
+      border-top-color: #fff;
+    }
+
+    &[x-placement^="right"] .bin-tooltip-arrow:after {
+      content: " ";
+      left: 1px;
+      bottom: - $tooltip-arrow-width-light;
+      border-left-width: 0;
+      border-right-width: $tooltip-arrow-width-light;
+      border-right-color: #fff;
+    }
+
+    &[x-placement^="bottom"] .bin-tooltip-arrow:after {
+      content: " ";
+      top: 1px;
+      margin-left: - $tooltip-arrow-width-light;
+      border-top-width: 0;
+      border-bottom-width: $tooltip-arrow-width-light;
+      border-bottom-color: #fff;
+    }
+
+    &[x-placement^="left"] .bin-tooltip-arrow:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-width: $tooltip-arrow-width-light;
+      border-left-color: #fff;
+      bottom: - $tooltip-arrow-width-light;
+    }
+  }
+  .bin-tooltip-inner {
+    background-color: #fff;
+    color: #515a6e;
+  }
+  .bin-tooltip-arrow {
+    box-sizing: border-box;
+    border-width: 8px;
+    &:after {
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+      content: "";
+      border-width: 7px;
+    }
+  }
+
+}
+
+.bin-tooltip-inner-with-width {
+  white-space: pre-wrap;
+  text-align: justify;
+}
+

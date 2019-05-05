@@ -207,6 +207,12 @@
           "path": "/drawer"
         },
         {
+          "desc": "Tooltip 提示",
+          "icon": "ios-watch",
+          "name": "tooltip",
+          "path": "/tooltip"
+        },
+        {
           "desc": "Tag 标签",
           "icon": "ios-pricetag",
           "name": "tag",
