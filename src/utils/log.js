@@ -33,6 +33,10 @@ export function typeColor (type = 'default') {
 }
 
 log.print = function (text, type = 'default', back = false) {
+  if (typeof text === 'object') {// 如果是对象则调用打印对象方式
+    console.dir(text)
+    return
+  }
   if (back) { // 如果是打印带背景图的
     console.log(
       `%c ${text} `,
@@ -46,12 +50,11 @@ log.print = function (text, type = 'default', back = false) {
   }
 }
 // 漂亮的
-log.pretty = function (title, text, type = 'primary') {
+log.pretty = function (title, text, type = 'default') {
   console.log(
-    `%c ${title} %c ${text} %c`,
-    `background:${typeColor(type)};border:1px solid ${typeColor(type)}; padding: 1px; border-radius: 3px 0 0 3px; color: #fff;`,
-    `border:1px solid ${typeColor(type)}; padding: 1px; border-radius: 0 3px 3px 0;  color: ${typeColor(type)};`,
-    'background:transparent'
+    `%c ${title} %c ${text} `,
+    `background:${typeColor('default')}; padding: 1px; border-radius: 4px 0 0 4px; color: #fff;`,
+    `background:${typeColor(type)}; padding: 1px; border-radius: 0 4px 4px 0;  color: #fff;`
   )
 }
 

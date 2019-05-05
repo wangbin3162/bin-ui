@@ -11,6 +11,7 @@
     "vue",
     "components"
   ],
+  "author": "wang bin",
   "files": [
     "lib",
     "src"

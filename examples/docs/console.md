@@ -4,18 +4,6 @@
 
 打开控制台查看输出效果
 可以使用 $print快速输出，也可以使用 $log.primary这种进行精度输出
-
-### 参数：
-
-    $print( 文字, 样式/颜色, 是否是背景模式 )
-        
-    $log.print( 文字, 样式/颜色, 是否是背景模式 )
-    
-    $log.primary(文字, 是否是背景模式)
-    $log.success(文字, 是否是背景模式)
-    $log.warning(文字, 是否是背景模式)
-    $log.danger(文字,  是否是背景模式)
-    $log.pretty(文字, 文字2，样式/颜色)
     
 ### 所有实例
 
@@ -39,9 +27,23 @@
       <b-button @click="$log.print('danger print','danger',true)" type="danger" v-waves>primary-back</b-button>
     </div>
     <div class="demo-button">
-          <b-button @click="$log.pretty('title','pretty print','success')" type="success" v-waves>pretty - log</b-button>
-        </div>
+      <b-button @click="$log.print({name:'bin-ui',author:'wang bin'})"  v-waves>object - log</b-button>
+      <b-button @click="$log.pretty('title','pretty print','success')"  v-waves>pretty - log</b-button>
+    </div>
 </template>
 ```
 :::
 
+
+### API：
+
+    $print( 文字, 样式/颜色, 是否是背景模式 )
+        
+    $log.print( 文字, 样式/颜色, 是否是背景模式 )
+    $log.print( 对象/数组 )
+    
+    $log.primary(文字, 是否是背景模式)
+    $log.success(文字, 是否是背景模式)
+    $log.warning(文字, 是否是背景模式)
+    $log.danger(文字,  是否是背景模式)
+    $log.pretty(文字, 文字2，样式/颜色)
