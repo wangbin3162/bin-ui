@@ -100,9 +100,9 @@
 
 ### 设置textarea
 
-提供额外3种尺寸进行配置
+可以设置 `type="textarea"`开启文本域模式
 
-::: demo `large` `small` 或 `mini`三种尺寸
+::: demo 
 ```html  
 <template>
 <div class="input-item">
