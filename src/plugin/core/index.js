@@ -1,4 +1,5 @@
 import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
+import config from '../../../package.json'
 // 指令
 import ellipsis from '../../directive/ellipsis'
 import waves from '../../directive/waves'
@@ -30,8 +31,7 @@ export default {
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
     Vue.prototype.$resize = {addResizeListener, removeResizeListener}
-    // 打印地址
-    log.print('welcome to use bin-ui', 'primary')
-    log.print('Link: ' + 'https://wangbin3162.github.io/bin-ui-doc/', 'danger')
+    // 打印UI官网
+    log.pretty('[bin-ui]' + config.version, 'https://wangbin3162.github.io/bin-ui-doc/')
   }
 }

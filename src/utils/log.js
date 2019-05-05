@@ -45,6 +45,15 @@ log.print = function (text, type = 'default', back = false) {
     )
   }
 }
+// 漂亮的
+log.pretty = function (title, text, type = 'primary') {
+  console.log(
+    `%c ${title} %c ${text} %c`,
+    `background:${typeColor(type)};border:1px solid ${typeColor(type)}; padding: 1px; border-radius: 3px 0 0 3px; color: #fff;`,
+    `border:1px solid ${typeColor(type)}; padding: 1px; border-radius: 0 3px 3px 0;  color: ${typeColor(type)};`,
+    'background:transparent'
+  )
+}
 
 log.primary = function (text, back = false) {
   this.print(text, 'primary', back)
