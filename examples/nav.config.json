@@ -59,6 +59,48 @@
       ]
     },
     {
+      "desc": "布局",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Layout 布局",
+          "icon": "ios-browsers",
+          "name": "layout",
+          "path": "/layout"
+        },
+        {
+          "desc": "ScrollBar 滚动",
+          "icon": "ios-infinite",
+          "name": "scrollbar",
+          "path": "/scrollbar"
+        },
+        {
+          "desc": "BackTop 返回顶部",
+          "icon": "ios-arrow-up",
+          "name": "backtop",
+          "path": "/backtop"
+        },
+        {
+          "desc": "Card 卡片",
+          "icon": "ios-card",
+          "name": "card",
+          "path": "/card"
+        },
+        {
+          "desc": "Collapse 折叠面板",
+          "icon": "ios-albums",
+          "name": "collapse",
+          "path": "/collapse"
+        },
+        {
+          "desc": "Divider 分割线",
+          "icon": "ios-code-working",
+          "name": "divider",
+          "path": "/divider"
+        }
+      ]
+    },
+    {
       "desc": "导航",
       "path": "/component",
       "items": [
@@ -127,48 +169,6 @@
           "icon": "ios-star",
           "name": "rate",
           "path": "/rate"
-        }
-      ]
-    },
-    {
-      "desc": "布局",
-      "path": "/component",
-      "items": [
-        {
-          "desc": "Layout 布局",
-          "icon": "ios-browsers",
-          "name": "layout",
-          "path": "/layout"
-        },
-        {
-          "desc": "ScrollBar 滚动",
-          "icon": "ios-infinite",
-          "name": "scrollbar",
-          "path": "/scrollbar"
-        },
-        {
-          "desc": "BackTop 返回顶部",
-          "icon": "ios-arrow-up",
-          "name": "backtop",
-          "path": "/backtop"
-        },
-        {
-          "desc": "Card 卡片",
-          "icon": "ios-card",
-          "name": "card",
-          "path": "/card"
-        },
-        {
-          "desc": "Collapse 折叠面板",
-          "icon": "ios-albums",
-          "name": "collapse",
-          "path": "/collapse"
-        },
-        {
-          "desc": "Divider 分割线",
-          "icon": "ios-code-working",
-          "name": "divider",
-          "path": "/divider"
         }
       ]
     },
