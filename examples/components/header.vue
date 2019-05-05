@@ -1,7 +1,7 @@
 <template>
   <header class="page-header">
     <div class="header-container" flex="main:justify">
-      <div class="logo">BIN-UI</div>
+      <div class="logo"></div>
       <div class="link">
         <router-link :to="{name: 'giud'}" class="active">指南</router-link>
         <a href="https://github.com/wangbin3162/bin-ui" class="github">GitHub</a>
@@ -40,12 +40,10 @@
         font-family: helvetica;
         text-align: center;
         font-size: 40px;
-        padding: 0 15px;
-        @media screen and (-webkit-min-device-pixel-ratio: 0) {
-          background: -webkit-gradient(linear, left top, left bottom, from(#409EFF), to(#154bff));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+        margin-left: 30px
+        width: 220px;
+        background: url("../assets/bin-ui.png") no-repeat 0 0
+        background-size: 100%;
       }
       .link {
         height: 100%
