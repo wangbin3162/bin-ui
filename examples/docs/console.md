@@ -15,8 +15,8 @@
     $log.success(文字, 是否是背景模式)
     $log.warning(文字, 是否是背景模式)
     $log.danger(文字,  是否是背景模式)
+    $log.pretty(文字, 文字2，样式/颜色)
     
-
 ### 所有实例
 
 ::: demo
@@ -37,8 +37,10 @@
       <b-button @click="$log.print('info print','info',true)" type="info" v-waves>primary-back</b-button>
       <b-button @click="$log.print('warning print','warning',true)" type="warning" v-waves>primary-back</b-button>
       <b-button @click="$log.print('danger print','danger',true)" type="danger" v-waves>primary-back</b-button>
-      
     </div>
+    <div class="demo-button">
+          <b-button @click="$log.pretty('title','pretty print','success')" type="success" v-waves>pretty - log</b-button>
+        </div>
 </template>
 ```
 :::

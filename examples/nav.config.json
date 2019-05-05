@@ -39,6 +39,18 @@
           "path": "/button"
         },
         {
+          "desc": "Directive 指令",
+          "icon": "ios-hand",
+          "name": "directive",
+          "path": "/directive"
+        },
+        {
+          "desc": "Console 控制台",
+          "icon": "ios-bug",
+          "name": "console",
+          "path": "/console"
+        },
+        {
           "desc": "Transition 过渡",
           "icon": "ios-fastforward",
           "name": "transition",
@@ -218,18 +230,6 @@
       "desc": "其他",
       "path": "/component",
       "items": [
-        {
-          "desc": "Directive 指令",
-          "icon": "ios-hand",
-          "name": "directive",
-          "path": "/directive"
-        },
-        {
-          "desc": "Console 控制台",
-          "icon": "ios-bug",
-          "name": "console",
-          "path": "/console"
-        },
         {
           "desc": "Velocity 动画库",
           "icon": "ios-paper-plane",
