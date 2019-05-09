@@ -6,7 +6,9 @@ bin-ui 是一款基于 Vue.js 2.0 的前端 UI组件库，是个人在工作中�
 `iView`。部分组件根据日常需要进行了简化实现，并结合实际需求进行了二次开发。
 
 添加了开源协议，编写本UI库的目的也是为了开发、学习、交流，熟悉vue相关技术栈及相关UI控件的实现和开发。
-【不为商用】
+
+项目依赖了动画库[bin-animation](https://github.com/wangbin3162/bin-animation/) 可快速实现复杂的动画，具体参考
+[API](https://wangbin3162.github.io/bin-animation-doc/)
 
 ### 概述
 
