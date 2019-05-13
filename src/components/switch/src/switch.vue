@@ -15,11 +15,13 @@
 </template>
 <script>
   import { oneOf } from '../../../utils/util'
+  import Emitter from '../../../mixins/emitter'
 
   const prefixCls = 'bin-switch'
 
   export default {
     name: 'BSwitch',
+    mixins: [Emitter],
     props: {
       value: {
         type: [String, Number, Boolean],
@@ -86,6 +88,8 @@
         this.currentValue = checked
         this.$emit('input', checked)
         this.$emit('on-change', checked)
+
+        this.dispatch('BFormItem', 'on-form-change', checked)
       }
     },
     watch: {

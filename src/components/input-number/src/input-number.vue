@@ -34,7 +34,9 @@
   </div>
 </template>
 <script>
-  import { oneOf } from '../../../utils/util'
+  import { oneOf, findComponentUpward } from '../../../utils/util'
+
+  import Emitter from '../../../mixins/emitter'
 
   const prefixCls = 'bin-input-number'
 
@@ -56,6 +58,7 @@
 
   export default {
     name: 'BInputNumber',
+    mixins: [ Emitter ],
     props: {
       max: {
         type: Number,
@@ -81,7 +84,7 @@
         validator (value) {
           return oneOf(value, ['small', 'large', 'default'])
         },
-        default :'default'
+        default: 'default'
       },
       disabled: {
         type: Boolean,
@@ -255,6 +258,7 @@
           this.currentValue = val
           this.$emit('input', val)
           this.$emit('on-change', val)
+          this.dispatch('BFormItem', 'on-form-change', val)
         })
       },
       focus (event) {
@@ -264,6 +268,10 @@
       blur () {
         this.focused = false
         this.$emit('on-blur')
+
+        if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
+          this.dispatch('BFormItem', 'on-form-blur', this.currentValue)
+        }
       },
       keyDown (e) {
         if (e.keyCode === 38) {

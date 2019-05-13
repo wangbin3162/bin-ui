@@ -18,10 +18,13 @@
 <script>
   import { oneOf, findComponentUpward } from '../../../utils/util'
 
+  import Emitter from '../../../mixins/emitter'
+
   const prefixCls = 'bin-radio'
 
   export default {
     name: 'BRadio',
+    mixins: [Emitter],
     props: {
       value: {
         type: [String, Number, Boolean],
@@ -137,6 +140,7 @@
           }
         } else {
           this.$emit('on-change', value)
+          this.dispatch('BFormItem', 'on-form-change', value)
         }
       },
       updateValue () {

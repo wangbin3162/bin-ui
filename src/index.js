@@ -29,6 +29,8 @@ import CheckboxGroup from './components/checkbox-group/index.js'
 import Radio from './components/radio/index.js'
 import RadioGroup from './components/radio-group/index.js'
 import Tooltip from './components/tooltip/index.js'
+import Form from './components/form/index.js'
+import FormItem from './components/form-item/index.js'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar/index.js'
 import Message from './components/message/index.js'
@@ -38,7 +40,8 @@ const components = [
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
-  Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip
+  Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
+  Form, FormItem
 ]
 
 const install = function (Vue) {
@@ -89,5 +92,6 @@ export default {
   Switch,
   Checkbox, CheckboxGroup,
   Radio, RadioGroup,
-  Tooltip
+  Tooltip,
+  Form, FormItem
 }

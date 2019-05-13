@@ -169,6 +169,12 @@
           "icon": "ios-star",
           "name": "rate",
           "path": "/rate"
+        },
+        {
+          "desc": "Form 表单",
+          "icon": "ios-clipboard",
+          "name": "form",
+          "path": "/form"
         }
       ]
     },

@@ -76,9 +76,13 @@
 <script>
   import calcTextareaHeight from '../../../utils/calcTextareaHeight'
   import { oneOf } from '../../../utils/util'
+  import { findComponentUpward } from '../../../utils/util'
+
+  import Emitter from '../../../mixins/emitter'
 
   const prefixCls = 'bin-input'
   export default {
+    mixins: [Emitter],
     name: 'BInput',
     props: {
       type: {
@@ -208,6 +212,10 @@
       },
       handleBlur (event) {
         this.$emit('on-blur', event)
+        // 触发校验
+        if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
+          this.dispatch('BFormItem', 'on-form-blur', this.currentValue)
+        }
       },
       handleComposition (event) {
         if (event.type === 'compositionstart') {
@@ -236,6 +244,10 @@
           this.resizeTextarea()
         })
         this.currentValue = value
+        // 触发校验
+        if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
+          this.dispatch('BFormItem', 'on-form-change', value);
+        }
       },
       resizeTextarea () {
         const autosize = this.autosize

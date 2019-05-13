@@ -1,6 +1,6 @@
 {
   "name": "bin-ui",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
   "main": "lib/bin-ui.common.js",
   "keywords": [
@@ -28,6 +28,7 @@
   },
   "homepage": "https://wangbin3162.github.io/bin-ui-doc/#/giud",
   "dependencies": {
+    "async-validator": "^1.11.2",
     "core-js": "^2.6.5",
     "popper.js": "^1.15.0",
     "resize-observer-polyfill": "^1.5.1",

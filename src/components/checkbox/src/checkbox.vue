@@ -30,10 +30,13 @@
 <script>
   import { oneOf, findComponentUpward } from '../../../utils/util'
 
+  import Emitter from '../../../mixins/emitter'
+
   const prefixCls = 'bin-checkbox'
 
   export default {
     name: 'BCheckbox',
+    mixins: [Emitter],
     props: {
       disabled: {
         type: Boolean,
@@ -141,6 +144,7 @@
           this.parent.change(this.model)
         } else {
           this.$emit('on-change', value)
+          this.dispatch('BFormItem', 'on-form-change', value)
         }
       },
       updateModel () {

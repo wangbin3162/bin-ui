@@ -5,6 +5,7 @@
 </template>
 <script>
   import { oneOf, findComponentsDownward } from '../../../utils/util'
+  import Emitter from '../../../mixins/emitter'
 
   const prefixCls = 'bin-radio-group'
 
@@ -14,6 +15,7 @@
 
   export default {
     name: 'BRadioGroup',
+    mixins: [Emitter],
     props: {
       value: {
         type: [String, Number],
@@ -65,6 +67,7 @@
         this.updateValue()
         this.$emit('input', data.value)
         this.$emit('on-change', data.value)
+        this.dispatch('BFormItem', 'on-form-change', data.value)
       }
     },
     watch: {
