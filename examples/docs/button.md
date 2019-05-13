@@ -110,14 +110,14 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 ```html  
 <template>
     <div class="demo-button">
+       <b-button size="large">大型按钮</b-button>
        <b-button>默认按钮</b-button>
-       <b-button size="medium">中等按钮</b-button>
        <b-button size="small">小型按钮</b-button>
        <b-button size="mini">超小按钮</b-button>
     </div>
     <div class="demo-button">
+       <b-button size="large" round>大型按钮</b-button>
        <b-button round>默认按钮</b-button>
-       <b-button size="medium" round>中等按钮</b-button>
        <b-button size="small" round>小型按钮</b-button>
        <b-button size="mini" round>超小按钮</b-button>
     </div>
@@ -127,7 +127,7 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 
 ### 加载状态
 
-Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
+可以添加加载状态
 
 ::: demo 
 ```html  
@@ -144,7 +144,7 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| size     | 尺寸   | string  |   medium / small / mini            |    —     |
+| size     | 尺寸   | string  |   large / small / mini            |    —     |
 | type     | 类型   | string    |   primary / success / warning / danger / info / text |     —    |
 | plain     | 是否朴素按钮   | boolean    | — | false   |
 | round     | 是否圆角按钮   | boolean    | — | false   |
