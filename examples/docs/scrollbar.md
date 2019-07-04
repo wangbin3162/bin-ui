@@ -29,10 +29,13 @@
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | normal    | 是否采用原生滚动 (隐藏原生滚动条)  | boolean    | true | false   |
+| always    | 是否一直显示(默认悬停显示)  | boolean    | true | false   |
 | wrapStyle    | 内联方式 自定义wrap容器的样式  | Object    | - | {}   |
 | wrapClass    | 类名方式 自定义wrap容器的样式  | Object    | - | {}   |
-| viewClass    | 内联方式 自定义view容器的样式  | Object    | - | {}   |
-| viewStyle    | 是否采用原生滚动 (隐藏原生滚动条)  | Object    | - | {}   |
+| viewClass    | 类名方式 自定义view容器的样式  | Object    | - | {}   |
+| viewStyle    | 内联方式 自定义view容器的样式  | Object    | - | {}   |
+| barStyle    | 滚动条thumb样式  | Object    | - | {}   |
+| barWrapStyle    | 滚动条bar样式  | Object    | - | {}   |
 | noresize    | 如果 container 尺寸不会发生变化，最好设置它可以优化性能  | boolean    | true | false   |
 
 

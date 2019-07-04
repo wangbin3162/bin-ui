@@ -8,7 +8,9 @@ export default {
   props: {
     vertical: Boolean,
     size: String,
-    move: Number
+    move: Number,
+    barStyle: {},
+    barWrapStyle: {}
   },
 
   computed: {
@@ -22,11 +24,13 @@ export default {
 
   render (h) {
     const {size, move, bar} = this
+    let barStyle = Object.assign({}, renderThumbStyle({size, move, bar}), this.barStyle)
     return h('div', {
       class: ['bin-scrollbar__bar', 'is-' + bar.key],
       on: {
         mousedown: this.clickTrackHandler
       },
+      style: this.barWrapStyle
     }, [
       h('div', {
         ref: 'thumb',
@@ -34,7 +38,7 @@ export default {
         on: {
           mousedown: this.clickThumbHandler
         },
-        style: renderThumbStyle({size, move, bar})
+        style: barStyle
       })
     ])
   },

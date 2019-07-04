@@ -10,10 +10,16 @@ export default {
       type: Boolean,
       default: false
     },  // 是否采用原生滚动（即只是隐藏掉了原生滚动条，但并没有使用自定义的滚动条）
+    always: { // 是否是一直显示，不是悬停显示
+      type: Boolean,
+      default: false
+    },
     wrapStyle: {},  // 内联方式 自定义wrap容器的样式
     wrapClass: {},  // 类名方式 自定义wrap容器的样式
     viewClass: {},  // 内联方式 自定义view容器的样式
     viewStyle: {},  // 类名方式 自定义view容器的样式
+    barStyle: {},// bar的样式
+    barWrapStyle: {},//bar容器样式
     noresize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
     tag: {                // view容器用那种标签渲染，默认为div
       type: String,
@@ -70,11 +76,34 @@ export default {
     let nodes
     // 如果不需要显示滚动条
     if (!this.normal) {
-      nodes = [
-        wrap,
-        h('bar', {props: {move: this.moveX, size: this.sizeWidth}}),
-        h('bar', {props: {vertical: true, move: this.moveY, size: this.sizeHeight}})
-      ]
+      nodes = [wrap]
+      if (this.sizeWidth) {
+        nodes.push(
+          h('bar', {
+            class: [{'always': this.always}],
+            props: {
+              move: this.moveX,
+              size: this.sizeWidth,
+              barStyle: this.barStyle,
+              barWrapStyle: this.barWrapStyle
+            }
+          })
+        )
+      }
+      if (this.sizeHeight) {
+        nodes.push(
+          h('bar', {
+            class: [{'always': this.always}],
+            props: {
+              vertical: true,
+              move: this.moveY,
+              size: this.sizeHeight,
+              barStyle: this.barStyle,
+              barWrapStyle: this.barWrapStyle
+            }
+          })
+        )
+      }
     } else {
       nodes = [
         h(this.tag, {

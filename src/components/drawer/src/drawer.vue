@@ -23,7 +23,7 @@
                 </slot>
               </b-scrollbar>
             </div>
-            <div class="footer">
+            <div class="footer" v-if="!footerHide">
               <slot name="footer">
                 <b-button type="default" size="small" plain @click="close()">{{ cancelText}}</b-button>
                 <b-button v-waves size="small" type="primary"
@@ -75,6 +75,10 @@
         default: '300px'
       },
       fullscreen: {
+        type: Boolean,
+        default: false
+      },
+      footerHide: {
         type: Boolean,
         default: false
       },

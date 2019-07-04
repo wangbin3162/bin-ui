@@ -89,6 +89,7 @@
 | cancel-text     | 取消按钮文字 | String  |      —      | 取消 |
 | fullscreen     | 是否全屏显示 | Boolean  |      —      | false |
 | width     | 抽屉宽度 | String  |      —      | 300px |
+| footer-hide     | 不显示底部 | Boolean  |      —      | false |
 | mask-closable    | 是否允许点击遮罩层关闭 | Boolean  |      —      | true |
 
 ### Events
