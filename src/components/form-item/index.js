@@ -1,3 +1,8 @@
-import FormItem from '../form/form-item.vue';
+import FormItem from '../form/form-item.vue'
 
-export default FormItem;
+/* istanbul ignore next */
+FormItem.install = function (Vue) {
+  Vue.component(FormItem.name, FormItem)
+}
+
+export default FormItem
