@@ -1,4 +1,4 @@
-import Breadcrumb from './src/breadcrumb'
+import Breadcrumb from './breadcrumb'
 
 /* istanbul ignore next */
 Breadcrumb.install = function (Vue) {

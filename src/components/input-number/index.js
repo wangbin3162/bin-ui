@@ -1,4 +1,4 @@
-import InputNumber from './src/input-number.vue'
+import InputNumber from './input-number.vue'
 
 /* istanbul ignore next */
 InputNumber.install = function (Vue) {

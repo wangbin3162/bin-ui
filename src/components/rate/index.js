@@ -1,4 +1,4 @@
-import Rate from './src/main'
+import Rate from './rate'
 
 /* istanbul ignore next */
 Rate.install = function (Vue) {

@@ -1,4 +1,4 @@
-import Alert from './src/alert'
+import Alert from './alert'
 
 /* istanbul ignore next */
 Alert.install = function (Vue) {

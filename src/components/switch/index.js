@@ -1,4 +1,4 @@
-import Switch from './src/switch'
+import Switch from './switch'
 
 /* istanbul ignore next */
 Switch.install = function (Vue) {

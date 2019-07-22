@@ -1,4 +1,4 @@
-import BackTop from './src/back-top'
+import BackTop from './back-top'
 
 /* istanbul ignore next */
 BackTop.install = function (Vue) {

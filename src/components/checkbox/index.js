@@ -1,5 +1,5 @@
-import Checkbox from './src/checkbox.vue'
-import CheckboxGroup from './src/checkbox-group.vue'
+import Checkbox from './checkbox.vue'
+import CheckboxGroup from './checkbox-group.vue'
 
 Checkbox.Group = CheckboxGroup
 

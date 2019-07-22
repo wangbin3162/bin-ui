@@ -1,4 +1,4 @@
-import BIcon from './src/icon.vue'
+import BIcon from './icon.vue'
 
 /* istanbul ignore next */
 BIcon.install = function (Vue) {

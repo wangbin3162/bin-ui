@@ -1,4 +1,4 @@
-import Drawer from './src/drawer'
+import Drawer from './drawer'
 
 /* istanbul ignore next */
 Drawer.install = function (Vue) {

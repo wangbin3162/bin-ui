@@ -1,4 +1,4 @@
-import BButtonGroup from '../button/src/button-group'
+import BButtonGroup from '../button/button-group'
 
 /* istanbul ignore next */
 BButtonGroup.install = function (Vue) {

@@ -1,4 +1,4 @@
-import Divider from './src/main'
+import Divider from './divider'
 
 /* istanbul ignore next */
 Divider.install = function (Vue) {

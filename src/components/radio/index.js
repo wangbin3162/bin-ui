@@ -1,5 +1,5 @@
-import Radio from './src/radio.vue'
-import RadioGroup from './src/radio-group.vue'
+import Radio from './radio.vue'
+import RadioGroup from './radio-group.vue'
 
 Radio.Group = RadioGroup
 

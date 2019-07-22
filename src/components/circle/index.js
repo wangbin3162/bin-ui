@@ -1,4 +1,4 @@
-import Circle from './src/circle.vue'
+import Circle from './circle.vue'
 
 /* istanbul ignore next */
 Circle.install = function (Vue) {

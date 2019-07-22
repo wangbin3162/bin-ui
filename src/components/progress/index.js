@@ -1,4 +1,4 @@
-import Progress from './src/progress.vue'
+import Progress from './progress.vue'
 
 /* istanbul ignore next */
 Progress.install = function (Vue) {

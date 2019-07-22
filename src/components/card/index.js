@@ -1,4 +1,4 @@
-import Card from './src/main'
+import Card from './card'
 
 /* istanbul ignore next */
 Card.install = function (Vue) {

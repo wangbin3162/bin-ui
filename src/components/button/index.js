@@ -1,4 +1,4 @@
-import BButton from './src/button'
+import BButton from './button'
 
 /* istanbul ignore next */
 BButton.install = function (Vue) {

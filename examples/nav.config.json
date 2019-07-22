@@ -111,6 +111,12 @@
       "path": "/component",
       "items": [
         {
+          "desc": "Dropdown 下拉菜单",
+          "icon": "md-arrow-dropdown",
+          "name": "dropdown",
+          "path": "/dropdown"
+        },
+        {
           "desc": "Breadcrumb 面包屑",
           "icon": "ios-apps",
           "name": "breadcrumb",

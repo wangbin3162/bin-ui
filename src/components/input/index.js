@@ -1,4 +1,4 @@
-import BInput from './src/input.vue'
+import BInput from './input.vue'
 
 /* istanbul ignore next */
 BInput.install = function (Vue) {

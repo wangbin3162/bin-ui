@@ -1,4 +1,4 @@
-import Modal from './src/confirm'
+import Modal from './confirm'
 
 let modalInstance
 

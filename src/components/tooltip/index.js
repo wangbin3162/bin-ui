@@ -1,4 +1,4 @@
-import Tooltip from './src/tooltip'
+import Tooltip from './tooltip'
 
 /* istanbul ignore next */
 Tooltip.install = function (Vue) {

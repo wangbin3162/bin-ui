@@ -1,4 +1,4 @@
-import Message from './src/message'
+import Message from './message'
 
 const prefixKey = 'bin_message_key_'
 let messageInstance
