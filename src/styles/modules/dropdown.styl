@@ -1,0 +1,57 @@
+@import "../common/var.styl"
+$root = bin
+
+.{$root}-dropdown {
+  display: inline-block;
+  .{$root}-dropdown {
+    width: 100%;
+  }
+  &-rel {
+    position: relative;
+    &-user-select-none {
+      user-select: none;
+    }
+  }
+  &-menu {
+    min-width: 100px;
+  }
+  &-transfer {
+    width: auto;
+  }
+  &-item-selected, &-item&-item-selected:hover {
+    background: $color-primary-light6;
+  }
+
+  .bin-select-dropdown {
+    overflow: visible;
+    max-height: none;
+  }
+}
+.bin-dropdown-item {
+  margin: 0;
+  line-height: normal !important;
+  padding: 7px 16px;
+  clear: both;
+  color: #515a6e;
+  font-size: 12px !important;
+  white-space: nowrap;
+  list-style: none;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+  &:hover {
+    background: #f3f3f3;
+  }
+  &-disabled {
+    color: #c5c8ce !important;
+    cursor: not-allowed;
+    &:hover {
+      color: #c5c8ce !important;
+      background-color: #fff;
+      cursor: not-allowed;
+    }
+  }
+  &-divided {
+    margin-top: 5px;
+    border-top: 1px solid #e8eaec;
+  }
+}

@@ -101,6 +101,30 @@ export function removeClass (el, cls) {
   }
 }
 
+// getStyle
+export function getStyle (element, styleName) {
+  if (!element || !styleName) return null
+  styleName = camelCase(styleName)
+  if (styleName === 'float') {
+    styleName = 'cssFloat'
+  }
+  try {
+    const computed = document.defaultView.getComputedStyle(element, '')
+    return element.style[styleName] || computed ? computed[styleName] : null
+  } catch (e) {
+    return element.style[styleName]
+  }
+}
+
+const SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g  // eslint-disable-line
+const MOZ_HACK_REGEXP = /^moz([A-Z])/ // eslint-disable-line
+
+function camelCase (name) {
+  return name.replace(SPECIAL_CHARS_REGEXP, function (_, separator, letter, offset) {
+    return offset ? letter.toUpperCase() : letter
+  }).replace(MOZ_HACK_REGEXP, 'Moz$1')
+}
+
 // scrollTop animation
 export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
   if (!window.requestAnimationFrame) {
