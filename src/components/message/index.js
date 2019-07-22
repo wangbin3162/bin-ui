@@ -17,7 +17,7 @@ function getMessageInstance () {
 // 提示方法
 function notice (options) {
   let instance = getMessageInstance()
-  let _notice = Object.assign({name: `${prefixKey}${name}`}, options)
+  let _notice = Object.assign({ name: `${prefixKey}${name}` }, options)
   // 实例弹出提示
   instance.notice(_notice)
   // 用于手动消除
@@ -47,7 +47,7 @@ export default {
     // 如果第一个是默认字符
     let _option = {}
     if (typeof options === 'string') {
-      _option = Object.assign({}, defaultOption, {content: options})
+      _option = Object.assign({}, defaultOption, { content: options })
       return notice(_option)
     }
     _option = Object.assign({}, defaultOption, options)

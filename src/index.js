@@ -81,8 +81,10 @@ export default {
   Alert,
   Loading,
   CollapseTransition,
-  Collapse, CollapsePanel,
-  Breadcrumb, breadcrumbItem,
+  Collapse,
+  CollapsePanel,
+  Breadcrumb,
+  breadcrumbItem,
   LoadingBar,
   Message,
   Badge,
@@ -90,8 +92,11 @@ export default {
   InputNumber,
   Rate,
   Switch,
-  Checkbox, CheckboxGroup,
-  Radio, RadioGroup,
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
   Tooltip,
-  Form, FormItem
+  Form,
+  FormItem
 }

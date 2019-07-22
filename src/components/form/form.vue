@@ -42,7 +42,7 @@
       }
     },
     provide () {
-      return {form: this}
+      return { form: this }
     },
     data () {
       return {

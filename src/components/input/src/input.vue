@@ -15,30 +15,30 @@
       <span class="bin-input-suffix" v-else-if="showSuffix">
         <slot name="suffix"><i class="iconfont" :class="['icon-' + suffix]" v-if="suffix"></i></slot></span>
       <input
-          :id="elementId"
-          :autocomplete="autocomplete"
-          ref="input"
-          :type="type"
-          :class="inputClasses"
-          :placeholder="placeholder"
-          :disabled="disabled"
-          :maxlength="maxlength"
-          :readonly="readonly"
-          :name="name"
-          :value="currentValue"
-          :number="number"
-          :autofocus="autofocus"
-          @keyup.enter="handleEnter"
-          @keyup="handleKeyup"
-          @keypress="handleKeypress"
-          @keydown="handleKeydown"
-          @focus="handleFocus"
-          @blur="handleBlur"
-          @compositionstart="handleComposition"
-          @compositionupdate="handleComposition"
-          @compositionend="handleComposition"
-          @input="handleInput"
-          @change="handleChange">
+        :id="elementId"
+        :autocomplete="autocomplete"
+        ref="input"
+        :type="type"
+        :class="inputClasses"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :maxlength="maxlength"
+        :readonly="readonly"
+        :name="name"
+        :value="currentValue"
+        :number="number"
+        :autofocus="autofocus"
+        @keyup.enter="handleEnter"
+        @keyup="handleKeyup"
+        @keypress="handleKeypress"
+        @keydown="handleKeydown"
+        @focus="handleFocus"
+        @blur="handleBlur"
+        @compositionstart="handleComposition"
+        @compositionupdate="handleComposition"
+        @compositionend="handleComposition"
+        @input="handleInput"
+        @change="handleChange">
       <span class="bin-input-prefix" v-if="showPrefix">
         <slot name="prefix"><i class="iconfont" :class="['icon-' + prefix]" v-if="prefix"></i></slot>
       </span>
@@ -75,9 +75,7 @@
 
 <script>
   import calcTextareaHeight from '../../../utils/calcTextareaHeight'
-  import { oneOf } from '../../../utils/util'
-  import { findComponentUpward } from '../../../utils/util'
-
+  import { oneOf, findComponentUpward } from '../../../utils/util'
   import Emitter from '../../../mixins/emitter'
 
   const prefixCls = 'bin-input'
@@ -246,7 +244,7 @@
         this.currentValue = value
         // 触发校验
         if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
-          this.dispatch('BFormItem', 'on-form-change', value);
+          this.dispatch('BFormItem', 'on-form-change', value)
         }
       },
       resizeTextarea () {
@@ -275,7 +273,7 @@
         }
       },
       handleClear () {
-        const e = {target: {value: ''}}
+        const e = { target: { value: '' } }
         this.$emit('input', '')
         this.setCurrentValue('')
         this.$emit('on-change', e)
@@ -296,7 +294,7 @@
             [`${prefixCls}-type`]: this.type,
             [`${prefixCls}-group-with-prepend`]: this.prepend,
             [`${prefixCls}-group-with-append`]: this.append || this.search,
-            [`${prefixCls}-hide-icon`]: this.append,  // #554
+            [`${prefixCls}-hide-icon`]: this.append, // #554
             [`${prefixCls}-with-search`]: this.search
           }
         ]

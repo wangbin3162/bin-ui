@@ -4,24 +4,24 @@ import Bar from './bar'
 
 export default {
   name: 'BScrollbar',
-  components: {Bar},
+  components: { Bar },
   props: {
     normal: {
       type: Boolean,
       default: false
-    },  // 是否采用原生滚动（即只是隐藏掉了原生滚动条，但并没有使用自定义的滚动条）
+    }, // 是否采用原生滚动（即只是隐藏掉了原生滚动条，但并没有使用自定义的滚动条）
     always: { // 是否是一直显示，不是悬停显示
       type: Boolean,
       default: false
     },
-    wrapStyle: {},  // 内联方式 自定义wrap容器的样式
-    wrapClass: {},  // 类名方式 自定义wrap容器的样式
-    viewClass: {},  // 内联方式 自定义view容器的样式
-    viewStyle: {},  // 类名方式 自定义view容器的样式
-    barStyle: {},// bar的样式
-    barWrapStyle: {},//bar容器样式
-    noresize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
-    tag: {                // view容器用那种标签渲染，默认为div
+    wrapStyle: {}, // 内联方式 自定义wrap容器的样式
+    wrapClass: {}, // 类名方式 自定义wrap容器的样式
+    viewClass: {}, // 内联方式 自定义view容器的样式
+    viewStyle: {}, // 类名方式 自定义view容器的样式
+    barStyle: {}, // bar的样式
+    barWrapStyle: {}, // bar容器样式
+    noResize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
+    tag: { // view容器用那种标签渲染，默认为div
       type: String,
       default: 'div'
     }
@@ -80,7 +80,7 @@ export default {
       if (this.sizeWidth) {
         nodes.push(
           h('bar', {
-            class: [{'always': this.always}],
+            class: [{ 'always': this.always }],
             props: {
               move: this.moveX,
               size: this.sizeWidth,
@@ -93,7 +93,7 @@ export default {
       if (this.sizeHeight) {
         nodes.push(
           h('bar', {
-            class: [{'always': this.always}],
+            class: [{ 'always': this.always }],
             props: {
               vertical: true,
               move: this.moveY,
@@ -109,11 +109,11 @@ export default {
         h(this.tag, {
           class: [this.wrapClass, 'bin-scrollbar__wrap'],
           style: style,
-          ref: 'wrap',
+          ref: 'wrap'
         }, [view])
       ]
     }
-    return h('div', {class: 'bin-scrollbar'}, nodes)
+    return h('div', { class: 'bin-scrollbar' }, nodes)
   },
 
   methods: {
@@ -138,10 +138,10 @@ export default {
   mounted () {
     if (this.normal) return
     this.$nextTick(this.update)
-    !this.noresize && addResizeListener(this.$refs.resize, this.update)
+    !this.noResize && addResizeListener(this.$refs.resize, this.update)
   },
   beforeDestroy () {
     if (this.normal) return
-    !this.noresize && removeResizeListener(this.$refs.resize, this.update)
+    !this.noResize && removeResizeListener(this.$refs.resize, this.update)
   }
 }

@@ -31,13 +31,13 @@ export default {
       return this.color
     },
     tagStyleBind () {
-      return this.tagStyle ? this.tagStyle :
-        this.dot ? {
+      return this.tagStyle ? this.tagStyle
+        : this.dot ? {
             backgroundColor: '#fff',
             color: this.color,
             fontSize: this.fontSize
-          } :
-          {
+          }
+          : {
             backgroundColor: this.color,
             color: this.color ? '#fff' : '',
             fontSize: this.fontSize
@@ -48,11 +48,11 @@ export default {
     let $child = []
     const dotEl = h('span', {
       class: ['bin-dot'],
-      style: {backgroundColor: this.dotColor},
+      style: { backgroundColor: this.dotColor }
     })
     const closeEl = h('i', {
       class: ['iconfont', 'icon-ios-close'],
-      style: this.dot ? {backgroundColor: '#fff', color: this.color} : {},
+      style: this.dot ? { backgroundColor: '#fff', color: this.color } : {},
       on: {
         click: this.handleClose
       }
@@ -68,7 +68,7 @@ export default {
       class: ['bin-tag',
         this.type ? `is-${this.type}` : '',
         this.size ? `is-${this.size}` : '',
-        {'no-border': this.noBorder}
+        { 'no-border': this.noBorder }
       ],
       style: this.tagStyleBind,
       on: {

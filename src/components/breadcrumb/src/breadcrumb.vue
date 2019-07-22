@@ -18,7 +18,7 @@
     },
     provide () {
       return {
-        elBreadcrumb: this
+        bBreadcrumb: this
       }
     },
     mounted () {

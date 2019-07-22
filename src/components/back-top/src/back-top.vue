@@ -76,8 +76,7 @@
         this.backTop = this.domEl.pageYOffset || this.domEl.scrollTop >= this.height
       },
       back () {
-        const sTop = this.domEl !== window ? (this.domEl.pageYOffset || this.domEl.scrollTop) :
-          (document.documentElement.scrollTop || document.body.scrollTop)
+        const sTop = this.domEl !== window ? (this.domEl.pageYOffset || this.domEl.scrollTop) : (document.documentElement.scrollTop || document.body.scrollTop)
         scrollTop(this.domEl, sTop, 0, this.duration)
         this.$emit('on-click')
       }

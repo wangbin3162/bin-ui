@@ -137,4 +137,3 @@ export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
 
   scroll(from, to, step)
 }
-

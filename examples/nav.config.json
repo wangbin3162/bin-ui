@@ -69,6 +69,12 @@
           "path": "/layout"
         },
         {
+          "desc": "Container 布局容器",
+          "icon": "ios-tv",
+          "name": "container",
+          "path": "/container"
+        },
+        {
           "desc": "ScrollBar 滚动",
           "icon": "ios-infinite",
           "name": "scrollbar",
@@ -242,12 +248,6 @@
       "desc": "其他",
       "path": "/component",
       "items": [
-        {
-          "desc": "Velocity 动画库",
-          "icon": "ios-paper-plane",
-          "name": "velocity",
-          "path": "/velocity"
-        },
         {
           "desc": "Lodash 工具库",
           "icon": "logo-dropbox",

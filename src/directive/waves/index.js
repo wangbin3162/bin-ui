@@ -21,7 +21,7 @@ export default {
         } else {
           ripple.className = 'waves-ripple'
         }
-        //获得页面向左、向上卷动的距离
+        // 获得页面向左、向上卷动的距离
         const pageScroll = {
           left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
           top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0

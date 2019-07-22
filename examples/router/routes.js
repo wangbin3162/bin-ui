@@ -19,7 +19,7 @@ let addComponent = (router) => {
       routes = routes.concat(route.items)
     } else {
       if (!route.name) return
-      route.meta = {desc: route.desc}
+      route.meta = { desc: route.desc }
       route.component = r => require.ensure([], () =>
         r(require(`../docs/${route.name}.md`)))
     }

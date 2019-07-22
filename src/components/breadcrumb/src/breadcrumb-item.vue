@@ -1,9 +1,9 @@
 <template>
   <span class="bin-breadcrumb__item">
     <span
-        :class="['bin-breadcrumb__inner', to ? 'is-link' : '']"
-        ref="link"
-        role="link">
+      :class="['bin-breadcrumb__inner', to ? 'is-link' : '']"
+      ref="link"
+      role="link">
       <slot></slot>
     </span>
     <i v-if="separatorIcon" class="bin-separator icon" :class="['iconfont','icon-'+separatorIcon]"></i>
@@ -23,14 +23,14 @@
         separatorIcon: ''
       }
     },
-    inject: ['elBreadcrumb'],
+    inject: ['bBreadcrumb'],
     mounted () {
-      this.separator = this.elBreadcrumb.separator
-      this.separatorIcon = this.elBreadcrumb.separatorIcon
+      this.separator = this.bBreadcrumb.separator
+      this.separatorIcon = this.bBreadcrumb.separatorIcon
       const link = this.$refs.link
       link.setAttribute('role', 'link')
       link.addEventListener('click', () => {
-        const {to, $router} = this
+        const { to, $router } = this
         if (!to || !$router) return
         this.replace ? $router.replace(to) : $router.push(to)
       })

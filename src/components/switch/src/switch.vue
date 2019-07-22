@@ -1,10 +1,10 @@
 <template>
     <span
-        tabindex="0"
-        :class="wrapClasses"
-        :style="wrapStyle"
-        @click="toggle"
-        @keydown.space="toggle"
+      tabindex="0"
+      :class="wrapClasses"
+      :style="wrapStyle"
+      @click="toggle"
+      @keydown.space="toggle"
     >
         <input type="hidden" :name="name" :value="currentValue">
         <span :class="innerClasses">
@@ -95,7 +95,7 @@
     watch: {
       value (val) {
         if (val !== this.trueValue && val !== this.falseValue) {
-          throw 'Value should be trueValue or falseValue.'
+          console.log('Value should be true or false.')
         }
         this.currentValue = val
       }

@@ -22,7 +22,7 @@
   }
 
   export default {
-    components: {Notice},
+    components: { Notice },
     props: {
       styles: {
         type: Object,
@@ -78,4 +78,3 @@
     }
   }
 </script>
-

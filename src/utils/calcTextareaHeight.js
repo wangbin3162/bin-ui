@@ -140,7 +140,7 @@ const SIZING_STYLE = [
   'padding-left',
   'padding-right',
   'border-width',
-  'box-sizing',
+  'box-sizing'
 ]
 
 let computedStyleCache = {}
@@ -182,7 +182,7 @@ function calculateNodeStyling (node, useCache = false) {
     sizingStyle,
     paddingSize,
     borderSize,
-    boxSizing,
+    boxSizing
   }
 
   if (useCache && nodeRef) {
@@ -210,7 +210,7 @@ export default function calcTextareaHeight (uiTextNode, minRows = null, maxRows 
   // the textbox
   let {
     paddingSize, borderSize,
-    boxSizing, sizingStyle,
+    boxSizing, sizingStyle
   } = calculateNodeStyling(uiTextNode, useCache)
 
   // Need to have the overflow attribute to hide the scrollbar otherwise

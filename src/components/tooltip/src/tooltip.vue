@@ -5,14 +5,14 @@
     </div>
     <transition name="fade-in">
       <div
-          :class="[prefixCls + '-popper', prefixCls + '-' + theme]"
-          :style="dropStyles"
-          ref="popper"
-          v-show="!disabled && (visible || always)"
-          @mouseenter="handleShowPopper"
-          @mouseleave="handleClosePopper"
-          :data-transfer="transfer"
-          v-transfer-dom>
+        :class="[prefixCls + '-popper', prefixCls + '-' + theme]"
+        :style="dropStyles"
+        ref="popper"
+        v-show="!disabled && (visible || always)"
+        @mouseenter="handleShowPopper"
+        @mouseleave="handleClosePopper"
+        :data-transfer="transfer"
+        v-transfer-dom>
         <div :class="[prefixCls + '-content']">
           <div :class="[prefixCls + '-arrow']"></div>
           <div :class="innerClasses" :style="innerStyles">
@@ -33,7 +33,7 @@
 
   export default {
     name: 'BTooltip',
-    directives: {TransferDom},
+    directives: { TransferDom },
     mixins: [Popper],
     props: {
       placement: {
@@ -54,7 +54,7 @@
         type: Boolean,
         default: false
       },
-      controlled: {    // under this prop,Tooltip will not close when mouseleave
+      controlled: { // under this prop,Tooltip will not close when mouseleave
         type: Boolean,
         default: false
       },
@@ -129,7 +129,7 @@
       handleGetIndex () {
         transferIncrease()
         return transferIndex
-      },
+      }
     },
     mounted () {
       if (this.always) {

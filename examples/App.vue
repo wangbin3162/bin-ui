@@ -30,7 +30,7 @@
         this.$nextTick(() => {
           this.componentScrollBar.update()
           if (this.$route.meta.desc) {
-            this.$util.title(this.$route.meta.desc+' - [bin-ui]')
+            this.$util.title(this.$route.meta.desc + ' - [bin-ui]')
           }
         })
       }

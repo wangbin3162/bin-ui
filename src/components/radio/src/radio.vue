@@ -1,17 +1,17 @@
 <template>
   <label :class="wrapClasses">
-        <span :class="radioClasses">
-            <span :class="innerClasses"></span>
-            <input
-                type="radio"
-                :class="inputClasses"
-                :disabled="disabled"
-                :checked="currentValue"
-                :name="groupName"
-                @change="change"
-                @focus="onFocus"
-                @blur="onBlur">
-        </span>
+    <span :class="radioClasses">
+      <span :class="innerClasses"></span>
+      <input
+        type="radio"
+        :class="inputClasses"
+        :disabled="disabled"
+        :checked="currentValue"
+        :name="groupName"
+        @change="change"
+        @focus="onFocus"
+        @blur="onBlur">
+    </span>
     <slot>{{ label }}</slot>
   </label>
 </template>
@@ -163,7 +163,7 @@
         if (val === this.trueValue || val === this.falseValue) {
           this.updateValue()
         } else {
-          throw 'Value should be trueValue or falseValue.'
+          console.log('Value should be trueValue or falseValue.')
         }
       }
     }

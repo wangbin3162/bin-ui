@@ -44,7 +44,7 @@
 
   export default {
     name: 'BDrawer',
-    directives: {TransferDom},
+    directives: { TransferDom },
     props: {
       value: {
         type: Boolean,
@@ -100,7 +100,7 @@
       },
       boxStyle () {
         return {
-          width: this.fullscreen ? '100%' : this.width,
+          width: this.fullscreen ? '100%' : this.width
         }
       }
     },
@@ -117,7 +117,7 @@
       },
       okClick () {
         this.$emit('on-ok')
-      },
+      }
     },
     watch: {
       value (val) {
@@ -125,8 +125,7 @@
       },
       visible (val) {
         this.$emit('on-visible-change', val)
-      },
+      }
     }
   }
 </script>
-

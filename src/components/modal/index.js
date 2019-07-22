@@ -64,7 +64,7 @@ Modal.confirm = function (props = {}) {
 }
 
 Modal.remove = function () {
-  if (!modalInstance) {   // at loading status, remove after Cancel
+  if (!modalInstance) { // at loading status, remove after Cancel
     return false
   }
 

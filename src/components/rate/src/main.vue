@@ -1,30 +1,30 @@
 <template>
   <div
-      class="bin-rate"
-      @keydown="handleKey"
-      role="slider"
-      :aria-valuenow="currentValue"
-      :aria-valuetext="text"
-      aria-valuemin="0"
-      :aria-valuemax="max"
-      tabindex="0">
+    class="bin-rate"
+    @keydown="handleKey"
+    role="slider"
+    :aria-valuenow="currentValue"
+    :aria-valuetext="text"
+    aria-valuemin="0"
+    :aria-valuemax="max"
+    tabindex="0">
     <span
-        v-for="(item, key) in max"
-        class="bin-rate__item"
-        @mousemove="setCurrentValue(item, $event)"
-        @mouseleave="resetCurrentValue"
-        @click="selectValue(item)"
-        :style="{ cursor: rateDisabled ? 'auto' : 'pointer' }"
-        :key="key">
+      v-for="(item, key) in max"
+      class="bin-rate__item"
+      @mousemove="setCurrentValue(item, $event)"
+      @mouseleave="resetCurrentValue"
+      @click="selectValue(item)"
+      :style="{ cursor: rateDisabled ? 'auto' : 'pointer' }"
+      :key="key">
       <i
-          :class="[classes[item - 1], { 'hover': hoverIndex === item }]"
-          class="bin-rate__icon iconfont"
-          :style="getIconStyle(item)">
+        :class="[classes[item - 1], { 'hover': hoverIndex === item }]"
+        class="bin-rate__icon iconfont"
+        :style="getIconStyle(item)">
         <i
-            v-if="showDecimalIcon(item)"
-            :class="decimalIconClass"
-            :style="decimalStyle"
-            class="bin-rate__decimal iconfont">
+          v-if="showDecimalIcon(item)"
+          :class="decimalIconClass"
+          :style="decimalStyle"
+          class="bin-rate__decimal iconfont">
         </i>
       </i>
     </span>

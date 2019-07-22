@@ -45,7 +45,7 @@
   const prefixCls = 'bin-modal'
   export default {
     name: 'BModal',
-    directives: {TransferDom},
+    directives: { TransferDom },
     props: {
       value: {
         type: Boolean,
@@ -123,7 +123,7 @@
           dragY: null,
           dragging: false
         },
-        modalIndex: this.handleGetModalIndex(),  // for Esc close the top modal
+        modalIndex: this.handleGetModalIndex() // for Esc close the top modal
       }
     },
     computed: {
@@ -278,13 +278,13 @@
           y: event.clientY
         }
 
-        const diff_distance = {
+        const diffDistance = {
           x: distance.x - this.dragData.dragX,
           y: distance.y - this.dragData.dragY
         }
 
-        this.dragData.x += diff_distance.x
-        this.dragData.y += diff_distance.y
+        this.dragData.x += diffDistance.x
+        this.dragData.y += diffDistance.y
 
         this.dragData.dragX = distance.x
         this.dragData.dragY = distance.y
@@ -293,7 +293,7 @@
         this.dragData.dragging = false
         off(window, 'mousemove', this.handleMoveMove)
         off(window, 'mouseup', this.handleMoveEnd)
-      },
+      }
     },
     watch: {
       value (val) {

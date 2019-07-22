@@ -3,26 +3,26 @@
         <span :class="checkboxClasses">
             <span :class="innerClasses"></span>
             <input
-                v-if="group"
-                type="checkbox"
-                :class="inputClasses"
-                :disabled="disabled"
-                :value="label"
-                v-model="model"
-                :name="name"
-                @change="change"
-                @focus="onFocus"
-                @blur="onBlur">
+              v-if="group"
+              type="checkbox"
+              :class="inputClasses"
+              :disabled="disabled"
+              :value="label"
+              v-model="model"
+              :name="name"
+              @change="change"
+              @focus="onFocus"
+              @blur="onBlur">
             <input
-                v-else
-                type="checkbox"
-                :class="inputClasses"
-                :disabled="disabled"
-                :checked="currentValue"
-                :name="name"
-                @change="change"
-                @focus="onFocus"
-                @blur="onBlur">
+              v-else
+              type="checkbox"
+              :class="inputClasses"
+              :disabled="disabled"
+              :checked="currentValue"
+              :name="name"
+              @change="change"
+              @focus="onFocus"
+              @blur="onBlur">
         </span>
     <slot><span v-if="showSlot">{{ label }}</span></slot>
   </label>
@@ -162,7 +162,7 @@
         if (val === this.trueValue || val === this.falseValue) {
           this.updateModel()
         } else {
-          throw 'Value should be trueValue or falseValue.'
+          console.error('Value should be trueValue or falseValue.')
         }
       }
     }

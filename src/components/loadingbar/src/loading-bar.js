@@ -17,21 +17,21 @@ LoadingBar.newInstance = properties => {
   // 添加到dom
   document.body.appendChild(component.$el)
   // 这个loading_bar即是返回的Vnode
-  const loading_bar = Instance.$children[0]
+  const loadingBar = Instance.$children[0]
   // 返回一个vnode对象
   return {
     update (options) {
       if ('percent' in options) {
-        loading_bar.percent = options.percent
+        loadingBar.percent = options.percent
       }
       if (options.status) {
-        loading_bar.status = options.status
+        loadingBar.status = options.status
       }
       if ('show' in options) {
-        loading_bar.show = options.show
+        loadingBar.show = options.show
       }
     },
-    component: loading_bar,
+    component: loadingBar,
     destroy () {
       document.body.removeChild(document.getElementsByClassName('bin-loading-bar')[0])
     }

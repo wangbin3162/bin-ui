@@ -30,7 +30,7 @@ export default {
     Vue.prototype.$open = util.open
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
-    Vue.prototype.$resize = {addResizeListener, removeResizeListener}
+    Vue.prototype.$resize = { addResizeListener, removeResizeListener }
     // 打印UI官网
     log.pretty('[bin-ui] ' + config.version, 'https://wangbin3162.github.io/bin-ui-doc/')
   }

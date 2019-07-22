@@ -29,7 +29,7 @@ export default {
         return {
           modifiers: {
             computeStyle: {
-              gpuAcceleration: false,
+              gpuAcceleration: false
             },
             preventOverflow: {
               boundariesElement: 'window'
@@ -54,7 +54,7 @@ export default {
     },
     visible (val) {
       if (val) {
-        if (this.handleIndexIncrease) this.handleIndexIncrease()  // just use for Poptip
+        if (this.handleIndexIncrease) this.handleIndexIncrease() // just use for PopTip
         this.updatePopper()
         this.$emit('on-popper-show')
       } else {

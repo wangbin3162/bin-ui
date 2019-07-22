@@ -9,7 +9,7 @@
         </div>
         <div :class="[baseClass + '-content-text']">
           <render-cell
-              :render="renderFunc"
+            :render="renderFunc"
           ></render-cell>
         </div>
         <a :class="[baseClass + '-close']" @click="close" v-if="closable">
@@ -66,7 +66,7 @@
             [`${this.className}`]: !!this.className,
             [`${this.baseClass}-closable`]: this.closable
           }
-        ];
+        ]
       },
       baseClass () {
         return `${prefixCls}-notice`
@@ -122,4 +122,3 @@
     }
   }
 </script>
-

@@ -2,34 +2,34 @@
   <div :class="wrapClasses">
     <div :class="handlerClasses">
       <a
-          @click="up"
-          :class="upClasses">
+        @click="up"
+        :class="upClasses">
         <span :class="innerUpClasses" @click="preventDefault"></span>
       </a>
       <a
-          @click="down"
-          :class="downClasses">
+        @click="down"
+        :class="downClasses">
         <span :class="innerDownClasses" @click="preventDefault"></span>
       </a>
     </div>
     <div :class="inputWrapClasses">
       <input
-          :id="elementId"
-          :class="inputClasses"
-          :disabled="disabled"
-          autocomplete="off"
-          spellcheck="false"
-          :autofocus="autofocus"
-          @focus="focus"
-          @blur="blur"
-          @keydown.stop="keyDown"
-          @input="change"
-          @mouseup="preventDefault"
-          @change="change"
-          :readonly="readonly || !editable"
-          :name="name"
-          :value="formatterValue"
-          :placeholder="placeholder">
+        :id="elementId"
+        :class="inputClasses"
+        :disabled="disabled"
+        autocomplete="off"
+        spellcheck="false"
+        :autofocus="autofocus"
+        @focus="focus"
+        @blur="blur"
+        @keydown.stop="keyDown"
+        @input="change"
+        @mouseup="preventDefault"
+        @change="change"
+        :readonly="readonly || !editable"
+        :name="name"
+        :value="formatterValue"
+        :placeholder="placeholder">
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@
 
   export default {
     name: 'BInputNumber',
-    mixins: [ Emitter ],
+    mixins: [Emitter],
     props: {
       max: {
         type: Number,
@@ -120,7 +120,7 @@
       placeholder: {
         type: String,
         default: ''
-      },
+      }
     },
     data () {
       return {
@@ -245,7 +245,7 @@
         // 如果 step 是小数，且没有设置 precision，是有问题的
         if (val && !isNaN(this.precision)) val = Number(Number(val).toFixed(this.precision))
 
-        const {min, max} = this
+        const { min, max } = this
         if (val !== null) {
           if (val > max) {
             val = max
@@ -283,9 +283,9 @@
         }
       },
       change (event) {
-        if (event.type == 'change') return
+        if (event.type === 'change') return
 
-        if (event.type == 'input' && !this.activeChange) return
+        if (event.type === 'input' && !this.activeChange) return
         let val = event.target.value.trim()
         if (this.parser) {
           val = this.parser(val)
@@ -296,7 +296,7 @@
           this.setValue(null)
           return
         }
-        if (event.type == 'input' && val.match(/^\-?\.?$|\.$/)) return // prevent fire early if decimal. If no more input the change event will fire later
+        if (event.type === 'input' && val.match(/^\-?\.?$|\.$/)) return // prevent fire early if decimal. If no more input the change event will fire later
 
         val = Number(val)
 

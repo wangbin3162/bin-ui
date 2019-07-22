@@ -33,19 +33,19 @@ export function typeColor (type = 'default') {
 }
 
 log.print = function (text, type = 'default', back = false) {
-  if (typeof text === 'object') {// 如果是对象则调用打印对象方式
+  if (typeof text === 'object') { // 如果是对象则调用打印对象方式
     console.dir(text)
     return
   }
   if (back) { // 如果是打印带背景图的
     console.log(
       `%c ${text} `,
-      `background:${typeColor(type)}; padding: 2px; border-radius: 4px;color: #fff;`,
+      `background:${typeColor(type)}; padding: 2px; border-radius: 4px;color: #fff;`
     )
   } else {
     console.log(
       `%c ${text} `,
-      `color: ${typeColor(type)};`,
+      `color: ${typeColor(type)};`
     )
   }
 }

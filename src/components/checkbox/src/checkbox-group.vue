@@ -30,7 +30,7 @@
     data () {
       return {
         currentValue: this.value,
-        childrens: []
+        children: []
       }
     },
     computed: {
@@ -48,10 +48,10 @@
     },
     methods: {
       updateModel (update) {
-        this.childrens = findComponentsDownward(this, 'BCheckbox')
-        if (this.childrens) {
-          const {value} = this
-          this.childrens.forEach(child => {
+        this.children = findComponentsDownward(this, 'BCheckbox')
+        if (this.children) {
+          const { value } = this
+          this.children.forEach(child => {
             child.model = value
 
             if (update) {

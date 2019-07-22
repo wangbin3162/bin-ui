@@ -1,6 +1,6 @@
 // move-to-body
 export default {
-  inserted (el, {value}, vnode) {
+  inserted (el, { value }, vnode) {
     if (el.dataset && el.dataset.transfer !== 'true') return false
     el.className = el.className ? el.className + ' v-transfer-dom' : 'v-transfer-dom'
     const parentNode = el.parentNode

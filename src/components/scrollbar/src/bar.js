@@ -23,8 +23,8 @@ export default {
   },
 
   render (h) {
-    const {size, move, bar} = this
-    let barStyle = Object.assign({}, renderThumbStyle({size, move, bar}), this.barStyle)
+    const { size, move, bar } = this
+    let barStyle = Object.assign({}, renderThumbStyle({ size, move, bar }), this.barStyle)
     return h('div', {
       class: ['bin-scrollbar__bar', 'is-' + bar.key],
       on: {
