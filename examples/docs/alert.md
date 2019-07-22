@@ -95,3 +95,27 @@
 </template>
 ```
 :::
+
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| type     |  警告提示样式   | string  |  info、success、warning、error   |   info   |
+| closable    |  是否可关闭	   | boolean  |  —   |   false   |
+| show-icon    |  是否显示图标   | boolean  |  —   |   false   |
+
+### Events
+
+| 事件名      | 说明    | 返回值      |
+|---------- |-------- |---------- |
+| on-close     | 关闭时触发   | event  |
+
+### Slot
+
+| 名称      | 说明    |
+|---------- |-------- |
+| default     | 警告提示内容   |
+| desc     | 警告提示辅助性文字介绍   |
+| icon     | 自定义图标内容   |
+| close     | 自定义关闭内容   |

@@ -1,5 +1,6 @@
 // 核心插件
 import corePlugin from './plugin/core'
+// 组件
 import CollapseTransition from './components/base/collapse-transition'
 import Icon from './components/icon/index.js'
 import Button from './components/button/index.js'
@@ -31,6 +32,7 @@ import RadioGroup from './components/radio-group/index.js'
 import Tooltip from './components/tooltip/index.js'
 import Form from './components/form/index.js'
 import FormItem from './components/form-item/index.js'
+import Container from './components/container/index.js'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar/index.js'
 import Message from './components/message/index.js'
@@ -41,7 +43,8 @@ const components = [
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
-  Form, FormItem
+  Form, FormItem,
+  Container
 ]
 
 const install = function (Vue) {
@@ -98,5 +101,6 @@ export default {
   RadioGroup,
   Tooltip,
   Form,
-  FormItem
+  FormItem,
+  Container
 }
