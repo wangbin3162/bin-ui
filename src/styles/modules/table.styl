@@ -1,0 +1,66 @@
+.bin-table {
+  &-wrapper {
+    position: relative;
+    border: 1px solid #dcdee2;
+    border-bottom: 0;
+    border-right: 0;
+    overflow: hidden; // 开启 max-height 时，没有 overflow: hidden，则底部多出 1px，早期没有 overflow 是因为有些控件没有加 transfer
+
+  }
+  width: inherit;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  color: #515a6e;
+  font-size: 12px;
+  background-color: #fff;
+  box-sizing: border-box;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #dcdee2;
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #dcdee2;
+    z-index: 3;
+  }
+  table {
+    margin: 0;
+    table-layout: fixed;
+    border: none;
+  }
+  th, td {
+    min-width: 0;
+    height: 48px;
+    box-sizing: border-box;
+    text-align: left;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    border: none;
+    border-bottom: 1px solid #e8eaec;
+  }
+
+  th {
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #f8f8f9;
+  }
+  td {
+    background-color: #fff;
+    transition: background-color .2s ease-in-out;
+  }
+}
