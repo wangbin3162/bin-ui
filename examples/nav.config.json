@@ -117,6 +117,12 @@
           "path": "/dropdown"
         },
         {
+          "desc": "Page 分页器",
+          "icon": "ios-journal",
+          "name": "page",
+          "path": "/page"
+        },
+        {
           "desc": "Breadcrumb 面包屑",
           "icon": "ios-apps",
           "name": "breadcrumb",

@@ -39,6 +39,7 @@ import DropdownMenu from './components/dropdown-menu'
 import Select from './components/select'
 import Option from './components/select-option'
 import OptionGroup from './components/select-option-group'
+import Page from './components/page'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
 import Message from './components/message'
@@ -51,7 +52,7 @@ const components = [
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
   Form, FormItem,
   Container, Dropdown, DropdownItem, DropdownMenu,
-  Select, Option, OptionGroup
+  Select, Option, OptionGroup, Page
 ]
 
 const install = function (Vue) {
@@ -115,5 +116,6 @@ export default {
   DropdownMenu,
   Select,
   Option,
-  OptionGroup
+  OptionGroup,
+  Page
 }
