@@ -171,6 +171,12 @@
           "path": "/switch"
         },
         {
+          "desc": "Select 选择器",
+          "icon": "ios-list",
+          "name": "select",
+          "path": "/select"
+        },
+        {
           "desc": "InputNumber 数字输入",
           "icon": "ios-calculator",
           "name": "inputNumber",

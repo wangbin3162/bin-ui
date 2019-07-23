@@ -1,3 +1,230 @@
+@import "../common/var.styl"
+.bin-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  vertical-align: middle;
+  color: #515a6e;
+  font-size: 14px;
+  line-height: normal;
+  &-selection {
+    display: block;
+    box-sizing: border-box;
+    outline: 0;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #dcdee2;
+    transition: all .2s ease-in-out;
+    &:hover, &-focused {
+      border-color: $color-primary-light2;
+      .bin-select-arrow {
+        display: inline-block;
+      }
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    line-height: 1;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #808695;
+    transition: all .2s ease-in-out;
+  }
+  &-visible {
+    .bin-select-selection {
+      border-color: $color-primary;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+    }
+    .bin-select-arrow {
+      transform: translateY(-50%) rotate(180deg);
+      display: inline-block;
+    }
+  }
+  &-disabled {
+    .bin-select-selection {
+      background-color: #f3f3f3;
+      opacity: 1;
+      cursor: not-allowed;
+      color: #ccc;
+      &:hover {
+        border-color: #dcdee2;
+        box-shadow: none;
+      }
+    }
+    .bin-select-arrow {
+      color: #ccc;
+    }
+  }
+  &-single &-selection {
+    height: 32px;
+    position: relative;
+    .bin-select-placeholder {
+      color: #c5c8ce;
+    }
+    .bin-select-placeholder, .bin-select-selected-value {
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-left: 8px;
+      padding-right: 24px;
+    }
+  }
+
+  &-small&-single &-selection {
+    height: 24px;
+    border-radius: 3px;
+    .bin-select-placeholder, .bin-select-selected-value {
+      height: 22px;
+      line-height: 22px;
+    }
+  }
+  &-small&-multiple &-selection {
+    min-height: 24px;
+    .bin-select-placeholder, .bin-select-selected-value {
+      min-height: 22px;
+      line-height: 22px;
+    }
+  }
+  &-large&-single &-selection {
+    height: 36px;
+    .bin-select-placeholder, .bin-select-selected-value {
+      height: 34px;
+      line-height: 34px;
+    }
+  }
+  &-large&-multiple &-selection {
+    min-height: 36px;
+    .bin-select-placeholder, .bin-select-selected-value {
+      min-height: 34px;
+      line-height: 34px;
+      font-size: 14px;
+    }
+  }
+  &-multiple &-selection {
+    padding: 0 24px 0 4px;
+    .bin-select-placeholder {
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      color: #c5c8ce;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-left: 4px;
+      padding-right: 22px;
+    }
+  }
+  &-multiple .bin-tag {
+    height: 24px;
+    line-height: 22px;
+    margin: 3px 4px 3px 0;
+    max-width: 99%;
+    position: relative;
+    span:not(.bin-select-max-tag) {
+      display: block;
+      margin-right: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    i {
+      display: block;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+    }
+  }
+  &-prefix {
+    display: inline-block;
+    vertical-align: middle;
+    i {
+      vertical-align: top;
+      font-size: 14px;
+    }
+  }
+  &-head-with-prefix {
+    display: inline-block !important;
+    vertical-align: middle;
+  }
+  &-single &-prefix {
+    padding: 0 5px 0 6px;
+  }
+  &-single &-head-with-prefix, &-multiple &-head-with-prefix {
+    padding-left: 0 !important;
+  }
+  // input
+  &-input {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 24px 0 8px;
+    font-size: 12px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    color: #515a6e;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    &::-moz-placeholder {
+      color: #c5c8ce;
+      opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+    // Internet Explorer 10+
+    &:-ms-input-placeholder {
+      color: #c5c8ce;
+    }
+    // Safari and Chrome
+    &::-webkit-input-placeholder {
+      color: #c5c8ce;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      color: #ccc;
+      -webkit-text-fill-color: #ccc; // #5249
+    }
+  }
+  &-single &-input {
+    width: 100%;
+  }
+  &-large &-input {
+    font-size: 34px;
+    height: 34px;
+  }
+  &-small &-input {
+    height: 22px
+    line-height: 22px
+  }
+  &-multiple &-input {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 0 0 4px;
+  }
+  &-not-found {
+    text-align: center;
+    color: #c5c8ce;
+  }
+  &-loading{
+    text-align: center;
+    color: #c5c8ce;
+  }
+}
+// 下拉框样式
 .bin-select-dropdown {
   width: inherit;
   max-height: 200px;
@@ -9,5 +236,95 @@
   border-radius: 4px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
   position: absolute;
-  z-index: 900
+  z-index: 900;
 }
+// 下拉框item样式
+.bin-select-item {
+  margin: 0;
+  line-height: normal !important;
+  padding: 7px 16px;
+  clear: both;
+  color: #515a6e !important;
+  font-size: 12px !important;
+  white-space: nowrap;
+  list-style: none;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+  &:hover {
+    background: #f3f3f3;
+  }
+  &-selected, &-item &-selected:hover {
+    color: #2d8cf0;
+  }
+  &-disabled {
+    color: #c5c8ce !important;
+    cursor: not-allowed;
+    &:hover {
+      color: #c5c8ce !important;
+      background-color: #fff;
+      cursor: not-allowed;
+    }
+  }
+}
+
+//  分组样式
+.bin-select-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &-title {
+    padding-left: 8px;
+    font-size: 12px;
+    color: #999;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+//  多选状态下的下拉item样式
+.bin-select-multiple .bin-select-item {
+  position: relative;
+  &-selected {
+    color: $color-primary-light2 !important;
+    background: #fff;
+  }
+  &-focus, &-selected:hover {
+    background: #f3f3f3;
+  }
+  &-selected&-focus {
+    color: $color-primary-light5;
+    background: #fff;
+  }
+  &-selected:after {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+    content: '\e820';
+    color: $color-primary-light2;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+  }
+}
+
+// form-item error 样式
+.bin-form-item-error {
+  .bin-select {
+    &-selection {
+      border: 1px solid $color-danger;
+    }
+    &-arrow {
+      color: $color-danger;
+    }
+    &-visible .bin-select-selection {
+      border-color: $color-danger;
+      outline: 0;
+      box-shadow: 0 0 0 2px $color-danger-light5;
+    }
+  }
+}
+
+
+

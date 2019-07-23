@@ -45,6 +45,9 @@
           gender: [
             { required: true, message: '请选择性别', trigger: 'change' }
           ],
+          city: [
+            { required: true, message: '请选择城市', trigger: 'change' }
+          ],
           interest: [
             { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
             { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
@@ -111,6 +114,13 @@
                 <b-radio label="male">男</b-radio>
                 <b-radio label="female">女</b-radio>
             </b-radio-group>
+        </b-form-item>
+        <b-form-item label="城市" prop="city">
+          <b-select v-model="formValidate.city" clearable>
+            <b-option value="beijing" label="北京"></b-option>
+            <b-option value="shanghai" label="上海"></b-option>
+            <b-option value="xuzhou" label="徐州"></b-option> 
+          </b-select>
         </b-form-item>
         <b-form-item label="爱好" prop="interest">
             <b-checkbox-group v-model="formValidate.interest">

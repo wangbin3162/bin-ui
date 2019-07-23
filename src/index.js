@@ -36,6 +36,9 @@ import Container from './components/container'
 import Dropdown from './components/dropdown'
 import DropdownItem from './components/dropdown-item'
 import DropdownMenu from './components/dropdown-menu'
+import Select from './components/select'
+import Option from './components/select-option'
+import OptionGroup from './components/select-option-group'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
 import Message from './components/message'
@@ -47,7 +50,8 @@ const components = [
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
   Form, FormItem,
-  Container, Dropdown, DropdownItem, DropdownMenu
+  Container, Dropdown, DropdownItem, DropdownMenu,
+  Select, Option, OptionGroup
 ]
 
 const install = function (Vue) {
@@ -108,5 +112,8 @@ export default {
   Container,
   Dropdown,
   DropdownItem,
-  DropdownMenu
+  DropdownMenu,
+  Select,
+  Option,
+  OptionGroup
 }
