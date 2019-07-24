@@ -10,8 +10,10 @@
 
 ```html
  <template>
+     <b-button size="small" type="info" v-waves
+        @click="$message({type:'info',content:'info 的提示'})">info</b-button>
      <b-button size="small" type="primary" v-waves
-        @click="$message('这是一条普通的提示')">普通提示</b-button>
+        @click="$message({type:'primary',content:'primary 的提示'})">primary</b-button>
      <b-button size="small" type="success" v-waves
         @click="$message({type:'success',content:'success 的提示'})">success</b-button>
      <b-button size="small" type="warning" v-waves

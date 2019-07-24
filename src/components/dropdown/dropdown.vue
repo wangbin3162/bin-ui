@@ -144,6 +144,36 @@
         }
       }
     },
+    mounted () {
+      this.$on('on-click', (key) => {
+        if (this.stopPropagation) return
+        const $parent = this.hasParent()
+        if ($parent) $parent.$emit('on-click', key)
+      })
+      this.$on('on-hover-click', () => {
+        const $parent = this.hasParent()
+        if ($parent) {
+          this.$nextTick(() => {
+            if (this.trigger === 'custom') return false
+            this.currentVisible = false
+          })
+          $parent.$emit('on-hover-click')
+        } else {
+          this.$nextTick(() => {
+            if (this.trigger === 'custom') return false
+            this.currentVisible = false
+          })
+        }
+      })
+      this.$on('on-haschild-click', () => {
+        this.$nextTick(() => {
+          if (this.trigger === 'custom') return false
+          this.currentVisible = true
+        })
+        const $parent = this.hasParent()
+        if ($parent) $parent.$emit('on-haschild-click')
+      })
+    },
     computed: {
       transition () {
         return ['bottom-start', 'bottom', 'bottom-end'].indexOf(this.placement) > -1 ? 'slide-up' : 'fade'

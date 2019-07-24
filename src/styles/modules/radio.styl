@@ -1,3 +1,4 @@
+@import "../common/var.styl"
 .bin-radio-wrapper {
   font-size: 12px;
   vertical-align: middle;
@@ -6,7 +7,11 @@
   white-space: nowrap;
   margin-right: 8px;
   cursor: pointer;
+  &-disabled {
+    cursor: not-allowed;
+  }
 }
+
 .bin-radio {
   display: inline-block;
   margin-right: 4px;
@@ -15,60 +20,65 @@
   line-height: 1;
   vertical-align: middle;
   cursor: pointer;
-}
-.bin-radio-inner {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  position: relative;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #dcdee2;
-  border-radius: 50%;
-  transition: all .2s ease-in-out;
-  &:after {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    left: 2px;
-    top: 2px;
-    border-radius: 6px;
-    display: table;
-    border-top: 0;
-    border-left: 0;
-    content: " ";
-    background-color: #2d8cf0;
-    opacity: 0;
+  &-inner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #dcdee2;
+    border-radius: 50%;
     transition: all .2s ease-in-out;
-    -webkit-transform: scale(0);
-    transform: scale(0);
+    &:after {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      left: 2px;
+      top: 2px;
+      border-radius: 6px;
+      display: table;
+      border-top: 0;
+      border-left: 0;
+      content: " ";
+      background-color: $color-primary;
+      opacity: 0;
+      transition: all .2s ease-in-out;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
   }
-}
-.bin-radio-input {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  opacity: 0;
-  cursor: pointer;
-}
+  &-input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+  }
 
-.bin-radio-checked .bin-radio-inner {
-  border-color: #2d8cf0;
-}
+  &-checked &-inner {
+    border-color: $color-primary
+  }
 
-.bin-radio-checked .bin-radio-inner:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  transition: all .2s ease-in-out;
-}
-// 禁用
-.bin-radio-wrapper-disabled {
-  cursor: not-allowed;
+  &-checked &-inner:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+  }
+  &-focus {
+    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+    z-index: 1;
+  }
+  &:hover {
+    .bin-radio-inner {
+      border-color: $color-primary-light2;
+    }
+  }
 }
 .bin-radio-disabled, .bin-radio-disabled .bin-radio-input {
   cursor: not-allowed;

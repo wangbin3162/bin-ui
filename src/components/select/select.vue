@@ -38,7 +38,7 @@
         </select-head>
       </slot>
     </div>
-    <transition name="transition-drop">
+    <transition name="zoom-in-top">
       <drop
         :class="dropdownCls"
         v-show="dropVisible"

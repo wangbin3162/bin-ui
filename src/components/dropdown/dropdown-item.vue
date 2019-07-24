@@ -3,6 +3,7 @@
     <slot></slot>
   </li>
 </template>
+
 <script>
   import { findComponentUpward } from '../../utils/util'
   const prefixCls = 'bin-dropdown-item'

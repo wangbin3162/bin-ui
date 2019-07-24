@@ -19,7 +19,7 @@
       <b-button type="danger" v-waves>危险按钮</b-button>
     </div>
     <div class="demo-button">
-       <b-button plain>朴素按钮</b-button>
+       <b-button plain>浅色按钮</b-button>
        <b-button type="primary" plain>主要按钮</b-button>
        <b-button type="success" plain>成功按钮</b-button>
        <b-button type="info" plain>信息按钮</b-button>
@@ -27,7 +27,7 @@
        <b-button type="danger" plain>危险按钮</b-button>
     </div>
     <div class="demo-button">
-       <b-button>圆角按钮</b-button>
+       <b-button round>圆角按钮</b-button>
        <b-button type="primary" round>主要按钮</b-button>
        <b-button type="success" round>成功按钮</b-button>
        <b-button type="info" round>信息按钮</b-button>

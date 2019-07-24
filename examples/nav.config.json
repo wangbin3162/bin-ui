@@ -213,6 +213,12 @@
           "path": "/page"
         },
         {
+          "desc": "Tree 树结构",
+          "icon": "ios-git-network",
+          "name": "tree",
+          "path": "/tree"
+        },
+        {
           "desc": "Progress 进度条",
           "icon": "ios-reorder",
           "name": "progress",

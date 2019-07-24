@@ -2,19 +2,21 @@
   <transition :name="transitionName"
               @enter="handleEnter" @leave="handleLeave" appear>
     <div :class="classes">
-      <div :class="[baseClass + '-content']" ref="content">
-        <div :class="[baseClass + '-content-text',`${baseClass}-${type}`]" v-if="content">
-          <b-icon :name="iconTypes"></b-icon>
-          <span>{{content}}</span>
+      <div class="bg-wrap">
+        <div :class="[baseClass + '-content',`${baseClass}-${type}`]" ref="content">
+          <div :class="[baseClass + '-content-text']" v-if="content">
+            <b-icon :name="iconTypes"></b-icon>
+            <span>{{content}}</span>
+          </div>
+          <div :class="[baseClass + '-content-text']">
+            <render-cell
+              :render="renderFunc"
+            ></render-cell>
+          </div>
+          <a :class="[baseClass + '-close']" @click="close" v-if="closable">
+            <i class="iconfont icon-ios-close"></i>
+          </a>
         </div>
-        <div :class="[baseClass + '-content-text']">
-          <render-cell
-            :render="renderFunc"
-          ></render-cell>
-        </div>
-        <a :class="[baseClass + '-close']" @click="close" v-if="closable">
-          <i class="iconfont icon-ios-close"></i>
-        </a>
       </div>
     </div>
   </transition>
@@ -78,6 +80,7 @@
       iconTypes () {
         const iconMap = {
           'info': 'ios-information-circle',
+          'primary': 'ios-information-circle',
           'success': 'ios-checkmark-circle',
           'warning': 'ios-alert',
           'danger': 'ios-close-circle'

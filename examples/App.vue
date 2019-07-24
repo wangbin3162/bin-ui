@@ -42,7 +42,7 @@
   }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
   #app {
     color: #444444;
     font-size: 12px;
