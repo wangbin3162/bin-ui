@@ -4,7 +4,20 @@
       <div class="logo"></div>
       <div class="link">
         <router-link :to="{name: 'giud'}" class="active">指南</router-link>
-        <a href="https://github.com/wangbin3162/bin-animation" class="active" target="_blank">动画库</a>
+        <b-dropdown>
+          <a href="#" class="active" @click.prevent>生态
+            <i class="iconfont icon-ios-arrow-down"></i>
+          </a>
+          <b-dropdown-menu slot="list">
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-admin')">Bin Admin
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-data')">可视化数据平台</b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-animation')">css动画库
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-keyframe-animation')">关键帧动画库
+            </b-dropdown-item>
+          </b-dropdown-menu>
+        </b-dropdown>
         <a href="https://github.com/wangbin3162/bin-ui" class="github" target="_blank">GitHub</a>
       </div>
     </div>
@@ -13,7 +26,12 @@
 
 <script>
   export default {
-    name: 'MainHeader'
+    name: 'MainHeader',
+    methods: {
+      goTo (url) {
+        this.$util.open(url, true)
+      }
+    }
   }
 </script>
 
@@ -33,7 +51,6 @@
       width: 100%;
       margin: 0 auto;
       height: 80px;
-      line-height: 80px;
       .logo {
         color: #409EFF;
         text-transform: uppercase;
@@ -47,17 +64,21 @@
         background-size: 100%;
       }
       .link {
-        height: 100%
+        padding: 0 20px;
+        line-height: 80px;
         a {
           text-decoration: none;
           color: #1989fa;
           display: inline-block;
+          line-height: 1.5;
           padding: 0 22px;
-          height: 100%
           font-size: 15px;
           &.github {
             color: #636363;
           }
+        }
+        .bin-dropdown {
+          line-height: 1.5;
         }
       }
     }

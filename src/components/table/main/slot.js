@@ -1,10 +1,14 @@
 export default {
+  name: 'TableSlot',
   functional: true,
   inject: ['tableRoot'],
   props: {
     row: Object,
-    column: Object,
-    index: Number
+    index: Number,
+    column: {
+      type: Object,
+      default: null
+    }
   },
   render: (h, ctx) => {
     return h('div', ctx.injections.tableRoot.$scopedSlots[ctx.props.column.slot]({

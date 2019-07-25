@@ -12,10 +12,12 @@ util.title = function (title) {
  * @description 打开新页面
  * @param {String} url 地址
  */
-util.open = function (url) {
+util.open = function (url, target) {
   let a = document.createElement('a')
   a.setAttribute('href', url)
-  a.setAttribute('target', '_blank')
+  if (target) {
+    a.setAttribute('target', '_blank')
+  }
   a.setAttribute('id', 'b-link-temp')
   document.body.appendChild(a)
   a.click()
@@ -291,6 +293,47 @@ export function findComponentsUpward (context, componentName) {
   } else {
     return []
   }
+}
+
+function typeOf (obj) {
+  const toString = Object.prototype.toString
+  const map = {
+    '[object Boolean]': 'boolean',
+    '[object Number]': 'number',
+    '[object String]': 'string',
+    '[object Function]': 'function',
+    '[object Array]': 'array',
+    '[object Date]': 'date',
+    '[object RegExp]': 'regExp',
+    '[object Undefined]': 'undefined',
+    '[object Null]': 'null',
+    '[object Object]': 'object'
+  }
+  return map[toString.call(obj)]
+}
+
+export function deepCopy (data) {
+  const t = typeOf(data)
+  let o
+
+  if (t === 'array') {
+    o = []
+  } else if (t === 'object') {
+    o = {}
+  } else {
+    return data
+  }
+
+  if (t === 'array') {
+    for (let i = 0; i < data.length; i++) {
+      o.push(deepCopy(data[i]))
+    }
+  } else if (t === 'object') {
+    for (let i in data) {
+      o[i] = deepCopy(data[i])
+    }
+  }
+  return o
 }
 
 export default util

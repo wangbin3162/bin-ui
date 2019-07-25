@@ -1,3 +1,26 @@
+$border-base = #e8eaec;
+// 这块是为了覆盖文档的样式，后期文档整理再删除
+.bin-table {
+  table {
+    width: auto;
+    color: #5e6d82;
+    font-size: 14px;
+    border-collapse: separate;
+    overflow: auto;
+    border: none;
+    thead, tbody {
+      width: auto;
+    }
+  }
+  th, td {
+    padding: 0;
+    max-width: unset;
+    border: none;
+  }
+  th {
+    background-color: #fafbfc;
+  }
+}
 .bin-table {
   &-wrapper {
     position: relative;
@@ -5,7 +28,10 @@
     border-bottom: 0;
     border-right: 0;
     overflow: hidden; // 开启 max-height 时，没有 overflow: hidden，则底部多出 1px，早期没有 overflow 是因为有些控件没有加 transfer
-
+    .bin-loading {
+      border-right: 1px solid #dcdee2;
+      border-bottom: 1px solid #dcdee2;
+    }
   }
   width: inherit;
   height: 100%;
@@ -15,7 +41,9 @@
   font-size: 12px;
   background-color: #fff;
   box-sizing: border-box;
-
+  &-hide {
+    opacity: 0;
+  }
   &:before {
     content: '';
     width: 100%;
@@ -37,10 +65,34 @@
     background-color: #dcdee2;
     z-index: 3;
   }
-  table {
-    margin: 0;
-    table-layout: fixed;
-    border: none;
+  &-title, &-footer {
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid $border-base;
+  }
+  &-footer {
+    border-bottom: none;
+  }
+  &-header {
+    overflow: hidden;
+  }
+  &-overflowX {
+    overflow-x: scroll;
+  }
+  &-overflowY {
+    overflow-y: scroll;
+  }
+  &-tip {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  &-with-fixed-top&-with-footer {
+    .bin-table-footer {
+      border-top: 1px solid #dcdee2;
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
   }
   th, td {
     min-width: 0;
@@ -49,8 +101,7 @@
     text-align: left;
     text-overflow: ellipsis;
     vertical-align: middle;
-    border: none;
-    border-bottom: 1px solid #e8eaec;
+    border-bottom: 1px solid $border-base;
   }
 
   th {
@@ -62,5 +113,247 @@
   td {
     background-color: #fff;
     transition: background-color .2s ease-in-out;
+  }
+  th&-column, td&-column {
+    &-left {
+      text-align: left;
+    }
+    &-center {
+      text-align: center;
+    }
+    &-right {
+      text-align: right;
+    }
+  }
+  & table {
+    table-layout: fixed;
+  }
+  &-border {
+    th, td {
+      border-right: 1px solid $border-base;
+    }
+  }
+  &-cell {
+    padding: 4px 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    box-sizing: border-box;
+
+    &-ellipsis {
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-tooltip {
+      width: 100%;
+      &-content {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    &-with-expand {
+      height: 47px;
+      line-height: 47px;
+      padding: 0;
+      text-align: center;
+    }
+
+    &-expand {
+      cursor: pointer;
+      transition: transform .2s ease-in-out;
+      i {
+        font-size: 14px;
+      }
+      &-expanded {
+        transform: rotate(90deg);
+      }
+    }
+    &-sort {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    // #3159
+    &-with-selection {
+      .bin-checkbox-wrapper {
+        margin-right: 0;
+      }
+    }
+  }
+  &-hidden {
+    visibility: hidden;
+  }
+  th .bin-table-cell {
+    display: inline-block;
+    word-wrap: normal;
+    vertical-align: middle;
+  }
+  td&-expanded-cell {
+    padding: 20px 50px;
+    background: #f8f8f9;
+  }
+  &-stripe &-body, &-stripe &-fixed-body {
+    tr:nth-child(2n) {
+      td {
+        background-color: #f8f8f9;
+      }
+    }
+    // #1380
+    tr.bin-table-row-hover {
+      td {
+        background-color: #ebf7ff;
+      }
+    }
+  }
+
+  tr&-row-hover {
+    td {
+      background-color: #ebf7ff;
+    }
+  }
+
+  &-large {
+    font-size: 14px;
+    th {
+      height: 48px;
+    }
+    td {
+      height: 60px;
+    }
+    &-title, &-footer {
+      height: 60px;
+      line-height: 60px;
+    }
+    .bin-table-cell-with-expand {
+      height: 59px;
+      line-height: 59px;
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-small {
+    th {
+      height: 32px;
+    }
+    td {
+      height: 40px;
+    }
+    &-title, &-footer {
+      height: 40px;
+      line-height: 40px;
+    }
+    .bin-table-cell-with-expand {
+      height: 39px;
+      line-height: 39px;
+    }
+  }
+
+  &-row-highlight, tr&-row-highlight&-row-hover, &-stripe &-body tr&-row-highlight:nth-child(2n), &-stripe &-fixed-body tr&-row-highlight:nth-child(2n) {
+    td {
+      background-color: #ebf7ff;
+    }
+  }
+
+  &-fixed, &-fixed-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 6px -2px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #dcdee2;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 4;
+    }
+  }
+
+  &-fixed-right {
+    top: 0;
+    left: auto;
+    right: 0;
+    box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
+  }
+  &-fixed-right-header {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    background-color: #f8f8f9;
+    border-top: 1px solid #dcdee2;
+    border-bottom: 1px solid #e8eaec;
+  }
+  &-fixed-header {
+    overflow: hidden;
+  }
+  &-fixed-body {
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+  }
+  &-fixed-shadow {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    z-index: 1;
+  }
+  &-sort {
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    margin-top: -1px;
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    i {
+      display: block;
+      height: 6px;
+      line-height: 6px;
+      overflow: hidden;
+      position: absolute;
+      color: #c5c8ce;
+      transition: color .2s ease-in-out;
+      font-size: 16px;
+      &:hover {
+        color: inherit;
+      }
+      &.on {
+        color: $color-primary
+      }
+      &:first-child {
+        top: 0;
+      }
+      &:last-child {
+        bottom: 0;
+      }
+    }
+  }
+  &-tip {
+    table {
+      width: 100%;
+      td {
+        text-align: center;
+      }
+    }
+  }
+  &-expanded-hidden {
+    visibility: hidden;
   }
 }

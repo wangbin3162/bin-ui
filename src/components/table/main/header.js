@@ -1,18 +1,16 @@
 export default {
+  name: 'TableRenderHeader',
   functional: true,
   props: {
-    row: Object,
+    render: Function,
     column: Object,
-    index: Number,
-    render: Function
+    index: Number
   },
   render: (h, ctx) => {
     const params = {
-      row: ctx.props.row,
       column: ctx.props.column,
       index: ctx.props.index
     }
-
     return ctx.props.render(h, params)
   }
 }
