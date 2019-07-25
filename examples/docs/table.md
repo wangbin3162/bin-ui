@@ -1099,7 +1099,7 @@ height 和maxHeight可以设置固定表头
 
 ### Table methods
 
-| 方法名      | 说明    | 返回值      |
+| 方法名      | 说明    | 参数      |
 |---------- |-------- |---------- |
 | exportCsv     | 将数据导出为 .csv   | params(Object)|
 | clearCurrentRow     | 清除高亮项，仅在开启  | 无 |

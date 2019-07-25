@@ -20,7 +20,7 @@ export function typeColor (type = 'default') {
       color = '#ff9900'
       break
     case 'danger':
-      color = '#f03f14'
+      color = '#ff4d4f'
       break
     case 'default':
       color = '#35495E'

@@ -111,6 +111,12 @@
       "path": "/component",
       "items": [
         {
+          "desc": "Menu 导航菜单",
+          "icon": "ios-list-box",
+          "name": "menu",
+          "path": "/menu"
+        },
+        {
           "desc": "Dropdown 下拉菜单",
           "icon": "md-arrow-dropdown",
           "name": "dropdown",
@@ -208,7 +214,7 @@
         },
         {
           "desc": "Page 分页器",
-          "icon": "ios-journal",
+          "icon": "ios-book",
           "name": "page",
           "path": "/page"
         },

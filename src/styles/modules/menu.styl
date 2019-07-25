@@ -1,0 +1,329 @@
+// 菜单样式
+.bin-menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  list-style: none;
+  color: #515a6e;
+  font-size: 14px;
+  position: relative;
+  z-index: 900;
+  &-horizontal {
+    height: 60px;
+    line-height: 60px;
+    &.bin-menu-light {
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #dcdee2;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+  &-vertical {
+    &.bin-menu-light {
+      &:after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #dcdee2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+      }
+    }
+  }
+
+  &-light {
+    background: #fff;
+  }
+  &-dark {
+    background: #001529;
+  }
+  &-item {
+    display: block;
+    outline: none;
+    list-style: none;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+  a&-item {
+    color: inherit;
+    &:hover, &:active {
+      color: inherit;
+    }
+  }
+  &-item > i {
+    margin-right: 6px;
+  }
+  &-submenu-title > i, &-submenu-title span > i {
+    margin-right: 8px;
+  }
+
+  &-submenu-title-icon {
+    transition: transform .2s ease-in-out;
+  }
+  &-horizontal &-item, &-horizontal &-submenu {
+    float: left;
+    padding: 0 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 3;
+    transition: all .2s ease-in-out;
+  }
+
+  &-light&-horizontal &-item, &-light&-horizontal > &-submenu {
+    height: inherit;
+    line-height: inherit;
+    border-bottom: 2px solid transparent;
+    color: #515a6e;
+    &-active, &:hover {
+      color: $color-primary;
+      border-bottom: 2px solid  $color-primary
+    }
+  }
+
+  &-dark&-horizontal &-item, &-dark&-horizontal > &-submenu {
+    height: inherit;
+    line-height: inherit;
+    color: rgba(255, 255, 255, .7);
+    &-active, &:hover {
+      color: #fff;
+    }
+  }
+
+  &-horizontal &-submenu .bin-select-dropdown {
+    min-width: 100%;
+    width: auto;
+    max-height: none;
+    .bin-menu-item {
+      height: auto;
+      line-height: normal;
+      border-bottom: 0;
+      float: none;
+    }
+  }
+
+  &-horizontal &-opened > * > &-submenu-title-icon {
+    transform: rotate(180deg);
+  }
+  &-item-group {
+    line-height: normal;
+    &-title {
+      height: 30px;
+      line-height: 30px;
+      padding-left: 8px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    & > ul {
+      padding: 0 !important;
+      list-style: none !important;
+    }
+  }
+
+  // vertical
+  &-vertical &-item, &-vertical &-submenu-title {
+    padding: 14px 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    transition: all .2s ease-in-out;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &-vertical &-submenu-title-icon {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+  }
+  &-vertical &-opened > * > &-submenu-title-icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  &-vertical &-submenu {
+    &-nested {
+      padding-left: 20px;
+    }
+    .bin-menu-item {
+      padding-left: 43px;
+    }
+  }
+  &-vertical &-submenu {
+    &-nested {
+      padding-left: 20px;
+    }
+    .bin-menu-item {
+      padding-left: 43px;
+    }
+  }
+  &-vertical &-item-group {
+    &-title {
+      height: 48px;
+      line-height: 48px;
+      font-size: 14px;
+      padding-left: 28px;
+    }
+  }
+  &-dark&-vertical &-item-group {
+    &-title {
+      color: rgba(255, 255, 255, .36);
+      background: #000c17;
+    }
+  }
+  &-light&-vertical {
+    .bin-menu-item-active {
+      color: $color-primary;
+      z-index: 2;
+    }
+  }
+  &-light&-vertical &-submenu {
+    .bin-menu-item-active {
+      color: $color-primary;
+      background: #e6f7ff;
+      z-index: 2;
+      &:after {
+        content: '';
+        display: block;
+        width: 2px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $color-primary;
+      }
+    }
+  }
+  &-dark&-vertical &-item, &-dark&-vertical &-submenu-title {
+    color: rgba(255, 255, 255, .7);
+    &:hover {
+      color: #fff;
+    }
+    &-active:not(.bin-menu-submenu) {
+      color: $color-primary;
+    }
+  }
+
+  &-dark&-vertical &-submenu {
+    .bin-menu-submenu-title {
+      background: #001529;
+    }
+    .bin-menu-submenu, .bin-menu-item {
+      background: #000c17;
+    }
+    .bin-menu-item {
+      &:hover {
+        color: #fff;
+      }
+      &-active, &-active:hover {
+        border-right: none;
+        color: #fff;
+        background: $color-primary !important;
+      }
+    }
+  }
+
+  &-dark&-vertical &-child-item-active > &-submenu-title {
+    color: #fff;
+  }
+
+  &-dark&-vertical &-opened {
+    .bin-menu-submenu-has-parent-submenu {
+      .bin-menu-submenu-title {
+        background: transparent;
+      }
+    }
+  }
+
+  &-horizontal &-submenu {
+    .bin-menu-submenu {
+      float: none;
+      padding: 0;
+      line-height: 36px;
+      height: 36px;
+      font-size: 12px;
+      .bin-menu-submenu-title {
+        padding: 0 10px;
+        position: relative;
+        .iconfont {
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          margin-top: -7px;
+          font-size: 14px;
+          transition: transform .3s;
+        }
+      }
+    }
+  }
+}
+// item样式
+.bin-menu-horizontal .bin-menu-submenu .bin-select-dropdown {
+  overflow: visible;
+  max-height: none;
+  .bin-menu-item {
+    margin: 0;
+    line-height: 36px;
+    height: 36px;
+    padding: 0 10px;
+    clear: both;
+    color: #515a6e;
+    font-size: 12px !important;
+    white-space: nowrap;
+    list-style: none;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+
+    &:hover {
+      background: #f3f3f3;
+    }
+
+    &-focus {
+      background: #f3f3f3;
+    }
+
+    &-disabled {
+      color: #c5c8ce;
+      cursor: not-allowed;
+
+      &:hover {
+        color: #c5c8ce;
+        background-color: #fff;
+        cursor: not-allowed;
+      }
+    }
+
+    &-selected, &-selected:hover {
+      color: $color-primary;
+    }
+
+    &-divided {
+      margin-top: 5px;
+      border-top: 1px solid #e8eaec;
+      &:before {
+        content: '';
+        height: 5px;
+        display: block;
+        margin: 0 -16px;
+        background-color: #fff;
+        position: relative;
+        top: -7px;
+      }
+    }
+  }
+}
+

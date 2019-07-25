@@ -42,6 +42,10 @@ import OptionGroup from './components/select-option-group'
 import Table from './components/table'
 import Page from './components/page'
 import Tree from './components/tree'
+import Menu from './components/menu'
+import SubMenu from './components/submenu'
+import MenuItem from './components/menu-item'
+import MenuItemGroup from './components/menu-group'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
 import Message from './components/message'
@@ -54,7 +58,8 @@ const components = [
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
   Form, FormItem,
   Container, Dropdown, DropdownItem, DropdownMenu,
-  Select, Option, OptionGroup, Table, Page, Tree
+  Select, Option, OptionGroup, Table, Page, Tree,
+  Menu, SubMenu, MenuItem, MenuItemGroup
 ]
 
 const install = function (Vue) {
@@ -121,5 +126,9 @@ export default {
   OptionGroup,
   Table,
   Page,
-  Tree
+  Tree,
+  Menu,
+  SubMenu,
+  MenuItem,
+  MenuItemGroup
 }
