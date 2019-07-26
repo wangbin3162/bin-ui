@@ -5,6 +5,7 @@
   padding: 0;
   outline: 0;
   list-style: none;
+  line-height: 1.5em;
   color: #515a6e;
   font-size: 14px;
   position: relative;
@@ -70,6 +71,9 @@
   &-submenu-title > i, &-submenu-title span > i {
     margin-right: 8px;
   }
+  &-submenu-title > .icon-ios-arrow-down, &-submenu-title span > i.icon-ios-arrow-down {
+    margin-right: 0;
+  }
 
   &-submenu-title-icon {
     transition: transform .2s ease-in-out;
@@ -93,7 +97,11 @@
       border-bottom: 2px solid  $color-primary
     }
   }
-
+  &-light&-horizontal &-item {
+    &-active {
+      color: #515a6e;
+    }
+  }
   &-dark&-horizontal &-item, &-dark&-horizontal > &-submenu {
     height: inherit;
     line-height: inherit;
@@ -187,7 +195,6 @@
   }
   &-light&-vertical {
     .bin-menu-item-active {
-      color: $color-primary;
       z-index: 2;
     }
   }
@@ -249,33 +256,13 @@
     }
   }
 
-  &-horizontal &-submenu {
-    .bin-menu-submenu {
-      float: none;
-      padding: 0;
-      line-height: 36px;
-      height: 36px;
-      font-size: 12px;
-      .bin-menu-submenu-title {
-        padding: 0 10px;
-        position: relative;
-        .iconfont {
-          position: absolute;
-          top: 50%;
-          right: 15px;
-          margin-top: -7px;
-          font-size: 14px;
-          transition: transform .3s;
-        }
-      }
-    }
-  }
+
 }
 // item样式
 .bin-menu-horizontal .bin-menu-submenu .bin-select-dropdown {
   overflow: visible;
   max-height: none;
-  .bin-menu-item {
+  .bin-menu-item, .bin-menu-submenu-has-parent-submenu {
     margin: 0;
     line-height: 36px;
     height: 36px;
@@ -322,6 +309,26 @@
         background-color: #fff;
         position: relative;
         top: -7px;
+      }
+    }
+  }
+  .bin-menu-submenu-has-parent-submenu {
+    float: none;
+    padding: 0;
+    width: 100%;
+    line-height: 36px;
+    height: 36px;
+    font-size: 12px;
+    .bin-menu-submenu-title {
+      padding: 0 10px;
+      position: relative;
+      .iconfont {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -7px;
+        font-size: 14px;
+        transition: transform .2s;
       }
     }
   }
