@@ -1,7 +1,7 @@
 const markdownRender = require('markdown-it')()
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/bin-ui-doc' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/docs/bin-ui' : '/',
   productionSourceMap: false,
   // 修改 pages 入口
   pages: {

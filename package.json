@@ -1,6 +1,6 @@
 {
   "name": "bin-ui",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
   "main": "lib/bin-ui.common.js",
   "keywords": [
@@ -26,7 +26,7 @@
     "lib": "vue-cli-service build --target lib --name bin-ui --dest lib src/index.js",
     "style": "gulp build"
   },
-  "homepage": "https://wangbin3162.github.io/bin-ui-doc/#/giud",
+  "homepage": "https://wangbin3162.github.io/docs/bin-ui/",
   "dependencies": {
     "async-validator": "^1.11.5",
     "core-js": "^2.6.5",

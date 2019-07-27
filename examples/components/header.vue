@@ -4,17 +4,29 @@
       <div class="logo"></div>
       <div class="link">
         <router-link :to="{name: 'giud'}" class="active">指南</router-link>
+        <router-link :to="{name: 'button'}" class="active">组件</router-link>
         <b-dropdown>
           <a href="#" class="active" @click.prevent>生态
             <i class="iconfont icon-ios-arrow-down"></i>
           </a>
           <b-dropdown-menu slot="list">
-            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-admin')">Bin Admin
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-admin')">
+              bin-admin
             </b-dropdown-item>
-            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-data')">可视化数据平台</b-dropdown-item>
-            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-animation')">css动画库
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-data')">
+              bin-data
             </b-dropdown-item>
-            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-keyframe-animation')">关键帧动画库
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-animation')">
+              bin-animation
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-keyframe-animation')">
+              bin-keyframe-animation
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-static-web/')">
+              bin-static-web
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/vue-admin/')">
+              vue-admin
             </b-dropdown-item>
           </b-dropdown-menu>
         </b-dropdown>
