@@ -8,10 +8,7 @@
 <b-menu mode="horizontal" :theme="theme1" active-name="1">
    <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
    <b-submenu name="2">
-     <template slot="title">
-         <b-icon name="ios-apps"></b-icon>
-         我的工作台
-     </template>
+     <template slot="title"><b-icon name="ios-apps"></b-icon>我的工作台</template>
      <b-menu-item name="2-1">选项1</b-menu-item>
      <b-submenu name="2-2">
          <template slot="title">
@@ -60,10 +57,7 @@
 <b-menu :theme="theme2" active-name="1" accordion>
    <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
    <b-submenu name="2">
-     <template slot="title">
-         <b-icon name="ios-apps"></b-icon>
-         我的工作台
-     </template>
+     <template slot="title"><b-icon name="ios-apps"></b-icon>我的工作台</template>
      <b-menu-item name="2-1">选项1</b-menu-item>
      <b-submenu name="2-2">
          <template slot="title">

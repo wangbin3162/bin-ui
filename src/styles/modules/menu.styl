@@ -5,7 +5,7 @@
   padding: 0;
   outline: 0;
   list-style: none;
-  line-height: 1.5em;
+  line-height: 2em;
   color: #515a6e;
   font-size: 14px;
   position: relative;
@@ -257,6 +257,13 @@
   }
 
 
+  .bin-menu-item, .bin-menu-submenu-title span, .bin-menu-submenu-title {
+    > i:not(.icon-ios-arrow-down) {
+      position: relative;
+      top: -1px;
+      font-size: 18px;
+    }
+  }
 }
 // item样式
 .bin-menu-horizontal .bin-menu-submenu .bin-select-dropdown {

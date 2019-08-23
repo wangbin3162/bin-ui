@@ -18,9 +18,6 @@
   cursor: default;
   &:hover {
     border-color: #57a3f3;
-    .bin-input-number-handler-wrap {
-      opacity: 1;
-    }
   }
   &:focus {
     border-color: #57a3f3;
@@ -55,7 +52,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  opacity: 0;
   transition: opacity .2s ease-in-out;
 }
 .bin-input-number-handler {
@@ -69,9 +65,6 @@
   position: relative;
   transition: .3s;
 }
-.bin-input-number-handler-up-inner {
-  top: 1px;
-}
 .bin-input-number-handler-up {
   cursor: pointer;
 }
@@ -81,17 +74,16 @@
   cursor: pointer;
 }
 .bin-input-number-handler-down-inner, .bin-input-number-handler-up-inner {
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  right: 5px;
   width: 12px;
   height: 12px;
+  margin-top: -6px;
   line-height: 12px;
   font-size: 14px;
   color: #999;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: absolute;
-  right: 5px;
   transition: all .2s linear;
 }
 

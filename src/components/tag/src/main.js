@@ -33,7 +33,7 @@ export default {
     tagStyleBind () {
       return this.tagStyle ? this.tagStyle
         : this.dot ? {
-            backgroundColor: '#fff',
+            backgroundColor: 'transparent',
             color: this.color,
             fontSize: this.fontSize
           }

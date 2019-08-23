@@ -13,15 +13,18 @@
     }
     li {
       list-style: none;
-      margin: 8px 0;
       padding: 0;
       white-space: nowrap;
       outline: none;
-      line-height: 1.5;
+      margin: 0;
+      line-height: 26px;
       &.bin-dropdown-item {
         margin: 0;
         padding: 7px 16px;
         white-space: nowrap;
+      }
+      .bin-checkbox {
+        vertical-align: baseline;
       }
     }
   }
@@ -35,26 +38,33 @@
   &-title {
     display: inline-block;
     margin: 0;
-    padding: 0 4px;
+    padding: 0 6px;
+    line-height: 22px;
     border-radius: 3px;
     cursor: pointer;
     vertical-align: top;
     color: #515a6e;
     transition: all .2s ease-in-out;
     &:hover {
-      background-color: $color-primary-light6;
+      background-color: #e6f7ff;
     }
     &-selected, &-selected:hover {
-      background-color: $color-primary-light5;
+      background-color: #1890ff;
+      color: #fff;
     }
   }
 
   &-arrow {
+    display: inline-block;
+    vertical-align: top;
     cursor: pointer;
     width: 14px;
     text-align: center;
-    display: inline-block;
+    line-height: 22px;
+    margin-right: 4px;
     .icon-ios-arrow-forward {
+      position: relative;
+      top: -1px;
       transition: transform .2s ease-in-out;
       font-size: 14px;
       vertical-align: middle;

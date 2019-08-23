@@ -1103,6 +1103,8 @@ height 和maxHeight可以设置固定表头
 |---------- |-------- |---------- |
 | exportCsv     | 将数据导出为 .csv   | params(Object)|
 | clearCurrentRow     | 清除高亮项，仅在开启  | 无 |
+| handleResize     | 刷新表格的宽高  | 无 |
+| getSelection     | 获取已经选中的行  | 无 |
 
 
 ### column 
