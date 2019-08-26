@@ -9,18 +9,18 @@
    <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
    <b-submenu name="2">
      <template slot="title"><b-icon name="ios-apps"></b-icon>我的工作台</template>
-     <b-menu-item name="2-1">选项1</b-menu-item>
+     <b-menu-item name="2-1"><b-icon name="ios-bowtie"></b-icon>选项1</b-menu-item>
      <b-submenu name="2-2">
          <template slot="title">
-             选项2
+             <b-icon name="ios-bulb"></b-icon>选项2
          </template>
-         <b-menu-item name="2-2-1">选项2-2-1</b-menu-item>
-         <b-menu-item name="2-2-2">选项2-2-2</b-menu-item>
+         <b-menu-item name="2-2-1"><b-icon name="ios-color-fill"></b-icon>选项2-2-1</b-menu-item>
+         <b-menu-item name="2-2-2"><b-icon name="ios-calendar"></b-icon>选项2-2-2</b-menu-item>
       </b-submenu>
-     <b-menu-item name="2-3">选项3</b-menu-item>
+     <b-menu-item name="2-3"><b-icon name="ios-cloud"></b-icon>选项3</b-menu-item>
    </b-submenu>
    <b-submenu name="3">
-        <template slot="title"><b-icon name="ios-bookmarks"></b-icon>统计分析 </template>
+        <template slot="title"><b-icon name="ios-bookmarks"></b-icon>统计分析</template>
         <b-menu-group title="使用">
             <b-menu-item name="3-1">新增和启动</b-menu-item>
             <b-menu-item name="3-2">活跃分析</b-menu-item>
@@ -58,15 +58,15 @@
    <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
    <b-submenu name="2">
      <template slot="title"><b-icon name="ios-apps"></b-icon>我的工作台</template>
-     <b-menu-item name="2-1">选项1</b-menu-item>
+     <b-menu-item name="2-1"><b-icon name="ios-bowtie"></b-icon>选项1</b-menu-item>
      <b-submenu name="2-2">
          <template slot="title">
-             选项2
+             <b-icon name="ios-bulb"></b-icon>选项2
          </template>
-         <b-menu-item name="2-2-1">选项2-2-1</b-menu-item>
-         <b-menu-item name="2-2-2">选项2-2-2</b-menu-item>
+         <b-menu-item name="2-2-1"><b-icon name="ios-color-fill"></b-icon>选项2-2-1</b-menu-item>
+         <b-menu-item name="2-2-2"><b-icon name="ios-calendar"></b-icon>选项2-2-2</b-menu-item>
       </b-submenu>
-     <b-menu-item name="2-3">选项3</b-menu-item>
+     <b-menu-item name="2-3"><b-icon name="ios-cloud"></b-icon>选项3</b-menu-item>
    </b-submenu>
    <b-submenu name="3">
         <template slot="title"><b-icon name="ios-bookmarks"></b-icon>统计分析 </template>
