@@ -183,6 +183,12 @@
           "path": "/select"
         },
         {
+          "desc": "DatePicker 日期选择器",
+          "icon": "ios-calendar",
+          "name": "datePicker",
+          "path": "/datePicker"
+        },
+        {
           "desc": "InputNumber 数字输入",
           "icon": "ios-calculator",
           "name": "inputNumber",

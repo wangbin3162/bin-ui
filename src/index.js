@@ -47,6 +47,7 @@ import SubMenu from './components/submenu'
 import MenuItem from './components/menu-item'
 import MenuItemGroup from './components/menu-group'
 import Upload from './components/upload'
+import DatePicker from './components/date-picker'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
 import Message from './components/message'
@@ -60,7 +61,7 @@ const components = [
   Form, FormItem,
   Container, Dropdown, DropdownItem, DropdownMenu,
   Select, Option, OptionGroup, Table, Page, Tree,
-  Menu, SubMenu, MenuItem, MenuItemGroup, Upload
+  Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker
 ]
 
 const install = function (Vue) {
@@ -132,5 +133,6 @@ export default {
   SubMenu,
   MenuItem,
   MenuItemGroup,
-  Upload
+  Upload,
+  DatePicker
 }

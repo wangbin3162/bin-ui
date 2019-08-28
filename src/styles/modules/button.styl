@@ -58,24 +58,6 @@ $root = bin
   }
 }
 
-.{$root}-button--text {
-  border-color: transparent;
-  color: $color-info;
-  background: transparent;
-  padding-left: 0;
-  padding-right: 0;
-  &:focus, &:hover {
-    color: $color-primary;
-    border-color: transparent;
-    background-color: transparent;
-    box-shadow: none;
-  }
-  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
-    cursor: not-allowed;
-    background-image: none;
-    border-color: transparent;
-  }
-}
 .{$root}-button--large {
   padding: 12px 20px;
   font-size: 14px;
@@ -269,6 +251,24 @@ $root = bin
   }
 }
 
+.{$root}-button--text {
+  border-color: transparent;
+  color: $color-info;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  &:focus, &:hover {
+    color: $color-primary;
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+    cursor: not-allowed;
+    background-image: none;
+    border-color: transparent;
+  }
+}
 //  button-group
 .{$root}-button-group {
   display: inline-block;

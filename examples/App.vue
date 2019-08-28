@@ -44,7 +44,6 @@
 
 <style lang="stylus">
   #app {
-    color: #444444;
     font-size: 12px;
     width: 100%;
     height: 100%;
