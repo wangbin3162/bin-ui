@@ -1,10 +1,10 @@
 <template>
   <button
-      class="bin-button"
-      @click="handleClick"
-      :disabled="disabled || loading"
-      :type="nativeType"
-      :class="['bin-button--' + type , 'bin-button--' + size,
+    class="bin-button"
+    @click="handleClick"
+    :disabled="disabled || loading"
+    :type="nativeType"
+    :class="['bin-button--' + type , 'bin-button--' + size,
       {
         'is-disabled': disabled,
         'is-loading': loading,

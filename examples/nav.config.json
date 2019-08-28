@@ -195,6 +195,12 @@
           "path": "/rate"
         },
         {
+          "desc": "upload 上传",
+          "icon": "ios-cloud-upload",
+          "name": "upload",
+          "path": "/upload"
+        },
+        {
           "desc": "Form 表单",
           "icon": "ios-clipboard",
           "name": "form",
