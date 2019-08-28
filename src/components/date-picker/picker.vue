@@ -482,7 +482,7 @@
           const double = direction.match(/up|down/) ? '-double' : ''
 
           // pulse button
-          const button = this.$refs.drop.$el.querySelector(`.ivu-date-picker-${position}-btn-arrow${double}`)
+          const button = this.$refs.drop.$el.querySelector(`.bin-date-picker-${position}-btn-arrow${double}`)
           if (button) pulseElement(button)
           return
         }
@@ -561,7 +561,7 @@
         this.visible = false
         this.internalValue = this.internalValue.map(() => null)
         this.$emit('on-clear')
-        this.dispatch('FormItem', 'on-form-change', '')
+        this.dispatch('BFormItem', 'on-form-change', '')
         this.emitChange(this.type)
         this.reset()
 

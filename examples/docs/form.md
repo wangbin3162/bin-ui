@@ -28,7 +28,8 @@
         },
         formValidate: {
           name: '',
-          mail: ''
+          mail: '',
+          birthday:''
         },
         formValidate2: {
           name: '',
@@ -45,6 +46,7 @@
           gender: [
             { required: true, message: '请选择性别', trigger: 'change' }
           ],
+          birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
           city: [
             { required: true, message: '请选择城市', trigger: 'change' }
           ],
@@ -115,6 +117,9 @@
                 <b-radio label="female">女</b-radio>
             </b-radio-group>
         </b-form-item>
+        <b-form-item label="出生日期" prop="birthday">
+           <b-date-picker size="small" type="date" v-model="formValidate.birthday" placeholder="选择出生日期"></b-date-picker>
+        </b-form-item>
         <b-form-item label="城市" prop="city">
           <b-select v-model="formValidate.city" clearable>
             <b-option value="beijing" label="北京"></b-option>
@@ -145,7 +150,8 @@
       return {
         formValidate: {
           name: '',
-          mail: ''
+          mail: '',
+          birthday:''
         },
         ruleValidate: {
           name: [
@@ -158,6 +164,7 @@
           gender: [
             { required: true, message: '请选择性别', trigger: 'change' }
           ],
+          birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
           interest: [
             { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
             { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
