@@ -49,11 +49,11 @@
 <script>
   import TimeSpinner from '../../base/time-spinner.vue'
   import Confirm from '../../base/confirm.vue'
-  import Options from '../../time-mixins'
+  import Options from '../../util/time-mixins'
 
   import Mixin from '../panel-mixin'
 
-  import { initTimeDate, formatDateLabels } from '../../util'
+  import { initTimeDate, formatDateLabels } from '../../util/util'
 
   const prefixCls = 'bin-picker-panel'
   const timePrefixCls = 'bin-time-picker'

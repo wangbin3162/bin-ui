@@ -122,7 +122,7 @@
   import TimePicker from '../Time/time-range.vue'
   import Confirm from '../../base/confirm.vue'
 
-  import { toDate, initTimeDate, formatDateLabels } from '../../util'
+  import { toDate, initTimeDate, formatDateLabels } from '../../util/util'
   import datePanelLabel from './date-panel-label.vue'
 
   import Mixin from '../panel-mixin'

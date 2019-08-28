@@ -189,6 +189,12 @@
           "path": "/datePicker"
         },
         {
+          "desc": "TimePicker 时间选择器",
+          "icon": "ios-timer",
+          "name": "timePicker",
+          "path": "/timePicker"
+        },
+        {
           "desc": "InputNumber 数字输入",
           "icon": "ios-calculator",
           "name": "inputNumber",

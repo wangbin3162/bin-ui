@@ -36,20 +36,15 @@
           mail: ''
         },
         ruleValidate: {
-          name: [
-            { required: true, message: '用户名不能为空', trigger: 'blur' }
-          ],
+          name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
           mail: [
             { required: true, message: '邮箱不能为空', trigger: 'blur' },
             { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
           ],
-          gender: [
-            { required: true, message: '请选择性别', trigger: 'change' }
-          ],
+          gender: [ { required: true, message: '请选择性别', trigger: 'change' }],
           birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
-          city: [
-            { required: true, message: '请选择城市', trigger: 'change' }
-          ],
+          time: [{ required: true, type: 'string', message: '选择时间', trigger: 'change' }],
+          city: [ { required: true, message: '请选择城市', trigger: 'change' }],
           interest: [
             { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
             { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
@@ -117,9 +112,18 @@
                 <b-radio label="female">女</b-radio>
             </b-radio-group>
         </b-form-item>
-        <b-form-item label="出生日期" prop="birthday">
-           <b-date-picker size="small" type="date" v-model="formValidate.birthday" placeholder="选择出生日期"></b-date-picker>
-        </b-form-item>
+        <div flex="box:mean">
+          <div>
+            <b-form-item label="出生日期" prop="birthday">
+               <b-date-picker size="small" type="date" v-model="formValidate.birthday" placeholder="选择出生日期"></b-date-picker>
+            </b-form-item>
+          </div>
+          <div>
+            <b-form-item label="时间" prop="time">
+               <b-time-picker size="small" v-model="formValidate.time" placeholder="选择时间"></b-time-picker>
+            </b-form-item>
+          </div>
+        </div>
         <b-form-item label="城市" prop="city">
           <b-select v-model="formValidate.city" clearable>
             <b-option value="beijing" label="北京"></b-option>
@@ -151,29 +155,28 @@
         formValidate: {
           name: '',
           mail: '',
-          birthday:''
+          birthday:'',
+          time:''
         },
-        ruleValidate: {
-          name: [
-            { required: true, message: '用户名不能为空', trigger: 'blur' }
-          ],
-          mail: [
-            { required: true, message: '邮箱不能为空', trigger: 'blur' },
-            { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
-          ],
-          gender: [
-            { required: true, message: '请选择性别', trigger: 'change' }
-          ],
-          birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
-          interest: [
-            { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
-            { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
-          ],
-          desc: [
-            { required: true, message: '描述必填', trigger: 'blur' },
-            { type: 'string', min: 20, message: '描述不能少于20个字符', trigger: 'blur' }
-          ]
-        }
+         ruleValidate: {
+           name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
+           mail: [
+             { required: true, message: '邮箱不能为空', trigger: 'blur' },
+             { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
+           ],
+           gender: [ { required: true, message: '请选择性别', trigger: 'change' }],
+           birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
+           time: [{ required: true, type: 'string', message: '选择时间', trigger: 'change' }],
+           city: [ { required: true, message: '请选择城市', trigger: 'change' }],
+           interest: [
+             { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
+             { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
+           ],
+           desc: [
+             { required: true, message: '描述必填', trigger: 'blur' },
+             { type: 'string', min: 20, message: '描述不能少于20个字符', trigger: 'blur' }
+           ]
+         }
       }
     },
     methods: {

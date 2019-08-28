@@ -1,5 +1,5 @@
 import { oneOf } from '../../../../utils/util'
-import { initTimeDate } from '../../util'
+import { initTimeDate } from '../../util/util'
 
 export default {
   props: {

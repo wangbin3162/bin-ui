@@ -87,7 +87,7 @@
   import Mixin from '../panel-mixin'
   import DateMixin from './date-panel-mixin'
 
-  import { siblingMonth, formatDateLabels } from '../../util'
+  import { siblingMonth, formatDateLabels } from '../../util/util'
 
   const prefixCls = 'bin-picker-panel'
   const datePrefixCls = 'bin-date-picker'

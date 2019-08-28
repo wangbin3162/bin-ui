@@ -78,7 +78,7 @@
   import TransferDom from '../../directive/transfer-dom'
   import ClickOutside from '../../directive/clickoutside'
   import { oneOf, findComponentsDownward } from '../../utils/util'
-  import { DEFAULT_FORMATS, TYPE_VALUE_RESOLVER_MAP, getDayCountOfMonth } from './util'
+  import { DEFAULT_FORMATS, TYPE_VALUE_RESOLVER_MAP, getDayCountOfMonth } from './util/util'
   import Emitter from '../../mixins/emitter'
 
   const prefixCls = 'bin-date-picker'
@@ -268,7 +268,14 @@
         return this.confirm || this.type === 'datetime' || this.type === 'datetimerange' || this.multiple
       },
       arrowType () {
-        return this.showClose ? 'ios-close-circle' : 'ios-calendar'
+        let type = ''
+        if (this.type === 'time' || this.type === 'timerange') {
+          type = 'ios-timer'
+        } else {
+          type = 'ios-calendar'
+        }
+        if (this.showClose) type = 'ios-close-circle'
+        return type
       }
     },
     methods: {

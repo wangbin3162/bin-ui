@@ -1,4 +1,4 @@
-import { clearHours } from '../util'
+import { clearHours } from '../util/util'
 
 export default {
   name: 'PanelTable',

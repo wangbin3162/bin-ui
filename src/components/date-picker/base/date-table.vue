@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-  import { clearHours, isInRange } from '../util'
+  import { clearHours, isInRange } from '../util/util'
   import jsCalendar from 'js-calendar'
 
   import mixin from './mixin'

@@ -31,7 +31,7 @@
   </div>
 </template>
 <script>
-  import Options from '../time-mixins'
+  import Options from '../util/time-mixins'
   import { deepCopy } from '../../../utils/util'
   import { scrollTop, firstUpperCase } from '../../../utils/dom'
 

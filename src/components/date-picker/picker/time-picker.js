@@ -1,11 +1,12 @@
 import Picker from '../picker.vue'
 import TimePickerPanel from '../panel/Time/time.vue'
 import RangeTimePickerPanel from '../panel/Time/time-range.vue'
-import Options from '../time-mixins'
+import Options from '../util/time-mixins'
 
 import { findComponentsDownward, oneOf } from '../../../utils/util'
 
 export default {
+  name: 'BTimePicker',
   mixins: [Picker, Options],
   components: { TimePickerPanel, RangeTimePickerPanel },
   props: {

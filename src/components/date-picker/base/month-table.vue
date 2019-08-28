@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-  import { clearHours } from '../util'
+  import { clearHours } from '../util/util'
   import { deepCopy } from '../../../utils/util'
   import mixin from './mixin'
 
