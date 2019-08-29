@@ -12,6 +12,7 @@
     <div :class="[prefixCls + '-empty']" v-if="!stateTree.length">{{ emptyText }}</div>
   </div>
 </template>
+
 <script>
   import TreeNode from './node.vue'
   import Emitter from '../../mixins/emitter'
@@ -62,6 +63,10 @@
       },
       render: {
         type: Function
+      },
+      lockSelect: {
+        type: Boolean,
+        default: false
       }
     },
     data () {
@@ -162,6 +167,9 @@
         }
       },
       handleSelect (nodeKey) {
+        if (this.lockSelect) { // 如果锁定选择，则不触发选中事件
+          return
+        }
         const node = this.flatState[nodeKey].node
         if (!this.multiple) { // reset previously selected node
           const currentSelectedKey = this.flatState.findIndex(obj => obj.node.selected)

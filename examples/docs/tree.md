@@ -140,10 +140,43 @@
                         ]
                     }
                 ],
+                data5: [
+                 {
+                     title: '一级 1',
+                     expand: true,
+                     children: [
+                         {
+                             title: '二级 1-1',
+                             expand: true,
+                             children: [
+                                 {
+                                     title: '三级 1-1-1',
+                                 },
+                                 {
+                                     title: '三级 1-1-2'
+                                 }
+                             ]
+                         },
+                         {
+                             title: '二级 1-2',
+                             expand: true,
+                             children: [
+                                {
+                                    title: '三级 1-2-1'
+                                },
+                                {
+                                    title: '三级 1-2-2'
+                                }
+                             ]
+                         }
+                     ]
+                 }
+             ],
                 buttonProps: {
                     type: 'default',
                     size: 'mini',
-                }
+                },
+                lockSelect:false
             }
         },
         methods: {
@@ -189,22 +222,25 @@
                             marginRight: '32px'
                         }
                     }, [
-                        h('b-button', {
+                        h('b-icon', {
                             props: Object.assign({}, this.buttonProps, {
-                                icon: 'ios-add'
+                                name: 'ios-add'
                             }),
                             style: {
-                                marginRight: '8px'
+                                marginRight: '8px',cursor:'pointer'
                             },
-                            on: {
+                            nativeOn: {
                                 click: () => { this.append(data) }
                             }
                         }),
-                        h('b-button', {
+                        h('b-icon', {
                             props: Object.assign({}, this.buttonProps, {
-                                icon: 'ios-remove'
+                                name: 'ios-remove'
                             }),
-                            on: {
+                            style: {
+                               cursor:'pointer'
+                            },
+                            nativeOn: {
                                 click: () => { this.remove(root, node, data) }
                             }
                         })
@@ -224,6 +260,38 @@
                 const parent = root.find(el => el.nodeKey === parentKey).node;
                 const index = parent.children.indexOf(data);
                 parent.children.splice(index, 1);
+            }
+        }
+    }
+</script>
+```
+:::
+
+### 禁用选择
+
+lockSelect 设置可以锁定树的选中事件，这个可以用来控制树菜单在不同情况下的操作
+
+::: demo
+```html  
+<template>
+<div flex>
+  <div style="width: 200px">
+    <b-tree :data="data5" :lock-select="lockSelect"></b-tree> 
+  </div>
+  <div style="width: 80px">
+    <b-switch v-model="lockSelect" size="large">
+        <span slot="open">锁定</span>
+        <span slot="close">解锁</span>
+    </b-switch>
+  </div>
+</div>
+</template>
+
+<script>
+    export default {
+        data () {
+            return {
+                lockSelect:false
             }
         }
     }
@@ -479,22 +547,25 @@
                             marginRight: '32px'
                         }
                     }, [
-                        h('b-button', {
+                        h('b-icon', {
                             props: Object.assign({}, this.buttonProps, {
-                                icon: 'ios-add'
+                                name: 'ios-add',
                             }),
                             style: {
-                                marginRight: '8px'
+                                marginRight: '8px',cursor:'pointer'
                             },
-                            on: {
+                            nativeOn: {
                                 click: () => { this.append(data) }
                             }
                         }),
-                        h('b-button', {
+                        h('b-icon', {
                             props: Object.assign({}, this.buttonProps, {
-                                icon: 'ios-remove'
+                                name: 'ios-remove',
                             }),
-                            on: {
+                            style: {
+                                cursor:'pointer'
+                            },
+                            nativeOn: {
                                 click: () => { this.remove(root, node, data) }
                             }
                         })
@@ -534,6 +605,7 @@
 | children-key   | 定义子节点键,默认children为子节点key | String	  |  —   |   children   |
 | check-strictly   | 复选框的情况下，是否严格的遵循父子不互相关联的做法 | Boolean		  |  —   |   false   |
 | check-directly   | 开启后，在 show-checkbox 模式下，select 的交互也将转为 check | Boolean		  |  —   |   false   |
+| lock-select    | 锁定树选择，再部分业务中常用，比如开启弹窗后禁用树的选中操作   | Boolean  |  —   |  false  |
 
 
 ### Events

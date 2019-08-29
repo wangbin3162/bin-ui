@@ -452,13 +452,12 @@ type 为 `datetime` 或 `datetimerange` 可以选择时间。
 ::: demo 设置 `format` 并且忽略秒，可以只设置小时和分钟维度。
 ```html  
 <template>
-<b-date-picker type="datetime" placeholder="选择日期时间" style="width: 200px"></b-date-picker>
-<br>
-<b-date-picker type="datetime" format="yyyy-MM-dd HH:mm" placeholder="选择日期时间(忽略秒)" style="width: 200px"></b-date-picker>
-<br>
-<b-date-picker type="datetimerange" placeholder="选择日期时间" style="width: 300px"></b-date-picker>
-<br>
-<b-date-picker type="datetimerange" format="yyyy-MM-dd HH:mm" placeholder="选择日期时间(忽略秒)" style="width: 300px"></b-date-picker>
+<div flex="box:mean">
+    <b-date-picker type="datetime" placeholder="选择日期时间" style="padding-right: 20px;"></b-date-picker>
+    <b-date-picker type="datetime" format="yyyy-MM-dd HH:mm" placeholder="选择日期时间(忽略秒)" style="padding-right: 20px;"></b-date-picker>
+    <b-date-picker type="datetimerange" placeholder="选择日期时间" style="padding-right: 20px;"></b-date-picker>
+    <b-date-picker type="datetimerange" format="yyyy-MM-dd HH:mm" placeholder="选择日期时间(忽略秒)"></b-date-picker>
+</div>
 </template>
 ```
 :::
@@ -467,17 +466,49 @@ type 为 `datetime` 或 `datetimerange` 可以选择时间。
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| Attributes     | 说明   | string  |  —   |   —   |
+| type     | 显示类型   | string  |  date、daterange、datetime、datetimerange、year、month  |  date  |
+| value    | 日期   | Date  |  JavaScript 的 Date，也可以是标准的日期格式,注意：value 使用 v-model 时，值是 Date 类型，可以配合 @on-change 使用  |  —  |
+| format   | 日期的格式化   | Date  |  —  | date/daterange：yyyy-MM-dd, datetime/datetimerange：yyyy-MM-dd HH:mm:ss,year：yyyy,month：yyyy-MM |
+| placement| 日期选择器出现的位置   | string  |  top,top-start,top-end,bottom,bottom-start,bottom-end,left,left-start,left-end,right,right-start,right-end  |  bottom-start  |
+| placeholder | 提示文本   | string  |  —  |  — |
+| options | 选择器额外配置，比如不可选日期与快捷选项，具体项详见下表   | Object  |  —  |  — |
+| split-panels | 开启后，左右面板不联动，仅在 daterange 和 datetimerange 下可用。   | Boolean |  —  |false |
+| multiple | 开启后，可以选择多个日期，仅在 date 下可用。   | Boolean |  —  |false |
+| show-week-numbers | 显示星期数。| Boolean |  —  |false |
+| start-date | 默认显示的起始日期。| Date |  —  | —  |
+| confirm | 显示底部控制栏，开启后，选择完日期，需确认后关闭。| Boolean |  —  | false  |
+| open | 手动控制日期选择器的显示状态，true 为显示，false 为收起。使用该属性后，选择器不会主动关闭。建议配合 slot 及 confirm 和相关事件一起使用。| Boolean |  —  | null  |
+| size | 尺寸| string | large、small、default | default  |
+| disabled | 是否禁用| Boolean |  —  |false |
+| clearable | 是否显示清除按钮| Boolean |  —  |true |
+| readonly | 完全只读，开启后不会弹出选择器,只在没有设置 open 属性下生效| Boolean |  —  |false |
+| editable | 文本框是否可以输入，只在没有使用 slot 时有效 | Boolean |  —  |true |
+| transfer | 是否将弹层放置于 body 内 | Boolean |  —  |false |
+| element-id | 给表单元素设置 id，详见 Form 用法。 | String |  —  |  —  |
+| time-picker-options | 可以在 type 为 datetime 和 datetimerange 下，配置 TimePicker 的属性，比如时间间隔 steps：:time-picker-options="{steps: [1, 10, 10]}"。 | Object	 |  —  |{}  |
+| separator | 两个日期间的分隔符 | String |  —  |  —  |
 
+### Options
+
+选择器额外配置
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| shortcuts     | 设置快捷选项，每项内容：   | Array  |  text/String：显示的文案,value /Function：返回指定的日期，如需自己控制逻辑，可不设置，并使用 onClick 回调 onClick /Function：点击时的回调，参数为当前日期选择器的 Vue 实例，当需要自定义复杂操作时，可以使用   |  —  |
+| disabledDate     | 设置不可选择的日期，参数为当前的日期，需要返回 Boolean 是否禁用这天   | Function  | —  |  —  |
 
 ### Events
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-close     | 关闭时触发   | event  |
+|  on-change     | 日期发生变化时触发   | 返回两个值，已经格式化后的日期，比如 2016-01-01，和当前的日期类型，比如 date  |
+|  on-open-change| 弹出日历和关闭日历时触发  | true / false  |
+|  on-ok     | 在 confirm 模式下有效，点击确定按钮时触发   | —  |
+|  on-clear    | 在 confirm 模式或 clearable = true 时有效，在清空日期时触发  | —  |
+|  on-clickoutside     | 点击外部关闭下拉菜单时触发   |event  |
 
 ### Slot
 
 | 名称      | 说明    |
 |---------- |-------- |
-| default     | 警告提示内容   |
+| default     | 自定义选择器的显示内容，建议与 open 等参数一起使用，详见示例  |
