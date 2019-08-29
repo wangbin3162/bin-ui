@@ -1,13 +1,20 @@
+<style scoped>
+  li{
+    line-height: 2.2em;
+  }
+</style>
 ## 介绍
 
 bin-ui 是一款基于 Vue.js 2.0 的前端 UI组件库，是个人在工作中为了更好的学习和使用vue相关技术栈而实现的。
 
 本项目的源码和文档主要参考借鉴了 `element-ui`和
-`iView`。部分组件根据日常需要进行了简化实现，并结合实际需求进行了二次开发。
+`iView`。分离了常用业务组件并封装，部分组件参考这两个开源库进行了简化实现。所有样式为方便开发已使用stylus进行了重写，现已实现扩展了约42个组件可供日常开发。
 
-添加了开源协议，编写本UI库的目的也是为了开发、学习、交流，熟悉vue相关技术栈及相关UI控件的实现和开发。
+添加了开源协议，编写本UI库的目的也是为了学习提升，熟悉vue相关技术栈及相关UI控件的实现和开发。
 
-本UI组件库包含对应的生态圈，具体可进入导航栏进行跳转传送,主要有以下几个衍生库
+组件库的更新请参考[更新日志](/#/logs)
+
+本UI组件库包含对应的生态圈，具体可进入导航栏进行跳转传送，主要有以下几个衍生库
 
 - [bin-animation](https://github.com/wangbin3162/bin-animation/) css3动画库
 - [bin-keyframe-animation](https://github.com/wangbin3162/bin-keyframe-animation/) js关键帧动画库

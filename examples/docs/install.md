@@ -10,12 +10,12 @@
 <!-- import Vue.js -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <!-- import stylesheet -->
-<link rel="stylesheet" href="https://unpkg.com/bin-ui@1.3.2/lib/styles/index.css">
+<link rel="stylesheet" href="https://unpkg.com/bin-ui@2.1.0/lib/styles/index.css">
 <!-- import bin-ui -->
-<script src="https://unpkg.com/bin-ui@1.3.2/lib/bin-ui.umd.min.js"></script>
+<script src="https://unpkg.com/bin-ui@2.1.0/lib/bin-ui.umd.min.js"></script>
 ```
     
-`@1.3.2` 表示版本号，我们建议锁定版本号来保证代码的稳定性
+`@2.1.0` 表示版本号，我们建议锁定版本号来保证代码的稳定性
 
 ### npm 安装
 
