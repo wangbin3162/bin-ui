@@ -301,6 +301,12 @@
           "icon": "ios-watch",
           "name": "tooltip",
           "path": "/tooltip"
+        },
+        {
+          "desc": "Timeline 时间线",
+          "icon": "ios-pulse",
+          "name": "timeline",
+          "path": "/timeline"
         }
       ]
     },
