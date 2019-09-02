@@ -183,6 +183,12 @@
           "path": "/select"
         },
         {
+          "desc": "Cascader 级联选择",
+          "icon": "ios-git-compare",
+          "name": "cascader",
+          "path": "/cascader"
+        },
+        {
           "desc": "DatePicker 日期选择器",
           "icon": "ios-calendar",
           "name": "datePicker",
