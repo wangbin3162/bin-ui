@@ -7,6 +7,14 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.1.1</p>
+        <p class="time">2019-9-3</p>
+        <p class="content">新级联选择框组件</p>
+        <p class="content">更新级联选择表单验证示例</p>
+        <p class="content">优化message显示圆角问题</p>
+      </b-timeline-item>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
         <p class="version">2.1.0 Full 42 Components</p>

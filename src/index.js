@@ -39,6 +39,7 @@ import DropdownMenu from './components/dropdown-menu'
 import Select from './components/select'
 import Option from './components/select-option'
 import OptionGroup from './components/select-option-group'
+import Cascade from './components/cascade'
 import Table from './components/table'
 import Page from './components/page'
 import Tree from './components/tree'
@@ -63,7 +64,7 @@ const components = [
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
   Form, FormItem,
   Container, Dropdown, DropdownItem, DropdownMenu,
-  Select, Option, OptionGroup, Table, Page, Tree,
+  Select, Option, OptionGroup, Table, Page, Tree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker,
   Timeline, TimelineItem
 ]
@@ -130,6 +131,7 @@ export default {
   Select,
   Option,
   OptionGroup,
+  Cascade,
   Table,
   Page,
   Tree,

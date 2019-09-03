@@ -1,6 +1,6 @@
 {
   "name": "bin-ui",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
   "main": "lib/bin-ui.common.js",
   "keywords": [
@@ -58,7 +58,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-markdown-loader": "^2.4.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^4.39.3"
   },
   "lint-staged": {
     "*.{js,vue}": [

@@ -170,11 +170,11 @@
           <b-icon name="ios-arrow-down"></b-icon>
        </a>
        <b-dropdown-menu slot="list">
-          <b-dropdown-item><b-icon name="ios-bowtie"></b-icon>驴肉火烧</b-dropdown-item>
-          <b-dropdown-item><b-icon name="ios-bowtie"></b-icon>牛肉板面</b-dropdown-item>
+          <b-dropdown-item>驴肉火烧</b-dropdown-item>
+          <b-dropdown-item>牛肉板面</b-dropdown-item>
             <b-dropdown placement="right-start">
                <b-dropdown-item>
-                  <b-icon name="ios-bowtie"></b-icon>特色菜系
+                  特色菜系
                   <b-icon name="ios-arrow-forward"></b-icon>
                </b-dropdown-item>
                <b-dropdown-menu slot="list">
@@ -183,7 +183,7 @@
                   <b-dropdown-item>把子肉</b-dropdown-item>
                </b-dropdown-menu>
             </b-dropdown>  
-          <b-dropdown-item><b-icon name="ios-bowtie"></b-icon>过桥米线</b-dropdown-item>
+          <b-dropdown-item>过桥米线</b-dropdown-item>
        </b-dropdown-menu>
     </b-dropdown>  
 </div>

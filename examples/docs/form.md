@@ -26,10 +26,53 @@
           name: '',
           mail: ''
         },
+        cities: [
+           {
+             value: 'nanjing',
+             label: '南京',
+             children: [
+                 {
+                     value: 'xuanwu',
+                     label: '玄武区'
+                 },
+                 {
+                     value: 'gulou',
+                     label: '鼓楼区'
+                 },
+                 {
+                     value: 'jianye',
+                     label: '建邺区'
+                 }
+             ]
+           },
+           {
+             value: 'xuzhou',
+             label: '徐州',
+             children: [
+                 {
+                     value: 'tongshan',
+                     label: '铜山区'
+                 },
+                 {
+                     value: 'gulou',
+                     label: '鼓楼区'
+                 },
+                 {
+                     value: 'yunlong',
+                     label: '云龙区'
+                 },
+                 {
+                     value: 'jiawang',
+                     label: '贾汪区'
+                 }
+             ]
+           }
+         ],
         formValidate: {
           name: '',
           mail: '',
-          birthday:''
+          birthday:'',
+          cities:[]
         },
         formValidate2: {
           name: '',
@@ -45,6 +88,7 @@
           birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
           time: [{ required: true, type: 'string', message: '选择时间', trigger: 'change' }],
           city: [ { required: true, message: '请选择城市', trigger: 'change' }],
+          cities: [ { required: true, type: 'array', message: '请选择所在地区', trigger: 'change' }],
           interest: [
             { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
             { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
@@ -124,13 +168,18 @@
             </b-form-item>
           </div>
         </div>
-        <b-form-item label="城市" prop="city">
-          <b-select v-model="formValidate.city" clearable>
-            <b-option value="beijing" label="北京"></b-option>
-            <b-option value="shanghai" label="上海"></b-option>
-            <b-option value="xuzhou" label="徐州"></b-option> 
-          </b-select>
-        </b-form-item>
+        <div flex="box:mean">
+            <b-form-item label="城市" prop="city">
+              <b-select v-model="formValidate.city" clearable>
+                <b-option value="beijing" label="北京"></b-option>
+                <b-option value="shanghai" label="上海"></b-option>
+                <b-option value="xuzhou" label="徐州"></b-option> 
+              </b-select>
+            </b-form-item>
+            <b-form-item label="地区" prop="cities">
+              <b-cascade :data="cities" v-model="formValidate.cities" size="small"></b-cascade>
+            </b-form-item>
+        </div>
         <b-form-item label="爱好" prop="interest">
             <b-checkbox-group v-model="formValidate.interest">
                 <b-checkbox label="Eat"></b-checkbox>
@@ -168,6 +217,7 @@
            birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
            time: [{ required: true, type: 'string', message: '选择时间', trigger: 'change' }],
            city: [ { required: true, message: '请选择城市', trigger: 'change' }],
+           cities: [ { required: true, type: 'array', message: '请选择所在地区', trigger: 'change' }],
            interest: [
              { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
              { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
