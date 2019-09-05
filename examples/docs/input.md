@@ -89,9 +89,9 @@
 <template>
 <div>
   <div style="margin-bottom: 10px;">输入的内容：{{value}}</div>
-  <b-input v-model="value" size="large"  prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
-  <b-input v-model="value" size="small"  prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
-  <b-input v-model="value" size="mini" prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
+  <b-input v-model="value" size="large"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
+  <b-input v-model="value" size="small"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
+  <b-input v-model="value" size="mini" clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
 </div>
 </template>
 ```
