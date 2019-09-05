@@ -1,0 +1,87 @@
+@import "../common/var.styl"
+.bin-anchor {
+  &-wrapper {
+    overflow: auto;
+    padding-left: 4px;
+    margin-left: -4px;
+  }
+
+  & {
+    position: relative;
+    padding-left: 2px;
+
+    &-ink {
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      &:before {
+        content: ' ';
+        position: relative;
+        width: 2px;
+        height: 100%;
+        display: block;
+        background-color: #e8eaec;
+        margin: 0 auto;
+      }
+      &-ball {
+        display: inline-block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 2px solid $color-primary;
+        background-color: #fff;
+        left: 50%;
+        transition: top .3s ease;
+        transform: translate(-50%, 2px);
+      }
+      .iconfont {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        font-size: 12px;
+        color: $color-primary;
+        transition: top .3s ease;
+        transform: translate(-5px, 0);
+      }
+    }
+  }
+
+  &-link {
+    padding: 8px 0 8px 16px;
+    line-height: 1;
+
+    &-title {
+      display: block;
+      position: relative;
+      transition: all .3s;
+      color: #515a6e;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 8px;
+      &:only-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-active > &-title {
+      color: $color-primary;
+    }
+    a {
+      background: 0 0;
+      text-decoration: none;
+      outline: 0;
+      cursor: pointer;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &-link &-link {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}

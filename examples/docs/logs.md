@@ -9,9 +9,17 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.1.2</p>
+        <p class="time">2019-9-5</p>
+        <p class="content">新增图钉固定组件</p>
+        <p class="content">新增锚点导航组件</p>
+        <p class="content">优化输入框清除图标的垂直居中显示</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.1.1</p>
         <p class="time">2019-9-3</p>
-        <p class="content">新级联选择框组件</p>
+        <p class="content">新增级联选择框组件</p>
         <p class="content">更新级联选择表单验证示例</p>
         <p class="content">优化message显示圆角问题</p>
       </b-timeline-item>

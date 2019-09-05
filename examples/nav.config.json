@@ -135,6 +135,12 @@
           "path": "/badge"
         },
         {
+          "desc": "Anchor 锚点",
+          "icon": "ios-attach",
+          "name": "anchor",
+          "path": "/anchor"
+        },
+        {
           "desc": "Loading 加载",
           "icon": "ios-hourglass",
           "name": "loading",
@@ -307,6 +313,12 @@
           "icon": "ios-watch",
           "name": "tooltip",
           "path": "/tooltip"
+        },
+        {
+          "desc": "Affix 图钉",
+          "icon": "ios-disc",
+          "name": "affix",
+          "path": "/affix"
         },
         {
           "desc": "Timeline 时间线",
