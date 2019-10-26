@@ -5,7 +5,7 @@
 设置属性 type 为 time 或 timerange 分别显示选择单个时间和选择范围时间类型。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -24,7 +24,7 @@
 设置属性 format 可以改变时间的显示格式
 
 ::: demo 注意， [format]() 只是改变显示的格式，并非改变 value 值。
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -43,7 +43,7 @@
 组件浮层中的列会随着 format 变化，当略去 format 中的秒时，浮层中对应的列也会消失。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -62,7 +62,7 @@
 通过属性 `steps` 可以设置时间间隔。数组的三项分别对应小时、分钟、秒。
 
 ::: demo
-```html  
+```html
 <template>
   <div style="padding:0 10px; width: 168px;">
     <b-time-picker type="time" :steps="[1, 15, 15]" placeholder="Select time"></b-time-picker>
@@ -78,7 +78,7 @@
 使用 `hide-disabled-options` 可以直接把不可选择的项隐藏。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -101,7 +101,7 @@
 类似日期选择，可以带有确认操作confirm
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -120,7 +120,7 @@
 类似日期选择，可以定制化组件选择
 
 ::: demo
-```html  
+```html
 <template>
   <b-time-picker
         :open="open"
@@ -167,7 +167,7 @@
 设置属性 `size` 可以调整输入选择框的尺寸，参考input尺寸
 
 ::: demo 
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">

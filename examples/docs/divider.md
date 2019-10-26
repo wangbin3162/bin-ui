@@ -11,7 +11,7 @@
 默认为水平分割线，可在中间加入文字。 可以是虚线
 
 :::demo 
-```html 
+```html
 <template>
 <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>
 <b-divider></b-divider>
@@ -28,8 +28,8 @@
 
 使用 type="vertical" 设置为行内的垂直分割线。
 
-:::demo 使用 type="vertical" 设置为行内的垂直分割线。
-```html 
+:::demo 
+```html
 <template>
     Text
     <b-divider type="vertical"></b-divider>
@@ -42,10 +42,10 @@
 
 ### 修改标题的位置
 
-align属性可以设置标题位置
+align属性可以设置标题位置 使用 align="left" 设置为行内的垂直分割线。
 
-:::demo 使用 align="left" 设置为行内的垂直分割线。
-```html 
+:::demo
+```html
 <template>
     <b-divider align="left">靠左标题</b-divider>
     <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>

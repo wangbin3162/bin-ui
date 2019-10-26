@@ -15,27 +15,6 @@
     <b-tag type="warning">标签四</b-tag>
     <b-tag type="danger">标签五</b-tag>
 </template>
-<script>
-    export default {
-        data () {
-            return {
-                show: true,
-                dynamicTags: ['标签一', '标签二', '标签三'],
-            }
-        },
-        methods: {
-            handleClose () {
-                this.show = false
-            },
-            handleCloseTag(tag) {
-              this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)
-            },
-            addOne() {
-                this.dynamicTags.push('new tag');
-            }
-        }
-    }
-</script>
 ```
 :::
 

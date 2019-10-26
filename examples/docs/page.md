@@ -3,7 +3,7 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
    <b-page :total="100" :current.sync="current"></b-page>
 </template>
@@ -22,7 +22,7 @@ export default {
 ### 每页数量
 
 ::: demo
-```html  
+```html
 <template>
    <b-page :total="100" show-sizer></b-page>
 </template>
@@ -32,7 +32,7 @@ export default {
 ### 电梯
 
 ::: demo
-```html  
+```html
 <template>
    <b-page :total="100" show-elevator></b-page>
 </template>
@@ -42,7 +42,7 @@ export default {
 ### 总数
 
 ::: demo
-```html  
+```html
 <template>
    <b-page :total="100" show-total></b-page>
 </template>
@@ -52,7 +52,7 @@ export default {
 ### mini型
 
 ::: demo
-```html  
+```html
 <template>
    <b-page :total="100" size="small" show-elevator show-sizer show-total></b-page>
 </template>
@@ -62,7 +62,7 @@ export default {
 ### 上一页 下一页文字
 
 ::: demo
-```html  
+```html
 <template>
    <b-page :total="40" prev-text="上一页" next-text="下一页"></b-page>
 </template>
@@ -72,14 +72,12 @@ export default {
 ### 简洁模式
 
 ::: demo
-```html  
+```html
 <template>
    <b-page :current="2" :total="50" simple></b-page>
 </template>
 ```
 :::
-
-
 
 ### Attributes
 

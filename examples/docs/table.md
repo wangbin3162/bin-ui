@@ -2,11 +2,10 @@
 
 暂时只是简单表格，后期继续丰富
 
-
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
 <b-table :columns="columns" :data="data"></b-table>
 </template>
@@ -33,107 +32,6 @@
             key: 'address'
           }
         ],
-        columns1: [
-          {
-            title: '姓名',
-            key: 'name'
-          },
-          {
-            title: '年龄',
-            key: 'age',
-            sortable: true
-          },
-          {
-            title: '出生日期',
-            key: 'birthday'
-          },
-          {
-            title: '地址',
-            key: 'address'
-          }
-        ],
-        columns2: [
-          {
-            title: '姓名',
-            slot: 'name'
-          },
-          {
-            title: '年龄',
-            slot: 'age'
-          },
-          {
-            title: '出生日期',
-            slot: 'birthday'
-          },
-          {
-            title: '地址',
-            slot: 'address'
-          },
-          {
-            title: '操作',
-            slot: 'action'
-          }
-        ],
-        columns3: [
-          {
-            title: '姓名',
-            key: 'name',
-            width: 150
-          },
-          {
-            title: '年龄',
-            key: 'age',
-            width: 150
-          },
-          {
-            title: '出生日期',
-            key: 'birthday',
-            width: 150
-          },
-          {
-            title: '地址',
-            key: 'address',
-            width: 350
-          },
-          {
-            title: '操作',
-            fixed: 'right',
-            width: 100,
-            render: (h, params) => {
-                return h('b-button', {
-                   props: {
-                       type: 'primary',
-                       size: 'mini',
-                       plain: true
-                   }
-               }, '编辑');
-            }
-          }
-        ],
-        columns4: [
-            {
-                type: 'selection',
-                width: 60,
-                align: 'center'
-            },
-          {
-            title: '姓名',
-            key: 'name'
-          },
-          {
-            title: '年龄',
-            key: 'age'
-          },
-          {
-            title: '出生日期',
-            key: 'birthday'
-          },
-          {
-            title: '地址',
-            key: 'address'
-          }
-        ],
-        loading: false,
         data: [
           {
             name: '王小明',
@@ -165,35 +63,7 @@
             birthday: '23232000000',
             address: '南京市龙眠大道'
           }
-        ],
-        editName: '', // 第一列输入框
-        editAge: '', // 第二列输入框
-        editBirthday: '', // 第三列输入框
-        editAddress: '', // 第四列输入框
-        editIndex: -1 // 当前聚焦的输入框的行数
-      }
-    },
-    methods: {
-      handleEdit (row, index) {
-        this.editName = row.name
-        this.editAge = row.age
-        this.editAddress = row.address
-        this.editBirthday = row.birthday
-        this.editIndex = index
-      },
-      handleSave (index) {
-        this.data[index].name = this.editName
-        this.data[index].age = this.editAge
-        this.data[index].birthday = this.editBirthday
-        this.data[index].address = this.editAddress
-        this.editIndex = -1
-      },
-      getBirthday (birthday) {
-        const date = new Date(parseInt(birthday))
-        const year = date.getFullYear()
-        const month = date.getMonth() + 1
-        const day = date.getDate()
-        return `${year}-${month}-${day}`
+        ]
       }
     }
   }
@@ -204,7 +74,7 @@
 ### 斑马纹 和边框
 
 ::: demo
-```html  
+```html
 <template>
 <b-table :columns="columns" :data="data" stripe border></b-table>
 </template>
@@ -274,7 +144,7 @@
 height 和maxHeight可以设置固定表头
 
 ::: demo 
-```html  
+```html
 <template>
 <b-table :columns="columns" :data="data" height="200"></b-table>
 </template>
@@ -344,7 +214,7 @@ height 和maxHeight可以设置固定表头
 可以同时固定表头和列
 
 ::: demo 
-```html  
+```html
 <template>
 <div style="width: 600px;">
   <b-table :columns="columns3" :data="data" height="200"></b-table>
@@ -432,7 +302,7 @@ height 和maxHeight可以设置固定表头
 ### 单选表格
 
 ::: demo 
-```html  
+```html
 <template>
 <div>
   <b-table :columns="columns" ref="currentRowTable" :data="data" highlight-row></b-table>
@@ -509,8 +379,10 @@ height 和maxHeight可以设置固定表头
 
 给 data 项设置特殊 key _disabled: true 可以禁止选择当前项。
 
-::: demo  @on-select，选中某一项触发，返回值为 selection 和 row，分别为已选项和刚选择的项。@on-select-all，点击全选时触发，返回值为 selection，已选项。 @on-selection-change，只要选中项发生变化时就会触发，返回值为 selection，已选项。
-```html  
+@on-select，选中某一项触发，返回值为 selection 和 row，分别为已选项和刚选择的项。@on-select-all，点击全选时触发，返回值为 selection，已选项。 @on-selection-change，只要选中项发生变化时就会触发，返回值为 selection，已选项。
+
+::: demo  
+```html
 <template>
 <div>
   <b-table :columns="columns4" ref="selection" :data="data" highlight-row></b-table>
@@ -588,7 +460,7 @@ height 和maxHeight可以设置固定表头
 ### 可操作表格
 
 ::: demo
-```html  
+```html
 <template>
 <b-table :columns="columns2" :data="data">
     <template v-slot:name="scope">
@@ -622,24 +494,6 @@ height 和maxHeight可以设置固定表头
   export default {
     data () {
       return {
-        columns: [
-          {
-            title: '姓名',
-            key: 'name'
-          },
-          {
-            title: '年龄',
-            key: 'age'
-          },
-          {
-            title: '出生日期',
-            key: 'birthday'
-          },
-          {
-            title: '地址',
-            key: 'address'
-          }
-        ],
         columns2: [
           {
             title: '姓名',
@@ -660,42 +514,6 @@ height 和maxHeight可以设置固定表头
           {
             title: '操作',
             slot: 'action'
-          }
-        ],
-        columns3: [
-          {
-            title: '姓名',
-            key: 'name',
-            width: 150
-          },
-          {
-            title: '年龄',
-            key: 'age',
-            width: 150
-          },
-          {
-            title: '出生日期',
-            key: 'birthday',
-            width: 150
-          },
-          {
-            title: '地址',
-            key: 'address',
-            width: 350
-          },
-          {
-            title: '操作',
-            fixed: 'right',
-            width: 100,
-            render: (h, params) => {
-                return h('b-button', {
-                   props: {
-                       type: 'primary',
-                       size: 'mini',
-                       plain: true
-                   }
-               }, '编辑');
-            }
           }
         ],
         data: [
@@ -761,7 +579,7 @@ height 和maxHeight可以设置固定表头
 ### 排序表格
 
 ::: demo 
-```html  
+```html
 <template>
 <div>
   <b-table :columns="columns1"  :data="data"></b-table>
@@ -833,7 +651,7 @@ height 和maxHeight可以设置固定表头
 ### loading状态
 
 ::: demo 
-```html  
+```html
 <template>
 <div>
   <b-table :columns="columns"  :data="data" :loading="loading" ></b-table>
@@ -908,7 +726,7 @@ height 和maxHeight可以设置固定表头
 通过设置属性 `size` 为 `large` 或 `small` 可以调整表格尺寸为大或小，默认不填或填写 default 为中。
 
 ::: demo 
-```html  
+```html
 <template>
 <div>
   <b-table :columns="columns"  :data="data" size="small" ></b-table>
@@ -980,7 +798,7 @@ height 和maxHeight可以设置固定表头
 通过调用 exportCsv() 方法，可以将数据导出为 .csv 的表格文件，详见 API。
 
 ::: demo 
-```html  
+```html
 <template>
 <div>
   <b-table :columns="columns" :data="data" size="small" ref="table"></b-table>
@@ -1051,7 +869,6 @@ height 和maxHeight可以设置固定表头
 </script>
 ```
 :::
-
 
 ### Table props
 

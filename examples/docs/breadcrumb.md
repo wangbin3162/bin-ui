@@ -7,7 +7,7 @@
 面包屑的用法，separator设置分隔符 :to表示当前为router a标签引用
 
 ::: demo
-```html  
+```html
 <template>
  <b-breadcrumb separator="/">
    <b-breadcrumb-item :to="{ path: '/' }">首页</b-breadcrumb-item>
@@ -23,7 +23,7 @@
 可以设置分隔符
 
 ::: demo
-```html  
+```html
 <template>
  <b-breadcrumb separator-icon="ios-arrow-forward">
    <b-breadcrumb-item :to="{ path: '/' }">首页</b-breadcrumb-item>
@@ -39,7 +39,6 @@
 </template>
 ```
 :::
-
 
 ### Breadcrumb Attributes
 

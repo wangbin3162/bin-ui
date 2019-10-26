@@ -3,7 +3,7 @@
     <div class="header-container" flex="main:justify">
       <div class="logo"></div>
       <div class="link">
-        <router-link :to="{name: 'giud'}" class="active">指南</router-link>
+        <router-link :to="{name: 'guide'}" class="active">指南</router-link>
         <router-link :to="{name: 'button'}" class="active">组件</router-link>
         <b-dropdown>
           <a href="#" class="active" @click.prevent>生态

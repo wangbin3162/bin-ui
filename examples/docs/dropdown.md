@@ -3,7 +3,7 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
 <div>
     <b-dropdown>
@@ -40,7 +40,7 @@
 ### 不同触发方式
    
 ::: demo
-```html  
+```html
 <template>
 <div>
    <b-dropdown>
@@ -114,11 +114,10 @@
 ```
 :::
 
-
 ### 对齐方向
 
 ::: demo
-```html  
+```html
 <template>
 <div>
     <b-dropdown placement="bottom-start">
@@ -161,7 +160,7 @@
 可嵌套实现级联效果，注意嵌套时候的展开方向
 
 ::: demo
-```html  
+```html
 <template>
 <div>
     <b-dropdown>

@@ -2,11 +2,20 @@
 
 更新日志已使用时间轴实现，根据不同的更新类型来设置颜色和图标，重大更新或重要版本标志为`success`
 
-::: demo 有新增组件使用`primary`样式`ios-leaf`图标，修复优化使用`warning`样式`ios-construct`图标
-```html
+:::tip
+有新增组件使用`primary`样式`ios-leaf`图标，修复优化使用`warning`样式`ios-construct`图标
+:::
+
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.3.0</p>
+        <p class="time">2019-10-26</p>
+        <p class="content">重构项目构建工具，重新打包整理文档</p>
+        <p class="content">修复部分样式</p>
+      </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.1.2</p>
@@ -160,5 +169,3 @@
     </b-timeline>
 </div>
 </template>
-```
-:::

@@ -5,7 +5,7 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
 <div>
   <div style="margin-bottom: 10px;">输入的内容：{{value}}</div>
@@ -16,8 +16,7 @@
  export default {
    data(){
      return{
-       value:'',
-       value1:'我可以被清空'
+       value:''
      }
    }
  }
@@ -30,13 +29,23 @@
 设置 `clearable` 可以开启清空按钮,icon设置icon图标名称
 
 ::: demo 
-```html  
+```html
 <template>
 <div>
   <b-input v-model="value" icon="logo-chrome" class="input-item"></b-input>  
   <b-input v-model="value1" clearable  class="input-item"></b-input>  
 </div>
 </template>
+<script>
+ export default {
+   data(){
+     return{
+       value:'',
+       value1:'我可以被清空',
+     }
+   }
+ }
+</script>
 ```
 :::
 
@@ -45,7 +54,7 @@
 提供两种方式来进行插入图标
 
 ::: demo 
-```html  
+```html
 <template>
  <div>
         Props：
@@ -70,7 +79,7 @@
 可以设置查询和禁用状态
 
 ::: demo 
-```html  
+```html
 <template>
 <div>
   <b-input search placeholder="Enter something..." class="input-item"></b-input>
@@ -82,31 +91,29 @@
 
 ### 不同尺寸
 
-提供额外3种尺寸进行配置
+提供额外3种尺寸进行配置 `large` `small` 或 `mini`三种尺寸
 
-::: demo `large` `small` 或 `mini`三种尺寸
-```html  
+::: demo
+```html
 <template>
 <div>
-  <div style="margin-bottom: 10px;">输入的内容：{{value}}</div>
-  <b-input v-model="value" size="large"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
-  <b-input v-model="value" size="small"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
-  <b-input v-model="value" size="mini" clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
+  <b-input size="large"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
+  <b-input size="small"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
+  <b-input size="mini" clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
 </div>
 </template>
 ```
 :::
-
 
 ### 设置textarea
 
 可以设置 `type="textarea"`开启文本域模式
 
 ::: demo 
-```html  
+```html
 <template>
 <div class="input-item">
- <b-input v-model="value" type="textarea" :rows="4" placeholder="Enter something..." ></b-input>
+ <b-input type="textarea" :rows="4" placeholder="Enter something..." ></b-input>
 </div>
 </template>
 ```

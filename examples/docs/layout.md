@@ -14,9 +14,8 @@
 
 ### flex.css使用
 
-
 ::: demo
-```html  
+```html
 <template>
    <!--
      将dist目录下的css文件引入到你的页面中，根据你的需要引入

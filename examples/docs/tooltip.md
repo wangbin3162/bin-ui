@@ -5,7 +5,7 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
   <b-tooltip  content="这是tooltip悬停文字">这是一段文字，鼠标经过其上时会显示tooltip</b-tooltip>
 </template>
@@ -15,25 +15,7 @@
 ### 多种悬停位置
 
 ::: demo
-```html  
-<style scoped>
-    .top,.bottom{
-        text-align: center;
-    }
-    .center{
-        width: 300px;
-        margin: 10px auto;
-        overflow: hidden;
-    }
-    .center-left{
-        float: left;
-        text-align: center;
-    }
-    .center-right{
-        float: right;
-        text-align: center;
-    }
-</style>
+```html
 <template>
     <div class="top">
         <b-tooltip content="Top Left text" placement="top-start">
@@ -88,7 +70,7 @@
 ### 不同主题
 
 ::: demo
-```html  
+```html
 <template>
   <b-tooltip  content="light(default)" >
      <b-button size="small">light(default)</b-button>&nbsp;&nbsp;
@@ -103,7 +85,7 @@
 ### 多行
 
 ::: demo
-```html  
+```html
 <template>
   <b-tooltip placement="top">
   <b-button size="small">多行</b-button>
@@ -119,7 +101,7 @@
 ### 长文本
 
 ::: demo
-```html  
+```html
 <template>
   <b-tooltip placement="top" max-width="200" content="我是一段长文本，我是一段长文本，我是一段长文本，我是一段长文本，我是一段长文本，我是一段长文本">
     <b-button size="small">长文本</b-button>
@@ -131,7 +113,7 @@
 ### 可以延时和关闭提示
 
 ::: demo
-```html  
+```html
 <template>
   <b-tooltip  content="延时一秒显示悬停文字" :delay="1000">
    <b-button size="small">延时一秒</b-button>&nbsp;&nbsp;
@@ -151,9 +133,6 @@
 </script>
 ```
 :::
-
-
-
 
 ### Attributes
 

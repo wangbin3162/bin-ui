@@ -5,15 +5,15 @@
 ### 行内表单
 
 ::: demo
-```html  
+```html
 <template>
   <div style="width:600px;">
       <b-form :model="formInline" ref="form" :rules="ruleValidate" inline>
         <b-form-item prop="name">
-          <b-input v-model="formValidate.name" placeholder="用户名"></b-input>
+          <b-input v-model="formInline.name" placeholder="用户名"></b-input>
         </b-form-item>
         <b-form-item prop="mail">
-          <b-input v-model="formValidate.mail" placeholder="邮箱"></b-input>
+          <b-input v-model="formInline.mail" placeholder="邮箱"></b-input>
         </b-form-item>
       </b-form>
    </div>
@@ -26,89 +26,13 @@
           name: '',
           mail: ''
         },
-        cities: [
-           {
-             value: 'nanjing',
-             label: '南京',
-             children: [
-                 {
-                     value: 'xuanwu',
-                     label: '玄武区'
-                 },
-                 {
-                     value: 'gulou',
-                     label: '鼓楼区'
-                 },
-                 {
-                     value: 'jianye',
-                     label: '建邺区'
-                 }
-             ]
-           },
-           {
-             value: 'xuzhou',
-             label: '徐州',
-             children: [
-                 {
-                     value: 'tongshan',
-                     label: '铜山区'
-                 },
-                 {
-                     value: 'gulou',
-                     label: '鼓楼区'
-                 },
-                 {
-                     value: 'yunlong',
-                     label: '云龙区'
-                 },
-                 {
-                     value: 'jiawang',
-                     label: '贾汪区'
-                 }
-             ]
-           }
-         ],
-        formValidate: {
-          name: '',
-          mail: '',
-          birthday:'',
-          cities:[]
-        },
-        formValidate2: {
-          name: '',
-          mail: ''
-        },
         ruleValidate: {
           name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
           mail: [
             { required: true, message: '邮箱不能为空', trigger: 'blur' },
             { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
-          ],
-          gender: [ { required: true, message: '请选择性别', trigger: 'change' }],
-          birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
-          time: [{ required: true, type: 'string', message: '选择时间', trigger: 'change' }],
-          city: [ { required: true, message: '请选择城市', trigger: 'change' }],
-          cities: [ { required: true, type: 'array', message: '请选择所在地区', trigger: 'change' }],
-          interest: [
-            { required: true, type: 'array', min: 1, message: '请选择爱好', trigger: 'change' },
-            { type: 'array', max: 2, message: '最多选择两个爱好', trigger: 'change' }
-          ],
-          desc: [
-            { required: true, message: '描述必填', trigger: 'blur' },
-            { type: 'string', min: 20, message: '描述不能少于20个字符', trigger: 'blur' }
           ]
         }
-      }
-    },
-    methods: {
-      handleSubmit () {
-        this.$refs.form.validate((valid) => {
-          if (valid) {
-            this.$message({type:'success',content:'表单校验成功'});
-          } else {
-            this.$message({type:'danger',content:'表单校验失败'});
-          }
-        })
       }
     }
   }
@@ -118,29 +42,41 @@
 
 ### 表单头对齐方式
 
-设置 label-position 可以设置表单头的对齐方式
+设置 label-position 可以设置表单头的对齐方式 可选top left right，并可设置label-width宽度
 
-::: demo 可选top left right，并可设置label-width宽度
-```html  
+::: demo
+```html
 <template>
   <div style="width:500px;">
       <b-form :model="formInline" ref="form" label-position="top">
         <b-form-item label="用户名" prop="name">
-          <b-input v-model="formValidate.name" placeholder="用户名"></b-input>
+          <b-input v-model="formInline.name" placeholder="用户名"></b-input>
         </b-form-item>
         <b-form-item label="邮箱" prop="mail">
-          <b-input v-model="formValidate.mail" placeholder="邮箱"></b-input>
+          <b-input v-model="formInline.mail" placeholder="邮箱"></b-input>
         </b-form-item>
       </b-form>
    </div>
 </template>
+<script>
+  export default {
+    data () {
+      return {
+        formInline: {
+          name: '',
+          mail: ''
+        }
+      }
+    }
+  }
+</script>
 ```
 :::
 
 ### 基本校验
 
 ::: demo
-```html  
+```html
 <template>
   <div style="width:600px;">
       <b-form :model="formValidate" ref="form" :rules="ruleValidate" :label-width="80">
@@ -207,6 +143,48 @@
           birthday:'',
           time:''
         },
+        cities: [
+             {
+               value: 'nanjing',
+               label: '南京',
+               children: [
+                   {
+                       value: 'xuanwu',
+                       label: '玄武区'
+                   },
+                   {
+                       value: 'gulou',
+                       label: '鼓楼区'
+                   },
+                   {
+                       value: 'jianye',
+                       label: '建邺区'
+                   }
+               ]
+             },
+             {
+               value: 'xuzhou',
+               label: '徐州',
+               children: [
+                   {
+                       value: 'tongshan',
+                       label: '铜山区'
+                   },
+                   {
+                       value: 'gulou',
+                       label: '鼓楼区'
+                   },
+                   {
+                       value: 'yunlong',
+                       label: '云龙区'
+                   },
+                   {
+                       value: 'jiawang',
+                       label: '贾汪区'
+                   }
+               ]
+             }
+         ],
          ruleValidate: {
            name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
            mail: [
@@ -249,19 +227,31 @@
 ### 单个元素的校验
 
 ::: demo
-```html  
+```html
 <template>
   <div style="width:400px;">
       <b-form :model="formValidate2" ref="form2"  :label-width="80">
         <b-form-item label="用户名" prop="name" :rules=" { required: true, message: '用户名不能为空', trigger: 'blur' }">
-          <b-input v-model="formValidate.name"></b-input>
+          <b-input v-model="formValidate2.name"></b-input>
         </b-form-item>
         <b-form-item label="邮箱" prop="mail">
-          <b-input v-model="formValidate.mail"></b-input>
+          <b-input v-model="formValidate2.mail"></b-input>
         </b-form-item>
       </b-form>
    </div>
 </template>
+<script>
+  export default {
+    data () {
+      return {
+        formValidate2: {
+          name: '',
+          mail: ''
+        }
+      }
+    }
+  }
+</script>
 ```
 :::
 

@@ -1,8 +1,8 @@
 {
   "开发指南": [
     {
-      "name": "giud",
-      "path": "/giud",
+      "name": "guide",
+      "path": "/guide",
       "desc": "介绍"
     },
     {
@@ -325,18 +325,6 @@
           "icon": "ios-pulse",
           "name": "timeline",
           "path": "/timeline"
-        }
-      ]
-    },
-    {
-      "desc": "其他",
-      "path": "/component",
-      "items": [
-        {
-          "desc": "Lodash 工具库",
-          "icon": "logo-dropbox",
-          "name": "lodash",
-          "path": "/lodash"
         }
       ]
     }

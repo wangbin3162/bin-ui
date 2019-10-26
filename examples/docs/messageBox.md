@@ -8,7 +8,7 @@
 只有确定按钮，可以直接使用 `$alert` 也可以个设置type或者直接使用快捷方法
 
 ::: demo
-```html  
+```html
 <template>
     <b-button type="primary" v-waves size="small" 
     @click="$alert({title: '标题',content: '我是弹窗内容',width:500})">Info</b-button>
@@ -26,26 +26,6 @@
         onOk:()=>{
           this.$message('点击了确定关闭弹窗')
         }})
-      },
-       async () {
-          this.$confirm({
-              title: '标题',
-              content: '<p>这个弹窗会在点击2秒后关闭</p>',
-              loading: true,
-              onOk: () => {
-                  setTimeout(() => {
-                      this.$modal.remove();
-                      this.$message('模态框已经关闭');
-                  }, 2000);
-              }
-          });
-      },
-      handleRender () {
-          this.$confirm({
-              render: (h) => {
-                  return h('div', {},'我是render函数渲染的')
-              }
-          })
       }
     }
   }
@@ -58,7 +38,7 @@
 模拟confirm提交选择
 
 ::: demo
-```html  
+```html
 <template>
     <b-button type="default" v-waves size="small" 
       @click="$confirm({title: '标题',content: '我是弹窗内容'})">标准</b-button>
@@ -67,6 +47,25 @@
     <b-button type="default" v-waves size="small" 
       @click="async">确定2s后关闭</b-button>
 </template>
+<script>
+  export default {
+    methods:{
+       async () {
+          this.$confirm({
+              title: '标题',
+              content: '<p>这个弹窗会在点击2秒后关闭</p>',
+              loading: true,
+              onOk: () => {
+                  setTimeout(() => {
+                      this.$modal.remove();
+                      this.$message('模态框已经关闭');
+                  }, 2000);
+              }
+          });
+      }
+    }
+  }
+</script>
 ```
 :::
 
@@ -75,11 +74,24 @@
 可以使用 `render` 函数自定义内容
 
 ::: demo
-```html  
+```html
 <template>
     <b-button type="default" v-waves size="small" 
       @click="handleRender">自定义内容</b-button>
 </template>
+<script>
+  export default {
+    methods:{
+      handleRender () {
+          this.$confirm({
+              render: (h) => {
+                  return h('div', {},'我是render函数渲染的')
+              }
+          })
+      }
+    }
+  }
+</script>
 ```
 :::
 

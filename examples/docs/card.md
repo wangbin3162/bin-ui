@@ -4,10 +4,10 @@
 
 ### 基础用法
 
-头部可以 开启高亮提示，如不需要头部则不用插入header
+头部可以 开启高亮提示，如不需要头部则不用插入header 可以开启`head-tip`来高亮header的前头
 
-:::demo 可以开启`head-tip`来高亮header的前头
-```html 
+:::demo 
+```html
 <template>
   <b-card class="box-card" width="480px" head-tip>
       <template v-slot:header>
@@ -21,23 +21,14 @@
       </div>
   </b-card>
 </template>
-<style>
-  .text {
-    font-size: 14px;
-  }
-
-  .item {
-    margin-bottom: 18px;
-  }
-</style>
 ```
 :::
 
 ### 默认标题和分割线
 
-直接传入header可以生成默认标题
+直接传入header可以生成默认标题,配置divider="no"可以消除默认标题和内容的分割线
 
-:::demo 配置divider="no"可以消除默认标题和内容的分割线
+:::demo 
 ```html
 <template>
   <div style="background: #f8f8f8;padding: 20px;">

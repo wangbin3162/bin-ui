@@ -3,7 +3,7 @@ import navConf from '../nav.config.json'
 let routes = [
   {
     path: '/',
-    redirect: 'giud',
+    redirect: 'guide',
     name: 'index'
   }
 ]

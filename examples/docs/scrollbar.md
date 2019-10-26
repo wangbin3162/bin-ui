@@ -6,7 +6,7 @@
 
 使用`b-scrollbar`进行包裹，默认`slot`为内容显示区域,如当前示例所包含的滚动结构如下:
 
-```html  
+```html
 <div class="page-container" flex-box="1">
     <b-scrollbar style="height:100%;" ref="componentScrollBar">
       <router-view></router-view>

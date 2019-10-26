@@ -7,7 +7,6 @@
 默认可以同时展开多个面板，可以设置默认展开第几个。
 
 :::demo 
-
 ```html
 <template>
    <div style="width:500px;">
@@ -28,9 +27,7 @@
     export default {
         data () {
             return {
-                value1: '1',
-                value2: '1',
-                value3: '2'
+                value1: '1'
             }
         }
     }
@@ -43,7 +40,6 @@
 手风琴模式默认只能开启一个
 
 :::demo 
-
 ```html
 <template>
    <div style="width:500px;">
@@ -77,7 +73,6 @@
 simple 设置简单模式
 
 :::demo 
-
 ```html
 <template>
    <div style="width:500px;">

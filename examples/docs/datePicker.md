@@ -7,7 +7,7 @@
 设置属性 placement 可以更改选择器出现的方向
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -18,107 +18,6 @@
   </div>
 </div>
 </template>
-<script>
-    export default {
-        data () {
-            return {
-                options1: {
-                    shortcuts: [
-                        {
-                            text: '今天',
-                            value () {
-                                return new Date();
-                            },
-                            onClick: (picker) => {
-                                this.$message('Click today');
-                            }
-                        },
-                        {
-                            text: '昨天',
-                            value () {
-                                const date = new Date();
-                                date.setTime(date.getTime() - 3600 * 1000 * 24);
-                                return date;
-                            },
-                            onClick: (picker) => {
-                                this.$message('Click yesterday');
-                            }
-                        },
-                        {
-                            text: '一周',
-                            value () {
-                                const date = new Date();
-                                date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-                                return date;
-                            },
-                            onClick: (picker) => {
-                                this.$message('Click a week ago');
-                            }
-                        }
-                    ]
-                },
-                options2: {
-                    shortcuts: [
-                        {
-                            text: '近一周',
-                            value () {
-                                const end = new Date();
-                                const start = new Date();
-                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-                                return [start, end];
-                            }
-                        },
-                        {
-                            text: '最近一个月',
-                            value () {
-                                const end = new Date();
-                                const start = new Date();
-                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-                                return [start, end];
-                            }
-                        },
-                        {
-                            text: '最近三个月',
-                            value () {
-                                const end = new Date();
-                                const start = new Date();
-                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-                                return [start, end];
-                            }
-                        }
-                    ]
-                },
-                options3: {
-                   disabledDate (date) {
-                       return date && date.valueOf() < Date.now() - 86400000;
-                   }
-                },
-                options4: {
-                   disabledDate (date) {
-                       const disabledDay = date.getDate();
-                       return disabledDay === 15;
-                   }
-                },
-                open: false,
-                value3: ''
-            }
-        },
-         methods: {
-             handleClick () {
-                 this.open = !this.open;
-             },
-             handleChange (date) {
-                 this.value3 = date;
-             },
-             handleClear () {
-                 this.open = false;
-             },
-             handleOk () {
-                 this.open = false;
-             }
-         }
-    }
-</script>
 ```
 :::
 
@@ -131,7 +30,7 @@ options 对象中的 shortcuts
 value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是正确的。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -143,78 +42,78 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 </div>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                options1: {
-                    shortcuts: [
-                        {
-                            text: '今天',
-                            value () {
-                                return new Date();
-                            },
-                            onClick: (picker) => {
-                                this.$message('Click today');
-                            }
+export default {
+    data () {
+        return {
+            options1: {
+                shortcuts: [
+                    {
+                        text: '今天',
+                        value () {
+                            return new Date();
                         },
-                        {
-                            text: '昨天',
-                            value () {
-                                const date = new Date();
-                                date.setTime(date.getTime() - 3600 * 1000 * 24);
-                                return date;
-                            },
-                            onClick: (picker) => {
-                                this.$message('Click yesterday');
-                            }
-                        },
-                        {
-                            text: '一周',
-                            value () {
-                                const date = new Date();
-                                date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-                                return date;
-                            },
-                            onClick: (picker) => {
-                                this.$message('Click a week ago');
-                            }
+                        onClick: (picker) => {
+                            this.$message('Click today');
                         }
-                    ]
-                },
-                options2: {
-                    shortcuts: [
-                        {
-                            text: '近一周',
-                            value () {
-                                const end = new Date();
-                                const start = new Date();
-                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-                                return [start, end];
-                            }
+                    },
+                    {
+                        text: '昨天',
+                        value () {
+                            const date = new Date();
+                            date.setTime(date.getTime() - 3600 * 1000 * 24);
+                            return date;
                         },
-                        {
-                            text: '最近一个月',
-                            value () {
-                                const end = new Date();
-                                const start = new Date();
-                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-                                return [start, end];
-                            }
-                        },
-                        {
-                            text: '最近三个月',
-                            value () {
-                                const end = new Date();
-                                const start = new Date();
-                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-                                return [start, end];
-                            }
+                        onClick: (picker) => {
+                            this.$message('Click yesterday');
                         }
-                    ]
-                }
+                    },
+                    {
+                        text: '一周',
+                        value () {
+                            const date = new Date();
+                            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+                            return date;
+                        },
+                        onClick: (picker) => {
+                            this.$message('Click a week ago');
+                        }
+                    }
+                ]
+            },
+            options2: {
+                shortcuts: [
+                    {
+                        text: '近一周',
+                        value () {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                            return [start, end];
+                        }
+                    },
+                    {
+                        text: '最近一个月',
+                        value () {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                            return [start, end];
+                        }
+                    },
+                    {
+                        text: '最近三个月',
+                        value () {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                            return [start, end];
+                        }
+                    }
+                ]
             }
         }
     }
+}
 </script>
 ```
 :::
@@ -224,7 +123,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 设置属性 `daterange` 时 `split-panels` 可以将左右面板联动关闭。`multiple` 后，可以多选。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -243,7 +142,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 设置属性 `show-week-numbers` 可以显示星期数。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -262,7 +161,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 设置属性 `start-date` 可以将默认显示的日期面板设置为指定日期。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -281,7 +180,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 设置属性 `type` 为 `year` 或 `month` 可以使用选择年或月的功能。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -300,7 +199,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 设置属性 `format` 变日期的显示格式 
 
 ::: demo `format` 只是改变显示的格式，并非改变 value 值。
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -318,8 +217,10 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 
 设置属性 `options` 对象中的 `disabledDate` 可以设置不可选择的日期。
 
-::: demo `disabledDate` 是函数，参数为当前的日期，需要返回 Boolean 是否禁用这天。
-```html  
+`disabledDate` 是函数，参数为当前的日期，需要返回 Boolean 是否禁用这天。
+
+::: demo 
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -357,7 +258,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 设置属性 `confirm` 选择日期后，户确认后才可关闭。
 
 ::: demo 
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -376,7 +277,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 可以使用 slot 配合参数 open 及事件来手动控制组件的显示状态
 
 ::: demo 
-```html  
+```html
 <template>
 <div style="width: 500px;">
     <b-date-picker
@@ -428,7 +329,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 设置属性 `size` 可以调整输入选择框的尺寸，参考input尺寸
 
 ::: demo 
-```html  
+```html
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
@@ -450,7 +351,7 @@ value 接收任何正确的日期格式，比如 2016-12-24 或 12/24/16 都是�
 type 为 `datetime` 或 `datetimerange` 可以选择时间。
 
 ::: demo 设置 `format` 并且忽略秒，可以只设置小时和分钟维度。
-```html  
+```html
 <template>
 <div flex="box:mean">
     <b-date-picker type="datetime" placeholder="选择日期时间" style="padding-right: 20px;"></b-date-picker>

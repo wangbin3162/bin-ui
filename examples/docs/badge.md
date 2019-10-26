@@ -7,7 +7,7 @@
 基础的徽标用法
 
 ::: demo
-```html  
+```html
 <template>
    <b-badge :value="12" class="item">
      <b-button size="small">普通按钮</b-button>
@@ -33,7 +33,7 @@
 可以提示非数字的徽标
 
 ::: demo
-```html  
+```html
 <template>
    <b-badge value="hot" class="item">
      <b-button size="small">热点</b-button>

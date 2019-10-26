@@ -1,11 +1,20 @@
 ## Anchor 锚点
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;">
+      <b-anchor icon="ios-heart">
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-tu-biao-he-bu-gu-ding" title="自定义图标和不固定"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 ### 基础用法
 
-锚点主要应用于滚动导航，这里推荐配合scrollbar使用已达到良好的效果
+锚点主要应用于滚动导航，这里推荐配合scrollbar使用已达到良好的效果，可以通过设置`icon`来设置小圆点为自定义图标
 
-::: demo 可以通过设置`icon`来设置小圆点为自定义图标
-```html  
+::: demo 
+```html
 <template>
   <div style="height:500px;overflow: hidden;border:1px solid #eee;">
       <b-scrollbar style="height:100%;">
@@ -42,7 +51,7 @@
 可以通过设置`icon`来设置小圆点为自定义图标
 
 ::: demo 
-```html  
+```html
 <template>
   <div style="height:500px;overflow: hidden;border:1px solid #eee;">
       <b-scrollbar style="height:100%;">

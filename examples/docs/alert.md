@@ -7,7 +7,7 @@
 基础的按钮用法
 
 ::: demo
-```html  
+```html
 <template>
     <b-alert >info alert</b-alert>
     <b-alert type="success">success alert</b-alert>
@@ -17,13 +17,12 @@
 ```
 :::
 
-
 ### 包含描述信息
 
-自定义<slot name="desc">描述内容。
+自定义`<slot name="desc">`描述内容。
 
 ::: demo
-```html  
+```html
 <template>
     <b-alert >info alert
     <template slot="desc">我是描述信息... </template>
@@ -46,7 +45,7 @@
 根据 `type` 属性自动添加不同图标，或者自定义图标 `slot` 。
 
 ::: demo
-```html  
+```html
 <template>
     <b-alert show-icon>info alert</b-alert>
     <b-alert type="success" show-icon>success alert</b-alert>
@@ -68,7 +67,7 @@
 设置属性 `banner` 可以应用顶部公告的样式。
 
 ::: demo
-```html  
+```html
 <template>
     <b-alert closable>An info prompt</b-alert>
     <b-alert type="success" show-icon closable>
@@ -88,7 +87,7 @@
 设置属性 `banner` 可以应用顶部公告的样式。
 
 ::: demo
-```html  
+```html
 <template>
     <b-alert banner >公告样式...</b-alert>
     <b-alert banner closable type="warning">公告样式...</b-alert>

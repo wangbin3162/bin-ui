@@ -20,7 +20,6 @@
 可以在父级元素中居中固定
 
 :::demo 
-
 ```html
 <template>
   <div class="demo-loading">
@@ -36,7 +35,6 @@
 可以自定义文字和内容
 
 :::demo 
-
 ```html
 <template>
   <div class="demo-loading">
@@ -57,27 +55,26 @@
 切换显示状态
 
 :::demo 
-
 ```html
- <template>
-  <div class="demo-loading">
-     <div>我是后面的段落我是后面的段落我是后面的段落我是后面的段落</div>
-     <b-loading fix v-if="spinShow"></b-loading>
-   </div>
-   <div>
-     <b-button size="small" @click="spinShow=true">加载</b-button>
-     <b-button type="danger" size="small" @click="spinShow=false">停止</b-button>
-   </div>
-  </template>
-  <script>
-      export default {
-          data () {
-              return {
-                  spinShow: true
-              }
+<template>
+<div class="demo-loading">
+ <div>我是后面的段落我是后面的段落我是后面的段落我是后面的段落</div>
+ <b-loading fix v-if="spinShow"></b-loading>
+</div>
+<div>
+ <b-button size="small" @click="spinShow=true">加载</b-button>
+ <b-button type="danger" size="small" @click="spinShow=false">停止</b-button>
+</div>
+</template>
+<script>
+  export default {
+      data () {
+          return {
+              spinShow: true
           }
       }
-  </script>
+  }
+</script>
 ```
 :::
 

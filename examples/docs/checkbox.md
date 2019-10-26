@@ -5,54 +5,19 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
     <b-checkbox v-model="single">b-checkbox</b-checkbox>&nbsp;&nbsp;
     <span style="color:#ff4511;">{{single}}</span>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                single: false,
-                social: ['facebook', 'github'],
-                fruit: ['苹果'],
-                disabledSingle: true,
-                disabledGroup: ['苹果'],
-               indeterminate: true,
-               checkAll: false,
-               checkAllGroup: ['香蕉', '西瓜']
-            }
-        },
-        methods: {
-            handleCheckAll () {
-                if (this.indeterminate) {
-                    this.checkAll = false;
-                } else {
-                    this.checkAll = !this.checkAll;
-                }
-                this.indeterminate = false;
- 
-                if (this.checkAll) {
-                    this.checkAllGroup = ['香蕉', '苹果', '西瓜'];
-                } else {
-                    this.checkAllGroup = [];
-                }
-            },
-            checkAllGroupChange (data) {
-                if (data.length === 3) {
-                    this.indeterminate = false;
-                    this.checkAll = true;
-                } else if (data.length > 0) {
-                    this.indeterminate = true;
-                    this.checkAll = false;
-                } else {
-                    this.indeterminate = false;
-                    this.checkAll = false;
-                }
-            }
+export default {
+    data () {
+        return {
+            single: false
         }
     }
+}
 </script>
 ```
 :::
@@ -60,39 +25,39 @@
 ### 组合使用
 
 ::: demo
-```html  
+```html
 <template>
-    <b-checkbox-group v-model="social">
-           <b-checkbox label="twitter">
-               <span>Twitter</span>
-           </b-checkbox>
-           <b-checkbox label="facebook">
-               <span>Facebook</span>
-           </b-checkbox>
-           <b-checkbox label="github">
-               <span>Github</span>
-           </b-checkbox>
-           <b-checkbox label="snapchat">
-               <span>Snapchat</span>
-           </b-checkbox>
-       </b-checkbox-group>
-       <p style="color:#ff4511;margin: 5px 0;">{{social}}</p>
-       <b-checkbox-group v-model="fruit">
-           <b-checkbox label="香蕉"></b-checkbox>
-           <b-checkbox label="苹果"></b-checkbox>
-           <b-checkbox label="西瓜"></b-checkbox>
-       </b-checkbox-group>
-       <p style="color:#ff4511;margin: 5px 0;">{{fruit}}</p>
+   <b-checkbox-group v-model="social">
+       <b-checkbox label="twitter">
+           <span>Twitter</span>
+       </b-checkbox>
+       <b-checkbox label="facebook">
+           <span>Facebook</span>
+       </b-checkbox>
+       <b-checkbox label="github">
+           <span>Github</span>
+       </b-checkbox>
+       <b-checkbox label="snapchat">
+           <span>Snapchat</span>
+       </b-checkbox>
+   </b-checkbox-group>
+   <p style="color:#ff4511;margin: 5px 0;">{{social}}</p>
+   <b-checkbox-group v-model="fruit">
+       <b-checkbox label="香蕉"></b-checkbox>
+       <b-checkbox label="苹果"></b-checkbox>
+       <b-checkbox label="西瓜"></b-checkbox>
+   </b-checkbox-group>
+   <p style="color:#ff4511;margin: 5px 0;">{{fruit}}</p>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                social: ['facebook', 'github'],
-                fruit: ['苹果']
-            }
+export default {
+    data () {
+        return {
+            social: ['facebook', 'github'],
+            fruit: ['苹果']
         }
     }
+}
 </script>
 ```
 :::
@@ -101,7 +66,7 @@
 ### 禁用
 
 ::: demo
-```html  
+```html
 <template>
     <b-checkbox v-model="disabledSingle" disabled>Checkbox</b-checkbox>
        <b-checkbox-group v-model="disabledGroup">
@@ -112,14 +77,14 @@
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                disabledSingle: true,
-                disabledGroup: ['苹果']
-            }
+export default {
+    data () {
+        return {
+            disabledSingle: true,
+            disabledGroup: ['苹果']
         }
     }
+}
 </script>
 ```
 :::
@@ -127,7 +92,7 @@
 ### 全选
 
 ::: demo
-```html  
+```html
 <template>
     <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
         <b-checkbox

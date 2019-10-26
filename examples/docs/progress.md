@@ -52,10 +52,10 @@ Progress 组件设置 `percent` 属性即可，表示进度条对应的百分比
 
 ### 动态进度
 
-可以配合外部操作进度
+可以配合外部操作进度 通过开启active可以开启动画样式
 
-::: demo 通过开启active可以开启动画样式
-```html  
+::: demo 
+```html
 <template>
    <div class="demo-button">
     <b-progress radius="5px" :stroke-width="20" :percent="percent" active  color="#ff86d8"></b-progress>

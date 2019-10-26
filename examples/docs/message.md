@@ -7,7 +7,6 @@
 基本用法，默认在 3 秒后关闭
 
 :::demo
-
 ```html
  <template>
      <b-button size="small" type="info" v-waves
@@ -29,7 +28,6 @@
 可以设置配置参数来渲染
 
 :::demo
-
 ```html
  <template>
      <b-button size="small" type="default" v-waves
@@ -47,7 +45,6 @@
 render函数调用
 
 :::demo
-
 ```html
  <template>
      <b-button size="small" type="default" v-waves

@@ -8,7 +8,7 @@
 
 默认位置距离页面右部和底部 50px，滚动至距顶端 150px 时显示。可以自定义样式或者按钮触发
 
-```html 
+```html
 <div class="page-container" flex-box="1">
     <b-scrollbar style="height:100%;" ref="componentScrollBar">
       <router-view></router-view>
@@ -22,7 +22,7 @@
 
 自定义了位置在页面底部 200px,滚动至距顶端 200px 时显示。
 
-```html 
+```html
 <div class="page-container" flex-box="1">
     <b-scrollbar style="height:100%;" ref="componentScrollBar">
       <router-view></router-view>

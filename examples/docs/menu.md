@@ -3,7 +3,7 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
 <b-menu mode="horizontal" :theme="theme1" active-name="1">
    <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
@@ -52,7 +52,7 @@
 ### 竖向设置
 
 ::: demo
-```html  
+```html
 <template>
 <b-menu :theme="theme2" active-name="1" accordion>
    <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
@@ -96,7 +96,6 @@
 ```
 :::
 
-
 ### Menu props
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
@@ -107,7 +106,6 @@
 | open-names  | 展开的 Submenu 的 name 集合  | Array  | -  |  [] |
 | accordion  | 是否开启手风琴模式  | Boolean	  | -  |  false |
 | width  | 导航菜单的宽度，只在 mode="vertical" 时有效  | String  | -  |  240px |
-
 
 ### Menu events
 

@@ -7,7 +7,7 @@
 最基本用法，点击上传，一次选择一个文件。
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width: 400px;">
   <b-upload action="//jsonplaceholder.typicode.com/posts/">
@@ -23,7 +23,7 @@
 可以开启多选模式来一次选择多个
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width: 400px;">
   <b-upload action="//jsonplaceholder.typicode.com/posts/" multiple>
@@ -39,7 +39,7 @@
 绑定 before-upload，并返回false，可以阻止默认上传流程，手动控制文件上传。
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width: 400px;">
   <b-upload action="//jsonplaceholder.typicode.com/posts/" :before-upload="handleUpload">
@@ -83,7 +83,7 @@
 设置属性 type 为 drag，可以拖拽上传。
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width: 400px;">
   <b-upload action="//jsonplaceholder.typicode.com/posts/"

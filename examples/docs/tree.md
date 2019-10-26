@@ -3,16 +3,16 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
-  <b-tree :data="data1"></b-tree>
+  <b-tree :data="data"></b-tree>
 </template>
 
 <script>
     export default {
         data () {
             return {
-                data1: [
+                data: [
                  {
                      title: '一级 1',
                      expand: true,
@@ -43,223 +43,7 @@
                          }
                      ]
                  }
-             ],
-                data2: [
-                 {
-                     title: '一级 1',
-                     expand: true,
-                     children: [
-                         {
-                             title: '二级 1-1',
-                             expand: true,
-                             selected: true,
-                             children: [
-                                 {
-                                     title: '三级 1-1-1',
-                                     disabled: true
-                                 },
-                                 {
-                                     title: '三级 1-1-2'
-                                 }
-                             ]
-                         },
-                         {
-                             title: '二级 1-2',
-                             expand: true,
-                             children: [
-                                {
-                                    title: '三级 1-2-1',
-                                    checked: true
-                                },
-                                {
-                                    title: '三级 1-2-2'
-                                }
-                             ]
-                         }
-                     ]
-                 }
-             ],
-                data3: [
-                    {
-                        title: 'parent',
-                        loading: false,
-                        children: []
-                    }
-              ],
-                data4: [
-                    {
-                        title: 'parent 1',
-                        expand: true,
-                        render: (h, { root, node, data }) => {
-                            return h('span', {
-                                style: {
-                                    display: 'inline-block',
-                                    width: '100%'
-                                }
-                            }, [
-                                h('span', [
-                                    h('b-icon', {
-                                        props: {
-                                            name: 'ios-folder-outline'
-                                        },
-                                        style: {
-                                            marginRight: '8px'
-                                        }
-                                    }),
-                                    h('span', data.title)
-                                ]),
-                                h('span', {
-                                    style: {
-                                        display: 'inline-block',
-                                        float: 'right',
-                                        marginRight: '32px'
-                                    }
-                                }, [
-                                    h('b-button', {
-                                        props: Object.assign({}, this.buttonProps, {
-                                            icon: 'ios-add',
-                                            type: 'primary'
-                                        }),
-                                        style: {
-                                            width: '64px'
-                                        },
-                                        on: {
-                                            click: () => { this.append(data) }
-                                        }
-                                    })
-                                ])
-                            ]);
-                        },
-                        children: [
-                            {
-                                title: 'child 1-1',
-                            },
-                            {
-                                title: 'child 1-2',
-                            }
-                        ]
-                    }
-                ],
-                data5: [
-                 {
-                     title: '一级 1',
-                     expand: true,
-                     children: [
-                         {
-                             title: '二级 1-1',
-                             expand: true,
-                             children: [
-                                 {
-                                     title: '三级 1-1-1',
-                                 },
-                                 {
-                                     title: '三级 1-1-2'
-                                 }
-                             ]
-                         },
-                         {
-                             title: '二级 1-2',
-                             expand: true,
-                             children: [
-                                {
-                                    title: '三级 1-2-1'
-                                },
-                                {
-                                    title: '三级 1-2-2'
-                                }
-                             ]
-                         }
-                     ]
-                 }
-             ],
-                buttonProps: {
-                    type: 'default',
-                    size: 'mini',
-                },
-                lockSelect:false
-            }
-        },
-        methods: {
-            loadData (item, callback) {
-                setTimeout(() => {
-                    const data = [
-                        {
-                            title: 'children',
-                            loading: false,
-                            children: []
-                        },
-                        {
-                            title: 'children',
-                            loading: false,
-                            children: []
-                        }
-                    ];
-                    callback(data);
-                }, 1000);
-            },
-            renderContent (h, { root, node, data }) {
-                return h('span', {
-                    style: {
-                        display: 'inline-block',
-                        width: '100%'
-                    }
-                }, [
-                    h('span', [
-                        h('b-icon', {
-                            props: {
-                                name: 'ios-paper-outline'
-                            },
-                            style: {
-                                marginRight: '8px'
-                            }
-                        }),
-                        h('span', data.title)
-                    ]),
-                    h('span', {
-                        style: {
-                            display: 'inline-block',
-                            float: 'right',
-                            marginRight: '32px'
-                        }
-                    }, [
-                        h('b-icon', {
-                            props: Object.assign({}, this.buttonProps, {
-                                name: 'ios-add'
-                            }),
-                            style: {
-                                marginRight: '8px',cursor:'pointer'
-                            },
-                            nativeOn: {
-                                click: () => { this.append(data) }
-                            }
-                        }),
-                        h('b-icon', {
-                            props: Object.assign({}, this.buttonProps, {
-                                name: 'ios-remove'
-                            }),
-                            style: {
-                               cursor:'pointer'
-                            },
-                            nativeOn: {
-                                click: () => { this.remove(root, node, data) }
-                            }
-                        })
-                    ])
-                ]);
-            },
-            append (data) {
-                const children = data.children || [];
-                children.push({
-                    title: 'new node',
-                    expand: true
-                });
-                this.$set(data, 'children', children);
-            },
-            remove (root, node, data) {
-                const parentKey = root.find(el => el === node).parent;
-                const parent = root.find(el => el.nodeKey === parentKey).node;
-                const index = parent.children.indexOf(data);
-                parent.children.splice(index, 1);
+             ]
             }
         }
     }
@@ -272,11 +56,11 @@
 lockSelect 设置可以锁定树的选中事件，这个可以用来控制树菜单在不同情况下的操作
 
 ::: demo
-```html  
+```html
 <template>
 <div flex>
   <div style="width: 200px">
-    <b-tree :data="data5" :lock-select="lockSelect"></b-tree> 
+    <b-tree :data="data" :lock-select="lockSelect"></b-tree> 
   </div>
   <div style="width: 80px">
     <b-switch v-model="lockSelect" size="large">
@@ -291,6 +75,38 @@ lockSelect 设置可以锁定树的选中事件，这个可以用来控制树菜
     export default {
         data () {
             return {
+                data: [
+                    {
+                         title: '一级 1',
+                         expand: true,
+                         children: [
+                             {
+                                 title: '二级 1-1',
+                                 expand: true,
+                                 children: [
+                                     {
+                                         title: '三级 1-1-1',
+                                     },
+                                     {
+                                         title: '三级 1-1-2'
+                                     }
+                                 ]
+                             },
+                             {
+                                 title: '二级 1-2',
+                                 expand: true,
+                                 children: [
+                                    {
+                                        title: '三级 1-2-1'
+                                    },
+                                    {
+                                        title: '三级 1-2-2'
+                                    }
+                                 ]
+                             }
+                         ]
+                     }
+                ],
                 lockSelect:false
             }
         }
@@ -303,18 +119,60 @@ lockSelect 设置可以锁定树的选中事件，这个可以用来控制树菜
 
 可以设置show-checkbox开启勾选，并可以设置数据格式中的默认选中
 
-::: demo expand、selected、checked 和 disabled 可以设置展开，选中，勾选和禁用 multiple 开启多选
-```html  
+expand、selected、checked 和 disabled 可以设置展开，选中，勾选和禁用 multiple 开启多选
+
+::: demo 
+```html
 <template>
-  <b-tree :data="data2" show-checkbox multiple></b-tree>
+  <b-tree :data="data" show-checkbox multiple></b-tree>
 </template>
+<script>
+    export default {
+        data () {
+            return {
+                data: [
+                 {
+                     title: '一级 1',
+                     expand: true,
+                     children: [
+                         {
+                             title: '二级 1-1',
+                             expand: true,
+                             children: [
+                                 {
+                                     title: '三级 1-1-1',
+                                 },
+                                 {
+                                     title: '三级 1-1-2'
+                                 }
+                             ]
+                         },
+                         {
+                             title: '二级 1-2',
+                             expand: true,
+                             children: [
+                                {
+                                    title: '三级 1-2-1'
+                                },
+                                {
+                                    title: '三级 1-2-2'
+                                }
+                             ]
+                         }
+                     ]
+                 }
+             ]
+            }
+        }
+    }
+</script>
 ```
 :::
 
 ### 异步加载子节点
 
 ::: demo
-```html  
+```html
 <template>
   <b-tree :data="data3" show-checkbox :load-data="loadData"></b-tree>
 </template>
@@ -359,8 +217,8 @@ lockSelect 设置可以锁定树的选中事件，这个可以用来控制树菜
 
 可以设置show-checkbox开启勾选，并可以设置数据格式中的默认选中
 
-::: demo expand、selected、checked 和 disabled 可以设置展开，选中，勾选和禁用 multiple 开启多选
-```html  
+::: demo
+```html
 <template>
 <div style="width: 300px;">
   <b-tree :data="data4" :render="renderContent"></b-tree>
@@ -370,80 +228,6 @@ lockSelect 设置可以锁定树的选中事件，这个可以用来控制树菜
     export default {
         data () {
             return {
-                data1: [
-                 {
-                     title: '一级 1',
-                     expand: true,
-                     children: [
-                         {
-                             title: '二级 1-1',
-                             expand: true,
-                             children: [
-                                 {
-                                     title: '三级 1-1-1',
-                                 },
-                                 {
-                                     title: '三级 1-1-2'
-                                 }
-                             ]
-                         },
-                         {
-                             title: '二级 1-2',
-                             expand: true,
-                             children: [
-                                {
-                                    title: '三级 1-2-1'
-                                },
-                                {
-                                    title: '三级 1-2-2'
-                                }
-                             ]
-                         }
-                     ]
-                 }
-             ],
-                data2: [
-                 {
-                     title: '一级 1',
-                     expand: true,
-                     children: [
-                         {
-                             title: '二级 1-1',
-                             expand: true,
-                             selected: true,
-                             children: [
-                                 {
-                                     title: '三级 1-1-1',
-                                     disabled: true
-                                 },
-                                 {
-                                     title: '三级 1-1-2'
-                                 }
-                             ]
-                         },
-                         {
-                             title: '二级 1-2',
-                             expand: true,
-                             children: [
-                                {
-                                    title: '三级 1-2-1',
-                                    checked: true
-                                },
-                                {
-                                    title: '三级 1-2-2'
-                                }
-                             ]
-                         }
-                     ]
-                 }
-             ],
-                data3: [
-                    {
-                        title: 'parent',
-                        loading: false,
-                        children: []
-                    }
-              ],
                 data4: [
                     {
                         title: 'parent 1',
@@ -505,23 +289,6 @@ lockSelect 设置可以锁定树的选中事件，这个可以用来控制树菜
             }
         },
         methods: {
-            loadData (item, callback) {
-                setTimeout(() => {
-                    const data = [
-                        {
-                            title: 'children',
-                            loading: false,
-                            children: []
-                        },
-                        {
-                            title: 'children',
-                            loading: false,
-                            children: []
-                        }
-                    ];
-                    callback(data);
-                }, 1000);
-            },
             renderContent (h, { root, node, data }) {
                 return h('span', {
                     style: {

@@ -1,0 +1,7 @@
+{
+  "affix": "./src/components/affix/index.js",
+  "alert": "./src/components/alert/index.js",
+  "anchor": "./src/components/anchor/index.js",
+  "anchor-link": "./src/components/anchor-link/index.js",
+  "button": "./src/components/button/index.js"
+}

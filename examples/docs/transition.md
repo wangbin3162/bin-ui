@@ -2,10 +2,10 @@
 
 ### 淡入淡出
 
-提供 2种 淡入淡出效果
+提供 2种 淡入淡出效果`fade-in-linear` 和 `fade-in`
 
-::: demo `fade-in-linear` 和 `fade-in`
-```html  
+::: demo 
+```html
 <template>
   <div class="demo-transition">
     <b-button @click="show1= !show1" size="medium" v-waves>查看效果</b-button>
@@ -24,10 +24,7 @@
     export default {
         data() {
           return {
-            show1: true,
-            show2: true,
-            show3: true,
-            show4: true
+            show1: true
           }
         }
       }
@@ -37,10 +34,10 @@
 
 ### 缩放
 
-提供 4种 缩放效果
+提供 4种 缩放效果 `zoom-in-center`，`zoom-in-top` ，`zoom-in` 和 `zoom-in-bottom`
 
-::: demo `zoom-in-center`，`zoom-in-top` ，`zoom-in` 和 `zoom-in-bottom`
-```html  
+::: demo
+```html
 <template>
   <div class="demo-transition">
     <b-button @click="show2= !show2" size="medium" v-waves>查看效果</b-button>
@@ -60,15 +57,24 @@
     </div>
   </div>
 </template>
+<script>
+    export default {
+        data() {
+          return {
+            show2: true
+          }
+        }
+      }
+</script>
 ```
 :::
 
 ### 移动渐变
 
-提供 3种 特殊的移动渐变
+提供 3种 特殊的移动渐变 `fade-transverse` ,`fade-scale` ,`fade-scale-move`
 
-::: demo `fade-transverse` ,`fade-scale` ,`fade-scale-move`
-```html  
+::: demo 
+```html
 <template>
  <div class="demo-transition">
     <b-button @click="show3= !show3" size="medium" v-waves>查看效果</b-button>
@@ -85,13 +91,22 @@
     </div>
    </div>
 </template>
+<script>
+    export default {
+        data() {
+          return {
+            show3: true
+          }
+        }
+      }
+</script>
 ```
 :::
 
 ### 展开折叠
 
-::: demo 
-```html  
+::: demo
+```html
 <template>
  <div class="demo-transition">
     <b-button @click="show4= !show4" size="medium" v-waves>查看效果</b-button>
@@ -105,6 +120,15 @@
       </div>
    </div>
 </template>
+<script>
+    export default {
+        data() {
+          return {
+            show4: true
+          }
+        }
+      }
+</script>
 ```
 :::
 

@@ -7,7 +7,7 @@
 最简单的使用方法，通过控制属性value来显示 / 隐藏对话框。
 
 ::: demo
-```html  
+```html
 <template>
   <b-button type="primary" v-waves size="small" @click="value1 = true">open</b-button>
     <b-drawer v-model="value1" title="抽屉标题">
@@ -18,9 +18,7 @@
     export default {
       data () {
             return {
-              value1:false,
-              value2:false,
-              value3:false
+              value1:false
             }
        }
     }
@@ -30,10 +28,10 @@
 
 ### 基础用法
 
-最简单的使用方法，通过控制属性value来显示 / 隐藏对话框。
+设置 `placement="left"`为左侧打开
 
 ::: demo
-```html  
+```html
 <template>
   <b-button type="primary" v-waves size="small" @click="value2 = true">左侧打开</b-button>
     <b-drawer v-model="value2" title="抽屉标题" placement="left" width="500px">
@@ -54,8 +52,10 @@
 
 ### 全屏
 
-::: demo `fullscreen` 设置全屏
-```html  
+`fullscreen` 设置全屏
+
+::: demo 
+```html
 <template>
   <b-button type="primary" v-waves size="small" @click="value3 = true">全屏设置</b-button>
     <b-drawer v-model="value3" title="抽屉标题" fullscreen>

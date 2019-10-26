@@ -6,10 +6,12 @@
 
 级联选择对数据有较严格要求，请参照示例的格式使用data，每项数据至少包含 value、label 两项，下一级使用 children
 
-::: demo value 为当前选择的数据的 value 值的数组，比如 ['xuzhou', 'tongshan'] ，按照级联顺序依次排序，使用 v-model 进行双向绑定。
-```html  
+value 为当前选择的数据的 value 值的数组，比如 ['xuzhou', 'tongshan'] ，按照级联顺序依次排序，使用 v-model 进行双向绑定。
+::: demo 
+```html
 <template>
-<div style="width:240px;">
+<div style="width:240px;"> 
+  {{value1}}
   <b-cascade :data="data" v-model="value1"></b-cascade>
 </div>
 </template>
@@ -17,186 +19,7 @@
 export default {
      data () {
          return {
-             text: '未选择',
              value1: [],
-             value2: ['xuzhou', 'tongshan'],
-             data: [
-               {
-                 value: 'nanjing',
-                 label: '南京',
-                 children: [
-                     {
-                         value: 'xuanwu',
-                         label: '玄武区'
-                     },
-                     {
-                         value: 'gulou',
-                         label: '鼓楼区'
-                     },
-                     {
-                         value: 'jianye',
-                         label: '建邺区'
-                     }
-                 ]
-               },
-               {
-                 value: 'xuzhou',
-                 label: '徐州',
-                 children: [
-                     {
-                         value: 'tongshan',
-                         label: '铜山区'
-                     },
-                     {
-                         value: 'gulou',
-                         label: '鼓楼区'
-                     },
-                     {
-                         value: 'yunlong',
-                         label: '云龙区'
-                     },
-                     {
-                         value: 'jiawang',
-                         label: '贾汪区'
-                     }
-                 ]
-               }
-             ],
-             data2: [
-               {
-                 value: 'nanjing',
-                 label: '南京',
-                 disabled: true,
-                 children: [
-                     {
-                         value: 'xuanwu',
-                         label: '玄武区'
-                     },
-                     {
-                         value: 'gulou',
-                         label: '鼓楼区'
-                     },
-                     {
-                         value: 'jianye',
-                         label: '建邺区'
-                     }
-                 ]
-               },
-               {
-                 value: 'xuzhou',
-                 label: '徐州',
-                 children: [
-                     {
-                         value: 'tongshan',
-                         label: '铜山区'
-                     },
-                     {
-                         value: 'gulou',
-                         label: '鼓楼区'
-                     },
-                     {
-                         value: 'yunlong',
-                         label: '云龙区'
-                     },
-                     {
-                         value: 'jiawang',
-                         label: '贾汪区'
-                     }
-                 ]
-               }
-             ],
-             data4: [
-               {
-                   value: 'nanjing',
-                   label: '南京',
-                   children: [],
-                   loading: false
-               },
-               {
-                   value: 'xuzhou',
-                   label: '徐州',
-                   children: [],
-                   loading:false
-               }
-             ]
-         }
-     },
-      methods: {
-          handleChange (value, selectedData) {
-              this.text = selectedData.map(o => o.label).join(', ');
-          },
-          format (labels, selectedData) {
-              const index = labels.length - 1;
-              const data = selectedData[index] || false;
-              if (data && data.value) {
-                  return labels[index] + ' - ' + data.value;
-              }
-              return labels[index];
-          },
-           loadData (item, callback) {
-               item.loading = true;
-               setTimeout(() => {
-                   if (item.value === 'nanjing') {
-                       item.children = [
-                             {
-                                 value: 'xuanwu',
-                                 label: '玄武区'
-                             },
-                             {
-                                 value: 'gulou',
-                                 label: '鼓楼区'
-                             },
-                             {
-                                 value: 'jianye',
-                                 label: '建邺区'
-                             }
-                       ];
-                   } else if (item.value === 'xuzhou') {
-                       item.children = [
-                             {
-                                 value: 'tongshan',
-                                 label: '铜山区'
-                             },
-                             {
-                                 value: 'gulou',
-                                 label: '鼓楼区'
-                             },
-                             {
-                                 value: 'yunlong',
-                                 label: '云龙区'
-                             },
-                             {
-                                 value: 'jiawang',
-                                 label: '贾汪区'
-                             }
-                       ];
-                   }
-                   item.loading = false;
-                   callback();
-               }, 1000);
-           }
-      }
-}
-</script>
-```
-:::
-
-### 设置默认值
-
-指定 value 默认值，组件会在初始化时选定数据。
-
-::: demo 
-```html  
-<template>
-<div style="width:240px;">
-  <b-cascade :data="data" v-model="value2"></b-cascade>
-</div>
-</template>
-<script>
-export default {
-     data () {
-         return {
-             value2: ['xuzhou', 'tongshan'],
              data: [
                {
                  value: 'nanjing',
@@ -241,6 +64,71 @@ export default {
              ]
          }
      }
+}
+</script>
+```
+:::
+
+### 设置默认值
+
+指定 value 默认值，组件会在初始化时选定数据。
+
+::: demo 
+```html
+<template>
+<div style="width:240px;">
+  <b-cascade :data="data" v-model="value2"></b-cascade>
+</div>
+</template>
+<script>
+export default {
+    data () {
+        return {
+            value2: ['xuzhou', 'tongshan'],
+            data: [
+                {
+                 value: 'nanjing',
+                 label: '南京',
+                 children: [
+                     {
+                         value: 'xuanwu',
+                         label: '玄武区'
+                     },
+                     {
+                         value: 'gulou',
+                         label: '鼓楼区'
+                     },
+                     {
+                         value: 'jianye',
+                         label: '建邺区'
+                     }
+                 ]
+                },
+                {
+                 value: 'xuzhou',
+                 label: '徐州',
+                 children: [
+                     {
+                         value: 'tongshan',
+                         label: '铜山区'
+                     },
+                     {
+                         value: 'gulou',
+                         label: '鼓楼区'
+                     },
+                     {
+                         value: 'yunlong',
+                         label: '云龙区'
+                     },
+                     {
+                         value: 'jiawang',
+                         label: '贾汪区'
+                     }
+                 ]
+                }
+            ]
+        }
+    }
 }
 </script>
 ```
@@ -252,7 +140,7 @@ export default {
 设置属性 trigger 为 hover，当鼠标悬停时就会展开子集。
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width:240px;">
   <b-cascade :data="data" trigger="hover"></b-cascade>
@@ -260,9 +148,8 @@ export default {
 </template>
 <script>
 export default {
-     data () {
+    data () {
          return {
-             value1: [],
              data: [
                {
                  value: 'nanjing',
@@ -306,7 +193,7 @@ export default {
                }
              ]
          }
-     }
+    }
 }
 </script>
 ```
@@ -317,7 +204,7 @@ export default {
 设置 slot 可以自定义显示内容，不局限于输入框。
 
 ::: demo
-```html  
+```html
 <template>
 <div>
     <div>{{ text }}</div>
@@ -333,7 +220,6 @@ export default {
      data () {
          return {
              text: '未选择',
-             value1: [],
              data: [
                {
                  value: 'nanjing',
@@ -393,7 +279,7 @@ export default {
 设置属性 `disabled` 可以禁用组件。给某项数据设置 `disabled: true` 可以禁用某一项。
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="main:justify" style="width: 500px;">
     <div style="width:240px;">
@@ -408,9 +294,7 @@ export default {
 export default {
      data () {
          return {
-             text: '未选择',
              value1: [],
-             value2: ['xuzhou', 'tongshan'],
              data: [
                {
                  value: 'nanjing',
@@ -514,7 +398,7 @@ export default {
 设置属性 `change-on-select` 点任何一级都可以选择。
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width:240px;">
   <b-cascade :data="data" change-on-select></b-cascade>
@@ -524,7 +408,6 @@ export default {
 export default {
      data () {
          return {
-             value1: [],
              data: [
                {
                  value: 'nanjing',
@@ -578,8 +461,10 @@ export default {
 
 对于显示的结果，可以通过 `render-format` 接收一个函数来自定义。
 
-::: demo 其中第一个参数 labels 是当前选择的label的集合，第二个参数 selectedData 是当前选择的数据集合，可以利用它们组合出你想要显示的内容。
-```html  
+其中第一个参数 labels 是当前选择的label的集合，第二个参数 selectedData 是当前选择的数据集合，可以利用它们组合出你想要显示的内容。
+
+::: demo 
+```html
 <template>
 <div style="width:240px;">
   <b-cascade :data="data" :render-format="format"></b-cascade>
@@ -589,7 +474,6 @@ export default {
 export default {
      data () {
          return {
-             value1: [],
              data: [
                {
                  value: 'nanjing',
@@ -654,7 +538,7 @@ export default {
 通过设置size属性为large和small
 
 ::: demo
-```html  
+```html
 <template>
 <div flex="main:justify" style="width: 800px;">
     <div style="width:240px;">
@@ -672,9 +556,6 @@ export default {
 export default {
      data () {
          return {
-             text: '未选择',
-             value1: [],
-             value2: ['xuzhou', 'tongshan'],
              data: [
                {
                  value: 'nanjing',
@@ -716,58 +597,9 @@ export default {
                      }
                  ]
                }
-             ],
-             data2: [
-               {
-                 value: 'nanjing',
-                 label: '南京',
-                 disabled: true,
-                 children: [
-                     {
-                         value: 'xuanwu',
-                         label: '玄武区'
-                     },
-                     {
-                         value: 'gulou',
-                         label: '鼓楼区'
-                     },
-                     {
-                         value: 'jianye',
-                         label: '建邺区'
-                     }
-                 ]
-               },
-               {
-                 value: 'xuzhou',
-                 label: '徐州',
-                 children: [
-                     {
-                         value: 'tongshan',
-                         label: '铜山区'
-                     },
-                     {
-                         value: 'gulou',
-                         label: '鼓楼区'
-                     },
-                     {
-                         value: 'yunlong',
-                         label: '云龙区'
-                     },
-                     {
-                         value: 'jiawang',
-                         label: '贾汪区'
-                     }
-                 ]
-               }
              ]
-            
          }
-     },
-      methods: {
-          handleChange (value, selectedData) {
-              this.text = selectedData.map(o => o.label).join(', ');
-          }
-      }
+     }
 }
 </script>
 ```
@@ -778,7 +610,7 @@ export default {
 使用 load-data 属性可以异步加载子选项，需要给数据增加 loading 来标识当前是否在加载中。
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width:240px;">
   <b-cascade :data="data4" :load-data="loadData"></b-cascade>
@@ -788,7 +620,7 @@ export default {
 export default {
    data () {
        return {
-         data4: [
+           data4: [
                {
                    value: 'nanjing',
                    label: '南京',
@@ -858,7 +690,7 @@ export default {
 使用属性 `filterable` 可直接搜索选项并选择。
 
 ::: demo
-```html  
+```html
 <template>
 <div style="width:240px;">
   <b-cascade :data="data" filterable></b-cascade>

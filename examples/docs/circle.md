@@ -7,18 +7,18 @@
 查看代码来查看配置信息
 
 ::: demo 
-```html  
+```html
 <template>
    <div flex="main:justify" style="width:400px;">
-    <b-circle :percent="80">
-           <span class="demo-Circle-inner" style="font-size:24px">80%</span>
+       <b-circle :percent="80">
+          <span class="demo-circle-inner" style="font-size:24px">80%</span>
        </b-circle>
        <b-circle :percent="100" stroke-color="#5cb85c">
-           <b-icon name="check" size="30" style="color:#5cb85c"></b-icon>
+           <b-icon name="ios-checkmark-circle-outline" size="30" style="color:#5cb85c"></b-icon>
        </b-circle>
        <b-circle :percent="35" stroke-color="#ff5500">
-           <span class="demo-Circle-inner">
-               <b-icon name="close" size="50px" style="color:#ff5500"></Icon>
+           <span class="demo-circle-inner">
+               <b-icon name="ios-close" size="50" style="color:#ff5500"></b-icon>
            </span>
        </b-circle>
   </div>
@@ -31,7 +31,7 @@
 可以配合外部操作进度
 
 ::: demo 
-```html  
+```html
 <template>
    <div flex="main:justify" style="width:300px;" class="demo-button">
     <b-circle :percent="percent" :stroke-color="color">
@@ -84,7 +84,7 @@
 可以配置更多的自定义样式
 
 ::: demo 
-```html  
+```html
 <template>
     <b-circle
         :size="250"
@@ -111,7 +111,7 @@
 通过设置属性 `dashboard`，可以很方便地实现仪表盘样式。
 
 ::: demo 
-```html  
+```html
 <template>
        <b-circle :percent="80" dashboard>
           <span class="demo-circle-inner" style="font-size:24px">80%</span>

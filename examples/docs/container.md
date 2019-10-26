@@ -2,8 +2,10 @@
 
 ### 基础用法
 
-::: demo 可以开启返回顶部按钮，这里返回顶部样式和滚动条样式可以使用css样式覆盖
-```html   
+可以开启返回顶部按钮，这里返回顶部样式和滚动条样式可以使用css样式覆盖
+
+::: demo
+```html
 <template>
   <div style="height:500px;overflow: hidden;border:1px solid #eee;">
     <b-container ref="container" header-fixed>
@@ -71,4 +73,4 @@
 | default     | 滚动内容   |
 | header     | 头部的插入内容   |
 | footer     | 底部的插入内容   |
-| backTop     | 返回顶部的插入内容，这里主要为了插入不同的<b-back-top>组件来自定义返回顶部按钮样式   |
+| backTop     | 返回顶部的插入内容，这里主要为了插入不同的组件来自定义返回顶部按钮样式   |

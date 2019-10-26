@@ -9,7 +9,7 @@
 可以给Select添加 style 样式，比如宽度。
 
 ::: demo
-```html  
+```html
 <template>
 <div>
   <b-select style="width:200px" v-model="select">
@@ -47,14 +47,8 @@ export default {
               label: 'Canberra'
           }
       ],
-      select:'',
-      cites:[]
+      select:''
     }
-  },
-  methods: {
-        maxTagPlaceholder (num) {
-            return 'more '+ num;
-        }
   }
 }
 </script>
@@ -64,7 +58,7 @@ export default {
 ### 不同的大小
 
 ::: demo
-```html  
+```html
 <template>
 <div>
   <b-select style="width:100px" v-model="select" size="small">
@@ -78,22 +72,56 @@ export default {
   </b-select>
 </div>
 </template>
+<script>
+export default {
+  data(){
+    return{
+      cityList: [
+          {
+              value: 'New York',
+              label: 'New York'
+          },
+          {
+              value: 'London',
+              label: 'London'
+          },
+          {
+              value: 'Sydney',
+              label: 'Sydney'
+          },
+          {
+              value: 'Ottawa',
+              label: 'Ottawa'
+          },
+          {
+              value: 'Paris',
+              label: 'Paris'
+          },
+          {
+              value: 'Canberra',
+              label: 'Canberra'
+          }
+      ],
+      select:''
+    }
+  }
+}
+</script>
 ```
 :::
-
 
 ### 启用禁用
 
 ::: demo
-```html  
+```html
 <template>
 <div>
-  <b-select style="width:200px" v-model="select" disabled>
+  <b-select style="width:200px" disabled>
     <b-option  value="beijing" label="北京"></b-option>
     <b-option  value="shanghai" label="上海"></b-option>
     <b-option  value="xuzhou" label="徐州"></b-option> 
   </b-select>
-  <b-select style="width:200px;margin-left: 20px;" v-model="select">
+  <b-select style="width:200px;margin-left: 20px;">
     <b-option  value="beijing" label="北京"></b-option>
     <b-option  value="shanghai" label="上海" disabled></b-option>
     <b-option  value="xuzhou" label="徐州"></b-option> 
@@ -113,7 +141,7 @@ export default {
 对于选项显示内容的逻辑：优先显示 slot 内容，如果没有定义 slot，则显示label的值，如果没有设置 label，则显示value的值。
 
 ::: demo
-```html  
+```html
 <template>
 <div>
   <b-select style="width:200px" v-model="select" clearable>
@@ -149,6 +177,15 @@ export default {
   <span>{{ select }}</span>
 </div>
 </template>
+<script>
+export default {
+  data(){
+    return {
+      select:''
+    }
+  }
+}
+</script>
 ```
 :::
 
@@ -158,7 +195,7 @@ export default {
 可以开启属性`multiple`开启多选模式 `max-tag-count` `max-tag-placeholder` 可以对超出的部分做折叠显示
 
 ::: demo
-```html  
+```html
 <template>
 <div>
   <div>{{ cites }}</div>
@@ -176,6 +213,20 @@ export default {
    </b-select>
 </div>
 </template>
+<script>
+export default {
+  data(){
+    return {
+      cites:[]
+    }
+  },
+  methods: {
+       maxTagPlaceholder (num) {
+           return 'more '+ num;
+       }
+  }
+}
+</script>
 ```
 :::
 
@@ -184,10 +235,10 @@ export default {
 可以开启属性 `prefix` 开启前缀模式
 
 ::: demo
-```html  
+```html
 <template>
 <div>
-  <b-select style="width:200px" v-model="select" prefix="ios-home">
+  <b-select style="width:200px" prefix="ios-home">
     <b-option value="beijing" label="北京"></b-option>
     <b-option value="shanghai" label="上海"></b-option>
     <b-option value="xuzhou" label="徐州"></b-option> 
@@ -203,10 +254,10 @@ export default {
 通过设置属性`filterable`可以开启搜索模式。单选和多选都支持搜索模式
 
 ::: demo
-```html  
+```html
 <template>
 <div>
-  <b-select style="width:200px" v-model="select" filterable>
+  <b-select style="width:200px" filterable>
     <b-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</b-option>
   </b-select>
   <b-select style="width:300px;margin-left: 20px;" v-model="cites" filterable multiple>
@@ -214,6 +265,41 @@ export default {
   </b-select>
 </div>
 </template>
+<script>
+export default {
+  data(){
+    return{
+      cityList: [
+          {
+              value: 'New York',
+              label: 'New York'
+          },
+          {
+              value: 'London',
+              label: 'London'
+          },
+          {
+              value: 'Sydney',
+              label: 'Sydney'
+          },
+          {
+              value: 'Ottawa',
+              label: 'Ottawa'
+          },
+          {
+              value: 'Paris',
+              label: 'Paris'
+          },
+          {
+              value: 'Canberra',
+              label: 'Canberra'
+          }
+      ],
+      cites:[]
+    }
+  }
+}
+</script>
 ```
 :::
 

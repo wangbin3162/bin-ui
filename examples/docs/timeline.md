@@ -5,7 +5,7 @@
 简单定义一个时间轴的方法
 
 ::: demo
-```html  
+```html
 <template>
   <b-timeline>
         <b-timeline-item>
@@ -26,17 +26,6 @@
         </b-timeline-item>
   </b-timeline>
 </template>
-<style scoped>
-    .time{
-        font-size: 14px;
-        font-weight: bold;
-        margin: 0;
-    }
-    .content{
-        padding-left: 5px;
-        margin: 0;
-    }
-</style>
 ```
 :::
 
@@ -46,7 +35,7 @@
 用各种颜色来标识不同状态，可以使用success、info、warning, danger或自定义的颜色，默认是 primary 。
 
 ::: demo
-```html  
+```html
 <template>
     <b-timeline>
         <b-timeline-item color="primary">发布1.0版本</b-timeline-item>
@@ -65,7 +54,7 @@
 通过添加pending属性来标记最后一个为节点
 
 ::: demo
-```html  
+```html
 <template>
     <b-timeline pending>
         <b-timeline-item>发布1.0版本</b-timeline-item>
@@ -83,7 +72,7 @@
 默认是空心远点，可以自定义轴点图标
 
 ::: demo
-```html  
+```html
 <template>
     <b-timeline>
         <b-timeline-item color="success">

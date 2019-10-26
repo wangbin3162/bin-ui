@@ -7,7 +7,7 @@
 最简单的使用方法，通过控制属性value来显示 / 隐藏对话框。
 
 ::: demo
-```html  
+```html
 <template>
   <b-button type="primary" v-waves size="small" @click="modal1 = true">显示弹窗</b-button>
   <b-modal v-model="modal1" title="普通的模态框标题"
@@ -21,28 +21,9 @@
     export default {
       data () {
             return {
-                modal1: false,
-                modal2: false,
-                modal3: false,
-                modal4: false,
-                modal5: false,
-                modal6: false,
-                modal7: false,
-                modal8: false,
-                modal9: false,
-                modal10: false,
-                modal11: false,
-                modal12: false,
-                loading: true
+                modal1: false
             }
-        },
-      methods: {
-         asyncOK () {
-             setTimeout(() => {
-                 this.modal5 = false;
-             }, 2000);
-         }
-      }
+        }
     }
 </script>
 ```
@@ -53,7 +34,7 @@
 Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制整个 Modal 的各个组成部分，比如页头、页脚、关闭按钮。
 
 ::: demo 注：参数内容都包含在第一个示例中
-```html  
+```html
 <template>
   <b-button  v-waves size="small" @click="modal2 = true">自定义页头页脚</b-button>
   <b-button  v-waves size="small" @click="modal3 = true">不带标题栏和页脚</b-button>
@@ -81,6 +62,17 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
            对话框的宽度是响应式的，当屏幕尺寸小于 768px 时，宽度会变为自动auto。</p>
     </b-modal>
 </template>
+<script>
+    export default {
+      data () {
+            return {
+                modal2: false,
+                modal3: false,
+                modal4: false
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -90,7 +82,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 需要手动关闭对话框，常用于表单提交。
 
 ::: demo
-```html  
+```html
 <template>
   <b-button type="primary" v-waves size="small" @click="modal5 = true">显示弹窗</b-button>
   <b-modal v-model="modal5" title="普通的模态框标题"
@@ -124,7 +116,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 可以禁用关闭和遮罩层关闭。
 
 ::: demo
-```html  
+```html
 <template>
     <b-button v-waves size="small" @click="modal6 = true">禁用右上角关闭</b-button>
     <b-button v-waves size="small" @click="modal7 = true">禁用mask关闭</b-button>
@@ -153,7 +145,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 可以自定义对话框的位置。
 
 ::: demo
-```html  
+```html
 <template>
     <b-button v-waves size="small" @click="modal8 = true">距离顶部200px</b-button>
     <b-button v-waves size="small" @click="modal9 = true">垂直居中</b-button>
@@ -182,7 +174,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 设置属性 `fullscreen` 可以全屏显示。属性 `footer-hide` 可以隐藏底部内容。
 
 ::: demo
-```html  
+```html
 <template>
     <b-button v-waves size="small" @click="modal10 = true">显示全屏对话框</b-button>
     <b-modal v-model="modal10" title="全屏标题" fullscreen>
@@ -206,7 +198,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 设置属性 `draggable` 对话框可以进行拖拽移动。
 
 ::: demo
-```html  
+```html
 <template>
     <b-button v-waves size="small" @click="modal11 = true">打开弹窗1</b-button>
     <b-button v-waves size="small" @click="modal12 = true">打开弹窗2</b-button>
@@ -221,7 +213,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
     export default {
         data () {
             return {
-                modal11: false
+                modal11: false,
                 modal12: false
             }
         }

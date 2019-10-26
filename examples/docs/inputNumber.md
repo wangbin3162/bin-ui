@@ -5,7 +5,7 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
     <b-input-number :max="10" :min="1" v-model="value1"></b-input-number>
 </template>
@@ -13,16 +13,7 @@
     export default {
         data () {
             return {
-                value1: 1,
-                value2: 1,
-                value3: 1,
-                value4: 1,
-                value5: 1,
-                value6: 1000,
-                value7: 100,
-                value8: 100,
-                value9: 1000,
-                value10: 100
+                value1: 1
             }
         }
     }
@@ -32,33 +23,51 @@
 
 ### 小数
 
-
 ::: demo
-```html  
+```html
 <template>
     <b-input-number :max="10" :min="1" v-model="value2" :step="0.2"></b-input-number>
 </template>
+<script>
+    export default {
+        data () {
+            return {
+                value2: 1
+            }
+        }
+    }
+</script>
 ```
 :::
 
 ### 可以格式化
 
 ::: demo
-```html  
+```html
 <template>
     <div>
         <b-input-number
             :max="10000"
-            v-model="value9"
+            v-model="value3"
             :formatter="value => `$ ${value}`.replace(/B(?=(d{3})+(?!d))/g, ',')"
             :parser="value => value.replace(/$s?|(,*)/g, '')"></b-input-number>&nbsp;&nbsp;
         <b-input-number
             :max="100"
-            v-model="value10"
+            v-model="value4"
             :formatter="value => `${value}%`"
             :parser="value => value.replace('%', '')"></b-input-number>
     </div>
 </template>
+<script>
+    export default {
+        data () {
+            return {
+                value3: 1,
+                value4: 1
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -67,14 +76,23 @@
 提供三种不同尺寸
 
 ::: demo
-```html  
+```html
 <template>
     <div>
-      <b-input-number v-model="value3" size="small"></b-input-number>&nbsp;&nbsp;
-      <b-input-number v-model="value4"></b-input-number>&nbsp;&nbsp;
+      <b-input-number v-model="value5" size="small"></b-input-number>&nbsp;&nbsp;
+      <b-input-number v-model="value5"></b-input-number>&nbsp;&nbsp;
       <b-input-number v-model="value5" size="large"></b-input-number>
     </div>
 </template>
+<script>
+    export default {
+        data () {
+            return {
+                value5: 1
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -84,14 +102,23 @@
 禁用，只读和不可编辑三种状态
 
 ::: demo
-```html  
+```html
 <template>
     <div>
       <b-input-number v-model="value6" disabled></b-input-number>&nbsp;&nbsp;
-      <b-input-number v-model="value7" readonly></b-input-number>&nbsp;&nbsp;
-       <b-input-number v-model="value8" :editable="false"></b-input-number>
+      <b-input-number v-model="value6" readonly></b-input-number>&nbsp;&nbsp;
+       <b-input-number v-model="value6" :editable="false"></b-input-number>
     </div>
 </template>
+<script>
+    export default {
+        data () {
+            return {
+                value6: 1
+            }
+        }
+    }
+</script>
 ```
 :::
 

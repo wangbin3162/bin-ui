@@ -8,7 +8,7 @@
 ### 所有实例
 
 ::: demo
-```html  
+```html
 <template>
     <div class="demo-button">
       <b-button @click="$log.print('default print','#df85ff')" v-waves>custom</b-button>

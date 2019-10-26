@@ -5,24 +5,23 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
   <b-switch v-model="switch1" @on-change="change"></b-switch>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                switch1: false,
-                disabled: true
-            }  
-        },
-        methods: {
-            change (status) {
-                this.$message('开关状态：' + status);
-            }
+export default {
+    data () {
+        return {
+            switch1: false
+        }  
+    },
+    methods: {
+        change (status) {
+            this.$message('开关状态：' + status);
         }
     }
+}
 </script>
 ```
 :::
@@ -30,7 +29,7 @@
 ### 大小及颜色
 
 ::: demo
-```html  
+```html
 <template>
     <b-switch size="large"></b-switch>&nbsp;
     <b-switch></b-switch>&nbsp;
@@ -43,7 +42,7 @@
 ### 文字或图标
 
 ::: demo
-```html  
+```html
 <template>
     <b-switch>
       <span slot="open">开</span>
@@ -66,16 +65,23 @@
 ```
 :::
 
-
-
 ### 禁用
 
 ::: demo
-```html  
+```html
 <template>
   <b-switch :disabled="disabled"></b-switch>&nbsp;
   <b-button type="primary" @click="disabled = !disabled" size="mini">Toggle Disabled</Button>
 </template>
+<script>
+export default {
+    data () {
+        return {
+            disabled: false
+        }  
+    }
+}
+</script>
 ```
 :::
 

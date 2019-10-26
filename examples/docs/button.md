@@ -2,13 +2,12 @@
 
 常用的操作按钮。
 
-
 ### 基础用法
 
-基础的按钮用法
+使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
 
-::: demo 使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
-```html  
+::: demo
+```html
 <template>
     <div class="demo-button">
       <b-button v-waves>默认按钮</b-button>
@@ -40,10 +39,10 @@
 
 ### 禁用按钮
 
-按钮不可用状态
+你可以使用`disabled`属性来定义按钮是否可用，它接受一个`Boolean`值。
 
-::: demo 你可以使用`disabled`属性来定义按钮是否可用，它接受一个`Boolean`值。
-```html  
+::: demo
+```html
 <template>
     <div class="demo-button">
       <b-button disabled>默认按钮</b-button>
@@ -70,7 +69,7 @@
 没有边框和背景色的按钮。
 
 ::: demo 
-```html  
+```html
 <template>
     <div class="demo-button">
        <b-button type="text">文字按钮</b-button>
@@ -82,10 +81,10 @@
 
 ### 按钮组
 
-以按钮组的方式出现，常用于多项类似操作。
+以按钮组的方式出现，常用于多项类似操作。使用`<b-button-group>`标签来嵌套你的按钮。
 
-::: demo  使用`<b-button-group>`标签来嵌套你的按钮。
-```html  
+::: demo
+```html
 <template>
     <div class="demo-button">
        <b-button-group>
@@ -106,8 +105,8 @@
 
 Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
 
-::: demo 
-```html  
+::: demo
+```html
 <template>
     <div class="demo-button">
        <b-button size="large">大型按钮</b-button>
@@ -129,8 +128,8 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 
 可以添加加载状态
 
-::: demo 
-```html  
+::: demo
+```html
 <template>
     <div class="demo-button">
        <b-button loading>默认按钮</b-button>

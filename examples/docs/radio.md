@@ -5,23 +5,19 @@
 ### 基础用法
 
 ::: demo
-```html  
+```html
 <template>
     <b-radio v-model="single">Radio</b-radio>
      <span style="color:#ff4511;">{{single}}</span>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                single: false,
-                social: 'facebook',
-                fruit: '苹果',
-                disabledSingle: true,
-                disabledGroup: '苹果'
-            }
+export default {
+    data () {
+        return {
+            single: false
         }
     }
+}
 </script>
 ```
 :::
@@ -29,7 +25,7 @@
 ### 组合使用
 
 ::: demo
-```html  
+```html
 <template>
     <b-radio-group v-model="social">
        <b-radio label="twitter">
@@ -54,14 +50,14 @@
    <p style="color:#ff4511;margin: 5px 0;">{{fruit}}</p>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                social: 'facebook',
-                fruit: '苹果'
-            }
+export default {
+    data () {
+        return {
+            social: 'facebook',
+            fruit: '苹果'
         }
     }
+}
 </script>
 ```
 :::
@@ -69,7 +65,7 @@
 ### 禁用
 
 ::: demo
-```html  
+```html
 <template>
     <b-radio v-model="disabledSingle" disabled>Checkbox</b-radio>
        <b-radio-group v-model="disabledGroup">
@@ -78,7 +74,6 @@
            <b-radio label="西瓜"></b-radio>
        </b-radio-group>
 </template>
-
 <script>
     export default {
         data () {

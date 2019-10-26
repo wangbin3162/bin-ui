@@ -1,8 +1,3 @@
-<style scoped>
-  li{
-    line-height: 2.2em;
-  }
-</style>
 ## 介绍
 
 bin-ui 是一款基于 Vue.js 2.0 的前端 UI组件库，是个人在工作中为了更好的学习和使用vue相关技术栈而实现的。

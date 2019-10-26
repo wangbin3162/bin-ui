@@ -4,9 +4,8 @@
 
 ### 基础用法
 
-
 ::: demo
-```html  
+```html
 <template>
     <div class="block">
       <span class="demonstration">默认不区分颜色</span>
@@ -14,10 +13,7 @@
     </div>
     <div class="block">
       <span class="demonstration">区分颜色</span>
-      <b-rate
-        v-model="value2"
-        :colors="colors">
-      </b-rate>
+      <b-rate v-model="value2" :colors="colors"></b-rate>
     </div>
 </template>
 <script>
@@ -26,9 +22,7 @@
       return {
         value1: null,
         value2: null,
-        colors: ['#99A9BF', '#F7BA2A', '#FF9900'] ,
-        value: null,
-        iconClasses: ['icon-ios-heart-empty', 'icon-ios-heart', 'icon-ios-heart'] 
+        colors: ['#99A9BF', '#F7BA2A', '#FF9900']
       }
     }
   }
@@ -36,11 +30,10 @@
 ```
 :::
 
-
 ### 其他的icon
 
 ::: demo
-```html  
+```html
 <b-rate
   v-model="value"
   :icon-classes="iconClasses"
@@ -64,7 +57,7 @@
 ### 只读的
 
 ::: demo
-```html  
+```html
 <b-rate
   :value="3.7"
   disabled

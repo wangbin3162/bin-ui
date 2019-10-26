@@ -2,22 +2,19 @@
 
 ### 水波纹指令
 
-用于在按钮点击或者文字点击的时候增加水波纹特效
+在标签中追加`v-waves`指令增加水波纹指令
 
-::: demo 直接在标签中追加`v-waves`指令开启
-```html  
+::: demo
+```html
 <template>
     <div class="demo-button">
-       <b-button type="primary" plain v-waves>主要按钮</b-button>
-       <b-button type="success" plain v-waves>成功按钮</b-button>
-       <b-button type="info" plain v-waves>信息按钮</b-button>
-       <b-button type="warning" plain v-waves>警告按钮</b-button>
-       <b-button type="danger" plain v-waves>危险按钮</b-button>
+      <b-button v-waves>默认按钮</b-button>
+      <b-button type="primary" v-waves>主要按钮</b-button>
+      <b-button type="success" v-waves>成功按钮</b-button>
+      <b-button type="info" v-waves>信息按钮</b-button>
+      <b-button type="warning" v-waves>警告按钮</b-button>
+      <b-button type="danger" v-waves>危险按钮</b-button>
     </div>
-    
-     <div class="demo-button">
-        <div style="padding: 15px;user-select: none;border:1px solid #c8c8c8;" v-waves>这是一段文字</h2>
-     </div>
 </template>
 ```
 :::
@@ -30,8 +27,8 @@
 
 直接在标签中追加`v-ellipsis`指令开启
 
-::: demo 
-```html  
+::: demo
+```html
 <template>
      <div class="demo-button">
         <div v-ellipsis="20">这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</div>
