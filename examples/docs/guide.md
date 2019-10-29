@@ -11,6 +11,7 @@ bin-ui 是一款基于 Vue.js 2.0 的前端 UI组件库，是个人在工作中�
 
 本UI组件库包含对应的生态圈，具体可进入导航栏进行跳转传送，主要有以下几个衍生库
 
+- [bin-cli](https://github.com/wangbin3162/bin-cli/) 脚手架构建工具
 - [bin-animation](https://github.com/wangbin3162/bin-animation/) css3动画库
 - [bin-keyframe-animation](https://github.com/wangbin3162/bin-keyframe-animation/) js关键帧动画库
 - [bin-admin](https://github.com/wangbin3162/bin-admin/) 后台管理系统admin2.0版本

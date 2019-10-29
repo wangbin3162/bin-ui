@@ -10,6 +10,9 @@
             <i class="iconfont icon-ios-arrow-down"></i>
           </a>
           <b-dropdown-menu slot="list">
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-cli')">
+              bin-cli
+            </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-admin')">
               bin-admin
             </b-dropdown-item>
