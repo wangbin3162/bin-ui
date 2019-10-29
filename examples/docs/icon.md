@@ -1,5 +1,15 @@
 ## Icon 图标
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#shi-yong-fang-fa" title="使用方法"></b-anchor-link>
+        <b-anchor-link href="#tu-biao-ji-he" title="图标集合"></b-anchor-link>
+        <b-anchor-link href="#huo-quicon-names" title="获取icon names"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 图标这里使用了阿里[iconfont](https://www.iconfont.cn/)图标库生成了图标，图标来源于
 开源项目 ionicons，结合整理添加了一些其他的图标。
 

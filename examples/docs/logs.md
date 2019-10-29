@@ -11,6 +11,14 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.3.1</p>
+        <p class="time">2019-10-26</p>
+        <p class="content">优化文档和打包配置</p>
+        <p class="content">优化工程目录结构</p>
+        <p class="content">修复input-number输入框样式</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.3.0</p>
         <p class="time">2019-10-26</p>
         <p class="content">重构项目构建工具，重新打包整理文档</p>

@@ -1,5 +1,21 @@
 ## Tree 树结构
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#jin-yong-xuan-ze" title="禁用选择"></b-anchor-link>
+        <b-anchor-link href="#ke-yi-xuan-ze" title="可以选择"></b-anchor-link>
+        <b-anchor-link href="#yi-bu-jia-zai-zi-jie-dian" title="异步加载子节点"></b-anchor-link>
+        <b-anchor-link href="#render-han-shu" title="render函数"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+        <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
+        <b-anchor-link href="#children" title="Children"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 ### 基础用法
 
 ::: demo
@@ -213,7 +229,7 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
 ```
 :::
 
-### 可以通过renner函数来自定义
+### render函数
 
 可以设置show-checkbox开启勾选，并可以设置数据格式中的默认选中
 
@@ -373,7 +389,6 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
 | check-strictly   | 复选框的情况下，是否严格的遵循父子不互相关联的做法 | Boolean		  |  —   |   false   |
 | check-directly   | 开启后，在 show-checkbox 模式下，select 的交互也将转为 check | Boolean		  |  —   |   false   |
 | lock-select    | 锁定树选择，再部分业务中常用，比如开启弹窗后禁用树的选中操作   | Boolean  |  —   |  false  |
-
 
 ### Events
 

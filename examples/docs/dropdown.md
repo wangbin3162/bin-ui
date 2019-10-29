@@ -1,5 +1,22 @@
 ## Dropdown 下拉菜单
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#hong-fa-fang-shi" title="触发方式"></b-anchor-link>
+        <b-anchor-link href="#dui-qi-fang-xiang" title="对齐方向"></b-anchor-link>
+        <b-anchor-link href="#qian-tao-yong-fa" title="嵌套用法"></b-anchor-link>
+        <b-anchor-link href="#api" title="API">
+            <b-anchor-link href="#dropdown-props" title="Dropdown props"></b-anchor-link>
+            <b-anchor-link href="#dropdown-events" title="Dropdown events"></b-anchor-link>
+            <b-anchor-link href="#dropdown-methods" title="Dropdown slot"></b-anchor-link>
+            <b-anchor-link href="#dropdown-item-props" title="Dropdown Item props"></b-anchor-link>
+        </b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 ### 基础用法
 
 ::: demo
@@ -37,7 +54,7 @@
 ```
 :::
 
-### 不同触发方式
+### 触发方式
    
 ::: demo
 ```html
@@ -190,6 +207,8 @@
 ```
 :::
 
+### API
+
 ### Dropdown props
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
@@ -214,7 +233,6 @@
 |---------- |-------- |
 | default     | 主体内容   |
 | list     | 列表内容，一般由 b-dropdown-menu 填充   |
-
 
 ### Dropdown Item props
 

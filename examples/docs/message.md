@@ -1,5 +1,17 @@
 ## Message 通知
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#pei-zhi-can-shu" title="配置参数"></b-anchor-link>
+        <b-anchor-link href="#render-han-shu-diao-yong" title="render函数调用"></b-anchor-link>
+        <b-anchor-link href="#api" title="API"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。
 
 ### 基础用法

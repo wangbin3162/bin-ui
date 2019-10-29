@@ -1,5 +1,19 @@
 ## Radio 单选框
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#zu-he-shi-yong" title="组合使用"></b-anchor-link>
+        <b-anchor-link href="#jin-yong" title="禁用"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#radio-events" title="Radio events"></b-anchor-link>
+        <b-anchor-link href="#radiogroup-slot" title="RadioGroup slot"></b-anchor-link>
+        <b-anchor-link href="#radiogroup-methods" title="RadioGroup methods"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 基本组件-单选框。主要用于一组可选项单项选择，或者单独用于切换到选中状态。
 
 ### 基础用法

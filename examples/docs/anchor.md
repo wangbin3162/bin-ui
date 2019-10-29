@@ -1,8 +1,8 @@
 ## Anchor 锚点
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;">
-      <b-anchor icon="ios-heart">
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#zi-ding-yi-tu-biao-he-bu-gu-ding" title="自定义图标和不固定"></b-anchor-link>
       </b-anchor>

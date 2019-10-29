@@ -1,5 +1,28 @@
 ## Table 简表格
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#ban-ma-wen-he-bian-kuang" title="斑马纹和边框"></b-anchor-link>
+        <b-anchor-link href="#gu-ding-biao-tou" title="固定表头"></b-anchor-link>
+        <b-anchor-link href="#gu-ding-biao-tou-he-lie" title="固定表头和列"></b-anchor-link>
+        <b-anchor-link href="#dan-xuan-biao-ge" title="单选表格"></b-anchor-link>
+        <b-anchor-link href="#duo-xuan-biao-ge" title="多选表格"></b-anchor-link>
+        <b-anchor-link href="#ke-cao-zuo-biao-ge" title="可操作表格"></b-anchor-link>
+        <b-anchor-link href="#pai-xu-biao-ge" title="排序表格"></b-anchor-link>
+        <b-anchor-link href="#loading-zhuang-tai" title="loading状态"></b-anchor-link>
+        <b-anchor-link href="#da-xiao-zhuang-tai" title="大小状态"></b-anchor-link>
+        <b-anchor-link href="#dao-chucsv" title="导出csv"></b-anchor-link>
+        <b-anchor-link href="#table-props" title="Table props"></b-anchor-link>
+        <b-anchor-link href="#table-events" title="Table events"></b-anchor-link>
+        <b-anchor-link href="#table-slot" title="Table slot"></b-anchor-link>
+        <b-anchor-link href="#table-methods" title="Table methods"></b-anchor-link>
+        <b-anchor-link href="#column" title="column"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 暂时只是简单表格，后期继续丰富
 
 ### 基础用法
@@ -71,7 +94,7 @@
 ```
 :::
 
-### 斑马纹 和边框
+### 斑马纹和边框
 
 ::: demo
 ```html
@@ -647,7 +670,6 @@ height 和maxHeight可以设置固定表头
 ```
 :::
 
-
 ### loading状态
 
 ::: demo 
@@ -913,7 +935,6 @@ height 和maxHeight可以设置固定表头
 | footer     | 页脚   |
 | loading     | 警告提加载中示内容   |
 
-
 ### Table methods
 
 | 方法名      | 说明    | 参数      |
@@ -922,7 +943,6 @@ height 和maxHeight可以设置固定表头
 | clearCurrentRow     | 清除高亮项，仅在开启  | 无 |
 | handleResize     | 刷新表格的宽高  | 无 |
 | getSelection     | 获取已经选中的行  | 无 |
-
 
 ### column 
 

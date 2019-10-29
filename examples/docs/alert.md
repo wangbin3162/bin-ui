@@ -1,5 +1,20 @@
 ## Alert 警告提示
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#bao-han-miao-shu-xin-xi" title="包含描述信息"></b-anchor-link>
+        <b-anchor-link href="#tu-biao" title="图标"></b-anchor-link>
+        <b-anchor-link href="#ke-yi-guan-bi" title="可以关闭"></b-anchor-link>
+        <b-anchor-link href="#ding-bu-gong-gao-yang-shi" title="顶部公告样式"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 静态的展示一些区块，提示或者警告，可以动态的去删除
 
 ### 基础用法
@@ -94,7 +109,6 @@
 </template>
 ```
 :::
-
 
 ### Attributes
 

@@ -1,8 +1,21 @@
 ## Tag 标签
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#ke-yi-chu-biao-qian" title="可移除标签"></b-anchor-link>
+        <b-anchor-link href="#dot-mo-shi" title="dot 模式"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-yang-shi" title="自定义样式"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 显示标签
 
-### 基本用法
+### 基础用法
 
 由`type`属性来选择`tag`的类型，也可以通过`color`属性来自定义背景色。
 
@@ -112,7 +125,6 @@ dot 模式简单显示
 | size    |  尺寸   | String  |   medium / small / mini       |    —          |
 | fontSize    |  字体大小   | String  |    —      |    —          |
 | tag-style    |  标签样式(完全控制，尽量不要设置)   | String  |    —      |    —          |
-
 
 ### Events
 

@@ -1,5 +1,18 @@
 ## Divider 分割线
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#shui-ping-fen-ge-xian" title="水平分割线"></b-anchor-link>
+        <b-anchor-link href="#chui-zhi-fen-ge-xian" title="垂直分割线"></b-anchor-link>
+        <b-anchor-link href="#xiu-gai-biao-ti-de-wei-zhi" title="修改标题的位置"></b-anchor-link>
+        <b-anchor-link href="#api" title="API">
+            <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        </b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 区隔内容的分割线。
 
 可以对对不同文本段落进行分割。
@@ -54,6 +67,8 @@ align属性可以设置标题位置 使用 align="left" 设置为行内的垂直
 </template>
 ```
 :::
+
+### API
 
 ### Attributes
 

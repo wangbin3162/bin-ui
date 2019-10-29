@@ -39,16 +39,38 @@ module.exports = {
         include: [resolve('examples'), resolve('src')]
       },
       {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.styl(us)?$/,
         loaders: ['style-loader', 'css-loader', 'stylus-loader']
       },
       {
-        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-        loader: 'url-loader?limit=8192'
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: '[name].[hash:7].[ext]',
+          publicPath: 'img/',
+          outputPath: 'img/'
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: '[name].[hash:7].[ext]',
+          publicPath: 'media/',
+          outputPath: 'media/'
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: '[name].[hash:7].[ext]',
+          publicPath: 'fonts/',
+          outputPath: 'fonts/'
+        }
       },
       {
         test: /\.(html|tpl)$/,
@@ -63,7 +85,6 @@ module.exports = {
     }
   },
   plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.DefinePlugin({
       'process.env.VERSION': `'${pkg.version}'`
     })

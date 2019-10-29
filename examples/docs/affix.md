@@ -1,5 +1,18 @@
 ## Affix 图钉
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#ding-bu-pian-yi" title="顶部偏移"></b-anchor-link>
+        <b-anchor-link href="#gu-ding-zhuang-tai-shi-jian" title="固定状态事件"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 ### 基础用法
 
 建议配合scrollbar组件已达到良好的显示效果，原生滚动暂未测试存在问题，相对于当前滚动窗口固定图钉
@@ -28,7 +41,7 @@
 ```
 :::
 
-### 固定状态出发事件
+### 固定状态事件
 
 可以简体固定状态改变事件
 
@@ -58,7 +71,6 @@
 |---------- |-------- |---------- |-------------  |-------- |
 | offset-top     | 距离窗口顶部达到指定偏移量后触发   | Number  |  —   |   0  |
 | z-index    | 层级   | Number  |  —   |   10  |
-
 
 ### Events
 

@@ -18,6 +18,9 @@
   cursor: default;
   &:hover {
     border-color: #57a3f3;
+    .bin-input-number-handler-wrap {
+      opacity: 1;
+    }
   }
   &:focus {
     border-color: #57a3f3;
@@ -54,9 +57,6 @@
   right: 0;
   transition: opacity .2s ease-in-out;
   opacity: 0;
-  &:hover {
-    opacity: 1;
-  }
 }
 .bin-input-number-handler {
   display: block;

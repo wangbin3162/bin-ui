@@ -1,5 +1,19 @@
 ## Form 表单
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#xing-nei-biao-dan" title="行内表单"></b-anchor-link>
+        <b-anchor-link href="#biao-dan-tou-dui-qi-fang-shi" title="表单头对齐方式"></b-anchor-link>
+        <b-anchor-link href="#ji-ben-xiao-yan" title="基本校验"></b-anchor-link>
+        <b-anchor-link href="#dan-ge-yuan-su-de-xiao-yan" title="单个元素的校验"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
+        <b-anchor-link href="#formitem-props" title="FormItem props"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 具有校验和提交功能的表单，暂时只包含输入框，单选，多选，文本域 ，开关组件，后期完善。
 
 ### 行内表单
@@ -223,7 +237,6 @@
 ```
 :::
 
-
 ### 单个元素的校验
 
 ::: demo
@@ -255,7 +268,7 @@
 ```
 :::
 
-### Form Attributes
+### Attributes
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
@@ -266,7 +279,7 @@
 | label-width    | 表单域标签的宽度   | Number  |   —    |  —   |
 | show-message   | 是否显示校验错误信息   | Boolean  |   —    |  false  |
 
-### Form Methods
+### Methods
 
 | 参数      | 说明    | 返回值   |
 |---------- |-------- |---------- |
@@ -274,7 +287,7 @@
 | validateField     | 对部分表单字段进行校验的方法，参数1为需校验的 prop，参数2为检验完回调，返回错误信息   | callback  |
 | resetFields     | 对整个表单进行重置，将所有字段值重置为空并移除校验结果   | 无  |
 
-### FormItem Attributes
+### FormItem props
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |

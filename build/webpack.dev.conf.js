@@ -11,21 +11,20 @@ const webpackBaseConfig = require('./webpack.base.conf.js')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const webpackConfig = merge(webpackBaseConfig, {
   mode: process.env.NODE_ENV,
   devtool: 'eval-source-map',
-  // 入口
   entry: {
-    main: './examples/main.js'
+    app: './examples/main.js'
   },
-  // 输出
   output: {
     path: path.join(__dirname, '../dist'),
-    publicPath: isProd ? '/docs/bin-ui' : '/',
-    filename: '[name].js',
-    chunkFilename: '[name].chunk.js'
+    publicPath: isProd ? '/docs/bin-ui/' : '/',
+    filename: 'js/[name].js',
+    chunkFilename: 'js/[name].[hash:7].js'
   },
   resolve: {
     alias: {
@@ -53,6 +52,13 @@ const webpackConfig = merge(webpackBaseConfig, {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader'
+        ]
+      },
+      {
         test: /\.md$/,
         use: [
           {
@@ -76,7 +82,7 @@ const webpackConfig = merge(webpackBaseConfig, {
     new ProgressBarPlugin(),
     new VueLoaderPlugin(),
     new webpack.DefinePlugin({
-      'process.env.FAAS_ENV': JSON.stringify(process.env.FAAS_ENV)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new webpack.LoaderOptionsPlugin({
       vue: {}
@@ -85,15 +91,13 @@ const webpackConfig = merge(webpackBaseConfig, {
 })
 
 if (isProd) {
-  webpackConfig.externals = {
-    vue: 'Vue',
-    'vue-router': 'VueRouter',
-    'highlight.js': 'hljs'
-  }
   webpackConfig.plugins.push(
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: 'css/[name].css'
     })
+  )
+  webpackConfig.plugins.push(
+    new CleanWebpackPlugin()
   )
   webpackConfig.optimization.minimizer.push(
     new UglifyJsPlugin({
@@ -104,10 +108,22 @@ if (isProd) {
     new OptimizeCSSAssetsPlugin({})
   )
   webpackConfig.optimization.splitChunks = {
+    chunks: 'async',
+    minSize: 30000, // 模块大于30k会被抽离到公共模块
+    minChunks: 1, // 模块出现1次就会被抽离到公共模块
+    maxAsyncRequests: 5, // 异步模块，一次最多只能被加载5个
+    maxInitialRequests: 3, // 入口模块最多只能加载3个
+    name: true,
     cacheGroups: {
-      vendor: {
-        test: /\/src\//,
-        name: 'bin-ui',
+      default: {
+        minChunks: 2,
+        priority: -20,
+        reuseExistingChunk: true
+      },
+      vendors: {
+        name: 'vendors',
+        test: /[\\/]node_modules[\\/]/,
+        priority: -10,
         chunks: 'all'
       }
     }

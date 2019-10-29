@@ -1,5 +1,16 @@
 ## BackTop 返回顶部
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#yong-fa" title="用法"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-yang-shi" title="自定义样式"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 当页面内容比较长滚动后需要快捷返回顶部时使用，一般放置在页面右下角位置。
 
 注意：如嵌套在自定义滚动组件中使用则需要将 `BackTop` 组件放置于 `Scrollbar` 组件内部

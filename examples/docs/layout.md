@@ -1,5 +1,15 @@
 ## Layout 布局
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#flex.css-shi-yong" title="flex.css使用"></b-anchor-link>
+        <b-anchor-link href="#flex-shu-xing-da-quan" title="flex属性大全"></b-anchor-link>
+        <b-anchor-link href="#flex-box-shu-xing-shuo-ming" title="flex-box属性说明"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 由于日常应用flex布局较为频繁，故不设计每家通用的24栏分隔布局，基本布局组件使用
 [flex.css](https://github.com/lzxb/flex.css)，
 框架集成了`flex.css` 故不用重复引入，并此基础上扩展了`flex`的换行属性`wrap`

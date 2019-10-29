@@ -1,5 +1,18 @@
 ## Container容器
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#api" title="API">
+            <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+            <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
+            <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+        </b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 ### 基础用法
 
 可以开启返回顶部按钮，这里返回顶部样式和滚动条样式可以使用css样式覆盖
@@ -48,6 +61,8 @@
 ```
 :::
 
+### API
+
 ### Attributes
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
@@ -60,7 +75,7 @@
 | fixedFooterHeight    |  底部的高度   | String  |  —   |   50px   |
 | wrapStyle    |  容器样式自定义,可以控制间距边框颜色等等   | Object  |  —   |   {}   |
 
-### methods
+### Methods
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |

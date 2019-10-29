@@ -1,5 +1,21 @@
 ## Tooltip 提示
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#duo-chong-xuan-ting-wei-zhi" title="多种悬停位置"></b-anchor-link>
+        <b-anchor-link href="#bu-tong-zhu-ti" title="不同主题"></b-anchor-link>
+        <b-anchor-link href="#duo-xing" title="多行"></b-anchor-link>
+        <b-anchor-link href="#chang-wen-ben" title="长文本"></b-anchor-link>
+        <b-anchor-link href="#ke-yi-yan-shi-he-guan-bi-ti-shi" title="可以延时和关闭提示"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 文字提示气泡框，在鼠标悬停时显示，代替了系统的title提示。
 
 ### 基础用法
@@ -149,14 +165,14 @@
 | transfer    | 是否将弹层放置于 body 内   | Boolean  |  —   |   false   |
 | options    | 自定义 popper.js 的配置项具体参考popper.js   | Object  |  —   |   —    |
 
-### Tooltip events 
+### Events 
 
 | 名称      | 事件名    | 返回值    |
 |---------- |-------- |-------- |
 | on-popper-show     | 在提示框显示时触发   | 无    |
 | on-popper-hide    | 在提示框消失时触发   | 无    |
 
-### Tooltip slot
+### Slot
 
 | 名称      | 说明    |
 |---------- |-------- |

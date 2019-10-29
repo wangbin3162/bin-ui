@@ -1,5 +1,20 @@
 ## b-checkbox 多选框
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#zu-he-shi-yong" title="组合使用"></b-anchor-link>
+        <b-anchor-link href="#jin-yong" title="禁用"></b-anchor-link>
+        <b-anchor-link href="#quan-xuan" title="全选"></b-anchor-link>
+        <b-anchor-link href="#checkbox-props" title="Checkbox props"></b-anchor-link>
+        <b-anchor-link href="#checkbox-events" title="Checkbox events"></b-anchor-link>
+        <b-anchor-link href="#checkboxgroup-props" title="CheckboxGroup props"></b-anchor-link>
+        <b-anchor-link href="#checkboxgroup-events" title="CheckboxGroup events"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 基本组件-多选框。主要用于一组可选项多项选择，或者单独用于标记切换某种状态。
 
 ### 基础用法
@@ -61,7 +76,6 @@ export default {
 </script>
 ```
 :::
-
 
 ### 禁用
 
@@ -149,7 +163,7 @@ export default {
 ```
 :::
 
-### Attributes
+### Checkbox props
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
@@ -166,12 +180,12 @@ export default {
 
 ### CheckboxGroup props
 
-| 事件名      | 说明    |类型      | 返回值  |
+| 属性      | 说明    |类型      | 返回值  |
 |---------- |-------- |---------- |--------- |
 | value   | 指定选中项目的集合，可以使用 v-model 双向绑定数据  |Array  | []  |
 | size   | 多选框组的尺寸，可选值为 large、small、default 或者不设置  |String  | — |
 
-### Checkbox events
+### CheckboxGroup events
 
 | 事件名      | 说明    | 返回值  |
 |---------- |-------- |---------- |

@@ -1,5 +1,14 @@
 ## 控制台优化
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#suo-you-shi-li" title="所有实例"></b-anchor-link>
+        <b-anchor-link href="#api" title="API"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 使用 `$log` 可以在控制台输出颜色信息
 
 打开控制台查看输出效果

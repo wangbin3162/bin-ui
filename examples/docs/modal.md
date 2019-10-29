@@ -1,5 +1,22 @@
 ## Modal 模态框
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-yang-shi" title="自定义样式"></b-anchor-link>
+        <b-anchor-link href="#yi-bu-guan-bi" title="异步关闭"></b-anchor-link>
+        <b-anchor-link href="#jin-yong-guan-bi" title="禁用关闭"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-wei-zhi" title="自定义位置"></b-anchor-link>
+        <b-anchor-link href="#quan-ping" title="全屏"></b-anchor-link>
+        <b-anchor-link href="#ke-tuo-zhuai" title="可拖拽"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 对话框/弹窗，在浮层中显示，引导用户进行相关操作。
 
 ### 基础用法
@@ -243,7 +260,6 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | z-index    | 层级 | Number  |      —      |  2000  |
 | append-to-body    | 是否将对话框放置于 body 内 | Boolean  |      —      |  true  |
 
-
 ### Events
 
 | 事件名      | 说明    | 返回值      |
@@ -252,8 +268,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | on-cancel    | 点击取消的回调   | 无  |
 | on-visible-change    | 显示状态发生变化时触发   | true / false  |
 
-
-### slot
+### Slot
 
 | 名称      | 说明    |
 |---------- |-------- |

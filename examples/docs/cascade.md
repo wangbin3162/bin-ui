@@ -1,5 +1,25 @@
 ## Cascade 级联选择
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#she-zhi-mo-ren-zhi" title="设置默认值"></b-anchor-link>
+        <b-anchor-link href="#xuan-ting-zhan-kai" title="悬停展开"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-xian-shi" title="自定义显示"></b-anchor-link>
+        <b-anchor-link href="#jin-yong-he-jin-yong-xiang" title="启用和禁用项"></b-anchor-link>
+        <b-anchor-link href="#ji-ke-xiang-ying" title="即刻响应"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-xian-shi-xuan-xiang" title="自定义显示选项"></b-anchor-link>
+        <b-anchor-link href="#chi-cun" title="尺寸"></b-anchor-link>
+        <b-anchor-link href="#dong-tai-jia-zai-xuan-xiang" title="动态加载选项"></b-anchor-link>
+        <b-anchor-link href="#ke-yi-sou-suo" title="可以搜索"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 从一组相关联的数据集合中进行选择，常用于省市区、公司级层、事务分类等。
 
 ### 基础用法
@@ -133,7 +153,6 @@ export default {
 </script>
 ```
 :::
-
 
 ### 悬停展开
 

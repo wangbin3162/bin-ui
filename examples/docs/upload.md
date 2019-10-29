@@ -1,5 +1,19 @@
 ## Upload 上传
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#duo-xuan" title="多选"></b-anchor-link>
+        <b-anchor-link href="#shou-dong-shang-chuan" title="手动上传"></b-anchor-link>
+        <b-anchor-link href="#tuo-zhuai-shang-chuan" title="拖拽上传"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
+        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 文件选择上传按钮，实现简单的上传封装
 
 ### 基础用法
@@ -127,7 +141,6 @@
 | on-format-error | 文件格式验证失败时的钩子，返回字段为 file, fileList |  Function  |  —   |   —   |
 | on-exceeded-size | 文件超出指定大小限制时的钩子，返回字段为 file, fileList |  Function  |  —   |   —   |
 | default-file-list | 默认已上传的文件列表，例如：[{name: 'img1.jpg',url: 'http://www.xxx.com/img1.jpg' }, { name: 'img2.jpg',  url: 'http://www.xxx.com/img2.jpg' }] |  Array	 |  —   |  []    |
-
 
 ### Methods
 

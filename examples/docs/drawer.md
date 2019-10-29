@@ -1,5 +1,18 @@
 ## Drawer 抽屉
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#zuo-ce-da-kai" title="左侧打开"></b-anchor-link>
+        <b-anchor-link href="#quan-ping" title="全屏"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 简易的抽屉用于展示或者快速弹出,可以根据是信息展示还是创建动态插入
 
 ### 基础用法
@@ -26,7 +39,7 @@
 ```
 :::
 
-### 基础用法
+### 左侧打开
 
 设置 `placement="left"`为左侧打开
 
@@ -99,7 +112,6 @@
 | on-ok     | 点击确定的回调   | 无  |
 | on-cancel    | 点击取消的回调   | 无  |
 | on-visible-change    | 显示状态发生变化时触发   | true / false  |
-
 
 ### Slot
 

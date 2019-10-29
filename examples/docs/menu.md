@@ -1,5 +1,23 @@
 ## Menu导航菜单
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#shu-xiang-she-zhi" title="竖向设置"></b-anchor-link>
+        <b-anchor-link href="#api" title="API">
+            <b-anchor-link href="#menu-props" title="Menu props"></b-anchor-link>
+            <b-anchor-link href="#menu-events" title="Menu events"></b-anchor-link>
+            <b-anchor-link href="#menu-methods" title="Menu methods"></b-anchor-link>
+            <b-anchor-link href="#menuitem-props" title="MenuItem props"></b-anchor-link>
+            <b-anchor-link href="#submenu-props" title="Submenu props"></b-anchor-link>
+            <b-anchor-link href="#submenu-slot" title="Submenu slot"></b-anchor-link>
+            <b-anchor-link href="#menugroup" title="MenuGroup"></b-anchor-link>
+        </b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 ### 基础用法
 
 ::: demo
@@ -95,6 +113,8 @@
 </script>
 ```
 :::
+
+### API
 
 ### Menu props
 

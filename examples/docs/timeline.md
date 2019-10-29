@@ -1,5 +1,21 @@
 ## Timeline 时间线
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#ke-yi-she-zhi-bu-tong-lei-xing-huo-zhe-zi-ding-yi-yan-se" title="可以设置不同类型或者自定义颜色"></b-anchor-link>
+        <b-anchor-link href="#zui-hou-yi-ge-jie-dian-she-zhi" title="最后一个节点设置"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-jie-dian-tu-biao" title="自定义节点图标"></b-anchor-link>
+        <b-anchor-link href="#timeline-attributes" title="Timeline Attributes"></b-anchor-link>
+        <b-anchor-link href="#timelineitem-attributes" title="TimelineItem Attributes"></b-anchor-link>
+        <b-anchor-link href="#timelineitem-slots" title="TimelineItem  Slot"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
+时间线组件
+
 ### 基础用法
 
 简单定义一个时间轴的方法
@@ -28,7 +44,6 @@
 </template>
 ```
 :::
-
 
 ### 可以设置不同类型或者自定义颜色
 
@@ -66,7 +81,6 @@
 ```
 :::
 
-
 ### 自定义节点图标
 
 默认是空心远点，可以自定义轴点图标
@@ -92,7 +106,6 @@
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | pending     | 指定是否最后一个节点 | Boolean  |  —   |  false  |
-
 
 ### TimelineItem Attributes
 

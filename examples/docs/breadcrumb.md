@@ -1,5 +1,18 @@
 ## Breadcrumb 面包屑
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#fen-ge-fu" title="分隔符"></b-anchor-link>
+        <b-anchor-link href="#api" title="API">
+            <b-anchor-link href="#breadcrumb-attributes" title="Breadcrumb Attributes"></b-anchor-link>
+            <b-anchor-link href="#breadcrumb-item-attributes" title="Breadcrumb Item Attributes"></b-anchor-link>
+        </b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 显示当前页面的路径，快速返回之前的任意页面或者跳转链接
 
 ### 基础用法
@@ -39,6 +52,8 @@
 </template>
 ```
 :::
+
+### API
 
 ### Breadcrumb Attributes
 

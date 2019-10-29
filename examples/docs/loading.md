@@ -1,8 +1,20 @@
 ## 加载进度
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#ju-zhong-gu-ding" title="居中固定"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-nei-rong" title="自定义内容"></b-anchor-link>
+        <b-anchor-link href="#qie-huan-xian-shi-zhuang-tai" title="切换显示状态"></b-anchor-link>
+        <b-anchor-link href="#attributes" title=" Attributes"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 获取数据或加载中时显示，提示用户正在等待中。
 
-### 基础的用法
+### 基础用法
 
 最简单的Loading
 

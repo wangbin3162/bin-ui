@@ -1,5 +1,19 @@
 ## InputNumber 数字输入
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#xiao-shu" title="小数"></b-anchor-link>
+        <b-anchor-link href="#ke-yi-ge-shi-hua" title="可以格式化"></b-anchor-link>
+        <b-anchor-link href="#bu-tong-chi-cun" title="不同尺寸"></b-anchor-link>
+        <b-anchor-link href="#duo-chong-zhuang-tai" title="多种状态"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="Events"></b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 用于输入数字
 
 ### 基础用法
@@ -96,7 +110,6 @@
 ```
 :::
 
-
 ### 多种状态
 
 禁用，只读和不可编辑三种状态
@@ -140,7 +153,7 @@
 |precision	|数值精度|	Number| |	-|
 |active-change|	是否实时响应数据|	Boolean| |	true|
 
-### InputNumber events 
+### Events 
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |

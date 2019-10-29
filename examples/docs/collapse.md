@@ -1,5 +1,20 @@
 ## Collapse 折叠面板
 
+<template>
+    <div style="position: absolute;top:20px;right:40px;width:200px;">
+      <b-anchor>
+        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#shou-feng-qin-mo-shi" title="手风琴模式"></b-anchor-link>
+        <b-anchor-link href="#jian-dan-mo-shi-he-zi-ding-yi-tou" title="简单模式和自定义头"></b-anchor-link>
+        <b-anchor-link href="#api" title="API">
+            <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+            <b-anchor-link href="#events" title="Events"></b-anchor-link>
+            <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
+        </b-anchor-link>
+      </b-anchor>
+    </div>
+</template>
+
 需要进行分段显示时使用折叠面板
 
 ### 基础用法
@@ -103,6 +118,8 @@ simple 设置简单模式
 </script>
 ```
 :::
+
+### API
 
 ### Attributes
 

@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const merge = require('webpack-merge')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
