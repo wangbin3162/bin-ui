@@ -1,11 +1,11 @@
 <template>
   <div class="bin-container" :style="wrapStyleBind">
     <!--header-->
-    <div class="bin-container-header" v-if="$slots.header && headerFixed" style="position: absolute;">
+    <div class="bin-container-header" v-if="$slots.header && headerFixed" :style="fixedHeaderStyle">
       <slot name="header">header</slot>
     </div>
     <!--footer-->
-    <div class="bin-container-footer" v-if="$slots.footer && footerFixed" style="position: absolute;">
+    <div class="bin-container-footer" v-if="$slots.footer && footerFixed" :style="fixedFooterStyle">
       <slot name="footer">footer</slot>
     </div>
     <div class="wrap" :style="scrollStyle">
@@ -77,6 +77,20 @@
           height: '100%',
           paddingTop: top,
           paddingBottom: bottom
+        }
+      },
+      fixedHeaderStyle () {
+        return {
+          position: 'absolute',
+          height: this.fixedHeaderHeight,
+          lineHeight: this.fixedHeaderHeight
+        }
+      },
+      fixedFooterStyle () {
+        return {
+          position: 'absolute',
+          height: this.fixedFooterHeight,
+          lineHeight: this.fixedFooterHeight
         }
       }
     }
