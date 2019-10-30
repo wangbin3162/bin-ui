@@ -60,15 +60,15 @@
     },
     mounted () {
       // 如果父级是自定义滚动则绑定滚动为父级元素dom
-      this.domEl = this.$parent.$el.className === 'bin-scrollbar' ? this.$parent.$el.querySelector('.bin-scrollbar__wrap') : window
+      this.domEl = this.$parent.$el.className === 'bin-scrollbar'
+        ? this.$parent.$el.querySelector('.bin-scrollbar__wrap') : this.$parent.$el.querySelector('.scroll-box')
       // 监听滚动事件
-      this.throttledScrollHandler = this.$util.throttle(this.handleScroll, 300)
-      on(this.domEl, 'scroll', this.throttledScrollHandler)
-      on(window, 'resize', this.throttledScrollHandler)
+      on(this.domEl, 'scroll', this.handleScroll)
+      on(window, 'resize', this.handleScroll)
     },
     beforeDestroy () {
-      off(this.domEl, 'scroll', this.throttledScrollHandler)
-      off(window, 'resize', this.throttledScrollHandler)
+      off(this.domEl, 'scroll', this.handleScroll)
+      off(window, 'resize', this.handleScroll)
     },
     methods: {
       // 滚动监听事件

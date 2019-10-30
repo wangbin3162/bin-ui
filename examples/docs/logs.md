@@ -11,6 +11,12 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.3.3</p>
+        <p class="time">2019-10-30</p>
+        <p class="content">返回顶部滚动组件，支持普通div盒子</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.3.2</p>
         <p class="time">2019-10-30</p>
         <p class="content">优化container组件顶部底部宽度配置</p>

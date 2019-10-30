@@ -15,6 +15,28 @@
 
 注意：如嵌套在自定义滚动组件中使用则需要将 `BackTop` 组件放置于 `Scrollbar` 组件内部
 
+
+### 基础用法
+
+可以开启返回顶部按钮，这里返回顶部样式和滚动条样式可以使用css样式覆盖
+
+普通div的back-top组件，需要给滚动盒子追加一个`scroll-box`的样式并需要嵌入在这个滚动盒子内
+
+::: demo
+```html
+<template>
+  <div style="height:500px;overflow: auto;border:1px solid #eee;" class="scroll-box">
+    <div style="padding: 20px;">
+       <div v-for="item in 80" :key="item" ref="item">{{item}}:这是用来撑开内容的行...</div>
+    </div>
+      <b-back-top :height="200" :bottom="200">
+        <b-button size="mini" type="success">返回顶端</b-button>
+      </b-back-top>
+  </div>
+</template>
+```
+:::
+
 ### 用法
 
 默认位置距离页面右部和底部 50px，滚动至距顶端 150px 时显示。可以自定义样式或者按钮触发
