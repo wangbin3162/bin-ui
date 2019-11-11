@@ -309,6 +309,12 @@
           "path": "/drawer"
         },
         {
+          "desc": "Carousel 轮播",
+          "icon": "ios-film",
+          "name": "carousel",
+          "path": "/carousel"
+        },
+        {
           "desc": "Tooltip 提示",
           "icon": "ios-watch",
           "name": "tooltip",
