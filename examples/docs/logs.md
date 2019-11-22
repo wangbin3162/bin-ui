@@ -9,6 +9,15 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">2.3.5</p>
+        <p class="time">2019-11-22</p>
+        <p class="content">新增ColorPicker颜色选择组件</p>
+        <p class="content">文档新增查询组件搜索下拉框，以便于实现快速搜索组件</p>
+        <p class="content">优化级联选择器缝隙问题</p>
+        <p class="content">优化选择框组件样式</p>
+      </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.3.4</p>

@@ -1,6 +1,6 @@
 {
   "name": "bin-ui",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
   "main": "lib/bin-ui.common.js",
   "keywords": [
@@ -32,7 +32,8 @@
     "async-validator": "^1.11.5",
     "js-calendar": "^1.2.3",
     "popper.js": "^1.15.0",
-    "resize-observer-polyfill": "^1.5.1"
+    "resize-observer-polyfill": "^1.5.1",
+    "tinycolor2": "^1.4.1"
   },
   "peerDependencies": {
     "vue": "^2.6.10"

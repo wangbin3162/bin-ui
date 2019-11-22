@@ -1,7 +1,13 @@
 <template>
   <header class="page-header">
     <div class="header-container" flex="main:justify">
-      <div class="logo"></div>
+      <div class="left" style="width: 480px;" flex="main:justify cross:center">
+        <div class="logo"></div>
+        <b-select style="width: 220px;" placeholder="查询组件" filterable v-model="current"
+                  @on-change="handleComponentChange" clearable size="large">
+          <b-option v-for="item in components" :value="item.value" :key="item.value">{{ item.label }}</b-option>
+        </b-select>
+      </div>
       <div class="link">
         <router-link :to="{name: 'guide'}" class="active">指南</router-link>
         <router-link :to="{name: 'button'}" class="active">组件</router-link>
@@ -40,11 +46,64 @@
 </template>
 
 <script>
+  import navConf from '../nav.config.json'
+
   export default {
     name: 'MainHeader',
+    data () {
+      return {
+        components: [],
+        current: ''
+      }
+    },
+    created () {
+      this.getComponentsOptions()
+    },
+    watch: {
+      $route: {
+        handler () {
+          setTimeout(() => {
+            this.current = ''
+          }, 300)
+        },
+        immediate: true
+      }
+    },
     methods: {
       goTo (url) {
         this.$util.open(url, true)
+      },
+      getComponentsOptions () {
+        let routes = []
+        Object.keys(navConf).forEach((header) => {
+          routes = routes.concat(navConf[header])
+        })
+
+        let addComponent = (router) => {
+          router.forEach((route) => {
+            if (route.items) {
+              addComponent(route.items)
+              routes = routes.concat(route.items)
+            } else {
+              // 如果是组件路由
+              if (['guide', 'install', 'start', 'logs'].indexOf(route.name) === -1) {
+                this.components.push({
+                  value: route.path,
+                  label: route.desc
+                })
+              }
+            }
+          })
+        }
+        addComponent(routes)
+      },
+      handleComponentChange (val) {
+        if (!val || val.length === 0) {
+          return
+        }
+        if (this.$route.path !== val) {
+          this.$router.push(val)
+        }
       }
     }
   }
@@ -75,8 +134,9 @@
         font-size: 40px;
         margin-left: 30px
         width: 220px;
+        height: 80px;
         background: url("../assets/bin-ui.png") no-repeat 0 0
-        background-size: 100%;
+        background-size: 220px 80px;
       }
       .link {
         padding: 0 20px;

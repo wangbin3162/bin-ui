@@ -2,15 +2,14 @@
   <div style="display: inline-block;">
     <ul v-if="data && data.length" :class="[prefixCls + '-menu']">
       <cas-item
-        v-for="(item,index) in data" :key="index"
-        :prefix-cls="prefixCls"
-        :data="item"
-        :tmp-item="tmpItem"
-        @click.native.stop="handleClickItem(item)"
-        @mouseenter.native.stop="handleHoverItem(item)"></cas-item>
-    </ul>
-    <cas-panel v-if="sublist && sublist.length" :prefix-cls="prefixCls" :data="sublist" :disabled="disabled"
-              :trigger="trigger" :change-on-select="changeOnSelect"></cas-panel>
+          v-for="(item,index) in data" :key="index"
+          :prefix-cls="prefixCls"
+          :data="item"
+          :tmp-item="tmpItem"
+          @click.native.stop="handleClickItem(item)"
+          @mouseenter.native.stop="handleHoverItem(item)"></cas-item>
+    </ul><cas-panel v-if="sublist && sublist.length" :prefix-cls="prefixCls" :data="sublist" :disabled="disabled"
+               :trigger="trigger" :change-on-select="changeOnSelect"></cas-panel>
   </div>
 </template>
 <script>

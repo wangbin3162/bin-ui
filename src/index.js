@@ -50,6 +50,7 @@ import MenuItemGroup from './components/menu-group'
 import Upload from './components/upload'
 import DatePicker from './components/date-picker'
 import TimePicker from './components/time-picker'
+import ColorPicker from './components/color-picker'
 import Timeline from './components/timeline'
 import TimelineItem from './components/timeline-item'
 import Affix from './components/affix'
@@ -70,7 +71,7 @@ const components = [
   Form, FormItem,
   Container, Dropdown, DropdownItem, DropdownMenu,
   Select, Option, OptionGroup, Table, Page, Tree, Cascade,
-  Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker,
+  Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
   Timeline, TimelineItem, Affix, Anchor, AnchorLink, Carousel, CarouselItem
 ]
 
@@ -147,6 +148,7 @@ export default {
   Upload,
   DatePicker,
   TimePicker,
+  ColorPicker,
   Timeline,
   TimelineItem,
   Affix,

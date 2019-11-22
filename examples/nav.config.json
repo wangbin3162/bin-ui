@@ -201,6 +201,12 @@
           "path": "/timePicker"
         },
         {
+          "desc": "ColorPicker 颜色选择器",
+          "icon": "ios-color-palette",
+          "name": "colorPicker",
+          "path": "/colorPicker"
+        },
+        {
           "desc": "Cascade 级联选择",
           "icon": "ios-git-compare",
           "name": "cascade",
