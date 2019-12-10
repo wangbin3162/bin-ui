@@ -37,7 +37,7 @@ npm install bin-ui -S
 
 <a href="https://github.com/wangbin3162/bin-ui/" target="_blank">Github 仓库</a> | 
 <a href="https://gitee.com/wangbin3162/bin-ui/" target="_blank">码云仓库</a> | 
-<a href="https://wangbin3162.github.io/docs/bin-ui/" target="_blank">文档说明</a>
+<a href="https://wangbin3162.gitee.io/bin-ui/" target="_blank">文档说明</a>
 
 ***bin-tree-org*** 树形组织图组件
 

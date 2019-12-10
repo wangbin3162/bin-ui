@@ -11,8 +11,8 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.3.7</p>
-        <p class="time">2019-11-22</p>
+        <p class="version">2.3.8</p>
+        <p class="time">2019-12-10</p>
         <p class="content">小版本更新，更新文档连接地址</p>
       </b-timeline-item>
       <b-timeline-item color="success">
