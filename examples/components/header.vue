@@ -16,8 +16,14 @@
             <i class="iconfont icon-ios-arrow-down"></i>
           </a>
           <b-dropdown-menu slot="list">
-            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-cli')">
-              bin-cli
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-animation')">
+              bin-animation
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-keyframe-animation')">
+              bin-keyframe-animation
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-tree-org')">
+              bin-tree-org
             </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-admin')">
               bin-admin
@@ -25,17 +31,17 @@
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-data')">
               bin-data
             </b-dropdown-item>
-            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-animation')">
-              bin-animation
-            </b-dropdown-item>
-            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-keyframe-animation')">
-              bin-keyframe-animation
-            </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-static-web/')">
               bin-static-web
             </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/vue-admin/')">
               vue-admin
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-cli')">
+              bin-cli
+            </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-lib')">
+              bin-lib
             </b-dropdown-item>
           </b-dropdown-menu>
         </b-dropdown>

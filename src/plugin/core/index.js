@@ -32,6 +32,6 @@ export default {
     Vue.prototype.$print = log.print
     Vue.prototype.$resize = { addResizeListener, removeResizeListener }
     // 打印UI官网
-    log.pretty('[bin-ui] ' + config.version, 'https://wangbin3162.github.io/docs/bin-ui/')
+    log.pretty('[bin-ui] ' + config.version, 'https://wangbin3162.gitee.io/bin-ui/')
   }
 }

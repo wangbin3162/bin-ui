@@ -21,8 +21,8 @@ const webpackConfig = merge(webpackBaseConfig, {
     app: './examples/main.js'
   },
   output: {
-    path: path.join(__dirname, '../dist'),
-    publicPath: isProd ? '/docs/bin-ui/' : '/',
+    path: path.join(__dirname, '../docs'),
+    publicPath: isProd ? '' : '/',
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].[hash:7].js'
   },
