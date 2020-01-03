@@ -1,7 +1,7 @@
 import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 import config from '../../../package.json'
 // 指令
-import ellipsis from '../../directive/ellipsis'
+import clickOutSide from '../../directive/clickoutside'
 import waves from '../../directive/waves'
 
 // 功能插件
@@ -19,7 +19,7 @@ export default {
     })
     // 全局指令
     Vue.directive('waves', waves)
-    Vue.directive('ellipsis', ellipsis)
+    Vue.directive('clickOutSide', clickOutSide)
 
     Vue.prototype.$global = {
       zIndex: 2000

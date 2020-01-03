@@ -4,7 +4,7 @@
     <div style="position: absolute;top:20px;right:40px;width:200px;">
       <b-anchor>
         <b-anchor-link href="#shui-bo-wen-zhi-ling" title="水波纹指令"></b-anchor-link>
-        <b-anchor-link href="#zi-shu-zhi-ling" title="字数指令"></b-anchor-link>
+        <b-anchor-link href="#click-out-side" title="click-out-side"></b-anchor-link>
       </b-anchor>
     </div>
 </template>
@@ -30,18 +30,28 @@
 
 **水波纹指令后期打算加上动画时间和水波遮罩的颜色配置**
 
-### 字数指令
+### clickOutSide
 
-用于限制文本字数，超出部分显示...
-
-直接在标签中追加`v-ellipsis`指令开启
+打开f12查看控制台
 
 ::: demo
 ```html
 <template>
      <div class="demo-button">
-        <div v-ellipsis="20">这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</div>
+        <div v-click-out-side="clickOutSide" flex="main:center cross:center"
+          style="width: 200px;height:100px;background: #2a85e4;color:#fff;font-size: 20px;">
+          click out side
+        </div>
      </div>
 </template>
+<script>
+export default {
+  methods:{
+    clickOutSide(){ 
+      this.$log.primary('点击外部')
+    }
+  } 
+}
+</script>
 ```
 :::
