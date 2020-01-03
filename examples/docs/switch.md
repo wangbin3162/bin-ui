@@ -7,6 +7,7 @@
         <b-anchor-link href="#da-xiao-ji-yan-se" title="大小及颜色"></b-anchor-link>
         <b-anchor-link href="#wen-zi-huo-tu-biao" title="文字或图标"></b-anchor-link>
         <b-anchor-link href="#jin-yong" title="禁用"></b-anchor-link>
+        <b-anchor-link href="#qie-huan-qian-lan-jie" title="切换前拦截"></b-anchor-link>
         <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
         <b-anchor-link href="#events" title="Events"></b-anchor-link>
         <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
@@ -99,6 +100,18 @@ export default {
 ```
 :::
 
+### 切换前拦截
+
+可以通过设置`confirm`来设置切换前拦截，并通过`confirm-txt`来自定义切换文字提示。
+
+::: demo
+```html
+<template>
+  <b-switch  confirm></b-switch>
+</template>
+```
+:::
+
 ### Attributes
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
@@ -110,6 +123,8 @@ export default {
 | false-value	 | 没有选中时的值，当使用类似 1 和 0 来判断是否选中时会很有用	   | String, Number, Boolean  |  —   |  false   |
 | active-color	 | switch 打开时的背景色	   | string |  —   |   —    |
 | inactive-color | switch 关闭时的背景色	   | string |  —   |   —    |
+| confirm | 开启切换前拦截功能  | Boolean  |  —   |  false   |
+| confirm-txt | 切换拦截文字   | string |  —   |   —    |
 
 ### Events
 

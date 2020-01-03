@@ -17,13 +17,13 @@
   transition: all .2s ease-in-out;
   &:after {
     content: "";
-    width: 18px;
-    height: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
     border-radius: 18px;
     background-color: #fff;
-    position: absolute;
-    left: 1px;
-    top: 1px;
     cursor: pointer;
     transition: left .2s ease-in-out, width .2s ease-in-out;
   }
@@ -54,24 +54,24 @@
   border-color: $color-primary;
   background-color: $color-primary;
   &:after {
-    left: 23px;
+    left: 22px;
   }
   &:active:after {
     left: 15px;
   }
   .bin-switch-inner {
-    left: 7px;
+    left: 6px;
   }
 }
 .bin-switch-large {
-  width: 56px;
+  width: 54px;
   &.bin-switch-checked:after {
-    left: 35px;
+    left: 32px;
   }
 
   &:active {
     &.bin-switch-checked:after {
-      left: 23px;
+      left: 22px;
     }
     &:after {
       width: 30px;

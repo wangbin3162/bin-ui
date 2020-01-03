@@ -1,10 +1,10 @@
 <template>
     <span
-      tabindex="0"
-      :class="wrapClasses"
-      :style="wrapStyle"
-      @click="toggle"
-      @keydown.space="toggle"
+        tabindex="0"
+        :class="wrapClasses"
+        :style="wrapStyle"
+        @click="toggle"
+        @keydown.space="toggle"
     >
         <input type="hidden" :name="name" :value="currentValue">
         <span :class="innerClasses">
@@ -13,6 +13,7 @@
         </span>
     </span>
 </template>
+
 <script>
   import { oneOf } from '../../utils/util'
   import Emitter from '../../mixins/emitter'
@@ -49,7 +50,14 @@
         type: String
       },
       activeColor: String,
-      inactiveColor: String
+      inactiveColor: String,
+      confirm: {
+        type: Boolean,
+        default: false
+      },
+      confirmTxt: {
+        type: String
+      }
     },
     data () {
       return {
@@ -79,7 +87,7 @@
       }
     },
     methods: {
-      toggle (event) {
+      handleToggle (event) {
         event.preventDefault()
         if (this.disabled || this.loading) {
           return false
@@ -90,6 +98,21 @@
         this.$emit('on-change', checked)
 
         this.dispatch('BFormItem', 'on-form-change', checked)
+      },
+      toggle (event) {
+        if (this.confirm) {
+          this.$confirm({
+            title: '切换确认',
+            content: this.confirmTxt || '您确认要切换开关状态吗？',
+            loading: true,
+            onOk: () => {
+              this.$modal.remove()
+              this.handleToggle(event)
+            }
+          })
+        } else {
+          this.handleToggle(event)
+        }
       }
     },
     watch: {
