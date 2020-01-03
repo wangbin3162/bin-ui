@@ -60,7 +60,7 @@
       },
       appendToBody: {
         type: Boolean,
-        default: true
+        default: false
       },
       okText: {
         type: String,
