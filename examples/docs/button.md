@@ -20,34 +20,42 @@
 
 ### 基础用法
 
-使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
+使用`type`、`plain`、`round`和`transparent`属性来定义 Button 的样式。
 
 ::: demo
 ```html
 <template>
     <div class="demo-button">
-      <b-button v-waves>默认按钮</b-button>
-      <b-button type="primary" v-waves>主要按钮</b-button>
-      <b-button type="success" v-waves>成功按钮</b-button>
-      <b-button type="info" v-waves>信息按钮</b-button>
-      <b-button type="warning" v-waves>警告按钮</b-button>
-      <b-button type="danger" v-waves>危险按钮</b-button>
+      <b-button v-waves>Default</b-button>
+      <b-button type="primary" v-waves>Primary</b-button>
+      <b-button type="success" v-waves>Success</b-button>
+      <b-button type="info" v-waves>Info</b-button>
+      <b-button type="warning" v-waves>Warning</b-button>
+      <b-button type="danger" v-waves>Danger</b-button>
     </div>
     <div class="demo-button">
-       <b-button plain>浅色按钮</b-button>
-       <b-button type="primary" plain>主要按钮</b-button>
-       <b-button type="success" plain>成功按钮</b-button>
-       <b-button type="info" plain>信息按钮</b-button>
-       <b-button type="warning" plain>警告按钮</b-button>
-       <b-button type="danger" plain>危险按钮</b-button>
+       <b-button plain>Default</b-button>
+       <b-button type="primary" plain>Primary</b-button>
+       <b-button type="success" plain>Success</b-button>
+       <b-button type="info" plain>Info</b-button>
+       <b-button type="warning" plain>Warning</b-button>
+       <b-button type="danger" plain>Danger</b-button>
     </div>
     <div class="demo-button">
-       <b-button round>圆角按钮</b-button>
-       <b-button type="primary" round>主要按钮</b-button>
-       <b-button type="success" round>成功按钮</b-button>
-       <b-button type="info" round>信息按钮</b-button>
-       <b-button type="warning" round>警告按钮</b-button>
-       <b-button type="danger" round>危险按钮</b-button>
+       <b-button round size="small">Default</b-button>
+       <b-button type="primary" round size="small">Primary</b-button>
+       <b-button type="success" round size="small">Success</b-button>
+       <b-button type="info" round size="small">Info</b-button>
+       <b-button type="warning" round size="small">Warning</b-button>
+       <b-button type="danger" round size="small">Danger</b-button>
+    </div>
+    <div class="demo-button" style="background: #cad4d4;padding: 10px;">
+       <b-button transparent size="small">Default</b-button>
+       <b-button type="primary" transparent size="small">Primary</b-button>
+       <b-button type="success" transparent size="small">Success</b-button>
+       <b-button type="info" transparent size="small">Info</b-button>
+       <b-button type="warning" transparent size="small">Warning</b-button>
+       <b-button type="danger" transparent size="small">Danger</b-button>
     </div>
 </template>
 ```
@@ -61,20 +69,20 @@
 ```html
 <template>
     <div class="demo-button">
-      <b-button disabled>默认按钮</b-button>
-      <b-button type="primary" disabled>主要按钮</b-button>
-      <b-button type="success" disabled>成功按钮</b-button>
-      <b-button type="info" disabled>信息按钮</b-button>
-      <b-button type="warning" disabled>警告按钮</b-button>
-      <b-button type="danger" disabled>危险按钮</b-button>
+      <b-button disabled>Default</b-button>
+      <b-button type="primary" disabled>Primary</b-button>
+      <b-button type="success" disabled>Success</b-button>
+      <b-button type="info" disabled>Info</b-button>
+      <b-button type="warning" disabled>Warning</b-button>
+      <b-button type="danger" disabled>Danger</b-button>
     </div>
     <div class="demo-button">
-       <b-button plain disabled>朴素按钮</b-button>
-       <b-button type="primary" plain disabled>主要按钮</b-button>
-       <b-button type="success" plain disabled>成功按钮</b-button>
-       <b-button type="info" plain disabled>信息按钮</b-button>
-       <b-button type="warning" plain disabled>警告按钮</b-button>
-       <b-button type="danger" plain disabled>危险按钮</b-button>
+       <b-button plain disabled>Default</b-button>
+       <b-button type="primary" plain disabled>Primary</b-button>
+       <b-button type="success" plain disabled>Success</b-button>
+       <b-button type="info" plain disabled>Info</b-button>
+       <b-button type="warning" plain disabled>Warning</b-button>
+       <b-button type="danger" plain disabled>Danger</b-button>
     </div>
 </template>
 ```
@@ -125,16 +133,16 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 ```html
 <template>
     <div class="demo-button">
-       <b-button size="large">大型按钮</b-button>
-       <b-button>默认按钮</b-button>
-       <b-button size="small">小型按钮</b-button>
-       <b-button size="mini">超小按钮</b-button>
+       <b-button size="large">Large</b-button>
+       <b-button>Default</b-button>
+       <b-button size="small">Small</b-button>
+       <b-button size="mini">Mini</b-button>
     </div>
     <div class="demo-button">
-       <b-button size="large" round>大型按钮</b-button>
-       <b-button round>默认按钮</b-button>
-       <b-button size="small" round>小型按钮</b-button>
-       <b-button size="mini" round>超小按钮</b-button>
+       <b-button size="large" round>Large</b-button>
+       <b-button round>Default</b-button>
+       <b-button size="small" round>Small</b-button>
+       <b-button size="mini" round>Mini</b-button>
     </div>
 </template>
 ```
@@ -165,7 +173,7 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 | type     | 类型   | string    |   primary / success / warning / danger / info / text |     —    |
 | plain     | 是否朴素按钮   | boolean    | — | false   |
 | round     | 是否圆角按钮   | boolean    | — | false   |
-| circle     | 是否圆形按钮   | boolean    | — | false   |
+| transparent | 是否是透明按钮   | boolean    | — | false   |
 | loading     | 是否加载中状态   | boolean    | — | false   |
 | disabled  | 是否禁用状态    | boolean   | —   | false   |
 | icon  | 图标类名 | string   |  —  |  —  |

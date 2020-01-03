@@ -35,7 +35,7 @@ $root = bin
   }
   &:focus {
     border-color: $color-primary-light4;
-    box-shadow: 0 0 0 2px $color-primary-light5;
+    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
   }
   &:active {
     color: $color-primary-light1;
@@ -45,6 +45,15 @@ $root = bin
   &.is-round {
     border-radius: 20px;
     padding: 10px 20px;
+  }
+  &.is-transparent {
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+    &:hover {
+      color: $color-primary;
+      border-color: $color-primary;
+    }
   }
   &.is-loading {
     pointer-events: none;
@@ -67,19 +76,19 @@ $root = bin
   }
 }
 .{$root}-button--small {
-  padding: 9px 15px;
+  padding: 9px 10px;
   font-size: 12px;
   border-radius: 3px;
   &.is-round {
-    padding: 9px 15px;
+    padding: 9px 10px;
   }
 }
 .{$root}-button--mini {
-  padding: 7px 15px;
+  padding: 5px 7px;
   font-size: 12px;
   border-radius: 3px;
   &.is-round {
-    padding: 7px 15px;
+    padding: 5px 10px;
   }
 }
 .{$root}-button--primary {
@@ -93,6 +102,15 @@ $root = bin
   }
   &:focus {
     box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+  }
+  &.is-transparent {
+    border-color: $color-primary;
+    color: $color-primary;
+    &:hover {
+      border-color: $color-primary;
+      color: $color-primary;
+      background-color: rgba(245, 249, 254, .5);
+    }
   }
   &.is-plain {
     color: $color-primary;
@@ -128,6 +146,15 @@ $root = bin
   &:focus {
     box-shadow: 0 0 0 2px rgba(25, 190, 107, .2);
   }
+  &.is-transparent {
+    border-color: $color-success;
+    color: $color-success;
+    &:hover {
+      border-color: $color-success;
+      color: $color-success;
+      background-color: rgba(245, 249, 254, .5);
+    }
+  }
   &.is-plain {
     color: $color-success;
     background: $color-success-light6;
@@ -161,6 +188,15 @@ $root = bin
   }
   &:focus {
     box-shadow: 0 0 0 2px rgba(144, 147, 153, 0.2);
+  }
+  &.is-transparent {
+    border-color: $color-info;
+    color: $color-info;
+    &:hover {
+      border-color: $color-info;
+      color: $color-info;
+      background-color: rgba(245, 249, 254, .5);
+    }
   }
   &.is-plain {
     color: $color-info;
@@ -196,6 +232,15 @@ $root = bin
   &:focus {
     box-shadow: 0 0 0 2px rgba(255, 153, 0, .2);
   }
+  &.is-transparent {
+    border-color: $color-warning;
+    color: $color-warning;
+    &:hover {
+      border-color: $color-warning;
+      color: $color-warning;
+      background-color: rgba(245, 249, 254, .5);
+    }
+  }
   &.is-plain {
     color: $color-warning;
     background: $color-warning-light6;
@@ -228,6 +273,15 @@ $root = bin
   }
   &:focus {
     box-shadow: 0 0 0 2px rgba(237, 64, 20, .2);
+  }
+  &.is-transparent {
+    border-color: $color-danger;
+    color: $color-danger;
+    &:hover {
+      border-color: $color-danger;
+      color: $color-danger;
+      background-color: rgba(245, 249, 254, .5);
+    }
   }
   &.is-plain {
     color: $color-danger;

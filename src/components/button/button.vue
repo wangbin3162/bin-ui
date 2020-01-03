@@ -1,16 +1,16 @@
 <template>
   <button
-    class="bin-button"
-    @click="handleClick"
-    :disabled="disabled || loading"
-    :type="nativeType"
-    :class="['bin-button--' + type , 'bin-button--' + size,
+      class="bin-button"
+      @click="handleClick"
+      :disabled="disabled || loading"
+      :type="nativeType"
+      :class="['bin-button--' + type , 'bin-button--' + size,
       {
         'is-disabled': disabled,
         'is-loading': loading,
         'is-plain': plain,
         'is-round': round,
-        'is-circle': circle
+        'is-transparent': transparent
       }
     ]"
   >
@@ -43,7 +43,7 @@
       disabled: Boolean,
       plain: Boolean,
       round: Boolean,
-      circle: Boolean
+      transparent: Boolean
     },
     methods: {
       handleClick (evt) {
