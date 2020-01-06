@@ -22,6 +22,8 @@
         <p class="content">模态窗和抽屉窗默认不添加至body中去</p>
         <p class="content">模态框优化，默认不预插入body模式，appendToBody时默认也只有在开启时将元素插入至body下面，优化显示</p>
         <p class="content">优化表格样式，tooltip默认不开启控件模式，优化表格展开key值，编写table可展开文档</p>
+        <p class="content">menu菜单可以设置展开所有，文档左侧导航栏使用menu菜单重写，滚动优化</p>
+        <p class="content">更新字体库，增加几种常用loading，删除冷门图标</p>
       </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
