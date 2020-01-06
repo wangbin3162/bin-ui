@@ -9,6 +9,20 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">2.5.0</p>
+        <p class="time">2020-01-06</p>
+        <p class="content">优化switch显示样式，使之更加饱满符合移动端开关样式，增加confirm切换前确认操作，确认后才调用真正切换</p>
+        <p class="content">优化下拉框组件选中样式</p>
+        <p class="content">优化按钮显示状态和样式，增加透明按钮功能</p>
+        <p class="content">去除省略号...指令，增加点击外部指令</p>
+        <p class="content">增加基础样式类名</p>
+        <p class="content">优化util中的防抖函数，优化返回顶部，图钉和锚点的滚动计算频率</p>
+        <p class="content">模态窗和抽屉窗默认不添加至body中去</p>
+        <p class="content">模态框优化，默认不预插入body模式，appendToBody时默认也只有在开启时将元素插入至body下面，优化显示</p>
+        <p class="content">优化表格样式，tooltip默认不开启控件模式，优化表格展开key值，编写table可展开文档</p>
+      </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.3.8</p>

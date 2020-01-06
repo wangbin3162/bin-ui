@@ -1,4 +1,4 @@
-## Layout 布局
+## 基础样式
 
 <template>
     <div style="position: absolute;top:20px;right:40px;width:200px;">
@@ -6,13 +6,14 @@
         <b-anchor-link href="#flex.css-shi-yong" title="flex.css使用"></b-anchor-link>
         <b-anchor-link href="#flex-shu-xing-da-quan" title="flex属性大全"></b-anchor-link>
         <b-anchor-link href="#flex-box-shu-xing-shuo-ming" title="flex-box属性说明"></b-anchor-link>
+        <b-anchor-link href="#common.css" title="common.css"></b-anchor-link>
       </b-anchor>
     </div>
 </template>
 
-由于日常应用flex布局较为频繁，故不设计每家通用的24栏分隔布局，基本布局组件使用
-[flex.css](https://github.com/lzxb/flex.css)，
-框架集成了`flex.css` 故不用重复引入，并此基础上扩展了`flex`的换行属性`wrap`
+本项目已集成normalize.css初始化样式，[flex.css](https://github.com/lzxb/flex.css)基本样式和自定义基础样式库common.css
+
+`flex.css` 扩展了换行属性`wrap`
 
 ```css
 [flex~="wrap:wrap"] {
@@ -84,4 +85,54 @@ box：子元素设置
 多余空间分配 = 当前flex-box值/子元素的flex-box值相加之和
 ```
 
+### common.css
 
+基础的css样式主要有内外边距，文字大小，链接等。具体如下
+
+
+| 外边距 | 说明 | 内边距 | 说明 | 
+|----------|--------|----------|--------|
+| m0      | 外边距0  | p0      | 内边距0  | 
+| m5      | 外边距5  | p5      | 内边距5  | 
+| m10     | 外边距10 | p10     | 内边距10 | 
+| m15     | 外边距15 | p15     | 内边距15 | 
+| m20     | 外边距20 | p20     | 内边距20 |
+| mt-5      | 上外边距5  | pt-5      | 上内边距5  | 
+| mt-10     | 上外边距10 | pt-10     | 上内边距10 | 
+| mt-15     | 上外边距15 | pt-15     | 上内边距15 | 
+| mt-20     | 上外边距20 | pt-20     | 上内边距20 | 
+| mr-5      | 右外边距5  | pr-5      | 右内边距5  | 
+| mr-10     | 右外边距10 | pr-10     | 右内边距10 | 
+| mr-15     | 右外边距15 | pr-15     | 右内边距15 | 
+| mr-20     | 右外边距20 | pr-20     | 右内边距20 | 
+| mb-5      | 下外边距5  | pb-5      | 下内边距5  | 
+| mb-10     | 下外边距10 | pb-10     | 下内边距10 | 
+| mb-15     | 下外边距15 | pb-15     | 下内边距15 | 
+| mb-20     | 下外边距20 | pb-20     | 下内边距20 | 
+| ml-5      | 左外边距5  | pl-5      | 左内边距5  | 
+| ml-10     | 左外边距10 | pl-10     | 左内边距10 | 
+| ml-15     | 左外边距15 | pl-15     | 左内边距15 | 
+| ml-20     | 左外边距20 | pl-20     | 左内边距20 | 
+
+还有文字等其他常用样式
+
+| 类名| 说明 | 
+|----------|--------|
+| f-s-12   | 字体大小12  | 
+| f-s-14   | 字体大小14  | 
+| f-s-16   | 字体大小16  | 
+| f-s-18   | 字体大小18  | 
+| f-s-20   | 字体大小20  | 
+| f-s-22   | 字体大小22  | 
+| f-s-20   | 字体大小20  | 
+| f-color-blue  | 文字颜色#409EFF;  | 
+| f-color-red  | 文字颜色#ff4d4f;  | 
+| f-color-333  | 文字颜色#333;  | 
+| f-color-666  | 文字颜色#666;  | 
+| f-color-999  | 文字颜色#999;  | 
+| t-center  | 文字居中  | 
+| t-right  | 文字居右 | 
+| t-right  | 文字居右 | 
+| t-ellipsis | 文字超出... | 
+| link | 蓝色链接样式 | 
+| link-red | 红色链接样式 | 

@@ -32,8 +32,6 @@
 
 ### clickOutSide
 
-打开f12查看控制台
-
 ::: demo
 ```html
 <template>
@@ -48,7 +46,7 @@
 export default {
   methods:{
     clickOutSide(){ 
-      this.$log.primary('点击外部')
+      this.$message('点击外部')
     }
   } 
 }

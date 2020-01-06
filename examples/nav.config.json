@@ -51,6 +51,12 @@
           "path": "/console"
         },
         {
+          "desc": "基础样式",
+          "icon": "ios-browsers",
+          "name": "layout",
+          "path": "/layout"
+        },
+        {
           "desc": "Transition 过渡",
           "icon": "ios-fastforward",
           "name": "transition",
@@ -62,12 +68,6 @@
       "desc": "布局",
       "path": "/component",
       "items": [
-        {
-          "desc": "Layout 布局",
-          "icon": "ios-browsers",
-          "name": "layout",
-          "path": "/layout"
-        },
         {
           "desc": "Container 布局容器",
           "icon": "ios-tv",
