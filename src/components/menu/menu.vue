@@ -39,6 +39,9 @@
           return []
         }
       },
+      expandAll: {
+        type: Boolean
+      },
       accordion: {
         type: Boolean,
         default: false
@@ -125,10 +128,10 @@
       },
       updateOpened () {
         const items = findComponentsDownward(this, 'BSubmenu')
-
+        // 判断是否展开所有submenu，如展开则全部
         if (items.length) {
           items.forEach(item => {
-            item.opened = this.openedNames.indexOf(item.name) > -1
+            item.opened = this.expandAll ? true : this.openedNames.indexOf(item.name) > -1
           })
         }
       },

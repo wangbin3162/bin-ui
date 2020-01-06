@@ -124,6 +124,7 @@
 | theme     | 主题   | string  |  light、dark  |  light  |
 | active-name  | 激活菜单的 name 值   | String/ Number  | -  |  -  |
 | open-names  | 展开的 Submenu 的 name 集合  | Array  | -  |  [] |
+| expand-all  | 展开所有的 Submenu 的  | Boolean  | -  |  false |
 | accordion  | 是否开启手风琴模式  | Boolean	  | -  |  false |
 | width  | 导航菜单的宽度，只在 mode="vertical" 时有效  | String  | -  |  240px |
 
