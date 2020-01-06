@@ -25,7 +25,14 @@
     {
       "desc": "基础",
       "path": "/component",
+      "icon": "ios-browsers",
       "items": [
+        {
+          "desc": "Base 基础样式",
+          "icon": "ios-color-palette",
+          "name": "layout",
+          "path": "/layout"
+        },
         {
           "desc": "Icon 图标",
           "icon": "ios-leaf",
@@ -51,12 +58,6 @@
           "path": "/console"
         },
         {
-          "desc": "基础样式",
-          "icon": "ios-browsers",
-          "name": "layout",
-          "path": "/layout"
-        },
-        {
           "desc": "Transition 过渡",
           "icon": "ios-fastforward",
           "name": "transition",
@@ -67,6 +68,7 @@
     {
       "desc": "布局",
       "path": "/component",
+      "icon": "ios-bookmarks",
       "items": [
         {
           "desc": "Container 布局容器",
@@ -109,6 +111,7 @@
     {
       "desc": "导航",
       "path": "/component",
+      "icon": "ios-navigate",
       "items": [
         {
           "desc": "Menu 导航菜单",
@@ -157,6 +160,7 @@
     {
       "desc": "表单",
       "path": "/component",
+      "icon": "ios-paper",
       "items": [
         {
           "desc": "Input 输入框",
@@ -241,6 +245,7 @@
     {
       "desc": "数据",
       "path": "/component",
+      "icon": "ios-stats",
       "items": [
         {
           "desc": "Table 表格",
@@ -283,6 +288,7 @@
     {
       "desc": "视图",
       "path": "/component",
+      "icon": "ios-eye",
       "items": [
         {
           "desc": "Alert 警告提示",
