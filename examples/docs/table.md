@@ -4,7 +4,9 @@
     <div style="position: absolute;top:20px;right:40px;width:200px;">
       <b-anchor>
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#ban-ma-wen-he-bian-kuang" title="斑马纹和边框"></b-anchor-link>
+        <b-anchor-link href="#ban-ma-wen" title="斑马纹"></b-anchor-link>
+        <b-anchor-link href="#bian-kuang" title="边框"></b-anchor-link>
+        <b-anchor-link href="#chao-chu-yin-cang" title="超出隐藏"></b-anchor-link>
         <b-anchor-link href="#gu-ding-biao-tou" title="固定表头"></b-anchor-link>
         <b-anchor-link href="#gu-ding-biao-tou-he-lie" title="固定表头和列"></b-anchor-link>
         <b-anchor-link href="#dan-xuan-biao-ge" title="单选表格"></b-anchor-link>
@@ -23,9 +25,9 @@
     </div>
 </template>
 
-暂时只是简单表格，后期继续丰富
-
 ### 基础用法
+
+基本用法
 
 ::: demo
 ```html
@@ -59,31 +61,31 @@
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -94,12 +96,14 @@
 ```
 :::
 
-### 斑马纹和边框
+### 斑马纹
+
+通过设置`stripe`来设置斑马纹显示
 
 ::: demo
 ```html
 <template>
-<b-table :columns="columns" :data="data" stripe border></b-table>
+<b-table :columns="columns" :data="data" stripe></b-table>
 </template>
 <script>
   export default {
@@ -127,32 +131,183 @@
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
+          }
+        ]
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 边框
+
+通过设置`border`来设置斑马纹显示
+
+::: demo
+```html
+<template>
+<b-table :columns="columns" :data="data" border></b-table>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        columns: [
+          {
+            title: '姓名',
+            key: 'name'
+          },
+          {
+            title: '年龄',
+            key: 'age'
+          },
+          {
+            title: '出生日期',
+            key: 'birthday'
+          },
+          {
+            title: '地址',
+            key: 'address'
+          }
+        ],
+        data: [
+          {
+            name: '王小明',
+            age: 18,
+            birthday: '1990-04-22',
+            address: '北京市朝阳区芍药居'
+          },
+          {
+            name: '张小刚',
+            age: 25,
+            birthday: '1990-11-11',
+            address: '北京市海淀区西二旗'
+          },
+          {
+            name: '李小红',
+            age: 30,
+            birthday: '1985-02-05',
+            address: '上海市浦东新区世纪大道'
+          },
+          {
+            name: '周小伟',
+            age: 26,
+            birthday: '1993-07-11',
+            address: '深圳市南山区深南大道'
+          },
+          {
+            name: '张小发',
+            age: 33,
+            birthday: '1999-12-12',
+            address: '南京市龙眠大道'
+          }
+        ]
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 超出隐藏
+
+可以通过给`columns`设置属性`tooltip`来设置超出隐藏并悬停显示, 如仅有一张表格则可以设置`tooltip`皮肤`tooltip-theme`来开启优化样式
+（注意：因表格单元格存在超出隐藏样式所以必须将tooltip标签插入至body元素，会成多余标签，如有多个表格缓存则会插入过多标签造成性能问题，所以是否开启需要根据需求确定）
+
+::: demo
+```html
+<template>
+<b-table :columns="columns" :data="data" border tooltip-theme="dark"></b-table>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        columns: [
+          {
+            title: '姓名',
+            key: 'name'
+          },
+          {
+            title: '年龄',
+            key: 'age'
+          },
+          {
+            title: '出生日期',
+            key: 'birthday'
+          },
+          {
+            title: '地址',
+            key: 'address'
+          },
+          {
+            title: '备注',
+            key: 'remark',
+            tooltip: true
+          }
+        ],
+        data: [
+          {
+            name: '王小明',
+            age: 18,
+            birthday: '1990-04-22',
+            address: '北京市朝阳区芍药居',
+            remark: '这是一段描述文字，文本长度会超出列宽，设置tooltip属性可以设置不换行显示并开启鼠标悬停显示所有文字。'
+          },
+          {
+            name: '张小刚',
+            age: 25,
+            birthday: '1990-11-11',
+            address: '北京市海淀区西二旗',
+            remark: '这是一段描述文字，文本长度会超出列宽，设置tooltip属性可以设置不换行显示并开启鼠标悬停显示所有文字。'
+          },
+          {
+            name: '李小红',
+            age: 30,
+            birthday: '1985-02-05',
+            address: '上海市浦东新区世纪大道',
+            remark: '这是一段描述文字，文本长度会超出列宽，设置tooltip属性可以设置不换行显示并开启鼠标悬停显示所有文字。'
+          },
+          {
+            name: '周小伟',
+            age: 26,
+            birthday: '1993-07-11',
+            address: '深圳市南山区深南大道',
+            remark: '这是一段描述文字，文本长度会超出列宽，设置tooltip属性可以设置不换行显示并开启鼠标悬停显示所有文字。'
+          },
+          {
+            name: '张小发',
+            age: 33,
+            birthday: '1999-12-12',
+            address: '南京市龙眠大道',
+            remark: '这是一段描述文字，文本长度会超出列宽，设置tooltip属性可以设置不换行显示并开启鼠标悬停显示所有文字。'
           }
         ]
       }
@@ -169,7 +324,7 @@ height 和maxHeight可以设置固定表头
 ::: demo 
 ```html
 <template>
-<b-table :columns="columns" :data="data" height="200"></b-table>
+<b-table :columns="columns" :data="data" height="200" border></b-table>
 </template>
 <script>
   export default {
@@ -197,31 +352,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -287,31 +442,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -359,31 +514,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -445,31 +600,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -543,31 +698,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ],
@@ -635,31 +790,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -708,31 +863,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -780,31 +935,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]
@@ -857,31 +1012,31 @@ height 和maxHeight可以设置固定表头
           {
             name: '王小明',
             age: 18,
-            birthday: '919526400000',
+            birthday: '1990-04-22',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
-            birthday: '696096000000',
+            birthday: '1990-11-11',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
-            birthday: '563472000000',
+            birthday: '1985-02-05',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
-            birthday: '687024000000',
+            birthday: '1993-07-11',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
-            birthday: '23232000000',
+            birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
         ]

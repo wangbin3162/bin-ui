@@ -200,8 +200,7 @@
       tooltipTheme: {
         validator (value) {
           return oneOf(value, ['dark', 'light'])
-        },
-        default: 'dark'
+        }
       },
       // #5380 开启后，:key 强制更新，否则使用 index
       rowKey: {
