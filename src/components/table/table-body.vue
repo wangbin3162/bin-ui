@@ -1,31 +1,31 @@
 <template>
   <table cellspacing="0" cellpadding="0" border="0" :style="styleObject">
     <colgroup>
-      <col v-for="(column, index) in columns" :width="setCellWidth(column)" :key="index">
+      <col v-for="(column, index) in columns" :width="setCellWidth(column)" :key="'group-'+index">
     </colgroup>
     <tbody :class="[prefixCls + '-tbody']">
     <template v-for="(row, index) in data">
       <table-tr
-        :draggable="draggable"
-        :row="row"
-        :key="rowKey ? row._rowKey : index"
-        :prefix-cls="prefixCls"
-        @mouseenter.native.stop="handleMouseIn(row._index)"
-        @mouseleave.native.stop="handleMouseOut(row._index)"
-        @click.native="clickCurrentRow(row._index)"
-        @dblclick.native.stop="dblclickCurrentRow(row._index)">
+          :draggable="draggable"
+          :row="row"
+          :key="rowKey ? row._rowKey : 'tr-'+index"
+          :prefix-cls="prefixCls"
+          @mouseenter.native.stop="handleMouseIn(row._index)"
+          @mouseleave.native.stop="handleMouseOut(row._index)"
+          @click.native="clickCurrentRow(row._index)"
+          @dblclick.native.stop="dblclickCurrentRow(row._index)">
         <td v-for="column in columns" :class="alignCls(column, row)" :key="column._columnKey">
           <table-cell
-            :fixed="fixed"
-            :prefix-cls="prefixCls"
-            :row="row"
-            :key="column._columnKey"
-            :column="column"
-            :natural-index="index"
-            :index="row._index"
-            :checked="rowChecked(row._index)"
-            :disabled="rowDisabled(row._index)"
-            :expanded="rowExpanded(row._index)"
+              :fixed="fixed"
+              :prefix-cls="prefixCls"
+              :row="row"
+              :key="column._columnKey"
+              :column="column"
+              :natural-index="index"
+              :index="row._index"
+              :checked="rowChecked(row._index)"
+              :disabled="rowDisabled(row._index)"
+              :expanded="rowExpanded(row._index)"
           ></table-cell>
         </td>
       </table-tr>

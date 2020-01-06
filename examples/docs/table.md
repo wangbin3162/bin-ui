@@ -1,4 +1,4 @@
-## Table 简表格
+## Table 表格
 
 <template>
     <div style="position: absolute;top:20px;right:40px;width:200px;">
@@ -12,6 +12,7 @@
         <b-anchor-link href="#dan-xuan-biao-ge" title="单选表格"></b-anchor-link>
         <b-anchor-link href="#duo-xuan-biao-ge" title="多选表格"></b-anchor-link>
         <b-anchor-link href="#ke-cao-zuo-biao-ge" title="可操作表格"></b-anchor-link>
+        <b-anchor-link href="#ke-zhan-kai" title="可展开"></b-anchor-link>
         <b-anchor-link href="#pai-xu-biao-ge" title="排序表格"></b-anchor-link>
         <b-anchor-link href="#loading-zhuang-tai" title="loading状态"></b-anchor-link>
         <b-anchor-link href="#da-xiao-zhuang-tai" title="大小状态"></b-anchor-link>
@@ -747,6 +748,80 @@ height 和maxHeight可以设置固定表头
         this.data[index].birthday = this.editBirthday
         this.data[index].address = this.editAddress
         this.editIndex = -1
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 可展开
+
+通过给`columns` 数据设置一项，指定 `type: 'expand'`，即可开启扩展功能。
+
+::: demo
+```html
+<template>
+<b-table :columns="columns" :data="data"></b-table>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        columns: [
+            {
+                type: 'expand',
+                width: 50,
+                render: (h, params) => {
+                    return h('div', '详细地址：'+ params.row.address)
+                }
+            },
+          {
+            title: '姓名',
+            key: 'name'
+          },
+          {
+            title: '年龄',
+            key: 'age'
+          },
+          {
+            title: '出生日期',
+            key: 'birthday'
+          }
+        ],
+        data: [
+          {
+            name: '王小明',
+            age: 18,
+            birthday: '1990-04-22',
+            address: '北京市朝阳区芍药居'
+          },
+          {
+            name: '张小刚',
+            age: 25,
+            birthday: '1990-11-11',
+            address: '北京市海淀区西二旗'
+          },
+          {
+            name: '李小红',
+            age: 30,
+            birthday: '1985-02-05',
+            address: '上海市浦东新区世纪大道'
+          },
+          {
+            name: '周小伟',
+            age: 26,
+            birthday: '1993-07-11',
+            address: '深圳市南山区深南大道'
+          },
+          {
+            name: '张小发',
+            age: 33,
+            birthday: '1999-12-12',
+            address: '南京市龙眠大道'
+          }
+        ]
       }
     }
   }

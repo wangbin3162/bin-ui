@@ -6,30 +6,30 @@
       </div>
       <div :class="[prefixCls + '-header']" v-if="showHeader" ref="header" @mousewheel="handleMouseWheel">
         <table-head
-          :prefix-cls="prefixCls"
-          :styleObject="tableHeaderStyle"
-          :columns="cloneColumns"
-          :column-rows="columnRows"
-          :obj-data="objData"
-          :columns-width="columnsWidth"
-          :data="rebuildData"></table-head>
+            :prefix-cls="prefixCls"
+            :styleObject="tableHeaderStyle"
+            :columns="cloneColumns"
+            :column-rows="columnRows"
+            :obj-data="objData"
+            :columns-width="columnsWidth"
+            :data="rebuildData"></table-head>
       </div>
       <div :class="[prefixCls + '-body']" :style="bodyStyle" ref="body" @scroll="handleBodyScroll"
            v-show="!(!!noDataText && (!data || data.length === 0))">
         <table-body
-          ref="tbody"
-          :draggable="draggable"
-          :prefix-cls="prefixCls"
-          :styleObject="tableStyle"
-          :columns="cloneColumns"
-          :data="rebuildData"
-          :row-key="rowKey"
-          :columns-width="columnsWidth"
-          :obj-data="objData"></table-body>
+            ref="tbody"
+            :draggable="draggable"
+            :prefix-cls="prefixCls"
+            :styleObject="tableStyle"
+            :columns="cloneColumns"
+            :data="rebuildData"
+            :row-key="rowKey"
+            :columns-width="columnsWidth"
+            :obj-data="objData"></table-body>
       </div>
       <div
-        :class="[prefixCls + '-tip']" :style="bodyStyle" @scroll="handleBodyScroll"
-        v-show="!!noDataText && (!data || data.length === 0)">
+          :class="[prefixCls + '-tip']" :style="bodyStyle" @scroll="handleBodyScroll"
+          v-show="!!noDataText && (!data || data.length === 0)">
         <table cellspacing="0" cellpadding="0" border="0">
           <tbody>
           <tr>
@@ -43,55 +43,55 @@
       <div :class="[prefixCls + '-fixed']" :style="fixedTableStyle" v-if="isLeftFixed">
         <div :class="fixedHeaderClasses" v-if="showHeader">
           <table-head
-            fixed="left"
-            :prefix-cls="prefixCls"
-            :styleObject="fixedTableStyle"
-            :columns="leftFixedColumns"
-            :column-rows="columnRows"
-            :fixed-column-rows="leftFixedColumnRows"
-            :obj-data="objData"
-            :columns-width="columnsWidth"
-            :data="rebuildData"></table-head>
+              fixed="left"
+              :prefix-cls="prefixCls"
+              :styleObject="fixedTableStyle"
+              :columns="leftFixedColumns"
+              :column-rows="columnRows"
+              :fixed-column-rows="leftFixedColumnRows"
+              :obj-data="objData"
+              :columns-width="columnsWidth"
+              :data="rebuildData"></table-head>
         </div>
         <div :class="[prefixCls + '-fixed-body']" :style="fixedBodyStyle" ref="fixedBody"
              @mousewheel="handleFixedMousewheel" @DOMMouseScroll="handleFixedMousewheel">
           <table-body
-            fixed="left"
-            :draggable="draggable"
-            :prefix-cls="prefixCls"
-            :styleObject="fixedTableStyle"
-            :columns="leftFixedColumns"
-            :data="rebuildData"
-            :row-key="rowKey"
-            :columns-width="columnsWidth"
-            :obj-data="objData"></table-body>
+              fixed="left"
+              :draggable="draggable"
+              :prefix-cls="prefixCls"
+              :styleObject="fixedTableStyle"
+              :columns="leftFixedColumns"
+              :data="rebuildData"
+              :row-key="rowKey"
+              :columns-width="columnsWidth"
+              :obj-data="objData"></table-body>
         </div>
       </div>
       <div :class="[prefixCls + '-fixed-right']" :style="fixedRightTableStyle" v-if="isRightFixed">
         <div :class="fixedHeaderClasses" v-if="showHeader">
           <table-head
-            fixed="right"
-            :prefix-cls="prefixCls"
-            :styleObject="fixedRightTableStyle"
-            :columns="rightFixedColumns"
-            :column-rows="columnRows"
-            :fixed-column-rows="rightFixedColumnRows"
-            :obj-data="objData"
-            :columns-width="columnsWidth"
-            :data="rebuildData"></table-head>
+              fixed="right"
+              :prefix-cls="prefixCls"
+              :styleObject="fixedRightTableStyle"
+              :columns="rightFixedColumns"
+              :column-rows="columnRows"
+              :fixed-column-rows="rightFixedColumnRows"
+              :obj-data="objData"
+              :columns-width="columnsWidth"
+              :data="rebuildData"></table-head>
         </div>
         <div :class="[prefixCls + '-fixed-body']" :style="fixedBodyStyle" ref="fixedRightBody"
              @mousewheel="handleFixedMousewheel" @DOMMouseScroll="handleFixedMousewheel">
           <table-body
-            fixed="right"
-            :draggable="draggable"
-            :prefix-cls="prefixCls"
-            :styleObject="fixedRightTableStyle"
-            :columns="rightFixedColumns"
-            :data="rebuildData"
-            :row-key="rowKey"
-            :columns-width="columnsWidth"
-            :obj-data="objData"></table-body>
+              fixed="right"
+              :draggable="draggable"
+              :prefix-cls="prefixCls"
+              :styleObject="fixedRightTableStyle"
+              :columns="rightFixedColumns"
+              :data="rebuildData"
+              :row-key="rowKey"
+              :columns-width="columnsWidth"
+              :obj-data="objData"></table-body>
         </div>
       </div>
       <div :class="[prefixCls + '-fixed-right-header']" :style="fixedRightHeaderStyle" v-if="isRightFixed"></div>
@@ -535,11 +535,12 @@
         }
         const status = !data._isExpanded
         this.objData[_index]._isExpanded = status
-        this.$emit('on-expand', JSON.parse(JSON.stringify(this.cloneData[_index])), status)
-
-        if (this.height || this.maxHeight) {
-          this.$nextTick(() => this.fixedBody())
-        }
+        console.log(this.objData[_index])
+        // data._isExpanded = status
+        // this.$emit('on-expand', JSON.parse(JSON.stringify(this.cloneData[_index])), status)
+        // if (this.height || this.maxHeight) {
+        //   this.$nextTick(() => this.fixedBody())
+        // }
       },
       selectAll (status) {
         for (const data of this.rebuildData) {
