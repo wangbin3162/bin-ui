@@ -134,6 +134,9 @@
             item.opened = this.expandAll ? true : this.openedNames.indexOf(item.name) > -1
           })
         }
+        // 更新openedNames
+        let openedNames = items.filter(item => item.opened).map(item => item.name)
+        this.openedNames = [...openedNames]
       },
       handleEmitSelectEvent (name) {
         this.$emit('on-select', name)
