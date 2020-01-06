@@ -10,7 +10,6 @@
           :name="name"
           :value="currentValue"
           type="hidden">
-      <b-icon name="ios-arrow-down" :class="arrowClasses"></b-icon>
       <div
           ref="input"
           :tabindex="itemDisabled ? undefined : 0"
@@ -253,12 +252,6 @@
       }
     },
     computed: {
-      arrowClasses () {
-        return [
-          `${this.inputPrefixCls}-icon`,
-          `${this.inputPrefixCls}-icon-normal`
-        ]
-      },
       transition () {
         return oneOf(this.placement, ['bottom-start', 'bottom', 'bottom-end']) ? 'slide-up' : 'fade'
       },

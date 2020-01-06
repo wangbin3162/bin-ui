@@ -62,7 +62,6 @@ active() {
     border-radius: 2px;
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==');
     position: relative;
-    top: 1px;
     div {
       width: 100%;
       height: 100%;
@@ -74,9 +73,10 @@ active() {
       overflow: hidden;
       text-align: center;
       i {
-        font-size: 24px;
+        font-size: 16px;
         vertical-align: baseline;
         color: #999;
+        line-height: 1.5em;
       }
     }
     &-focused {
@@ -84,15 +84,18 @@ active() {
     }
   }
   .bin-input {
-    padding: 4px 7px;
+    padding: 4px;
+    height: auto;
   }
-  .bin-input-icon-normal + .bin-input {
-    padding-right: 32px;
+  &-input {
+    cursor: pointer;
+  }
+  .bin-input-default {
+    cursor: pointer;
   }
   &-large &-color {
     width: 30px;
     height: 30px;
-    top: 0;
     &-empty {
       i {
         font-size: 20px;
@@ -102,7 +105,6 @@ active() {
   &-small &-color {
     width: 20px;
     height: 20px;
-    top: 1px;
     &-empty {
       i {
         font-size: 14px;
@@ -112,7 +114,6 @@ active() {
   &-mini &-color {
     width: 16px;
     height: 16px;
-    top: 1px;
     &-empty {
       i {
         font-size: 14px;
@@ -184,7 +185,6 @@ active() {
       }
     }
     &, &--white, &--black {
-      cursor: pointer;
       position: absolute;
       top: 0;
       left: 0;
@@ -198,7 +198,6 @@ active() {
       background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
     &-pointer {
-      cursor: pointer;
       position: absolute;
     }
     &-circle {
@@ -219,7 +218,6 @@ active() {
       active()
     }
     &-container {
-      cursor: pointer;
       margin: 0 2px;
       position: relative;
       height: 100%;
@@ -279,7 +277,6 @@ active() {
       border-radius: 2px;
     }
     &-container {
-      cursor: pointer;
       position: relative;
       z-index: 2;
       height: 100%;
@@ -334,3 +331,4 @@ active() {
     }
   }
 }
+

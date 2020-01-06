@@ -54,7 +54,7 @@
         return { background: `hsl(${this.value.hsv.h}, 100%, 50%)` }
       },
       pointerStyle () {
-        return { top: `${-(this.value.hsv.v * 100) + 1 + 100}%`, left: `${this.value.hsv.s * 100}%` }
+        return { top: `${-(this.value.hsv.v * 100) + 100}%`, left: `${this.value.hsv.s * 100}%` }
       }
     },
 
