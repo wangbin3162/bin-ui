@@ -9,7 +9,7 @@ let timer
 
 // 获取loadingBar的实例
 function getLoadingBarInstance () {
-  //初始化实例
+  // 初始化实例
   loadingBarInstance = loadingBarInstance || LoadingBar.newInstance({
     color: color,
     failedColor: failedColor,
@@ -18,7 +18,7 @@ function getLoadingBarInstance () {
   return loadingBarInstance
 }
 
-//更新进度并传入配置
+// 更新进度并传入配置
 function update (options) {
   let instance = getLoadingBarInstance()
   instance.update(options)
