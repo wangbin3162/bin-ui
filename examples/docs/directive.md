@@ -32,6 +32,8 @@
 
 ### clickOutSide
 
+通过添加`v-click-out-side="clickOutSide"`来添加外部点击事件
+
 ::: demo
 ```html
 <template>
@@ -46,7 +48,7 @@
 export default {
   methods:{
     clickOutSide(){ 
-      this.$message('点击外部')
+      this.$log.primary('点击外部')
     }
   } 
 }
