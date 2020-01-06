@@ -14,7 +14,7 @@
       }
     ]"
   >
-    <b-icon name="loading" v-if="loading"></b-icon>
+    <b-icon class="button-loading icon-is-rotating" :name="loadingIcon?loadingIcon:'loading'" v-if="loading"></b-icon>
     <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
@@ -40,6 +40,9 @@
         default: 'button'
       },
       loading: Boolean,
+      loadingIcon: {
+        type: String
+      },
       disabled: Boolean,
       plain: Boolean,
       round: Boolean,
