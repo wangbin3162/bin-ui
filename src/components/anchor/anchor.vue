@@ -120,7 +120,7 @@
       this.scroll = findComponentUpward(this, 'BScrollbar')
       this.domEl = this.scroll ? this.scroll.$el.querySelector('.bin-scrollbar__wrap') : window
 
-      this.scrollEvent = this.$util.debounce(this.handleScroll, 10)
+      this.scrollEvent = this.$util.debounce(this.handleScroll, 10, false)
       on(this.domEl, 'scroll', this.scrollEvent)
       on(window, 'resize', this.scrollEvent)
 

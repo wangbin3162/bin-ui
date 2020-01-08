@@ -11,6 +11,13 @@
     <b-timeline>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">2.6.0</p>
+        <p class="time">2020-01-06</p>
+        <p class="content">新增tabs标签页组件</p>
+        <p class="content">优化util防抖函数，去除部分log日志</p>
+      </b-timeline-item>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
         <p class="version">2.5.0</p>
         <p class="time">2020-01-06</p>
         <p class="content">优化switch显示样式，使之更加饱满符合移动端开关样式，增加confirm切换前确认操作，确认后才调用真正切换</p>

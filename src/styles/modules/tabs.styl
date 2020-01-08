@@ -1,0 +1,192 @@
+@import "../common/var.styl"
+.bin-tabs-wrapper {
+  position: relative;
+  .nav-wrap {
+    position: relative;
+    z-index: 2;
+    &.is-scrollable {
+      padding: 0 15px;
+      box-sizing: border-box;
+      .nav-next, .nav-prev {
+        position: absolute;
+        cursor: pointer;
+        line-height: 37px;
+        font-size: 12px;
+        color: #909399;
+        z-index: 2000;
+      }
+      .nav-prev {
+        left: 0;
+      }
+      .nav-next {
+        right: 0;
+      }
+    }
+  }
+  .scroll-container {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    .scroll-wrapper {
+      position: absolute;
+      transition: .3s;
+    }
+  }
+  .nav-wrapper {
+    height: 36px;
+    .tab-item {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      color: #515a6e;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 18px;
+      font-size: 14px;
+      transition: .3s;
+      .icon-ios-close {
+        position: relative;
+        width: 0;
+        height: 16px;
+        line-height: 16px;
+        overflow: hidden;
+        vertical-align: -2px;
+        top: 2px;
+        border-radius: 50%;
+        margin-left: 5px;
+        text-align: center;
+        font-size: 16px;
+        color: #999;
+        transition: all .3s cubic-bezier(.645, .045, .355, 1);
+        &:before {
+          display: inline-block;
+        }
+        &:hover {
+          background-color: #e1e1e1;
+          color: #ffffff;
+        }
+      }
+      &.active {
+        color: $color-primary;
+        .icon-ios-close {
+          width: 16px;
+        }
+      }
+      &:hover {
+        color: $color-primary;
+        .icon-ios-close {
+          width: 16px;
+        }
+      }
+    }
+    .tabs-active-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-color: #409eff;
+      z-index: 10;
+      transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+      list-style: none;
+    }
+  }
+  .contextmenu {
+    margin: 0;
+    background: #fff;
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    list-style-type: none;
+    padding: 5px 0;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    border: 1px solid #cfd7e5;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1)
+    li {
+      margin: 0;
+      padding: 9px 16px;
+      cursor: pointer;
+      line-height: 1.2em;
+      &:hover {
+        background: #ecf5ff;
+        color: #66b1ff;
+      }
+    }
+  }
+  &.default:after {
+    content: '';
+    position: absolute
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e4e7ed;
+    z-index: 1;
+  }
+  &.card {
+    border-bottom: 1px solid #e4e7ed;
+    .nav-wrapper {
+      height: 37px;
+      z-index: 10;
+      bottom: -1px;
+    }
+    .tab-list {
+      border: 1px solid #e4e7ed;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      box-sizing: border-box;
+    }
+    .tab-item {
+      border-bottom: 1px solid #e4e7ed;
+      border-left: 1px solid #e4e7ed;
+      transition: color .3s cubic-bezier(.645, .045, .355, 1), padding .3s cubic-bezier(.645, .045, .355, 1);
+      &:first-child {
+        border-left: none;
+      }
+      &.active {
+        border-bottom-color: #fff;
+      }
+    }
+  }
+  &.tag {
+    .scroll-wrapper {
+      height: 32px;
+    }
+    .tab-item {
+      height: 32px;
+      line-height: 32px;
+      border-radius: 3px;
+      padding: 0 12px;
+      border: 1px solid #e8eaec;
+      margin-right: 10px;
+      font-size: 12px;
+      &::before {
+        content: '';
+        background: #e1e1e1;
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+      &.active {
+        &::before {
+          background: #2d8cf0;
+        }
+      }
+    }
+    .nav-wrap.is-scrollable {
+      .nav-next, .nav-prev {
+        line-height: 36px;
+      }
+    }
+  }
+}
+

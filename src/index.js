@@ -12,6 +12,7 @@ import Divider from './components/divider'
 import Modal from './components/modal'
 import Drawer from './components/drawer'
 import Tag from './components/tag'
+import Tabs from './components/tabs'
 import Circle from './components/circle'
 import Progress from './components/progress'
 import Alert from './components/alert'
@@ -68,7 +69,7 @@ const components = [
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
-  Form, FormItem,
+  Form, FormItem, Tabs,
   Container, Dropdown, DropdownItem, DropdownMenu,
   Select, Option, OptionGroup, Table, Page, Tree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
@@ -107,6 +108,7 @@ export default {
   Modal,
   Drawer,
   Tag,
+  Tabs,
   Progress,
   Circle,
   Alert,

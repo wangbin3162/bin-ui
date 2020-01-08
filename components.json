@@ -48,6 +48,7 @@
   "switch": "./src/components/switch/index.js",
   "table": "./src/components/table/index.js",
   "tag": "./src/components/tag/index.js",
+  "tabs": "./src/components/tabs/index.js",
   "time-picker": "./src/components/time-picker/index.js",
   "timeline": "./src/components/timeline/index.js",
   "tooltip": "./src/components/tooltip/index.js",

@@ -120,6 +120,12 @@
           "path": "/menu"
         },
         {
+          "desc": "Tabs 标签页",
+          "icon": "ios-more",
+          "name": "tabs",
+          "path": "/tabs"
+        },
+        {
           "desc": "Dropdown 下拉菜单",
           "icon": "md-arrow-dropdown",
           "name": "dropdown",

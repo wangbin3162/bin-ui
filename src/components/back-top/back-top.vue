@@ -62,7 +62,7 @@
       // 如果父级是自定义滚动则绑定滚动为父级元素dom
       this.domEl = this.$parent.$el.className === 'bin-scrollbar'
         ? this.$parent.$el.querySelector('.bin-scrollbar__wrap') : this.$parent.$el.querySelector('.scroll-box')
-      this.scrollEvent = this.$util.debounce(this.handleScroll)
+      this.scrollEvent = this.$util.debounce(this.handleScroll, 50, false)
       // 监听滚动事件
       on(this.domEl, 'scroll', this.scrollEvent)
       on(window, 'resize', this.scrollEvent)
