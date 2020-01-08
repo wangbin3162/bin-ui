@@ -34,8 +34,7 @@
     name: 'BTabs',
     props: {
       value: {
-        type: String,
-        required: true
+        type: String
       },
       data: {
         type: Array,

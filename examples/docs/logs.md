@@ -11,8 +11,8 @@
     <b-timeline>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
-        <p class="version">2.6.0</p>
-        <p class="time">2020-01-06</p>
+        <p class="version">2.6.1</p>
+        <p class="time">2020-01-8</p>
         <p class="content">新增tabs标签页组件</p>
         <p class="content">优化util防抖函数，去除部分log日志</p>
       </b-timeline-item>
