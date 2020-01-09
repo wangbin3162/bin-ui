@@ -9,8 +9,15 @@
 <template>
 <div class="doc-update">
     <b-timeline>
-      <b-timeline-item color="success">
-        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.6.2</p>
+        <p class="time">2020-01-9</p>
+        <p class="content">优化tabs标签页，修复部分样式</p>
+        <p class="content">优化标签页滚动效果，窗口变化时同时计算容器宽度</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.6.1</p>
         <p class="time">2020-01-8</p>
         <p class="content">新增tabs标签页组件</p>

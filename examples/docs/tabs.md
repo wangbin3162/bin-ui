@@ -51,7 +51,7 @@ export default {
 
 可以设置基本的卡片模式
 
-::: demo 
+::: demo 卡片模式可以给tab项设置icon图标
 ```html
 <template>
   <b-tabs v-model="activeTab" :data="tabs" type="card"></b-tabs>
@@ -82,12 +82,12 @@ export default {
 
 可以关闭，同时可以通过自定义事件来增加标签页，关闭按钮只能在card和tag模式下使用,默认超出宽度，可以滚动移动
 
-::: demo 
+::: demo `tabs`中的项设置noClose可以排除关闭按钮，主要是为了部分可固定标签设置使用
 ```html
 <template>
   <div class="mb-15"><b-button type="primary" plain v-waves size="small" @click="handleAdd">add tab</b-button></div>
   <b-tabs v-model="activeTab" :data="tabs" type="card" closable
-    @on-close-tab="handleCloseTab"></b-tabs>
+    @on-tab-close="handleTabClose"></b-tabs>
   <p>开启的tab：{{ activeTab }}</p>
 </template>
 <script>
@@ -95,6 +95,7 @@ export default {
   data(){
     return {
       tabs:[
+        {key:'tab0',title:'首页',noClose:true},
         {key:'tab1',title:'用户管理'},
         {key:'tab2',title:'组织管理'},
         {key:'tab3',title:'系统管理'},
@@ -111,7 +112,7 @@ export default {
       // 增加完毕后通常默认选中这个新的tab，当然，你也可以不设置选中新的tab
       this.activeTab = newTab.key
     },
-    handleCloseTab(tab){
+    handleTabClose(tab){
       this.tabs.splice(this.tabs.findIndex(t => t.key === tab.key), 1)
     }
   }
@@ -122,13 +123,13 @@ export default {
 
 ### ContextMenu
 
-配合可以关闭，可以开启右键菜单实现更多的配置信息，开启右键菜单需要手动插入右键菜单的按钮列表标签为`<li>`,并需要配合`on-select-tab`事件
+配合可以关闭，可以开启右键菜单实现更多的配置信息，开启右键菜单需要手动插入右键菜单的按钮列表标签为`<li>`,并需要配合`on-tab-select`事件
 
 ::: demo 
 ```html
 <template>
   <b-tabs v-model="activeTab" :data="tabs" type="card" closable context-menu
-    ref="tabs" @on-close-tab="handleCloseTab" @on-select-tab="handleSelect">
+    ref="tabs" @on-tab-close="handleTabClose" @on-tab-select="handleSelect">
     <template v-slot:menu>
         <li @click="refreshSelected">刷新</li>
         <li @click="closeSelected">关闭</li>
@@ -152,7 +153,7 @@ export default {
     } 
   },
   methods:{
-    handleCloseTab(tab){
+    handleTabClose(tab){
       this.tabs.splice(this.tabs.findIndex(t => t.key === tab.key), 1)
     },
     // 缓存右键选中的tab
@@ -194,7 +195,7 @@ export default {
 <template>
   <div class="mb-15"><b-button type="primary" plain v-waves size="small" @click="handleAdd">add tab</b-button></div>
   <b-tabs v-model="activeTab" :data="tabs" type="tag" closable context-menu
-    ref="tabs" @on-close-tab="handleCloseTab" @on-select-tab="handleSelect">
+    ref="tabs" @on-tab-close="handleTabClose" @on-tab-select="handleSelect">
     <template v-slot:menu>
         <li @click="refreshSelected">刷新</li>
         <li @click="closeSelected">关闭</li>
@@ -209,7 +210,7 @@ export default {
   data(){
     return {
       tabs:[
-        {key:'tab1',title:'用户管理'},
+        {key:'tab1',title:'用户管理',icon:'ios-contact'},
         {key:'tab2',title:'组织管理'},
         {key:'tab3',title:'系统管理'},
         {key:'tab4',title:'目录模块配置'}
@@ -225,7 +226,7 @@ export default {
       // 增加完毕后通常默认选中这个新的tab
       this.activeTab = newTab.key
     },
-    handleCloseTab(tab){
+    handleTabClose(tab){
       this.tabs.splice(this.tabs.findIndex(t => t.key === tab.key), 1)
     },
     // 缓存右键选中的tab
@@ -270,5 +271,5 @@ export default {
 
 | 事件名      | 说明    | 返回值    |
 |---------- |-------- |---------- |
-| on-close-tab   | 关闭一个tab事件  | 当前关闭的tab  |
-| on-select-tab    | 右键选中事件回调，用于配合右键系统缓存点击的tag   | 右键选中的tab  |
+| on-tab-close   | 关闭一个tab事件  | 当前关闭的tab  |
+| on-tab-select  | 右键选中事件回调，用于配合右键系统缓存点击的tag   | 右键选中的tab  |

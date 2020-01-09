@@ -45,8 +45,11 @@
       moveToTarget ($target) {
         const $container = this.$refs.scrollContainer
         const $containerWidth = $container.offsetWidth
+        const $wrapper = this.$refs.scrollWrapper
+        const $wrapperWidth = $wrapper.offsetWidth
         const $targetLeft = $target.offsetLeft
         const $targetWidth = $target.offsetWidth
+        this.isScrollable = $wrapperWidth > ($containerWidth - padding)
 
         if ($targetLeft < -this.left) {
           // tag in the left

@@ -46,39 +46,52 @@
       padding: 0 18px;
       font-size: 14px;
       transition: .3s;
-      .icon-ios-close {
+      .iconfont {
         position: relative;
-        width: 0;
+        top: -1px;
+        font-size: 16px;
         height: 16px;
         line-height: 16px;
+        color: #515a6e;
+      }
+      .icon-ios-close {
+        width: 0;
         overflow: hidden;
-        vertical-align: -2px;
-        top: 2px;
-        border-radius: 50%;
-        margin-left: 5px;
-        text-align: center;
         font-size: 16px;
+        border-radius: 50%;
+        text-align: center;
+        height: 16px;
+        line-height: 16px;
         color: #999;
         transition: all .3s cubic-bezier(.645, .045, .355, 1);
         &:before {
           display: inline-block;
         }
         &:hover {
-          background-color: #e1e1e1;
+          background-color: #c0c4cc;
           color: #ffffff;
         }
       }
-      &.active {
+      &:hover {
+        padding: 0 12px;
         color: $color-primary;
         .icon-ios-close {
           width: 16px;
+          margin-left: 5px;
         }
       }
-      &:hover {
+      &.active {
+        &:hover {
+          padding: 0 18px;
+        }
         color: $color-primary;
         .icon-ios-close {
           width: 16px;
+          margin-left: 5px;
         }
+      }
+      &.no-close:hover {
+        padding: 0 18px;
       }
     }
     .tabs-active-bar {
@@ -112,6 +125,7 @@
       padding: 9px 16px;
       cursor: pointer;
       line-height: 1.2em;
+      color: #5e6d82;
       &:hover {
         background: #ecf5ff;
         color: #66b1ff;
@@ -158,13 +172,13 @@
       height: 32px;
     }
     .tab-item {
-      height: 32px;
-      line-height: 32px;
+      height: 34px;
+      line-height: 33px;
       border-radius: 3px;
       padding: 0 12px;
       border: 1px solid #e8eaec;
       margin-right: 10px;
-      font-size: 12px;
+      font-size: 14px;
       &::before {
         content: '';
         background: #e1e1e1;
@@ -176,9 +190,18 @@
         border-radius: 50%;
         margin-right: 8px;
       }
+      &.width-icon::before {
+        display: none;
+      }
       &.active {
+        &:hover {
+          padding: 0 12px;
+        }
         &::before {
-          background: #2d8cf0;
+          background: $color-primary;
+        }
+        .custom-icon {
+          color: $color-primary;
         }
       }
     }
