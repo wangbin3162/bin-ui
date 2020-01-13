@@ -10,7 +10,7 @@
     <template v-if="renderType === 'html'"><span v-html="row[column.key]"></span></template>
     <template v-if="renderType === 'normal'">
       <template v-if="column.tooltip && tableRoot.tooltipTheme">
-        <b-tooltip transfer :content="row[column.key]" :theme="tableRoot.tooltipTheme" :disabled="!showTooltip"
+        <b-tooltip append-to-body :content="row[column.key]" :theme="tableRoot.tooltipTheme" :disabled="!showTooltip"
                    :max-width="300" class="bin-table-cell-tooltip">
                 <span ref="content" @mouseenter="handleTooltipIn" @mouseleave="handleTooltipOut"
                       class="bin-table-cell-tooltip-content">{{ row[column.key] }}</span>

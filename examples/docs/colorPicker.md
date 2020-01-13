@@ -151,6 +151,7 @@ export default {
 | colors   | 自定义颜色预设   | Array  |  —   |  [] |
 | format   | 颜色的格式  | String  |  hsl、hsv、hex、rgb  |  开启 alpha 时为 rgb，其它为 hex |
 | size   | 尺寸  | String  |  large、default 、small、mini |  default  |
+| appendToBody   | 是否将弹层放置于body下  | Boolean  |  —   |  false |
 
 ### Events
 

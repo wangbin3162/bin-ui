@@ -334,7 +334,7 @@ export default {
 | not-found-text | 没有数据显示 |  String  |  —   |  没有数据  |
 | label-in-value | 在返回选项时，是否将 label 和 value 一并返回,默认只返回 value |  Boolean  |  —   |  false  |
 | placement | 弹窗的展开方向 |  String  |  top、bottom、top-start、bottom-start、top-end、bottom-end  |  bottom-start  |
-| transfer | 是否将弹层放置于 body 内 |  Boolean  |  —   |  false  |
+| appendToBody | 是否将弹层放置于 body 内 |  Boolean  |  —   |  false  |
 | max-tag-count | 多选时最多显示多少个 tag |  Number  |  —   | —    |
 | max-tag-placeholder  | 隐藏 tag 时显示的内容，参数是剩余项数量 |  Function  |  —   | —    |
 

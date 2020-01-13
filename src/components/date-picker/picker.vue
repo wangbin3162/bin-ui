@@ -33,11 +33,11 @@
       <drop
         @click.native="handleTransferClick"
         v-show="opened"
-        :class="{ [prefixCls + '-transfer']: transfer }"
+        :class="{ [prefixCls + '-transfer']: appendToBody }"
         :placement="placement"
         ref="drop"
-        :data-transfer="transfer"
-        :transfer="transfer"
+        :data-transfer="appendToBody"
+        :transfer="appendToBody"
         v-transfer-dom>
         <div>
           <component
@@ -179,7 +179,7 @@
         },
         default: 'bottom-start'
       },
-      transfer: {
+      appendToBody: {
         type: Boolean,
         default: false
       },
@@ -286,7 +286,7 @@
       },
       // 开启 transfer 时，点击 Drop 即会关闭，这里不让其关闭
       handleTransferClick () {
-        if (this.transfer) this.disableCloseUnderTransfer = true
+        if (this.appendToBody) this.disableCloseUnderTransfer = true
       },
       handleClose (e) {
         if (this.disableCloseUnderTransfer) {

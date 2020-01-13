@@ -162,7 +162,7 @@
 | theme     | 主题   |  string  |  dark 或 light   |   light   |
 | max-width	     | 最大宽度，超出最大值后，文本将自动换行   |  string/number  | — |   —    |
 | offset    | 出现位置的偏移量   |  Number |  — |  	0     |
-| transfer    | 是否将弹层放置于 body 内   | Boolean  |  —   |   false   |
+| appendToBody    | 是否将弹层放置于 body 内   | Boolean  |  —   |   false   |
 | options    | 自定义 popper.js 的配置项具体参考popper.js   | Object  |  —   |   —    |
 
 ### Events 

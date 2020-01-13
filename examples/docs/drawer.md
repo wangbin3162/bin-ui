@@ -23,7 +23,7 @@
 ```html
 <template>
   <b-button type="primary" v-waves size="small" @click="value1 = true">open</b-button>
-    <b-drawer v-model="value1" title="抽屉标题">
+    <b-drawer v-model="value1" title="抽屉标题" append-to-body>
       <p>我是抽屉内容</p>
     </b-drawer>
 </template>

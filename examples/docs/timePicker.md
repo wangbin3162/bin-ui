@@ -219,7 +219,7 @@
 | clearable | 是否显示清除按钮| Boolean |  —  |true |
 | readonly | 完全只读，开启后不会弹出选择器,只在没有设置 open 属性下生效| Boolean |  —  |false |
 | editable | 文本框是否可以输入，只在没有使用 slot 时有效 | Boolean |  —  |true |
-| transfer | 是否将弹层放置于 body 内 | Boolean |  —  |false |
+| appendToBody | 是否将弹层放置于 body 内 | Boolean |  —  |false |
 | element-id | 给表单元素设置 id，详见 Form 用法。 | String |  —  |  —  |
 | separator | 两个时间间的分隔符 | String |  —  |  —  |
 

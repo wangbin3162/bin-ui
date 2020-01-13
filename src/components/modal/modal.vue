@@ -197,8 +197,9 @@
     mounted () {
       if (this.visible) {
         this.wrapShow = true
-        if (this.appendToBody) {
+        if (this.appendToBody && !this.hasMoveOut) {
           document.body.appendChild(this.$el)
+          this.hasMoveOut = true
         }
       }
       let showHead = true
@@ -311,8 +312,9 @@
           this.modalIndex = this.handleGetModalIndex()
           if (this.timer) clearTimeout(this.timer)
           this.wrapShow = true
-          if (this.appendToBody) {
+          if (this.appendToBody && !this.hasMoveOut) {
             document.body.appendChild(this.$el)
+            this.hasMoveOut = true
           }
         }
         this.$emit('on-visible-change', val)
@@ -328,7 +330,7 @@
         }
       }
     },
-    destroyed () {
+    beforeDestroy () {
       // if appendToBody is true, remove DOM node after destroy
       if (this.appendToBody && this.$el && this.$el.parentNode) {
         this.$el.parentNode.removeChild(this.$el)

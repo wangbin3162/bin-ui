@@ -14,8 +14,8 @@
         ref="drop"
         @mouseenter.native="handleMouseenter"
         @mouseleave.native="handleMouseleave"
-        :data-transfer="transfer"
-        :transfer="transfer"
+        :data-transfer="appendToBody"
+        :transfer="appendToBody"
         v-transfer-dom>
         <slot name="list"></slot>
       </drop>
@@ -51,7 +51,7 @@
         type: Boolean,
         default: false
       },
-      transfer: Boolean, // 是否移动至body
+      appendToBody: Boolean, // 是否移动至body
       transferClassName: { // 包裹的样式名
         type: String
       },
@@ -180,7 +180,7 @@
       },
       dropdownCls () {
         return {
-          [prefixCls + '-transfer']: this.transfer,
+          [prefixCls + '-transfer']: this.appendToBody,
           [this.transferClassName]: this.transferClassName
         }
       },

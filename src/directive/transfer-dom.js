@@ -12,5 +12,12 @@ export default {
       document.body.appendChild(el) // moving into body
       hasMovedOut = true
     }
+  },
+  unbind (el, { value }, vnode) {
+    const parentNode = el.parentNode
+    if (parentNode && parentNode === document.body) {
+      // remove body el
+      document.body.removeChild(el)
+    }
   }
 }

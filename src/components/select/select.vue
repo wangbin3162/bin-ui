@@ -44,8 +44,8 @@
         v-show="dropVisible"
         :placement="placement"
         ref="dropdown"
-        :data-transfer="transfer"
-        :transfer="transfer"
+        :data-transfer="appendToBody"
+        :transfer="appendToBody"
         v-transfer-dom
       >
         <ul v-show="showNotFoundLabel" :class="[prefixCls + '-not-found']">
@@ -207,7 +207,7 @@
         },
         default: 'bottom-start'
       },
-      transfer: Boolean,
+      appendToBody: Boolean,
       // Use for AutoComplete
       autoComplete: {
         type: Boolean,
@@ -281,7 +281,7 @@
       },
       dropdownCls () {
         return {
-          [prefixCls + '-dropdown-transfer']: this.transfer,
+          [prefixCls + '-dropdown-transfer']: this.appendToBody,
           [prefixCls + '-multiple']: this.multiple && this.transfer,
           'bin-auto-complete': this.autoComplete,
           [this.transferClassName]: this.transferClassName
@@ -474,7 +474,7 @@
       },
       onClickOutside () {
         if (this.visible) {
-          if (this.transfer) {
+          if (this.appendToBody) {
             const { $el } = this.$refs.dropdown
             if ($el === event.target || $el.contains(event.target)) {
               return

@@ -9,6 +9,15 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">2.6.3</p>
+        <p class="time">2020-01-13</p>
+        <p class="content">统一transfer-dom增加解除绑定事件，添加至body中的dom元素会在解绑时remove</p>
+        <p class="content">修复tooltip和modal 不采用transfer模式，默认在显示时再去添加至body，并做优化操作，已移动至body中的元素不做重复移动</p>
+        <p class="content">picker,select,dropdown等组件默认修改transfer为appendToBody属性，方便理解</p>
+        <p class="content">修复部分样式bug</p>
+      </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.6.2</p>

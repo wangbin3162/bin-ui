@@ -37,8 +37,8 @@
           v-show="visible"
           ref="drop"
           :placement="placement"
-          :data-transfer="transfer"
-          :transfer="transfer"
+          :data-transfer="appendToBody"
+          :transfer="appendToBody"
           :class="dropClasses"
       >
         <transition name="fade-in">
@@ -204,7 +204,7 @@
         },
         default: 'bottom'
       },
-      transfer: {
+      appendToBody: {
         type: Boolean,
         default: false
       },
@@ -268,7 +268,7 @@
         return [
           `${this.prefixCls}`,
           {
-            [`${this.prefixCls}-transfer`]: this.transfer
+            [`${this.prefixCls}-transfer`]: this.appendToBody
           }
         ]
       },
@@ -298,7 +298,7 @@
         return [
           `${this.transferPrefixCls}-no-max-height`,
           {
-            [`${this.prefixCls}-transfer`]: this.transfer,
+            [`${this.prefixCls}-transfer`]: this.appendToBody,
             [`${this.prefixCls}-hide-drop`]: this.hideDropDown
           }
         ]
@@ -369,11 +369,9 @@
             event.preventDefault()
             return
           }
-          if (this.transfer) {
-            const { $el } = this.$refs.drop
-            if ($el === event.target || $el.contains(event.target)) {
-              return
-            }
+          if (this.appendToBody) {
+            this.visible = false
+            return
           }
           this.closer(event)
           return

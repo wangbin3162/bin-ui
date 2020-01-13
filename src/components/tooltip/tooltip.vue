@@ -5,14 +5,12 @@
     </div>
     <transition name="fade-in">
       <div
-        :class="[prefixCls + '-popper', prefixCls + '-' + theme]"
-        :style="dropStyles"
-        ref="popper"
-        v-show="!disabled && (visible || always)"
-        @mouseenter="handleShowPopper"
-        @mouseleave="handleClosePopper"
-        :data-transfer="transfer"
-        v-transfer-dom>
+          :class="[prefixCls + '-popper', prefixCls + '-' + theme]"
+          :style="dropStyles"
+          ref="popper"
+          v-show="!disabled && (visible || always)"
+          @mouseenter="handleShowPopper"
+          @mouseleave="handleClosePopper">
         <div :class="[prefixCls + '-content']">
           <div :class="[prefixCls + '-arrow']"></div>
           <div :class="innerClasses" :style="innerStyles">
@@ -25,7 +23,6 @@
 </template>
 <script>
   import Popper from '../base/popper'
-  import TransferDom from '../../directive/transfer-dom'
   import { oneOf } from '../../utils/util'
   import { transferIndex, transferIncrease } from '../../utils/transfer-queue'
 
@@ -33,7 +30,6 @@
 
   export default {
     name: 'BTooltip',
-    directives: { TransferDom },
     mixins: [Popper],
     props: {
       placement: {
@@ -62,7 +58,7 @@
         type: Boolean,
         default: false
       },
-      transfer: {
+      appendToBody: {
         type: Boolean,
         default: false
       },
@@ -98,7 +94,7 @@
       },
       dropStyles () {
         let styles = {}
-        if (this.transfer) styles['z-index'] = 1060 + this.tIndex
+        if (this.appendToBody) styles['z-index'] = 1060 + this.tIndex
 
         return styles
       }
@@ -106,6 +102,18 @@
     watch: {
       content () {
         this.updatePopper()
+      },
+      visible (val) {
+        if (val) {
+          if (this.appendToBody) {
+            this.tooltipEl = this.$refs.popper
+            if (this.tooltipEl && !this.hasMoveOut) {
+              document.body.appendChild(this.tooltipEl)
+              this.hasMoveOut = true
+            }
+          }
+        }
+        this.$emit('on-visible-change', val)
       }
     },
     methods: {
@@ -134,6 +142,17 @@
     mounted () {
       if (this.always) {
         this.updatePopper()
+      }
+    },
+    beforeDestroy () {
+      // if appendToBody is true, remove DOM node after destroy
+      if (!this.tooltipEl || !this.appendToBody) {
+        return
+      }
+      const parentNode = this.tooltipEl.parentNode
+      if (parentNode && parentNode === document.body) {
+        // remove body el
+        document.body.removeChild(this.tooltipEl)
       }
     }
   }
