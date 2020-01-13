@@ -1,5 +1,6 @@
+import { on, off } from '../../../utils/dom'
 import { addResizeListener, removeResizeListener } from '../../../utils/resize-event'
-import { toObject } from './util'
+import { scrollBarWidth, toObject } from './util'
 import Bar from './bar'
 
 export default {
@@ -24,7 +25,8 @@ export default {
     tag: { // view容器用那种标签渲染，默认为div
       type: String,
       default: 'div'
-    }
+    },
+    calcBarWidth: Boolean
   },
   data () {
     return {
@@ -42,6 +44,9 @@ export default {
   render (h) {
     // 获取浏览器滚动条宽度scrollBarWidth() // 这里先默认为17
     let gutter = 17
+    if (this.calcBarWidth) {
+      gutter = scrollBarWidth()
+    }
     let style = this.wrapStyle
     // 如果宽度获取成功
     if (gutter) {
@@ -115,7 +120,6 @@ export default {
     }
     return h('div', { class: 'bin-scrollbar' }, nodes)
   },
-
   methods: {
     handleScroll () {
       const wrap = this.wrap
@@ -126,7 +130,6 @@ export default {
       let heightPercentage, widthPercentage
       const wrap = this.wrap
       if (!wrap) return
-
       // 计算thumb的百分比
       heightPercentage = (wrap.clientHeight * 100 / wrap.scrollHeight)
       widthPercentage = (wrap.clientWidth * 100 / wrap.scrollWidth)
@@ -137,11 +140,19 @@ export default {
   },
   mounted () {
     if (this.normal) return
+
+    this.updateEvent = this.$util.debounce(this.update, 10, false)
     this.$nextTick(this.update)
-    !this.noResize && addResizeListener(this.$refs.resize, this.update)
+    if (!this.noResize) {
+      on(window, 'resize', this.updateEvent)
+      addResizeListener(this.$refs.resize, this.update) // 内容撑开的时候计算动态计算
+    }
   },
   beforeDestroy () {
     if (this.normal) return
-    !this.noResize && removeResizeListener(this.$refs.resize, this.update)
+    if (!this.noResize) {
+      off(window, 'resize', this.updateEvent)
+      removeResizeListener(this.$refs.resize, this.update)
+    }
   }
 }

@@ -1,4 +1,3 @@
-import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 import config from '../../../package.json'
 // 指令
 import clickOutSide from '../../directive/clickoutside'
@@ -30,7 +29,6 @@ export default {
     Vue.prototype.$open = util.open
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
-    Vue.prototype.$resize = { addResizeListener, removeResizeListener }
     // 打印UI官网
     log.pretty('[bin-ui] ' + config.version, 'https://wangbin3162.gitee.io/bin-ui/')
   }

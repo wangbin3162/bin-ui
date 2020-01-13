@@ -1,17 +1,18 @@
 <template>
-  <div class="bin-tabs-wrapper" :class="type">
-    <scroll-pane class='nav-wrapper' :class="type" ref='scrollPane'>
+  <div class="bin-tabs-wrapper" :class="[type,{'closable':closable}]">
+    <scroll-pane class='nav-wrapper' ref='scrollPane'>
       <div class="tab-list">
         <!--下标-->
         <div v-if="type==='default'" class="tabs-active-bar" :style="activeBarStyle"></div>
         <span v-for="(tab,index) in data" :key="tab.key || 'tab-'+index"
               class="tab-item" :id="tab.key"
-              ref='tabs' :class="[{'width-icon':tab.icon},{'no-close':tab.noClose},{'active':isActive(tab)}]"
+              ref='tabs'
+              :class="[{'width-icon':tab.icon},{'no-close':tab.noClose},{'active':isActive(tab)}]"
               @click.stop="handleSelectTab(tab)"
               @contextmenu.stop.prevent="openMenu(tab,$event)">
         <b-icon v-if="tab.icon" :name="tab.icon" class="custom-icon"></b-icon>
         {{ tab.title }}
-        <i v-if="type!=='default'&&closable && !tab.noClose" class='iconfont icon-ios-close'
+        <i v-if="type!=='default'&& closable && !tab.noClose" class='iconfont icon-ios-close'
            @click.prevent.stop="closeSelectedTab(tab)"></i>
       </span>
       </div>

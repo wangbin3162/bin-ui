@@ -210,6 +210,7 @@ export default {
   data(){
     return {
       tabs:[
+        {key:'tab0',title:'首页',noClose:true},
         {key:'tab1',title:'用户管理',icon:'ios-contact'},
         {key:'tab2',title:'组织管理'},
         {key:'tab3',title:'系统管理'},

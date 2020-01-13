@@ -73,7 +73,6 @@
         }
       }
       &:hover {
-        padding: 0 12px;
         color: $color-primary;
         .icon-ios-close {
           width: 16px;
@@ -166,6 +165,14 @@
         border-bottom-color: #fff;
       }
     }
+    &.closable .tab-item {
+      &:hover {
+        padding: 0 12px;
+      }
+      &.no-close:hover {
+        padding: 0 18px;
+      }
+    }
   }
   &.tag {
     .scroll-wrapper {
@@ -203,6 +210,9 @@
         .custom-icon {
           color: $color-primary;
         }
+      }
+      &.no-close:hover {
+        padding: 0 12px;
       }
     }
     .nav-wrap.is-scrollable {
