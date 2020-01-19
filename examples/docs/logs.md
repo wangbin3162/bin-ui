@@ -9,6 +9,13 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.6.6</p>
+        <p class="time">2020-01-19</p>
+        <p class="content">优化打包路径，增加按需加载模块</p>
+        <p class="content">优化按钮组按钮间隔</p>
+      </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">2.6.4</p>

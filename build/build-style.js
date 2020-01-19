@@ -38,7 +38,7 @@ function compileModule () {
       cascade: false
     }))
     .pipe(cssmin())
-    .pipe(dest('../lib/styles/modules'))
+    .pipe(dest('../lib/styles'))
 }
 
 // 复制字体包
