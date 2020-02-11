@@ -1,31 +1,29 @@
 <template>
   <div class="side-nav">
-    <b-scrollbar style="height:100%;">
-      <div class="group-container">
-        <p class="side-nav-title">开发指南</p>
-        <div class="side-nav-items" v-for="(nav,index) in guide" :key="index">
-          <router-link :class="$route.name===nav.name ? 'active' : ''" :to="{name: nav.name}">
-            {{ nav.desc }}
-          </router-link>
-        </div>
+    <div class="group-container">
+      <p class="side-nav-title">开发指南</p>
+      <div class="side-nav-items" v-for="(nav,index) in guide" :key="index">
+        <router-link :class="$route.name===nav.name ? 'active' : ''" :to="{name: nav.name}">
+          {{ nav.desc }}
+        </router-link>
       </div>
-      <div class="group-container">
-        <p class="side-nav-title">组件</p>
-        <b-menu width="100%" expand-all :active-name="$route.name">
-          <b-submenu v-for="(sub,index) in components" :key="sub.path+'-'+index" :name="index">
-            <template slot="title">
-              <b-icon v-if="sub.icon" :name="sub.icon"></b-icon>
-              {{ sub.desc }}
-            </template>
-            <b-menu-item v-for="item in sub.items" :key="item.name" :name="item.name"
-                         @click.native="handleTo(item.path)">
-              <b-icon v-if="item.icon" :name="item.icon"></b-icon>
-              {{ item.desc }}
-            </b-menu-item>
-          </b-submenu>
-        </b-menu>
-      </div>
-    </b-scrollbar>
+    </div>
+    <div class="group-container">
+      <p class="side-nav-title">组件</p>
+      <b-menu width="100%" expand-all :active-name="$route.name">
+        <b-submenu v-for="(sub,index) in components" :key="sub.path+'-'+index" :name="index">
+          <template slot="title">
+            <b-icon v-if="sub.icon" :name="sub.icon"></b-icon>
+            {{ sub.desc }}
+          </template>
+          <b-menu-item v-for="item in sub.items" :key="item.name" :name="item.name"
+                       @click.native="handleTo(item.path)">
+            <b-icon v-if="item.icon" :name="item.icon"></b-icon>
+            {{ item.desc }}
+          </b-menu-item>
+        </b-submenu>
+      </b-menu>
+    </div>
   </div>
 </template>
 
@@ -33,7 +31,7 @@
   import navConf from '../nav.config.json'
 
   export default {
-    data () {
+    data() {
       return {
         data: navConf,
         guide: navConf['开发指南'],
@@ -42,7 +40,7 @@
       }
     },
     methods: {
-      handleTo (path) {
+      handleTo(path) {
         this.$router.push(path)
       }
     }
@@ -51,8 +49,10 @@
 
 <style lang="stylus">
   .side-nav {
+    position: fixed;
+    top: 80px;
     width: 260px;
-    height: 100%;
+    height: calc(100vh - 80px);
     overflow: hidden;
     padding-top: 20px
     box-sizing: border-box;
@@ -60,8 +60,11 @@
     background-color: #fff;
     border-right: 1px solid #dcdee2;
     z-index: 99;
-    .bin-scrollbar__wrap {
-      overflow-x: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+    &::-webkit-scrollbar {
+      display: none;
     }
     .group-container {
       margin-bottom: 12px;

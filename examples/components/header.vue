@@ -56,18 +56,18 @@
 
   export default {
     name: 'MainHeader',
-    data () {
+    data() {
       return {
         components: [],
         current: ''
       }
     },
-    created () {
+    created() {
       this.getComponentsOptions()
     },
     watch: {
       $route: {
-        handler () {
+        handler() {
           setTimeout(() => {
             this.current = ''
           }, 300)
@@ -76,10 +76,10 @@
       }
     },
     methods: {
-      goTo (url) {
+      goTo(url) {
         this.$util.open(url, true)
       },
-      getComponentsOptions () {
+      getComponentsOptions() {
         let routes = []
         Object.keys(navConf).forEach((header) => {
           routes = routes.concat(navConf[header])
@@ -103,7 +103,7 @@
         }
         addComponent(routes)
       },
-      handleComponentChange (val) {
+      handleComponentChange(val) {
         if (!val || val.length === 0) {
           return
         }
@@ -118,11 +118,11 @@
 <style lang="stylus">
   .page-header {
     background-color: #fff;
-    box-shadow: 0 10px 60px 0 rgba(29, 29, 31, 0.07);
-    opacity: 0.98;
-    position: relative !important;
+    border-bottom: 1px solid #eeeeee;
+    position: fixed !important;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     height: 80px;
     transition: all .3s;

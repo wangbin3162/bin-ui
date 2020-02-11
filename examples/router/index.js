@@ -12,6 +12,9 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  },
   routes
 })
 

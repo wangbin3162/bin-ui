@@ -1,7 +1,7 @@
 ## 基础样式
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
+    <div class="global-anchor" style="position: absolute;top:20px;right:40px;width:200px;">
       <b-anchor>
         <b-anchor-link href="#flex.css-shi-yong" title="flex.css使用"></b-anchor-link>
         <b-anchor-link href="#flex-shu-xing-da-quan" title="flex属性大全"></b-anchor-link>
