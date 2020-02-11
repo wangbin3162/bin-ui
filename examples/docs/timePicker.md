@@ -1,8 +1,8 @@
 ## TimePicker 时间选择器
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#shi-jian-ge-shi" title="时间格式"></b-anchor-link>
         <b-anchor-link href="#xuan-ze-shi-fen" title="选择时分"></b-anchor-link>

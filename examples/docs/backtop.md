@@ -1,9 +1,9 @@
 ## BackTop 返回顶部
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
-        <b-anchor-link href="#yong-fa" title="用法"></b-anchor-link>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
+        <b-anchor-link href="#scrollbar-yong-fa" title="scrollbar用法"></b-anchor-link>
         <b-anchor-link href="#zi-ding-yi-yang-shi" title="自定义样式"></b-anchor-link>
         <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
         <b-anchor-link href="#events" title="Events"></b-anchor-link>
@@ -18,9 +18,7 @@
 
 ### 基础用法
 
-可以开启返回顶部按钮，这里返回顶部样式和滚动条样式可以使用css样式覆盖
-
-普通div的back-top组件，需要给滚动盒子追加一个`scroll-box`的样式并需要嵌入在这个滚动盒子内
+可以开启返回顶部按钮，默认返回顶部的滚动元素为window，如在其父级元素设置了`scroll-box`则只监听父级元素的滚动
 
 ::: demo
 ```html
@@ -29,7 +27,7 @@
     <div style="padding: 20px;">
        <div v-for="item in 80" :key="item" ref="item">{{item}}:这是用来撑开内容的行...</div>
     </div>
-      <b-back-top :height="200" :bottom="200">
+      <b-back-top :height="200" :bottom="20">
         <b-button size="mini" type="success">返回顶端</b-button>
       </b-back-top>
   </div>
@@ -37,9 +35,9 @@
 ```
 :::
 
-### 用法
+### scrollbar用法
 
-默认位置距离页面右部和底部 50px，滚动至距顶端 150px 时显示。可以自定义样式或者按钮触发
+如果结合scrollbar使用则不需要配置其他项
 
 ```html
 <div class="page-container" flex-box="1">

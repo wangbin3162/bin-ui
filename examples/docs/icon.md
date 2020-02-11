@@ -1,8 +1,8 @@
 ## Icon 图标
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#shi-yong-fang-fa" title="使用方法"></b-anchor-link>
         <b-anchor-link href="#tu-biao-ji-he" title="图标集合"></b-anchor-link>
         <b-anchor-link href="#huo-quicon-names" title="获取icon names"></b-anchor-link>

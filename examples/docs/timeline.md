@@ -1,8 +1,8 @@
 ## Timeline 时间线
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#ke-yi-she-zhi-bu-tong-lei-xing-huo-zhe-zi-ding-yi-yan-se" title="可以设置不同类型或者自定义颜色"></b-anchor-link>
         <b-anchor-link href="#zui-hou-yi-ge-jie-dian-she-zhi" title="最后一个节点设置"></b-anchor-link>

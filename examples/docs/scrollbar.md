@@ -1,8 +1,8 @@
 ## ScrollBar 滚动
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#yong-fa" title="用法"></b-anchor-link>
         <b-anchor-link href="#shi-yong-tie-shi" title="使用贴士"></b-anchor-link>
         <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>

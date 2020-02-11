@@ -1,8 +1,8 @@
 ## Badge 徽标
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#zi-ding-yi-ti-shi-nei-rong" title="自定义提示内容"></b-anchor-link>
         <b-anchor-link href="#attributes" title=" Attributes"></b-anchor-link>

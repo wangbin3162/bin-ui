@@ -1,8 +1,8 @@
 ## Switch 开关
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#da-xiao-ji-yan-se" title="大小及颜色"></b-anchor-link>
         <b-anchor-link href="#wen-zi-huo-tu-biao" title="文字或图标"></b-anchor-link>

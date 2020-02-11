@@ -14,31 +14,31 @@
       title: String,
       scrollOffset: {
         type: Number,
-        default () {
+        default() {
           return this.anchorCom.scrollOffset
         }
       }
     },
-    data () {
+    data() {
       return {
         prefix: 'bin-anchor-link'
       }
     },
     computed: {
-      anchorLinkClasses () {
+      anchorLinkClasses() {
         return [
           this.prefix,
           this.anchorCom.currentLink === this.href ? `${this.prefix}-active` : ''
         ]
       },
-      linkTitleClasses () {
+      linkTitleClasses() {
         return [
           `${this.prefix}-title`
         ]
       }
     },
     methods: {
-      goAnchor () {
+      goAnchor() {
         this.currentLink = this.href
         this.anchorCom.chooseLink(this.currentLink)
       }

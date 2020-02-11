@@ -16,12 +16,12 @@
 
   export default {
     name: 'BAnchor',
-    provide () {
+    provide() {
       return {
         anchorCom: this
       }
     },
-    data () {
+    data() {
       return {
         inkTop: 8,
         currentLink: '', // current show link =>  #href -> currentLink = #href
@@ -49,7 +49,7 @@
       }
     },
     methods: {
-      chooseLink (current) {
+      chooseLink(current) {
         this.currentLink = current
         this.currentId = current.slice(1)
         this.$emit('on-select', this.currentLink)
@@ -58,26 +58,26 @@
         this.handleScrollTo(anchor.offsetTop)
         this.handleSetInkTop()
       },
-      handleScrollTo (to) {
+      handleScrollTo(to) {
         const offsetTop = to - this.scrollOffset
         this.animating = true
         scrollTop(this.domEl, this.domEl.scrollTop, offsetTop, 1000, () => {
           this.animating = false
         })
       },
-      handleSetInkTop () {
+      handleSetInkTop() {
         const currentLinkElementA = document.querySelector(`a[data-href="${this.currentLink}"]`)
         if (!currentLinkElementA) return
         const elementATop = currentLinkElementA.offsetTop
         this.inkTop = (elementATop < 0 ? this.offsetTop : elementATop)
       },
-      handleScroll () {
+      handleScroll() {
         if (this.animating) return
         this.updateTitleOffset()
         const scrollTop = this.domEl.pageYOffset || this.domEl.scrollTop
         this.getCurrentScrollAtTitleId(scrollTop)
       },
-      updateTitleOffset () {
+      updateTitleOffset() {
         const links = findComponentsDownward(this, 'BAnchorLink').map(link => {
           return link.href
         })
@@ -90,13 +90,13 @@
           if (titleEle) {
             offsetArr.push({
               link: `#${id}`,
-              offset: titleEle.offsetTop
+              offset: titleEle.offsetTop - this.scrollOffset
             })
           }
         })
         this.titlesOffsetArr = offsetArr
       },
-      getCurrentScrollAtTitleId (scrollTop) {
+      getCurrentScrollAtTitleId(scrollTop) {
         let i = -1
         let len = this.titlesOffsetArr.length
         let titleItem = {
@@ -116,7 +116,7 @@
         this.handleSetInkTop()
       }
     },
-    mounted () {
+    mounted() {
       this.scroll = findComponentUpward(this, 'BScrollbar')
       this.domEl = this.scroll ? this.scroll.$el.querySelector('.bin-scrollbar__wrap') : window
 
@@ -130,7 +130,7 @@
         this.updateTitleOffset()
       })
     },
-    beforeDestroy () {
+    beforeDestroy() {
       off(this.domEl, 'scroll', this.scrollEvent)
       off(window, 'resize', this.scrollEvent)
     }

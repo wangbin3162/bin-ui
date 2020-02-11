@@ -1,8 +1,8 @@
 ## Breadcrumb 面包屑
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#fen-ge-fu" title="分隔符"></b-anchor-link>
         <b-anchor-link href="#api" title="API">

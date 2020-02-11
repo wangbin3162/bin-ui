@@ -9,7 +9,6 @@
   color: #515a6e;
   font-size: 14px;
   position: relative;
-  z-index: 900;
   &-horizontal {
     height: 60px;
     line-height: 60px;
@@ -194,8 +193,19 @@
     }
   }
   &-light&-vertical {
-    .bin-menu-item-active {
-      z-index: 2;
+    .bin-menu-item-active:not(.bin-menu-submenu) {
+      color: $color-primary;
+      background: #e6f7ff;
+      &:after {
+        content: "";
+        display: block;
+        width: 2px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $color-primary;
+      }
     }
   }
   &-light&-vertical &-submenu {

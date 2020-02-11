@@ -1,8 +1,8 @@
 ## Form 表单
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#xing-nei-biao-dan" title="行内表单"></b-anchor-link>
         <b-anchor-link href="#biao-dan-tou-dui-qi-fang-shi" title="表单头对齐方式"></b-anchor-link>
         <b-anchor-link href="#ji-ben-xiao-yan" title="基本校验"></b-anchor-link>

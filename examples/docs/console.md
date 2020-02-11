@@ -1,8 +1,8 @@
 ## 控制台优化
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#suo-you-shi-li" title="所有实例"></b-anchor-link>
         <b-anchor-link href="#api" title="API"></b-anchor-link>
       </b-anchor>

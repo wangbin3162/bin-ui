@@ -1,8 +1,8 @@
 ## Divider 分割线
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#shui-ping-fen-ge-xian" title="水平分割线"></b-anchor-link>
         <b-anchor-link href="#chui-zhi-fen-ge-xian" title="垂直分割线"></b-anchor-link>
         <b-anchor-link href="#xiu-gai-biao-ti-de-wei-zhi" title="修改标题的位置"></b-anchor-link>

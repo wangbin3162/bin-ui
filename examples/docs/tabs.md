@@ -1,8 +1,8 @@
 ## Tabs 标签页
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#qia-pian-mo-shi" title="卡片模式"></b-anchor-link>
         <b-anchor-link href="#zeng-jia-he-yi-chu" title="增加和移除"></b-anchor-link>

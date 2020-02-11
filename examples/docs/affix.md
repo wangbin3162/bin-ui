@@ -1,8 +1,8 @@
 ## Affix 图钉
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#ding-bu-pian-yi" title="顶部偏移"></b-anchor-link>
         <b-anchor-link href="#gu-ding-zhuang-tai-shi-jian" title="固定状态事件"></b-anchor-link>
@@ -15,13 +15,13 @@
 
 ### 基础用法
 
-建议配合scrollbar组件已达到良好的显示效果，原生滚动暂未测试存在问题，相对于当前滚动窗口固定图钉
+原生滚动相对于window窗口固定，也可以结合scrollbar进行配置
 
 ::: demo
 ```html
 <template>
-    <b-affix>
-        <b-tag type="primary">固定在顶部的位置</b-tag>
+    <b-affix :offset-top="80">
+        <b-tag type="primary">固定在顶部80的位置</b-tag>
     </b-affix>
 </template>
 ```
@@ -34,8 +34,8 @@
 ::: demo
 ```html
 <template>
-    <b-affix :offset-top="100">
-        <b-tag type="primary">固定在顶部100的位置</b-tag>
+    <b-affix :offset-top="150">
+        <b-tag type="primary">固定在顶部150的位置</b-tag>
     </b-affix>
 </template>
 ```
@@ -48,7 +48,7 @@
 ::: demo
 ```html
 <template>
-    <b-affix :offset-top="150" @on-change="change">
+    <b-affix :offset-top="200" @on-change="change">
         <b-tag type="primary">固定状态触发事件</b-tag>
     </b-affix>
 </template>

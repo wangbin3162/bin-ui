@@ -1,8 +1,8 @@
 ## Dropdown 下拉菜单
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#hong-fa-fang-shi" title="触发方式"></b-anchor-link>
         <b-anchor-link href="#dui-qi-fang-xiang" title="对齐方向"></b-anchor-link>

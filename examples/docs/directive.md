@@ -1,8 +1,8 @@
 ## 自定义指令
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#shui-bo-wen-zhi-ling" title="水波纹指令"></b-anchor-link>
         <b-anchor-link href="#click-out-side" title="click-out-side"></b-anchor-link>
       </b-anchor>

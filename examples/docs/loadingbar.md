@@ -1,8 +1,8 @@
 ## 顶部加载
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#shuo-ming" title="说明"></b-anchor-link>
         <b-anchor-link href="#dai-ma-shi-li" title="代码实例"></b-anchor-link>
         <b-anchor-link href="#api" title="API"></b-anchor-link>

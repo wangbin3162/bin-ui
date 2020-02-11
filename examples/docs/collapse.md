@@ -1,8 +1,8 @@
 ## Collapse 折叠面板
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#shou-feng-qin-mo-shi" title="手风琴模式"></b-anchor-link>
         <b-anchor-link href="#jian-dan-mo-shi-he-zi-ding-yi-tou" title="简单模式和自定义头"></b-anchor-link>

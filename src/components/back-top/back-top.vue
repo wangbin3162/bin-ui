@@ -32,15 +32,19 @@
       duration: {
         type: Number,
         default: 1000
+      },
+      zIndex: {
+        type: Number,
+        default: 100
       }
     },
-    data () {
+    data() {
       return {
         backTop: false
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           {
@@ -48,35 +52,44 @@
           }
         ]
       },
-      styles () {
+      styles() {
         return {
           bottom: `${this.bottom}px`,
-          right: `${this.right}px`
+          right: `${this.right}px`,
+          zIndex: this.zIndex
         }
       },
-      innerClasses () {
+      innerClasses() {
         return `${prefixCls}-inner`
       }
     },
-    mounted () {
-      // 如果父级是自定义滚动则绑定滚动为父级元素dom
-      this.domEl = this.$parent.$el.className === 'bin-scrollbar'
-        ? this.$parent.$el.querySelector('.bin-scrollbar__wrap') : this.$parent.$el.querySelector('.scroll-box')
+    mounted() {
+      this.domEl = window
+      // 父级元素是否设置了scroll-box
+      let parentScrollBox = this.$parent.$el.querySelector('.scroll-box')
+      if (parentScrollBox) {
+        this.domEl = parentScrollBox
+      } else {
+        // 如果父级是自定义滚动则绑定滚动为父级元素dom
+        this.domEl = this.$parent.$el.className === 'bin-scrollbar'
+          ? this.$parent.$el.querySelector('.bin-scrollbar__wrap')
+          : window
+      }
       this.scrollEvent = this.$util.debounce(this.handleScroll, 50, false)
       // 监听滚动事件
       on(this.domEl, 'scroll', this.scrollEvent)
       on(window, 'resize', this.scrollEvent)
     },
-    beforeDestroy () {
+    beforeDestroy() {
       off(this.domEl, 'scroll', this.scrollEvent)
       off(window, 'resize', this.scrollEvent)
     },
     methods: {
       // 滚动监听事件
-      handleScroll () {
+      handleScroll() {
         this.backTop = this.domEl.pageYOffset || this.domEl.scrollTop >= this.height
       },
-      back () {
+      back() {
         const sTop = this.domEl !== window ? (this.domEl.pageYOffset || this.domEl.scrollTop) : (document.documentElement.scrollTop || document.body.scrollTop)
         scrollTop(this.domEl, sTop, 0, this.duration)
         this.$emit('on-click')

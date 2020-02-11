@@ -8,6 +8,7 @@
         <main-footer></main-footer>
       </div>
     </div>
+    <b-back-top></b-back-top>
   </div>
 </template>
 

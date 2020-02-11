@@ -21,7 +21,7 @@ Modal.newInstance = properties => {
       buttonLoading: false,
       scrollable: false
     }),
-    render (h) {
+    render(h) {
       let footerVNodes = []
       if (this.showCancel) {
         footerVNodes.push(h(Button, {
@@ -46,15 +46,15 @@ Modal.newInstance = properties => {
       }, this.okText))
 
       // render content
-      let body_render
+      let bodyRender
       if (this.render) {
-        body_render = h('div', {
+        bodyRender = h('div', {
           attrs: {
             class: `${prefixCls}-body ${prefixCls}-body-render`
           }
         }, [this.render(h)])
       } else {
-        body_render = h('div', {
+        bodyRender = h('div', {
           attrs: {
             class: `${prefixCls}-body`
           }
@@ -68,9 +68,9 @@ Modal.newInstance = properties => {
       }
 
       // when render with no title, hide head
-      let head_render
+      let headRender
       if (this.title) {
-        head_render = h('div', {
+        headRender = h('div', {
           attrs: {
             class: `${prefixCls}-head`
           }
@@ -112,8 +112,8 @@ Modal.newInstance = properties => {
             class: prefixCls
           }
         }, [
-          head_render,
-          body_render,
+          headRender,
+          bodyRender,
           h('div', {
             attrs: {
               class: `${prefixCls}-footer`
@@ -123,13 +123,13 @@ Modal.newInstance = properties => {
       ])
     },
     computed: {
-      iconTypeCls () {
+      iconTypeCls() {
         return [
           `${prefixCls}-head-icon`,
           `${prefixCls}-head-icon-${this.iconType}`
         ]
       },
-      iconNameCls () {
+      iconNameCls() {
         return [
           'iconfont',
           `icon-${this.iconName}`
@@ -137,13 +137,13 @@ Modal.newInstance = properties => {
       }
     },
     methods: {
-      cancel () {
+      cancel() {
         this.$children[0].visible = false
         this.buttonLoading = false
         this.onCancel()
         this.remove()
       },
-      ok () {
+      ok() {
         if (this.loading) {
           this.buttonLoading = true
         } else {
@@ -152,21 +152,21 @@ Modal.newInstance = properties => {
         }
         this.onOk()
       },
-      remove () {
+      remove() {
         setTimeout(() => {
           this.destroy()
         }, 300)
       },
-      destroy () {
+      destroy() {
         this.$destroy()
         document.body.removeChild(this.$el)
         this.onRemove()
       },
-      onOk () {
+      onOk() {
       },
-      onCancel () {
+      onCancel() {
       },
-      onRemove () {
+      onRemove() {
       }
     }
   })
@@ -176,7 +176,7 @@ Modal.newInstance = properties => {
   const modal = Instance.$children[0]
 
   return {
-    show (props) {
+    show(props) {
       modal.$parent.showCancel = props.showCancel
       modal.$parent.iconType = props.icon
 
@@ -236,7 +236,7 @@ Modal.newInstance = properties => {
 
       modal.visible = true
     },
-    remove () {
+    remove() {
       modal.visible = false
       modal.$parent.buttonLoading = false
       modal.$parent.remove()

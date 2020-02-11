@@ -1,8 +1,8 @@
 ## 加载进度
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#ju-zhong-gu-ding" title="居中固定"></b-anchor-link>
         <b-anchor-link href="#zi-ding-yi-nei-rong" title="自定义内容"></b-anchor-link>

@@ -1,8 +1,8 @@
 ## MessageBox 弹框
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#mo-nialert" title="模拟alert"></b-anchor-link>
         <b-anchor-link href="#mo-niconfirm" title="模拟confirm"></b-anchor-link>
         <b-anchor-link href="#ke-yi-zi-ding-yi-nei-rong" title="可以自定义内容"></b-anchor-link>

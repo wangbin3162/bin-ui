@@ -18,12 +18,16 @@
         type: Number,
         default: 0
       },
+      offsetBottom: {
+        type: Number,
+        default: 0
+      },
       zIndex: {
         type: Number,
         default: 10
       }
     },
-    data () {
+    data() {
       return {
         affix: false,
         styles: {},
@@ -32,7 +36,14 @@
       }
     },
     computed: {
-      affixClass () {
+      offsetType() {
+        let type = 'top'
+        if (this.offsetBottom >= 0) {
+          type = 'bottom'
+        }
+        return type
+      },
+      affixClass() {
         if (this.affix) {
           if (this.scroll) {
             return 'bin-affix-abs'
@@ -43,7 +54,7 @@
         return null
       }
     },
-    mounted () {
+    mounted() {
       // 查找最近的滚动组件
       this.scroll = findComponentUpward(this, 'BScrollbar')
       this.domEl = this.scroll ? this.scroll.$el.querySelector('.bin-scrollbar__wrap') : window
@@ -55,12 +66,12 @@
         this.handleScroll()
       })
     },
-    beforeDestroy () {
+    beforeDestroy() {
       off(this.domEl, 'scroll', this.scrollEvent)
       off(window, 'resize', this.scrollEvent)
     },
     methods: {
-      handleScroll () {
+      handleScroll() {
         const affix = this.affix
         const scrollTop = this.domEl.pageYOffset || this.domEl.scrollTop
         const oTop = this.$el.offsetTop

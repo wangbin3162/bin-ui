@@ -1,8 +1,8 @@
 ## Tree 树结构
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#jin-yong-xuan-ze" title="禁用选择"></b-anchor-link>
         <b-anchor-link href="#ke-yi-xuan-ze" title="可以选择"></b-anchor-link>

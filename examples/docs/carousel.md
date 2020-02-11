@@ -1,8 +1,8 @@
 ## Carousel 轮播
 
 <template>
-    <div style="position: absolute;top:20px;right:40px;width:200px;">
-      <b-anchor>
+    <div class="global-anchor">
+      <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#zi-dong-qie-huan-he-su-du" title="自动切换和速度"></b-anchor-link>
         <b-anchor-link href="#zhi-shi-qi-yang-shi-he-wei-zhi" title="指示器样式和位置"></b-anchor-link>
