@@ -80,13 +80,16 @@ export default {
 ```html
 <template>
 <div>
-  <b-select style="width:100px" v-model="select" size="small">
+  <b-select style="width:100px" v-model="select" size="mini" clearable>
     <b-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</b-option> 
   </b-select>
-  <b-select style="width:100px;margin-left: 20px;" v-model="select">
+  <b-select style="width:100px;margin-left: 20px;" v-model="select" size="small" clearable>
     <b-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</b-option> 
   </b-select>
-  <b-select style="width:100px;margin-left: 20px;" v-model="select" size="large">
+  <b-select style="width:100px;margin-left: 20px;" v-model="select" clearable>
+    <b-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</b-option> 
+  </b-select>
+  <b-select style="width:100px;margin-left: 20px;" v-model="select" size="large" clearable>
     <b-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</b-option> 
   </b-select>
 </div>

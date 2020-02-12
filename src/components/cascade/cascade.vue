@@ -4,14 +4,14 @@
       <input type="hidden" :name="name" :value="currentValue">
       <slot>
         <b-input
-          :element-id="elementId"
-          ref="input"
-          :readonly="!filterable"
-          :disabled="disabled"
-          :value="displayInputRender"
-          @on-change="handleInput"
-          :size="size"
-          :placeholder="inputPlaceholder"></b-input>
+            :element-id="elementId"
+            ref="input"
+            :readonly="!filterable"
+            :disabled="disabled"
+            :value="displayInputRender"
+            @on-change="handleInput"
+            :size="size"
+            :placeholder="inputPlaceholder"></b-input>
         <div :class="[prefixCls + '-label']" v-show="filterable && query === ''" @click="handleFocus">
           {{ displayRender }}
         </div>
@@ -22,21 +22,21 @@
     </div>
     <transition name="zoom-in-top">
       <drop
-        v-show="visible"
-        :class="{ [prefixCls + '-transfer']: transfer }"
-        ref="drop"
-        :data-transfer="transfer"
-        :transfer="transfer"
-        v-transfer-dom>
+          v-show="visible"
+          :class="{ [prefixCls + '-transfer']: transfer }"
+          ref="drop"
+          :data-transfer="transfer"
+          :transfer="transfer"
+          v-transfer-dom>
         <div>
           <cas-panel
-            v-show="!filterable || (filterable && query === '')"
-            ref="caspanel"
-            :prefix-cls="prefixCls"
-            :data="data"
-            :disabled="disabled"
-            :change-on-select="changeOnSelect"
-            :trigger="trigger"></cas-panel>
+              v-show="!filterable || (filterable && query === '')"
+              ref="caspanel"
+              :prefix-cls="prefixCls"
+              :data="data"
+              :disabled="disabled"
+              :change-on-select="changeOnSelect"
+              :trigger="trigger"></cas-panel>
           <div :class="[prefixCls + '-dropdown']" v-show="filterable && query !== '' && querySelections.length">
             <ul :class="[selectPrefixCls + '-dropdown-list']">
               <li :class="[selectPrefixCls + '-item', { [selectPrefixCls + '-item-disabled']: item.disabled }]"
@@ -72,13 +72,13 @@
     props: {
       data: {
         type: Array,
-        default () {
+        default() {
           return []
         }
       },
       value: {
         type: Array,
-        default () {
+        default() {
           return []
         }
       },
@@ -95,13 +95,13 @@
         default: '请选择'
       },
       size: {
-        validator (value) {
-          return oneOf(value, ['small', 'large', 'default'])
+        validator(value) {
+          return oneOf(value, ['small', 'large', 'default', 'mini'])
         },
         default: 'default'
       },
       trigger: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['click', 'hover'])
         },
         default: 'click'
@@ -112,7 +112,7 @@
       },
       renderFormat: {
         type: Function,
-        default (label) {
+        default(label) {
           return label.join(' / ')
         }
       },
@@ -138,7 +138,7 @@
         type: String
       }
     },
-    data () {
+    data() {
       return {
         prefixCls: prefixCls,
         selectPrefixCls: selectPrefixCls,
@@ -153,7 +153,7 @@
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           {
@@ -165,10 +165,10 @@
           }
         ]
       },
-      showCloseIcon () {
+      showCloseIcon() {
         return this.currentValue && this.currentValue.length && this.clearable && !this.disabled
       },
-      displayRender () {
+      displayRender() {
         let label = []
         for (let i = 0; i < this.selected.length; i++) {
           label.push(this.selected[i].label)
@@ -176,16 +176,16 @@
 
         return this.renderFormat(label, this.selected)
       },
-      displayInputRender () {
+      displayInputRender() {
         return this.filterable ? '' : this.displayRender
       },
-      inputPlaceholder () {
+      inputPlaceholder() {
         return this.filterable && this.currentValue.length ? null : this.placeholder
       },
-      querySelections () {
+      querySelections() {
         let selections = []
 
-        function getSelections (arr, label, value) {
+        function getSelections(arr, label, value) {
           for (let i = 0; i < arr.length; i++) {
             let item = arr[i]
             item.__label = label ? label + ' / ' + item.label : item.label
@@ -218,7 +218,7 @@
       }
     },
     methods: {
-      clearSelect () {
+      clearSelect() {
         if (this.disabled) return false
         const oldVal = JSON.stringify(this.currentValue)
         this.currentValue = this.selected = this.tmpSelected = []
@@ -226,10 +226,10 @@
         this.emitValue(this.currentValue, oldVal)
         this.broadcast('CasPanel', 'on-clear')
       },
-      handleClose () {
+      handleClose() {
         this.visible = false
       },
-      toggleOpen () {
+      toggleOpen() {
         if (this.disabled) return false
         if (this.visible) {
           if (!this.filterable) this.handleClose()
@@ -237,16 +237,16 @@
           this.onFocus()
         }
       },
-      onFocus () {
+      onFocus() {
         this.visible = true
         if (!this.currentValue.length) {
           this.broadcast('CasPanel', 'on-clear')
         }
       },
-      updateResult (result) {
+      updateResult(result) {
         this.tmpSelected = result
       },
-      updateSelected (init = false, changeOnSelectDataChange = false) {
+      updateSelected(init = false, changeOnSelectDataChange = false) {
         // #2793 当数据更改并设置值时，changeOnSelectDataChange用于changeOnSelect
         if (!this.changeOnSelect || init || changeOnSelectDataChange) {
           this.broadcast('CasPanel', 'on-find-selected', {
@@ -254,7 +254,7 @@
           })
         }
       },
-      emitValue (val, oldVal) {
+      emitValue(val, oldVal) {
         if (JSON.stringify(val) !== oldVal) {
           this.$emit('on-change', this.currentValue, JSON.parse(JSON.stringify(this.selected)))
           this.$nextTick(() => {
@@ -265,10 +265,10 @@
           })
         }
       },
-      handleInput (event) {
+      handleInput(event) {
         this.query = event.target.value
       },
-      handleSelectItem (index) {
+      handleSelectItem(index) {
         const item = this.querySelections[index]
 
         if (item.item.disabled) return false
@@ -282,12 +282,12 @@
           this.handleClose()
         }, 0)
       },
-      handleFocus () {
+      handleFocus() {
         this.$refs.input.focus()
       },
       // 排除 loading 后的 data，避免重复触发 updateSelect
-      getValidData (data) {
-        function deleteData (item) {
+      getValidData(data) {
+        function deleteData(item) {
           const newItem = Object.assign({}, item)
           if ('loading' in newItem) {
             delete newItem.loading
@@ -307,7 +307,7 @@
         return data.map(item => deleteData(item))
       }
     },
-    created () {
+    created() {
       this.validDataStr = JSON.stringify(this.getValidData(this.data))
       this.$on('on-result-change', (params) => {
         // lastValue: is click the final val
@@ -336,11 +336,11 @@
         }
       })
     },
-    mounted () {
+    mounted() {
       this.updateSelected(true)
     },
     watch: {
-      visible (val) {
+      visible(val) {
         if (val) {
           if (this.currentValue.length) {
             this.updateSelected()
@@ -361,11 +361,11 @@
         }
         this.$emit('on-visible-change', val)
       },
-      value (val) {
+      value(val) {
         this.currentValue = val
         if (!val.length) this.selected = []
       },
-      currentValue () {
+      currentValue() {
         this.$emit('input', this.currentValue)
         if (this.updatingValue) {
           this.updatingValue = false
@@ -375,7 +375,7 @@
       },
       data: {
         deep: true,
-        handler () {
+        handler() {
           const validDataStr = JSON.stringify(this.getValidData(this.data))
           if (validDataStr !== this.validDataStr) {
             this.validDataStr = validDataStr

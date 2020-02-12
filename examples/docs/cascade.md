@@ -554,19 +554,22 @@ export default {
 
 ### 尺寸
 
-通过设置size属性为large和small
+通过设置size属性为large和small,mini
 
 ::: demo
 ```html
 <template>
-<div flex="main:justify" style="width: 800px;">
-    <div style="width:240px;">
+<div flex="cross:center">
+    <div style="width:120px;">
+      <b-cascade :data="data" size="mini"></b-cascade>
+    </div>
+    <div style="width:120px;margin-left: 5px;">
       <b-cascade :data="data" size="small"></b-cascade>
     </div>
-    <div style="width:240px;">
+    <div style="width:120px;margin-left: 5px;">
       <b-cascade :data="data"></b-cascade>
     </div>
-    <div style="width:240px;">
+    <div style="width:120px;margin-left: 5px;">
       <b-cascade :data="data" size="large"></b-cascade>
     </div>
 </div>

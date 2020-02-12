@@ -122,12 +122,12 @@
         <div flex="box:mean">
           <div>
             <b-form-item label="出生日期" prop="birthday">
-               <b-date-picker size="small" type="date" v-model="formValidate.birthday" placeholder="选择出生日期"></b-date-picker>
+               <b-date-picker type="date" v-model="formValidate.birthday" placeholder="选择出生日期"></b-date-picker>
             </b-form-item>
           </div>
           <div>
             <b-form-item label="时间" prop="time">
-               <b-time-picker size="small" v-model="formValidate.time" placeholder="选择时间"></b-time-picker>
+               <b-time-picker v-model="formValidate.time" placeholder="选择时间"></b-time-picker>
             </b-form-item>
           </div>
         </div>
@@ -140,7 +140,7 @@
               </b-select>
             </b-form-item>
             <b-form-item label="地区" prop="cities">
-              <b-cascade :data="cities" v-model="formValidate.cities" size="small"></b-cascade>
+              <b-cascade :data="cities" v-model="formValidate.cities"></b-cascade>
             </b-form-item>
         </div>
         <b-form-item label="爱好" prop="interest">

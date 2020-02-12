@@ -2,34 +2,34 @@
   <div :class="wrapClasses">
     <div :class="handlerClasses">
       <a
-        @click="up"
-        :class="upClasses">
+          @click="up"
+          :class="upClasses">
         <span :class="innerUpClasses" @click="preventDefault"></span>
       </a>
       <a
-        @click="down"
-        :class="downClasses">
+          @click="down"
+          :class="downClasses">
         <span :class="innerDownClasses" @click="preventDefault"></span>
       </a>
     </div>
     <div :class="inputWrapClasses">
       <input
-        :id="elementId"
-        :class="inputClasses"
-        :disabled="disabled"
-        autocomplete="off"
-        spellcheck="false"
-        :autofocus="autofocus"
-        @focus="focus"
-        @blur="blur"
-        @keydown.stop="keyDown"
-        @input="change"
-        @mouseup="preventDefault"
-        @change="change"
-        :readonly="readonly || !editable"
-        :name="name"
-        :value="formatterValue"
-        :placeholder="placeholder">
+          :id="elementId"
+          :class="inputClasses"
+          :disabled="disabled"
+          autocomplete="off"
+          spellcheck="false"
+          :autofocus="autofocus"
+          @focus="focus"
+          @blur="blur"
+          @keydown.stop="keyDown"
+          @input="change"
+          @mouseup="preventDefault"
+          @change="change"
+          :readonly="readonly || !editable"
+          :name="name"
+          :value="formatterValue"
+          :placeholder="placeholder">
     </div>
   </div>
 </template>
@@ -41,7 +41,7 @@
 
   const prefixCls = 'bin-input-number'
 
-  function addNum (num1, num2) {
+  function addNum(num1, num2) {
     let sq1, sq2, m
     try {
       sq1 = num1.toString().split('.')[1].length
@@ -82,8 +82,8 @@
         default: 1
       },
       size: {
-        validator (value) {
-          return oneOf(value, ['small', 'large', 'default'])
+        validator(value) {
+          return oneOf(value, ['small', 'large', 'default', 'mini'])
         },
         default: 'default'
       },
@@ -123,7 +123,7 @@
         default: ''
       }
     },
-    data () {
+    data() {
       return {
         focused: false,
         upDisabled: false,
@@ -132,7 +132,7 @@
       }
     },
     computed: {
-      wrapClasses () {
+      wrapClasses() {
         return [
           `${prefixCls}`,
           {
@@ -142,10 +142,10 @@
           }
         ]
       },
-      handlerClasses () {
+      handlerClasses() {
         return `${prefixCls}-handler-wrap`
       },
-      upClasses () {
+      upClasses() {
         return [
           `${prefixCls}-handler`,
           `${prefixCls}-handler-up`,
@@ -154,10 +154,10 @@
           }
         ]
       },
-      innerUpClasses () {
+      innerUpClasses() {
         return `${prefixCls}-handler-up-inner iconfont icon-ios-arrow-up`
       },
-      downClasses () {
+      downClasses() {
         return [
           `${prefixCls}-handler`,
           `${prefixCls}-handler-down`,
@@ -166,21 +166,21 @@
           }
         ]
       },
-      innerDownClasses () {
+      innerDownClasses() {
         return `${prefixCls}-handler-down-inner iconfont icon-ios-arrow-down`
       },
-      inputWrapClasses () {
+      inputWrapClasses() {
         return `${prefixCls}-input-wrap`
       },
-      inputClasses () {
+      inputClasses() {
         return `${prefixCls}-input`
       },
-      precisionValue () {
+      precisionValue() {
         // can not display 1.0
         if (!this.currentValue) return this.currentValue
         return this.precision ? this.currentValue.toFixed(this.precision) : this.currentValue
       },
-      formatterValue () {
+      formatterValue() {
         if (this.formatter && this.precisionValue !== null) {
           return this.formatter(this.precisionValue)
         } else {
@@ -189,24 +189,24 @@
       }
     },
     methods: {
-      preventDefault (e) {
+      preventDefault(e) {
         e.preventDefault()
       },
-      up (e) {
+      up(e) {
         const targetVal = Number(e.target.value)
         if (this.upDisabled && isNaN(targetVal)) {
           return false
         }
         this.changeStep('up', e)
       },
-      down (e) {
+      down(e) {
         const targetVal = Number(e.target.value)
         if (this.downDisabled && isNaN(targetVal)) {
           return false
         }
         this.changeStep('down', e)
       },
-      changeStep (type, e) {
+      changeStep(type, e) {
         if (this.disabled || this.readonly) {
           return false
         }
@@ -242,7 +242,7 @@
         }
         this.setValue(val)
       },
-      setValue (val) {
+      setValue(val) {
         // 如果 step 是小数，且没有设置 precision，是有问题的
         if (val && !isNaN(this.precision)) val = Number(Number(val).toFixed(this.precision))
 
@@ -262,11 +262,11 @@
           this.dispatch('BFormItem', 'on-form-change', val)
         })
       },
-      focus (event) {
+      focus(event) {
         this.focused = true
         this.$emit('on-focus', event)
       },
-      blur () {
+      blur() {
         this.focused = false
         this.$emit('on-blur')
 
@@ -274,7 +274,7 @@
           this.dispatch('BFormItem', 'on-form-blur', this.currentValue)
         }
       },
-      keyDown (e) {
+      keyDown(e) {
         if (e.keyCode === 38) {
           e.preventDefault()
           this.up(e)
@@ -283,7 +283,7 @@
           this.down(e)
         }
       },
-      change (event) {
+      change(event) {
         if (event.type === 'change') return
 
         if (event.type === 'input' && !this.activeChange) return
@@ -308,7 +308,7 @@
           event.target.value = this.currentValue
         }
       },
-      changeVal (val) {
+      changeVal(val) {
         val = Number(val)
         if (!isNaN(val)) {
           const step = this.step
@@ -321,20 +321,20 @@
         }
       }
     },
-    mounted () {
+    mounted() {
       this.changeVal(this.currentValue)
     },
     watch: {
-      value (val) {
+      value(val) {
         this.currentValue = val
       },
-      currentValue (val) {
+      currentValue(val) {
         this.changeVal(val)
       },
-      min () {
+      min() {
         this.changeVal(this.currentValue)
       },
-      max () {
+      max() {
         this.changeVal(this.currentValue)
       }
     }

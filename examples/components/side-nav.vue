@@ -1,28 +1,20 @@
 <template>
   <div class="side-nav">
-    <div class="group-container">
-      <p class="side-nav-title">开发指南</p>
-      <div class="side-nav-items" v-for="(nav,index) in guide" :key="index">
-        <router-link :class="$route.name===nav.name ? 'active' : ''" :to="{name: nav.name}">
+    <div v-for="title in (Object.keys(data))" class="group-container" :key="title">
+      <p class="side-nav-title">{{ title }}</p>
+      <div class="side-nav-items" v-for="(nav,index) in data[title]" :key="index">
+        <router-link v-if="nav.name" :class="$route.name===nav.name ? 'active' : ''" :to="{name: nav.name}">
           {{ nav.desc }}
         </router-link>
+        <p v-else class="side-nav-group">{{nav.desc}}</p>
+        <div v-for="item in nav.items" :key="item.name">
+          <router-link :to="{name: item.name}" :class="$route.name===item.name ? 'active' : ''"
+                       class="slid-nav-component">
+            <b-icon :name="item.icon" v-if="item.icon" style="margin-right: 5px;" size="16"></b-icon>
+            {{item.desc}}
+          </router-link>
+        </div>
       </div>
-    </div>
-    <div class="group-container">
-      <p class="side-nav-title">组件</p>
-      <b-menu width="100%" expand-all :active-name="$route.name">
-        <b-submenu v-for="(sub,index) in components" :key="sub.path+'-'+index" :name="index">
-          <template slot="title">
-            <b-icon v-if="sub.icon" :name="sub.icon"></b-icon>
-            {{ sub.desc }}
-          </template>
-          <b-menu-item v-for="item in sub.items" :key="item.name" :name="item.name"
-                       @click.native="handleTo(item.path)">
-            <b-icon v-if="item.icon" :name="item.icon"></b-icon>
-            {{ item.desc }}
-          </b-menu-item>
-        </b-submenu>
-      </b-menu>
     </div>
   </div>
 </template>
@@ -33,15 +25,7 @@
   export default {
     data() {
       return {
-        data: navConf,
-        guide: navConf['开发指南'],
-        components: navConf['组件'],
-        openedNames: []
-      }
-    },
-    methods: {
-      handleTo(path) {
-        this.$router.push(path)
+        data: navConf
       }
     }
   }
@@ -85,8 +69,8 @@
       a {
         display: block;
         position: relative;
-        padding: 14px 24px;
-        color: #3F536E;
+        padding: 8px 24px;
+        color: #3f536e;
         font-weight: normal;
         line-height: 1.5;
         cursor: pointer;
@@ -95,16 +79,16 @@
         }
       }
       .side-nav-group {
-        padding: 6px 0 6px 24px;
-        font-size: 15px;
+        padding: 4px 0 4px 24px;
+        font-size: 14px;
         color: #999;
         margin: 0;
       }
       .slid-nav-component {
         display: block;
         position: relative;
-        padding: 10px 24px 10px 35px;
-        color: #616367;
+        padding: 8px 24px 8px 35px;
+        color: #3f536e;
         font-size: 14px;
       }
       .active {
@@ -122,8 +106,5 @@
         }
       }
     }
-  }
-  .bin-menu-vertical.bin-menu-light:after {
-    display: none;
   }
 </style>

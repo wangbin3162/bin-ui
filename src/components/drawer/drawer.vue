@@ -1,9 +1,9 @@
 <template>
   <div v-transfer-dom :data-transfer="appendToBody">
     <transition name="fade-in">
-      <div :class="maskClasses" :style="maskStyle" v-show="visible" v-if="mask" @click="handleMask"></div>
+      <div :class="maskClasses" :style="wrapStyles" v-show="visible" v-if="mask" @click="handleMask"></div>
     </transition>
-    <div :class="wrapClasses" @click="handleWrapClick">
+    <div :class="wrapClasses" :style="wrapStyles" @click="handleWrapClick">
       <transition :name="'move-' + placement">
         <div :class="classes" :style="mainStyles" v-show="visible">
           <div :class="contentClasses" ref="content">
@@ -44,6 +44,7 @@
   import ScrollbarMixins from '../../mixins/scrollbar-mixin'
 
   import { on, off } from '../../utils/dom'
+  import { transferIncrease as modalIncrease, transferIndex as modalIndex } from '../../utils/transfer-queue'
 
   const prefixCls = 'bin-drawer'
 
@@ -74,9 +75,6 @@
       mask: {
         type: Boolean,
         default: true
-      },
-      maskStyle: {
-        type: Object
       },
       styles: {
         type: Object
@@ -123,7 +121,8 @@
         dragWidth: this.width,
         wrapperWidth: this.width,
         wrapperLeft: 0,
-        minWidth: 300
+        minWidth: 300,
+        modalIndex: this.handleGetModalIndex() // for Esc close the top modal
       }
     },
     computed: {
@@ -138,6 +137,11 @@
             [`${prefixCls}-wrap-dragging`]: this.canMove
           }
         ]
+      },
+      wrapStyles() {
+        return {
+          zIndex: this.modalIndex + this.zIndex
+        }
       },
       mainStyles() {
         let style = {}
@@ -176,6 +180,11 @@
       }
     },
     methods: {
+      // 全局modal的索引
+      handleGetModalIndex() {
+        modalIncrease()
+        return modalIndex
+      },
       close() {
         if (!this.beforeClose) {
           return this.handleClose()

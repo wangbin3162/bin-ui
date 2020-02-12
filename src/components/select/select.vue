@@ -1,38 +1,38 @@
 <template>
   <div
-    :class="classes"
-    v-click-outside="onClickOutside"
+      :class="classes"
+      v-click-outside="onClickOutside"
   >
     <div
-      ref="reference"
-      :class="selectionCls"
-      :tabindex="selectTabindex"
-      @blur="toggleHeaderFocus"
-      @focus="toggleHeaderFocus"
-      @click="toggleMenu"
-      @mouseenter="hasMouseHoverHead = true"
-      @mouseleave="hasMouseHoverHead = false"
+        ref="reference"
+        :class="selectionCls"
+        :tabindex="selectTabindex"
+        @blur="toggleHeaderFocus"
+        @focus="toggleHeaderFocus"
+        @click="toggleMenu"
+        @mouseenter="hasMouseHoverHead = true"
+        @mouseleave="hasMouseHoverHead = false"
     >
       <slot name="input">
         <input type="hidden" :name="name" :value="publicValue">
         <select-head
-          :filterable="filterable"
-          :multiple="multiple"
-          :values="values"
-          :clearable="canBeCleared"
-          :prefix="prefix"
-          :disabled="disabled"
-          :remote="remote"
-          :input-element-id="elementId"
-          :initial-label="initialLabel"
-          :placeholder="placeholder"
-          :query-prop="query"
-          :max-tag-count="maxTagCount"
-          :max-tag-placeholder="maxTagPlaceholder"
-          @on-query-change="onQueryChange"
-          @on-input-focus="isFocused = true"
-          @on-input-blur="isFocused = false"
-          @on-clear="clearSingleSelect"
+            :filterable="filterable"
+            :multiple="multiple"
+            :values="values"
+            :clearable="canBeCleared"
+            :prefix="prefix"
+            :disabled="disabled"
+            :remote="remote"
+            :input-element-id="elementId"
+            :initial-label="initialLabel"
+            :placeholder="placeholder"
+            :query-prop="query"
+            :max-tag-count="maxTagCount"
+            :max-tag-placeholder="maxTagPlaceholder"
+            @on-query-change="onQueryChange"
+            @on-input-focus="isFocused = true"
+            @on-input-blur="isFocused = false"
+            @on-clear="clearSingleSelect"
         >
           <slot name="prefix" slot="prefix"></slot>
         </select-head>
@@ -40,23 +40,23 @@
     </div>
     <transition name="zoom-in-top">
       <drop
-        :class="dropdownCls"
-        v-show="dropVisible"
-        :placement="placement"
-        ref="dropdown"
-        :data-transfer="appendToBody"
-        :transfer="appendToBody"
-        v-transfer-dom
+          :class="dropdownCls"
+          v-show="dropVisible"
+          :placement="placement"
+          ref="dropdown"
+          :data-transfer="appendToBody"
+          :transfer="appendToBody"
+          v-transfer-dom
       >
         <ul v-show="showNotFoundLabel" :class="[prefixCls + '-not-found']">
           <li>{{ notFoundText }}</li>
         </ul>
         <ul :class="prefixCls + '-dropdown-list'">
           <functional-options
-            v-if="(!remote) || (remote && !loading)"
-            :options="selectOptions"
-            :slot-update-hook="updateSlotOptions"
-            :slot-options="slotOptions"
+              v-if="(!remote) || (remote && !loading)"
+              :options="selectOptions"
+              :slot-update-hook="updateSlotOptions"
+              :slot-options="slotOptions"
           ></functional-options>
         </ul>
         <ul v-show="loading" :class="[prefixCls + '-loading']">loading...</ul>
@@ -188,8 +188,8 @@
         type: String
       },
       size: {
-        validator (value) {
-          return oneOf(value, ['small', 'large', 'default'])
+        validator(value) {
+          return oneOf(value, ['small', 'large', 'default', 'mini'])
         },
         default: 'default'
       },
@@ -202,7 +202,7 @@
         default: '没有数据'
       },
       placement: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['top', 'bottom', 'top-start', 'bottom-start', 'top-end', 'bottom-end'])
         },
         default: 'bottom-start'
@@ -232,7 +232,7 @@
         type: Function
       }
     },
-    mounted () {
+    mounted() {
       this.$on('on-select-selected', this.onOptionClick)
 
       // set the initial values if there are any
@@ -245,7 +245,7 @@
 
       this.checkUpdateStatus()
     },
-    data () {
+    data() {
       return {
         prefixCls: prefixCls,
         values: [],
@@ -266,7 +266,7 @@
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           {
@@ -279,7 +279,7 @@
           }
         ]
       },
-      dropdownCls () {
+      dropdownCls() {
         return {
           [prefixCls + '-dropdown-transfer']: this.appendToBody,
           [prefixCls + '-multiple']: this.multiple && this.transfer,
@@ -287,16 +287,16 @@
           [this.transferClassName]: this.transferClassName
         }
       },
-      selectionCls () {
+      selectionCls() {
         return {
           [`${prefixCls}-selection`]: !this.autoComplete,
           [`${prefixCls}-selection-focused`]: this.isFocused
         }
       },
-      transitionName () {
+      transitionName() {
         return this.placement === 'bottom' ? 'slide-up' : 'slide-down'
       },
-      dropVisible () {
+      dropVisible() {
         let status = true
         const noOptions = !this.selectOptions || this.selectOptions.length === 0
         if (!this.loading && this.remote && this.query === '' && noOptions) status = false
@@ -305,23 +305,23 @@
 
         return this.visible && status
       },
-      showNotFoundLabel () {
+      showNotFoundLabel() {
         const { loading, remote, selectOptions } = this
         return selectOptions && selectOptions.length === 0 && (!remote || (remote && !loading))
       },
-      publicValue () {
+      publicValue() {
         if (this.labelInValue) {
           return this.multiple ? this.values : this.values[0]
         } else {
           return this.multiple ? this.values.map(option => option.value) : (this.values[0] || {}).value
         }
       },
-      canBeCleared () {
+      canBeCleared() {
         const uiStateMatch = this.hasMouseHoverHead || this.active
         const qualifiesForClear = !this.multiple && !this.disabled && this.clearable
         return uiStateMatch && qualifiesForClear && this.reset // we return a function
       },
-      selectOptions () {
+      selectOptions() {
         const selectOptions = []
         const slotOptions = (this.slotOptions || [])
         let optionCounter = -1
@@ -377,18 +377,18 @@
         }
         return selectOptions
       },
-      flatOptions () {
+      flatOptions() {
         return extractOptions(this.selectOptions)
       },
-      selectTabindex () {
+      selectTabindex() {
         return this.disabled || this.filterable ? -1 : 0
       },
-      remote () {
+      remote() {
         return typeof this.remoteMethod === 'function'
       }
     },
     methods: {
-      setQuery (query) { // PUBLIC API
+      setQuery(query) { // PUBLIC API
         if (query) {
           this.onQueryChange(query)
           return
@@ -398,12 +398,12 @@
           this.values = []
         }
       },
-      clearSingleSelect () { // PUBLIC API
+      clearSingleSelect() { // PUBLIC API
         this.$emit('on-clear')
         this.hideMenu()
         if (this.clearable) this.reset()
       },
-      getOptionData (value) {
+      getOptionData(value) {
         const option = this.flatOptions.find(({ componentOptions }) => componentOptions.propsData.value === value)
         if (!option) return null
         const label = getOptionLabel(option)
@@ -412,7 +412,7 @@
           label: label
         }
       },
-      getInitialValue () {
+      getInitialValue() {
         const { multiple, remote, value } = this
         let initialValue = Array.isArray(value) ? value : [value]
         if (!multiple && (typeof initialValue[0] === 'undefined' || (String(initialValue[0]).trim() === '' && !Number.isFinite(initialValue[0])))) initialValue = []
@@ -424,7 +424,7 @@
           return Boolean(item) || item === 0
         })
       },
-      processOption (option, values, isFocused) {
+      processOption(option, values, isFocused) {
         if (!option.componentOptions) return option
         const optionValue = option.componentOptions.propsData.value
         const disabled = option.componentOptions.propsData.disabled
@@ -444,7 +444,7 @@
           }
         }
       },
-      validateOption ({ children, elm, propsData }) {
+      validateOption({ children, elm, propsData }) {
         const value = propsData.value
         const label = propsData.label || ''
         const textContent = (elm && elm.textContent) || (children || []).reduce((str, node) => {
@@ -455,7 +455,7 @@
         const query = this.query.toLowerCase().trim()
         return stringValues.toLowerCase().includes(query)
       },
-      toggleMenu (e, force) {
+      toggleMenu(e, force) {
         if (this.disabled) {
           return false
         }
@@ -466,13 +466,13 @@
           this.broadcast('Drop', 'on-update-popper')
         }
       },
-      hideMenu () {
+      hideMenu() {
         this.toggleMenu(null, false)
         setTimeout(() => {
           this.unchangedQuery = true
         }, ANIMATION_TIMEOUT)
       },
-      onClickOutside () {
+      onClickOutside() {
         if (this.visible) {
           if (this.appendToBody) {
             const { $el } = this.$refs.dropdown
@@ -495,18 +495,21 @@
           this.isFocused = false
         }
       },
-      reset () {
+      reset() {
         this.query = ''
         this.focusIndex = -1
         this.unchangedQuery = true
         this.values = []
         this.filterQueryChange = false
       },
-      onOptionClick (option) {
+      onOptionClick(option) {
         if (this.multiple) {
           // keep the query for remote select
-          if (this.remote) this.lastRemoteQuery = this.lastRemoteQuery || this.query
-          else this.lastRemoteQuery = ''
+          if (this.remote) {
+            this.lastRemoteQuery = this.lastRemoteQuery || this.query
+          } else {
+            this.lastRemoteQuery = ''
+          }
 
           const valueIsSelected = this.values.find(({ value }) => value === option.value)
           if (valueIsSelected) {
@@ -535,7 +538,7 @@
           this.filterQueryChange = false
         }, ANIMATION_TIMEOUT)
       },
-      onQueryChange (query) {
+      onQueryChange(query) {
         if (query.length > 0 && query !== this.query) {
           // in 'AutoComplete', when set an initial value asynchronously,
           // the 'dropdown list' should be stay hidden.
@@ -553,36 +556,37 @@
         this.unchangedQuery = this.visible
         this.filterQueryChange = true
       },
-      toggleHeaderFocus ({ type }) {
+      toggleHeaderFocus({ type }) {
         if (this.disabled) {
           return
         }
         this.isFocused = type === 'focus'
       },
-      updateSlotOptions () {
+      updateSlotOptions() {
         this.slotOptions = this.$slots.default
       },
-      checkUpdateStatus () {
+      checkUpdateStatus() {
         if (this.getInitialValue().length > 0 && this.selectOptions.length === 0) {
           this.hasExpectedValue = true
         }
       }
     },
     watch: {
-      value (value) {
+      value(value) {
         const { getInitialValue, getOptionData, publicValue, values } = this
 
         this.checkUpdateStatus()
 
-        if (value === '') this.values = []
-        else if (checkValuesNotEqual(value, publicValue, values)) {
+        if (value === '') {
+          this.values = []
+        } else if (checkValuesNotEqual(value, publicValue, values)) {
           this.$nextTick(() => {
             this.values = getInitialValue().map(getOptionData).filter(Boolean)
           })
           this.dispatch('BFormItem', 'on-form-change', this.publicValue)
         }
       },
-      values (now, before) {
+      values(now, before) {
         const newValue = JSON.stringify(now)
         const oldValue = JSON.stringify(before)
         // v-model is always just the value, event with labelInValue === true
@@ -596,7 +600,7 @@
           this.dispatch('BFormItem', 'on-form-change', this.publicValue)
         }
       },
-      query (query) {
+      query(query) {
         this.$emit('on-query-change', query)
         const { remoteMethod, lastRemoteQuery } = this
         const hasValidQuery = query !== '' && (query !== lastRemoteQuery || !lastRemoteQuery)
@@ -615,12 +619,12 @@
         }
         if (query !== '' && this.remote) this.lastRemoteQuery = query
       },
-      loading (state) {
+      loading(state) {
         if (state === false) {
           this.updateSlotOptions()
         }
       },
-      isFocused (focused) {
+      isFocused(focused) {
         const el = this.filterable ? this.$el.querySelector('input[type="text"]') : this.$el
         el[this.isFocused ? 'focus' : 'blur']()
 
@@ -634,7 +638,7 @@
           }
         }
       },
-      focusIndex (index) {
+      focusIndex(index) {
         if (index < 0 || this.autoComplete) return
         // update scroll
         const optionValue = this.flatOptions[index].componentOptions.propsData.value
@@ -651,10 +655,10 @@
           this.$refs.dropdown.$el.scrollTop += topOverflowDistance
         }
       },
-      dropVisible (open) {
+      dropVisible(open) {
         this.broadcast('Drop', open ? 'on-update-popper' : 'on-destroy-popper')
       },
-      selectOptions () {
+      selectOptions() {
         if (this.hasExpectedValue && this.selectOptions.length > 0) {
           if (this.values.length === 0) {
             this.values = this.getInitialValue()
@@ -671,10 +675,10 @@
         // dropdown 的位置不会重新计算，需要重新计算
         this.broadcast('Drop', 'on-update-popper')
       },
-      visible (state) {
+      visible(state) {
         this.$emit('on-open-change', state)
       },
-      slotOptions (options, old) {
+      slotOptions(options, old) {
         // #4626，当 Options 的 label 更新时，v-model 的值未更新
         // remote 下，调用 getInitialValue 有 bug
         if (!this.remote) {

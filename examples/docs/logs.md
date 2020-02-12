@@ -11,6 +11,15 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.1</p>
+        <p class="time">2020-02-12</p>
+        <p class="content">修改文档样式，左侧导航栏更紧凑</p>
+        <p class="content">模态窗和抽屉遮罩优化，抽屉层级配置</p>
+        <p class="content">表单控件统一高度，统一size为四个大小</p>
+        <p class="content">修复部分样式错位问题</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.7.0</p>
         <p class="time">2020-02-12</p>
         <p class="content">修改文档布局</p>

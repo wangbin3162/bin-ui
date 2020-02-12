@@ -87,12 +87,13 @@
 
 ### 不同尺寸
 
-提供三种不同尺寸
+提供三种额外不同尺寸
 
 ::: demo
 ```html
 <template>
     <div>
+      <b-input-number v-model="value5" size="mini"></b-input-number>&nbsp;
       <b-input-number v-model="value5" size="small"></b-input-number>&nbsp;&nbsp;
       <b-input-number v-model="value5"></b-input-number>&nbsp;&nbsp;
       <b-input-number v-model="value5" size="large"></b-input-number>

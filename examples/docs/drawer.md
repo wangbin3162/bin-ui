@@ -51,7 +51,7 @@
 ```html
 <template>
   <b-button type="primary" v-waves @click="value2 = true">左侧打开</b-button>
-    <b-drawer v-model="value2" title="抽屉标题" placement="left" width="500px">
+    <b-drawer v-model="value2" title="抽屉标题" placement="left" append-to-body width="500px">
       <p>我是左侧的抽屉</p>
     </b-drawer>
 </template>
@@ -99,7 +99,7 @@
 ```html
 <template>
   <b-button type="primary" v-waves @click="value3 = true">信息预览</b-button>
-    <b-drawer v-model="value3" :closable="false" width="640">
+    <b-drawer v-model="value3" :closable="false" append-to-body width="640">
      <p :style="pStyle">用户信息</p>
      <p :style="pStyle">个人信息</p>
      <div class="demo-drawer-profile">
@@ -163,7 +163,7 @@
 ```html
 <template>
   <b-button type="primary" v-waves @click="value4 = true">编辑抽屉</b-button>
-    <b-drawer v-model="value4" title="编辑对象" width="720"  :mask-closable="false" :styles="styles">
+    <b-drawer v-model="value4" title="编辑对象" width="720" append-to-body :mask-closable="false" :styles="styles">
       <b-form :model="formInline" ref="form" label-position="top">
         <div flex="box:mean">
             <b-form-item label="用户名" prop="name" class="mr-15">
@@ -256,10 +256,10 @@
 ```html
 <template>
     <b-button type="primary" v-waves @click="value5 = true">打开抽屉</b-button>
-    <b-drawer title="一级抽屉" width="512" :closable="false" v-model="value5">
+    <b-drawer title="一级抽屉" width="512" append-to-body :closable="false" v-model="value5">
         <b-button @click="value6 = true" type="primary">打开二层抽屉</b-button>
     </b-drawer>
-    <b-drawer title="二级抽屉" :closable="false" v-model="value6">
+    <b-drawer title="二级抽屉" :closable="false" v-model="value6" append-to-body >
         这是第二层抽屉
     </b-drawer>
 </template>

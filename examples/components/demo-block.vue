@@ -1,8 +1,5 @@
 <template>
-  <div class="demo-block"
-       :class="[blockClass, { 'hover': hovering }]"
-       @mouseenter="hovering = true"
-       @mouseleave="hovering = false">
+  <div class="demo-block" :class="[blockClass]">
     <div class="source">
       <slot name="source"></slot>
     </div>
@@ -15,40 +12,37 @@
       </div>
     </div>
     <div class="demo-block-control"
-         ref="control"
+         ref="control" flex="main:center cross:center"
          @click="isExpanded = !isExpanded">
-      <i :class="[iconClass, { 'hovering': hovering }]" style="font-size: 18px;"></i>
-      <transition name="text-slide">
-        <span v-show="hovering">{{ controlText }}</span>
-      </transition>
+      <i :class="[iconClass]" style="font-size: 18px;"></i>
+      <span>{{ controlText }}</span>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    data () {
+    data() {
       return {
-        hovering: false,
         isExpanded: false,
         fixedControl: false,
         scrollParent: null
       }
     },
     computed: {
-      blockClass () {
+      blockClass() {
         return `demo-${this.$router.currentRoute.path.split('/').pop()}`
       },
-      iconClass () {
+      iconClass() {
         return this.isExpanded ? 'iconfont icon-md-arrow-dropup' : 'iconfont icon-md-arrow-dropdown'
       },
-      controlText () {
+      controlText() {
         return this.isExpanded ? '隐藏代码' : '显示代码'
       },
-      codeArea () {
+      codeArea() {
         return this.$el.getElementsByClassName('meta')[0]
       },
-      codeAreaHeight () {
+      codeAreaHeight() {
         if (this.$el.getElementsByClassName('description').length > 0) {
           return this.$el.getElementsByClassName('description')[0].clientHeight +
             this.$el.getElementsByClassName('highlight')[0].clientHeight + 20
@@ -57,11 +51,11 @@
       }
     },
     watch: {
-      isExpanded (val) {
+      isExpanded(val) {
         this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
       }
     },
-    mounted () {
+    mounted() {
       this.$nextTick(() => {
         let highlight = this.$el.getElementsByClassName('highlight')[0]
         if (this.$el.getElementsByClassName('description').length === 0) {
@@ -76,10 +70,6 @@
   .demo-block {
     border: solid 1px #ebebeb;
     border-radius: 3px;
-    transition: .2s;
-    &.hover {
-      box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
-    }
     code {
       font-family: Menlo, Monaco, Consolas, Courier, monospace;
     }
@@ -149,22 +139,14 @@
       cursor: pointer;
       position: relative;
       i {
-        vertical-align: baseline;
-        display: inline-block;
         font-size: 16px;
         line-height: 44px;
         transition: .3s;
-        &.hovering {
-          transform: translateX(-40px);
-        }
       }
       > span {
-        position: absolute;
-        transform: translateX(-30px);
         font-size: 14px;
         line-height: 44px;
         transition: .3s;
-        display: inline-block;
       }
       &:hover {
         color: #409EFF;
