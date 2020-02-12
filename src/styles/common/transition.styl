@@ -17,6 +17,24 @@
 .fade-in-linear-leave-to {
   opacity: 0;
 }
+// move-left
+.move-left-enter-active, .move-left-leave-active {
+  transition: all .2s ease-in-out
+  transform-origin: 0 0;
+}
+.move-left-enter, .move-left-leave-to {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+// move-right
+.move-right-enter-active, .move-right-leave-active {
+  transition: all .2s ease-in-out
+  transform-origin: 0 0;
+}
+.move-right-enter, .move-right-leave-to {
+  opacity: 1;
+  transform: translateX(100%);
+}
 //  中间缩放zoom-in-center
 .zoom-in-center-enter-active,
 .zoom-in-center-leave-active {
@@ -24,7 +42,7 @@
 }
 .zoom-in-center-enter,
 .zoom-in-center-leave-active
-.zoom-in-center-leave-to{
+.zoom-in-center-leave-to {
   opacity: 0;
   transform: scaleX(0);
 }

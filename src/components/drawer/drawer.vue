@@ -1,49 +1,55 @@
 <template>
-  <div class="bin-drawer" v-transfer-dom :data-transfer="appendToBody">
-    <transition name="fade">
-      <div class="bin-drawer-wrapper" :class="'is-'+placement"
-           v-show="visible" :style="mainStyle" @click.self="handleMaskClick">
-        <transition name="move">
-          <div class="drawer-box" :style="boxStyle" v-show="visible" flex="dir:top">
-            <div class="header">
+  <div v-transfer-dom :data-transfer="appendToBody">
+    <transition name="fade-in">
+      <div :class="maskClasses" :style="maskStyle" v-show="visible" v-if="mask" @click="handleMask"></div>
+    </transition>
+    <div :class="wrapClasses" @click="handleWrapClick">
+      <transition :name="'move-' + placement">
+        <div :class="classes" :style="mainStyles" v-show="visible">
+          <div :class="contentClasses" ref="content">
+            <a class="bin-drawer-close" v-if="closable" @click="close">
+              <slot name="close">
+                <b-icon name="ios-close"></b-icon>
+              </slot>
+            </a>
+            <div :class="[prefixCls + '-header']" v-if="showHead">
               <slot name="header">
-                <div flex="main:justify">
-                  <div class="title" flex-box="1">
-                    {{ title }}
-                  </div>
-                  <div class="close" @click.stop="close()">
-                    <b-icon name="ios-close" size="22"></b-icon>
-                  </div>
-                </div>
+                <div :class="[prefixCls + '-header-inner']">{{ title }}</div>
               </slot>
             </div>
-            <div class="body" flex-box="1">
-              <b-scrollbar style="height: 100%;">
-                <slot>
-                </slot>
-              </b-scrollbar>
-            </div>
-            <div class="footer" v-if="!footerHide">
-              <slot name="footer">
-                <b-button type="default" size="small" plain @click="close()">{{ cancelText}}</b-button>
-                <b-button v-waves size="small" type="primary"
-                          @click="okClick">
-                  {{ okText }}
-                </b-button>
-              </slot>
+            <div :class="[prefixCls + '-body']" :style="styles">
+              <slot></slot>
             </div>
           </div>
-        </transition>
-      </div>
-    </transition>
+          <div class="bin-drawer-drag" :class="{ 'bin-drawer-drag-left': placement === 'left' }" v-if="draggable"
+               @mousedown="handleTriggerMousedown">
+            <slot name="trigger">
+              <div class="bin-drawer-drag-move-trigger">
+                <div class="bin-drawer-drag-move-trigger-point">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+            </slot>
+          </div>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
 <script>
+  import { oneOf, findBrothersComponents, findComponentsUpward } from '../../utils/util'
   import TransferDom from '../../directive/transfer-dom'
+  import Emitter from '../../mixins/emitter'
+  import ScrollbarMixins from '../../mixins/scrollbar-mixin'
+
+  import { on, off } from '../../utils/dom'
+
+  const prefixCls = 'bin-drawer'
 
   export default {
     name: 'BDrawer',
+    mixins: [Emitter, ScrollbarMixins],
     directives: { TransferDom },
     props: {
       value: {
@@ -51,80 +57,245 @@
         default: false
       },
       title: {
-        type: String,
-        required: true
+        type: String
+      },
+      width: {
+        type: [Number, String],
+        default: 300
+      },
+      closable: {
+        type: Boolean,
+        default: true
+      },
+      maskClosable: {
+        type: Boolean,
+        default: true
+      },
+      mask: {
+        type: Boolean,
+        default: true
+      },
+      maskStyle: {
+        type: Object
+      },
+      styles: {
+        type: Object
+      },
+      scrollable: {
+        type: Boolean,
+        default: false
       },
       placement: {
-        type: String,
+        validator(value) {
+          return oneOf(value, ['left', 'right'])
+        },
         default: 'right'
+      },
+      zIndex: {
+        type: Number,
+        default: 1000
       },
       appendToBody: {
         type: Boolean,
         default: false
       },
-      okText: {
-        type: String,
-        default: '确定'
+      className: {
+        type: String
       },
-      cancelText: {
-        type: String,
-        default: '取消'
-      },
-      width: {
-        type: String,
-        default: '300px'
-      },
-      fullscreen: {
+      inner: {
         type: Boolean,
         default: false
       },
-      footerHide: {
+      // Whether drag and drop is allowed to adjust width
+      draggable: {
         type: Boolean,
         default: false
       },
-      maskClosable: {
-        type: Boolean,
-        default: true
-      }
+      beforeClose: Function
     },
-    data () {
+    data() {
       return {
-        visible: this.value
+        prefixCls: prefixCls,
+        visible: this.value,
+        wrapShow: false,
+        showHead: true,
+        canMove: false,
+        dragWidth: this.width,
+        wrapperWidth: this.width,
+        wrapperLeft: 0,
+        minWidth: 300
       }
     },
     computed: {
-      mainStyle () {
-        return {
-          backgroundColor: !this.fullscreen && this.width !== '100%' ? 'rgba(55, 55, 55, .6)' : 'none'
-        }
+      wrapClasses() {
+        return [
+          `${prefixCls}-wrap`,
+          {
+            [`${prefixCls}-hidden`]: !this.wrapShow,
+            [`${this.className}`]: !!this.className,
+            [`${prefixCls}-no-mask`]: !this.mask,
+            [`${prefixCls}-wrap-inner`]: this.inner,
+            [`${prefixCls}-wrap-dragging`]: this.canMove
+          }
+        ]
       },
-      boxStyle () {
-        return {
-          width: this.fullscreen ? '100%' : this.width
+      mainStyles() {
+        let style = {}
+        const width = parseInt(this.dragWidth)
+        const styleWidth = {
+          width: width <= 100 ? `${width}%` : `${width}px`
         }
+        Object.assign(style, styleWidth)
+        return style
+      },
+      contentClasses() {
+        return [
+          `${prefixCls}-content`,
+          {
+            [`${prefixCls}-content-no-mask`]: !this.mask
+          }
+        ]
+      },
+      classes() {
+        return [
+          `${prefixCls}`,
+          `${prefixCls}-${this.placement}`,
+          {
+            [`${prefixCls}-no-header`]: !this.showHead,
+            [`${prefixCls}-inner`]: this.inner
+          }
+        ]
+      },
+      maskClasses() {
+        return [
+          `${prefixCls}-mask`,
+          {
+            [`${prefixCls}-mask-inner`]: this.inner
+          }
+        ]
       }
     },
     methods: {
-      close () {
+      close() {
+        if (!this.beforeClose) {
+          return this.handleClose()
+        }
+        const before = this.beforeClose()
+        if (before && before.then) {
+          before.then(() => {
+            this.handleClose()
+          })
+        } else {
+          this.handleClose()
+        }
+      },
+      handleClose() {
         this.visible = false
         this.$emit('input', false)
-        this.$emit('on-cancel')
+        this.$emit('on-close')
       },
-      handleMaskClick () {
-        if (this.maskClosable) {
+      handleMask() {
+        if (this.maskClosable && this.mask) {
           this.close()
         }
       },
-      okClick () {
-        this.$emit('on-ok')
+      handleWrapClick(event) {
+        // use indexOf,do not use === ,because bin-modal-wrap can have other custom className
+        const className = event.target.getAttribute('class')
+        if (className && className.indexOf(`${prefixCls}-wrap`) > -1) this.handleMask()
+      },
+      handleMousemove(event) {
+        if (!this.canMove || !this.draggable) return
+        // 更新容器宽度和距离左侧页面距离，如果是window则距左侧距离为0
+        this.handleSetWrapperWidth()
+        const left = event.pageX - this.wrapperLeft
+        // 如果抽屉方向为右边，宽度计算需用容器宽度减去left
+        let width = this.placement === 'right' ? this.wrapperWidth - left + 16 : left
+        // 限定最小宽度
+        width = Math.max(width, parseFloat(this.minWidth))
+        event.atMin = width === parseFloat(this.minWidth)
+        // 如果当前width不大于100，视为百分比
+        if (width <= 100) width = (width / this.wrapperWidth) * 100
+        this.dragWidth = width
+        this.$emit('on-resize-width', parseInt(this.dragWidth))
+      },
+      handleSetWrapperWidth() {
+        const { width, left } = this.$el.getBoundingClientRect()
+        this.wrapperWidth = width
+        this.wrapperLeft = left
+      },
+      handleMouseup() {
+        if (!this.draggable) return
+        this.canMove = false
+      },
+      handleTriggerMousedown() {
+        this.canMove = true
+        // 防止鼠标选中抽屉中文字，造成拖动trigger触发浏览器原生拖动行为
+        window.getSelection().removeAllRanges()
       }
     },
+    mounted() {
+      if (this.visible) {
+        this.wrapShow = true
+      }
+      let showHead = true
+      if (this.$slots.header === undefined && !this.title) {
+        showHead = false
+      }
+      this.showHead = showHead
+      on(document, 'mousemove', this.handleMousemove)
+      on(document, 'mouseup', this.handleMouseup)
+      this.handleSetWrapperWidth()
+    },
+    beforeDestroy() {
+      off(document, 'mousemove', this.handleMousemove)
+      off(document, 'mouseup', this.handleMouseup)
+      this.removeScrollEffect()
+    },
     watch: {
-      value (val) {
+      value(val) {
         this.visible = val
       },
-      visible (val) {
+      visible(val) {
+        if (val === false) {
+          this.timer = setTimeout(() => {
+            this.wrapShow = false
+            // #4831 Check if there are any drawers left at the parent level
+            const brotherDrawers = findBrothersComponents(this, 'BDrawer') || []
+            const parentDrawers = findComponentsUpward(this, 'BDrawer') || []
+
+            const otherDrawers = [].concat(brotherDrawers).concat(parentDrawers)
+
+            const isScrollDrawer = otherDrawers.some(item => item.visible && !item.scrollable)
+
+            if (!isScrollDrawer && !this.inner) {
+              this.removeScrollEffect()
+            }
+          }, 300)
+        } else {
+          if (this.timer) clearTimeout(this.timer)
+          this.wrapShow = true
+          if (!this.scrollable && !this.inner) {
+            this.addScrollEffect()
+          }
+        }
+        this.broadcast('BTable', 'on-visible-change', val)
         this.$emit('on-visible-change', val)
+      },
+      scrollable(val) {
+        if (!val) {
+          this.addScrollEffect()
+        } else {
+          this.removeScrollEffect()
+        }
+      },
+      title(val) {
+        if (this.$slots.header === undefined) {
+          this.showHead = !!val
+        }
+      },
+      width(val) {
+        this.dragWidth = val
       }
     }
   }
