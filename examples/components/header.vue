@@ -4,7 +4,7 @@
       <div class="left" style="width: 480px;" flex="main:justify cross:center">
         <div class="logo"></div>
         <b-select style="width: 220px;" placeholder="查询组件" filterable v-model="current"
-                  @on-change="handleComponentChange" clearable size="large">
+                  @on-change="handleComponentChange" clearable>
           <b-option v-for="item in components" :value="item.value" :key="item.value">{{ item.label }}</b-option>
         </b-select>
       </div>
