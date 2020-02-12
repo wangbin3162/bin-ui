@@ -21,7 +21,7 @@
         type: Number
       },
       labelPosition: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['left', 'right', 'top'])
         },
         default: 'right'
@@ -35,22 +35,22 @@
         default: true
       },
       autocomplete: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['on', 'off'])
         },
         default: 'off'
       }
     },
-    provide () {
+    provide() {
       return { form: this }
     },
-    data () {
+    data() {
       return {
         fields: []
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           `${prefixCls}-label-${this.labelPosition}`,
@@ -61,12 +61,12 @@
       }
     },
     methods: {
-      resetFields () {
+      resetFields() {
         this.fields.forEach(field => {
           field.resetField()
         })
       },
-      validate (callback) {
+      validate(callback) {
         return new Promise(resolve => {
           let valid = true
           let count = 0
@@ -86,7 +86,7 @@
           })
         })
       },
-      validateField (prop, cb) {
+      validateField(prop, cb) {
         const field = this.fields.filter(field => field.prop === prop)[0]
         if (!field) {
           throw new Error('[bin-ui warn]: 必须使用有效的 props 字符串调用 validateField !')
@@ -95,11 +95,11 @@
       }
     },
     watch: {
-      rules () {
+      rules() {
         this.validate()
       }
     },
-    created () {
+    created() {
       this.$on('on-form-item-add', (field) => {
         if (field) this.fields.push(field)
         return false

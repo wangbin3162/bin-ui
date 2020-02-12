@@ -21,6 +21,8 @@
 :::demo
 ```html
  <template>
+     <b-button size="small" v-waves
+        @click="$message('this is default message')">默认提示</b-button>
      <b-button size="small" type="info" v-waves
         @click="$message({type:'info',content:'info 的提示'})">info</b-button>
      <b-button size="small" type="primary" v-waves
@@ -99,6 +101,7 @@ render函数调用
 | 函数      | 说明    |  类型      | 默认值      |
 |---------- |-------- |---------- |---------|
 | content     |  提示内容   | String  | —  |
+| type     |  提示类别(primary,info,success,warning,danger)   | String  | primary  |
 | render     |  自定义描述内容，使用 Vue 的 Render 函数   | Function  | —  |
 | duration     | 自动关闭的延时，单位秒，不关闭可以写 0 | Number |3  |
 | onClose     | 关闭时的回调 | Function	 |  —  |

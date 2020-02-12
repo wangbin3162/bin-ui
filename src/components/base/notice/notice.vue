@@ -2,21 +2,19 @@
   <transition :name="transitionName"
               @enter="handleEnter" @leave="handleLeave" appear>
     <div :class="classes">
-      <div class="bg-wrap">
-        <div :class="[baseClass + '-content',`${baseClass}-${type}`]" ref="content">
-          <div :class="[baseClass + '-content-text']" v-if="content">
-            <b-icon :name="iconTypes"></b-icon>
-            <span>{{content}}</span>
-          </div>
-          <div :class="[baseClass + '-content-text']">
-            <render-cell
-              :render="renderFunc"
-            ></render-cell>
-          </div>
-          <a :class="[baseClass + '-close']" @click="close" v-if="closable">
-            <i class="iconfont icon-ios-close"></i>
-          </a>
+      <div :class="[baseClass + '-content',`${baseClass}-${type}`]" ref="content">
+        <div :class="[baseClass + '-content-text']" v-if="content">
+          <b-icon :name="iconTypes"></b-icon>
+          <span>{{content}}</span>
         </div>
+        <div :class="[baseClass + '-content-text']">
+          <render-cell
+              :render="renderFunc"
+          ></render-cell>
+        </div>
+        <a :class="[baseClass + '-close']" @click="close" v-if="closable">
+          <i class="iconfont icon-ios-close"></i>
+        </a>
       </div>
     </div>
   </transition>
@@ -61,7 +59,7 @@
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           this.baseClass,
           {
@@ -70,40 +68,40 @@
           }
         ]
       },
-      baseClass () {
+      baseClass() {
         return `${prefixCls}-notice`
       },
-      renderFunc () {
+      renderFunc() {
         return this.render || function () {
         }
       },
-      iconTypes () {
+      iconTypes() {
         const iconMap = {
           'info': 'ios-information-circle',
           'primary': 'ios-information-circle',
           'success': 'ios-checkmark-circle',
-          'warning': 'ios-alert',
+          'warning': 'ios-warning',
           'danger': 'ios-close-circle'
         }
         return iconMap[this.type]
       }
     },
     methods: {
-      clearCloseTimer () {
+      clearCloseTimer() {
         if (this.closeTimer) {
           clearTimeout(this.closeTimer)
           this.closeTimer = null
         }
       },
-      close () {
+      close() {
         this.clearCloseTimer()
         this.onClose()
         this.$parent.close(this.name)
       },
-      handleEnter (el) {
+      handleEnter(el) {
         el.style.height = el.scrollHeight + 'px'
       },
-      handleLeave (el) {
+      handleLeave(el) {
         // 优化一下，如果当前只有一个 Message，则不使用 js 过渡动画，这样更优美
         if (document.getElementsByClassName('bin-message-notice').length !== 1) {
           el.style.height = 0
@@ -112,7 +110,7 @@
         }
       }
     },
-    mounted () {
+    mounted() {
       this.clearCloseTimer()
       if (this.duration !== 0) {
         this.closeTimer = setTimeout(() => {
@@ -120,7 +118,7 @@
         }, this.duration * 1000)
       }
     },
-    beforeDestroy () {
+    beforeDestroy() {
       this.clearCloseTimer()
     }
   }

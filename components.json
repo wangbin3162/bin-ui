@@ -16,7 +16,6 @@
   "circle": "./src/components/circle/index.js",
   "collapse": "./src/components/collapse/index.js",
   "collapse-panel": "./src/components/collapse-panel/index.js",
-  "container": "./src/components/container/index.js",
   "date-picker": "./src/components/date-picker/index.js",
   "divider": "./src/components/divider/index.js",
   "drawer": "./src/components/drawer/index.js",

@@ -28,10 +28,10 @@
       "icon": "ios-browsers",
       "items": [
         {
-          "desc": "Base 基础样式",
+          "desc": "Base 基础",
           "icon": "ios-color-palette",
-          "name": "layout",
-          "path": "/layout"
+          "name": "base",
+          "path": "/base"
         },
         {
           "desc": "Icon 图标",
@@ -70,12 +70,6 @@
       "path": "/component",
       "icon": "ios-bookmarks",
       "items": [
-        {
-          "desc": "Container 布局容器",
-          "icon": "ios-tv",
-          "name": "container",
-          "path": "/container"
-        },
         {
           "desc": "ScrollBar 滚动",
           "icon": "ios-infinite",

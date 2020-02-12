@@ -33,7 +33,6 @@ import RadioGroup from './components/radio-group'
 import Tooltip from './components/tooltip'
 import Form from './components/form'
 import FormItem from './components/form-item'
-import Container from './components/container'
 import Dropdown from './components/dropdown'
 import DropdownItem from './components/dropdown-item'
 import DropdownMenu from './components/dropdown-menu'
@@ -70,7 +69,7 @@ const components = [
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
   Form, FormItem, Tabs,
-  Container, Dropdown, DropdownItem, DropdownMenu,
+  Dropdown, DropdownItem, DropdownMenu,
   Select, Option, OptionGroup, Table, Page, Tree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
   Timeline, TimelineItem, Affix, Anchor, AnchorLink, Carousel, CarouselItem
@@ -132,7 +131,6 @@ export default {
   Tooltip,
   Form,
   FormItem,
-  Container,
   Dropdown,
   DropdownItem,
   DropdownMenu,

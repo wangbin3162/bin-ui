@@ -13,31 +13,31 @@
   padding: 8px;
   text-align: center;
   transition: height .3s ease-in-out, padding .3s ease-in-out;
-  .bg-wrap {
-    background: #fff;
-    display: inline-block;
-    border-radius: 5px;
-  }
 }
 
 .bin-message-notice-content {
   display: inline-block;
   pointer-events: all;
-  padding: 16px;
+  padding: 10px 16px;
   border-radius: 5px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .15);
   background: #fff;
   position: relative;
+  &-text {
+    display: flex;
+    align-items: center;
+  }
   i {
+    font-size: 18px;
     vertical-align: baseline;
-    margin-right: 10px;
+    margin-right: 8px;
   }
 }
 
 .bin-message-notice-close {
   position: absolute;
   right: 0;
-  top: 16px;
+  top: 11px;
   color: #999;
   outline: 0;
   cursor: pointer;
@@ -57,40 +57,17 @@
     padding-right: 32px;
   }
 }
-.bin-message-notice-primary {
-  border: 1px solid  $color-primary-light5;
-  background-color: $color-primary-light7;
-  i {
-    color: $color-primary;
-  }
+.bin-message-notice-primary i {
+  color: $color-primary;
 }
-.bin-message-notice-info {
-  border: 1px solid  $color-primary-light4;
-  background-color: #ffffff;
-  i {
-    color: $color-primary;
-  }
+.bin-message-notice-success i {
+  color: $color-success;
 }
-.bin-message-notice-success {
-  border: 1px solid  $color-success-light5;
-  background-color: $color-success-light7;
-  i {
-    color: $color-success;
-  }
+.bin-message-notice-warning i {
+  color: $color-warning;
 }
-.bin-message-notice-warning {
-  border: 1px solid  $color-warning-light5;
-  background-color: $color-warning-light7;
-  i {
-    color: $color-warning;
-  }
-}
-.bin-message-notice-danger {
-  border: 1px solid  $color-danger-light5;
-  background-color: $color-danger-light7;
-  i {
-    color: $color-danger;
-  }
+.bin-message-notice-danger i {
+  color: $color-danger;
 }
 // move-up
 .move-up-enter-active,

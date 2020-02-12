@@ -1,8 +1,9 @@
-## 基础样式
+## 基础
 
 <template>
     <div class="global-anchor">
       <b-anchor :scroll-offset="100">
+        <b-anchor-link href="#ji-chuapi" title="基础api"></b-anchor-link>
         <b-anchor-link href="#flex.css-shi-yong" title="flex.css使用"></b-anchor-link>
         <b-anchor-link href="#flex-shu-xing-da-quan" title="flex属性大全"></b-anchor-link>
         <b-anchor-link href="#flex-box-shu-xing-shuo-ming" title="flex-box属性说明"></b-anchor-link>
@@ -10,6 +11,39 @@
       </b-anchor>
     </div>
 </template>
+
+### 基础api
+
+暴露了以下几个api用于实现常用功能，log print在专门模块中说明
+
+```javascript
+    Vue.prototype.$log = log
+    Vue.prototype.$util = util
+    Vue.prototype.$open = util.open
+    Vue.prototype.$scrollTop = scrollTop
+    Vue.prototype.$print = log.print
+```
+
+util方法函数
+
+| 方法名     | 说明    | 参数      |
+|---------- |-------- |---------- |
+| title | 更新标题   | title  |
+| open | 打开新页面   | url,target  |
+| parseTime | 时间格式化   | time,cFormat('{y}-{m}-{d} {h}:{i}:{s}')  |
+| debounce | 防抖函数   | func, wait = 50, immediate = true  |
+| shuffle | 洗牌函数   | arr  |
+| getRandomInt | 在某个区间随机一个整数   | min, max  |
+| deepClone | 深拷贝函数   | obj/arr  |
+
+
+$scrollTop 滚动函数
+
+| 方法名     | 说明    | 参数      |
+|---------- |-------- |---------- |
+| $scrollTop | 滚动函数   | el, from = 0, to, duration = 500, endCallback  |
+
+### flex.css使用
 
 本项目已集成normalize.css初始化样式，[flex.css](https://github.com/lzxb/flex.css)基本样式和自定义基础样式库common.css
 
@@ -22,8 +56,6 @@
   flex-wrap: wrap;
 }
 ```
-
-### flex.css使用
 
 ::: demo
 ```html

@@ -61,8 +61,15 @@
 ::: demo
 ```html
 <template>
-  <div style="width:500px;">
-      <b-form :model="formInline" ref="form" label-position="top">
+  <div style="width:500px;">  
+    <div class="mb-10">表头对其方式：
+      <b-radio-group v-model="type" style="display: inline-block;">
+        <b-radio label="top">top</b-radio>
+        <b-radio label="left">left</b-radio>
+        <b-radio label="right">right</b-radio>
+      </b-radio-group>
+    </div>
+      <b-form :model="formInline" ref="form" :label-position="type" :label-width="labelWidth">
         <b-form-item label="用户名" prop="name">
           <b-input v-model="formInline.name" placeholder="用户名"></b-input>
         </b-form-item>
@@ -76,12 +83,18 @@
   export default {
     data () {
       return {
+        type: 'top',
         formInline: {
           name: '',
           mail: ''
         }
       }
-    }
+    },
+    computed:{
+      labelWidth(){
+        return this.type==='top' ? null : 80
+      }
+    } 
   }
 </script>
 ```

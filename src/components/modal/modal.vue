@@ -40,10 +40,12 @@
 <script>
   import { transferIndex as modalIndex, transferIncrease as modalIncrease } from '../../utils/transfer-queue'
   import { on, off } from '../../utils/dom'
+  import scrollbarMixin from '../../mixins/scrollbar-mixin'
 
   const prefixCls = 'bin-modal'
   export default {
     name: 'BModal',
+    mixins: [scrollbarMixin],
     props: {
       value: {
         type: Boolean,
@@ -102,12 +104,16 @@
         type: Number,
         default: 2000
       },
+      scrollable: {
+        type: Boolean,
+        default: false
+      },
       appendToBody: {
         type: Boolean,
         default: false
       }
     },
-    data () {
+    data() {
       return {
         prefixCls: prefixCls,
         wrapShow: false,
@@ -125,7 +131,7 @@
       }
     },
     computed: {
-      wrapClasses () {
+      wrapClasses() {
         return [
           `${prefixCls}-wrap`,
           {
@@ -135,12 +141,12 @@
           }
         ]
       },
-      wrapStyles () {
+      wrapStyles() {
         return {
           zIndex: this.modalIndex + this.zIndex
         }
       },
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           {
@@ -150,7 +156,7 @@
           }
         ]
       },
-      mainStyles () {
+      mainStyles() {
         let style = {}
         // 主要样式配置，配置宽度
         const width = parseInt(this.width)
@@ -166,7 +172,7 @@
 
         return style
       },
-      contentClasses () {
+      contentClasses() {
         return [
           `${prefixCls}-content`,
           {
@@ -176,7 +182,7 @@
           }
         ]
       },
-      contentStyles () {
+      contentStyles() {
         let style = {}
         if (this.draggable) {
           if (this.dragData.x !== null) style.left = `${this.dragData.x}px`
@@ -190,11 +196,11 @@
         }
         return style
       },
-      showMask () {
+      showMask() {
         return this.draggable ? false : this.mask
       }
     },
-    mounted () {
+    mounted() {
       if (this.visible) {
         this.wrapShow = true
         if (this.appendToBody && !this.hasMoveOut) {
@@ -210,18 +216,18 @@
     },
     methods: {
       // 全局modal的索引
-      handleGetModalIndex () {
+      handleGetModalIndex() {
         modalIncrease()
         return modalIndex
       },
-      handleWrapClick (event) {
+      handleWrapClick(event) {
         const className = event.target.getAttribute('class')
         if (className && className.indexOf(`${prefixCls}-wrap`) > -1) this.handleMask()
       },
-      cancel () {
+      cancel() {
         this.close()
       },
-      ok () {
+      ok() {
         if (this.loading) {
           this.buttonLoading = true
         } else {
@@ -231,27 +237,27 @@
         this.$emit('on-ok')
       },
       // 点击遮罩层
-      handleMask () {
+      handleMask() {
         if (this.maskClosable && this.showMask) {
           this.close()
         }
       },
-      handleClickModal () {
+      handleClickModal() {
         if (this.draggable) {
           this.modalIndex = this.handleGetModalIndex()
         }
       },
-      close () {
+      close() {
         this.visible = false
         this.$emit('input', false)
         this.$emit('on-cancel')
       },
       // 缩放动画结束
-      animationFinish () {
+      animationFinish() {
         this.$emit('on-hidden')
       },
       // 拖拽开始
-      handleMoveStart (event) {
+      handleMoveStart(event) {
         if (!this.draggable) return false
 
         const $content = this.$refs.content
@@ -272,7 +278,7 @@
         on(window, 'mousemove', this.handleMoveMove)
         on(window, 'mouseup', this.handleMoveEnd)
       },
-      handleMoveMove (event) {
+      handleMoveMove(event) {
         if (!this.dragData.dragging) return false
 
         const distance = {
@@ -291,27 +297,31 @@
         this.dragData.dragX = distance.x
         this.dragData.dragY = distance.y
       },
-      handleMoveEnd () {
+      handleMoveEnd() {
         this.dragData.dragging = false
         off(window, 'mousemove', this.handleMoveMove)
         off(window, 'mouseup', this.handleMoveEnd)
       }
     },
     watch: {
-      value (val) {
+      value(val) {
         this.visible = val
       },
-      visible (val) {
+      visible(val) {
         if (val === false) {
           this.buttonLoading = false
           // 关闭内容显示
           this.timer = setTimeout(() => {
             this.wrapShow = false
+            this.removeScrollEffect()
           }, 300)
         } else {
           this.modalIndex = this.handleGetModalIndex()
           if (this.timer) clearTimeout(this.timer)
           this.wrapShow = true
+          if (!this.scrollable) {
+            this.addScrollEffect()
+          }
           if (this.appendToBody && !this.hasMoveOut) {
             document.body.appendChild(this.$el)
             this.hasMoveOut = true
@@ -319,18 +329,25 @@
         }
         this.$emit('on-visible-change', val)
       },
-      loading (val) {
+      scrollable(val) {
+        if (!val) {
+          this.addScrollEffect()
+        } else {
+          this.removeScrollEffect()
+        }
+      },
+      loading(val) {
         if (!val) {
           this.buttonLoading = false
         }
       },
-      title (val) {
+      title(val) {
         if (this.$slots.header === undefined) {
           this.showHead = !!val
         }
       }
     },
-    beforeDestroy () {
+    beforeDestroy() {
       // if appendToBody is true, remove DOM node after destroy
       if (this.appendToBody && this.$el && this.$el.parentNode) {
         this.$el.parentNode.removeChild(this.$el)

@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 const util = {}
 
 /**
@@ -11,8 +13,9 @@ util.title = function (title) {
 /**
  * @description 打开新页面
  * @param {String} url 地址
+ * @param target
  */
-util.open = function (url, target) {
+util.open = function (url, target = false) {
   let a = document.createElement('a')
   a.setAttribute('href', url)
   if (target) {
@@ -161,15 +164,55 @@ util.getWaterMark = function (str) {
   return canvas
 }
 
+// For Modal scrollBar hidden
+let cached
+
+export function getScrollBarSize(fresh) {
+  if (fresh || cached === undefined) {
+    const inner = document.createElement('div')
+    inner.style.width = '100%'
+    inner.style.height = '200px'
+
+    const outer = document.createElement('div')
+    const outerStyle = outer.style
+
+    outerStyle.position = 'absolute'
+    outerStyle.top = '0'
+    outerStyle.left = '0'
+    outerStyle.pointerEvents = 'none'
+    outerStyle.visibility = 'hidden'
+    outerStyle.width = '200px'
+    outerStyle.height = '150px'
+    outerStyle.overflow = 'hidden'
+
+    outer.appendChild(inner)
+
+    document.body.appendChild(outer)
+
+    const widthContained = inner.offsetWidth
+    outer.style.overflow = 'scroll'
+    let widthScroll = inner.offsetWidth
+
+    if (widthContained === widthScroll) {
+      widthScroll = outer.clientWidth
+    }
+
+    document.body.removeChild(outer)
+
+    cached = widthContained - widthScroll
+  }
+  return cached
+}
+
 util.deepClone = deepCopy
 
 // 一个值是否在列表中
-export function oneOf (value, validList) {
+export function oneOf(value, validList) {
   return validList.indexOf(value) > -1
 }
 
 // Find components upward
-export function findComponentUpward (context, componentName, componentNames) {
+export function findComponentUpward(context, componentName, componentNames) {
   if (typeof componentName === 'string') {
     componentNames = [componentName]
   } else {
@@ -186,7 +229,7 @@ export function findComponentUpward (context, componentName, componentNames) {
 }
 
 // Find component downward
-export function findComponentDownward (context, componentName) {
+export function findComponentDownward(context, componentName) {
   const childrens = context.$children
   let children = null
 
@@ -206,7 +249,7 @@ export function findComponentDownward (context, componentName) {
 }
 
 // Find components downward
-export function findComponentsDownward (context, componentName) {
+export function findComponentsDownward(context, componentName) {
   return context.$children.reduce((components, child) => {
     if (child.$options.name === componentName) components.push(child)
     const foundChilds = findComponentsDownward(child, componentName)
@@ -215,7 +258,7 @@ export function findComponentsDownward (context, componentName) {
 }
 
 // Find components upward
-export function findComponentsUpward (context, componentName) {
+export function findComponentsUpward(context, componentName) {
   let parents = []
   const parent = context.$parent
   if (parent) {
@@ -226,7 +269,7 @@ export function findComponentsUpward (context, componentName) {
   }
 }
 
-function typeOf (obj) {
+function typeOf(obj) {
   const toString = Object.prototype.toString
   const map = {
     '[object Boolean]': 'boolean',
@@ -243,7 +286,7 @@ function typeOf (obj) {
   return map[toString.call(obj)]
 }
 
-export function deepCopy (data) {
+export function deepCopy(data) {
   const t = typeOf(data)
   let o
 

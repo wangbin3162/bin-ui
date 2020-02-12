@@ -32,7 +32,7 @@ function notice (options) {
 
 let defaultOption = {
   transitionName: 'move-up',
-  type: 'info',
+  type: 'primary',
   content: '',
   duration: 3,
   closable: false,
