@@ -11,6 +11,16 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.0</p>
+        <p class="time">2020-02-12</p>
+        <p class="content">修改文档布局</p>
+        <p class="content">修改滚动锚点，默认使用原生滚动，不优先使用scrollbar</p>
+        <p class="content">去除container容器组件，属于业务的布局需自行实现</p>
+        <p class="content">重构了抽屉组件，修复message大小</p>
+        <p class="content">修改form，modal弹窗，默认弹窗后更新body滚动条</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.6.6</p>
         <p class="time">2020-01-19</p>
         <p class="content">优化打包路径，增加按需加载模块</p>
