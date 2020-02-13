@@ -1,4 +1,6 @@
 // 去除空格
+import Vue from 'vue'
+
 const trim = function (string) {
   return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '')
 }
@@ -49,7 +51,7 @@ export const once = function (el, event, fn) {
 }
 
 // 是否有class类名
-export function hasClass (el, cls) {
+export function hasClass(el, cls) {
   if (!el || !cls) return false
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.')
   if (el.classList) {
@@ -60,7 +62,7 @@ export function hasClass (el, cls) {
 }
 
 // 添加class
-export function addClass (el, cls) {
+export function addClass(el, cls) {
   if (!el) return
   let curClass = el.className
   let classes = (cls || '').split(' ')
@@ -81,7 +83,7 @@ export function addClass (el, cls) {
 }
 
 // 移除一个class样式
-export function removeClass (el, cls) {
+export function removeClass(el, cls) {
   if (!el || !cls) return
   let classes = cls.split(' ')
   let curClass = ' ' + el.className + ' '
@@ -102,7 +104,7 @@ export function removeClass (el, cls) {
 }
 
 // getStyle
-export function getStyle (element, styleName) {
+export function getStyle(element, styleName) {
   if (!element || !styleName) return null
   styleName = camelCase(styleName)
   if (styleName === 'float') {
@@ -116,17 +118,45 @@ export function getStyle (element, styleName) {
   }
 }
 
+// 获取浏览器滚动条宽度
+export function getScrollBarWidth() {
+  let scrollBarWidth
+  if (Vue.prototype.$isServer) return 0
+  if (scrollBarWidth !== undefined) return scrollBarWidth
+
+  const outer = document.createElement('div')
+  outer.className = 'bin-scrollbar__wrap'
+  outer.style.visibility = 'hidden'
+  outer.style.width = '100px'
+  outer.style.position = 'absolute'
+  outer.style.top = '-9999px'
+  document.body.appendChild(outer)
+
+  const widthNoScroll = outer.offsetWidth
+  outer.style.overflow = 'scroll'
+
+  const inner = document.createElement('div')
+  inner.style.width = '100%'
+  outer.appendChild(inner)
+
+  const widthWithScroll = inner.offsetWidth
+  outer.parentNode.removeChild(outer)
+  scrollBarWidth = widthNoScroll - widthWithScroll
+
+  return scrollBarWidth
+}
+
 const SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g  // eslint-disable-line
 const MOZ_HACK_REGEXP = /^moz([A-Z])/ // eslint-disable-line
 
-function camelCase (name) {
+function camelCase(name) {
   return name.replace(SPECIAL_CHARS_REGEXP, function (_, separator, letter, offset) {
     return offset ? letter.toUpperCase() : letter
   }).replace(MOZ_HACK_REGEXP, 'Moz$1')
 }
 
 // scrollTop animation
-export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
+export function scrollTop(el, from = 0, to, duration = 500, endCallback) {
   if (!window.requestAnimationFrame) {
     window.requestAnimationFrame = (
       window.webkitRequestAnimationFrame ||
@@ -140,7 +170,7 @@ export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
   const difference = Math.abs(from - to)
   const step = Math.ceil(difference / duration * 50)
 
-  function scroll (start, end, step) {
+  function scroll(start, end, step) {
     if (start === end) {
       endCallback && endCallback()
       return
@@ -162,6 +192,6 @@ export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
   scroll(from, to, step)
 }
 
-export function firstUpperCase (str) {
+export function firstUpperCase(str) {
   return str.toString()[0].toUpperCase() + str.toString().slice(1)
 }

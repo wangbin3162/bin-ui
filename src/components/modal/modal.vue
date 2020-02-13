@@ -1,5 +1,5 @@
 <template>
-  <div class="bin-modal" v-show="wrapShow">
+  <div class="bin-modal">
     <transition name="fade-in-linear">
       <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click="handleMask"></div>
     </transition>

@@ -1,5 +1,5 @@
 // used for Modal  & Drawer
-import { getScrollBarSize } from '../utils/util'
+import { getScrollBarWidth } from '../utils/dom'
 
 export default {
   methods: {
@@ -11,7 +11,7 @@ export default {
       }
       this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth
       if (this.bodyIsOverflowing) {
-        this.scrollBarWidth = getScrollBarSize()
+        this.scrollBarWidth = getScrollBarWidth()
       }
     },
     checkMaskInVisible() {

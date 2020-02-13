@@ -396,7 +396,7 @@ height 和maxHeight可以设置固定表头
 ```html
 <template>
 <div style="width: 600px;">
-  <b-table :columns="columns3" :data="data" height="200"></b-table>
+  <b-table :columns="columns3" :data="data" height="200" border></b-table>
 </div>
 </template>
 <script>
