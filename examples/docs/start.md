@@ -28,12 +28,10 @@ new Vue({
 
 #### 按需引入
 
-借助 [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
-
-首先，安装 babel-plugin-component：
+借助插件 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)我们可以只引入需要的组件，以达到减小项目体积的目的
 
 ```shell script
-npm install babel-plugin-component -D
+npm install babel-plugin-import --save-dev
 ```
 
 然后，将 .babelrc 或 babel.config.js修改为：
@@ -46,13 +44,10 @@ module.exports = {
     }]
   ],
   plugins: [
-    [
-      'component',
-      {
-        'libraryName': 'bin-ui',
-        'styleLibraryName': 'styles'
-      }
-    ]
+    ["import", {
+     "libraryName": "bin-ui",
+     "libraryDirectory": "src/components"
+    }]
   ]
 }
 ```
@@ -76,6 +71,10 @@ new Vue({
   render: h => h(App)
 });
 ```
+
+特别提醒
+
+按需引用仍然需要导入样式，即在 main.js 或根组件执行 import 'view-design/dist/styles/iview.css';
 
 完整组件列表
 

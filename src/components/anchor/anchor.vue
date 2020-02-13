@@ -61,7 +61,8 @@
       handleScrollTo(to) {
         const offsetTop = to - this.scrollOffset
         this.animating = true
-        scrollTop(this.domEl, this.domEl.scrollTop, offsetTop, 1000, () => {
+        const currentPos = this.domEl.pageYOffset || this.domEl.scrollTop
+        scrollTop(this.domEl, currentPos, offsetTop, 1000, () => {
           this.animating = false
         })
       },

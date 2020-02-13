@@ -27,6 +27,7 @@
 <template>
     <div class="demo-button">
       <b-button v-waves>Default</b-button>
+      <b-button v-waves type="dashed">Dashed</b-button>
       <b-button type="primary" v-waves>Primary</b-button>
       <b-button type="success" v-waves>Success</b-button>
       <b-button type="info" v-waves>Info</b-button>

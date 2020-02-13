@@ -17,30 +17,6 @@ function compile () {
     .pipe(dest('../lib/styles'))
 }
 
-// 打包common
-function compileCommon () {
-  return src('../src/styles/common/*.styl')
-    .pipe(stylus())
-    .pipe(autoprefixer({
-      overrideBrowserslist: ['ie > 9', 'last 2 versions'],
-      cascade: false
-    }))
-    .pipe(cssmin())
-    .pipe(dest('../lib/styles/common'))
-}
-
-// 打包modules
-function compileModule () {
-  return src('../src/styles/modules/*.styl')
-    .pipe(stylus())
-    .pipe(autoprefixer({
-      overrideBrowserslist: ['ie > 9', 'last 2 versions'],
-      cascade: false
-    }))
-    .pipe(cssmin())
-    .pipe(dest('../lib/styles'))
-}
-
 // 复制字体包
 function copyfont () {
   return src('../src/styles/fonts/**')
@@ -48,4 +24,4 @@ function copyfont () {
     .pipe(dest('../lib/styles/fonts'))
 }
 
-task('default', series(compileCommon, compileModule, compile, copyfont))
+task('default', series(compile, copyfont))

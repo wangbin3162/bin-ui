@@ -2,6 +2,8 @@
 import corePlugin from './plugin/core'
 // 组件
 import CollapseTransition from './components/base/collapse-transition'
+import Row from './components/row'
+import Col from './components/col'
 import Icon from './components/icon'
 import Button from './components/button'
 import ButtonGroup from './components/button-group'
@@ -63,7 +65,7 @@ import LoadingBar from './components/loadingbar'
 import Message from './components/message'
 
 const components = [
-  Icon, Button, ButtonGroup, ScrollBar,
+  Row, Col, Icon, Button, ButtonGroup, ScrollBar,
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
@@ -97,6 +99,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
+  Row,
+  Col,
   Icon,
   Button,
   ButtonGroup,

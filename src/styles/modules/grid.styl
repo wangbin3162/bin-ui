@@ -1,0 +1,77 @@
+@import "../common/mixins.styl"
+
+.bin-row {
+  display: block;
+  make-row()
+  &-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &:before,
+    &:after {
+      display: flex;
+    }
+    // x轴原点
+    &-start {
+      justify-content: flex-start;
+    }
+    // x轴居中
+    &-center {
+      justify-content: center;
+    }
+    // x轴反方向
+    &-end {
+      justify-content: flex-end;
+    }
+    // x轴平分
+    &-space-between {
+      justify-content: space-between;
+    }
+    // x轴有间隔地平分
+    &-space-around {
+      justify-content: space-around;
+    }
+    // 顶部对齐
+    &-top {
+      align-items: flex-start;
+    }
+    // 居中对齐
+    &-middle {
+      align-items: center;
+    }
+    // 底部对齐
+    &-bottom {
+      align-items: flex-end;
+    }
+  }
+}
+
+.bin-col {
+  position: relative;
+  display: block;
+}
+
+make-grid();
+
+make-grid(-xs);
+
+@media (min-width: 576px) {
+  make-grid(-sm);
+}
+
+
+@media (min-width: 768px) {
+  make-grid(-md);
+}
+
+@media (min-width: 992px) {
+  make-grid(-lg);
+}
+
+@media (min-width: 1200px) {
+  make-grid(-xl);
+}
+
+@media (min-width: 1600px) {
+  make-grid(-xxl);
+}

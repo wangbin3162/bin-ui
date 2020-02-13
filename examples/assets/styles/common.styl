@@ -165,3 +165,29 @@ table {
     margin: 0;
   }
 }
+
+.demo-grid {
+  .code-row-bg {
+    background: #eeeeee;
+  }
+  .bin-col {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    background: rgba(0, 153, 229, .8);
+    &:nth-child(odd) {
+      background: rgba(0, 153, 229, .5);
+    }
+  }
+  .gutter {
+    .bin-col {
+      background: transparent !important;
+      > div {
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        background: rgba(0, 153, 229, .8);
+      }
+    }
+  }
+}

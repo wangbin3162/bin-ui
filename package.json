@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
     "build:demo": "cross-env NODE_ENV=production webpack --config build/webpack.dev.conf.js",
-    "build": "npm run build:lib && npm run build:component && npm run build:style",
+    "build": "npm run build:lib && npm run build:style",
     "build:style": "gulp --gulpfile build/build-style.js",
     "build:lib": "npm run build:common && npm run build:prod",
     "build:common": "webpack --config build/webpack.common.js",

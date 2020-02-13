@@ -71,6 +71,12 @@
       "icon": "ios-bookmarks",
       "items": [
         {
+          "desc": "Grid 栅格",
+          "icon": "ios-grid",
+          "name": "grid",
+          "path": "/grid"
+        },
+        {
           "desc": "ScrollBar 滚动",
           "icon": "ios-infinite",
           "name": "scrollbar",

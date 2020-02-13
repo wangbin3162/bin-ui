@@ -14,8 +14,7 @@ $root = bin
   box-sizing: border-box;
   outline: none;
   margin: 0;
-  transition: .3s;
-  font-weight: 500;
+  transition: .2s;
   user-select: none;
   padding: 10px 20px;
   font-size: 14px;
@@ -30,7 +29,6 @@ $root = bin
   &:hover {
     color: $color-primary;
     border-color: $color-primary-light5;
-    background-color: $color-primary-light6;
     box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
   }
   &:focus {
@@ -53,6 +51,11 @@ $root = bin
     &:hover {
       color: $color-primary;
       border-color: $color-primary;
+    }
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      background: transparent;
+      cursor: not-allowed;
+      color: #fff;
     }
   }
   &.is-loading {
@@ -111,6 +114,10 @@ $root = bin
       color: $color-primary;
       background-color: rgba(245, 249, 254, .5);
     }
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      border-color: $color-primary-light3;
+      color: $color-primary-light3;
+    }
   }
   &.is-plain {
     color: $color-primary;
@@ -153,6 +160,10 @@ $root = bin
       border-color: $color-success;
       color: $color-success;
       background-color: rgba(245, 249, 254, .5);
+    }
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      border-color: $color-success-light3;
+      color: $color-success-light3;
     }
   }
   &.is-plain {
@@ -197,6 +208,10 @@ $root = bin
       color: $color-info;
       background-color: rgba(245, 249, 254, .5);
     }
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      border-color: $color-info-light3;
+      color: $color-info-light3;
+    }
   }
   &.is-plain {
     color: $color-info;
@@ -240,6 +255,10 @@ $root = bin
       color: $color-warning;
       background-color: rgba(245, 249, 254, .5);
     }
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      border-color: $color-warning-light3;
+      color: $color-warning-light3;
+    }
   }
   &.is-plain {
     color: $color-warning;
@@ -282,6 +301,10 @@ $root = bin
       color: $color-danger;
       background-color: rgba(245, 249, 254, .5);
     }
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      border-color: $color-danger-light3;
+      color: $color-danger-light3;
+    }
   }
   &.is-plain {
     color: $color-danger;
@@ -309,8 +332,7 @@ $root = bin
   border-color: transparent;
   color: $color-info;
   background: transparent;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   &:focus, &:hover {
     color: $color-primary;
     border-color: transparent;
@@ -319,9 +341,12 @@ $root = bin
   }
   &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
     cursor: not-allowed;
-    background-image: none;
+    background-color: transparent;
     border-color: transparent;
   }
+}
+.{$root}-button--dashed {
+  border-style: dashed;
 }
 //  button-group
 .{$root}-button-group {
