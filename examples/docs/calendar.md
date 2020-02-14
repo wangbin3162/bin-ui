@@ -50,3 +50,12 @@
 | mini | 迷你模式 | Boolean  | l—  |   —  |
 | body-style   | 日期表body样式 | Object  | —  |   —  |
 | day-style  | 每天样式 | Object  | —  |   —  |
+
+### Events
+
+| 事件名      | 说明    | 返回值      |
+|---------- |-------- |---------- |
+| on-prev  | 上个月按钮事件  | —  |
+| on-next  | 下个月按钮事件  | —  |
+| on-today  | 今天按钮事件  | —  |
+| on-select-day  | 选中某一天事件  | day |

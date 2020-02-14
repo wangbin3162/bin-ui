@@ -154,7 +154,7 @@
         prevMonth.setMonth(prevMonth.getMonth() - 1)
         this.time = utils.getNewDate(prevMonth)
         this.initVisibleCalendar()
-        this.$emit('handlePrevMonth')
+        this.$emit('on-prev')
       },
       // 下一个月
       handleNextMonth() {
@@ -162,13 +162,13 @@
         nextMonth.setMonth(nextMonth.getMonth() + 1)
         this.time = utils.getNewDate(nextMonth)
         this.initVisibleCalendar()
-        this.$emit('handleNextMonth')
+        this.$emit('on-next')
       },
       // 点击回到今天
       handleToday() {
         this.time = utils.getNewDate(new Date())
         this.initVisibleCalendar()
-        this.$emit('handleToday')
+        this.$emit('on-today')
       },
       // 点击某一天
       handleSelectDay(item) {

@@ -11,6 +11,15 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.3</p>
+        <p class="time">2020-02-14</p>
+        <p class="content">更新打包资源，尝试使用按需加载，需验证可用性</p>
+        <p class="content">增加栅格组件</p>
+        <p class="content">增加日历组件</p>
+        <p class="content">优化按钮样式</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.7.2</p>
         <p class="time">2020-02-13</p>
         <p class="content">修改模态窗弹窗样式</p>
