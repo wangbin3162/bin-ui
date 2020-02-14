@@ -327,6 +327,12 @@
           "path": "/drawer"
         },
         {
+          "desc": "Calendar 日历组件",
+          "icon": "ios-calendar",
+          "name": "calendar",
+          "path": "/calendar"
+        },
+        {
           "desc": "Carousel 轮播",
           "icon": "ios-film",
           "name": "carousel",

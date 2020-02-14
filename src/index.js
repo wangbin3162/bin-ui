@@ -60,6 +60,7 @@ import Anchor from './components/anchor'
 import AnchorLink from './components/anchor-link'
 import Carousel from './components/carousel'
 import CarouselItem from './components/carousel-item'
+import Calendar from './components/calendar'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
 import Message from './components/message'
@@ -70,7 +71,7 @@ const components = [
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
-  Form, FormItem, Tabs,
+  Form, FormItem, Tabs, Calendar,
   Dropdown, DropdownItem, DropdownMenu,
   Select, Option, OptionGroup, Table, Page, Tree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
@@ -159,5 +160,6 @@ export default {
   Anchor,
   AnchorLink,
   Carousel,
-  CarouselItem
+  CarouselItem,
+  Calendar
 }
