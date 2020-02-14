@@ -11,17 +11,17 @@
 在 main.js 中写入以下内容：
 
 ```javascript
-import Vue from 'vue';
-import BinUI from 'bin-ui';
-import 'bin-ui/lib/style/index.css';
-import App from './App.vue';
+import Vue from 'vue'
+import App from './App.vue'
+import BinUI from 'bin-ui'
+import 'bin-ui/lib/styles/index.css'
 
-Vue.use(BinUI);
+Vue.use(BinUI)
 
 new Vue({
   el: '#app',
   render: h => h(App)
-});
+})
 ```
 
 以上代码便完成了 bin-ui 的引入。需要注意的是，样式文件需要单独引入。
@@ -52,18 +52,20 @@ module.exports = {
 }
 ```
 
-如果你只希望引入部分组件，比如 Button 和 Select，那么需要在 main.js 中写入以下内容：
+如果你只希望引入部分组件，比如 Button 和 Icon，那么需要在 main.js 中写入以下内容
 
 ```javascript
 import Vue from 'vue';
-import { Button, Select } from 'bin-ui';
-import App from './App.vue';
+import { Button, Message, Icon } from 'bin-ui'
+import waves from 'bin-ui/src/directive/waves' // 引入指令
 
-Vue.component(Button.name, Button);
-Vue.component(Select.name, Select);
+Vue.component(Button.name,Button)
+Vue.component(Icon.name,Icon)
+Vue.directive('waves', waves)  // 注册全局指令
+Vue.prototype.$message = Message.message // 注册全局message方法
 /* 或写为
  * Vue.use(Button)
- * Vue.use(Select)
+ * Vue.use(Icon)
  */
 
 new Vue({
@@ -72,74 +74,74 @@ new Vue({
 });
 ```
 
-特别提醒
-
-按需引用仍然需要导入样式，即在 main.js 或根组件执行 import 'view-design/dist/styles/iview.css';
+**特别提醒:按需引用仍然需要导入样式，即在 main.js 或根组件 import 'bin-ui/lib/styles/index.css';**
 
 完整组件列表
 
 ```javascript
 import {
-  Icon,
-  Button,
-  ButtonGroup,
-  ScrollBar,
-  BackTop,
-  Card,
-  Divider,
-  Modal,
-  Drawer,
-  Tag,
-  Tabs,
-  Progress,
-  Circle,
-  Alert,
-  Loading,
-  CollapseTransition,
-  Collapse,
-  CollapsePanel,
-  Breadcrumb,
-  breadcrumbItem,
-  LoadingBar,
-  Message,
-  Badge,
-  Input,
-  InputNumber,
-  Rate,
-  Switch,
-  Checkbox,
-  CheckboxGroup,
-  Radio,
-  RadioGroup,
-  Tooltip,
-  Form,
-  FormItem,
-  Container,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  Select,
-  Option,
-  OptionGroup,
-  Cascade,
-  Table,
-  Page,
-  Tree,
-  Menu,
-  SubMenu,
-  MenuItem,
-  MenuItemGroup,
-  Upload,
-  DatePicker,
-  TimePicker,
-  ColorPicker,
-  Timeline,
-  TimelineItem,
-  Affix,
-  Anchor,
-  AnchorLink,
-  Carousel,
-  CarouselItem
+    Row,
+    Col,
+    Icon,
+    Button,
+    ButtonGroup,
+    ScrollBar,
+    BackTop,
+    Card,
+    Divider,
+    Modal,
+    Drawer,
+    Tag,
+    Tabs,
+    Progress,
+    Circle,
+    Alert,
+    Loading,
+    CollapseTransition,
+    Collapse,
+    CollapsePanel,
+    Breadcrumb,
+    breadcrumbItem,
+    LoadingBar,
+    Message,
+    Badge,
+    Input,
+    InputNumber,
+    Rate,
+    Switch,
+    Checkbox,
+    CheckboxGroup,
+    Radio,
+    RadioGroup,
+    Tooltip,
+    Form,
+    FormItem,
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    Select,
+    Option,
+    OptionGroup,
+    Cascade,
+    Table,
+    Page,
+    Tree,
+    Menu,
+    SubMenu,
+    MenuItem,
+    MenuItemGroup,
+    Upload,
+    DatePicker,
+    TimePicker,
+    ColorPicker,
+    Timeline,
+    TimelineItem,
+    Affix,
+    Anchor,
+    AnchorLink,
+    Carousel,
+    CarouselItem,
+    Calendar
 } from 'bin-ui';
 ```
 

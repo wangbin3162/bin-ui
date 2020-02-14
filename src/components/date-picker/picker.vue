@@ -1,69 +1,69 @@
 <template>
   <div
-    :class="wrapperClasses"
-    v-click-outside="handleClose"
+      :class="wrapperClasses"
+      v-click-outside="handleClose"
   >
     <div ref="reference" :class="[prefixCls + '-rel']">
       <slot>
         <b-input
-          :key="forceInputRerender"
-          :element-id="elementId"
-          :class="[prefixCls + '-editor']"
-          :readonly="!editable || readonly"
-          :disabled="disabled"
-          :size="size"
-          :placeholder="placeholder"
-          :value="visualValue"
-          :name="name"
-          ref="input"
+            :key="forceInputRerender"
+            :element-id="elementId"
+            :class="[prefixCls + '-editor']"
+            :readonly="!editable || readonly"
+            :disabled="disabled"
+            :size="size"
+            :placeholder="placeholder"
+            :value="visualValue"
+            :name="name"
+            ref="input"
 
-          @on-input-change="handleInputChange"
-          @on-focus="handleFocus"
-          @on-blur="handleBlur"
-          @click.native="handleFocus"
-          @keydown.native="handleKeydown"
-          @mouseenter.native="handleInputMouseenter"
-          @mouseleave.native="handleInputMouseleave"
+            @on-input-change="handleInputChange"
+            @on-focus="handleFocus"
+            @on-blur="handleBlur"
+            @click.native="handleFocus"
+            @keydown.native="handleKeydown"
+            @mouseenter.native="handleInputMouseenter"
+            @mouseleave.native="handleInputMouseleave"
         >
-          <b-icon @click.native="handleIconClick" :name="arrowType" slot="suffix"/>
+          <b-icon @click.native.stop.prevent="handleIconClick($event)" :name="arrowType" slot="suffix"/>
         </b-input>
       </slot>
     </div>
     <transition name="zoom-in-top">
       <drop
-        @click.native="handleTransferClick"
-        v-show="opened"
-        :class="{ [prefixCls + '-transfer']: appendToBody }"
-        :placement="placement"
-        ref="drop"
-        :data-transfer="appendToBody"
-        :transfer="appendToBody"
-        v-transfer-dom>
+          @click.native="handleTransferClick"
+          v-show="opened"
+          :class="{ [prefixCls + '-transfer']: appendToBody }"
+          :placement="placement"
+          ref="drop"
+          :data-transfer="appendToBody"
+          :transfer="appendToBody"
+          v-transfer-dom>
         <div>
           <component
-            :is="panel"
-            ref="pickerPanel"
-            :visible="visible"
-            :showTime="type === 'datetime' || type === 'datetimerange'"
-            :confirm="isConfirm"
-            :selectionMode="selectionMode"
-            :steps="steps"
-            :format="format"
-            :value="internalValue"
-            :start-date="startDate"
-            :split-panels="splitPanels"
-            :show-week-numbers="showWeekNumbers"
-            :picker-type="type"
-            :multiple="multiple"
-            :focused-date="focusedDate"
-            :time-picker-options="timePickerOptions"
-            v-bind="ownPickerProps"
+              :is="panel"
+              ref="pickerPanel"
+              :visible="visible"
+              :showTime="type === 'datetime' || type === 'datetimerange'"
+              :confirm="isConfirm"
+              :selectionMode="selectionMode"
+              :steps="steps"
+              :format="format"
+              :value="internalValue"
+              :start-date="startDate"
+              :split-panels="splitPanels"
+              :show-week-numbers="showWeekNumbers"
+              :picker-type="type"
+              :multiple="multiple"
+              :focused-date="focusedDate"
+              :time-picker-options="timePickerOptions"
+              v-bind="ownPickerProps"
 
-            @on-pick="onPick"
-            @on-pick-clear="handleClear"
-            @on-pick-success="onPickSuccess"
-            @on-pick-click="disableClickOutSide = true"
-            @on-selection-mode-change="onSelectionModeChange"
+              @on-pick="onPick"
+              @on-pick-clear="handleClear"
+              @on-pick-success="onPickSuccess"
+              @on-pick-click="disableClickOutSide = true"
+              @on-selection-mode-change="onSelectionModeChange"
           ></component>
         </div>
       </drop>
@@ -164,7 +164,7 @@
         type: Date
       },
       size: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['small', 'large', 'default'])
         },
         default: 'default'
@@ -174,7 +174,7 @@
         default: ''
       },
       placement: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'])
         },
         default: 'bottom-start'
@@ -205,7 +205,7 @@
         default: ' - '
       }
     },
-    data () {
+    data() {
       const isRange = this.type.includes('range')
       const emptyArray = isRange ? [null, null] : [null]
       const initialValue = isEmptyArray((isRange ? this.value : [this.value]) || []) ? emptyArray : this.parseDate(this.value)
@@ -232,12 +232,12 @@
       }
     },
     computed: {
-      wrapperClasses () {
+      wrapperClasses() {
         return [prefixCls, {
           [prefixCls + '-focused']: this.isFocused
         }]
       },
-      publicVModelValue () {
+      publicVModelValue() {
         if (this.multiple) {
           return this.internalValue.slice()
         } else {
@@ -248,26 +248,26 @@
           return (isRange || this.multiple) ? val : val[0]
         }
       },
-      publicStringValue () {
+      publicStringValue() {
         const { formatDate, publicVModelValue, type } = this
         if (type.match(/^time/)) return publicVModelValue
         if (this.multiple) return formatDate(publicVModelValue)
         return Array.isArray(publicVModelValue) ? publicVModelValue.map(formatDate) : formatDate(publicVModelValue)
       },
-      opened () {
+      opened() {
         return this.open === null ? this.visible : this.open
       },
-      transition () {
+      transition() {
         const bottomPlaced = this.placement.match(/^bottom/)
         return bottomPlaced ? 'slide-up' : 'slide-down'
       },
-      visualValue () {
+      visualValue() {
         return this.formatDate(this.internalValue)
       },
-      isConfirm () {
+      isConfirm() {
         return this.confirm || this.type === 'datetime' || this.type === 'datetimerange' || this.multiple
       },
-      arrowType () {
+      arrowType() {
         let type = ''
         if (this.type === 'time' || this.type === 'timerange') {
           type = 'ios-timer'
@@ -279,16 +279,16 @@
       }
     },
     methods: {
-      onSelectionModeChange (type) {
+      onSelectionModeChange(type) {
         if (type.match(/^date/)) type = 'date'
         this.selectionMode = oneOf(type, ['year', 'month', 'date', 'time']) && type
         return this.selectionMode
       },
       // 开启 transfer 时，点击 Drop 即会关闭，这里不让其关闭
-      handleTransferClick () {
+      handleTransferClick() {
         if (this.appendToBody) this.disableCloseUnderTransfer = true
       },
-      handleClose (e) {
+      handleClose(e) {
         if (this.disableCloseUnderTransfer) {
           this.disableCloseUnderTransfer = false
           return false
@@ -314,7 +314,7 @@
         this.isFocused = false
         this.disableClickOutSide = false
       },
-      handleFocus (e) {
+      handleFocus(e) {
         if (this.readonly) return
         this.isFocused = true
         if (e && e.type === 'focus') return // just focus, don't open yet
@@ -322,7 +322,7 @@
           this.visible = true
         }
       },
-      handleBlur (e) {
+      handleBlur(e) {
         if (this.internalFocus) {
           this.internalFocus = false
           return
@@ -338,7 +338,7 @@
         this.reset()
         this.$refs.pickerPanel.onToggleVisibility(false)
       },
-      handleKeydown (e) {
+      handleKeydown(e) {
         const keyCode = e.keyCode
 
         // handle "tab" key
@@ -409,10 +409,10 @@
         if (this.focusedTime.active) e.preventDefault() // to prevent cursor from moving
         this.navigateDatePanel(keyValueMapper[keyCode], e.shiftKey)
       },
-      reset () {
+      reset() {
         this.$refs.pickerPanel.reset && this.$refs.pickerPanel.reset()
       },
-      navigateTimePanel (direction) {
+      navigateTimePanel(direction) {
         this.focusedTime.active = true
         const horizontal = direction.match(/left|right/)
         const vertical = direction.match(/up|down/)
@@ -435,8 +435,11 @@
             time: time
           }
           timePickers.forEach((instance, i) => {
-            if (i === pickerIndex) instance.updateFocusedTime(col, time[pickerIndex])
-            else instance.updateFocusedTime(-1, instance.focusedTime)
+            if (i === pickerIndex) {
+              instance.updateFocusedTime(col, time[pickerIndex])
+            } else {
+              instance.updateFocusedTime(-1, instance.focusedTime)
+            }
           })
         }
         if (vertical) {
@@ -457,12 +460,15 @@
           }
 
           timePickers.forEach((instance, i) => {
-            if (i === pickerIndex) instance.updateFocusedTime(col, times[i])
-            else instance.updateFocusedTime(-1, instance.focusedTime)
+            if (i === pickerIndex) {
+              instance.updateFocusedTime(col, times[i])
+            } else {
+              instance.updateFocusedTime(-1, instance.focusedTime)
+            }
           })
         }
       },
-      navigateDatePanel (direction, shift) {
+      navigateDatePanel(direction, shift) {
         const timePickers = findComponentsDownward(this, 'TimeSpinner')
         if (timePickers.length > 0) {
           // we are in TimePicker mode
@@ -527,7 +533,7 @@
         }
         this.focusedDate = focusedDate
       },
-      handleInputChange (event) {
+      handleInputChange(event) {
         const isArrayValue = this.type.includes('range') || this.multiple
         const oldValue = this.visualValue
         const newValue = event.target.value
@@ -547,16 +553,16 @@
           this.forceInputRerender++
         }
       },
-      handleInputMouseenter () {
+      handleInputMouseenter() {
         if (this.readonly || this.disabled) return
         if (this.visualValue && this.clearable) {
           this.showClose = true
         }
       },
-      handleInputMouseleave () {
+      handleInputMouseleave() {
         this.showClose = false
       },
-      handleIconClick (e) {
+      handleIconClick(e) {
         if (this.showClose) {
           if (e) e.stopPropagation()
           this.handleClear()
@@ -564,7 +570,7 @@
           this.handleFocus()
         }
       },
-      handleClear () {
+      handleClear() {
         this.visible = false
         this.internalValue = this.internalValue.map(() => null)
         this.$emit('on-clear')
@@ -577,13 +583,13 @@
           500 // delay to improve dropdown close visual effect
         )
       },
-      emitChange (type) {
+      emitChange(type) {
         this.$nextTick(() => {
           this.$emit('on-change', this.publicStringValue, type)
           this.dispatch('BFormItem', 'on-form-change', this.publicStringValue)
         })
       },
-      parseDate (val) {
+      parseDate(val) {
         const isRange = this.type.includes('range')
         const type = this.type
         const parser = (
@@ -622,7 +628,7 @@
 
         return (isRange || this.multiple) ? (val || []) : [val]
       },
-      formatDate (value) {
+      formatDate(value) {
         const format = DEFAULT_FORMATS[this.type]
 
         if (this.multiple) {
@@ -636,7 +642,7 @@
           return formatter(value, this.format || format, this.separator)
         }
       },
-      onPick (dates, visible = false, type) {
+      onPick(dates, visible = false, type) {
         if (this.multiple) {
           const pickedTimeStamp = dates.getTime()
           const indexOfPickedDate = this.internalValue.findIndex(date => date && date.getTime() === pickedTimeStamp)
@@ -658,44 +664,44 @@
         if (!this.isConfirm) this.visible = visible
         this.emitChange(type)
       },
-      onPickSuccess () {
+      onPickSuccess() {
         this.visible = false
         this.$emit('on-ok')
         this.focus()
         this.reset()
       },
-      focus () {
+      focus() {
         this.$refs.input && this.$refs.input.focus()
       },
-      updatePopper () {
+      updatePopper() {
         this.$refs.drop.update()
       }
     },
     watch: {
-      visible (state) {
+      visible(state) {
         if (state === false) {
           this.$refs.drop.destroy()
         }
         this.$refs.drop.update()
         this.$emit('on-open-change', state)
       },
-      value (val) {
+      value(val) {
         this.internalValue = this.parseDate(val)
       },
-      open (val) {
+      open(val) {
         this.visible = val === true
       },
-      type (type) {
+      type(type) {
         this.onSelectionModeChange(type)
       },
-      publicVModelValue (now, before) {
+      publicVModelValue(now, before) {
         const newValue = JSON.stringify(now)
         const oldValue = JSON.stringify(before)
         const shouldEmitInput = newValue !== oldValue || typeof now !== typeof before
         if (shouldEmitInput) this.$emit('input', now) // to update v-model
       }
     },
-    mounted () {
+    mounted() {
       const initialValue = this.value
       const parsedValue = this.publicVModelValue
       if (typeof initialValue !== typeof parsedValue || JSON.stringify(initialValue) !== JSON.stringify(parsedValue)) {

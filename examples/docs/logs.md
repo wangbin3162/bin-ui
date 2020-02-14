@@ -1,6 +1,6 @@
 ## 更新日志
 
-更新日志已使用时间轴实现，根据不同的更新类型来设置颜色和图标，重大更新或重要版本标志为`success`
+重要版本标志为`success`,推荐使用最新版，2.7.4版本之后支持按需引入，可减小体积，后台管理系统推荐全系引入。
 
 :::tip
 有新增组件使用`primary`样式`ios-leaf`图标，修复优化使用`warning`样式`ios-construct`图标
@@ -9,14 +9,15 @@
 <template>
 <div class="doc-update">
     <b-timeline>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.7.3</p>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.4</p>
         <p class="time">2020-02-14</p>
-        <p class="content">更新打包资源，尝试使用按需加载，需验证可用性</p>
+        <p class="content">更新打包资源,更换按需引入文档</p>
         <p class="content">增加栅格组件</p>
         <p class="content">增加日历组件</p>
         <p class="content">优化按钮样式</p>
+        <p class="content">优化文本域输入文字大小，优化datepicker清空功能。</p>
       </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
@@ -102,59 +103,23 @@
         <p class="version">2.3.5</p>
         <p class="time">2019-11-22</p>
         <p class="content">新增ColorPicker颜色选择组件</p>
+        <p class="content">新增一个轮播组件</p>
+        <p class="content">新增图钉固定组件</p>
+        <p class="content">新增锚点导航组件</p>
+        <p class="content">新增级联选择框组件</p>
+        <p class="content">更新级联选择表单验证示例</p>
+        <p class="content">优化输入框清除图标的垂直居中显示</p>
         <p class="content">文档新增查询组件搜索下拉框，以便于实现快速搜索组件</p>
         <p class="content">优化级联选择器缝隙问题</p>
         <p class="content">优化选择框组件样式</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.3.4</p>
-        <p class="time">2019-11-11</p>
-        <p class="content">新增一个轮播组件</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.3.3</p>
-        <p class="time">2019-10-30</p>
         <p class="content">返回顶部滚动组件，支持普通div盒子</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.3.2</p>
-        <p class="time">2019-10-30</p>
-        <p class="content">优化container组件顶部底部宽度配置</p>
-        <p class="content">优化样式</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.3.1</p>
-        <p class="time">2019-10-26</p>
-        <p class="content">优化文档和打包配置</p>
-        <p class="content">优化工程目录结构</p>
-        <p class="content">修复input-number输入框样式</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.3.0</p>
-        <p class="time">2019-10-26</p>
         <p class="content">重构项目构建工具，重新打包整理文档</p>
-        <p class="content">修复部分样式</p>
       </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.1.2</p>
-        <p class="time">2019-9-5</p>
-        <p class="content">新增图钉固定组件</p>
-        <p class="content">新增锚点导航组件</p>
-        <p class="content">优化输入框清除图标的垂直居中显示</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.1.1</p>
-        <p class="time">2019-9-3</p>
-        <p class="content">新增级联选择框组件</p>
-        <p class="content">更新级联选择表单验证示例</p>
-        <p class="content">优化message显示圆角问题</p>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">2.1 ~ 2.0</p>
+        <p class="time">2019-8-29 ~ 2019-11-22</p>
+        <p class="content">小版本迭代，修复部分bug等</p>
       </b-timeline-item>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
@@ -170,116 +135,10 @@
       </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">2.0.4</p>
-        <p class="time">2019-8-26</p>
-        <p class="content">修复菜单栏下拉后图标的错位问题</p>
+        <p class="version">1.0 ~ 2.0</p>
+        <p class="time">2019-4-12 ~ 2019-8-28</p>
+        <p class="content">小版本迭代，基础打包模块修改，文档地址修改等</p>
       </b-timeline-item>
-      <b-timeline-item color="warning">
-        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">2.0.3</p>
-        <p class="time">2019-8-23</p>
-        <p class="content">修复tag标签页的背景颜色为透明</p>
-        <p class="content">调整文本输入框禁用样式，调整数字输入框的上下箭头显示</p>
-        <p class="content">菜单文档和table文档更新api记录</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-paper" slot="dot" size="20"></b-icon>
-        <p class="version">2.0.2</p>
-        <p class="time">2019-7-27</p>
-        <p class="content">更新文档api地址</p>
-      </b-timeline-item>
-      <b-timeline-item color="warning">
-        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">2.0.1</p>
-        <p class="time">2019-7-25</p>
-        <p class="content">修复菜单栏下拉框样式</p>
-        <p class="content">修改部分文档说明</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.0.0 full edition</p>
-        <p class="time">2019-7-25</p>
-        <p class="content">新增表格组件</p>
-        <p class="content">新增菜单组件</p>
-        <p class="content">优化部分样式显示</p>
-        <p class="content">优化message扩大显示</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">1.5.0</p>
-        <p class="time">2019-7-24</p>
-        <p class="content">新增滚动容器组件Container</p>
-        <p class="content">新增Dropdown下拉菜单</p>
-        <p class="content">新增select下拉选择器</p>
-        <p class="content">新增page分页组件</p>
-        <p class="content">新增Tree树结构菜单</p>
-        <p class="content">优化文档、修复部分样式问题</p>
-      </b-timeline-item>
-      <b-timeline-item color="warning">
-        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">1.4.6</p>
-        <p class="time">2019-7-14</p>
-        <p class="content">添加基础form及校验功能</p>
-        <p class="content">优化按钮大小</p>
-        <p class="content">优化滚动条，增加一直显示和样式修改。</p>
-        <p class="content">优化首屏加载，评分组件样式，form-item面包屑等颜色值</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">1.4.3</p>
-        <p class="time">2019-5-9</p>
-        <p class="content">新增rate评分组件</p>
-        <p class="content">新增单选框组件</p>
-        <p class="content">新增多选框组件</p>
-        <p class="content">新增开关组件</p>
-        <p class="content">新增数字输入组件</p>
-        <p class="content">新增tooltip提示组件</p>
-        <p class="content">优化左侧组件次序，优化打印输出功能</p>
-        <p class="content">优化tooltip样式，优化代码和doc结构</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">1.3.8</p>
-        <p class="time">2019-4-30</p>
-        <p class="content">新增input基础输入框</p>
-        <p class="content">新增面包屑</p>
-        <p class="content">新增徽标</p>
-        <p class="content">新增全局message提示功能</p>
-        <p class="content">新增动态模态框</p>
-        <p class="content">新增collapse展开伸缩组件</p>
-        <p class="content">新增展开伸缩公共样式</p>
-      </b-timeline-item>  
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">1.3.5</p>
-        <p class="time">2019-4-26</p>
-        <p class="content">新增tag标签</p>
-        <p class="content">新增circle进度环组件</p>
-        <p class="content">新增alert组件</p>
-        <p class="content">新增progressbar组件</p>
-        <p class="content">新增loading组件和loadingBar组件</p>
-        <p class="content">修改部分样式bug，添加几个图标资源</p>
-        <p class="content">编写内置过渡动画的文档</p>
-        <p class="content">修复icon-loading加载动画功能</p>
-        <p class="content">加入开原协议</p>
-        <p class="content">重构图标来源，重新编写引入图标组件，优化返回顶部组件。</p>
-      </b-timeline-item>  
-      <b-timeline-item color="warning">
-        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">1.2.3</p>
-        <p class="time">2019-4-22</p>
-        <p class="content">微调按钮样式</p>
-        <p class="content">修复模态框和抽屉的样式前缀</p>
-        <p class="content">抽屉组件添加参数说明，按钮样式调整</p>
-      </b-timeline-item>  
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">1.2.0</p>
-        <p class="time">2019-4-22</p>
-        <p class="content">新增模态框组件</p>
-        <p class="content">新增抽屉组件</p>
-        <p class="content">重新布局文档样式</p>
-      </b-timeline-item>  
       <b-timeline-item color="danger">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">1.0.0</p>
