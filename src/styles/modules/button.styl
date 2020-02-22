@@ -76,15 +76,15 @@ $root = bin
   }
 }
 .{$root}-button--small {
-  padding: 9px 10px;
+  padding: 9px 14px;
   font-size: 12px;
   border-radius: 3px;
   &.is-round {
-    padding: 9px 10px;
+    padding: 9px 14px;
   }
 }
 .{$root}-button--mini {
-  padding: 5px 7px;
+  padding: 5px 8px;
   font-size: 12px;
   border-radius: 3px;
   &.is-round {
@@ -377,11 +377,11 @@ $root = bin
 
 .{$root}-button--text {
   border-color: transparent;
-  color: $color-info;
+  color: $color-primary;
   background: transparent;
   padding: 0;
   &:focus, &:hover {
-    color: $color-primary;
+    color: $color-primary-light2;
     border-color: transparent;
     background-color: transparent;
     box-shadow: none;
@@ -390,6 +390,7 @@ $root = bin
     cursor: not-allowed;
     background-color: transparent;
     border-color: transparent;
+    color: $color-primary-light5;
   }
 }
 .{$root}-button--dashed {

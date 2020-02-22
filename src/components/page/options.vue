@@ -56,7 +56,7 @@
     },
     computed: {
       size () {
-        return this.isSmall ? 'small' : 'default'
+        return this.isSmall ? 'mini' : 'small'
       },
       optsClasses () {
         return [
