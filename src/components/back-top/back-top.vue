@@ -19,7 +19,7 @@
     props: {
       height: {
         type: Number,
-        default: 150
+        default: 400
       },
       bottom: {
         type: Number,
@@ -87,7 +87,8 @@
     methods: {
       // 滚动监听事件
       handleScroll() {
-        this.backTop = this.domEl.pageYOffset || this.domEl.scrollTop >= this.height
+        const sTop = this.domEl !== window ? (this.domEl.pageYOffset || this.domEl.scrollTop) : (document.documentElement.scrollTop || document.body.scrollTop)
+        this.backTop = sTop >= this.height
       },
       back() {
         const sTop = this.domEl !== window ? (this.domEl.pageYOffset || this.domEl.scrollTop) : (document.documentElement.scrollTop || document.body.scrollTop)
