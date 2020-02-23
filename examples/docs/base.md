@@ -22,6 +22,7 @@
     Vue.prototype.$open = util.open
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
+    Vue.prototype.$resize = { addResizeListener, removeResizeListener }
 ```
 
 util方法函数
@@ -37,11 +38,12 @@ util方法函数
 | deepClone | 深拷贝函数   | obj/arr  |
 
 
-$scrollTop 滚动函数
+扩展函数
 
 | 方法名     | 说明    | 参数      |
 |---------- |-------- |---------- |
 | $scrollTop | 滚动函数   | el, from = 0, to, duration = 500, endCallback  |
+| $resize | 大小重绘函数,用于监听div   | el, fun  |
 
 ### flex.css使用
 

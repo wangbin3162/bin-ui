@@ -7,9 +7,10 @@ import waves from '../../directive/waves'
 import util from '../../utils/util'
 import log from '../../utils/log'
 import { scrollTop } from '../../utils/dom'
+import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 
 export default {
-  async install (Vue, options) {
+  async install(Vue, options) {
     // 设置为 false 以阻止 vue 在启动时生成生产提示 https://cn.vuejs.org/v2/api/#productionTip
     Vue.config.productionTip = false
     // 全局过滤器
@@ -29,6 +30,7 @@ export default {
     Vue.prototype.$open = util.open
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
+    Vue.prototype.$resize = { addResizeListener, removeResizeListener }
     // 打印UI官网
     log.pretty('[bin-ui] ' + config.version, 'https://wangbin3162.gitee.io/bin-ui/')
   }

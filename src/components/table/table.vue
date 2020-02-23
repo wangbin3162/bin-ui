@@ -114,6 +114,7 @@
   import Csv from './main/csv'
   import ExportCsv from './main/export-csv'
   import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './main/util'
+  import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 
   const prefixCls = 'bin-table'
 
@@ -372,7 +373,7 @@
       },
       handleResize() {
         // let tableWidth = parseInt(getStyle(this.$el, 'width')) - 1;
-        let tableWidth = this.$el.offsetWidth - 1
+        let tableWidth = this.$el.offsetWidth
         let columnsWidth = {}
         let sumMinWidth = 0
         let hasWidthColumns = []
@@ -841,9 +842,8 @@
       this.$nextTick(() => {
         this.ready = true
       })
-
       on(window, 'resize', this.handleResize)
-
+      addResizeListener(this.$el.parentElement, this.handleResize)
       this.$on('on-visible-change', (val) => {
         if (val) {
           this.handleResize()
@@ -852,6 +852,7 @@
     },
     beforeDestroy() {
       off(window, 'resize', this.handleResize)
+      removeResizeListener(this.$el.parentElement, this.handleResize)
     },
     watch: {
       data: {
