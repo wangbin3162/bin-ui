@@ -11,6 +11,14 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.9</p>
+        <p class="time">2020-02-28</p>
+        <p class="content">固定图钉优化滚动监听</p>
+        <p class="content">datePicker新增mini大小</p>
+        <p class="content">优化table可以选择复制,优化tabs页签背景色</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.7.8</p>
         <p class="time">2020-02-23</p>
         <p class="content">借助resize组件,使table模块默认跟随父级元素大小改变而改变,保证宽度统一</p>
