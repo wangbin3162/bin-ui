@@ -11,6 +11,13 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.10</p>
+        <p class="time">2020-03-03</p>
+        <p class="content">修复table边框border的错位bug</p>
+        <p class="content">扩展message提示显示zIndex可设置</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.7.9</p>
         <p class="time">2020-02-28</p>
         <p class="content">固定图钉优化滚动监听</p>

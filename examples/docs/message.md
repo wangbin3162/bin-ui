@@ -49,7 +49,7 @@
      <b-button size="small" type="default" v-waves
         @click="$message({content:'我是可关闭的的提示', duration: 10, closable: true})">可关闭的</b-button>
     <b-button size="small" type="default" v-waves
-            @click="$message({content:'我永远不会关闭除非手动', duration: 0, closable: true})">不会关闭</b-button>
+            @click="$message({content:'我永远不会关闭除非手动', duration: 0, closable: true, zIndex:3000})">不会关闭</b-button>
   </template>
 ```
 :::
@@ -106,4 +106,5 @@ render函数调用
 | duration     | 自动关闭的延时，单位秒，不关闭可以写 0 | Number |3  |
 | onClose     | 关闭时的回调 | Function	 |  —  |
 | closable     | 是否显示关闭按钮 | Boolean	 | false |
+| zIndex     | 显示层级 | Number	 | 2000 |
 

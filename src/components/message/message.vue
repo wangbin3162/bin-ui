@@ -17,7 +17,7 @@
   const now = Date.now()
 
   // 用时间戳设置为uuid
-  function getUuid () {
+  function getUuid() {
     return 'binMessage_' + now + '_' + (seed++)
   }
 
@@ -34,22 +34,24 @@
         }
       }
     },
-    data () {
+    data() {
       return {
         notices: [],
+        zIndex: 2000,
         tIndex: this.handleGetIndex()
       }
     },
     computed: {
-      wrapStyles () {
+      wrapStyles() {
         let styles = Object.assign({}, this.styles)
-        styles['z-index'] = 1010 + this.tIndex
+        styles['z-index'] = this.zIndex + this.tIndex
         return styles
       }
     },
     methods: {
-      add (notice) {
+      add(notice) {
         const name = notice.name || getUuid()
+        this.zIndex = notice.zIndex || 2000
         let _notice = Object.assign({
           styles: {
             right: '50%'
@@ -59,7 +61,7 @@
         this.notices.push(_notice)
         this.tIndex = this.handleGetIndex()
       },
-      close (name) {
+      close(name) {
         const notices = this.notices
         for (let i = 0; i < notices.length; i++) {
           if (notices[i].name === name) {
@@ -68,10 +70,10 @@
           }
         }
       },
-      closeAll () {
+      closeAll() {
         this.notices = []
       },
-      handleGetIndex () {
+      handleGetIndex() {
         transferIncrease()
         return transferIndex
       }

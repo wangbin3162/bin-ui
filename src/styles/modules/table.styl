@@ -132,9 +132,21 @@ $border-base = #e8eaec;
     table-layout: fixed;
   }
   &-wrapper-with-border {
-    border: 1px solid #dcdee2;
-    border-bottom: 0;
-    border-right: 0;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #dcdee2;
+    }
+    &:before {
+      height: 100%;
+      width: 1px;
+    }
+    &:after {
+      height: 1px;
+      width: 100%;
+    }
   }
   &-border {
     &:before, &:after {

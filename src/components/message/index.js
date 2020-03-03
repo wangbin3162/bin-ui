@@ -5,7 +5,7 @@ let messageInstance
 let name = 1
 
 // 获取一个实例
-function getMessageInstance () {
+function getMessageInstance() {
   messageInstance = messageInstance || Message.newInstance({
     styles: {
       top: '24px'
@@ -15,7 +15,7 @@ function getMessageInstance () {
 }
 
 // 提示方法
-function notice (options) {
+function notice(options) {
   let instance = getMessageInstance()
   let _notice = Object.assign({ name: `${prefixKey}${name}` }, options)
   // 实例弹出提示
@@ -43,7 +43,7 @@ let defaultOption = {
 }
 export default {
   name: 'Message',
-  message (options) {
+  message(options) {
     // 如果第一个是默认字符
     let _option = {}
     if (typeof options === 'string') {
@@ -53,7 +53,7 @@ export default {
     _option = Object.assign({}, defaultOption, options)
     return notice(_option)
   },
-  destroy () {
+  destroy() {
     let instance = getMessageInstance()
     messageInstance = null
     instance.destroy('bin-message')
