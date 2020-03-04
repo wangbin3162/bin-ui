@@ -16,6 +16,7 @@
         <b-anchor-link href="#pai-xu-biao-ge" title="排序表格"></b-anchor-link>
         <b-anchor-link href="#loading-zhuang-tai" title="loading状态"></b-anchor-link>
         <b-anchor-link href="#da-xiao-zhuang-tai" title="大小状态"></b-anchor-link>
+        <b-anchor-link href="#wu-shu-ju" title="无数据"></b-anchor-link>
         <b-anchor-link href="#dao-chucsv" title="导出csv"></b-anchor-link>
         <b-anchor-link href="#table-props" title="Table props"></b-anchor-link>
         <b-anchor-link href="#table-events" title="Table events"></b-anchor-link>
@@ -1038,6 +1039,47 @@ height 和maxHeight可以设置固定表头
             address: '南京市龙眠大道'
           }
         ]
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 无数据
+
+noDataText可以设置无数据状态
+
+::: demo 
+```html
+<template>
+<div>
+  <b-table :columns="columns"  :data="data" no-data-text="No Data"></b-table>
+</div>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        columns: [
+          {
+            title: '姓名',
+            key: 'name'
+          },
+          {
+            title: '年龄',
+            key: 'age',
+          },
+          {
+            title: '出生日期',
+            key: 'birthday'
+          },
+          {
+            title: '地址',
+            key: 'address'
+          }
+        ],
+        data: []
       }
     }
   }

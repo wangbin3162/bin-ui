@@ -11,6 +11,12 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.11</p>
+        <p class="time">2020-03-04</p>
+        <p class="content">优化table和tree树形组件无数据显示状态</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.7.10</p>
         <p class="time">2020-03-03</p>
         <p class="content">修复table边框border的错位bug</p>
