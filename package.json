@@ -3,6 +3,7 @@
   "version": "2.7.11",
   "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
   "main": "lib/bin-ui.common.js",
+  "typings": "types/index.d.ts",
   "keywords": [
     "bin-ui",
     "bin",

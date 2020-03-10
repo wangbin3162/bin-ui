@@ -161,8 +161,6 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
        <b-button type="primary" loading>primary</b-button>
        <b-button type="info" loading loading-icon="loading1">loading1</b-button>
        <b-button type="success" loading loading-icon="loading2">loading2</b-button>
-       <b-button type="warning" loading loading-icon="loading3">loading3</b-button>
-       <b-button type="danger" loading loading-icon="loading4">loading4</b-button>
     </div>
 </template>
 ```

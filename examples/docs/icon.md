@@ -21,10 +21,9 @@ i 标签可以直接设置样式类名为 `iconfont icon-xxx` 来使用即可。
 :::demo size和color可以设置字体大小和颜色
 ```html
   <div class="demo-icon">
-    <i class="iconfont icon-logo-dropbox"></i>
     <b-icon name="logo-freebsd-devil" size="20" color="#ff53a5"></b-icon>
     <b-button type="danger" icon="ios-trash" size="mini">删除</b-button>
-    <b-icon name="loading4" class="icon-is-rotating"></b-icon>
+    <b-icon name="loading2" class="icon-is-rotating"></b-icon>
   </div>
 ```
 :::
