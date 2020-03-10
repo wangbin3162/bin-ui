@@ -11,6 +11,13 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.7.14</p>
+        <p class="time">2020-03-10</p>
+        <p class="content">优化图标,button文字大小,修复模态窗和部分样式问题</p>
+        <p class="content">暂时去除ts支持,暂未实现</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.7.11</p>
         <p class="time">2020-03-04</p>
         <p class="content">优化table和tree树形组件无数据显示状态</p>
