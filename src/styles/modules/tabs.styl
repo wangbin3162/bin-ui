@@ -5,14 +5,14 @@
     position: relative;
     z-index: 2;
     &.is-scrollable {
-      padding: 0 15px;
+      padding: 0 20px;
       box-sizing: border-box;
       .nav-next, .nav-prev {
         position: absolute;
         cursor: pointer;
         line-height: 37px;
-        font-size: 12px;
-        color: #909399;
+        font-size: $base-font-size;
+        color: $color-text-regular;
         z-index: 2000;
       }
       .nav-prev {
@@ -40,11 +40,11 @@
       display: inline-block;
       position: relative;
       cursor: pointer;
-      color: #515a6e;
+      color: $color-text-regular;
       height: 36px;
       line-height: 36px;
       padding: 0 18px;
-      font-size: 14px;
+      font-size: $base-font-size;
       transition: .3s;
       .iconfont {
         position: relative;
@@ -52,7 +52,7 @@
         font-size: 16px;
         height: 16px;
         line-height: 16px;
-        color: #515a6e;
+        color: $color-text-regular;
       }
       .icon-ios-close {
         width: 0;
@@ -62,14 +62,14 @@
         text-align: center;
         height: 16px;
         line-height: 16px;
-        color: #999;
+        color: $color-text-regular;
         transition: all .3s cubic-bezier(.645, .045, .355, 1);
         &:before {
           display: inline-block;
         }
         &:hover {
           background-color: #c0c4cc;
-          color: #ffffff;
+          color: $color-white;
         }
       }
       &:hover {
@@ -98,7 +98,7 @@
       bottom: 0;
       left: 0;
       height: 2px;
-      background-color: #409eff;
+      background-color: $color-primary;
       z-index: 10;
       transition: transform .3s cubic-bezier(.645, .045, .355, 1);
       list-style: none;
@@ -113,10 +113,10 @@
     top: 0;
     list-style-type: none;
     padding: 5px 0;
-    border-radius: 4px;
-    font-size: 12px;
+    border-radius: $border-base-radius;
+    font-size: $base-font-size;
     font-weight: 400;
-    color: #333;
+    color: $color-text-regular;
     border: 1px solid #cfd7e5;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1)
     li {
@@ -124,10 +124,10 @@
       padding: 9px 16px;
       cursor: pointer;
       line-height: 1.2em;
-      color: #5e6d82;
+      color: $color-text-regular;
       &:hover {
-        background: #ecf5ff;
-        color: #66b1ff;
+        background: $color-hover;
+        color: $color-primary;
       }
     }
   }
@@ -151,7 +151,7 @@
     .tab-list {
       border: 1px solid #e4e7ed;
       border-bottom: none;
-      border-radius: 4px 4px 0 0;
+      border-radius: $border-base-radius $border-base-radius 0 0;
       box-sizing: border-box;
       overflow: hidden;
     }
@@ -184,11 +184,11 @@
       background: #fff;
       height: 34px;
       line-height: 33px;
-      border-radius: 3px;
+      border-radius: $border-base-radius;
       padding: 0 12px;
       border: 1px solid #e8eaec;
       margin-right: 10px;
-      font-size: 14px;
+      font-size: $base-font-size;
       &::before {
         content: '';
         background: #e1e1e1;
