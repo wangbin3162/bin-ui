@@ -15,30 +15,30 @@
       <span class="bin-input-suffix" v-else-if="showSuffix">
         <slot name="suffix"><i class="iconfont" :class="['icon-' + suffix]" v-if="suffix"></i></slot></span>
       <input
-        :id="elementId"
-        :autocomplete="autocomplete"
-        ref="input"
-        :type="type"
-        :class="inputClasses"
-        :placeholder="placeholder"
-        :disabled="disabled"
-        :maxlength="maxlength"
-        :readonly="readonly"
-        :name="name"
-        :value="currentValue"
-        :number="number"
-        :autofocus="autofocus"
-        @keyup.enter="handleEnter"
-        @keyup="handleKeyup"
-        @keypress="handleKeypress"
-        @keydown="handleKeydown"
-        @focus="handleFocus"
-        @blur="handleBlur"
-        @compositionstart="handleComposition"
-        @compositionupdate="handleComposition"
-        @compositionend="handleComposition"
-        @input="handleInput"
-        @change="handleChange">
+          :id="elementId"
+          :autocomplete="autocomplete"
+          ref="input"
+          :type="type"
+          :class="inputClasses"
+          :placeholder="placeholder"
+          :disabled="disabled"
+          :maxlength="maxlength"
+          :readonly="readonly"
+          :name="name"
+          :value="currentValue"
+          :number="number"
+          :autofocus="autofocus"
+          @keyup.enter="handleEnter"
+          @keyup="handleKeyup"
+          @keypress="handleKeypress"
+          @keydown="handleKeydown"
+          @focus="handleFocus"
+          @blur="handleBlur"
+          @compositionstart="handleComposition"
+          @compositionupdate="handleComposition"
+          @compositionend="handleComposition"
+          @input="handleInput"
+          @change="handleChange">
       <span class="bin-input-prefix" v-if="showPrefix">
         <slot name="prefix"><i class="iconfont" :class="['icon-' + prefix]" v-if="prefix"></i></slot>
       </span>
@@ -84,7 +84,7 @@
     name: 'BInput',
     props: {
       type: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['text', 'textarea', 'password', 'url', 'email', 'date', 'number', 'tel'])
         },
         default: 'text'
@@ -94,7 +94,7 @@
         default: ''
       },
       size: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['small', 'large', 'default', 'mini'])
         },
         default: 'default'
@@ -139,7 +139,7 @@
         default: false
       },
       autocomplete: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['on', 'off'])
         },
         default: 'off'
@@ -152,7 +152,7 @@
         type: String
       },
       wrap: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['hard', 'soft'])
         },
         default: 'soft'
@@ -170,7 +170,7 @@
         default: false
       }
     },
-    data () {
+    data() {
       return {
         currentValue: this.value,
         prefixCls: prefixCls,
@@ -184,38 +184,38 @@
       }
     },
     watch: {
-      value (val) {
+      value(val) {
         this.setCurrentValue(val)
       }
     },
     methods: {
-      handleEnter (event) {
+      handleEnter(event) {
         this.$emit('on-enter', event)
         if (this.search) this.$emit('on-search', this.currentValue)
       },
-      handleKeydown (event) {
+      handleKeydown(event) {
         this.$emit('on-keydown', event)
       },
-      handleKeypress (event) {
+      handleKeypress(event) {
         this.$emit('on-keypress', event)
       },
-      handleKeyup (event) {
+      handleKeyup(event) {
         this.$emit('on-keyup', event)
       },
-      handleIconClick (event) {
+      handleIconClick(event) {
         this.$emit('on-click', event)
       },
-      handleFocus (event) {
+      handleFocus(event) {
         this.$emit('on-focus', event)
       },
-      handleBlur (event) {
+      handleBlur(event) {
         this.$emit('on-blur', event)
         // 触发校验
         if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
           this.dispatch('BFormItem', 'on-form-blur', this.currentValue)
         }
       },
-      handleComposition (event) {
+      handleComposition(event) {
         if (event.type === 'compositionstart') {
           this.isOnComposition = true
         }
@@ -224,7 +224,7 @@
           this.handleInput(event)
         }
       },
-      handleInput (event) {
+      handleInput(event) {
         if (this.isOnComposition) return
 
         let value = event.target.value
@@ -233,10 +233,10 @@
         this.setCurrentValue(value)
         this.$emit('on-change', event)
       },
-      handleChange (event) {
+      handleChange(event) {
         this.$emit('on-input-change', event)
       },
-      setCurrentValue (value) {
+      setCurrentValue(value) {
         if (value === this.currentValue) return
         this.$nextTick(() => {
           this.resizeTextarea()
@@ -247,7 +247,7 @@
           this.dispatch('BFormItem', 'on-form-change', value)
         }
       },
-      resizeTextarea () {
+      resizeTextarea() {
         const autosize = this.autosize
         if (!autosize || this.type !== 'textarea') {
           return false
@@ -258,35 +258,35 @@
 
         this.textareaStyles = calcTextareaHeight(this.$refs.textarea, minRows, maxRows)
       },
-      focus () {
+      focus() {
         if (this.type === 'textarea') {
           this.$refs.textarea.focus()
         } else {
           this.$refs.input.focus()
         }
       },
-      blur () {
+      blur() {
         if (this.type === 'textarea') {
           this.$refs.textarea.blur()
         } else {
           this.$refs.input.blur()
         }
       },
-      handleClear () {
+      handleClear() {
         const e = { target: { value: '' } }
         this.$emit('input', '')
         this.setCurrentValue('')
         this.$emit('on-change', e)
         this.$emit('on-clear')
       },
-      handleSearch () {
+      handleSearch() {
         if (this.disabled) return false
         this.$refs.input.focus()
         this.$emit('on-search', this.currentValue)
       }
     },
     computed: {
-      wrapClasses () {
+      wrapClasses() {
         return [
           `${prefixCls}-wrapper`,
           {
@@ -299,7 +299,7 @@
           }
         ]
       },
-      inputClasses () {
+      inputClasses() {
         return [
           `${prefixCls}`,
           {
@@ -310,10 +310,10 @@
           }
         ]
       },
-      closeClasses () {
+      closeClasses() {
         return ['iconfont', 'icon-ios-close-circle', prefixCls + '-icon', prefixCls + '-icon-clear', prefixCls + '-icon-normal']
       },
-      textareaClasses () {
+      textareaClasses() {
         return [
           `${prefixCls}`,
           {
@@ -322,7 +322,7 @@
         ]
       }
     },
-    mounted () {
+    mounted() {
       if (this.type !== 'textarea') {
         this.prepend = this.$slots.prepend !== undefined
         this.append = this.$slots.append !== undefined

@@ -113,11 +113,12 @@
 ::: demo
 ```html
 <template>
-<div>
-  <b-input size="large"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
-  <b-input size="small"  clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
-  <b-input size="mini" clearable prefix="ios-contact" placeholder="请输入一些文字..." class="input-item"></b-input>  
-</div>
+<b-row :gutter="10">
+    <b-col span="6"><b-input size="large"  clearable prefix="ios-contact" placeholder="large input"></b-input></b-col>
+    <b-col span="6"><b-input clearable prefix="ios-contact" placeholder="default input"></b-input></b-col>
+    <b-col span="6"><b-input size="small"  clearable prefix="ios-contact" placeholder="small input"></b-input></b-col>
+    <b-col span="6"><b-input size="mini" clearable prefix="ios-contact" placeholder="mini input"></b-input></b-col>
+</b-row>
 </template>
 ```
 :::
