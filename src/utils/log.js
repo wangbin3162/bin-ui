@@ -11,16 +11,16 @@ export function typeColor (type = 'default') {
       color = '#1890ff'
       break
     case 'success':
-      color = '#19be6b'
+      color = '#52c41a'
       break
     case 'info':
-      color = '#909399'
+      color = '#13c2c2'
       break
     case 'warning':
-      color = '#ff9900'
+      color = '#fa8c16'
       break
     case 'danger':
-      color = '#ff4d4f'
+      color = '#f5222d'
       break
     case 'default':
       color = '#35495E'

@@ -225,8 +225,8 @@
         visible: false,
         recommendedColor: [
           '#1890ff',
-          '#19be6b',
-          '#ff9900',
+          '#52c41a',
+          '#fa8c16',
           '#ed4014',
           '#00b5ff',
           '#19c919',

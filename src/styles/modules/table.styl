@@ -1,10 +1,11 @@
+@import "../common/var.styl"
 $border-base = #e8eaec;
 // 这块是为了覆盖文档的样式，后期文档整理再删除
 .bin-table {
   table {
     width: auto;
     color: #5e6d82;
-    font-size: 14px;
+    font-size: $base-font-size;
     border-collapse: separate;
     overflow: auto;
     border: none;
@@ -193,7 +194,7 @@ $border-base = #e8eaec;
       cursor: pointer;
       transition: transform .2s ease-in-out;
       i {
-        font-size: 14px;
+        font-size: $base-font-size;
       }
       &-expanded {
         transform: rotate(90deg);
@@ -244,7 +245,7 @@ $border-base = #e8eaec;
   }
 
   &-large {
-    font-size: 14px;
+    font-size: $base-font-size;
     th {
       height: 48px;
     }

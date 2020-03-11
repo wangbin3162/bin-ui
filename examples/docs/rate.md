@@ -34,7 +34,7 @@
       return {
         value1: null,
         value2: null,
-        colors: ['#99A9BF', '#F7BA2A', '#FF9900']
+        colors: ['#99A9BF', '#F7BA2A', '#fa8c16']
       }
     }
   }
@@ -50,7 +50,7 @@
   v-model="value"
   :icon-classes="iconClasses"
   void-icon-class="icon-ios-heart-empty"
-  :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
+  :colors="['#99A9BF', '#F7BA2A', '#fa8c16']">
 </b-rate>
 
 <script>
@@ -74,7 +74,7 @@
   :value="3.7"
   disabled
   show-score
-  text-color="#ff9900"
+  text-color="#fa8c16"
   score-template="3.7">
 </b-rate>
 ```

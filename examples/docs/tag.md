@@ -57,7 +57,7 @@ dot 模式简单显示
     <b-tag dot>dot</b-tag>
     <b-tag type="primary" no-border dot>no-border-dot</b-tag>
     <b-tag type="success" dot no-border>type dot</b-tag>
-    <b-tag color="#722ed1" closable dot>color dot</b-tag>
+    <b-tag color="#13c2c2" closable dot>color dot</b-tag>
 </template>
 ```
 :::
