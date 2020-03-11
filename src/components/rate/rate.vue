@@ -79,16 +79,16 @@
       iconClasses: {
         type: Array,
         default () {
-          return ['icon-ios-star', 'icon-ios-star', 'icon-ios-star']
+          return ['icon-favorfill', 'icon-favorfill', 'icon-favorfill']
         }
       },
       voidIconClass: {
         type: String,
-        default: 'icon-ios-star-outline'
+        default: 'icon-favor'
       },
       disabledVoidIconClass: {
         type: String,
-        default: 'icon-ios-star'
+        default: 'icon-favorfill'
       },
       disabled: {
         type: Boolean,
@@ -108,7 +108,7 @@
       },
       textColor: {
         type: String,
-        default: '#1f2d3d'
+        default: 'rgba(0,0,0,.65)'
       },
       texts: {
         type: Array,

@@ -21,7 +21,7 @@
 <template>
     <div class="block">
       <span class="demonstration">默认不区分颜色</span>
-      <b-rate v-model="value1"></b-rate>
+      <b-rate v-model="value1" allow-half show-text></b-rate>
     </div>
     <div class="block">
       <span class="demonstration">区分颜色</span>
