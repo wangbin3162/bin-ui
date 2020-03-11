@@ -83,7 +83,7 @@
             <div :class="[prefixCls + '-confirm']">
                 <span :class="confirmColorClasses">
                     <template v-if="editable">
-                        <b-input :value="formatColor" size="small" @on-enter="handleEditColor"
+                        <b-input :value="formatColor" size="mini" @on-enter="handleEditColor"
                                  @on-blur="handleEditColor"></b-input>
                     </template>
                     <template v-else>{{formatColor}}</template>
@@ -91,7 +91,7 @@
               <b-button
                   ref="clear"
                   :tabindex="0"
-                  size="small"
+                  size="mini"
                   @click.native="handleClear"
                   @keydown.enter="handleClear"
                   @keydown.native.esc="closer"
@@ -100,7 +100,7 @@
               <b-button
                   ref="ok"
                   :tabindex="0"
-                  size="small"
+                  size="mini"
                   type="primary"
                   @click.native="handleSuccess"
                   @keydown.native.tab="handleLastTab"
@@ -227,24 +227,24 @@
           '#1890ff',
           '#52c41a',
           '#fa8c16',
-          '#ed4014',
-          '#00b5ff',
-          '#19c919',
-          '#f9e31c',
-          '#ea1a1a',
-          '#9b1dea',
-          '#00c2b1',
-          '#ac7a33',
-          '#1d35ea',
-          '#8bc34a',
-          '#f16b62',
-          '#ea4ca3',
-          '#0d94aa',
-          '#febd79',
-          '#5d4037',
+          '#f5222d',
+          '#2f54eb',
+          '#faad14',
+          '#722ed1',
+          '#eb2f96',
+          '#13c2c2',
+          '#fadb14',
+          '#a0d911',
+          '#fa541c',
+          '#eaff8f',
+          '#bae7ff',
+          '#efdbff',
+          '#ffd6e7',
+          '#ff1885',
+          '#fff506',
           '#00bcd4',
           '#f06292',
-          '#cddc39',
+          '#cb6c00',
           '#607d8b',
           '#000000',
           '#ffffff'

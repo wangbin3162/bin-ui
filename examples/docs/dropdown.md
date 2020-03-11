@@ -180,7 +180,7 @@
 ```html
 <template>
 <div>
-    <b-dropdown>
+    <b-dropdown trigger="click">
        <a href="javascript:void(0)">
           徐州小吃
           <b-icon name="ios-arrow-down"></b-icon>

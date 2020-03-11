@@ -8,7 +8,7 @@ $width-with-date-base = 72px;
     height: 32px;
     line-height: 32px;
     text-align: center;
-    border-bottom: 1px solid #e8eaec;
+    border-bottom: $border-base;
   }
   &-cells {
     min-width: $width-base* 2;
@@ -21,7 +21,7 @@ $width-with-date-base = 72px;
       max-height: 144px;
       float: left;
       overflow: hidden;
-      border-left: 1px solid #e8eaec;
+      border-left: $border-base;
       position: relative;
       &:hover {
         overflow-y: auto;
@@ -29,10 +29,10 @@ $width-with-date-base = 72px;
 
       &:first-child {
         border-left: none;
-        border-radius: 4px 0 0 4px;
+        border-radius: $border-base-radius 0 0 $border-base-radius;
       }
       &:last-child {
-        border-radius: 0 4px 4px 0;
+        border-radius: 0 $border-base-radius $border-base-radius 0;
       }
       ul {
         width: 100%;
