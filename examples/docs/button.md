@@ -4,6 +4,7 @@
     <div class="global-anchor">
       <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#dai-tu-biao-de-an-niu" title="带图标"></b-anchor-link>
         <b-anchor-link href="#jin-yong-an-niu" title="禁用按钮"></b-anchor-link>
         <b-anchor-link href="#wen-zi-an-niu" title="文字按钮"></b-anchor-link>
         <b-anchor-link href="#an-niu-zu" title="按钮组"></b-anchor-link>
@@ -26,16 +27,15 @@
 ```html
 <template>
     <div class="demo-button">
-      <b-button v-waves>Default</b-button>
-      <b-button v-waves type="dashed">Dashed</b-button>
-      <b-button type="primary" v-waves>Primary</b-button>
-      <b-button type="success" v-waves>Success</b-button>
-      <b-button type="info" v-waves>Info</b-button>
-      <b-button type="warning" v-waves>Warning</b-button>
-      <b-button type="danger" v-waves>Danger</b-button>
+      <b-button>Default</b-button>
+      <b-button type="dashed">Dashed</b-button>
+      <b-button type="primary">Primary</b-button>
+      <b-button type="success">Success</b-button>
+      <b-button type="info">Info</b-button>
+      <b-button type="warning">Warning</b-button>
+      <b-button type="danger">Danger</b-button>
     </div>
     <div class="demo-button">
-       <b-button plain>Default</b-button>
        <b-button type="primary" plain>Primary</b-button>
        <b-button type="success" plain>Success</b-button>
        <b-button type="info" plain>Info</b-button>
@@ -43,7 +43,6 @@
        <b-button type="danger" plain>Danger</b-button>
     </div>
     <div class="demo-button">
-       <b-button round size="small">Default</b-button>
        <b-button type="primary" round size="small">Primary</b-button>
        <b-button type="success" round size="small">Success</b-button>
        <b-button type="info" round size="small">Info</b-button>
@@ -51,12 +50,28 @@
        <b-button type="danger" round size="small">Danger</b-button>
     </div>
     <div class="demo-button" style="background: #cad4d4;padding: 10px;">
-       <b-button transparent size="small">Default</b-button>
        <b-button type="primary" transparent size="small">Primary</b-button>
        <b-button type="success" transparent size="small">Success</b-button>
        <b-button type="info" transparent size="small">Info</b-button>
        <b-button type="warning" transparent size="small">Warning</b-button>
        <b-button type="danger" transparent size="small">Danger</b-button>
+    </div>
+</template>
+```
+
+:::
+### 带图标的按钮
+
+使用`icon`给按钮配置图标
+
+::: demo
+```html
+<template>
+    <div class="demo-button">
+      <b-button icon="ios-search">search</b-button>
+      <b-button icon="ios-add-circle-outline">create</b-button>
+      <b-button icon="ios-checkmark-circle-outline" type="primary">check</b-button>
+      <b-button icon="ios-close-circle" type="danger">delete</b-button>
     </div>
 </template>
 ```
@@ -158,11 +173,25 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 <template>
     <div class="demo-button">
        <b-button loading>default</b-button>
-       <b-button type="primary" loading>primary</b-button>
-       <b-button type="info" loading loading-icon="loading1">loading1</b-button>
-       <b-button type="success" loading loading-icon="loading2">loading2</b-button>
+       <b-button type="primary" :loading="loading" icon="ios-checkmark-circle-outline"
+          @click="loading=true">Click me!</b-button>
+       <b-button type="primary" :loading="loading1" loading-icon="loading1"
+          @click="loading1=true">Click me!</b-button>
+       <b-button type="primary" :loading="loading2" loading-icon="loading2"
+          @click="loading2=true">Click me!</b-button>
     </div>
 </template>
+<script>
+export default {
+  data(){
+    return {
+      loading: false,
+      loading1: false,
+      loading2: false
+    }     
+  }
+}
+</script>
 ```
 :::
 

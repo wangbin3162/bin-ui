@@ -5,7 +5,7 @@ const path = require('path')
 const webpack = require('webpack')
 const pkg = require('../package.json')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -22,7 +22,8 @@ module.exports = {
           loaders: {
             css: [
               'vue-style-loader',
-              'css-loader'
+              'css-loader',
+              'postcss-loader'
             ],
             stylus: [
               'vue-style-loader', 'css-loader', 'stylus-loader'

@@ -11,24 +11,19 @@
 
 ### 水波纹指令
 
-在标签中追加`v-waves`指令增加水波纹指令
+在标签中追加`v-waves`指令增加水波纹指令,指令可以设置波纹颜色和点击方式
 
 ::: demo
 ```html
 <template>
     <div class="demo-button">
       <b-button v-waves>默认按钮</b-button>
-      <b-button type="primary" v-waves>主要按钮</b-button>
-      <b-button type="success" v-waves>成功按钮</b-button>
-      <b-button type="info" v-waves>信息按钮</b-button>
-      <b-button type="warning" v-waves>警告按钮</b-button>
-      <b-button type="danger" v-waves>危险按钮</b-button>
+      <b-button v-waves="{color: 'rgba(122,234,12,0.35)'}">设置颜色</b-button>
+      <b-button v-waves="{color: 'rgba(0,0,0,0.45)', type:'center'}">中心扩散</b-button>
     </div>
 </template>
 ```
 :::
-
-**水波纹指令后期打算加上动画时间和水波遮罩的颜色配置**
 
 ### clickOutSide
 

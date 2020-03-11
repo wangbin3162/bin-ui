@@ -3,7 +3,7 @@ $root = bin
 
 .{$root}-button {
   display: inline-block;
-  line-height: 1;
+  line-height: 1.5715;
   white-space: nowrap;
   cursor: pointer;
   background: $color-white;
@@ -16,36 +16,32 @@ $root = bin
   margin: 0;
   transition: .2s;
   user-select: none;
-  padding: 10px 20px;
-  font-size: 14px;
-  border-radius: 4px;
+  padding: 6px 15px;
+  font-size: $base-font-size;
+  border-radius: $border-base-radius;
   .iconfont {
-    vertical-align: baseline;
+    vertical-align: -1px;
+    + span {
+      margin-left: 4px;
+    }
   }
   &-loading {
     font-size: 14px;
     margin-right: 5px;
   }
-  &:hover {
+  &:hover, &:focus {
     color: $color-primary;
     border-color: $color-primary;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
-  }
-  &:focus {
-    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
-  }
-  &:active {
-    outline: none;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   }
   &.is-round {
     border-radius: 20px;
-    padding: 10px 20px;
   }
   &.is-transparent {
     background: transparent;
     border-color: #fff;
     color: #fff;
-    &:hover {
+    &:hover, &:focus {
       color: $color-primary;
       border-color: $color-primary;
     }
@@ -68,55 +64,42 @@ $root = bin
 }
 
 .{$root}-button--large {
-  padding: 12px 20px;
-  font-size: 14px;
-  border-radius: 4px;
+  height: 40px;
+  padding: 6px 15px;
+  font-size: 16px;
   &.is-round {
-    padding: 12px 23px;
+    padding: 6px 15px;
   }
 }
 .{$root}-button--small {
-  padding: 8px 14px;
-  font-size: 14px;
-  border-radius: 3px;
+  padding: 4px 14px;
   &.is-round {
-    padding: 8px 14px;
+    padding: 4px 14px;
   }
 }
 .{$root}-button--mini {
-  padding: 4px 8px;
-  font-size: 14px;
-  border-radius: 3px;
+  padding: 0 7px;
   &.is-round {
-    padding: 4px 10px;
+    padding: 0 10px;
   }
 }
 .{$root}-button--primary {
   color: $color-white;
   background-color: $color-primary;
   border-color: $color-primary;
-  &:hover {
+  &:hover, &:focus {
     background: $color-primary-light1;
     border-color: $color-primary-light1;
     color: #fff;
-  }
-  &:focus {
-    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
-  }
-  &:active {
-    background-color: $color-primary;
   }
   &.is-transparent {
     border-color: $color-primary;
     color: $color-primary;
     background-color: transparent;
-    &:hover {
+    &:hover, &:focus {
       border-color: $color-primary-light1;
       color: $color-primary;
       background-color: rgba(245, 249, 254, .5);
-    }
-    &:active {
-      border-color: $color-primary;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-primary-light3;
@@ -129,9 +112,6 @@ $root = bin
     border-color: $color-primary-light5;
     &:focus, &:hover {
       border-color: $color-primary-light2;
-    }
-    &:active {
-      border-color: $color-primary;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -152,28 +132,19 @@ $root = bin
   color: #fff;
   background-color: $color-success;
   border-color: $color-success;
-  &:hover {
+  &:hover, &:focus {
     background: $color-success-light1;
     border-color: $color-success-light1;
     color: #fff;
-  }
-  &:focus {
-    box-shadow: 0 0 0 2px rgba(25, 190, 107, .2);
-  }
-  &:active {
-    background-color: $color-success;
   }
   &.is-transparent {
     border-color: $color-success;
     color: $color-success;
     background-color: transparent;
-    &:hover {
+    &:hover, &:focus {
       border-color: $color-success-light1;
       color: $color-success;
       background-color: rgba(245, 249, 254, .5);
-    }
-    &:active {
-      border-color: $color-success;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-success-light3;
@@ -186,9 +157,6 @@ $root = bin
     border-color: $color-success-light5;
     &:focus, &:hover {
       border-color: $color-success-light2;
-    }
-    &:active {
-      border-color: $color-success;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -209,28 +177,19 @@ $root = bin
   color: #fff;
   background-color: $color-info;
   border-color: $color-info;
-  &:hover {
+  &:hover, &:focus {
     background: $color-info-light1;
     border-color: $color-info-light1;
     color: #fff;
-  }
-  &:focus {
-    box-shadow: 0 0 0 2px rgba(144, 147, 153, 0.2);
-  }
-  &:active {
-    background-color: $color-info;
   }
   &.is-transparent {
     border-color: $color-info;
     color: $color-info;
     background-color: transparent;
-    &:hover {
+    &:hover, &:focus {
       border-color: $color-info-light1;
       color: $color-info;
       background-color: rgba(245, 249, 254, .5);
-    }
-    &:active {
-      border-color: $color-info;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-info-light3;
@@ -243,9 +202,6 @@ $root = bin
     border-color: $color-info-light5;
     &:focus, &:hover {
       border-color: $color-info-light2;
-    }
-    &:active {
-      border-color: $color-info;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -266,28 +222,19 @@ $root = bin
   color: #fff;
   background-color: $color-warning;
   border-color: $color-warning;
-  &:hover {
+  &:hover, &:focus {
     background: $color-warning-light1;
     border-color: $color-warning-light1;
     color: #fff;
-  }
-  &:focus {
-    box-shadow: 0 0 0 2px rgba(255, 153, 0, .2);
-  }
-  &:active {
-    background-color: $color-warning;
   }
   &.is-transparent {
     border-color: $color-warning;
     color: $color-warning;
     background-color: transparent;
-    &:hover {
+    &:hover, &:focus {
       border-color: $color-warning-light1;
       color: $color-warning;
       background-color: rgba(245, 249, 254, .5);
-    }
-    &:active {
-      border-color: $color-warning;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-warning-light3;
@@ -300,9 +247,6 @@ $root = bin
     border-color: $color-warning-light5;
     &:focus, &:hover {
       border-color: $color-warning-light2;
-    }
-    &:active {
-      border-color: $color-warning;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -322,28 +266,19 @@ $root = bin
   color: #fff;
   background-color: $color-danger;
   border-color: $color-danger;
-  &:hover {
+  &:hover, &:focus {
     background: $color-danger-light1;
     border-color: $color-danger-light1;
     color: #fff;
-  }
-  &:focus {
-    box-shadow: 0 0 0 2px rgba(237, 64, 20, .2);
-  }
-  &:active {
-    background-color: $color-danger;
   }
   &.is-transparent {
     border-color: $color-danger;
     color: $color-danger;
     background-color: transparent;
-    &:hover {
+    &:hover, &:focus {
       border-color: $color-danger-light1;
       color: $color-danger;
       background-color: rgba(245, 249, 254, .5);
-    }
-    &:active {
-      border-color: $color-danger;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-danger-light3;
@@ -356,9 +291,6 @@ $root = bin
     border-color: $color-danger-light5;
     &:focus, &:hover {
       border-color: $color-danger-light2;
-    }
-    &:active {
-      border-color: $color-danger;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;

@@ -1,10 +1,11 @@
 <template>
-  <button
-      class="bin-button"
-      @click="handleClick"
-      :disabled="disabled || loading"
-      :type="nativeType"
-      :class="['bin-button--' + type , 'bin-button--' + size,
+  <button v-if="type!=='text'"
+          class="bin-button"
+          @click="handleClick"
+          :disabled="disabled || loading"
+          :type="nativeType"
+          v-waves="{ color: (type==='default'||type==='dashed'||plain||transparent) ? 'rgba(0, 0, 0, 0.25)':'rgba(255, 255, 255, 0.35)' }"
+          :class="['bin-button--' + type , 'bin-button--' + size,
       {
         'is-disabled': disabled,
         'is-loading': loading,
@@ -18,6 +19,14 @@
     <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
+  <button v-else
+          @click="handleClick"
+          :disabled="disabled || loading"
+          :type="nativeType"
+          class="bin-button"
+          :class="['bin-button--' + type, { 'is-disabled': disabled, 'is-loading': loading }
+    ]"
+  ><span v-if="$slots.default"><slot></slot></span></button>
 </template>
 <script>
   export default {
@@ -49,7 +58,7 @@
       transparent: Boolean
     },
     methods: {
-      handleClick (evt) {
+      handleClick(evt) {
         this.$emit('click', evt)
       }
     }
