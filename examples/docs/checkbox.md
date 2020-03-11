@@ -1,4 +1,4 @@
-## b-checkbox 多选框
+## Checkbox 多选框
 
 <template>
     <div class="global-anchor">

@@ -2,7 +2,7 @@
 
 .bin-checkbox-wrapper {
   cursor: pointer;
-  font-size: 12px;
+  font-size: $base-font-size;
   display: inline-block;
   margin-right: 8px;
   -webkit-user-select: none;
@@ -27,50 +27,36 @@
   margin-right: 5px;
   &-inner {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     position: relative;
     top: 0;
     left: 0;
-    border: 1px solid #dcdee2;
-    border-radius: 2px;
-    background-color: #fff;
+    border: $border-base;
+    border-radius: $border-base-radius;
+    background-color: $color-white;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, box-shadow .2s ease-in-out;
     &:after {
       content: "";
-      display: table;
-      width: 4px;
-      height: 8px;
       position: absolute;
-      top: 1px;
-      left: 4px;
+      display: table;
+      width: 5.7px;
+      height: 9px;
+      top: 50%;
+      left: 22%;
       border: 2px solid #fff;
       border-top: 0;
       border-left: 0;
-      -webkit-transform: rotate(45deg) scale(0);
-      transform: rotate(45deg) scale(0);
+      transform: rotate(45deg) scale(1) translate(-50%, -50%);
       transition: all .2s ease-in-out;
+      border-top: 0;
+      border-left: 0;
     }
   }
   &-checked {
     .bin-checkbox-inner {
       border-color: $color-primary;
       background-color: $color-primary;
-      &:after {
-        content: "";
-        display: table;
-        width: 4px;
-        height: 8px;
-        position: absolute;
-        top: 1px;
-        left: 4px;
-        border: 2px solid #fff;
-        border-top: 0;
-        border-left: 0;
-        -webkit-transform: rotate(45deg) scale(1);
-        transform: rotate(45deg) scale(1);
-        transition: all .2s ease-in-out;
-      }
     }
   }
   &-focus {
@@ -142,13 +128,12 @@
 }
 .bin-checkbox-indeterminate .bin-checkbox-inner:after {
   content: "";
-  width: 8px;
+  width: 9.1px;
   height: 1px;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  transform: scale(1) translate(-50%, -50%);
   position: absolute;
-  left: 2px;
-  top: 5px;
+  left: 50%;
+  top: 50%;
 }
 
 
