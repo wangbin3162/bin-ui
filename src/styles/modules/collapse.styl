@@ -1,17 +1,17 @@
+@import "../common/var.styl";
 .bin-collapse {
-  background-color: #f7f7f7;
-  border-radius: 3px;
-  border: 1px solid #dcdee2;
+  background-color: #fafafa;
+  border-radius: $border-base-radius;
+  border: $border-base;
   > .bin-collapse-item {
-    border-top: 1px solid #dcdee2;
+    border-top: $border-base;
     &:first-child {
       border-top: none;
     }
     > .bin-collapse-header {
-      height: 38px;
-      line-height: 38px;
-      padding-left: 16px;
-      color: #666;
+      line-height: $base-line-height;
+      padding: 12px 16px;
+      color: $color-text-primary;
       cursor: pointer;
       position: relative;
       border-bottom: 1px solid transparent;
@@ -19,11 +19,12 @@
       > i {
         transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
         margin-right: 10px;
+        vertical-align: -1px;
       }
     }
     &.bin-collapse-item-active {
       > .bin-collapse-header {
-        border-bottom: 1px solid #dcdee2
+        border-bottom: $border-base;
         > i {
           -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -33,14 +34,14 @@
   }
 }
 .bin-collapse-content {
-  color: #515a6e;
+  color: $color-text-regular;
   padding: 0 16px;
   background-color: #fff;
   > .bin-collapse-content-box {
     padding-top: 16px;
     padding-bottom: 16px;
     line-height: 2em;
-    font-size: 14px;
+    font-size: $base-font-size;
   }
 }
 .bin-collapse-simple {

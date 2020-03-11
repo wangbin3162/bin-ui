@@ -1,9 +1,10 @@
+@import "../common/var.styl";
 $root = bin
 
 .{$root}-divider {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #515a6e;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $color-text-regular
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -34,8 +35,8 @@ $root = bin
   text-align: center;
   background: 0 0;
   font-weight: 500;
-  color: #17233d;
-  font-size: 16px;
+  color: $color-text-primary;
+  font-size: $header-font-size;
   margin: 16px 0;
 }
 .{$root}-divider-dashed {
