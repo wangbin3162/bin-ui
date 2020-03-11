@@ -5,9 +5,9 @@
   width: 100%;
   box-sizing: border-box;
   vertical-align: middle;
-  color: #515a6e;
-  font-size: 14px;
-  line-height: normal;
+  color: $color-text-default;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
   &-selection {
     display: block;
     box-sizing: border-box;
@@ -15,8 +15,8 @@
     user-select: none;
     cursor: pointer;
     position: relative;
-    background-color: #fff;
-    border-radius: 4px;
+    background-color: $color-white;
+    border-radius: $border-base-radius;
     border: 1px solid #dcdee2;
     transition: all .2s ease-in-out;
     &:hover, &-focused {
@@ -34,8 +34,8 @@
     line-height: 1;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    font-size: 14px;
-    color: #808695;
+    font-size: $base-font-size;
+    color: $color-text-secondary;
     transition: all .2s ease-in-out;
   }
   &-visible {
@@ -51,10 +51,10 @@
   }
   &-disabled {
     .bin-select-selection {
-      background-color: #f3f3f3;
+      background-color: #f5f5f5;
       opacity: 1;
       cursor: not-allowed;
-      color: #ccc;
+      color: $color-text-disabled;
       &:hover {
         border-color: #dcdee2;
         box-shadow: none;
@@ -68,13 +68,13 @@
     height: 36px;
     position: relative;
     .bin-select-placeholder {
-      color: #c5c8ce;
+      color: $color-text-placeholder;
     }
     .bin-select-placeholder, .bin-select-selected-value {
       display: block;
       height: 34px;
       line-height: 34px;
-      font-size: 12px;
+      font-size: $base-font-size;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -85,7 +85,7 @@
 
   &-mini&-single &-selection {
     height: 28px;
-    border-radius: 3px;
+    border-radius: $border-base-radius;
     .bin-select-placeholder, .bin-select-selected-value {
       height: 26px;
       line-height: 26px;
@@ -93,7 +93,7 @@
   }
   &-mini&-multiple &-selection {
     min-height: 28px;
-    border-radius: 3px;
+    border-radius: $border-base-radius;
     .bin-select-placeholder, .bin-select-selected-value {
       min-height: 26px;
       line-height: 26px;
@@ -125,7 +125,7 @@
     .bin-select-placeholder, .bin-select-selected-value {
       min-height: 38px;
       line-height: 38px;
-      font-size: 14px;
+      font-size: $base-font-size;
     }
   }
   &-multiple &-selection {
@@ -135,7 +135,7 @@
       height: 30px;
       line-height: 30px;
       color: #c5c8ce;
-      font-size: 12px;
+      font-size: $base-font-size;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -157,18 +157,16 @@
       white-space: nowrap;
     }
     i {
-      display: block;
       position: absolute;
-      right: 4px;
-      top: 4px;
+      right: 2px;
+      top: 2px;
     }
   }
   &-prefix {
     display: inline-block;
-    vertical-align: middle;
     i {
-      vertical-align: top;
-      font-size: 14px;
+      vertical-align: -1px;
+      font-size: 16px;
     }
   }
   &-head-with-prefix {
@@ -187,25 +185,25 @@
     height: 34px;
     line-height: 34px;
     padding: 0 24px 0 8px;
-    font-size: 12px;
+    font-size: $base-font-size;
     outline: none;
     border: none;
     box-sizing: border-box;
-    color: #515a6e;
+    color: $color-text-default;
     background-color: transparent;
     position: relative;
     cursor: pointer;
     &::-moz-placeholder {
-      color: #c5c8ce;
+      color: $color-text-placeholder;
       opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
     }
     // Internet Explorer 10+
     &:-ms-input-placeholder {
-      color: #c5c8ce;
+      color: $color-text-placeholder;
     }
     // Safari and Chrome
     &::-webkit-input-placeholder {
-      color: #c5c8ce;
+      color: $color-text-placeholder;
     }
 
     &[disabled] {
@@ -236,11 +234,11 @@
   }
   &-not-found {
     text-align: center;
-    color: #c5c8ce;
+    color: $color-text-placeholder;
   }
   &-loading {
     text-align: center;
-    color: #c5c8ce;
+    color: $color-text-placeholder;
   }
 }
 // 下拉框样式
@@ -250,10 +248,10 @@
   overflow: auto;
   margin: 5px 0;
   padding: 5px 0;
-  background-color: #fff;
+  background-color: $color-white;
   box-sizing: border-box;
-  border-radius: 4px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  border-radius: $border-base-radius;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   position: absolute;
   z-index: 900;
 }
@@ -261,28 +259,27 @@
 .bin-select-item {
   margin: 0;
   line-height: normal !important;
-  padding: 7px 16px;
+  padding: 6px 12px;
   clear: both;
-  color: #515a6e;
-  font-size: 12px !important;
+  color: $color-text-default;
+  font-size: $base-font-size !important;
   white-space: nowrap;
   list-style: none;
   cursor: pointer;
   transition: background .2s ease-in-out;
   &:hover {
-    background: #f3f3f3;
+    background: #f5f5f5;
   }
   &-selected, &-item &-selected:hover {
-    background: #f3f3f3;
-    color: #1890ff;
+    background: $color-hover;
     font-weight: bold;
   }
   &-disabled {
-    color: #c5c8ce !important;
+    color: $color-text-placeholder !important;
     cursor: not-allowed;
     &:hover {
-      color: #c5c8ce !important;
-      background-color: #fff;
+      color: $color-text-placeholder !important;
+      background-color: $color-white;
       cursor: not-allowed;
     }
   }
@@ -295,8 +292,8 @@
   padding: 0;
   &-title {
     padding-left: 8px;
-    font-size: 12px;
-    color: #999;
+    font-size: $base-font-size;
+    color: $color-text-secondary;
     height: 30px;
     line-height: 30px;
   }
@@ -306,14 +303,14 @@
   position: relative;
   &-selected {
     color: $color-primary-light2 !important;
-    background: #fff;
+    background: $color-white;
   }
   &-focus, &-selected:hover {
-    background: #f3f3f3;
+    background: #f5f5f5;
   }
   &-selected&-focus {
     color: $color-primary-light5;
-    background: #fff;
+    background: $color-white;
   }
   &-selected:after {
     font-family: "iconfont" !important;

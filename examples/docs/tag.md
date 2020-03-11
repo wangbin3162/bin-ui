@@ -67,20 +67,25 @@ dot 模式简单显示
 ::: demo 设置`closable`属性可以定义一个标签是否可移除。
 ```html
 <template>
-    <b-tag
-      :key="tag"
-      v-for="tag in dynamicTags"
-      closable
-      @on-close="handleCloseTag(tag)">
-      {{tag}}
-    </b-tag>
-    <b-button class="button-new-tag" size="small" @click="addOne">+ New Tag</b-button>
+    <div>
+      <b-button class="button-new-tag" size="small" @click="addOne">+ New Tag</b-button>
+        <p>
+            <b-tag
+              :key="tag"
+              v-for="tag in dynamicTags"
+              closable
+              @on-close="handleCloseTag(tag)">
+              {{tag}}
+            </b-tag>
+        </p>
+    </div>
 </template>
 <script>
     export default {
         data () {
             return {
                 dynamicTags: ['标签一', '标签二', '标签三'],
+                count: 0
             }
         },
         methods: {
@@ -88,7 +93,8 @@ dot 模式简单显示
               this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)
             },
             addOne() {
-                this.dynamicTags.push('new tag');
+                this.count++
+                this.dynamicTags.push('new tag'+this.count);
             }
         }
     }
@@ -106,9 +112,9 @@ dot 模式简单显示
     <b-tag color="#ffa2d3">Custom Color</b-tag>
     <b-tag type="primary" no-border font-size="14px">No Border</b-tag>
     <b-tag :tag-style="{backgroundColor: '#5AFAFC',color:'#606266'}">Style</b-tag>
-    <b-tag size="medium" closable>中等标签</b-tag>
-    <b-tag size="small" closable>小型标签</b-tag>
-    <b-tag size="mini" closable>超小标签</b-tag>
+    <b-tag closable>Default</b-tag>
+    <b-tag size="small" closable>Small</b-tag>
+    <b-tag size="mini" closable>Mini</b-tag>
 </template>
 ```
 :::

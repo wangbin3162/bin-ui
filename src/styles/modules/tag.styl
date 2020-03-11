@@ -3,7 +3,7 @@
   display: inline-block;
   margin: 2px 4px 2px 0;
   border: 1px solid #e8eaec;
-  background: #f7f7f7;
+  background: #fafafa;
   font-size: 12px;
   vertical-align: middle;
   opacity: 1;
@@ -11,26 +11,18 @@
   padding: 0 10px;
   height: 32px;
   line-height: 30px;
-  border-radius: 4px;
+  border-radius: $border-base-radius;
   box-sizing: border-box;
   white-space: nowrap;
   .icon-ios-close {
-    border-radius: 50%;
-    text-align: center;
     position: relative;
-    cursor: pointer;
-    font-size: 16px;
-    height: 16px;
-    width: 16px;
-    line-height: 16px;
-    vertical-align: middle;
-    top: -1px;
     right: -5px;
-    color: $color-info;
-    transition: .3s
+    top: -1px;
+    cursor: pointer;
+    font-size: 18px;
+    color: $color-text-secondary;
     &:hover {
-      background-color: $color-info-light3;
-      color: #fff;
+      color: $color-text-default;
     }
   }
 }
@@ -39,10 +31,9 @@
   color: $color-primary;
   border: 1px solid $color-primary-light5;
   .icon-ios-close {
-    color: $color-primary;
+    color: $color-primary-light2;
     &:hover {
-      background-color: $color-primary;
-      color: #fff;
+      color: $color-primary;
     }
   }
 }
@@ -51,10 +42,9 @@
   border-color: $color-success-light5;
   color: $color-success;
   .icon-ios-close {
-    color: $color-success;
+    color: $color-success-light2;
     &:hover {
-      background-color: $color-success;
-      color: #fff;
+      color: $color-success;
     }
   }
 }
@@ -63,10 +53,9 @@
   border-color: $color-info-light5;
   color: $color-info;
   .icon-ios-close {
-    color: $color-info;
+    color: $color-info-light2;
     &:hover {
-      background-color: $color-info;
-      color: #fff;
+      color: $color-info;
     }
   }
 }
@@ -75,10 +64,9 @@
   border-color: $color-warning-light5;
   color: $color-warning;
   .icon-ios-close {
-    color: $color-warning;
+    color: $color-warning-light2;
     &:hover {
-      background-color: $color-warning;
-      color: #fff;
+      color: $color-warning;
     }
   }
 }
@@ -87,41 +75,34 @@
   border-color: $color-danger-light5;
   color: $color-danger;
   .icon-ios-close {
-    color: $color-danger;
+    color: $color-danger-light2;
     &:hover {
-      background-color: $color-danger;
-      color: #fff;
+      color: $color-danger;
     }
   }
 }
 .no-border {
   border: none;
+  padding: 0 5px;
+  line-height: $base-line-height;
+  height: auto;
 }
-.is-medium {
+.is-small {
   height: 28px;
   line-height: 26px;
 }
-.is-small {
+.is-mini {
   height: 24px;
   padding: 0 8px;
   line-height: 22px;
 }
-.is-mini {
-  height: 20px;
-  padding: 0 5px;
-  line-height: 19px;
-  .icon-ios-close {
-    margin-left: -3px;
-    transform: scale(.7);
-  }
-}
 .bin-dot {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   margin-right: 8px;
   border-radius: 50%;
   background: #e8eaec;
   position: relative;
-  top: 2px;
+  top: 1px;
 }
