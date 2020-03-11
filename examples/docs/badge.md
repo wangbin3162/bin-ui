@@ -52,9 +52,6 @@
      <b-button size="small">回复</b-button>
    </b-badge>
    <b-badge is-dot class="item">红点模式</b-badge>
-   <b-badge is-dot class="item">
-     <b-button class="share-button" icon="logo-game-controller-a" type="primary"></b-button>
-   </b-badge>
 </template>
 ```
 :::
