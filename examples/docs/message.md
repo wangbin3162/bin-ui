@@ -23,8 +23,6 @@
  <template>
      <b-button size="small" v-waves
         @click="$message('this is default message')">默认提示</b-button>
-     <b-button size="small" type="info" v-waves
-        @click="$message({type:'info',content:'info 的提示'})">info</b-button>
      <b-button size="small" type="primary" v-waves
         @click="$message({type:'primary',content:'primary 的提示'})">primary</b-button>
      <b-button size="small" type="success" v-waves

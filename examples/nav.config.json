@@ -304,9 +304,15 @@
         },
         {
           "desc": "Message 提示",
-          "icon": "ios-notifications-outline",
+          "icon": "ios-mail",
           "name": "message",
           "path": "/message"
+        },
+        {
+          "desc": "Notice 通知",
+          "icon": "ios-notifications",
+          "name": "notice",
+          "path": "/notice"
         },
         {
           "desc": "MessageBox 弹框",

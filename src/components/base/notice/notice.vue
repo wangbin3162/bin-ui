@@ -1,22 +1,39 @@
 <template>
   <transition :name="transitionName"
               @enter="handleEnter" @leave="handleLeave" appear>
-    <div :class="classes">
-      <div :class="[baseClass + '-content',`${baseClass}-${type}`]" ref="content">
-        <div :class="[baseClass + '-content-text']" v-if="content">
-          <b-icon :name="iconTypes"></b-icon>
-          <span>{{content}}</span>
-        </div>
-        <div :class="[baseClass + '-content-text']">
+    <template v-if="type === 'notice'">
+      <div :class="noticeClasses">
+        <div
+            :class="['bin-notice-content',this.render !== undefined ? `bin-notice-content-with-render` : '']"
+            ref="content" v-html="content"></div>
+        <div :class="contentWithIcon">
           <render-cell
               :render="renderFunc"
           ></render-cell>
         </div>
-        <a :class="[baseClass + '-close']" @click="close" v-if="closable">
+        <a class="bin-notice-close" @click="close" v-if="closable">
           <i class="iconfont icon-ios-close"></i>
         </a>
       </div>
-    </div>
+    </template>
+    <template v-else>
+      <div :class="classes">
+        <div :class="[baseClass + '-content',`${baseClass}-${type}`]" ref="content">
+          <div :class="[baseClass + '-content-text']" v-if="content">
+            <b-icon :name="iconTypes"></b-icon>
+            <span>{{content}}</span>
+          </div>
+          <div :class="[baseClass + '-content-text']">
+            <render-cell
+                :render="renderFunc"
+            ></render-cell>
+          </div>
+          <a :class="[baseClass + '-close']" @click="close" v-if="closable">
+            <i class="iconfont icon-ios-close"></i>
+          </a>
+        </div>
+      </div>
+    </template>
   </transition>
 </template>
 
@@ -51,6 +68,8 @@
         type: String,
         required: true
       },
+      withIcon: Boolean,
+      hasTitle: Boolean,
       onClose: {
         type: Function
       },
@@ -66,6 +85,21 @@
             [`${this.className}`]: !!this.className,
             [`${this.baseClass}-closable`]: this.closable
           }
+        ]
+      },
+      noticeClasses() {
+        return [
+          'bin-notice-notice',
+          {
+            [`${this.className}`]: !!this.className,
+            'bin-notice-closable': this.closable
+          }
+        ]
+      },
+      contentWithIcon() {
+        return [
+          this.withIcon ? `bin-notice-content-with-icon` : '',
+          !this.hasTitle && this.withIcon ? `bin-notice-content-with-render-notitle` : ''
         ]
       },
       baseClass() {
@@ -99,9 +133,15 @@
         this.$parent.close(this.name)
       },
       handleEnter(el) {
+        if (this.type === 'notice') {
+          return
+        }
         el.style.height = el.scrollHeight + 'px'
       },
       handleLeave(el) {
+        if (this.type === 'notice') {
+          return
+        }
         // 优化一下，如果当前只有一个 Message，则不使用 js 过渡动画，这样更优美
         if (document.getElementsByClassName('bin-message-notice').length !== 1) {
           el.style.height = 0

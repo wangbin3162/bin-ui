@@ -1,6 +1,6 @@
 @import "../common/var.styl"
 .bin-message {
-  font-size: 14px;
+  font-size: $base-font-size;
   position: fixed;
   z-index: 1010;
   width: 100%;
@@ -19,7 +19,7 @@
   display: inline-block;
   pointer-events: all;
   padding: 10px 16px;
-  border-radius: 5px;
+  border-radius: $border-base-radius;
   box-shadow: 0 1px 6px 1px rgba(0, 0, 0, .15);
   background: #fff;
   position: relative;
@@ -38,12 +38,12 @@
   position: absolute;
   right: 0;
   top: 11px;
-  color: #999;
+  color: $color-text-default;
   outline: 0;
   cursor: pointer;
   i {
     font-size: 22px;
-    color: #999;
+    color: $color-info;
     transition: color .2s ease;
     position: relative;
     top: -3px;

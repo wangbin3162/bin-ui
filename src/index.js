@@ -64,6 +64,7 @@ import Calendar from './components/calendar'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
 import Message from './components/message'
+import Notice from './components/notice'
 
 const components = [
   Row, Col, Icon, Button, ButtonGroup, ScrollBar,
@@ -85,6 +86,7 @@ const install = function (Vue) {
   // 注册全局的组件实例
   Vue.prototype.$loading = LoadingBar
   Vue.prototype.$message = Message.message
+  Vue.prototype.$notice = Notice
   // 模态框实例及快捷方法
   Vue.prototype.$modal = Modal
   Vue.prototype.$alert = Modal.alert
@@ -124,6 +126,7 @@ export default {
   breadcrumbItem,
   LoadingBar,
   Message,
+  Notice,
   Badge,
   Input,
   InputNumber,
