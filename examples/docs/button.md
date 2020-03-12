@@ -113,6 +113,13 @@
 <template>
     <div class="demo-button">
        <b-button type="text">文字按钮</b-button>
+       <b-button type="text" text-color="primary">Primary</b-button>
+       <b-button type="text" text-color="success">Success</b-button>
+       <b-button type="text" text-color="info">Info</b-button>
+       <b-button type="text" text-color="warning">Warning</b-button>
+       <b-button type="text" text-color="danger">Danger</b-button>
+       <b-button type="text" text-color="#b37feb">多彩按钮</b-button>
+       <b-button type="text" text-color="#f759ab">多彩按钮</b-button>
        <b-button type="text" disabled>文字按钮</b-button>
     </div>
 </template>
@@ -209,6 +216,7 @@ export default {
 | loading     | 是否加载中状态   | boolean    | — | false   |
 | disabled  | 是否禁用状态    | boolean   | —   | false   |
 | icon  | 图标类名 | string   |  —  |  —  |
+| text-color  | 文字按钮颜色 | string  | primary / success / warning / danger / info / text / 自定义色值  |  —  |
 | autofocus  | 是否默认聚焦 | boolean   |  —  |  false  |
 | native-type | 原生 type 属性 | string | button / submit / reset | button |
 

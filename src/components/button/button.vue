@@ -26,8 +26,9 @@
           class="bin-button"
           :class="['bin-button--' + type, { 'is-disabled': disabled, 'is-loading': loading }
     ]"
-  ><span v-if="$slots.default"><slot></slot></span></button>
+  ><span v-if="$slots.default" :style="textStyle"><slot></slot></span></button>
 </template>
+
 <script>
   export default {
     name: 'BButton',
@@ -55,7 +56,22 @@
       disabled: Boolean,
       plain: Boolean,
       round: Boolean,
-      transparent: Boolean
+      transparent: Boolean,
+      textColor: {
+        type: String
+      }
+    },
+    computed: {
+      textStyle() {
+        const colorMap = {
+          primary: '#1890ff',
+          success: '#52c41a',
+          info: '#13c2c2',
+          warning: '#fa8c16',
+          danger: '#f5222d'
+        }
+        return this.textColor ? { color: colorMap[this.textColor] ? colorMap[this.textColor] : this.textColor } : null
+      }
     },
     methods: {
       handleClick(evt) {
