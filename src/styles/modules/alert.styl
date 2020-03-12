@@ -1,18 +1,18 @@
 @import "../common/var.styl"
 .bin-alert {
   position: relative;
-  padding: 10px 48px 10px 16px;
-  border-radius: 4px;
-  color: #515a6e;
-  font-size: 12px;
-  line-height: 16px;
+  padding: 8px 15px;
+  border-radius: $border-base-radius;
+  color: $color-text-default;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
   margin-bottom: 10px;
   &.bin-alert-with-icon {
-    padding: 10px 48px 10px 38px;
+    padding: 8px 48px 8px 38px;
   }
   &.bin-alert-with-desc {
     &.bin-alert-with-icon {
-      padding: 16px 16px 16px 69px;
+      padding: 8px 16px 8px 69px;
     }
     .bin-alert-icon {
       top: 50%;
@@ -60,10 +60,11 @@
   }
 }
 
+.bin-alert-message {
+  font-size: $header-font-size;
+  color: $color-text-primary;
+}
 .bin-alert-desc {
-  font-size: 12px;
-  color: #515a6e;
-  line-height: 21px;
   display: none;
   text-align: justify;
 }
@@ -83,13 +84,13 @@
   overflow: hidden;
   cursor: pointer;
   .icon-ios-close {
-    font-size: 18px;
-    color: #999;
+    font-size: 20px;
+    color: $color-text-secondary;
     transition: color .2s ease;
     position: relative;
     top: -2px;
     &:hover {
-      color: #444;
+      color: $color-text-default;
     }
   }
 }

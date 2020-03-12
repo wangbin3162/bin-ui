@@ -83,10 +83,10 @@
             type = 'ios-checkmark-circle'
             break
           case 'warning':
-            type = 'ios-alert'
+            type = 'ios-warning'
             break
           case 'error':
-            type = 'ios-close-circle'
+            type = 'ios-close-circle-outline'
             break
         }
         return type
