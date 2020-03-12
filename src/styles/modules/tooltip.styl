@@ -1,3 +1,4 @@
+@import "../common/var.styl"
 $arrow-width = 5px;
 $arrow-distance = $arrow-width - 1 + 4;
 $bg = rgba(30, 30, 30, .9);
@@ -14,12 +15,12 @@ $tooltip-arrow-width-light = 7px;
 }
 //  气泡
 .bin-tooltip-popper {
-  display: block;
-  visibility: visible;
-  font-size: 12px;
-  line-height: 1.5;
   position: absolute;
   z-index: 1060;
+  display: block;
+  visibility: visible;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
   &[x-placement^="top"] {
     padding: $arrow-width 0 $arrow-distance 0;
   }
@@ -105,12 +106,12 @@ $tooltip-arrow-width-light = 7px;
   text-align: left;
   text-decoration: none;
   background-color: $bg;
-  border-radius: 4px;
+  border-radius: $border-base-radius;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
   white-space: nowrap;
   p, div {
     margin: 5px 0;
-    font-size: 14px;
+    font-size: $base-font-size;
   }
 }
 // 气泡箭头
@@ -125,12 +126,10 @@ $tooltip-arrow-width-light = 7px;
 //样式主题
 .bin-tooltip-light {
   &.bin-tooltip-popper {
-    display: block;
-    visibility: visible;
-    font-size: 12px;
-    line-height: 1.5;
     position: absolute;
     z-index: 1060;
+    display: block;
+    visibility: visible;
     &[x-placement^="top"] {
       padding: $arrow-width 0 $arrow-distance 0;
     }
@@ -247,7 +246,7 @@ $tooltip-arrow-width-light = 7px;
   }
   .bin-tooltip-inner {
     background-color: #fff;
-    color: #515a6e;
+    color: $color-text-default;
   }
   .bin-tooltip-arrow {
     box-sizing: border-box;
