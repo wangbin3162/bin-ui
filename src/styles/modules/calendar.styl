@@ -12,9 +12,9 @@
     padding: 12px 20px;
     border-bottom: 1px solid #ebeef5;
     &-title {
-      color: #000;
+      color: $color-text-primary;
       align-self: center;
-      font-size: 14px;
+      font-size: $base-font-size;
     }
   }
   &-week {
@@ -23,9 +23,9 @@
     &-item {
       flex: 1;
       text-align: center;
-      font-size: 14px;
-      color: #424953;
-      line-height: 1.5em;
+      font-size: $base-font-size;
+      color: $color-text-default;
+      line-height: $base-line-height;
       font-weight: 400;
       padding: 10px 0;
     }
@@ -34,25 +34,25 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    border-top: 1px solid #E4E7EA;
-    border-left: 1px solid #E4E7EA;
+    border-top: $border-base;
+    border-left: $border-base;
   }
   &-date-view {
     width: 14.285%;
     height: 80px;
-    line-height: 1.5em;
+    line-height: $base-line-height;
     padding: 8px;
-    border-right: 1px solid #E4E7EA;
-    border-bottom: 1px solid #E4E7EA;
+    border-right: $border-base;
+    border-bottom: $border-base;
     cursor: pointer;
     &.is-current-day, &.is-selected {
       color: $color-primary;
     }
     &.is-selected, &:hover {
-      background-color: #f2f8fe;
+      background-color: $color-hover;
     }
     &.prev, &.next {
-      color: #c0c4cc;
+      color: $color-text-disabled;
     }
   }
   &.card {
