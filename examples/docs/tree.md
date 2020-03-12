@@ -22,7 +22,7 @@
 ::: demo
 ```html
 <template>
-  <b-tree :data="data"></b-tree>
+  <b-tree :data="data" show-checkbox></b-tree>
 </template>
 
 <script>

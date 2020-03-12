@@ -1,4 +1,7 @@
+@import "../common/var.styl"
 .bin-tree {
+  font-size: $base-font-size;
+  color: $color-text-default;
   &-wrapper {
     margin-right: 4px;
     margin-left: 4px;
@@ -7,24 +10,18 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size: 12px;
     &.bin-dropdown-menu {
       padding: 0;
     }
     li {
       list-style: none;
       padding: 0;
-      white-space: nowrap;
       outline: none;
       margin: 0;
-      line-height: 26px;
       &.bin-dropdown-item {
         margin: 0;
         padding: 7px 16px;
         white-space: nowrap;
-      }
-      .bin-checkbox {
-        vertical-align: baseline;
       }
     }
   }
@@ -35,28 +32,31 @@
     }
   }
 
+  &-node {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 0 4px 0;
+    white-space: nowrap;
+  }
   &-title {
-    display: inline-block;
     margin: 0;
     padding: 0 6px;
     line-height: 22px;
-    border-radius: 3px;
+    border-radius: $border-base-radius;
     cursor: pointer;
     vertical-align: middle;
-    color: #515a6e;
     transition: all .2s ease-in-out;
     &:hover {
-      background-color: #e6f7ff;
+      background-color: $color-hover;
     }
     &-selected, &-selected:hover {
-      background-color: #1890ff;
-      color: #fff;
+      background-color: $color-primary;
+      color: $color-white;
     }
   }
 
   &-arrow {
-    display: inline-block;
-    vertical-align: middle;
     cursor: pointer;
     width: 14px;
     text-align: center;
@@ -80,8 +80,7 @@
   .bin-checkbox-wrapper {
     margin-right: 0;
     margin-left: 4px;
-    .bin-checkbox {
-      vertical-align: middle;
-    }
+    line-height: $base-line-height;
+    vertical-align: bottom;
   }
 }

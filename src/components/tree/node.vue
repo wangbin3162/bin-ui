@@ -2,28 +2,30 @@
   <collapse-transition :appear="appear">
     <ul :class="classes">
       <li>
-        <span :class="arrowClasses" @click="handleExpand">
+        <div class="bin-tree-node">
+          <span :class="arrowClasses" @click="handleExpand">
           <b-icon v-if="showArrow" name="ios-arrow-forward"></b-icon>
           <b-icon v-if="showLoading" name="loading" class="bin-load-loop"></b-icon>
         </span>
-        <b-checkbox
-          v-if="showCheckbox"
-          :value="data.checked"
-          :indeterminate="data.indeterminate"
-          :disabled="data.disabled || data.disableCheckbox"
-          @click.native.prevent="handleCheck"></b-checkbox>
-        <render v-if="data.render" :render="data.render" :data="data" :node="node"></render>
-        <render v-else-if="isParentRender" :render="parentRender" :data="data" :node="node"></render>
-        <span v-else :class="titleClasses" @click="handleSelect">{{ data.title }}</span>
+          <b-checkbox
+              v-if="showCheckbox"
+              :value="data.checked"
+              :indeterminate="data.indeterminate"
+              :disabled="data.disabled || data.disableCheckbox"
+              @click.native.prevent="handleCheck"></b-checkbox>
+          <render v-if="data.render" :render="data.render" :data="data" :node="node"></render>
+          <render v-else-if="isParentRender" :render="parentRender" :data="data" :node="node"></render>
+          <span v-else :class="titleClasses" @click="handleSelect">{{ data.title }}</span>
+        </div>
         <template v-if="data.expand">
           <tree-node
-            :appear="appearByClickArrow"
-            v-for="(item, i) in children"
-            :key="i"
-            :data="item"
-            :multiple="multiple"
-            :show-checkbox="showCheckbox"
-            :children-key="childrenKey">
+              :appear="appearByClickArrow"
+              v-for="(item, i) in children"
+              :key="i"
+              :data="item"
+              :multiple="multiple"
+              :show-checkbox="showCheckbox"
+              :children-key="childrenKey">
           </tree-node>
         </template>
       </li>
@@ -46,7 +48,7 @@
     props: {
       data: {
         type: Object,
-        default () {
+        default() {
           return {}
         }
       },
@@ -67,19 +69,19 @@
         default: false
       }
     },
-    data () {
+    data() {
       return {
         prefixCls: prefixCls,
         appearByClickArrow: false
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}-children`
         ]
       },
-      arrowClasses () {
+      arrowClasses() {
         return [
           `${prefixCls}-arrow`,
           {
@@ -88,7 +90,7 @@
           }
         ]
       },
-      titleClasses () {
+      titleClasses() {
         return [
           `${prefixCls}-title`,
           {
@@ -96,17 +98,17 @@
           }
         ]
       },
-      showArrow () {
+      showArrow() {
         return (this.data[this.childrenKey] && this.data[this.childrenKey].length) || ('loading' in this.data && !this.data.loading)
       },
-      showLoading () {
+      showLoading() {
         return 'loading' in this.data && this.data.loading
       },
-      isParentRender () {
+      isParentRender() {
         const Tree = findComponentUpward(this, 'BTree')
         return Tree && Tree.render
       },
-      parentRender () {
+      parentRender() {
         const Tree = findComponentUpward(this, 'BTree')
         if (Tree && Tree.render) {
           return Tree.render
@@ -114,7 +116,7 @@
           return null
         }
       },
-      node () {
+      node() {
         const Tree = findComponentUpward(this, 'BTree')
         if (Tree) {
           // 将所有的 node（即flatState）和当前 node 都传递
@@ -123,12 +125,12 @@
           return []
         }
       },
-      children () {
+      children() {
         return this.data[this.childrenKey]
       }
     },
     methods: {
-      handleExpand () {
+      handleExpand() {
         const item = this.data
         if (item.disabled) return
 
@@ -156,7 +158,7 @@
           this.dispatch('BTree', 'toggle-expand', this.data)
         }
       },
-      handleSelect () {
+      handleSelect() {
         if (this.data.disabled) return
         if (this.TreeInstance.showCheckbox && this.TreeInstance.checkDirectly) {
           this.handleCheck()
@@ -164,7 +166,7 @@
           this.dispatch('BTree', 'on-selected', this.data.nodeKey)
         }
       },
-      handleCheck () {
+      handleCheck() {
         if (this.data.disabled) return
         const changes = {
           checked: !this.data.checked && !this.data.indeterminate,
