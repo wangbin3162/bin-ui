@@ -9,7 +9,7 @@
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
             <a :class="[prefixCls + '-close']" v-if="closable" @click="close">
               <slot name="close">
-                <b-icon name="ios-close"></b-icon>
+                <b-icon name="close"></b-icon>
               </slot>
             </a>
             <div :class="[prefixCls + '-header']"
@@ -20,12 +20,12 @@
                 <div :class="[prefixCls + '-header-inner']">{{ title }}</div>
               </slot>
             </div>
-            <div :class="[prefixCls + '-body']">
+            <div :class="[prefixCls + '-body']" :style="bodyStyles">
               <slot></slot>
             </div>
             <div :class="[prefixCls + '-footer']" v-if="!footerHide">
               <slot name="footer">
-                <b-button type="text" size="small" @click.native="cancel">{{ cancelText }}</b-button>
+                <b-button size="small" @click.native="cancel">{{ cancelText }}</b-button>
                 <b-button type="primary" size="small" :loading="buttonLoading" @click.native="ok" v-waves>{{ okText }}
                 </b-button>
               </slot>
@@ -79,6 +79,9 @@
         default: false
       },
       styles: {
+        type: Object
+      },
+      bodyStyles: {
         type: Object
       },
       className: {

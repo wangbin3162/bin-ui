@@ -28,50 +28,72 @@
   }
 }
 .bin-modal {
+  box-sizing: border-box;
+  padding: 0;
+  color: $color-text-default;
+  font-size: $base-font-size;
+  font-variant: tabular-nums;
+  line-height: $base-line-height
   width: auto;
   margin: 0 auto;
   position: relative;
   outline: 0;
   top: 100px;
+  P {
+    margin: 0;
+  }
 }
 .bin-modal-content {
   position: relative;
-  background-color: #fff;
+  background-color: $color-white;
   border: 0;
-  border-radius: 6px;
+  border-radius: $border-base-radius;
   overflow: hidden;
   background-clip: padding-box;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 }
 
 .bin-modal-close {
-  z-index: 1;
-  font-size: 12px;
   position: absolute;
-  right: 8px;
-  top: 10px;
-  overflow: hidden;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0;
+  color: $color-text-secondary;
+  line-height: 1;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
   cursor: pointer;
-  .icon-ios-close {
-    font-size: 26px;
-    color: #999;
+  transition: color 0.3s;
+  .icon-close {
+    display: block;
+    width: 56px;
+    height: 56px;
+    font-style: normal;
+    line-height: 56px;
+    text-align: center;
+    text-transform: none;
+    text-rendering: auto;
+    font-size: 20px;
+    color: $color-text-secondary;
     transition: color .2s ease;
     &:hover {
-      color: #b7b7b7;
+      color: $color-text-default;
     }
   }
 }
 
 .bin-modal-header {
-  border-bottom: 1px solid #e8eaec;
-  padding: 14px 16px;
-  line-height: 1;
+  border-bottom: $border-base-light;
+  padding: 16px 24px;
   .bin-modal-header-inner, .bin-modal-header p {
-    display: inline-block;
     width: 100%;
-    font-size: 14px;
-    color: #17233d;
-    font-weight: 600;
+    font-size: $header-font-size;
+    color: $color-text-primary;
+    font-weight: 500;
+    line-height: 22px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -79,13 +101,14 @@
 }
 
 .bin-modal-body {
-  padding: 16px;
-  font-size: 12px;
-  line-height: 1.5;
+  padding: 24px;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  word-wrap: break-word;
 }
 .bin-modal-footer {
-  border-top: 1px solid #e8eaec;
-  padding: 12px 18px;
+  border-top: $border-base-light;
+  padding: 10px 16px;
   text-align: right;
 }
 
@@ -140,7 +163,7 @@
 }
 //  confirm弹窗的样式
 .bin-modal-confirm {
-  padding: 0 4px;
+  padding: 0;
 }
 .bin-modal-confirm-head {
   padding: 0 12px 0 0;
@@ -151,9 +174,12 @@
   vertical-align: middle;
   position: relative;
   top: -2px;
+  .iconfont {
+    font-size: 28px;
+  }
 }
 .bin-modal-confirm-head-icon-confirm {
-  color: #f90;
+  color: $color-warning;
 }
 .bin-modal-confirm-head-icon-info {
   color: $color-primary;
@@ -171,15 +197,14 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 12px;
-  font-size: 16px;
-  color: #17233d;
-  font-weight: 700;
+  font-size: $header-font-size;
+  color: $color-text-primary;
 }
 
 .bin-modal-confirm-body {
   padding-left: 42px;
-  font-size: 14px;
-  color: #515a6e;
+  font-size: $base-font-size;
+  color: $color-text-default;
   position: relative;
   p {
     margin: 0;
