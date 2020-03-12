@@ -30,10 +30,14 @@ value 为当前选择的数据的 value 值的数组，比如 ['xuzhou', 'tongsh
 ::: demo 
 ```html
 <template>
-<div style="width:240px;"> 
-  {{value1}}
-  <b-cascade :data="data" v-model="value1"></b-cascade>
-</div>
+<b-row :gutter="20" type="flex" align="middle"> 
+    <b-col span="6">
+      <b-cascader :data="data" v-model="value1"></b-cascader>
+    </b-col>
+    <b-col span="6">
+      <span>{{value1}}</span>
+    </b-col>
+</b-row>
 </template>
 <script>
 export default {
@@ -97,7 +101,7 @@ export default {
 ```html
 <template>
 <div style="width:240px;">
-  <b-cascade :data="data" v-model="value2"></b-cascade>
+  <b-cascader :data="data" v-model="value2"></b-cascader>
 </div>
 </template>
 <script>
@@ -162,7 +166,7 @@ export default {
 ```html
 <template>
 <div style="width:240px;">
-  <b-cascade :data="data" trigger="hover"></b-cascade>
+  <b-cascader :data="data" trigger="hover"></b-cascader>
 </div>
 </template>
 <script>
@@ -228,9 +232,9 @@ export default {
 <div>
     <div>{{ text }}</div>
     <div style="width:240px;">
-      <b-cascade :data="data" @on-change="handleChange">
+      <b-cascader :data="data" @on-change="handleChange">
         <a href="javascript:void(0)">选择</a>
-      </b-cascade>
+      </b-cascader>
     </div>
 </div>
 </template>
@@ -302,10 +306,10 @@ export default {
 <template>
 <div flex="main:justify" style="width: 500px;">
     <div style="width:240px;">
-      <b-cascade :data="data" v-model="value1" disabled></b-cascade>
+      <b-cascader :data="data" v-model="value1" disabled></b-cascader>
     </div>
     <div style="width:240px;">
-      <b-cascade :data="data2" v-model="value1"></b-cascade>
+      <b-cascader :data="data2" v-model="value1"></b-cascader>
     </div>
 </div>
 </template>
@@ -420,7 +424,7 @@ export default {
 ```html
 <template>
 <div style="width:240px;">
-  <b-cascade :data="data" change-on-select></b-cascade>
+  <b-cascader :data="data" change-on-select></b-cascader>
 </div>
 </template>
 <script>
@@ -486,7 +490,7 @@ export default {
 ```html
 <template>
 <div style="width:240px;">
-  <b-cascade :data="data" :render-format="format"></b-cascade>
+  <b-cascader :data="data" :render-format="format"></b-cascader>
 </div>
 </template>
 <script>
@@ -561,16 +565,16 @@ export default {
 <template>
 <div flex="cross:center">
     <div style="width:120px;">
-      <b-cascade :data="data" size="mini"></b-cascade>
+      <b-cascader :data="data" size="mini"></b-cascader>
     </div>
     <div style="width:120px;margin-left: 5px;">
-      <b-cascade :data="data" size="small"></b-cascade>
+      <b-cascader :data="data" size="small"></b-cascader>
     </div>
     <div style="width:120px;margin-left: 5px;">
-      <b-cascade :data="data"></b-cascade>
+      <b-cascader :data="data"></b-cascader>
     </div>
     <div style="width:120px;margin-left: 5px;">
-      <b-cascade :data="data" size="large"></b-cascade>
+      <b-cascader :data="data" size="large"></b-cascader>
     </div>
 </div>
 </template>
@@ -635,7 +639,7 @@ export default {
 ```html
 <template>
 <div style="width:240px;">
-  <b-cascade :data="data4" :load-data="loadData"></b-cascade>
+  <b-cascader :data="data4" :load-data="loadData"></b-cascader>
 </div>
 </template>
 <script>
@@ -715,7 +719,7 @@ export default {
 ```html
 <template>
 <div style="width:240px;">
-  <b-cascade :data="data" filterable></b-cascade>
+  <b-cascader :data="data" filterable></b-cascader>
 </div>
 </template>
 <script>

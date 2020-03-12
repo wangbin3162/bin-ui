@@ -61,11 +61,11 @@
   import { oneOf } from '../../utils/util'
   import Emitter from '../../mixins/emitter'
 
-  const prefixCls = 'bin-cascade'
+  const prefixCls = 'bin-cascader'
   const selectPrefixCls = 'bin-select'
 
   export default {
-    name: 'BCascade',
+    name: 'BCascader',
     mixins: [Emitter],
     components: { Drop, CasPanel },
     directives: { ClickOutside, TransferDom },

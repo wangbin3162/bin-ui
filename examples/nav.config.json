@@ -217,10 +217,10 @@
           "path": "/colorPicker"
         },
         {
-          "desc": "Cascade 级联选择",
+          "desc": "Cascader 级联选择",
           "icon": "ios-git-compare",
-          "name": "cascade",
-          "path": "/cascade"
+          "name": "cascader",
+          "path": "/cascader"
         },
         {
           "desc": "InputNumber 数字输入",

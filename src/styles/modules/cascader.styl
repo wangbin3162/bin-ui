@@ -1,6 +1,6 @@
 @import "../common/var.styl"
 
-.bin-cascade {
+.bin-cascader {
   line-height: normal;
   &-rel {
     display: inline-block;
@@ -42,17 +42,17 @@
     line-height: 28px;
   }
 
-  .bin-cascade-arrow:nth-of-type(1) {
+  .bin-cascader-arrow:nth-of-type(1) {
     display: none;
     cursor: pointer;
   }
 
   &:hover {
-    .bin-cascade-arrow:nth-of-type(1) {
+    .bin-cascader-arrow:nth-of-type(1) {
       display: inline-block;
     }
   }
-  &-show-clear:hover .bin-cascade-arrow:nth-of-type(2) {
+  &-show-clear:hover .bin-cascader-arrow:nth-of-type(2) {
     display: none;
   }
 
@@ -77,13 +77,13 @@
     overflow: visible;
   }
   // menu-item
-  .bin-cascade-menu-item {
+  .bin-cascader-menu-item {
     margin: 0;
     line-height: normal;
     padding: 7px 16px;
     clear: both;
-    color: #515a6e;
-    font-size: 12px !important;
+    color: $color-text-default;
+    font-size: $base-font-size !important;
     white-space: nowrap;
     list-style: none;
     cursor: pointer;
@@ -113,7 +113,7 @@
     }
     &-divided {
       margin-top: 5px;
-      border-top: 1px solid #e8eaec;
+      border-top: $border-base;
       &:before {
         content: '';
         height: 5px;
@@ -126,7 +126,7 @@
     }
   }
 
-  .bin-cascade-large .bin-cascade-menu-item {
+  .bin-cascader-large .bin-cascader-menu-item {
     padding: 7px 16px 8px;
     font-size: 14px !important;
   }
@@ -167,7 +167,7 @@
     padding: 5px 0 !important;
     vertical-align: top;
     list-style: none;
-    border-right: 1px solid #e8eaec;
+    border-right: $border-base;
     overflow: auto;
 
     &:first-child {
@@ -185,7 +185,6 @@
       position: relative;
       padding-right: 36px;
       transition: all .2s ease-in-out;
-
       i {
         position: absolute;
         right: 15px;
@@ -195,24 +194,23 @@
       &-loading {
         margin-top: -6px;
       }
-
       &-active {
-        background-color: #f3f3f3;
-        color: $color-primary;
+        background-color: $color-hover;
+        color: $color-text-primary;
       }
     }
   }
 }
 
 
-.bin-cascade-transfer {
+.bin-cascader-transfer {
   z-index: 1060;
   width: auto;
   padding: 0;
   white-space: nowrap;
   overflow: visible;
   // menu-item
-  .bin-cascade-menu-item {
+  .bin-cascader-menu-item {
     margin: 0;
     line-height: normal;
     padding: 7px 16px;
@@ -248,7 +246,7 @@
     }
     &-divided {
       margin-top: 5px;
-      border-top: 1px solid #e8eaec;
+      border-top: $border-base;
       &:before {
         content: '';
         height: 5px;
@@ -261,7 +259,7 @@
     }
   }
 
-  .bin-cascade-large .bin-cascade-menu-item {
+  .bin-cascader-large .bin-cascader-menu-item {
     padding: 7px 16px 8px;
     font-size: 14px !important;
   }
@@ -270,14 +268,14 @@
   .bin-select-item span {
     color: $color-danger;
   }
-  .bin-cascade {
+  .bin-cascader {
     &-menu {
       &-item {
         padding-right: 24px;
         transition: all .2s ease-in-out;
         &-active {
-          background-color: #f3f3f3;
-          color: $color-primary;
+          background-color: $color-hover;
+          color: $color-text-primary;
         }
       }
     }
@@ -285,7 +283,7 @@
 }
 
 .bin-form-item-error {
-  .bin-cascade {
+  .bin-cascader {
     &-arrow {
       color: $color-danger;
     }

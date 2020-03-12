@@ -57,11 +57,10 @@
       handleTriggerItem (item, fromInit = false, fromUser = false) {
         if (item.disabled) return
 
-        const cascade = findComponentUpward(this, 'BCascade')
+        const cascade = findComponentUpward(this, 'BCascader')
         if (item.loading !== undefined && !item.children.length) {
           if (cascade && cascade.loadData) {
             cascade.loadData(item, () => {
-              // todo
               if (fromUser) {
                 cascade.isLoadedChildren = true
               }
@@ -87,7 +86,7 @@
 
         if (item.children && item.children.length) {
           this.sublist = item.children
-          this.dispatch('BCascade', 'on-result-change', {
+          this.dispatch('BCascader', 'on-result-change', {
             lastValue: false,
             changeOnSelect: this.changeOnSelect,
             fromInit: fromInit
@@ -102,7 +101,7 @@
           }
         } else {
           this.sublist = []
-          this.dispatch('BCascade', 'on-result-change', {
+          this.dispatch('BCascader', 'on-result-change', {
             lastValue: true,
             changeOnSelect: this.changeOnSelect,
             fromInit: fromInit
