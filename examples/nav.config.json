@@ -321,6 +321,12 @@
           "path": "/messageBox"
         },
         {
+          "desc": "Popover 气泡弹框",
+          "icon": "ios-chatbubbles",
+          "name": "popover",
+          "path": "/popover"
+        },
+        {
           "desc": "Modal 模态框",
           "icon": "ios-text",
           "name": "modal",

@@ -69,7 +69,7 @@
 <style lang="stylus">
   .demo-block {
     border: solid 1px #ebebeb;
-    border-radius: 3px;
+    border-radius: 2px;
     code {
       font-family: Menlo, Monaco, Consolas, Courier, monospace;
     }
@@ -137,7 +137,6 @@
       margin-top: -1px;
       color: #d3dce6;
       cursor: pointer;
-      position: relative;
       i {
         font-size: 16px;
         line-height: 44px;

@@ -61,6 +61,7 @@ import AnchorLink from './components/anchor-link'
 import Carousel from './components/carousel'
 import CarouselItem from './components/carousel-item'
 import Calendar from './components/calendar'
+import Popover from './components/popover'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
 import Message from './components/message'
@@ -76,7 +77,7 @@ const components = [
   Dropdown, DropdownItem, DropdownMenu,
   Select, Option, OptionGroup, Table, Page, Tree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
-  Timeline, TimelineItem, Affix, Anchor, AnchorLink, Carousel, CarouselItem
+  Timeline, TimelineItem, Affix, Anchor, AnchorLink, Carousel, CarouselItem, Popover
 ]
 
 const install = function (Vue) {
@@ -164,5 +165,6 @@ export default {
   AnchorLink,
   Carousel,
   CarouselItem,
-  Calendar
+  Calendar,
+  Popover
 }
