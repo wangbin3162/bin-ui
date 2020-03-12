@@ -106,7 +106,7 @@
 ```html
 <template>
   <div style="width:600px;">
-      <b-form :model="formValidate" ref="form" :rules="ruleValidate" :label-width="80">
+      <b-form :model="formValidate" ref="form" :rules="ruleValidate" :label-width="100">
         <b-form-item label="用户名" prop="name">
           <b-input v-model="formValidate.name"></b-input>
         </b-form-item>
@@ -140,7 +140,7 @@
               </b-select>
             </b-form-item>
             <b-form-item label="地区" prop="cities">
-              <b-cascade :data="cities" v-model="formValidate.cities"></b-cascade>
+              <b-cascader :data="cities" v-model="formValidate.cities"></b-cascader>
             </b-form-item>
         </div>
         <b-form-item label="爱好" prop="interest">

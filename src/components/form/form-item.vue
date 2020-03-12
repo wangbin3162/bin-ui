@@ -3,7 +3,8 @@
     <label :class="[prefixCls + '-label']" :for="labelFor" :style="labelStyles" v-if="label || $slots.label">
       <slot name="label">{{ label }}</slot>
     </label>
-    <div :class="[prefixCls + '-content']" :style="contentStyles">
+    <label :class="[prefixCls + '-label-empty']" v-else :style="labelStyles"/>
+    <div :class="[prefixCls + '-content']">
       <slot></slot>
       <transition name="fade-in">
         <div :class="[prefixCls + '-error-tip']" v-if="validateState === 'error' && showMessage && form.showMessage">{{
@@ -19,7 +20,7 @@
 
   const prefixCls = 'bin-form-item'
 
-  function getPropByPath (obj, path) {
+  function getPropByPath(obj, path) {
     let tempObj = obj
     path = path.replace(/\[(\w+)\]/g, '.$1')
     path = path.replace(/^\./, '')
@@ -77,7 +78,7 @@
         type: String
       }
     },
-    data () {
+    data() {
       return {
         prefixCls: prefixCls,
         isRequired: false,
@@ -89,22 +90,22 @@
     },
     watch: {
       error: {
-        handler (val) {
+        handler(val) {
           this.validateMessage = val
           this.validateState = val ? 'error' : ''
         },
         immediate: true
       },
-      validateStatus (val) {
+      validateStatus(val) {
         this.validateState = val
       },
-      rules () {
+      rules() {
         this.setRules()
       }
     },
     inject: ['form'],
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           {
@@ -114,7 +115,7 @@
           }
         ]
       },
-      fieldValue () {
+      fieldValue() {
         const model = this.form.model
         if (!model || !this.prop) {
           return
@@ -127,7 +128,7 @@
 
         return getPropByPath(model, path).v
       },
-      labelStyles () {
+      labelStyles() {
         let style = {}
         const labelWidth = this.labelWidth === 0 || this.labelWidth ? this.labelWidth : this.form.labelWidth
 
@@ -135,19 +136,10 @@
           style.width = `${labelWidth}px`
         }
         return style
-      },
-      contentStyles () {
-        let style = {}
-        const labelWidth = this.labelWidth === 0 || this.labelWidth ? this.labelWidth : this.form.labelWidth
-
-        if (labelWidth || labelWidth === 0) {
-          style.marginLeft = `${labelWidth}px`
-        }
-        return style
       }
     },
     methods: {
-      setRules () {
+      setRules() {
         let rules = this.getRules()
         if (rules.length && this.required) {
           return
@@ -163,7 +155,7 @@
         this.$on('on-form-blur', this.onFieldBlur)
         this.$on('on-form-change', this.onFieldChange)
       },
-      getRules () {
+      getRules() {
         let formRules = this.form.rules
         const selfRules = this.rules
 
@@ -171,12 +163,12 @@
 
         return [].concat(selfRules || formRules || [])
       },
-      getFilteredRule (trigger) {
+      getFilteredRule(trigger) {
         const rules = this.getRules()
 
         return rules.filter(rule => !rule.trigger || rule.trigger.indexOf(trigger) !== -1)
       },
-      validate (trigger, callback = function () {
+      validate(trigger, callback = function () {
       }) {
         let rules = this.getFilteredRule(trigger)
         if (!rules || rules.length === 0) {
@@ -206,7 +198,7 @@
         })
         this.validateDisabled = false
       },
-      resetField () {
+      resetField() {
         this.validateState = ''
         this.validateMessage = ''
 
@@ -227,10 +219,10 @@
           prop.o[prop.k] = this.initialValue
         }
       },
-      onFieldBlur () {
+      onFieldBlur() {
         this.validate('blur')
       },
-      onFieldChange () {
+      onFieldChange() {
         if (this.validateDisabled) {
           this.validateDisabled = false
           return
@@ -239,7 +231,7 @@
         this.validate('change')
       }
     },
-    mounted () {
+    mounted() {
       if (this.prop) {
         this.dispatch('BForm', 'on-form-item-add', this)
 
@@ -250,7 +242,7 @@
         this.setRules()
       }
     },
-    beforeDestroy () {
+    beforeDestroy() {
       this.dispatch('BForm', 'on-form-item-remove', this)
     }
   }
