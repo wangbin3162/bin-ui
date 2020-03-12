@@ -1,5 +1,9 @@
 @import "../common/var.styl"
 .bin-page {
+  color: $color-text-default;
+  font-size: $base-font-size;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
   &:after {
     content: '';
     display: block;
@@ -10,6 +14,7 @@
   }
   &-item {
     display: inline-block;
+    box-sizing: border-box;
     vertical-align: middle;
     min-width: 32px;
     height: 32px;
@@ -17,19 +22,18 @@
     margin-right: 4px;
     text-align: center;
     list-style: none;
-    background-color: #fff;
+    background-color: $color-white;
     user-select: none;
     cursor: pointer;
     font-family: Arial;
-    border: 1px solid #dcdee2;
-    border-radius: 4px;
+    border: $border-base;
+    border-radius: $border-base-radius;
     transition: border .2s ease-in-out, color .2s ease-in-out;
     a {
       font-family: Monospaced Number;
       margin: 0 6px;
       text-decoration: none;
-      color: #515a6e;
-      font-size: 12px;
+      color: $color-text-default;
     }
     &:hover {
       border-color: $color-primary;
@@ -50,7 +54,7 @@
       content: "•••";
       display: block;
       letter-spacing: 1px;
-      color: #ccc;
+      color: $color-text-disabled;
       text-align: center;
     }
     i {
@@ -62,7 +66,7 @@
       }
       i {
         display: inline;
-        font-size: 14px;
+        font-size: $color-text-disabled;
       }
     }
   }
@@ -82,8 +86,8 @@
     cursor: pointer;
     color: #666;
     font-family: Arial;
-    border: 1px solid #dcdee2;
-    border-radius: 4px;
+    border: $border-base;
+    border-radius: $border-base-radius;
     transition: all .2s ease-in-out;
   }
 
@@ -92,11 +96,17 @@
   }
 
   &-prev, &-next {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 0 5px;
     a {
-      color: #666;
-      font-size: 14px;
+      color: $color-text-secondary;
+      font-size: $base-font-size;
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+      .iconfont {
+        font-size: $base-font-size;
+      }
     }
     &:hover {
       border-color: $color-primary;
@@ -109,12 +119,12 @@
   &-disabled {
     cursor: not-allowed;
     a {
-      color: #ccc;
+      color: $color-text-disabled;
     }
     &:hover {
       border-color: #dcdee2;
       a {
-        color: #ccc;
+        color: $color-text-disabled;
         cursor: not-allowed;
       }
     }
@@ -130,20 +140,20 @@
     &-elevator {
       display: inline-block;
       vertical-align: middle;
-      height: 30px;
+      height: 32px;
       line-height: 30px;
       input {
         display: inline-block;
         margin: 0 8px;
         width: 50px;
-        height: 30px;
+        height: 32px;
         line-height: 1.5;
-        padding: 0 15px;
-        font-size: 12px;
-        border: 1px solid #dcdee2;
-        border-radius: 4px;
-        color: #515a6e;
-        background-color: #fff;
+        padding: 0 11px;
+        font-size: $base-font-size;
+        border: $border-base;
+        border-radius: $border-base-radius;
+        color: $color-text-default;
+        background-color: $color-white;
         background-image: none;
         position: relative;
         cursor: text;
@@ -164,7 +174,7 @@
     height: 32px;
     line-height: 32px;
     margin-right: 10px;
-    font-size: 12px;
+    font-size: $base-font-size;
   }
   &-simple &-prev, &-simple &-next {
     margin: 0;
@@ -185,10 +195,10 @@
       padding: 5px 8px;
       text-align: center;
       box-sizing: border-box;
-      background-color: #fff;
+      background-color: $color-white;
       outline: none;
-      border: 1px solid #dcdee2;
-      border-radius: 4px;
+      border: $border-base;
+      border-radius: $border-base-radius;
       transition: border .3s ease-in-out, background .3s ease-in-out, box-shadow .3s ease;
       &:hover {
         border-color: $color-primary;
@@ -207,12 +217,15 @@
     line-height: 24px;
   }
   &.mini &-item {
-    border: 0;
+    border-color: transparent;
     margin: 0;
     min-width: 24px;
     height: 24px;
-    line-height: 24px;
-    border-radius: 3px;
+    line-height: 23px;
+    border-radius: $border-base-radius;
+    &-active {
+      border-color: $color-primary;
+    }
   }
   &.mini &-prev, &.mini &-next {
     margin: 0;
@@ -221,9 +234,8 @@
     line-height: 22px;
     border: 0;
     a {
-      i:after {
-        height: 24px;
-        line-height: 24px;
+      i {
+        vertical-align: middle;
       }
     }
   }

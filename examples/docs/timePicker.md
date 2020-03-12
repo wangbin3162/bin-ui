@@ -189,13 +189,16 @@
 <template>
 <div flex="box:mean" style="width: 500px;">
   <div style="padding:0 10px;">
-    <b-time-picker size="small" placeholder="Select date"></b-time-picker>
+    <b-time-picker size="mini" placeholder="mini date"></b-time-picker>
   </div>
   <div style="padding:0 10px;">
-    <b-time-picker placeholder="Select date"></b-time-picker>
+    <b-time-picker size="small" placeholder="small date"></b-time-picker>
   </div>
   <div style="padding:0 10px;">
-    <b-time-picker size="large" placeholder="Select date"></b-time-picker>
+    <b-time-picker placeholder="default date"></b-time-picker>
+  </div>
+  <div style="padding:0 10px;">
+    <b-time-picker size="large" placeholder="large date"></b-time-picker>
   </div>
 </div>
 </template>
