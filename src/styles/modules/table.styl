@@ -1,14 +1,13 @@
 @import "../common/var.styl"
-$border-base = #e8eaec;
 // 这块是为了覆盖文档的样式，后期文档整理再删除
 .bin-table {
   table {
     width: auto;
-    color: #5e6d82;
-    font-size: $base-font-size;
     border-collapse: separate;
     overflow: auto;
     border: none;
+    color: $color-text-default;
+    font-size: $base-font-size;
     thead, tbody {
       width: auto;
     }
@@ -19,25 +18,25 @@ $border-base = #e8eaec;
     border: none;
   }
   th {
-    background-color: #fafbfc;
+    background-color: $color-bg-fa;
   }
 }
 .bin-table {
   user-select: text;
+  color: $color-text-default;
+  font-size: $base-font-size;
+  width: inherit;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: $color-white;
+  box-sizing: border-box;
   &-wrapper {
     position: relative;
     border-bottom: 0;
     border-right: 0;
     overflow: hidden; // 开启 max-height 时，没有 overflow: hidden，则底部多出 1px，早期没有 overflow 是因为有些控件没有加 transfer
   }
-  width: inherit;
-  height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  color: #515a6e;
-  font-size: 12px;
-  background-color: #fff;
-  box-sizing: border-box;
   &-hide {
     opacity: 0;
   }
@@ -67,7 +66,7 @@ $border-base = #e8eaec;
   &-title, &-footer {
     height: 48px;
     line-height: 48px;
-    border-bottom: 1px solid $border-base;
+    border-bottom: $border-base;
   }
   &-footer {
     border-bottom: none;
@@ -90,7 +89,7 @@ $border-base = #e8eaec;
   }
   &-with-fixed-top&-with-footer {
     .bin-table-footer {
-      border-top: 1px solid #dcdee2;
+      border-top: $border-base;
     }
     tbody tr:last-child td {
       border-bottom: none;
@@ -98,21 +97,21 @@ $border-base = #e8eaec;
   }
   th, td {
     min-width: 0;
-    height: 48px;
+    height: 50px;
     box-sizing: border-box;
     text-align: left;
     text-overflow: ellipsis;
     vertical-align: middle;
-    border-bottom: 1px solid $border-base;
+    border-bottom: $border-base;
   }
 
   th {
-    height: 40px;
+    height: 50px;
     white-space: nowrap;
     overflow: hidden;
-    background-color: #fafafa;
-    color: rgba(0, 0, 0, .85);
-    font-weight: 500;
+    background-color: $color-bg-fa;
+    color: $color-text-primary;
+    font-weight: 600;
   }
   td {
     background-color: #fff;
@@ -154,7 +153,7 @@ $border-base = #e8eaec;
       display: block;
     }
     th, td {
-      border-right: 1px solid $border-base;
+      border-right: $border-base;
     }
   }
   &-cell {
@@ -164,7 +163,7 @@ $border-base = #e8eaec;
     white-space: normal;
     word-break: break-all;
     box-sizing: border-box;
-    color: rgba(0, 0, 0, .65);
+    color: $color-text-default;
 
     &-ellipsis {
       word-break: keep-all;
@@ -222,43 +221,40 @@ $border-base = #e8eaec;
   }
   td&-expanded-cell {
     padding: 20px 50px;
-    background: #fafafa;
+    background: $color-bg-fa;
   }
   &-stripe &-body, &-stripe &-fixed-body {
     tr:nth-child(2n) {
       td {
-        background-color: #fafafa;
+        background-color: $color-bg-fa;
       }
     }
     // #1380
     tr.bin-table-row-hover {
       td {
-        background-color: #e6f7ff;
+        background-color: $color-hover;
       }
     }
   }
 
   tr&-row-hover {
     td {
-      background-color: #e6f7ff;
+      background-color: $color-hover;
     }
   }
 
   &-large {
     font-size: $base-font-size;
-    th {
-      height: 48px;
-    }
     td {
-      height: 60px;
+      height: 55px;
     }
     &-title, &-footer {
-      height: 60px;
-      line-height: 60px;
+      height: 55px;
+      line-height: 55px;
     }
     .bin-table-cell-with-expand {
-      height: 59px;
-      line-height: 59px;
+      height: 55px;
+      line-height: 55px;
       i {
         font-size: 16px;
       }
@@ -267,7 +263,7 @@ $border-base = #e8eaec;
 
   &-small {
     th {
-      height: 32px;
+      height: 40px;
     }
     td {
       height: 40px;
@@ -284,7 +280,7 @@ $border-base = #e8eaec;
 
   &-row-highlight, tr&-row-highlight&-row-hover, &-stripe &-body tr&-row-highlight:nth-child(2n), &-stripe &-fixed-body tr&-row-highlight:nth-child(2n) {
     td {
-      background-color: #e6f7ff;
+      background-color: $color-hover;
     }
   }
 
@@ -316,9 +312,9 @@ $border-base = #e8eaec;
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: #fafafa;
-    border-top: 1px solid #dcdee2;
-    border-bottom: 1px solid #e8eaec;
+    background-color: $color-bg-fa;
+    border-top: $border-base;
+    border-bottom: $border-base;
   }
   &-fixed-header {
     overflow: hidden;

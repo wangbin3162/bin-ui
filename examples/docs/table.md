@@ -644,28 +644,28 @@ height 和maxHeight可以设置固定表头
 <template>
 <b-table :columns="columns2" :data="data">
     <template v-slot:name="scope">
-      <b-input type="text" v-model="editName" v-if="editIndex === scope.index" size="mini"></b-input>
+      <b-input type="text" v-model="editName" v-if="editIndex === scope.index" size="small"></b-input>
       <span v-else>{{ scope.row.name }}</span>
     </template>
     <template v-slot:age="scope">
-      <b-input type="text" v-model="editAge" v-if="editIndex ===  scope.index" size="mini"></b-input>
+      <b-input type="text" v-model="editAge" v-if="editIndex ===  scope.index" size="small"></b-input>
       <span v-else>{{  scope.row.age }}</span>
     </template>
     <template v-slot:birthday="scope">
-      <b-input type="text" v-model="editBirthday" v-if="editIndex ===  scope.index" size="mini"></b-input>
+      <b-input type="text" v-model="editBirthday" v-if="editIndex ===  scope.index" size="small"></b-input>
       <span v-else>{{ scope.row.birthday }}</span>
     </template>
     <template v-slot:address="scope">
-      <b-input type="text" v-model="editAddress" v-if="editIndex ===  scope.index" size="mini"></b-input>
+      <b-input type="text" v-model="editAddress" v-if="editIndex ===  scope.index" size="small"></b-input>
       <span v-else>{{  scope.row.address }}</span>
     </template>
     <template v-slot:action="scope">
       <div v-if="editIndex ===  scope.index">
-        <b-button @click="handleSave( scope.index)" size="mini">保存</b-button>
-        <b-button @click="editIndex = -1" size="mini">取消</b-button>
+        <b-button @click="handleSave( scope.index)" size="small">保存</b-button>
+        <b-button @click="editIndex = -1" size="small">取消</b-button>
       </div>
       <div v-else>
-        <b-button @click="handleEdit( scope.row,  scope.index)" size="mini">操作</b-button>
+        <b-button @click="handleEdit( scope.row,  scope.index)" size="small">操作</b-button>
       </div>
     </template>
 </b-table>
@@ -982,13 +982,26 @@ height 和maxHeight可以设置固定表头
 ```html
 <template>
 <div>
-  <b-table :columns="columns"  :data="data" size="small" ></b-table>
+    <div style="display:flex;justify-content: flex-end;">
+       <b-dropdown trigger="click" style="margin-bottom: 20px;">
+          <a href="javascript:void(0)">
+             表格密度 <b-icon name="ios-apps"></b-icon>
+          </a>
+          <b-dropdown-menu slot="list">
+             <b-dropdown-item @click.native="tableSize='large'">松散</b-dropdown-item>
+             <b-dropdown-item @click.native="tableSize='default'">默认</b-dropdown-item>
+             <b-dropdown-item @click.native="tableSize='small'">紧凑</b-dropdown-item>
+          </b-dropdown-menu>
+       </b-dropdown> 
+    </div>
+  <b-table :columns="columns"  :data="data" :size="tableSize" ></b-table>
 </div>
 </template>
 <script>
   export default {
     data () {
       return {
+        tableSize: 'default',
         columns: [
           {
             title: '姓名',
