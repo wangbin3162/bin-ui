@@ -1,3 +1,4 @@
+@import "../common/var.styl"
 .bin-drawer {
   position: fixed;
   width: auto;
@@ -43,7 +44,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: $color-text-secondary;
     height: 100%;
     z-index: 100;
     &-hidden {
@@ -54,31 +55,33 @@
     }
   }
   &-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0;
     bottom: 0;
-    background-color: #fff;
-    border: 0;
-    background-clip: padding-box;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
     &-no-mask {
       pointer-events: auto;
     }
   }
   &-header {
-    border-bottom: 1px solid #e8eaec;
-    padding: 14px 16px;
-    line-height: 1;
+    border-bottom: $border-base-light;
+    padding: 16px 24px;
     p,
     &-inner {
-      display: inline-block;
       width: 100%;
-      height: 20px;
-      line-height: 20px;
-      font-size: 16px;
-      color: #17233d;
+      line-height: 22px;
+      font-size: $header-font-size;
+      color: $color-text-primary;
       font-weight: 500;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -87,29 +90,48 @@
   }
   &-close {
     position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0;
+    color: $color-text-secondary;
+    line-height: 1;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    outline: 0;
     cursor: pointer;
-    font-size: 12px;
-    right: 8px;
-    top: 8px;
-    z-index: 1;
-    overflow: hidden;
-    .icon-ios-close {
-      font-size: 31px;
-      color: #999;
+    transition: color 0.3s;
+    .icon-close {
+      display: block;
+      width: 56px;
+      height: 56px;
+      font-style: normal;
+      line-height: 56px;
+      text-align: center;
+      text-transform: none;
+      text-rendering: auto;
+      font-size: 20px;
+      color: $color-text-secondary;
       transition: color .2s ease;
-      position: relative;
-      top: 1px;
+      &:hover {
+        color: $color-text-default;
+      }
     }
   }
   &-body {
     width: 100%;
-    height: calc(100vh - 51px);
-    padding: 16px;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: $base-font-size;
     word-wrap: break-word;
-    position: absolute;
     overflow: auto;
+    flex-grow: 1;
+    padding: 24px;
+    line-height: $base-line-height;
+  }
+  &-footer {
+    flex-shrink: 0;
+    padding: 10px 10px;
+    border-top: $border-base-light;
   }
   &-no-header &-body {
     height: 100%;
@@ -130,11 +152,12 @@
       right: 0;
     }
     &-move-trigger {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
       width: 8px;
       height: 100px;
       line-height: 100px;
-      position: absolute;
-      top: 50%;
       background: rgb(243, 243, 243);
       transform: translate(-50%, -50%);
       border-radius: 4px 6px;

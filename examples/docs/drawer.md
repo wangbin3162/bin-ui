@@ -103,16 +103,16 @@
      <p :style="pStyle">用户信息</p>
      <p :style="pStyle">个人信息</p>
      <div class="demo-drawer-profile">
-        <p flex="box:mean">
+        <p flex="box:mean" class="mb-10">
           <span>名称: wangbin</span><span>手机号: +86 1762516xxxx</span>
         </p>
-        <p flex="box:mean">
+        <p flex="box:mean" class="mb-10">
           <span>城市: 徐州市</span><span>区: 鼓楼区</span>
         </p>
-        <p flex="box:mean">
+        <p flex="box:mean" class="mb-10">
           <span>出生年月: 1990-04</span><span>职业: web前端</span>
         </p>
-        <p flex="box:mean">
+        <p flex="box:mean" class="mb-10">
           个人主页:
           <a href="https://wangbin3162.gitee.io/web-doc/guide/" target="_blank">https://wangbin3162.gitee.io/web-doc/guide/</a>
         </p>
@@ -120,20 +120,20 @@
      <b-divider></b-divider>
      <p :style="pStyle">公司</p>
      <div class="demo-drawer-profile">
-        <p flex="box:mean">
+        <p flex="box:mean" class="mb-10">
           <span>名称: xxxx有限公司</span><span>手机号: +86 1762516xxxx</span>
         </p>
-        <p flex="box:mean">
+        <p flex="box:mean" class="mb-10">
           <span>地址: 徐州市xx区xx街道88号</span><span>电话: +86 1762516xxxx</span>
         </p>
      </div>
      <b-divider></b-divider>
      <p :style="pStyle">联系我们</p>
      <div class="demo-drawer-profile">
-        <p flex="box:mean">
+        <p flex="box:mean" class="mb-10">
           <span>Email: 316281400@qq.com</span><span>手机号: +86 1762516xxxx</span>
         </p>
-        <p>
+        <p class="mb-10">
           GitHub: <a href="https://github.com/wangbin3162/bin-ui" target="_blank">https://github.com/wangbin3162/bin-ui</a>
         </p>
      </div>
@@ -163,7 +163,7 @@
 ```html
 <template>
   <b-button type="primary" v-waves @click="value4 = true">编辑抽屉</b-button>
-    <b-drawer v-model="value4" title="编辑对象" width="720" append-to-body :mask-closable="false" :styles="styles">
+    <b-drawer v-model="value4" title="编辑对象" width="720" append-to-body :mask-closable="false">
       <b-form :model="formInline" ref="form" label-position="top">
         <div flex="box:mean">
             <b-form-item label="用户名" prop="name" class="mr-15">
@@ -191,7 +191,7 @@
         </div>
         <div flex="box:mean">
             <b-form-item label="城市" prop="city" class="mr-15">
-              <b-select v-model="formInline.city" clearable size="large">
+              <b-select v-model="formInline.city" clearable>
                 <b-option value="beijing" label="北京"></b-option>
                 <b-option value="shanghai" label="上海"></b-option>
                 <b-option value="xuzhou" label="徐州"></b-option> 
@@ -205,9 +205,9 @@
             <b-input v-model="formInline.desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></b-input>
         </b-form-item>
       </b-form>
-      <div :style="footerStyles">
-        <b-button style="margin-right: 8px" @click="value4 = false">取 消</b-button>
-        <b-button type="primary" @click="value4 = false">提 交</b-button>
+      <div slot="footer">
+        <b-button size="small" @click="value4 = false">取 消</b-button>
+        <b-button size="small" type="primary" @click="value4 = false">提 交</b-button>
       </div>
     </b-drawer>
 </template>
@@ -224,23 +224,7 @@
             city:'',
             address:'',
             desc:''
-          },
-          styles: {
-            height: 'calc(100% - 55px)',
-            overflow: 'auto',
-            paddingBottom: '53px',
-            position: 'static'
-          },
-          footerStyles: {
-            width: '100%',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            borderTop: '1px solid #e8e8e8',
-            padding: '10px 16px',
-            textAlign: 'right',
-            background: '#fff'
-          }   
+          }
         }
       }
     }

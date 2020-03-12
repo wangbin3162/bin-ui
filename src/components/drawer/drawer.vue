@@ -9,7 +9,7 @@
           <div :class="contentClasses" ref="content">
             <a class="bin-drawer-close" v-if="closable" @click="close">
               <slot name="close">
-                <b-icon name="ios-close"></b-icon>
+                <b-icon name="close"></b-icon>
               </slot>
             </a>
             <div :class="[prefixCls + '-header']" v-if="showHead">
@@ -19,6 +19,12 @@
             </div>
             <div :class="[prefixCls + '-body']" :style="styles">
               <slot></slot>
+            </div>
+            <div :class="[prefixCls + '-footer']" v-if="$slots.footer">
+              <div style="text-align: right">
+                <slot name="footer">
+                </slot>
+              </div>
             </div>
           </div>
           <div class="bin-drawer-drag" :class="{ 'bin-drawer-drag-left': placement === 'left' }" v-if="draggable"
