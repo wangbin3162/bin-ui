@@ -51,18 +51,17 @@ $width-with-date-base = 72px;
           cursor: pointer;
           list-style: none;
           transition: background .2s ease-in-out;
-
+          color: $color-text-default;
         }
       }
     }
     &-cell {
       &:hover {
-        background: #f3f3f3;
+        background: #f5f5f5;
       }
       &-disabled {
         color: $btn-disable-color
         cursor: not-allowed;
-
         &:hover {
           color: $btn-disable-color
           background-color: #fff;
@@ -70,8 +69,8 @@ $width-with-date-base = 72px;
         }
       }
       &-selected, &-selected:hover {
-        color: $color-primary;
-        background: #f3f3f3;
+        color: $color-text-primary !important;
+        background: $color-hover;
       }
       &-focused {
         background-color: tint($color-primary, 80%);
