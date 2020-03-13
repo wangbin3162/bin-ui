@@ -64,15 +64,15 @@
     }
   }
   &-single &-selection {
-    height: 36px;
+    height: $default-height;
     position: relative;
     .bin-select-placeholder {
       color: $color-text-placeholder;
     }
     .bin-select-placeholder, .bin-select-selected-value {
       display: block;
-      height: 34px;
-      line-height: 34px;
+      height: $default-height - 2;
+      line-height: $default-height  - 2;
       font-size: $base-font-size;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -86,54 +86,67 @@
     height: $mini-height;
     border-radius: $border-base-radius;
     .bin-select-placeholder, .bin-select-selected-value {
-      height: $mini-height;
-      line-height: $mini-height;
+      height: $mini-height - 2;
+      line-height: $mini-height  - 2;
     }
   }
   &-mini&-multiple &-selection {
-    min-height: $mini-height;
+    height: $small-height;
     border-radius: $border-base-radius;
     .bin-select-placeholder, .bin-select-selected-value {
-      min-height: $mini-height;
-      line-height: $mini-height;
+      height: $small-height - 2;
+      line-height: $small-height  - 2;
+    }
+    .bin-tag {
+      height: $small-height - 8;
+      line-height: $small-height - 10;
     }
   }
   &-small&-single &-selection {
     height: $small-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      height: $small-height;
-      line-height: $small-height;
+      height: $small-height - 2;
+      line-height: $small-height  - 2;
     }
   }
   &-small&-multiple &-selection {
-    min-height: $small-height;
+    height: $small-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      min-height: $small-height;
-      line-height: $small-height;
+      height: $small-height - 2;
+      line-height: $small-height  - 2;
+    }
+    .bin-tag {
+      height: $small-height - 8;
+      line-height: $small-height - 10;
     }
   }
   &-large&-single &-selection {
     height: $large-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      height: $large-height;
-      line-height: $large-height - 1;
+      height: $large-height - 2;
+      line-height: $large-height  - 2;
       font-size: $header-font-size;
     }
   }
   &-large&-multiple &-selection {
-    min-height: $large-height;
+    height: $large-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      min-height: $large-height;
-      line-height: $large-height - 1;
+      height: $large-height - 2;
+      line-height: $large-height - 2;
       font-size: $header-font-size;
+    }
+    .bin-tag {
+      height: $large-height - 8;
+      line-height: $large-height - 10;
     }
   }
   &-multiple &-selection {
+    height: $default-height;
     padding: 0 24px 0 4px;
     .bin-select-placeholder {
       display: block;
-      height: 30px;
-      line-height: 30px;
+      height: $default-height - 2;
+      line-height: $default-height  - 2;
       color: $btn-disable-color;
       font-size: $base-font-size;
       overflow: hidden;
@@ -144,8 +157,8 @@
     }
   }
   &-multiple .bin-tag {
-    height: 24px;
-    line-height: 22px;
+    height: $default-height - 8;
+    line-height: $default-height - 10;
     margin: 3px 4px 3px 0;
     max-width: 99%;
     position: relative;
@@ -159,7 +172,8 @@
     i {
       position: absolute;
       right: 2px;
-      top: 2px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
   &-prefix {
@@ -182,8 +196,8 @@
   // input
   &-input {
     display: inline-block;
-    height: 34px;
-    line-height: 34px;
+    height: $default-height - 2;
+    line-height: $default-height  - 2;
     padding: 0 24px 0 8px;
     font-size: $base-font-size;
     outline: none;
@@ -216,23 +230,23 @@
     width: 100%;
   }
   &-large &-input {
-    line-height: $large-height;
-    height: $large-height;
+    height: $large-height - 2;
+    line-height: $large-height  - 2;
   }
   &-large {
     font-size: $header-font-size;
   }
   &-small &-input {
-    height: $small-height;
-    line-height: $small-height;
+    height: $small-height - 2;
+    line-height: $small-height  - 2;
   }
   &-mini &-input {
-    height: $mini-height;
-    line-height: $mini-height;
+    height: $mini-height - 2;
+    line-height: $mini-height  - 2;
   }
   &-multiple &-input {
-    height: 30px;
-    line-height: 30px;
+    height: $default-height - 2;
+    line-height: $default-height - 2;
     padding: 0 0 0 4px;
   }
   &-not-found {
@@ -275,7 +289,7 @@
     background: $color-select-hover;
   }
   &-selected, &-item &-selected:hover {
-    background: $color-primary-light7;
+    background: $color-primary-light6;
     font-weight: bold;
   }
   &-disabled {

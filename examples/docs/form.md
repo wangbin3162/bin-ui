@@ -155,7 +155,8 @@
             <b-input v-model="formValidate.desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></b-input>
         </b-form-item>
         <b-form-item>
-            <b-button @click="handleSubmit">提交</b-button>
+            <b-button @click="handleSubmit" type="primary">提 交</b-button>
+            <b-button @click="handleReset">重 置</b-button>
         </b-form-item>
       </b-form>
    </div>
@@ -243,6 +244,9 @@
             this.$message({type:'danger',content:'表单校验失败'});
           }
         })
+      },
+      handleReset () {
+       this.$refs.form.resetFields();
       }
     }
   }

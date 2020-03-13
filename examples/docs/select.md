@@ -177,7 +177,7 @@ export default {
    </b-option-group>
    <b-option-group label="热门城市">
      <b-option value="xuzhou" label="徐州"></b-option> 
-     <b-option value="xuzhou" label="南京"></b-option> 
+     <b-option value="nanjing" label="南京"></b-option> 
    </b-option-group>
   </b-select>
   <b-select style="width:200px;margin-left: 20px;" v-model="select">
@@ -214,7 +214,7 @@ export default {
 
 可以开启属性`multiple`开启多选模式 `max-tag-count` `max-tag-placeholder` 可以对超出的部分做折叠显示
 
-::: demo
+::: demo 注意，多选的尺寸，mini型和small一样大小
 ```html
 <template>
 <div>

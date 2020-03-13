@@ -34,52 +34,52 @@ placeholder() {
 // 大小设置
 .bin-input-wrapper-large {
   .bin-input-with-prefix {
-    padding-left: 40px;
+    padding-left: $large-height;
   }
   .bin-input-prefix, .bin-input-suffix {
-    width: 40px;
+    width: $large-height;
     i {
       font-size: 18px;
-      line-height: 40px;
+      line-height: $large-height;
     }
   }
   .bin-input-icon {
-    line-height: 40px;
+    line-height: $large-height;
   }
 }
 .bin-input-wrapper-small {
   .bin-input-with-prefix {
-    padding-left: 32px;
+    padding-left: $small-height;
   }
   .bin-input-prefix, .bin-input-suffix {
-    width: 32px;
+    width: $small-height;
     i {
-      line-height: 32px;
+      line-height: $small-height;
     }
   }
   .bin-input-icon {
-    line-height: 32px;
+    line-height: $small-height;
   }
 }
 .bin-input-wrapper-mini {
   .bin-input-with-prefix {
-    padding-left: 28px;
+    padding-left: $mini-height;
   }
   .bin-input-prefix, .bin-input-suffix {
-    width: 28px;
+    width: $mini-height;
     i {
-      line-height: 24px;
+      line-height: $mini-height;
     }
   }
   .bin-input-icon {
-    line-height: 24px;
+    line-height: $mini-height;
   }
 }
 
 .bin-input {
   display: inline-block;
   width: 100%;
-  height: 36px;
+  height: $default-height;
   line-height: $base-line-height;
   padding: 0 11px;
   font-size: $base-font-size;
@@ -122,12 +122,12 @@ placeholder() {
   right: 0;
   top: 0;
   z-index: 3;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
+  width: $default-height;
+  height: $default-height;
+  line-height: $default-height;
   font-size: 16px;
   text-align: center;
-  color: $color-text-default;
+  color: $color-text-secondary;
 }
 .bin-input-icon-normal + .bin-input {
   padding-right: 36px;
@@ -146,7 +146,7 @@ placeholder() {
   z-index: 1;
   i {
     font-size: 16px;
-    line-height: 36px;
+    line-height: $default-height;
     color: $color-text-secondary;
   }
 }

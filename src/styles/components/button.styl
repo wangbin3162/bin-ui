@@ -1,6 +1,7 @@
 .bin-button {
   display: inline-block;
   line-height: $base-line-height;
+  height: $default-height;
   white-space: nowrap;
   cursor: pointer;
   background: $color-white;
@@ -13,7 +14,7 @@
   margin: 0;
   transition: .2s;
   user-select: none;
-  padding: 6px 15px;
+  padding: 4px 15px;
   font-size: $base-font-size;
   border-radius: $border-base-radius;
   .iconfont {
@@ -29,7 +30,6 @@
   &:hover, &:focus {
     color: $color-primary;
     border-color: $color-primary;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   }
   &.is-round {
     border-radius: 20px;
@@ -61,20 +61,22 @@
 }
 
 .bin-button--large {
-  height: 40px;
-  padding: 6px 15px;
-  font-size: 16px;
-  &.is-round {
-    padding: 6px 15px;
-  }
-}
-.bin-button--small {
+  height: $large-height;
   padding: 4px 14px;
+  font-size: $header-font-size;
   &.is-round {
     padding: 4px 14px;
   }
 }
+.bin-button--small {
+  height: $small-height;
+  padding: 2px 11px;
+  &.is-round {
+    padding: 2px 11px;
+  }
+}
 .bin-button--mini {
+  height: $mini-height;
   padding: 0 7px;
   &.is-round {
     padding: 0 10px;
@@ -313,7 +315,6 @@
     color: $color-primary-light2;
     border-color: transparent;
     background-color: transparent;
-    box-shadow: none;
   }
   &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
     cursor: not-allowed;
@@ -337,10 +338,6 @@
     z-index: 0;
     &:hover {
       z-index: 1;
-      box-shadow: none;
-    }
-    &:focus {
-      box-shadow: none;
     }
     &:active {
       z-index: 1;

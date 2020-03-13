@@ -32,8 +32,8 @@
                 <slot name="title"><span class="message-title">{{ title }}</span></slot>
               </div>
               <div :class="[prefixCls + '-body-buttons']">
-                <b-button size="mini" @click="cancel">{{ okText }}</b-button>
-                <b-button type="primary" size="mini" @click="ok">{{ cancelText }}</b-button>
+                <b-button size="mini" @click="cancel">{{ cancelText }}</b-button>
+                <b-button type="primary" size="mini" @click="ok">{{ okText }}</b-button>
               </div>
             </div>
           </div>
