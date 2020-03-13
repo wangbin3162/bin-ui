@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         test: /\.styl(us)?$/,
-        loaders: ['style-loader', 'css-loader', 'stylus-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
