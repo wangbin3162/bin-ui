@@ -11,36 +11,28 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">2.9.0 (3.0beta版，3.0发布前优化调整细节样式，正式发布后删除此条)</p>
+        <p class="time">2020-03-13</p>
+        <p class="content">调整全局主色调颜色，基础字号统一为14px，圆角值默认设置为2px</p>
+        <p class="content">表单各类组件四个标准高度，40px，36px，32px，24px</p>
+        <p class="content">优化各组件样式引用，支持主题定制配色</p>
+        <p class="content">扩展popover组件，扩展notice通知组件</p>
+        <p class="content">按钮扩展多彩文字设置</p>
+        <p class="content">去除normalize引用，使用reset重置样式</p>
+        <p class="content">级联选择器重命名为cascader</p>
+        <p class="content">各个组件下拉框组件选中默认为主色混合白色85%</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">2.7.14</p>
         <p class="time">2020-03-10</p>
         <p class="content">优化图标,button文字大小,修复模态窗和部分样式问题</p>
-        <p class="content">暂时去除ts支持,暂未实现</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.7.11</p>
-        <p class="time">2020-03-04</p>
         <p class="content">优化table和tree树形组件无数据显示状态</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.7.10</p>
-        <p class="time">2020-03-03</p>
         <p class="content">修复table边框border的错位bug</p>
         <p class="content">扩展message提示显示zIndex可设置</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.7.9</p>
-        <p class="time">2020-02-28</p>
         <p class="content">固定图钉优化滚动监听</p>
         <p class="content">datePicker新增mini大小</p>
         <p class="content">优化table可以选择复制,优化tabs页签背景色</p>
-      </b-timeline-item>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.7.8</p>
-        <p class="time">2020-02-23</p>
         <p class="content">借助resize组件,使table模块默认跟随父级元素大小改变而改变,保证宽度统一</p>
       </b-timeline-item>
       <b-timeline-item color="primary">
