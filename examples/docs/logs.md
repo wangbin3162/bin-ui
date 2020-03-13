@@ -11,10 +11,10 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.9.0 (3.0beta版，3.0发布前优化调整细节样式，正式发布后删除此条)</p>
+        <p class="version">2.9.1 (3.0beta版，3.0发布前优化调整细节样式，正式发布后删除此条)</p>
         <p class="time">2020-03-13</p>
         <p class="content">调整全局主色调颜色，基础字号统一为14px，圆角值默认设置为2px</p>
-        <p class="content">表单各类组件四个标准高度，40px，36px，32px，24px</p>
+        <p class="content">表单各类组件四个标准高度，40px，32px，28px，24px</p>
         <p class="content">优化各组件样式引用，支持主题定制配色</p>
         <p class="content">扩展popover组件，扩展notice通知组件</p>
         <p class="content">按钮扩展多彩文字设置</p>
