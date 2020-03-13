@@ -66,7 +66,7 @@
         validator (value) {
           return oneOf(value, ['dark', 'light'])
         },
-        default: 'light'
+        default: 'dark'
       },
       maxWidth: {
         type: [String, Number]

@@ -33,7 +33,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer;
-    font-size: 12px;
+    font-size: $base-font-size;
   }
   &-size-large &-label {
     line-height: 40px;
@@ -102,11 +102,11 @@
     }
 
     &-disabled {
-      color: #c5c8ce;
+      color: $btn-disable-color;
       cursor: not-allowed;
 
       &:hover {
-        color: #c5c8ce;
+        color: $btn-disable-color;
         background-color: #fff;
         cursor: not-allowed;
       }
@@ -152,7 +152,7 @@
   &-not-found-tip {
     padding: 5px 0;
     text-align: center;
-    color: #c5c8ce;
+    color: $btn-disable-color;
     min-width: 120px;
     li:not([class^=bin-]) {
       list-style: none;
@@ -193,13 +193,13 @@
         position: absolute;
         right: 15px;
         top: 10px;
-        font-size: 12px;
+        font-size: $base-font-size;
       }
       &-loading {
         margin-top: -6px;
       }
       &-active {
-        background-color: $color-hover;
+        background-color: $color-primary-light6;
         color: $color-text-primary;
       }
     }
@@ -219,27 +219,27 @@
     line-height: normal;
     padding: 7px 16px;
     clear: both;
-    color: #515a6e;
-    font-size: 12px !important;
+    color: $color-text-default;
+    font-size: $base-font-size !important;
     white-space: nowrap;
     list-style: none;
     cursor: pointer;
     transition: background .2s ease-in-out;
 
     &:hover {
-      background: #f3f3f3;
+      background: $color-select-hover;
     }
 
     &-focus {
-      background: #f3f3f3;
+      background: $color-select-hover;
     }
 
     &-disabled {
-      color: #c5c8ce;
+      color: $color-text-disabled;
       cursor: not-allowed;
 
       &:hover {
-        color: #c5c8ce;
+        color: $color-text-disabled;
         background-color: #fff;
         cursor: not-allowed;
       }
@@ -278,7 +278,7 @@
         padding-right: 24px;
         transition: all .2s ease-in-out;
         &-active {
-          background-color: $color-hover;
+          background-color: $color-primary-light6;
           color: $color-text-primary;
         }
       }

@@ -195,7 +195,7 @@
   &-light&-vertical {
     .bin-menu-item-active:not(.bin-menu-submenu) {
       color: $color-primary;
-      background: $color-hover;
+      background: $color-primary-light7;
       &:after {
         content: "";
         display: block;
@@ -211,7 +211,7 @@
   &-light&-vertical &-submenu {
     .bin-menu-item-active {
       color: $color-primary;
-      background: $color-hover;
+      background: $color-primary-light6;
       z-index: 2;
       &:after {
         content: '';
@@ -297,15 +297,15 @@
     }
 
     &-focus {
-      background: $color-hover
+      background: $color-primary-light6;
     }
 
     &-disabled {
-      color: #c5c8ce;
+      color: $btn-disable-color;
       cursor: not-allowed;
 
       &:hover {
-        color: #c5c8ce;
+        color: $btn-disable-color;
         background-color: $color-white;
         cursor: not-allowed;
       }
@@ -313,12 +313,12 @@
 
     &-selected, &-selected:hover {
       color: $color-primary;
-      background: $color-hover
+      background: $color-primary-light6;
     }
 
     &-divided {
       margin-top: 5px;
-      border-top: 1px solid #e8eaec;
+      border-top: $border-base;
       &:before {
         content: '';
         height: 5px;
@@ -337,6 +337,9 @@
     line-height: 36px;
     height: 36px;
     font-size: $base-font-size;
+    &.bin-menu-child-item-active {
+      color: $color-primary;
+    }
     .bin-menu-submenu-title {
       padding: 0 10px;
       position: relative;
@@ -363,15 +366,15 @@
       }
 
       &-focus {
-        background: $color-hover
+        background: $color-primary-light6
       }
 
       &-disabled {
-        color: #c5c8ce;
+        color: $btn-disable-color;
         cursor: not-allowed;
 
         &:hover {
-          color: #c5c8ce;
+          color: $btn-disable-color;
           background-color: $color-white;
           cursor: not-allowed;
         }

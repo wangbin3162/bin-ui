@@ -84,7 +84,7 @@
       transition: height .2s;
     }
     .description {
-      padding: 20px;
+      padding: 10px;
       box-sizing: border-box;
       border: solid 1px #ebebeb;
       border-radius: 3px;

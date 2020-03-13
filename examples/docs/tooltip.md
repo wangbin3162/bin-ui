@@ -88,7 +88,7 @@
 ::: demo
 ```html
 <template>
-  <b-tooltip  content="light(default)" >
+  <b-tooltip  content="light" >
      <b-button size="small">light(default)</b-button>&nbsp;&nbsp;
   </b-tooltip>
   <b-tooltip  content="Dark" theme="dark">
@@ -159,7 +159,7 @@
 | disabled     | 是否禁用提示框   | Boolean  |  —   |   false   |
 | delay     | 延迟显示   |  Number	 |  —   |   100   |
 | always     | 是否总是可见   |  Boolean  |  —   |   false   |
-| theme     | 主题   |  string  |  dark 或 light   |   light   |
+| theme     | 主题   |  string  |  dark 或 light   |   dark   |
 | max-width	     | 最大宽度，超出最大值后，文本将自动换行   |  string/number  | — |   —    |
 | offset    | 出现位置的偏移量   |  Number |  — |  	0     |
 | appendToBody    | 是否将弹层放置于 body 内   | Boolean  |  —   |   false   |

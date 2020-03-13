@@ -187,7 +187,7 @@
 ::: demo 
 ```html
 <template>
-<div flex="box:mean" style="width: 500px;">
+<div flex="box:mean">
   <div style="padding:0 10px;">
     <b-time-picker size="mini" placeholder="mini date"></b-time-picker>
   </div>

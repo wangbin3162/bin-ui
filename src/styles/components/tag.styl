@@ -1,8 +1,8 @@
 .bin-tag {
   display: inline-block;
   margin: 2px 4px 2px 0;
-  border: $border-color-base;
-  background: #fafafa;
+  border: $border-base;
+  background: $color-bg-fa;
   font-size: 12px;
   vertical-align: middle;
   opacity: 1;
@@ -87,13 +87,13 @@
   height: auto;
 }
 .is-small {
-  height: 28px;
-  line-height: 26px;
+  height: $mini-height + 4
+  line-height: $mini-height + 4
 }
 .is-mini {
-  height: 24px;
+  height: $mini-height;
   padding: 0 8px;
-  line-height: 22px;
+  line-height: $mini-height;
 }
 .bin-dot {
   display: inline-block;
@@ -101,7 +101,7 @@
   height: 10px;
   margin-right: 8px;
   border-radius: 50%;
-  background: $border-base;
+  background: $border-color-base;
   position: relative;
   top: 1px;
 }

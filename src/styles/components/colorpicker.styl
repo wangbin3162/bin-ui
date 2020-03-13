@@ -9,7 +9,7 @@ circle-dot() {
 active() {
   border-color: tint($color-primary, 20%);
   outline: 0;
-  box-shadow: 0 0 0 2px $color-primary-light6;
+  box-shadow: 0 0 0 2px $color-input-shadow;
 }
 
 .bin-color-picker {
@@ -21,7 +21,7 @@ active() {
     }
   }
   &-disabled {
-    background-color: #f5f5f5;
+    background-color: $color-select-hover;
     opacity: 1;
     cursor: not-allowed;
     color: #ccc;

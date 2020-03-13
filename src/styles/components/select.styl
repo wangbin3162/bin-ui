@@ -41,7 +41,7 @@
     .bin-select-selection {
       border-color: $color-primary;
       outline: 0;
-      box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+      box-shadow: 0 0 0 2px $color-input-shadow;
     }
     .bin-select-arrow {
       transform: translateY(-50%) rotate(180deg);
@@ -50,7 +50,7 @@
   }
   &-disabled {
     .bin-select-selection {
-      background-color: #f5f5f5;
+      background-color: $color-select-hover;
       opacity: 1;
       cursor: not-allowed;
       color: $color-text-disabled;
@@ -83,48 +83,49 @@
   }
 
   &-mini&-single &-selection {
-    height: 24px;
+    height: $mini-height;
     border-radius: $border-base-radius;
     .bin-select-placeholder, .bin-select-selected-value {
-      height: 24px;
-      line-height: 24px;
+      height: $mini-height;
+      line-height: $mini-height;
     }
   }
   &-mini&-multiple &-selection {
-    min-height: 24px;
+    min-height: $mini-height;
     border-radius: $border-base-radius;
     .bin-select-placeholder, .bin-select-selected-value {
-      min-height: 24px;
-      line-height: 24px;
+      min-height: $mini-height;
+      line-height: $mini-height;
     }
   }
   &-small&-single &-selection {
-    height: 32px;
+    height: $small-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      height: 30px;
-      line-height: 30px;
+      height: $small-height;
+      line-height: $small-height;
     }
   }
   &-small&-multiple &-selection {
-    min-height: 32px;
+    min-height: $small-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      min-height: 30px;
-      line-height: 30px;
+      min-height: $small-height;
+      line-height: $small-height;
     }
   }
   &-large&-single &-selection {
-    height: 40px;
+    height: $large-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      height: 38px;
-      line-height: 38px;
+      height: $large-height;
+      line-height: $large-height - 1;
+      font-size: $header-font-size;
     }
   }
   &-large&-multiple &-selection {
-    min-height: 40px;
+    min-height: $large-height;
     .bin-select-placeholder, .bin-select-selected-value {
-      min-height: 38px;
-      line-height: 38px;
-      font-size: $base-font-size;
+      min-height: $large-height;
+      line-height: $large-height - 1;
+      font-size: $header-font-size;
     }
   }
   &-multiple &-selection {
@@ -133,7 +134,7 @@
       display: block;
       height: 30px;
       line-height: 30px;
-      color: #c5c8ce;
+      color: $btn-disable-color;
       font-size: $base-font-size;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -215,16 +216,19 @@
     width: 100%;
   }
   &-large &-input {
-    line-height: 38px
-    height: 38px;
+    line-height: $large-height;
+    height: $large-height;
+  }
+  &-large {
+    font-size: $header-font-size;
   }
   &-small &-input {
-    height: 34px
-    line-height: 34px
+    height: $small-height;
+    line-height: $small-height;
   }
   &-mini &-input {
-    height: 26px
-    line-height: 26px
+    height: $mini-height;
+    line-height: $mini-height;
   }
   &-multiple &-input {
     height: 30px;
@@ -257,8 +261,9 @@
 // 下拉框item样式
 .bin-select-item {
   margin: 0;
-  line-height: normal !important;
-  padding: 6px 12px;
+  line-height: $base-line-height;
+  min-height: $small-height;
+  padding: 5px 12px;
   clear: both;
   color: $color-text-default;
   font-size: $base-font-size !important;
@@ -267,10 +272,10 @@
   cursor: pointer;
   transition: background .2s ease-in-out;
   &:hover {
-    background: #f5f5f5;
+    background: $color-select-hover;
   }
   &-selected, &-item &-selected:hover {
-    background: $color-hover;
+    background: $color-primary-light7;
     font-weight: bold;
   }
   &-disabled {
@@ -305,7 +310,7 @@
     background: $color-white;
   }
   &-focus, &-selected:hover {
-    background: #f5f5f5;
+    background: $color-select-hover;
   }
   &-selected&-focus {
     color: $color-primary-light5;
@@ -338,7 +343,7 @@
     &-visible .bin-select-selection {
       border-color: $color-danger;
       outline: 0;
-      box-shadow: 0 0 0 2px $color-danger-light5;
+      box-shadow: 0 0 0 2px $color-input-error-shadow;
     }
   }
 }

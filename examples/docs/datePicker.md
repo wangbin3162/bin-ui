@@ -353,7 +353,7 @@ export default {
 ::: demo 
 ```html
 <template>
-<div flex="box:mean" style="width: 600px;">
+<div flex="box:mean">
   <div style="padding:0 10px;">
     <b-date-picker size="mini" type="date" placeholder="Select date"></b-date-picker>
   </div>

@@ -8,7 +8,7 @@
   transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
   margin: 0;
   padding: 0;
-  width: 80px;
+  width: 90px;
   height: 36px;
   line-height: 36px;
   vertical-align: middle;
@@ -25,7 +25,7 @@
   &:focus {
     border-color: $color-primary;
     outline: 0;
-    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+    box-shadow: 0 0 0 2px $color-input-shadow;
   }
 }
 .bin-input-number-input-wrap {
@@ -36,7 +36,7 @@
   width: 100%;
   height: 36px;
   line-height: 36px;
-  padding: 0 7px;
+  padding: 0 11px;
   text-align: left;
   outline: 0;
   -moz-appearance: textfield;
@@ -134,51 +134,52 @@
 //不同尺寸
 .bin-input-number-mini {
   padding: 0;
-  height: 24px;
+  height: $mini-height;
   border-radius: $border-base-radius;
   input {
-    height: 24px;
-    line-height: 24px;
+    height: $mini-height;
+    line-height: $mini-height;
     vertical-align: top;
   }
   .bin-input-number-input-wrap {
-    height: 24px;
+    height:$mini-height;
   }
 }
 .bin-input-number-small {
   padding: 0;
-  height: 32px;
+  height: $small-height;
   border-radius: $border-base-radius;
   input {
-    height: 30px;
-    line-height: 30px;
+    height: $small-height;
+    line-height: $small-height;
     vertical-align: top;
   }
   .bin-input-number-handler {
-    height: 15px;
+    height: $small-height / 2;
   }
   .bin-input-number-input-wrap {
-    height: 32px;
+    height: $small-height;
   }
 }
 .bin-input-number-large {
-  font-size: 14px;
+  font-size: $header-font-size
   padding: 0;
-  height: 40px;
+  height: $large-height;
   input {
-    height: 38px;
-    line-height: 38px;
+    height: $large-height;
+    line-height: $large-height;
+    font-size: $header-font-size
   }
   .bin-input-number-handler {
-    height: 20px;
+    height: $large-height / 2;
   }
   .bin-input-number-input-wrap {
-    height: 40px;
+    height: $large-height;
   }
 }
 
 .bin-input-number-focused {
   border-color: $color-primary;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+  box-shadow: 0 0 0 2px $color-input-shadow;
 }

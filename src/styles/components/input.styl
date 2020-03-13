@@ -97,21 +97,21 @@ placeholder() {
   }
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+    box-shadow: 0 0 0 2px $color-input-shadow;
   }
 }
 // 大小设置
 .bin-input-large {
-  height: 40px;
+  height: $large-height;
   font-size: $header-font-size;
 }
 
 .bin-input-small {
-  height: 32px;
+  height: $small-height;
 }
 
 .bin-input-mini {
-  height: 24px;
+  height: $mini-height;
 }
 //  图标部分
 .bin-input-hide-icon .bin-input-icon, .bin-input-icon-clear, .bin-input-icon-validate {

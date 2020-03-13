@@ -47,7 +47,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #dcdee2;
+    background-color: $border-color-base;
     z-index: 1;
   }
 
@@ -59,7 +59,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #dcdee2;
+    background-color: $border-color-base;
     z-index: 3;
   }
   &-title, &-footer {
@@ -136,7 +136,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      background-color: #dcdee2;
+      background-color: $border-color-base;
     }
     &:before {
       height: 100%;
@@ -231,14 +231,14 @@
     // #1380
     tr.bin-table-row-hover {
       td {
-        background-color: $color-hover;
+        background-color: $color-primary-light7;
       }
     }
   }
 
   tr&-row-hover {
     td {
-      background-color: $color-hover;
+      background-color: $color-primary-light7;
     }
   }
 
@@ -279,7 +279,7 @@
 
   &-row-highlight, tr&-row-highlight&-row-hover, &-stripe &-body tr&-row-highlight:nth-child(2n), &-stripe &-fixed-body tr&-row-highlight:nth-child(2n) {
     td {
-      background-color: $color-hover;
+      background-color: $color-primary-light7;
     }
   }
 
@@ -293,7 +293,7 @@
       content: '';
       width: 100%;
       height: 1px;
-      background-color: #dcdee2;
+      background-color: $border-color-base;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -348,7 +348,7 @@
       line-height: 6px;
       overflow: hidden;
       position: absolute;
-      color: #c5c8ce;
+      color: $btn-disable-color;
       transition: color .2s ease-in-out;
       font-size: 16px;
       &:hover {
