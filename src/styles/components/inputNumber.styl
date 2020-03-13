@@ -1,0 +1,184 @@
+.bin-input-number {
+  display: inline-block;
+  font-size: 12px;
+  color: $color-text-default;
+  background-color: $color-white;
+  background-image: none;
+  position: relative;
+  transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  vertical-align: middle;
+  border: $border-base;
+  border-radius: $border-base-radius;
+  overflow: hidden;
+  cursor: default;
+  &:hover {
+    border-color: $color-primary;
+    .bin-input-number-handler-wrap {
+      opacity: 1;
+    }
+  }
+  &:focus {
+    border-color: $color-primary;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+  }
+}
+.bin-input-number-input-wrap {
+  overflow: hidden;
+  height: 36px;
+}
+.bin-input-number-input {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 7px;
+  text-align: left;
+  outline: 0;
+  -moz-appearance: textfield;
+  color: $color-text-default;
+  border: 0;
+  border-radius: $border-base-radius;
+  transition: all .2s linear;
+}
+//  数字输入
+.bin-input-number-handler-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22px;
+  height: 100%;
+  border-left: $border-base;
+  border-radius: 0 $border-base-radius $border-base-radius 0;
+  background: $color-white;
+  transition: opacity .2s ease-in-out;
+  opacity: 0;
+  &:hover .bin-input-number-handler {
+    height: 40%;
+  }
+}
+.bin-input-number-handler {
+  display: block;
+  width: 100%;
+  height: 50%;
+  line-height: 0;
+  text-align: center;
+  overflow: hidden;
+  color: $color-text-secondary;
+  position: relative;
+  transition: .3s;
+}
+.bin-input-number-handler-up {
+  cursor: pointer;
+  &:hover {
+    height: 60% !important;
+    .bin-input-number-handler-up-inner {
+      color: $color-primary;
+    }
+  }
+}
+.bin-input-number-handler-down {
+  border-top: $border-base;
+  top: -1px;
+  cursor: pointer;
+  &:hover {
+    height: 60% !important;
+    .bin-input-number-handler-down-inner {
+      color: $color-primary;
+    }
+  }
+}
+.bin-input-number-handler-down-inner, .bin-input-number-handler-up-inner {
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  line-height: 12px;
+  font-size: 12px;
+  color: $color-text-secondary;
+  transition: all .2s linear;
+}
+
+.bin-input-number-disabled .bin-input-number-handler-down-inner,
+.bin-input-number-disabled .bin-input-number-handler-up-inner,
+.bin-input-number-handler-down-disabled .bin-input-number-handler-down-inner,
+.bin-input-number-handler-down-disabled .bin-input-number-handler-up-inner,
+.bin-input-number-handler-up-disabled .bin-input-number-handler-down-inner,
+.bin-input-number-handler-up-disabled .bin-input-number-handler-up-inner {
+  opacity: .72;
+  color: $color-text-disabled !important;
+  cursor: not-allowed;
+}
+//   禁用状态
+.bin-input-number-disabled .bin-input-number-input {
+  opacity: .72;
+  cursor: not-allowed;
+  background-color: #f3f3f3;
+}
+.bin-input-number-input[disabled] {
+  background-color: #f3f3f3;
+  opacity: 1;
+  cursor: not-allowed;
+  color: $color-text-disabled;
+}
+.bin-input-number-disabled .bin-input-number-handler-wrap {
+  display: none;
+}
+//不同尺寸
+.bin-input-number-mini {
+  padding: 0;
+  height: 24px;
+  border-radius: $border-base-radius;
+  input {
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+  }
+  .bin-input-number-input-wrap {
+    height: 24px;
+  }
+}
+.bin-input-number-small {
+  padding: 0;
+  height: 32px;
+  border-radius: $border-base-radius;
+  input {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: top;
+  }
+  .bin-input-number-handler {
+    height: 15px;
+  }
+  .bin-input-number-input-wrap {
+    height: 32px;
+  }
+}
+.bin-input-number-large {
+  font-size: 14px;
+  padding: 0;
+  height: 40px;
+  input {
+    height: 38px;
+    line-height: 38px;
+  }
+  .bin-input-number-handler {
+    height: 20px;
+  }
+  .bin-input-number-input-wrap {
+    height: 40px;
+  }
+}
+
+.bin-input-number-focused {
+  border-color: $color-primary;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+}

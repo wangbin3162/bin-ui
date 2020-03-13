@@ -43,6 +43,37 @@
 ```
 :::
 
+
+### 左右平移
+
+::: demo 
+```html
+<template>
+  <div class="demo-transition">
+    <b-button @click="show1= !show1" size="medium" v-waves>查看效果</b-button>
+    <div style="display: flex; justify-content:center;margin-top: 20px; height: 100px;">
+      <transition name="move-left">
+        <div v-show="show1" class="transition-box">move-left</div>
+      </transition>
+      <transition name="move-right">
+        <div v-show="show1" class="transition-box">move-right</div>
+      </transition>
+    </div>
+  </div>
+</template>
+
+<script>
+    export default {
+        data() {
+          return {
+            show1: true
+          }
+        }
+      }
+</script>
+```
+:::
+
 ### 缩放
 
 提供 4种 缩放效果 `zoom-in-center`，`zoom-in-top` ，`zoom-in` 和 `zoom-in-bottom`

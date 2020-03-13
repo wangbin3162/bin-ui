@@ -16,6 +16,11 @@
       "desc": "快速开始"
     },
     {
+      "name": "theme",
+      "path": "/theme",
+      "desc": "定制主题"
+    },
+    {
       "name": "logs",
       "path": "/logs",
       "desc": "更新日志"

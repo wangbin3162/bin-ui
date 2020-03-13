@@ -1,0 +1,107 @@
+.bin-tag {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  border: $border-color-base;
+  background: #fafafa;
+  font-size: 12px;
+  vertical-align: middle;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 30px;
+  border-radius: $border-base-radius;
+  box-sizing: border-box;
+  white-space: nowrap;
+  .icon-ios-close {
+    position: relative;
+    right: -5px;
+    top: -1px;
+    cursor: pointer;
+    font-size: 18px;
+    color: $color-text-secondary;
+    &:hover {
+      color: $color-text-default;
+    }
+  }
+}
+.is-primary {
+  background-color: $color-primary-light6;
+  color: $color-primary;
+  border: 1px solid $color-primary-light5;
+  .icon-ios-close {
+    color: $color-primary-light2;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+.is-success {
+  background-color: $color-success-light6;
+  border-color: $color-success-light5;
+  color: $color-success;
+  .icon-ios-close {
+    color: $color-success-light2;
+    &:hover {
+      color: $color-success;
+    }
+  }
+}
+.is-info {
+  background-color: $color-info-light6;
+  border-color: $color-info-light5;
+  color: $color-info;
+  .icon-ios-close {
+    color: $color-info-light2;
+    &:hover {
+      color: $color-info;
+    }
+  }
+}
+.is-warning {
+  background-color: $color-warning-light6;
+  border-color: $color-warning-light5;
+  color: $color-warning;
+  .icon-ios-close {
+    color: $color-warning-light2;
+    &:hover {
+      color: $color-warning;
+    }
+  }
+}
+.is-danger {
+  background-color: $color-danger-light6;
+  border-color: $color-danger-light5;
+  color: $color-danger;
+  .icon-ios-close {
+    color: $color-danger-light2;
+    &:hover {
+      color: $color-danger;
+    }
+  }
+}
+.no-border {
+  border: none;
+  padding: 0 5px;
+  line-height: $base-line-height;
+  height: auto;
+}
+.is-small {
+  height: 28px;
+  line-height: 26px;
+}
+.is-mini {
+  height: 24px;
+  padding: 0 8px;
+  line-height: 22px;
+}
+.bin-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: $border-base;
+  position: relative;
+  top: 1px;
+}

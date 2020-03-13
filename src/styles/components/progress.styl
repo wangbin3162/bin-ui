@@ -1,0 +1,100 @@
+.bin-progress {
+  position: relative;
+  line-height: 1;
+}
+.bin-progress-bar {
+  padding-right: 60px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  margin-right: -60px;
+  box-sizing: border-box;
+  &.is-active {
+    .bin-progress-bar__inner {
+      background-size: 40px 40px;
+      background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+      transparent 50%, rgba(255, 255, 255, .15) 50%,
+      rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+      animation: progress-bar-stripes 2s linear infinite;
+    }
+  }
+}
+.bin-progress-bar__outer {
+  height: 8px;
+  border-radius: 100px;
+  background-color: #f3f3f3;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+.bin-progress-bar__inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: $color-primary;
+  text-align: right;
+  border-radius: 100px;
+  line-height: 1;
+  white-space: nowrap;
+  transition: width .6s ease;
+}
+.bin-progress--text-inside .bin-progress-bar {
+  padding-right: 0;
+  margin-right: 0;
+}
+.bin-progress__text {
+  font-size: $base-font-size;
+  color: $color-text-default;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  line-height: 1;
+}
+.bin-progress-bar__innerText {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 12px;
+  margin: 0 5px;
+}
+.bin-progress-bar__inner:after {
+  display: inline-block;
+  content: "";
+  height: 100%;
+  vertical-align: middle;
+}
+
+.bin-progress.progress-success .bin-progress__text {
+  color: $color-success;
+}
+.bin-progress.progress-success .bin-progress-bar__inner {
+  background-color: $color-success;
+}
+.bin-progress.progress-exception .bin-progress__text {
+  color: $color-danger;
+}
+.bin-progress.progress-exception .bin-progress-bar__inner {
+  background-color: $color-danger;
+}
+
+
+// WebKit
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+// Spec and IE10+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}

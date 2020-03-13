@@ -1,0 +1,86 @@
+.bin-anchor {
+  &-wrapper {
+    overflow: auto;
+    padding-left: 5px;
+    margin-left: -5px;
+  }
+
+  & {
+    position: relative;
+    padding-left: 2px;
+
+    &-ink {
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      &:before {
+        content: ' ';
+        position: relative;
+        width: 2px;
+        height: 100%;
+        display: block;
+        background-color: #e8eaec;
+        margin: 0 auto;
+      }
+      &-ball {
+        display: inline-block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid $color-primary;
+        background-color: #fff;
+        left: 50%;
+        transition: top .3s ease;
+        transform: translate(-50%, 1px);
+      }
+      .iconfont {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        color: $color-primary;
+        transition: top .3s ease;
+        transform: translate(-6px, -1px);
+      }
+    }
+  }
+
+  &-link {
+    padding: 8px 0 8px 16px;
+    line-height: 1;
+
+    &-title {
+      display: block;
+      position: relative;
+      transition: all .3s;
+      color: $color-text-default;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 8px;
+      &:only-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-active > &-title {
+      color: $color-primary;
+    }
+    a {
+      background: 0 0;
+      text-decoration: none;
+      outline: 0;
+      cursor: pointer;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &-link &-link {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}

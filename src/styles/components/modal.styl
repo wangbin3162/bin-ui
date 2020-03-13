@@ -1,0 +1,217 @@
+.bin-modal-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .6);
+  height: 100%;
+  z-index: 1000;
+}
+
+.bin-modal-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  outline: 0;
+  &.bin-modal-hidden {
+    display: none !important;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+.bin-modal {
+  box-sizing: border-box;
+  padding: 0;
+  color: $color-text-default;
+  font-size: $base-font-size;
+  font-variant: tabular-nums;
+  line-height: $base-line-height
+  width: auto;
+  margin: 0 auto;
+  position: relative;
+  outline: 0;
+  top: 100px;
+  p {
+    margin: 0;
+  }
+}
+.bin-modal-content {
+  position: relative;
+  background-color: $color-white;
+  border: 0;
+  border-radius: $border-base-radius;
+  overflow: hidden;
+  background-clip: padding-box;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bin-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0;
+  color: $color-text-secondary;
+  line-height: 1;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: color 0.3s;
+  .icon-close {
+    display: block;
+    width: 56px;
+    height: 56px;
+    font-style: normal;
+    line-height: 56px;
+    text-align: center;
+    text-transform: none;
+    text-rendering: auto;
+    font-size: 20px;
+    color: $color-text-secondary;
+    transition: color .2s ease;
+    &:hover {
+      color: $color-text-default;
+    }
+  }
+}
+
+.bin-modal-header {
+  border-bottom: $border-base-light;
+  padding: 16px 24px;
+  .bin-modal-header-inner, .bin-modal-header p {
+    width: 100%;
+    font-size: $header-font-size;
+    color: $color-text-primary;
+    font-weight: 500;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.bin-modal-body {
+  padding: 24px;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  word-wrap: break-word;
+}
+.bin-modal-footer {
+  border-top: $border-base-light;
+  padding: 10px 16px;
+  text-align: right;
+}
+
+//  垂直居中
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .bin-modal {
+    top: 0;
+  }
+}
+//  全屏
+.bin-modal-fullscreen {
+  width: 100% !important;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  .bin-modal-content {
+    width: 100%;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .bin-modal-body {
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 50px;
+    bottom: 60px;
+  }
+  .bin-modal-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+//  可拖拽时
+.bin-modal-content-drag .bin-modal-header {
+  cursor: move;
+}
+.bin-modal-no-mask {
+  pointer-events: none;
+}
+.bin-modal-content-no-mask {
+  pointer-events: auto;
+}
+.bin-modal-content-drag {
+  position: absolute;
+}
+//  confirm弹窗的样式
+.bin-modal-confirm {
+  padding: 0;
+}
+.bin-modal-confirm-head {
+  padding: 0 12px 0 0;
+}
+.bin-modal-confirm-head-icon {
+  display: inline-block;
+  font-size: 28px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  .iconfont {
+    font-size: 28px;
+  }
+}
+.bin-modal-confirm-head-icon-confirm {
+  color: $color-warning;
+}
+.bin-modal-confirm-head-icon-info {
+  color: $color-primary;
+}
+.bin-modal-confirm-head-icon-success {
+  color: $color-success;
+}
+.bin-modal-confirm-head-icon-warning {
+  color: $color-warning;
+}
+.bin-modal-confirm-head-icon-danger {
+  color: $color-danger;
+}
+.bin-modal-confirm-head-title {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  font-size: $header-font-size;
+  color: $color-text-primary;
+}
+
+.bin-modal-confirm-body {
+  padding-left: 42px;
+  font-size: $base-font-size;
+  color: $color-text-default;
+  position: relative;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+.bin-modal-confirm-footer {
+  margin-top: 10px;
+  text-align: right;
+}
+

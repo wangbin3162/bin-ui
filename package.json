@@ -1,6 +1,6 @@
 {
   "name": "bin-ui",
-  "version": "2.7.14",
+  "version": "2.8.1",
   "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
   "main": "lib/bin-ui.common.js",
   "keywords": [
@@ -39,7 +39,7 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
@@ -86,6 +86,7 @@
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-router": "^3.1.3",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",

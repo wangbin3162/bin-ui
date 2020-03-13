@@ -1,0 +1,81 @@
+$root = bin
+
+.{$root}-divider {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $color-text-default
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #e8eaec;
+}
+.{$root}-divider, .{$root}-divider-vertical {
+  margin: 0 8px;
+  display: inline-block;
+  height: .9em;
+  width: 1px;
+  vertical-align: middle;
+  position: relative;
+  top: -.06em;
+}
+.{$root}-divider-horizontal {
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 24px 0;
+  clear: both;
+}
+.{$root}-divider-horizontal.{$root}-divider-with-text-center,
+.{$root}-divider-horizontal.{$root}-divider-with-text-left,
+.{$root}-divider-horizontal.{$root}-divider-with-text-right {
+  display: table;
+  white-space: nowrap;
+  text-align: center;
+  background: 0 0;
+  font-weight: 500;
+  color: $color-text-primary;
+  font-size: $header-font-size;
+  margin: 16px 0;
+}
+.{$root}-divider-dashed {
+  background: 0 0;
+  border-top: 1px dashed #e8eaec;
+}
+.{$root}-divider-inner-text {
+  display: inline-block;
+  padding: 0 24px;
+}
+.{$root}-divider-horizontal.{$root}-divider-with-text-left .{$root}-divider-inner-text,
+.{$root}-divider-horizontal.{$root}-divider-with-text-right .{$root}-divider-inner-text {
+  display: inline-block;
+  padding: 0 10px;
+}
+.{$root}-divider-horizontal.{$root}-divider-with-text-center:after,
+.{$root}-divider-horizontal.{$root}-divider-with-text-center:before,
+.{$root}-divider-horizontal.{$root}-divider-with-text-left:after,
+.{$root}-divider-horizontal.{$root}-divider-with-text-left:before,
+.{$root}-divider-horizontal.{$root}-divider-with-text-right:after,
+.{$root}-divider-horizontal.{$root}-divider-with-text-right:before {
+  content: "";
+  display: table-cell;
+  position: relative;
+  top: 50%;
+  width: 50%;
+  border-top: 1px solid #e8eaec;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+.{$root}-divider-horizontal.{$root}-divider-with-text-left:before {
+  top: 50%;
+  width: 5%;
+}
+.{$root}-divider-horizontal.{$root}-divider-with-text-left:after,
+.{$root}-divider-horizontal.{$root}-divider-with-text-right:before {
+  top: 50%;
+  width: 95%;
+}
+.{$root}-divider-horizontal.{$root}-divider-with-text-right:after {
+  top: 50%;
+  width: 5%;
+}

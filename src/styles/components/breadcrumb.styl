@@ -1,0 +1,33 @@
+.bin-breadcrumb {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  &:after, &:before {
+    display: table;
+    content: "";
+  }
+}
+
+.bin-breadcrumb__item {
+  &:last-child .bin-separator {
+    display: none;
+  }
+}
+.bin-separator {
+  margin: 0 6px;
+  color: $color-text-secondary;
+  &.icon {
+    font-weight: normal;
+  }
+}
+.bin-breadcrumb__inner {
+  color: $color-text-default;
+  &.is-link, a {
+    text-decoration: none;
+    transition: color .2s cubic-bezier(.645, .045, .355, 1);
+    color: $color-text-secondary;
+    &:hover {
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+}

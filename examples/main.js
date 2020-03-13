@@ -5,7 +5,7 @@ import router from './router'
 import './assets/styles/color-brewer.css'
 import './assets/styles/index.styl'
 import BinUI from '../src/index'
-import '../src/styles/index.styl'
+import './theme.styl'
 import icon from './icon.config'
 
 import BCollapseTransition from '../src/components/base/collapse-transition'

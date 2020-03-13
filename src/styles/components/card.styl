@@ -1,0 +1,47 @@
+
+.bin-card {
+  border-radius: $border-base-radius;
+  border: $border-normal;
+  background-color: #fff;
+  overflow: hidden;
+  color: $color-text-default;
+  transition: .3s;
+  width: 100%;
+  &.is-always-shadow, &.is-hover-shadow:focus, &.is-hover-shadow:hover {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .12);
+  }
+  &.is-never-shadow, &.is-never-shadow:focus, &.is-never-shadow:hover {
+    box-shadow: none;
+  }
+  &.is-no-border {
+    border: none;
+  }
+  .bin-card__header {
+    padding: 18px 20px;
+    box-sizing: border-box;
+    font-size: $header-font-size;
+    color: $color-text-primary;
+    &.has-divider {
+      border-bottom: $border-normal;
+    }
+    &.no-divider {
+      border-bottom: none;
+    }
+    &.has-tip {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 18px;
+        bottom: 18px;
+        width: 2px;
+        background: $color-primary;
+      }
+    }
+  }
+  .bin-card__body {
+    padding: 20px;
+  }
+
+}

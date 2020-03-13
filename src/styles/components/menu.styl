@@ -1,0 +1,387 @@
+// 菜单样式
+.bin-menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  list-style: none;
+  line-height: 2em;
+  color: $color-text-default;
+  font-size: $base-font-size;
+  position: relative;
+  &-horizontal {
+    height: 60px;
+    line-height: 60px;
+    &.bin-menu-light {
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #dcdee2;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+  &-vertical {
+    &.bin-menu-light {
+      &:after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #dcdee2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -1px;
+        z-index: 1;
+      }
+    }
+  }
+
+  &-light {
+    background: $color-white;
+  }
+  &-dark {
+    background: #001529;
+  }
+  &-item {
+    display: block;
+    outline: none;
+    list-style: none;
+    font-size: $base-font-size;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+  a&-item {
+    color: inherit;
+    &:hover, &:active {
+      color: inherit;
+    }
+  }
+  &-item > i {
+    margin-right: 6px;
+  }
+  &-submenu-title > i, &-submenu-title span > i {
+    margin-right: 8px;
+  }
+  &-submenu-title > .icon-ios-arrow-down, &-submenu-title span > i.icon-ios-arrow-down {
+    margin-right: 0;
+  }
+
+  &-submenu-title-icon {
+    transition: transform .2s ease-in-out;
+  }
+  &-horizontal &-item, &-horizontal &-submenu {
+    float: left;
+    padding: 0 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 3;
+    transition: all .2s ease-in-out;
+  }
+
+  &-light&-horizontal &-item, &-light&-horizontal > &-submenu {
+    height: inherit;
+    line-height: inherit;
+    border-bottom: 2px solid transparent;
+    color: $color-text-default;
+    &-active, &:hover {
+      color: $color-primary;
+      border-bottom: 2px solid  $color-primary
+    }
+  }
+  &-light&-horizontal &-item {
+    &-active {
+      color: $color-text-default;
+    }
+  }
+  &-dark&-horizontal &-item, &-dark&-horizontal > &-submenu {
+    height: inherit;
+    line-height: inherit;
+    color: $color-white-light;
+    &-active, &:hover {
+      color: $color-white;
+    }
+  }
+
+  &-horizontal &-submenu .bin-select-dropdown {
+    min-width: 100%;
+    width: auto;
+    max-height: none;
+    .bin-menu-item {
+      height: auto;
+      line-height: normal;
+      border-bottom: 0;
+      float: none;
+    }
+  }
+
+  &-horizontal &-opened > * > &-submenu-title-icon {
+    transform: rotate(180deg);
+  }
+  &-item-group {
+    line-height: normal;
+    &-title {
+      height: 30px;
+      line-height: 30px;
+      padding-left: 8px;
+      font-size: $base-font-size;
+      color: #999;
+    }
+
+    & > ul {
+      padding: 0 !important;
+      list-style: none !important;
+    }
+  }
+
+  // vertical
+  &-vertical &-item, &-vertical &-submenu-title {
+    padding: 10px 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    transition: all .2s ease-in-out;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &-vertical &-submenu-title-icon {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+  }
+  &-vertical &-opened > * > &-submenu-title-icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  &-vertical &-submenu {
+    &-nested {
+      padding-left: 20px;
+    }
+    .bin-menu-item {
+      padding-left: 43px;
+    }
+  }
+  &-vertical &-submenu {
+    &-nested {
+      padding-left: 20px;
+    }
+    .bin-menu-item {
+      padding-left: 43px;
+    }
+  }
+  &-vertical &-item-group {
+    &-title {
+      height: 48px;
+      line-height: 48px;
+      font-size: $base-font-size;
+      padding-left: 28px;
+    }
+  }
+  &-dark&-vertical &-item-group {
+    &-title {
+      color: $color-white-light2;
+      background: #000c17;
+    }
+  }
+  &-light&-vertical {
+    .bin-menu-item-active:not(.bin-menu-submenu) {
+      color: $color-primary;
+      background: $color-hover;
+      &:after {
+        content: "";
+        display: block;
+        width: 2px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $color-primary;
+      }
+    }
+  }
+  &-light&-vertical &-submenu {
+    .bin-menu-item-active {
+      color: $color-primary;
+      background: $color-hover;
+      z-index: 2;
+      &:after {
+        content: '';
+        display: block;
+        width: 2px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $color-primary;
+      }
+    }
+  }
+  &-dark&-vertical &-item, &-dark&-vertical &-submenu-title {
+    color: $color-white-light;
+    &:hover {
+      color: $color-white;
+    }
+    &-active:not(.bin-menu-submenu) {
+      color: $color-white;
+      background: $color-primary;
+    }
+  }
+
+  &-dark&-vertical &-submenu {
+    .bin-menu-submenu-title {
+      background: #001529;
+    }
+    .bin-menu-submenu, .bin-menu-item {
+      background: #000c17;
+    }
+    .bin-menu-item {
+      &:hover {
+        color: $color-white;
+      }
+      &-active, &-active:hover {
+        border-right: none;
+        color: $color-white;
+        background: $color-primary !important;
+      }
+    }
+  }
+
+  &-dark&-vertical &-child-item-active > &-submenu-title {
+    color: $color-white;
+  }
+
+  &-dark&-vertical &-opened {
+    .bin-menu-submenu-has-parent-submenu {
+      .bin-menu-submenu-title {
+        background: transparent;
+      }
+    }
+  }
+
+
+  .bin-menu-item, .bin-menu-submenu-title span, .bin-menu-submenu-title {
+    > i:not(.icon-ios-arrow-down) {
+      vertical-align: -1px;
+      font-size: 18px;
+    }
+  }
+}
+// item样式
+.bin-menu-horizontal .bin-menu-submenu .bin-select-dropdown {
+  overflow: visible;
+  max-height: none;
+  .bin-menu-item, .bin-menu-submenu-has-parent-submenu {
+    margin: 0;
+    line-height: 36px;
+    height: 36px;
+    padding: 0 10px;
+    clear: both;
+    color: $color-text-default;
+    font-size: $base-font-size !important;
+    white-space: nowrap;
+    list-style: none;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &-focus {
+      background: $color-hover
+    }
+
+    &-disabled {
+      color: #c5c8ce;
+      cursor: not-allowed;
+
+      &:hover {
+        color: #c5c8ce;
+        background-color: $color-white;
+        cursor: not-allowed;
+      }
+    }
+
+    &-selected, &-selected:hover {
+      color: $color-primary;
+      background: $color-hover
+    }
+
+    &-divided {
+      margin-top: 5px;
+      border-top: 1px solid #e8eaec;
+      &:before {
+        content: '';
+        height: 5px;
+        display: block;
+        margin: 0 -16px;
+        background-color: $color-white;
+        position: relative;
+        top: -7px;
+      }
+    }
+  }
+  .bin-menu-submenu-has-parent-submenu {
+    float: none;
+    padding: 0;
+    width: 100%;
+    line-height: 36px;
+    height: 36px;
+    font-size: $base-font-size;
+    .bin-menu-submenu-title {
+      padding: 0 10px;
+      position: relative;
+      .iconfont.bin-menu-submenu-title-icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -7px;
+        font-size: $base-font-size;
+        transition: transform .2s;
+      }
+    }
+  }
+}
+
+.bin-menu-dark.bin-menu-horizontal {
+  .bin-select-dropdown {
+    background: #001529;
+    .bin-menu-item, .bin-menu-submenu-has-parent-submenu {
+      color: $color-white-light;
+
+      &:hover {
+        color: $color-white;
+      }
+
+      &-focus {
+        background: $color-hover
+      }
+
+      &-disabled {
+        color: #c5c8ce;
+        cursor: not-allowed;
+
+        &:hover {
+          color: #c5c8ce;
+          background-color: $color-white;
+          cursor: not-allowed;
+        }
+      }
+
+      &-selected, &-selected:hover {
+        color: $color-white;
+        background: $color-primary;
+      }
+
+    }
+  }
+}
