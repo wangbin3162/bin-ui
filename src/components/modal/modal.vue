@@ -25,8 +25,8 @@
             </div>
             <div :class="[prefixCls + '-footer']" v-if="!footerHide">
               <slot name="footer">
-                <b-button size="small" @click.native="cancel">{{ cancelText }}</b-button>
-                <b-button type="primary" size="small" :loading="buttonLoading" @click.native="ok" v-waves>{{ okText }}
+                <b-button @click.native="cancel">{{ cancelText }}</b-button>
+                <b-button type="primary" :loading="buttonLoading" @click.native="ok" v-waves>{{ okText }}
                 </b-button>
               </slot>
             </div>

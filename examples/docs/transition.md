@@ -19,7 +19,7 @@
 ```html
 <template>
   <div class="demo-transition">
-    <b-button @click="show1= !show1" size="medium" v-waves>查看效果</b-button>
+    <b-button @click="show1= !show1" size="medium">查看效果</b-button>
     <div style="display: flex; margin-top: 20px; height: 100px;">
       <transition name="fade-in-linear">
         <div v-show="show1" class="transition-box">fade-in-linear</div>
@@ -50,7 +50,7 @@
 ```html
 <template>
   <div class="demo-transition">
-    <b-button @click="show1= !show1" size="medium" v-waves>查看效果</b-button>
+    <b-button @click="show1= !show1" size="medium">查看效果</b-button>
     <div style="display: flex; justify-content:center;margin-top: 20px; height: 100px;">
       <transition name="move-left">
         <div v-show="show1" class="transition-box">move-left</div>
@@ -82,7 +82,7 @@
 ```html
 <template>
   <div class="demo-transition">
-    <b-button @click="show2= !show2" size="medium" v-waves>查看效果</b-button>
+    <b-button @click="show2= !show2" size="medium">查看效果</b-button>
     <div style="display: flex; margin-top: 20px; height: 100px;">
         <transition name="zoom-in-center">
           <div v-show="show2" class="transition-box">zoom-in-center</div>
@@ -119,7 +119,7 @@
 ```html
 <template>
  <div class="demo-transition">
-    <b-button @click="show3= !show3" size="medium" v-waves>查看效果</b-button>
+    <b-button @click="show3= !show3" size="medium">查看效果</b-button>
     <div style="display: flex; margin-top: 20px; height: 100px;">
         <transition name="fade-transverse">
           <div v-show="show3" class="transition-box">fade-transverse</div>
@@ -151,7 +151,7 @@
 ```html
 <template>
  <div class="demo-transition">
-    <b-button @click="show4= !show4" size="medium" v-waves>查看效果</b-button>
+    <b-button @click="show4= !show4" size="medium">查看效果</b-button>
     <div style="margin-top: 20px; height: 200px;">
         <collapse-transition>
           <div v-show="show4">

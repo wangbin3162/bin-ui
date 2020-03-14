@@ -43,9 +43,9 @@
        <b-button type="danger" plain>Danger</b-button>
     </div>
     <div class="demo-button">
-       <b-button type="primary" round size="small">Primary</b-button>
-       <b-button type="success" round size="small">Success</b-button>
-       <b-button type="info" round size="small">Info</b-button>
+       <b-button type="primary" round>Primary</b-button>
+       <b-button type="success" round>Success</b-button>
+       <b-button type="info" round>Info</b-button>
        <b-button type="warning" round size="small">Warning</b-button>
        <b-button type="danger" round size="small">Danger</b-button>
     </div>

@@ -42,11 +42,11 @@ LoadingBar 只会在全局创建一个，因此在任何位置调用的方法都
 
 ```html
  <template>
-     <b-button @click="start" size="mini">Start</b-button>
-     <b-button @click="update(50)" size="mini">Update 50</b-button>
-     <b-button @click="done" size="mini">Done</b-button>
-     <b-button @click="error" size="mini">Error</b-button>
-     <b-button @click="config" size="mini">Config</b-button>
+     <b-button @click="start">Start</b-button>
+     <b-button @click="update(50)">Update 50</b-button>
+     <b-button @click="done">Done</b-button>
+     <b-button @click="error">Error</b-button>
+     <b-button @click="config">Config</b-button>
   </template>
   <script>
       export default {

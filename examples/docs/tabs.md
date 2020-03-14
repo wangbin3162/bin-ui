@@ -85,7 +85,7 @@ export default {
 ::: demo `tabs`中的项设置noClose可以排除关闭按钮，主要是为了部分可固定标签设置使用
 ```html
 <template>
-  <div class="mb-15"><b-button type="primary" plain v-waves size="small" @click="handleAdd">add tab</b-button></div>
+  <div class="mb-15"><b-button type="primary" plain size="small" @click="handleAdd">add tab</b-button></div>
   <b-tabs v-model="activeTab" :data="tabs" type="card" closable
     @on-tab-close="handleTabClose"></b-tabs>
   <p>开启的tab：{{ activeTab }}</p>
@@ -193,7 +193,7 @@ export default {
 ::: demo 
 ```html
 <template>
-  <div class="mb-15"><b-button type="primary" plain v-waves size="small" @click="handleAdd">add tab</b-button></div>
+  <div class="mb-15"><b-button type="primary" plain size="small" @click="handleAdd">add tab</b-button></div>
   <b-tabs v-model="activeTab" :data="tabs" type="tag" closable context-menu
     ref="tabs" @on-tab-close="handleTabClose" @on-tab-select="handleSelect">
     <template v-slot:menu>

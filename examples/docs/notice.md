@@ -16,9 +16,9 @@
 ::: demo
 ```html
 <template>
-     <b-button size="small" @click="open(false)">提醒</b-button>
-     <b-button size="small" @click="open(true)">打开提醒(仅标题)</b-button>
-     <b-button size="small" @click="time">自定义时长</b-button>
+     <b-button @click="open(false)">提醒</b-button>
+     <b-button @click="open(true)">打开提醒(仅标题)</b-button>
+     <b-button @click="time">自定义时长</b-button>
 </template>
 <script>
   export default {
@@ -50,15 +50,15 @@
 <template>
 <div>
 <div style="padding: 5px 0;">带描述</div>
-     <b-button size="small" @click="info(false)">Info</b-button>
-     <b-button size="small" @click="success(false)">Success</b-button>
-     <b-button size="small" @click="warning(false)">Warning</b-button>
-     <b-button size="small" @click="danger(false)">danger</b-button>
+     <b-button @click="info(false)">Info</b-button>
+     <b-button @click="success(false)">Success</b-button>
+     <b-button @click="warning(false)">Warning</b-button>
+     <b-button @click="danger(false)">danger</b-button>
 <div style="padding: 5px 0;">仅标题</div>
-     <b-button size="small" @click="info(true)">Info</b-button>
-     <b-button size="small" @click="success(true)">Success</b-button>
-     <b-button size="small" @click="warning(true)">Warning</b-button>
-     <b-button size="small" @click="danger(true)">danger</b-button>
+     <b-button @click="info(true)">Info</b-button>
+     <b-button @click="success(true)">Success</b-button>
+     <b-button @click="warning(true)">Warning</b-button>
+     <b-button @click="danger(true)">danger</b-button>
 </div>
 </template>
 <script>
@@ -101,7 +101,7 @@ render函数调用
 :::demo
 ```html
  <template>
-     <b-button size="small" type="default" v-waves
+     <b-button type="default"
         @click="renderFunc">render函数调用</b-button>
   </template>
   <script>

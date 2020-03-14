@@ -2,10 +2,6 @@
 
 重要版本标志为`success`,推荐使用最新版，2.7.4版本之后支持按需引入，可减小体积，后台管理系统推荐全系引入。
 
-:::tip
-有新增组件使用`primary`样式`ios-leaf`图标，修复优化使用`warning`样式`ios-construct`图标
-:::
-
 <template>
 <div class="doc-update">
     <b-timeline>

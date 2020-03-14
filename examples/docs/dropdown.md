@@ -37,7 +37,7 @@
        </b-dropdown-menu>
     </b-dropdown> 
     <b-dropdown style="margin-left: 20px;">
-       <b-button type="primary" size="small">
+       <b-button type="primary">
           下拉菜单
           <b-icon name="ios-arrow-down"></b-icon>
        </b-button>
@@ -104,7 +104,7 @@
       <b-dropdown-menu slot="list">
            <div style="padding: 15px 5px;">常用于各种自定义下拉内容的场景。</div>
            <div style="text-align: right;margin: 0 10px;">
-               <b-button type="primary" size="small" @click="handleClose">关闭</b-button>
+               <b-button type="primary" @click="handleClose">关闭</b-button>
            </div>
       </b-dropdown-menu>
    </b-dropdown> 

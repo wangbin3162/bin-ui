@@ -15,7 +15,9 @@ Modal.newInstance = properties => {
       iconType: '',
       iconName: '',
       okText: '确定',
+      okType: 'primary',
       cancelText: '取消',
+      cancelType: 'default',
       showCancel: false,
       loading: false,
       buttonLoading: false,
@@ -26,7 +28,7 @@ Modal.newInstance = properties => {
       if (this.showCancel) {
         footerVNodes.push(h(Button, {
           props: {
-            size: 'small'
+            type: this.cancelType
           },
           on: {
             click: this.cancel
@@ -35,8 +37,7 @@ Modal.newInstance = properties => {
       }
       footerVNodes.push(h(Button, {
         props: {
-          type: 'primary',
-          size: 'small',
+          type: this.okType,
           loading: this.buttonLoading
         },
         on: {
@@ -212,8 +213,14 @@ Modal.newInstance = properties => {
       if ('okText' in props) {
         modal.$parent.okText = props.okText
       }
+      if ('okType' in props) {
+        modal.$parent.okType = props.okType
+      }
       if ('cancelText' in props) {
         modal.$parent.cancelText = props.cancelText
+      }
+      if ('cancelType' in props) {
+        modal.$parent.cancelType = props.cancelType
       }
       if ('onCancel' in props) {
         modal.$parent.onCancel = props.onCancel

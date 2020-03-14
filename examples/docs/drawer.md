@@ -26,7 +26,7 @@
 ::: demo
 ```html
 <template>
-  <b-button type="primary" v-waves @click="value1 = true">open</b-button>
+  <b-button type="primary" @click="value1 = true">open</b-button>
     <b-drawer v-model="value1" title="抽屉标题" append-to-body :closable="false">
       <p>我是抽屉内容</p>
     </b-drawer>
@@ -50,7 +50,7 @@
 ::: demo
 ```html
 <template>
-  <b-button type="primary" v-waves @click="value2 = true">左侧打开</b-button>
+  <b-button type="primary" @click="value2 = true">左侧打开</b-button>
     <b-drawer v-model="value2" title="抽屉标题" placement="left" append-to-body width="500px">
       <p>我是左侧的抽屉</p>
     </b-drawer>
@@ -75,7 +75,7 @@
 ```html
 <template>
 <div style="position:relative;height:400px;background: #eee;border:1px solid #eee;z-index: 2;">
-    <b-button type="primary" v-waves @click="valueInner = true">内部抽屉</b-button>
+    <b-button type="primary" @click="valueInner = true">内部抽屉</b-button>
     <b-drawer v-model="valueInner" title="内部抽屉" inner :z-index="10">
       <p>我是内部的抽屉</p>
     </b-drawer>
@@ -98,7 +98,7 @@
 ::: demo 
 ```html
 <template>
-  <b-button type="primary" v-waves @click="value3 = true">信息预览</b-button>
+  <b-button type="primary" @click="value3 = true">信息预览</b-button>
     <b-drawer v-model="value3" :closable="false" append-to-body width="640">
      <p :style="pStyle">用户信息</p>
      <p :style="pStyle">个人信息</p>
@@ -162,7 +162,7 @@
 ::: demo 
 ```html
 <template>
-  <b-button type="primary" v-waves @click="value4 = true">编辑抽屉</b-button>
+  <b-button type="primary" @click="value4 = true">编辑抽屉</b-button>
     <b-drawer v-model="value4" title="编辑对象" width="720" append-to-body :mask-closable="false">
       <b-form :model="formInline" ref="form" label-position="top">
         <div flex="box:mean">
@@ -206,8 +206,8 @@
         </b-form-item>
       </b-form>
       <div slot="footer">
-        <b-button size="small" @click="value4 = false">取 消</b-button>
-        <b-button size="small" type="primary" @click="value4 = false">提 交</b-button>
+        <b-button @click="value4 = false">取 消</b-button>
+        <b-button type="primary" @click="value4 = false">提 交</b-button>
       </div>
     </b-drawer>
 </template>
@@ -239,7 +239,7 @@
 ::: demo 
 ```html
 <template>
-    <b-button type="primary" v-waves @click="value5 = true">打开抽屉</b-button>
+    <b-button type="primary" @click="value5 = true">打开抽屉</b-button>
     <b-drawer title="一级抽屉" width="512" append-to-body :closable="false" v-model="value5">
         <b-button @click="value6 = true" type="primary">打开二层抽屉</b-button>
     </b-drawer>
@@ -267,7 +267,7 @@
 ::: demo
 ```html
 <template>
-    <b-button type="primary" v-waves @click="value7 = true">open</b-button>
+    <b-button type="primary" @click="value7 = true">open</b-button>
     <b-drawer v-model="value7" title="抽屉标题" append-to-body draggable>
       <p>我是抽屉内容</p>
     </b-drawer>

@@ -21,15 +21,15 @@
 :::demo
 ```html
  <template>
-     <b-button size="small" v-waves
+     <b-button
         @click="$message('this is default message')">默认提示</b-button>
-     <b-button size="small" type="primary" v-waves
+     <b-button type="primary"
         @click="$message({type:'primary',content:'primary 的提示'})">primary</b-button>
-     <b-button size="small" type="success" v-waves
+     <b-button type="success"
         @click="$message({type:'success',content:'success 的提示'})">success</b-button>
-     <b-button size="small" type="warning" v-waves
+     <b-button type="warning"
         @click="$message({type:'warning',content:'warning 的提示'})">warning</b-button>
-     <b-button size="small" type="danger" v-waves
+     <b-button type="danger"
         @click="$message({type:'danger',content:'danger 的提示'})">danger</b-button>
   </template>
 ```
@@ -42,11 +42,11 @@
 :::demo
 ```html
  <template>
-     <b-button size="small" type="default" v-waves
+     <b-button type="default"
         @click="$message({content:'我10秒消失',duration:10})">我10秒消失</b-button>
-     <b-button size="small" type="default" v-waves
+     <b-button type="default"
         @click="$message({content:'我是可关闭的的提示', duration: 10, closable: true})">可关闭的</b-button>
-    <b-button size="small" type="default" v-waves
+    <b-button type="default"
             @click="$message({content:'我永远不会关闭除非手动', duration: 0, closable: true, zIndex:3000})">不会关闭</b-button>
   </template>
 ```
@@ -59,7 +59,7 @@ render函数调用
 :::demo
 ```html
  <template>
-     <b-button size="small" type="default" v-waves
+     <b-button type="default"
         @click="renderFunc">render函数调用</b-button>
   </template>
   <script>

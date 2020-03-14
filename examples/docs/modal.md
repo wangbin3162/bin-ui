@@ -26,7 +26,7 @@
 ::: demo
 ```html
 <template>
-  <b-button type="primary" v-waves size="small" @click="modal1 = true">显示弹窗</b-button>
+  <b-button type="primary" @click="modal1 = true">显示弹窗</b-button>
   <b-modal v-model="modal1" title="普通的模态框标题"
     @on-ok="$log.print('ok click')"  @on-cancel="$log.print('cancel click','success')">
       <p>我是弹窗内容...</p>
@@ -53,9 +53,9 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ::: demo 注：参数内容都包含在第一个示例中
 ```html
 <template>
-  <b-button  v-waves size="small" @click="modal2 = true">自定义页头页脚</b-button>
-  <b-button  v-waves size="small" @click="modal3 = true">不带标题栏和页脚</b-button>
-  <b-button  v-waves size="small" @click="modal4 = true">设置宽</b-button>
+  <b-button  @click="modal2 = true">自定义页头页脚</b-button>
+  <b-button  @click="modal3 = true">不带标题栏和页脚</b-button>
+  <b-button  @click="modal4 = true">设置宽</b-button>
   <b-modal v-model="modal2">
      <p slot="header" style="color:#f60;text-align:center">
          <span>自定义页头</span>
@@ -64,7 +64,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
       <p>我是弹窗内容...</p>
       <p>我是弹窗内容...</p>
       <div slot="footer">
-          <b-button type="error" size="mini" @click="$log.print('delete click','danger')" >Delete</b-button>
+          <b-button type="danger"  @click="$log.print('delete click','danger')" >Delete</b-button>
       </div>
   </b-modal>
   <b-modal v-model="modal3" footer-hide>
@@ -101,7 +101,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ::: demo
 ```html
 <template>
-  <b-button type="primary" v-waves size="small" @click="modal5 = true">显示弹窗</b-button>
+  <b-button type="primary" @click="modal5 = true">显示弹窗</b-button>
   <b-modal v-model="modal5" title="普通的模态框标题"
           :loading="loading"
           @on-ok="asyncOK">
@@ -135,8 +135,8 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ::: demo
 ```html
 <template>
-    <b-button v-waves size="small" @click="modal6 = true">禁用右上角关闭</b-button>
-    <b-button v-waves size="small" @click="modal7 = true">禁用mask关闭</b-button>
+    <b-button @click="modal6 = true">禁用右上角关闭</b-button>
+    <b-button @click="modal7 = true">禁用mask关闭</b-button>
     <b-modal v-model="modal6" title="普通的模态框标题" :closable="false">
       <p>禁用右上角关闭</p>
     </b-modal>
@@ -164,8 +164,8 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ::: demo
 ```html
 <template>
-    <b-button v-waves size="small" @click="modal8 = true">距离顶部200px</b-button>
-    <b-button v-waves size="small" @click="modal9 = true">垂直居中</b-button>
+    <b-button @click="modal8 = true">距离顶部200px</b-button>
+    <b-button @click="modal9 = true">垂直居中</b-button>
     <b-modal v-model="modal8" title="距离顶部" :styles="{top: '200px'}">
       <p>距离顶部200px</p>
     </b-modal>
@@ -193,7 +193,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ::: demo
 ```html
 <template>
-    <b-button v-waves size="small" @click="modal10 = true">显示全屏对话框</b-button>
+    <b-button @click="modal10 = true">显示全屏对话框</b-button>
     <b-modal v-model="modal10" title="全屏标题" fullscreen>
       <p style="text-align: center;">我是全屏的内容</p>
     </b-modal>
@@ -217,8 +217,8 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ::: demo
 ```html
 <template>
-    <b-button v-waves size="small" @click="modal11 = true">打开弹窗1</b-button>
-    <b-button v-waves size="small" @click="modal12 = true">打开弹窗2</b-button>
+    <b-button @click="modal11 = true">打开弹窗1</b-button>
+    <b-button @click="modal12 = true">打开弹窗2</b-button>
     <b-modal v-model="modal11" title="弹窗1" draggable>
       <p>弹窗1内容</p>
     </b-modal>

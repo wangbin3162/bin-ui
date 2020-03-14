@@ -21,13 +21,13 @@
 ::: demo
 ```html
 <template>
-    <b-button type="primary" v-waves size="small" 
+    <b-button type="primary" 
     @click="$alert({title: '标题',content: '我是弹窗内容',width:500})">Info</b-button>
-    <b-button type="success" v-waves size="small" 
+    <b-button type="success" 
     @click="$alert({type:'success',title: '标题',content: '我是弹窗内容'})">Success</b-button>
-    <b-button type="warning" v-waves size="small" 
+    <b-button type="warning" 
     @click="$alert.warning({title: '标题',content: '我是弹窗内容'})">Warning</b-button>
-    <b-button type="danger" v-waves size="small" @click="showAlert">Danger</b-button>
+    <b-button type="danger" @click="showAlert">Danger</b-button>
 </template>
 <script>
   export default {
@@ -51,11 +51,13 @@
 ::: demo
 ```html
 <template>
-    <b-button type="default" v-waves size="small" 
+    <b-button type="default" 
       @click="$confirm({title: '标题',content: '我是弹窗内容'})">标准</b-button>
-    <b-button type="default" v-waves size="small" 
-      @click="$confirm({title: '标题',content: '改变按钮文字',okText: 'OK',cancelText: 'Cancel'})">改变按钮文字</b-button>
-    <b-button type="default" v-waves size="small" 
+    <b-button type="default" 
+      @click="$confirm({title: '标题',content: '改变按钮文字',okText: 'OK',okType: 'danger',cancelText: 'Cancel',cancelType: 'info'})">
+      改变按钮样式
+    </b-button>
+    <b-button type="default" 
       @click="async">确定2s后关闭</b-button>
 </template>
 <script>
@@ -87,7 +89,7 @@
 ::: demo
 ```html
 <template>
-    <b-button type="default" v-waves size="small" 
+    <b-button type="default" size="small" 
       @click="handleRender">自定义内容</b-button>
 </template>
 <script>

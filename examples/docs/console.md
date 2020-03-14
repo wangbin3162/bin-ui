@@ -20,24 +20,24 @@
 ```html
 <template>
     <div class="demo-button">
-      <b-button @click="$log.print('default print','#df85ff')" v-waves>custom</b-button>
-      <b-button @click="$log.print('default print')" v-waves>default</b-button>
-      <b-button @click="$log.print('primary print','primary')" type="primary" v-waves>primary</b-button>
-      <b-button @click="$log.print('success print','success')" type="success" v-waves>success</b-button>
-      <b-button @click="$log.print('info print','info')" type="info" v-waves>info</b-button>
-      <b-button @click="$log.print('warning print','warning')" type="warning" v-waves>warning</b-button>
-      <b-button @click="$log.print('danger print','danger')" type="danger" v-waves>danger</b-button>
+      <b-button @click="$log.print('default print','#df85ff')">custom</b-button>
+      <b-button @click="$log.print('default print')">default</b-button>
+      <b-button @click="$log.print('primary print','primary')" type="primary">primary</b-button>
+      <b-button @click="$log.print('success print','success')" type="success">success</b-button>
+      <b-button @click="$log.print('info print','info')" type="info">info</b-button>
+      <b-button @click="$log.print('warning print','warning')" type="warning">warning</b-button>
+      <b-button @click="$log.print('danger print','danger')" type="danger">danger</b-button>
     </div>
     <div class="demo-button">
-      <b-button @click="$log.print('primary print','primary',true)" type="primary" v-waves>primary-back</b-button>
-      <b-button @click="$log.print('success print','success',true)" type="success" v-waves>primary-back</b-button>
-      <b-button @click="$log.print('info print','info',true)" type="info" v-waves>primary-back</b-button>
-      <b-button @click="$log.print('warning print','warning',true)" type="warning" v-waves>primary-back</b-button>
-      <b-button @click="$log.print('danger print','danger',true)" type="danger" v-waves>primary-back</b-button>
+      <b-button @click="$log.print('primary print','primary',true)" type="primary">primary-back</b-button>
+      <b-button @click="$log.print('success print','success',true)" type="success">primary-back</b-button>
+      <b-button @click="$log.print('info print','info',true)" type="info">primary-back</b-button>
+      <b-button @click="$log.print('warning print','warning',true)" type="warning">primary-back</b-button>
+      <b-button @click="$log.print('danger print','danger',true)" type="danger">primary-back</b-button>
     </div>
     <div class="demo-button">
-      <b-button @click="$log.print({name:'bin-ui',author:'wang bin'})"  v-waves>object - log</b-button>
-      <b-button @click="$log.pretty('title','pretty print','success')"  v-waves>pretty - log</b-button>
+      <b-button @click="$log.print({name:'bin-ui',author:'wang bin'})" >object - log</b-button>
+      <b-button @click="$log.pretty('title','pretty print','success')" >pretty - log</b-button>
     </div>
 </template>
 ```

@@ -45,48 +45,48 @@
 <template>
     <div class="top">
         <b-popover title="Title" content="Top Left text" placement="top-start">
-            <b-button size="small">上左</b-button>&nbsp;&nbsp;
+            <b-button>上左</b-button>&nbsp;&nbsp;
         </b-popover>
         <b-popover title="Title" content="Top Center text" placement="top">
-            <b-button size="small">上边</b-button>&nbsp;&nbsp;
+            <b-button>上边</b-button>&nbsp;&nbsp;
         </b-popover>
         <b-popover title="Title" content="Top Right text" placement="top-end">
-            <b-button size="small">上右</b-button>
+            <b-button>上右</b-button>
         </b-popover>
     </div>
     <div class="center">
         <div class="center-left">
             <b-popover title="Title" content="Left Top text" placement="left-start">
-                <b-button size="small">左上</b-button> 
+                <b-button>左上</b-button> 
             </b-popover><br><br>
             <b-popover title="Title" content="Left Center text" placement="left">
-                <b-button size="small">左边</b-button> 
+                <b-button>左边</b-button> 
             </b-popover><br><br>
             <b-popover title="Title" content="Left Bottom text" placement="left-end">
-                <b-button size="small">左下</b-button>
+                <b-button>左下</b-button>
             </b-popover>
         </div>
         <div class="center-right">
             <b-popover title="Title" content="Right Top text" placement="right-start">
-                <b-button size="small">右上</b-button>
+                <b-button>右上</b-button>
             </b-popover><br><br>
             <b-popover title="Title" content="Right Center text" placement="right">
-                <b-button size="small">右边</b-button>
+                <b-button>右边</b-button>
             </b-popover><br><br>
             <b-popover title="Title" content="Right Bottom text" placement="right-end">
-                <b-button size="small">右下</b-button>
+                <b-button>右下</b-button>
             </b-popover>
         </div>
     </div>
     <div class="bottom">
         <b-popover title="Title" content="Bottom Left text" placement="bottom-start">
-            <b-button size="small">下左</b-button>&nbsp;&nbsp;
+            <b-button>下左</b-button>&nbsp;&nbsp;
         </b-popover>
         <b-popover title="Title" content="Bottom Center text" placement="bottom">
-            <b-button size="small">下边</b-button>&nbsp;&nbsp;
+            <b-button>下边</b-button>&nbsp;&nbsp;
         </b-popover>
         <b-popover title="Title" content="Bottom Right text" placement="bottom-end">
-            <b-button size="small">下右</b-button>
+            <b-button>下右</b-button>
         </b-popover>
     </div>
 </template>
@@ -130,13 +130,13 @@
 <template>
 <div>
   <b-popover placement="top" width="200" word-wrap>
-    <b-button size="small">长文本</b-button>
+    <b-button>长文本</b-button>
     <div slot="content">
       <div>这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长的描述</div>
     </div>
   </b-popover>
   <b-popover placement="right" width="300">
-    <b-button size="small">更多内容</b-button>
+    <b-button>更多内容</b-button>
     <div slot="content">
       <div>这是自定义内容~这是自定义内容~这是自定义内容~这是自定义内容~</div>
       <div>这是自定义内容~这是自定义内容~这是自定义内容~这是自定义内容~</div>
@@ -160,7 +160,7 @@
       title="确认删除此项吗?"
       @on-ok="ok"
       @on-cancel="cancel">
-      <b-button type="danger" size="small" plain>删 除</b-button>
+      <b-button type="danger" plain>删 除</b-button>
   </b-popover>&nbsp;&nbsp;
    <b-popover
       confirm
@@ -168,14 +168,14 @@
       ok-text="Yes" cancel-text="No"
       @on-ok="ok"
       @on-cancel="cancel">
-      <b-button type="danger" size="small" plain>自定义文字</b-button>
+      <b-button type="danger" plain>自定义文字</b-button>
   </b-popover>&nbsp;&nbsp;
    <b-popover
       confirm icon-name="ios-trash" :icon-styles="{color:'#f5222d'}"
       title="Are you sure delete this item?"
       @on-ok="ok"
       @on-cancel="cancel">
-      <b-button type="danger" size="small" plain>自定义图标</b-button>
+      <b-button type="danger" plain>自定义图标</b-button>
   </b-popover>
 </div>
 </template>

@@ -17,7 +17,7 @@
 ```html
 <template>
     <div class="demo-button">
-      <b-button v-waves>默认按钮</b-button>
+      <b-button>默认按钮</b-button>
       <b-button v-waves="{color: 'rgba(122,234,12,0.35)'}">设置颜色</b-button>
       <b-button v-waves="{color: 'rgba(0,0,0,0.45)', type:'center'}">中心扩散</b-button>
     </div>

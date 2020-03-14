@@ -74,8 +74,8 @@
  <b-loading fix v-if="spinShow"></b-loading>
 </div>
 <div>
- <b-button size="small" @click="spinShow=true">加载</b-button>
- <b-button type="danger" size="small" @click="spinShow=false">停止</b-button>
+ <b-button @click="spinShow=true">加载</b-button>
+ <b-button type="danger" @click="spinShow=false">停止</b-button>
 </div>
 </template>
 <script>
