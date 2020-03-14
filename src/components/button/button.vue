@@ -66,7 +66,7 @@
         const colorMap = {
           primary: '#1890ff',
           success: '#52c41a',
-          info: '#13c2c2',
+          info: '#35495E',
           warning: '#fa8c16',
           danger: '#f5222d'
         }

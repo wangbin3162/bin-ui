@@ -1,14 +1,16 @@
 ## 更新日志
 
-重要版本标志为`success`,推荐使用最新版，2.7.4版本之后支持按需引入，可减小体积，后台管理系统推荐全系引入。
+3.0版本来啦，现经过多个版本迭代，组件库已更新越50个组件，3.0版本前经过多个小版本测试，现已基本实现大部分组件样式重绘，规范参考阿里设计规范。
+
+版本更新日志
 
 <template>
 <div class="doc-update">
     <b-timeline>
-      <b-timeline-item color="primary">
-        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">2.9.1 (3.0beta版，3.0发布前优化调整细节样式，正式发布后删除此条)</p>
-        <p class="time">2020-03-13</p>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.0.0</p>
+        <p class="time">2020-03-14</p>
         <p class="content">调整全局主色调颜色，基础字号统一为14px，圆角值默认设置为2px</p>
         <p class="content">表单各类组件四个标准高度，40px，32px，28px，24px</p>
         <p class="content">优化各组件样式引用，支持主题定制配色</p>
@@ -17,6 +19,7 @@
         <p class="content">去除normalize引用，使用reset重置样式</p>
         <p class="content">级联选择器重命名为cascader</p>
         <p class="content">各个组件下拉框组件选中默认为主色混合白色85%</p>
+        <p class="content">优化各个组件</p>
       </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>

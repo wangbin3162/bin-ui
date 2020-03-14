@@ -92,7 +92,7 @@
               routes = routes.concat(route.items)
             } else {
               // 如果是组件路由
-              if (['guide', 'install', 'start', 'logs'].indexOf(route.name) === -1) {
+              if (['guide', 'install', 'start', 'theme', 'logs'].indexOf(route.name) === -1) {
                 this.components.push({
                   value: route.path,
                   label: route.desc
@@ -161,6 +161,12 @@
         .bin-dropdown {
           line-height: 1.5;
         }
+      }
+    }
+    .bin-select-single .bin-select-selection {
+      border-color: transparent;
+      .bin-select-arrow {
+        opacity: 0;
       }
     }
   }

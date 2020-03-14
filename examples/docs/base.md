@@ -45,6 +45,20 @@ util方法函数
 | $scrollTop | 滚动函数   | el, from = 0, to, duration = 500, endCallback  |
 | $resize | 大小重绘函数,用于监听div   | el, fun  |
 
+### 无数据组件
+
+目前表格和tree型结构使用，也可以自己使用
+
+::: demo
+```html
+<template>
+<div style="width: 224px;">
+  <b-empty>当前无数据</b-empty>
+</div>
+</template>
+```
+:::
+
 ### flex.css使用
 
 本项目已集成normalize.css初始化样式，[flex.css](https://github.com/lzxb/flex.css)基本样式和自定义基础样式库common.css

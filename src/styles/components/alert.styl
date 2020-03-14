@@ -1,5 +1,6 @@
 .bin-alert {
   position: relative;
+  width: 100%;
   padding: 8px 15px;
   border-radius: $border-base-radius;
   color: $color-text-default;
@@ -60,8 +61,13 @@
 }
 
 .bin-alert-message {
-  font-size: $header-font-size;
+  font-size: $base-font-size;
   color: $color-text-primary;
+}
+.bin-alert-with-desc .bin-alert-message {
+  display: block;
+  font-size: $header-font-size;
+  margin-bottom: 4px;
 }
 .bin-alert-desc {
   display: none;
@@ -69,7 +75,7 @@
 }
 
 .bin-alert-icon {
-  top: 9px;
+  top: 7px;
   left: 14px;
   position: absolute;
   .iconfont {

@@ -1,8 +1,6 @@
-$root = bin
-
-.{$root}-dropdown {
+.bin-dropdown {
   display: inline-block;
-  .{$root}-dropdown {
+  .bin-dropdown {
     width: 100%;
   }
   &-rel {
@@ -16,6 +14,7 @@ $root = bin
   }
   &-transfer {
     width: auto;
+    max-height: none;
   }
   &-item-selected, &-item&-item-selected:hover {
     background: $color-primary-light6;

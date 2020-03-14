@@ -25,9 +25,8 @@
             </div>
             <div :class="[prefixCls + '-footer']" v-if="!footerHide">
               <slot name="footer">
-                <b-button @click.native="cancel">{{ cancelText }}</b-button>
-                <b-button type="primary" :loading="buttonLoading" @click.native="ok" v-waves>{{ okText }}
-                </b-button>
+                <b-button @click="cancel">{{ cancelText }}</b-button>
+                <b-button type="primary" :loading="buttonLoading" @clic="ok">{{ okText }}</b-button>
               </slot>
             </div>
           </div>
@@ -68,11 +67,11 @@
       },
       okText: {
         type: String,
-        default: '确定'
+        default: '确 定'
       },
       cancelText: {
         type: String,
-        default: '取消'
+        default: '取 消'
       },
       loading: {
         type: Boolean,

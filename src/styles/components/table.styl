@@ -47,7 +47,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: $border-color-base;
+    background-color: $border-table-color;
     z-index: 1;
   }
 
@@ -59,13 +59,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: $border-color-base;
+    background-color: $border-table-color;
     z-index: 3;
   }
   &-title, &-footer {
     height: 48px;
     line-height: 48px;
-    border-bottom: $border-base;
+    border-bottom: $border-table;
   }
   &-footer {
     border-bottom: none;
@@ -88,7 +88,7 @@
   }
   &-with-fixed-top&-with-footer {
     .bin-table-footer {
-      border-top: $border-base;
+      border-top: $border-table;
     }
     tbody tr:last-child td {
       border-bottom: none;
@@ -101,7 +101,7 @@
     text-align: left;
     text-overflow: ellipsis;
     vertical-align: middle;
-    border-bottom: $border-base;
+    border-bottom: $border-table;
   }
 
   th {
@@ -136,7 +136,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      background-color: $border-color-base;
+      background-color: $border-table-color;
     }
     &:before {
       height: 100%;
@@ -152,7 +152,7 @@
       display: block;
     }
     th, td {
-      border-right: $border-base;
+      border-right: $border-table;
     }
   }
   &-cell {
@@ -293,7 +293,7 @@
       content: '';
       width: 100%;
       height: 1px;
-      background-color: $border-color-base;
+      background-color: $border-table-color;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -312,8 +312,8 @@
     top: -1px;
     right: 0;
     background-color: $color-bg-fa;
-    border-top: $border-base;
-    border-bottom: $border-base;
+    border-top: $border-table;
+    border-bottom: $border-table;
   }
   &-fixed-header {
     overflow: hidden;

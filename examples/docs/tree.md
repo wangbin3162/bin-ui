@@ -4,7 +4,6 @@
     <div class="global-anchor">
       <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#wu-shu-ju" title="无数据"></b-anchor-link>
         <b-anchor-link href="#jin-yong-xuan-ze" title="禁用选择"></b-anchor-link>
         <b-anchor-link href="#ke-yi-xuan-ze" title="可以选择"></b-anchor-link>
         <b-anchor-link href="#yi-bu-jia-zai-zi-jie-dian" title="异步加载子节点"></b-anchor-link>
@@ -61,28 +60,6 @@
                      ]
                  }
              ]
-            }
-        }
-    }
-</script>
-```
-:::
-
-### 无数据
-
-::: demo
-```html
-<template>
-<div style="width: 224px;">
-  <b-tree :data="data"></b-tree>
-</div>
-</template>
-
-<script>
-    export default {
-        data () {
-            return {
-                data: []
             }
         }
     }
