@@ -96,16 +96,20 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ### 异步关闭
 
 给Modal添加属性loading后，点击确定按钮对话框不会自动消失，并显示 loading 状态，
-需要手动关闭对话框，常用于表单提交。
+需要手动关闭对话框，常用于表单提交。 这里建议自定义footer以达到更精确的按钮控制
 
 ::: demo
 ```html
 <template>
-  <b-button type="primary" @click="modal5 = true">显示弹窗</b-button>
+  <b-button type="primary" @click="showModal">显示弹窗</b-button>
   <b-modal v-model="modal5" title="普通的模态框标题"
           :loading="loading"
           @on-ok="asyncOK">
-      <p>点击确定后，对话框将在 2秒 后关闭。</p>
+      <b-form :model="formInline" ref="form" :rules="ruleValidate" :label-width="80">
+        <b-form-item label="用户名" prop="name">
+          <b-input v-model="formInline.name" placeholder="请输入"></b-input>
+        </b-form-item>
+      </b-form>
   </b-modal>
 </template>
 <script>
@@ -113,14 +117,37 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
         data () {
             return {
                 modal5: false,
-                loading: true
+                loading: true,
+                formInline: {
+                  name: ''
+                },
+                ruleValidate: {
+                   name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
+                }
             }
         },
          methods: {
+            showModal(){
+              this.modal5 = true
+              this.loading = true
+              this.formInline.name=''
+              this.$refs.form.resetFields();
+            },
             asyncOK () {
-                setTimeout(() => {
-                    this.modal5 = false;
-                }, 2000);
+                this.$refs.form.validate((valid) => {
+                  if (valid) {
+                    setTimeout(() => {
+                        this.$message({type:'success',content:'表单提交成功'});
+                        this.modal5 = false;
+                    }, 2000);
+                  } else {
+                    this.$message({type:'danger',content:'表单校验失败'});
+                    this.loading = false 
+                    setTimeout(() => {
+                        this.loading = true 
+                    }, 200);
+                  }
+                })
             }
          }
     }

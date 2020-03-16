@@ -26,7 +26,7 @@
             <div :class="[prefixCls + '-footer']" v-if="!footerHide">
               <slot name="footer">
                 <b-button @click="cancel">{{ cancelText }}</b-button>
-                <b-button type="primary" :loading="buttonLoading" @clic="ok">{{ okText }}</b-button>
+                <b-button type="primary" :loading="buttonLoading" @click="ok">{{ okText }}</b-button>
               </slot>
             </div>
           </div>
