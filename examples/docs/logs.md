@@ -7,6 +7,13 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.0.1</p>
+        <p class="time">2020-03-16</p>
+        <p class="content">修复modal窗确认点击事件不响应问题</p>
+        <p class="content">优化表单标题显示高度，优化按钮间隔</p>
+      </b-timeline-item>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
         <p class="version">3.0.0</p>
