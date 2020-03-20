@@ -162,7 +162,7 @@
         if (this.width) {
           style.width = `${this.width}px`
         }
-        if (this.appendToBody) style['z-index'] = 1060 + this.tIndex
+        if (this.appendToBody) style['z-index'] = 2060 + this.tIndex
         return style
       },
       contentClasses() {

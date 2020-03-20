@@ -73,7 +73,7 @@
       },
       wrapStyles() {
         let styles = Object.assign({}, this.styles)
-        styles['z-index'] = 1010 + this.tIndex
+        styles['z-index'] = 2010 + this.tIndex
 
         return styles
       }

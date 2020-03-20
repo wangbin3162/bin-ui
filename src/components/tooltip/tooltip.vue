@@ -94,7 +94,7 @@
       },
       dropStyles () {
         let styles = {}
-        if (this.appendToBody) styles['z-index'] = 1060 + this.tIndex
+        if (this.appendToBody) styles['z-index'] = 2060 + this.tIndex
 
         return styles
       }
