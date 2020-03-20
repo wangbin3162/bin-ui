@@ -62,6 +62,7 @@ import Carousel from './components/carousel'
 import CarouselItem from './components/carousel-item'
 import Calendar from './components/calendar'
 import Popover from './components/popover'
+import Split from './components/split'
 import Empty from './components/empty'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
@@ -79,7 +80,7 @@ const components = [
   Select, Option, OptionGroup, Table, Page, Tree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
   Timeline, TimelineItem, Affix, Anchor, AnchorLink, Carousel, CarouselItem, Popover,
-  Empty
+  Empty, Split
 ]
 
 const install = function (Vue) {
@@ -169,5 +170,6 @@ export default {
   CarouselItem,
   Calendar,
   Empty,
-  Popover
+  Popover,
+  Split
 }

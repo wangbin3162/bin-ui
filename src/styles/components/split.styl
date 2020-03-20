@@ -1,0 +1,65 @@
+.clear-fix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.bin-splitter-container {
+  height: 100%;
+  position: relative;
+}
+
+.bin-splitter-pane.vertical.splitter-left {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  padding-right: 3px;
+}
+
+.bin-splitter-pane.vertical.splitter-right {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding-left: 3px;
+}
+
+.bin-splitter-pane.horizontal.splitter-left {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.bin-splitter-pane.horizontal.splitter-right {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 3px;
+}
+.bin-splitter-pane-resizer {
+  box-sizing: border-box;
+  background: #ddd;
+  position: absolute;
+  z-index: 1;
+  background-clip: padding-box;
+}
+
+.bin-splitter-pane-resizer.horizontal {
+  height: 11px;
+  margin: -5px 0;
+  border-top: 5px solid rgba(255, 255, 255, 0);
+  border-bottom: 5px solid rgba(255, 255, 255, 0);
+  cursor: row-resize;
+  width: 100%;
+}
+
+.bin-splitter-pane-resizer.vertical {
+  width: 11px;
+  height: 100%;
+  margin-left: -5px;
+  border-left: 5px solid rgba(255, 255, 255, 0);
+  border-right: 5px solid rgba(255, 255, 255, 0);
+  cursor: col-resize;
+}

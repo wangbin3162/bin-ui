@@ -106,6 +106,12 @@
           "path": "/collapse"
         },
         {
+          "desc": "Split 分割面板",
+          "icon": "ios-photos",
+          "name": "split",
+          "path": "/split"
+        },
+        {
           "desc": "Divider 分割线",
           "icon": "ios-code-working",
           "name": "divider",
