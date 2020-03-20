@@ -88,11 +88,11 @@
 ::: demo
 ```html
 <template>
-  <b-tooltip  content="light" >
-     <b-button>light(default)</b-button>&nbsp;&nbsp;
+  <b-tooltip content="light" theme="light" >
+     <b-button>light</b-button>&nbsp;&nbsp;
   </b-tooltip>
-  <b-tooltip  content="Dark" theme="dark">
-    <b-button>Dark</b-button>
+  <b-tooltip content="Dark" theme="dark">
+    <b-button>Dark(default)</b-button>
   </b-tooltip>
 </template>
 ```
