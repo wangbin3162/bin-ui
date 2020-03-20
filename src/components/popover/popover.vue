@@ -99,11 +99,11 @@
       },
       okText: {
         type: String,
-        default: '确 定'
+        default: '确定'
       },
       cancelText: {
         type: String,
-        default: '取 消'
+        default: '取消'
       },
       appendToBody: {
         type: Boolean
