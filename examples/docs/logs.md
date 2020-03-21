@@ -7,6 +7,16 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.1.0</p>
+        <p class="time">2020-03-21</p>
+        <p class="content">新增分割面板split组件，新增slider滑块组件</p>
+        <p class="content">更新生态连接，新增code-editor插件</p>
+        <p class="content">popover取消确定字间距删除</p>
+        <p class="content">tooltip文档主题修复</p>
+        <p class="content">通知，popover，tooltip基础层级设置为2000+</p>
+      </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.0.1</p>
