@@ -246,6 +246,12 @@
           "path": "/rate"
         },
         {
+          "desc": "Slider 滑块组件",
+          "icon": "ios-remove",
+          "name": "slider",
+          "path": "/slider"
+        },
+        {
           "desc": "upload 上传",
           "icon": "ios-cloud-upload",
           "name": "upload",

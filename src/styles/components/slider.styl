@@ -1,0 +1,113 @@
+.bin-slider {
+  line-height: normal;
+  &-wrap {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    margin: 16px 0;
+    background-color: #e8eaec;
+    border-radius: $border-base-radius + 1;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  &-button-wrap {
+    position: absolute;
+    width: 18px;
+    height: 18px
+    text-align: center;
+    background-color: transparent;
+    top: -6px;
+    transform: translateX(-50%);
+    .bin-tooltip {
+      display: block;
+      user-select: none;
+    }
+  }
+  &-button {
+    width: 12px;
+    height: 12px;
+    border: 2px solid $color-primary-light2;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: .2s linear;
+    outline: 0;
+    &:focus, &:hover, &-dragging {
+      border-color: $color-primary;
+      transform: scale(1.5);
+    }
+    &:hover {
+      cursor: grab;
+    }
+    &-dragging, &-dragging:hover {
+      cursor: grabbing;
+    }
+  }
+
+  &-bar {
+    height: 4px;
+    background: $color-primary-light2;
+    border-radius: $border-base-radius + 1;
+    position: absolute;
+  }
+
+  &-stop {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateX(-50%);
+  }
+  &-marks {
+    top: 0;
+    left: 12px;
+    width: 18px;
+    height: 100%;
+
+    &-item {
+      position: absolute;
+      transform: translateX(-50%);
+      font-size: $base-font-size;
+      color: #808695;
+      margin-top: 15px;
+    }
+  }
+}
+.bin-slider-disabled {
+  cursor: not-allowed;
+  .bin-slider-wrap {
+    background-color: $btn-disable-color;
+    cursor: not-allowed;
+  }
+
+  .bin-slider-bar {
+    background-color: $btn-disable-color;
+  }
+  .bin-slider-button {
+    border-color: $btn-disable-color;
+    &:hover, &-dragging {
+      border-color: $btn-disable-color;
+      transform: scale(1);
+    }
+    &:hover {
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+    &-dragging, &-dragging:hover {
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+  }
+}
+
+.bin-slider-input {
+  .bin-slider-wrap {
+    width: auto;
+    margin-right: 100px;
+  }
+  .bin-input-number {
+    float: right;
+    margin-top: -14px;
+  }
+}

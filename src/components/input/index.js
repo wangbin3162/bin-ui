@@ -1,8 +1,8 @@
-import BInput from './input.vue'
+import Input from './input.vue'
 
 /* istanbul ignore next */
-BInput.install = function (Vue) {
-  Vue.component(BInput.name, BInput)
+Input.install = function (Vue) {
+  Vue.component(Input.name, Input)
 }
 
-export default BInput
+export default Input

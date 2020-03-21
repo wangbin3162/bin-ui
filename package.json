@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "async-validator": "^1.11.5",
+    "element-resize-detector": "^1.2.1",
     "js-calendar": "^1.2.3",
     "popper.js": "^1.15.0",
     "resize-observer-polyfill": "^1.5.1",

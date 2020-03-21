@@ -16,6 +16,9 @@
             <i class="iconfont icon-ios-arrow-down"></i>
           </a>
           <b-dropdown-menu slot="list">
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-code-editor')">
+              bin-code-editor
+            </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-tree-org')">
               bin-tree-org
             </b-dropdown-item>
