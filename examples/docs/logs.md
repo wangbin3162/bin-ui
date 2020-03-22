@@ -7,6 +7,12 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.1.1</p>
+        <p class="time">2020-03-22</p>
+        <p class="content">去除多余包引用，修改文档，增加生态连接bin-charts插件导航</p>
+      </b-timeline-item>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
         <p class="version">3.1.0</p>
