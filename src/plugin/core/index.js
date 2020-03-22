@@ -9,6 +9,8 @@ import log from '../../utils/log'
 import { scrollTop } from '../../utils/dom'
 import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 
+let baseUrl = 'https://wangbin3162.gitee.io'
+
 export default {
   async install(Vue, options) {
     // 设置为 false 以阻止 vue 在启动时生成生产提示 https://cn.vuejs.org/v2/api/#productionTip
@@ -31,7 +33,6 @@ export default {
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
     Vue.prototype.$resize = { addResizeListener, removeResizeListener }
-    // 打印UI官网
-    log.pretty('[bin-ui] ' + config.version, 'https://wangbin3162.gitee.io/bin-ui/')
+    log.pretty(`[${config.name}] ${config.version}`, `${baseUrl}/${config.name}`)
   }
 }

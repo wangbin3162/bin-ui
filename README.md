@@ -51,6 +51,12 @@ npm install bin-ui -S
 <a href="https://gitee.com/wangbin3162/bin-tree-org/" target="_blank">码云仓库</a> | 
 <a href="https://wangbin3162.gitee.io/bin-tree-org" target="_blank">文档说明</a>
 
+***bin-charts*** 基于vue、 echarts的图表封装组件
+
+<a href="https://github.com/wangbin3162/bin-charts/" target="_blank">Github 仓库</a> | 
+<a href="https://gitee.com/wangbin3162/bin-charts/" target="_blank">码云仓库</a> | 
+<a href="https://wangbin3162.gitee.io/bin-charts/" target="_blank">文档说明</a>
+
 ***bin-animation*** 基于vue transition钩子函数的css3动画库
 
 <a href="https://github.com/wangbin3162/bin-animation/" target="_blank">Github 仓库</a> | 

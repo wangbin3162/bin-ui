@@ -104,7 +104,7 @@
   import { getStyle, on, off } from '../../utils/dom'
   import { oneOf } from '../../utils/util'
   import Emitter from '../../mixins/emitter'
-  import elementResizeDetectorMaker from 'element-resize-detector'
+  import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 
   const prefixCls = 'bin-slider'
 
@@ -474,12 +474,10 @@
           })
         }
       })
-
-      this.observer = elementResizeDetectorMaker()
-      this.observer.listenTo(this.$refs.slider, this.handleSetSliderWidth)
+      addResizeListener(this.$refs.slider, this.handleSetSliderWidth)
     },
     beforeDestroy() {
-      this.observer.removeListener(this.$refs.slider, this.handleSetSliderWidth)
+      removeResizeListener(this.$refs.slider, this.handleSetSliderWidth)
     }
   }
 </script>

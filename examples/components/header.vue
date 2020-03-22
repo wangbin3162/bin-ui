@@ -22,6 +22,9 @@
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-tree-org')">
               bin-tree-org
             </b-dropdown-item>
+            <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-charts')">
+              bin-charts
+            </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-animation')">
               bin-animation
             </b-dropdown-item>
