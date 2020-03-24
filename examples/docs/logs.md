@@ -9,6 +9,12 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.1.2</p>
+        <p class="time">2020-03-24</p>
+        <p class="content">修复modal框超出屏幕返回没有滚动问题</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.1.1</p>
         <p class="time">2020-03-22</p>
         <p class="content">去除多余包引用，修改文档，增加生态连接bin-charts插件导航</p>
