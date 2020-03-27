@@ -8,15 +8,15 @@
     </div>
     <transition name="zoom-in-top">
       <drop
-        :class="dropdownCls"
-        v-show="currentVisible"
-        :placement="placement"
-        ref="drop"
-        @mouseenter.native="handleMouseenter"
-        @mouseleave.native="handleMouseleave"
-        :data-transfer="appendToBody"
-        :transfer="appendToBody"
-        v-transfer-dom>
+          :class="dropdownCls"
+          v-show="currentVisible"
+          :placement="placement"
+          ref="drop"
+          @mouseenter.native="handleMouseenter"
+          @mouseleave.native="handleMouseleave"
+          :data-transfer="appendToBody"
+          :transfer="appendToBody"
+          v-transfer-dom>
         <slot name="list"></slot>
       </drop>
     </transition>
@@ -36,13 +36,13 @@
     components: { Drop },
     props: {
       trigger: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['click', 'hover', 'custom', 'contextMenu'])
         },
         default: 'hover'
       },
       placement: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'])
         },
         default: 'bottom'
@@ -60,41 +60,39 @@
         default: false
       }
     },
-    data () {
+    data() {
       return {
         prefixCls: prefixCls,
         currentVisible: this.visible
       }
     },
     watch: {
-      visible (val) {
+      visible(val) {
         this.currentVisible = val
       },
-      currentVisible (val) {
+      currentVisible(val) {
         if (val) {
           this.$refs.drop.update()
-        } else {
-          this.$refs.drop.destroy()
         }
         this.$emit('on-visible-change', val)
       }
     },
     methods: {
-      handleClick () {
+      handleClick() {
         if (this.trigger === 'custom') return false
         if (this.trigger !== 'click') {
           return false
         }
         this.currentVisible = !this.currentVisible
       },
-      handleRightClick () {
+      handleRightClick() {
         if (this.trigger === 'custom') return false
         if (this.trigger !== 'contextMenu') {
           return false
         }
         this.currentVisible = !this.currentVisible
       },
-      handleMouseenter () {
+      handleMouseenter() {
         if (this.trigger === 'custom') return false
         if (this.trigger !== 'hover') {
           return false
@@ -104,7 +102,7 @@
           this.currentVisible = true
         }, 250)
       },
-      handleMouseleave () {
+      handleMouseleave() {
         if (this.trigger === 'custom') return false
         if (this.trigger !== 'hover') {
           return false
@@ -116,26 +114,26 @@
           }, 150)
         }
       },
-      onClickOutside (e) {
+      onClickOutside(e) {
         this.handleClose()
         this.handleRightClose()
         if (this.currentVisible) this.$emit('on-click-outside', e)
       },
-      handleClose () {
+      handleClose() {
         if (this.trigger === 'custom') return false
         if (this.trigger !== 'click') {
           return false
         }
         this.currentVisible = false
       },
-      handleRightClose () {
+      handleRightClose() {
         if (this.trigger === 'custom') return false
         if (this.trigger !== 'contextMenu') {
           return false
         }
         this.currentVisible = false
       },
-      hasParent () {
+      hasParent() {
         const $parent = findComponentUpward(this, 'BDropdown')
         if ($parent) {
           return $parent
@@ -144,7 +142,7 @@
         }
       }
     },
-    mounted () {
+    mounted() {
       this.$on('on-click', (key) => {
         if (this.stopPropagation) return
         const $parent = this.hasParent()
@@ -175,16 +173,16 @@
       })
     },
     computed: {
-      transition () {
+      transition() {
         return ['bottom-start', 'bottom', 'bottom-end'].indexOf(this.placement) > -1 ? 'slide-up' : 'fade'
       },
-      dropdownCls () {
+      dropdownCls() {
         return {
           [prefixCls + '-transfer']: this.appendToBody,
           [this.transferClassName]: this.transferClassName
         }
       },
-      relClasses () {
+      relClasses() {
         return [
           `${prefixCls}-rel`,
           {
