@@ -295,6 +295,8 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | on-ok     | 点击确定的回调   | 无  |
 | on-cancel    | 点击取消的回调   | 无  |
 | on-visible-change    | 显示状态发生变化时触发   | true / false  |
+| on-opened    | 打开动画完成事件   | 无  |
+| on-hidden    | 关闭动画结束事件   | 无  |
 
 ### Slot
 

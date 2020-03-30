@@ -4,7 +4,7 @@
       <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click="handleMask"></div>
     </transition>
     <div :class="wrapClasses" :style="wrapStyles" @click="handleWrapClick">
-      <transition name="fade-scale-move" @after-leave="animationFinish">
+      <transition name="fade-scale-move" @after-enter="animationEnter" @after-leave="animationFinish">
         <div :class="classes" :style="mainStyles" v-show="visible">
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
             <a :class="[prefixCls + '-close']" v-if="closable" @click="close">
@@ -253,6 +253,10 @@
         this.visible = false
         this.$emit('input', false)
         this.$emit('on-cancel')
+      },
+      // 动画完成
+      animationEnter() {
+        this.$emit('on-opened')
       },
       // 缩放动画结束
       animationFinish() {
