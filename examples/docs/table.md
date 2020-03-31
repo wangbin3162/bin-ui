@@ -485,7 +485,8 @@ height 和maxHeight可以设置固定表头
 ```html
 <template>
 <div>
-  <b-table :columns="columns" ref="currentRowTable" :data="data" highlight-row></b-table>
+  <b-table :columns="columns" ref="currentRowTable" :data="data" 
+      highlight-row @on-current-change="currentRowChange"></b-table>
   <br>
   <b-button @click="$refs.currentRowTable.clearCurrentRow();">清除单选</b-button>
 </div>
@@ -545,6 +546,13 @@ height 和maxHeight可以设置固定表头
           }
         ]
       }
+    },
+    methods:{
+      currentRowChange(currentRow,oldRow,index){
+        if(index){
+          this.$message(`选中了第${index+1}行`)
+        }
+      } 
     }
   }
 </script>
@@ -1200,7 +1208,7 @@ noDataText可以设置无数据状态
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-current-change     | 开启 highlight-row 后有效，当表格的当前行发生变化的时候会触   | currentRow, oldCurrentRow  |
+| on-current-change     | 开启 highlight-row 后有效，当表格的当前行发生变化的时候会触   | currentRow, oldCurrentRow,index  |
 | on-select     | 在多选模式下有效，选中某一项时触发   | 已选项, 刚选择  |
 | on-select-cancel    | 在多选模式下有效，取消选中某一项时触发  | 已选项, 取消选择 |
 | on-select-all    | 全选时触发	 | 已选项 |

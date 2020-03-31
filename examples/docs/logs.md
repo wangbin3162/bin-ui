@@ -9,8 +9,9 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.1.5</p>
-        <p class="time">2020-03-30</p>
+        <p class="version">3.1.6</p>
+        <p class="time">2020-03-31</p>
+        <p class="content">修改表格单选选中样式，行改变事件参数传入选中行数</p>
         <p class="content">提供modal窗动画完成事件回调</p>
         <p class="content">修复下来菜单隐藏销毁默认位置的问题</p>
         <p class="content">修复modal框超出屏幕返回没有滚动问题</p>

@@ -484,7 +484,7 @@
         if (type === 'highlight') this.objData[_index]._isHighlight = true
         const oldData = oldIndex < 0 ? null : JSON.parse(JSON.stringify(this.cloneData[oldIndex]))
         const newData = type === 'highlight' ? JSON.parse(JSON.stringify(this.cloneData[_index])) : null
-        this.$emit('on-current-change', newData, oldData)
+        this.$emit('on-current-change', newData, oldData, _index)
       },
       highlightCurrentRow(_index) {
         if (!this.highlightRow || this.objData[_index]._isHighlight) return
