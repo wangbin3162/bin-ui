@@ -168,8 +168,13 @@
         formValidate: {
           name: '',
           mail: '',
+          gender: '',
           birthday:'',
-          time:''
+          time: '',
+          city:'',   
+          cities:'',  
+          interest:[],  
+          desc:''
         },
         cities: [
              {
@@ -213,7 +218,7 @@
                ]
              }
          ],
-         ruleValidate: {
+        ruleValidate: {
            name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
            mail: [
              { required: true, message: '邮箱不能为空', trigger: 'blur' },

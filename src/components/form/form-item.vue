@@ -6,7 +6,7 @@
     <label :class="[prefixCls + '-label-empty']" v-else :style="labelStyles"/>
     <div :class="[prefixCls + '-content']">
       <slot></slot>
-      <transition name="fade-in">
+      <transition name="zoom-in-top">
         <div :class="[prefixCls + '-error-tip']" v-if="validateState === 'error' && showMessage && form.showMessage">{{
           validateMessage }}
         </div>
