@@ -9,8 +9,9 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.1.7</p>
-        <p class="time">2020-04-05</p>
+        <p class="version">3.1.8</p>
+        <p class="time">2020-04-06</p>
+        <p class="content">修改数值输入框form错误样式</p>
         <p class="content">修改form-item组件样式错位问题</p>
         <p class="content">修改表格单选选中样式，行改变事件参数传入选中行数</p>
         <p class="content">提供modal窗动画完成事件回调</p>

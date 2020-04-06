@@ -113,6 +113,12 @@
         <b-form-item label="邮箱" prop="mail">
           <b-input v-model="formValidate.mail"></b-input>
         </b-form-item>
+        <b-form-item label="年龄" prop="age">
+          <b-input-number v-model="formValidate.age"></b-input-number>
+        </b-form-item>
+        <b-form-item label="进度" prop="jindu">
+          <b-slider v-model="formValidate.jindu"></b-slider>
+        </b-form-item>
         <b-form-item label="性别" prop="gender">
             <b-radio-group v-model="formValidate.gender">
                 <b-radio label="male">男</b-radio>
@@ -168,6 +174,8 @@
         formValidate: {
           name: '',
           mail: '',
+          age: 0,
+          jindu: 30,
           gender: '',
           birthday:'',
           time: '',
@@ -224,6 +232,9 @@
              { required: true, message: '邮箱不能为空', trigger: 'blur' },
              { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
            ],
+           age: [ { required: true, type:'number', message: '年龄必填', trigger: 'change' },
+                  { min:18,max:35, type:'number', message: '年龄必须满18周岁，不大于35岁', trigger: 'change' }],
+           jindu: [ { min:40, type:'number', message: '进度范围不能低于40%', trigger: 'change' }],
            gender: [ { required: true, message: '请选择性别', trigger: 'change' }],
            birthday: [{ required: true, type: 'date', message: '请选择出生日期', trigger: 'change' }],
            time: [{ required: true, type: 'string', message: '选择时间', trigger: 'change' }],
