@@ -1,6 +1,6 @@
 {
   "name": "bin-ui",
-  "version": "3.1.8",
+  "version": "3.1.9",
   "description": "基于 vue2.6 / vue-cli3 的 UI 组件库",
   "main": "lib/bin-ui.common.js",
   "keywords": [
