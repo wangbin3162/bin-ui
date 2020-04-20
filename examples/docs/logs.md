@@ -9,6 +9,14 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.2.0</p>
+        <p class="time">2020-04-20</p>
+        <p class="content">修改下拉菜单，禁用选项点击事件冒泡</p>
+        <p class="content">修改按钮禁用样式，多彩按钮可禁用</p>
+        <p class="content">扩充按钮设置图标模式，并可扩展图标样式</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.1.9</p>
         <p class="time">2020-04-09</p>
         <p class="content">修改tag组件行高，修改notice文字格式</p>

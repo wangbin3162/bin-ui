@@ -60,17 +60,17 @@
 ```html
 <template>
 <div>
-   <b-dropdown>
+   <b-dropdown @on-click="handleClick">
       <a href="javascript:void(0)">
          hover 触发
          <b-icon name="ios-arrow-down"></b-icon>
       </a>
       <b-dropdown-menu slot="list">
-         <b-dropdown-item selected>驴肉火烧</b-dropdown-item>
-         <b-dropdown-item disabled>炸酱面</b-dropdown-item>
-         <b-dropdown-item>牛肉板面</b-dropdown-item>
-         <b-dropdown-item divided>地锅鸡</b-dropdown-item>
-         <b-dropdown-item>街边烧烤</b-dropdown-item>
+         <b-dropdown-item name="驴肉火烧" selected >驴肉火烧</b-dropdown-item>
+         <b-dropdown-item name="炸酱面" disabled >炸酱面</b-dropdown-item>
+         <b-dropdown-item name="牛肉板面" >牛肉板面</b-dropdown-item>
+         <b-dropdown-item name="地锅鸡" divided >地锅鸡</b-dropdown-item>
+         <b-dropdown-item name="街边烧烤" >街边烧烤</b-dropdown-item>
       </b-dropdown-menu>
    </b-dropdown> 
    <b-dropdown trigger="click"  style="margin-left: 20px;">
@@ -124,7 +124,10 @@
             },
             handleClose () {
                 this.visible = false;
-            }
+            },
+            handleClick(name){
+              this.$message(name)
+            }       
         }
     }
 </script>

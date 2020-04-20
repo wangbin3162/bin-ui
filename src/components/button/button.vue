@@ -15,8 +15,9 @@
       }
     ]"
   >
-    <b-icon class="button-loading icon-is-rotating" :name="loadingIcon?loadingIcon:'loading'" v-if="loading"></b-icon>
-    <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading"></i>
+    <b-icon class="button-loading icon-is-rotating"
+            :name="loadingIcon?loadingIcon:'loading'" v-if="loading" :style="iconStyles"/>
+    <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading" :style="iconStyles"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
   <button v-else
@@ -26,10 +27,15 @@
           class="bin-button"
           :class="['bin-button--' + type, { 'is-disabled': disabled, 'is-loading': loading }
     ]"
-  ><span v-if="$slots.default" :style="textStyle"><slot></slot></span></button>
+  >
+    <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading" :style="iconStyles"></i>
+    <span v-if="$slots.default" :style="textStyle"><slot></slot></span>
+  </button>
 </template>
 
 <script>
+  import tinycolor from 'tinycolor2'
+
   export default {
     name: 'BButton',
     props: {
@@ -44,6 +50,9 @@
       icon: {
         type: String,
         default: ''
+      },
+      iconStyle: {
+        type: Object
       },
       nativeType: {
         type: String,
@@ -62,6 +71,12 @@
       }
     },
     computed: {
+      iconStyles() {
+        return {
+          ...this.textStyle,
+          ...this.iconStyle
+        }
+      },
       textStyle() {
         const colorMap = {
           primary: '#1890ff',
@@ -70,7 +85,13 @@
           warning: '#fa8c16',
           danger: '#f5222d'
         }
-        return this.textColor ? { color: colorMap[this.textColor] ? colorMap[this.textColor] : this.textColor } : null
+        let color = this.textColor ? (colorMap[this.textColor] ? colorMap[this.textColor] : this.textColor) : null
+        if (color) {
+          return {
+            color: this.disabled ? tinycolor(color).lighten(15).toString() : color
+          }
+        }
+        return null
       }
     },
     methods: {

@@ -26,7 +26,7 @@
               :class="[prefixCls + '-picker-colors-wrapper-circle', hideClass]"></div>
         </div>
       </div>
-      <br v-if="lineBreak(list, index)">
+      <br v-if="lineBreak(list, index)"/>
     </template>
   </div>
 </template>
@@ -45,8 +45,8 @@
     props: {
       list: {
         type: Array,
-        default: undefined,
-      },
+        default: undefined
+      }
     },
 
     data () {

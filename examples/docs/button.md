@@ -111,7 +111,8 @@
 ::: demo 注意，文字按钮无法使用样式变量进行覆盖，可自主设置颜色值来改变
 ```html
 <template>
-    <div class="demo-button">
+<div class="demo-button">
+    <div>
        <b-button type="text">文字按钮</b-button>
        <b-button type="text" text-color="primary">Primary</b-button>
        <b-button type="text" text-color="success">Success</b-button>
@@ -119,9 +120,30 @@
        <b-button type="text" text-color="warning">Warning</b-button>
        <b-button type="text" text-color="danger">Danger</b-button>
        <b-button type="text" text-color="#b37feb">多彩按钮</b-button>
-       <b-button type="text" text-color="#f759ab">多彩按钮</b-button>
-       <b-button type="text" disabled>文字按钮</b-button>
+       <b-button type="text" text-color="#f759ab">多彩按钮2</b-button>
     </div>
+    <div>
+       <b-button type="text" disabled>禁用按钮</b-button>
+       <b-button type="text" text-color="primary" disabled>Primary</b-button>
+       <b-button type="text" text-color="success" disabled>Success</b-button>
+       <b-button type="text" text-color="info" disabled>Info</b-button>
+       <b-button type="text" text-color="warning" disabled>Warning</b-button>
+       <b-button type="text" text-color="danger" disabled>Danger</b-button>
+       <b-button type="text" text-color="#f759ab" disabled>多彩按钮</b-button>
+       <b-button type="text" text-color="#f759ab" disabled>多彩按钮2</b-button>
+    </div>
+    <div>
+       <b-button type="text" icon="heart" :icon-style="{fontSize:'20px'}"/>
+       <b-button type="text" icon="ios-create" text-color="success" :icon-style="{fontSize:'20px'}"/>
+       <b-button type="text" icon="ios-warning" text-color="warning"  :icon-style="{fontSize:'20px'}"/>
+       <b-button type="text" icon="ios-close-circle-outline" text-color="danger" :icon-style="{fontSize:'20px'}"/>
+       <b-divider type="vertical"></b-divider>
+       <b-button type="text" icon="heart" :icon-style="{fontSize:'20px'}" disabled/>
+       <b-button type="text" icon="ios-create" text-color="success" :icon-style="{fontSize:'20px'}" disabled/>
+       <b-button type="text" icon="ios-warning" text-color="warning"  :icon-style="{fontSize:'20px'}" disabled/>
+       <b-button type="text" icon="ios-close-circle-outline" text-color="danger" :icon-style="{fontSize:'20px'}" disabled/>
+    </div>
+</div>
 </template>
 ```
 :::
@@ -216,7 +238,8 @@ export default {
 | loading     | 是否加载中状态   | boolean    | — | false   |
 | disabled  | 是否禁用状态    | boolean   | —   | false   |
 | icon  | 图标类名 | string   |  —  |  —  |
-| text-color  | 文字按钮颜色 | string  | primary / success / warning / danger / info / text / 自定义色值  |  —  |
+| text-color  | 文字按钮颜色，默认禁用文字颜色增加亮度区分 | string  | primary / success / warning / danger / info / text / 自定义色值  |  —  |
+| icon-style  | 图标样式,可设置图标大小，字体对其等，可依托text-color设置颜色，也可以自定义 | Object   |  —  |  —  |
 | autofocus  | 是否默认聚焦 | boolean   |  —  |  false  |
 | native-type | 原生 type 属性 | string | button / submit / reset | button |
 

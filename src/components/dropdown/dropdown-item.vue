@@ -6,6 +6,7 @@
 
 <script>
   import { findComponentUpward } from '../../utils/util'
+
   const prefixCls = 'bin-dropdown-item'
 
   export default {
@@ -28,7 +29,7 @@
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           {
@@ -40,13 +41,14 @@
       }
     },
     methods: {
-      handleClick () {
+      handleClick() {
         const $parent = findComponentUpward(this, 'BDropdown')
         const hasChildren = this.$parent && this.$parent.$options.name === 'BDropdown'
         if (this.disabled) {
           this.$nextTick(() => {
             $parent.currentVisible = true
           })
+          return
         } else if (hasChildren) {
           this.$parent.$emit('on-haschild-click')
         } else {
