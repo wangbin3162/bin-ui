@@ -41,12 +41,14 @@
 ```html
 <template>
     <b-input-number :max="10" :min="1" v-model="value2" :step="0.2"></b-input-number>
+    <b-input-number v-model="value3" :precision="2"></b-input-number>
 </template>
 <script>
     export default {
         data () {
             return {
-                value2: 1
+                value2: 1,
+                value3: null
             }
         }
     }

@@ -75,7 +75,7 @@
       },
       activeChange: {
         type: Boolean,
-        default: true
+        default: false
       },
       value: {
         type: Number,
@@ -284,28 +284,30 @@
         }
       },
       change(event) {
-        if (event.type === 'change') return
-
-        if (event.type === 'input' && !this.activeChange) return
         let val = event.target.value.trim()
-        if (this.parser) {
-          val = this.parser(val)
-        }
+        // 需要格式化数据时
+        let needFormat = (event.type === 'input' && this.activeChange) || (event.type === 'change' && !this.activeChange)
+        if (needFormat) {
+          if (event.type === 'input' && !this.activeChange) return
+          if (this.parser) {
+            val = this.parser(val)
+          }
 
-        const isEmptyString = val.length === 0
-        if (isEmptyString) {
-          this.setValue(null)
-          return
-        }
-        if (event.type === 'input' && val.match(/^\-?\.?$|\.$/)) return // prevent fire early if decimal. If no more input the change event will fire later
+          const isEmptyString = val.length === 0
+          if (isEmptyString) {
+            this.setValue(null)
+            return
+          }
+          if (event.type === 'input' && val.match(/^\-?\.?$|\.$/)) return // prevent fire early if decimal. If no more input the change event will fire later
 
-        val = Number(val)
+          val = Number(val)
 
-        if (!isNaN(val)) {
-          this.currentValue = val
-          this.setValue(val)
-        } else {
-          event.target.value = this.currentValue
+          if (!isNaN(val)) {
+            this.currentValue = val
+            this.setValue(val)
+          } else {
+            event.target.value = this.currentValue
+          }
         }
       },
       changeVal(val) {
