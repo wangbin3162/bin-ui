@@ -8,19 +8,19 @@ export function typeColor (type = 'default') {
   let color = ''
   switch (type) {
     case 'primary':
-      color = '#1890ff'
+      color = '#0d85ff'
       break
     case 'success':
       color = '#52c41a'
       break
     case 'warning':
-      color = '#fa8c16'
+      color = '#fea638'
       break
     case 'danger':
-      color = '#f5222d'
+      color = '#ff4d4f'
       break
     case 'default':
-      color = '#35495E'
+      color = '#25bbe3'
       break
     default:
       color = type

@@ -1,4 +1,5 @@
 .bin-button {
+  position: relative;
   display: inline-block;
   vertical-align: middle;
   line-height: $base-line-height;
@@ -13,7 +14,7 @@
   box-sizing: border-box;
   outline: none;
   margin: 0;
-  transition: .2s;
+  transition: .3s;
   user-select: none;
   padding: 4px 15px;
   font-size: $base-font-size;
@@ -28,9 +29,16 @@
     font-size: 14px;
     margin-right: 5px;
   }
-  &:hover, &:focus {
+  &:hover {
     color: $color-primary;
     border-color: $color-primary;
+  }
+  &:active {
+    color: $color-primary-active;
+    border-color: $color-primary-active;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $color-primary-opacity;
   }
   &.is-round {
     border-radius: 20px;
@@ -39,9 +47,13 @@
     background: transparent;
     border-color: #fff;
     color: #fff;
-    &:hover, &:focus {
+    &:hover {
       color: $color-primary;
       border-color: $color-primary;
+    }
+    &:active {
+      color: $color-primary-active;
+      border-color: $color-primary-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       background: transparent;
@@ -87,19 +99,30 @@
   color: $color-white;
   background-color: $color-primary;
   border-color: $color-primary;
-  &:hover, &:focus {
+  &:hover {
     background: $color-primary-light1;
     border-color: $color-primary-light1;
     color: #fff;
+  }
+  &:active {
+    background: $color-primary-active;
+    border-color: $color-primary-active;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $color-primary-opacity;
   }
   &.is-transparent {
     border-color: $color-primary;
     color: $color-primary;
     background-color: transparent;
-    &:hover, &:focus {
+    &:hover {
       border-color: $color-primary-light1;
       color: $color-primary;
       background-color: rgba(245, 249, 254, .5);
+    }
+    &:active {
+      color: $color-primary-active;
+      border-color: $color-primary-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-primary-light3;
@@ -110,8 +133,12 @@
     color: $color-primary;
     background: $color-primary-light6;
     border-color: $color-primary-light5;
-    &:focus, &:hover {
+    &:hover {
       border-color: $color-primary-light2;
+    }
+    &:active {
+      color: $color-primary-active;
+      border-color: $color-primary-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -132,19 +159,30 @@
   color: #fff;
   background-color: $color-success;
   border-color: $color-success;
-  &:hover, &:focus {
+  &:hover {
     background: $color-success-light1;
     border-color: $color-success-light1;
     color: #fff;
+  }
+  &:active {
+    background: $color-success-active;
+    border-color: $color-success-active;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $color-success-opacity;
   }
   &.is-transparent {
     border-color: $color-success;
     color: $color-success;
     background-color: transparent;
-    &:hover, &:focus {
+    &:hover {
       border-color: $color-success-light1;
       color: $color-success;
       background-color: rgba(245, 249, 254, .5);
+    }
+    &:active {
+      color: $color-success-active;
+      border-color: $color-success-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-success-light3;
@@ -155,8 +193,12 @@
     color: $color-success;
     background: $color-success-light6;
     border-color: $color-success-light5;
-    &:focus, &:hover {
+    &:hover {
       border-color: $color-success-light2;
+    }
+    &:active {
+      color: $color-success-active;
+      border-color: $color-success-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -177,19 +219,30 @@
   color: #fff;
   background-color: $color-info;
   border-color: $color-info;
-  &:hover, &:focus {
+  &:hover {
     background: $color-info-light1;
     border-color: $color-info-light1;
     color: #fff;
+  }
+  &:active {
+    background: $color-info-active;
+    border-color: $color-info-active;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $color-info-opacity;
   }
   &.is-transparent {
     border-color: $color-info;
     color: $color-info;
     background-color: transparent;
-    &:hover, &:focus {
+    &:hover {
       border-color: $color-info-light1;
       color: $color-info;
       background-color: rgba(245, 249, 254, .5);
+    }
+    &:active {
+      color: $color-info-active;
+      border-color: $color-info-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-info-light3;
@@ -200,8 +253,12 @@
     color: $color-info;
     background: $color-info-light6;
     border-color: $color-info-light5;
-    &:focus, &:hover {
+    &:hover {
       border-color: $color-info-light2;
+    }
+    &:active {
+      color: $color-info-active;
+      border-color: $color-info-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -222,19 +279,30 @@
   color: #fff;
   background-color: $color-warning;
   border-color: $color-warning;
-  &:hover, &:focus {
+  &:hover {
     background: $color-warning-light1;
     border-color: $color-warning-light1;
     color: #fff;
+  }
+  &:active {
+    background: $color-warning-active;
+    border-color: $color-warning-active;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $color-warning-opacity;
   }
   &.is-transparent {
     border-color: $color-warning;
     color: $color-warning;
     background-color: transparent;
-    &:hover, &:focus {
+    &:hover {
       border-color: $color-warning-light1;
       color: $color-warning;
       background-color: rgba(245, 249, 254, .5);
+    }
+    &:active {
+      color: $color-warning-active;
+      border-color: $color-warning-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-warning-light3;
@@ -245,8 +313,12 @@
     color: $color-warning;
     background: $color-warning-light6;
     border-color: $color-warning-light5;
-    &:focus, &:hover {
+    &:hover {
       border-color: $color-warning-light2;
+    }
+    &:active {
+      color: $color-warning-active;
+      border-color: $color-warning-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -266,19 +338,30 @@
   color: #fff;
   background-color: $color-danger;
   border-color: $color-danger;
-  &:hover, &:focus {
+  &:hover {
     background: $color-danger-light1;
     border-color: $color-danger-light1;
     color: #fff;
+  }
+  &:active {
+    background: $color-danger-active;
+    border-color: $color-danger-active;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $color-danger-opacity;
   }
   &.is-transparent {
     border-color: $color-danger;
     color: $color-danger;
     background-color: transparent;
-    &:hover, &:focus {
+    &:hover {
       border-color: $color-danger-light1;
       color: $color-danger;
       background-color: rgba(245, 249, 254, .5);
+    }
+    &:active {
+      color: $color-danger-active;
+      border-color: $color-danger-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       border-color: $color-danger-light3;
@@ -289,8 +372,12 @@
     color: $color-danger;
     background: $color-danger-light6;
     border-color: $color-danger-light5;
-    &:focus, &:hover {
+    &:hover {
       border-color: $color-danger-light2;
+    }
+    &:active {
+      color: $color-danger-active;
+      border-color: $color-danger-active;
     }
     &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
       cursor: not-allowed;
@@ -317,6 +404,10 @@
     color: $color-primary-light2;
     border-color: transparent;
     background-color: transparent;
+    box-shadow: none;
+  }
+  &:active {
+    color: $color-primary-active;
   }
   &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
     cursor: not-allowed;

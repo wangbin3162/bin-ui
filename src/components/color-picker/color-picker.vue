@@ -224,10 +224,10 @@
         dragging: false,
         visible: false,
         recommendedColor: [
-          '#1890ff',
+          '#0d85ff',
           '#52c41a',
-          '#fa8c16',
-          '#f5222d',
+          '#fea638',
+          '#ff4d4f',
           '#2f54eb',
           '#faad14',
           '#722ed1',
