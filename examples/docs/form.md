@@ -180,7 +180,7 @@
           birthday:'',
           time: '',
           city:'',   
-          cities:'',  
+          cities:[],  
           interest:[],  
           desc:''
         },

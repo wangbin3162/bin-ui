@@ -34,9 +34,15 @@
       "items": [
         {
           "desc": "Base 基础",
-          "icon": "ios-color-palette",
+          "icon": "ios-barcode",
           "name": "base",
           "path": "/base"
+        },
+        {
+          "desc": "Color 颜色",
+          "icon": "ios-color-palette",
+          "name": "color",
+          "path": "/color"
         },
         {
           "desc": "Icon 图标",

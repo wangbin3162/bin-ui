@@ -21,7 +21,9 @@
 
 ### 基础用法
 
-使用`type`、`plain`、`round`和`transparent`属性来定义 Button 的样式。
+使用`type`可以设置不同类型的按钮样式，其中，`dashed`也可以单独设置
+
+可以另外给按钮设置不同的按钮效果，如`plain`简约按钮，`round`圆角按钮，`dashed`虚线按钮和`transparent`透明按钮四种不同种类的按钮
 
 ::: demo
 ```html
@@ -48,6 +50,14 @@
        <b-button type="info" round>Info</b-button>
        <b-button type="warning" round>Warning</b-button>
        <b-button type="danger" round>Danger</b-button>
+    </div>
+    <div class="demo-button">
+      <b-button dashed>Default</b-button>
+      <b-button type="primary" dashed>Primary</b-button>
+      <b-button type="success" dashed>Success</b-button>
+      <b-button type="info" dashed>Info</b-button>
+      <b-button type="warning" dashed>Warning</b-button>
+      <b-button type="danger" dashed>Danger</b-button>
     </div>
     <div class="demo-button" style="background: #cad4d4;padding: 10px;">
        <b-button type="primary" transparent size="small">Primary</b-button>
@@ -86,6 +96,7 @@
 <template>
     <div class="demo-button">
       <b-button disabled>Default</b-button>
+      <b-button type="dashed" disabled>Dashed</b-button>
       <b-button type="primary" disabled>Primary</b-button>
       <b-button type="success" disabled>Success</b-button>
       <b-button type="info" disabled>Info</b-button>
@@ -93,12 +104,33 @@
       <b-button type="danger" disabled>Danger</b-button>
     </div>
     <div class="demo-button">
-       <b-button plain disabled>Default</b-button>
        <b-button type="primary" plain disabled>Primary</b-button>
        <b-button type="success" plain disabled>Success</b-button>
        <b-button type="info" plain disabled>Info</b-button>
        <b-button type="warning" plain disabled>Warning</b-button>
        <b-button type="danger" plain disabled>Danger</b-button>
+    </div>
+    <div class="demo-button">
+       <b-button type="primary" round disabled>Primary</b-button>
+       <b-button type="success" round disabled>Success</b-button>
+       <b-button type="info" round disabled>Info</b-button>
+       <b-button type="warning" round disabled>Warning</b-button>
+       <b-button type="danger" round disabled>Danger</b-button>
+    </div>
+    <div class="demo-button">
+      <b-button dashed disabled>Default</b-button>
+      <b-button type="primary" dashed disabled>Primary</b-button>
+      <b-button type="success" dashed disabled>Success</b-button>
+      <b-button type="info" dashed disabled>Info</b-button>
+      <b-button type="warning" dashed disabled>Warning</b-button>
+      <b-button type="danger" dashed disabled>Danger</b-button>
+    </div>
+    <div class="demo-button" style="background: #cad4d4;padding: 10px;">
+       <b-button type="primary" transparent size="small" disabled>Primary</b-button>
+       <b-button type="success" transparent size="small" disabled>Success</b-button>
+       <b-button type="info" transparent size="small" disabled>Info</b-button>
+       <b-button type="warning" transparent size="small" disabled>Warning</b-button>
+       <b-button type="danger" transparent size="small" disabled>Danger</b-button>
     </div>
 </template>
 ```

@@ -15,6 +15,7 @@ import DemoBlock from './components/demo-block.vue'
 import MainHeader from './components/header.vue'
 import MainFooter from './components/footer.vue'
 import SideNav from './components/side-nav.vue'
+import ColorBase from './components/color-base.vue'
 
 Vue.use(BinUI)
 
@@ -22,6 +23,7 @@ Vue.component('DemoBlock', DemoBlock)
 Vue.component('MainHeader', MainHeader)
 Vue.component('MainFooter', MainFooter)
 Vue.component('SideNav', SideNav)
+Vue.component('ColorBase', ColorBase)
 Vue.component('BCollapseTransition', BCollapseTransition)
 
 Vue.prototype.$icon = icon // Icon 列表页用
