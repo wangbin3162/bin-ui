@@ -7,6 +7,16 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.3.0</p>
+        <p class="time">2020-06-01</p>
+        <p class="content">修改主色调，更新默认色板值</p>
+        <p class="content">按钮组件，默认去除wave水波纹效果以提升性能，默认添加shadow效果为点击效果</p>
+        <p class="content">数字输入框，修改判定条件，默认blur时进行格式校验和精度补齐，可设置实时改变</p>
+        <p class="content">添加颜色文档，包含基础色号和中性色号值</p>
+        <p class="content">扩展表格组件，增加合并行列函数props，可传入合并函数来进行合并行列</p>
+      </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.2.0</p>

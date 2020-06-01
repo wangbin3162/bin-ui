@@ -154,7 +154,6 @@
       height: {
         type: [Number, String]
       },
-      // 3.4.0
       maxHeight: {
         type: [Number, String]
       },
@@ -203,10 +202,12 @@
           return oneOf(value, ['dark', 'light'])
         }
       },
-      // #5380 开启后，:key 强制更新，否则使用 index
       rowKey: {
         type: Boolean,
         default: false
+      },
+      mergeMethod: {
+        type: Function
       }
     },
     data() {

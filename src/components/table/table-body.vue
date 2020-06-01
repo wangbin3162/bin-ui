@@ -14,20 +14,24 @@
           @mouseleave.native.stop="handleMouseOut(row._index)"
           @click.native="clickCurrentRow(row._index)"
           @dblclick.native.stop="dblclickCurrentRow(row._index)">
-        <td v-for="column in columns" :class="alignCls(column, row)" :key="column._columnKey">
-          <table-cell
-              :fixed="fixed"
-              :prefix-cls="prefixCls"
-              :row="row"
-              :key="column._columnKey"
-              :column="column"
-              :natural-index="index"
-              :index="row._index"
-              :checked="rowChecked(row._index)"
-              :disabled="rowDisabled(row._index)"
-              :expanded="rowExpanded(row._index)"
-          ></table-cell>
-        </td>
+        <template v-for="(column,colIndex) in columns">
+          <td :class="alignCls(column, row)" :key="column._columnKey"
+              v-if="showWithSpan(row, column, index, colIndex)"
+              v-bind="getSpan(row, column, index, colIndex)">
+            <table-cell
+                :fixed="fixed"
+                :prefix-cls="prefixCls"
+                :row="row"
+                :key="column._columnKey"
+                :column="column"
+                :natural-index="index"
+                :index="row._index"
+                :checked="rowChecked(row._index)"
+                :disabled="rowDisabled(row._index)"
+                :expanded="rowExpanded(row._index)"
+            ></table-cell>
+          </td>
+        </template>
       </table-tr>
       <tr v-if="rowExpanded(row._index)" :class="{[prefixCls + '-expanded-hidden']: fixed}" :key="row._index">
         <td :colspan="columns.length" :class="prefixCls + '-expanded-cell'">
@@ -70,7 +74,7 @@
       }
     },
     computed: {
-      expandRender () {
+      expandRender() {
         let render = function () {
           return ''
         }
@@ -84,25 +88,55 @@
       }
     },
     methods: {
-      rowChecked (_index) {
+      getSpan(row, column, rowIndex, columnIndex) {
+        const fn = this.$parent.mergeMethod
+        if (typeof fn === 'function') {
+          const result = fn({
+            row,
+            column,
+            rowIndex,
+            columnIndex
+          })
+          let rowspan = 1
+          let colspan = 1
+          if (Array.isArray(result)) {
+            rowspan = result[0]
+            colspan = result[1]
+          } else if (typeof result === 'object') {
+            rowspan = result.rowspan
+            colspan = result.colspan
+          }
+          return {
+            rowspan,
+            colspan
+          }
+        } else {
+          return {}
+        }
+      },
+      showWithSpan(row, column, rowIndex, columnIndex) {
+        const result = this.getSpan(row, column, rowIndex, columnIndex)
+        return !(('rowspan' in result && result.rowspan === 0) || ('colspan' in result && result.colspan === 0))
+      },
+      rowChecked(_index) {
         return this.objData[_index] && this.objData[_index]._isChecked
       },
-      rowDisabled (_index) {
+      rowDisabled(_index) {
         return this.objData[_index] && this.objData[_index]._isDisabled
       },
-      rowExpanded (_index) {
+      rowExpanded(_index) {
         return this.objData[_index] && this.objData[_index]._isExpanded
       },
-      handleMouseIn (_index) {
+      handleMouseIn(_index) {
         this.$parent.handleMouseIn(_index)
       },
-      handleMouseOut (_index) {
+      handleMouseOut(_index) {
         this.$parent.handleMouseOut(_index)
       },
-      clickCurrentRow (_index) {
+      clickCurrentRow(_index) {
         this.$parent.clickCurrentRow(_index)
       },
-      dblclickCurrentRow (_index) {
+      dblclickCurrentRow(_index) {
         this.$parent.dblclickCurrentRow(_index)
       }
     }

@@ -192,6 +192,12 @@
           "path": "/input"
         },
         {
+          "desc": "InputNumber 数字输入",
+          "icon": "ios-calculator",
+          "name": "inputNumber",
+          "path": "/inputNumber"
+        },
+        {
           "desc": "Radio 单选框",
           "icon": "ios-radio-button-on",
           "name": "radio",
@@ -238,12 +244,6 @@
           "icon": "ios-git-compare",
           "name": "cascader",
           "path": "/cascader"
-        },
-        {
-          "desc": "InputNumber 数字输入",
-          "icon": "ios-calculator",
-          "name": "inputNumber",
-          "path": "/inputNumber"
         },
         {
           "desc": "Rate 评分",

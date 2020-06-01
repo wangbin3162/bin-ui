@@ -13,6 +13,7 @@
         <b-anchor-link href="#duo-xuan-biao-ge" title="多选表格"></b-anchor-link>
         <b-anchor-link href="#ke-cao-zuo-biao-ge" title="可操作表格"></b-anchor-link>
         <b-anchor-link href="#ke-zhan-kai" title="可展开"></b-anchor-link>
+        <b-anchor-link href="#xing-lie-he-bing" title="行列合并"></b-anchor-link>
         <b-anchor-link href="#pai-xu-biao-ge" title="排序表格"></b-anchor-link>
         <b-anchor-link href="#loading-zhuang-tai" title="loading状态"></b-anchor-link>
         <b-anchor-link href="#da-xiao-zhuang-tai" title="大小状态"></b-anchor-link>
@@ -838,6 +839,88 @@ height 和maxHeight可以设置固定表头
 ```
 :::
 
+### 行列合并
+
+可以设置属性`mergeMethod`制定合并行或者列的算法，方法参数为四个对象`row`，`column`，`rowIndex`，`columnIndex`，
+该方法返回一个包含两个元素的数组，第一个表示rowspan，第二个为colspan，用于合并单元格 合并表格最好是使用border模式
+
+::: demo
+```html
+<template>
+<b-table :columns="columns" :data="data" border :merge-method="handleSpan"></b-table>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        columns: [
+          { title: '姓名',key: 'name'},
+          { title: '年龄',key: 'age'},
+          { title: '出生日期',key: 'birthday'},
+          { title: '地址',key: 'address'}
+        ],
+        data: [
+          {
+            name: '王小明',
+            age: 18,
+            birthday: '1990-04-22',
+            address: '北京市朝阳区芍药居'
+          },
+          {
+            name: '王小明',
+            age: 25,
+            birthday: '1990-11-11',
+            address: '北京市海淀区西二旗'
+          },
+          {
+            name: '李小红',
+            age: 30,
+            birthday: '1985-02-05',
+            address: '上海市浦东新区世纪大道'
+          },
+          {
+            name: '周小伟',
+            age: 26,
+            birthday: '1993-07-11',
+            address: '深圳市南山区深南大道'
+          },
+          {
+            name: '张小发',
+            age: 33,
+            birthday: '1999-12-12',
+            address: '南京市龙眠大道'
+          }
+        ]
+      }
+    },
+    methods: {
+      handleSpan ({ row, column, rowIndex, columnIndex }) {
+        // 获取相同姓名的行是，0，1
+        if (rowIndex === 0 && columnIndex === 0) {
+            return {
+                rowspan: 2,
+                colspan: 1
+            };
+        } else if (rowIndex === 1 && columnIndex === 0) {
+            return {
+                rowspan: 0,
+                colspan: 1
+            };
+        }
+        // 合并列，这里将第三行，周小伟的日期和地址合并
+        if (rowIndex === 3 && columnIndex === 2) {
+            return [1, 2];
+        } else if (rowIndex === 3 && columnIndex === 3) {
+            return [0,0];
+        }
+      } 
+    }
+  }
+</script>
+```
+:::
+
 ### 排序表格
 
 ::: demo 
@@ -1203,6 +1286,7 @@ noDataText可以设置无数据状态
 | size |  表格尺寸 | string	  |  large / small    |  default    |
 | no-data-text |  空数据内容 | string	  |   —     |  暂无数据    |
 | draggable  | 开启拖拽调整行顺序，需配合 @on-drag-drop 事件使用 | Boolean	  |   —     | 	false |
+| merge-method  | 表格合并行列的方法函数 | Function	  |   —     | 	false |
 
 ### Table events
 

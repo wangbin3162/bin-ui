@@ -40,8 +40,8 @@
 ::: demo
 ```html
 <template>
-    <b-input-number :max="10" :min="1" v-model="value2" :step="0.2"></b-input-number>
-    <b-input-number v-model="value3" :precision="2"></b-input-number>
+    小数步长：<b-input-number :max="10" :min="1" v-model="value2" :step="0.2"></b-input-number>
+    精度范围：<b-input-number v-model="value3" :precision="2"></b-input-number>
 </template>
 <script>
     export default {
