@@ -1,31 +1,41 @@
 <template>
-  <ul :class="classes" :style="styles">
+  <div class="bin-menu-wrapper" v-if="scrollable&&mode==='horizontal'">
+    <scroll-pane hide-arrow>
+      <ul :class="classes" :style="styles">
+        <slot></slot>
+      </ul>
+    </scroll-pane>
+  </div>
+  <ul v-else :class="classes" :style="styles">
     <slot></slot>
   </ul>
 </template>
 <script>
   import { oneOf, findComponentsDownward, findComponentsUpward } from '../../utils/util'
   import Emitter from '../../mixins/emitter'
+  import ScrollWrap from './scroll-wrap'
+  import ScrollPane from '../tabs/scroll-pane'
 
   const prefixCls = 'bin-menu'
 
   export default {
     name: 'BMenu',
+    components: { ScrollPane },
     mixins: [Emitter],
-    provide () {
+    provide() {
       return {
         rootMenu: this
       }
     },
     props: {
       mode: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['horizontal', 'vertical'])
         },
         default: 'vertical'
       },
       theme: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['light', 'dark'])
         },
         default: 'light'
@@ -35,7 +45,7 @@
       },
       openNames: {
         type: Array,
-        default () {
+        default() {
           return []
         }
       },
@@ -49,16 +59,20 @@
       width: {
         type: String,
         default: '240px'
+      },
+      scrollable: {
+        type: Boolean,
+        default: false
       }
     },
-    data () {
+    data() {
       return {
         currentActiveName: this.activeName,
         openedNames: []
       }
     },
     computed: {
-      classes () {
+      classes() {
         let theme = this.theme
         return [
           `${prefixCls}`,
@@ -68,21 +82,21 @@
           }
         ]
       },
-      styles () {
+      styles() {
         let style = {}
         if (this.mode === 'vertical') style.width = this.width
         return style
       }
     },
     methods: {
-      updateActiveName () {
+      updateActiveName() {
         if (this.currentActiveName === undefined) {
           this.currentActiveName = -1
         }
         this.broadcast('BSubmenu', 'on-update-active-name', false)
         this.broadcast('BMenuItem', 'on-update-active-name', this.currentActiveName)
       },
-      updateOpenKeys (name) {
+      updateOpenKeys(name) {
         let names = [...this.openedNames]
         const index = names.indexOf(name)
         if (this.accordion) {
@@ -126,7 +140,7 @@
         this.openedNames = [...openedNames]
         this.$emit('on-open-change', openedNames)
       },
-      updateOpened () {
+      updateOpened() {
         const items = findComponentsDownward(this, 'BSubmenu')
         // 判断是否展开所有submenu，如展开则全部
         if (items.length) {
@@ -138,11 +152,11 @@
         let openedNames = items.filter(item => item.opened).map(item => item.name)
         this.openedNames = [...openedNames]
       },
-      handleEmitSelectEvent (name) {
+      handleEmitSelectEvent(name) {
         this.$emit('on-select', name)
       }
     },
-    mounted () {
+    mounted() {
       this.openedNames = [...this.openNames]
       this.updateOpened()
       this.$nextTick(() => this.updateActiveName())
@@ -152,13 +166,13 @@
       })
     },
     watch: {
-      openNames (names) {
+      openNames(names) {
         this.openedNames = names
       },
-      activeName (val) {
+      activeName(val) {
         this.currentActiveName = val
       },
-      currentActiveName () {
+      currentActiveName() {
         this.updateActiveName()
       }
     }

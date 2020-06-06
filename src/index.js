@@ -21,6 +21,7 @@ import Alert from './components/alert'
 import Loading from './components/loading'
 import Collapse from './components/collapse'
 import CollapsePanel from './components/collapse-panel'
+import CollapseWrap from './components/collapse-wrap'
 import Breadcrumb from './components/breadcrumb'
 import breadcrumbItem from './components/breadcrumb-item'
 import Badge from './components/badge'
@@ -74,7 +75,7 @@ const components = [
   Row, Col, Icon, Button, ButtonGroup, ScrollBar,
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
-  CollapseTransition, Collapse, CollapsePanel, Badge, Breadcrumb, breadcrumbItem,
+  CollapseTransition, Collapse, CollapsePanel, CollapseWrap, Badge, Breadcrumb, breadcrumbItem,
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
   Form, FormItem, Tabs, Calendar,
   Dropdown, DropdownItem, DropdownMenu,
@@ -127,6 +128,7 @@ export default {
   CollapseTransition,
   Collapse,
   CollapsePanel,
+  CollapseWrap,
   Breadcrumb,
   breadcrumbItem,
   LoadingBar,

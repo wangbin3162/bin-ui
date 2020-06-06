@@ -12,11 +12,13 @@
     <transition name="zoom-in-top" v-else>
       <drop v-show="opened"
             :placement="placement"
+            :class-name="`bin-menu-horizontal-dropdown ${rootMenu.theme}`"
             ref="drop"
             :style="dropStyle"
             :data-transfer="transfer"
             :transfer="transfer"
-            v-transfer-dom>
+            v-transfer-dom
+            @mouseenter.native="handleMouseenter" @mouseleave.native="handleMouseleave">
         <ul :class="[prefixCls + '-drop-list']">
           <slot></slot>
         </ul>
@@ -53,7 +55,7 @@
       },
       transfer: Boolean // 是否移动至body
     },
-    data () {
+    data() {
       return {
         prefixCls: prefixCls,
         active: false,
@@ -64,7 +66,7 @@
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}-submenu`,
           {
@@ -76,23 +78,23 @@
           }
         ]
       },
-      accordion () {
+      accordion() {
         return this.menu.accordion
       },
-      dropStyle () {
+      dropStyle() {
         let style = {}
 
         if (this.dropWidth) style.minWidth = `${this.dropWidth}px`
         return style
       },
-      titleStyle () {
+      titleStyle() {
         return this.hasParentSubmenu && this.mode !== 'horizontal' ? {
           paddingLeft: 43 + (this.parentSubmenuNum - 1) * 24 + 'px'
         } : {}
       }
     },
     methods: {
-      handleMouseenter () {
+      handleMouseenter() {
         if (this.disabled) return
         if (this.mode === 'vertical') return
 
@@ -102,7 +104,7 @@
           this.opened = true
         }, 250)
       },
-      handleMouseleave () {
+      handleMouseleave() {
         if (this.disabled) return
         if (this.mode === 'vertical') return
 
@@ -112,7 +114,7 @@
           this.opened = false
         }, 150)
       },
-      handleClick () {
+      handleClick() {
         if (this.disabled) return
         if (this.mode === 'horizontal') return
         const opened = this.opened
@@ -126,12 +128,12 @@
       }
     },
     watch: {
-      mode (val) {
+      mode(val) {
         if (val === 'horizontal') {
           this.$refs.drop.update()
         }
       },
-      opened (val) {
+      opened(val) {
         if (this.mode === 'vertical') return
         if (val) {
           // set drop a width to fixed when menu has fixed position
@@ -142,7 +144,7 @@
         }
       }
     },
-    mounted () {
+    mounted() {
       this.$on('on-menu-item-select', (name) => {
         if (this.mode === 'horizontal') this.opened = false
         this.dispatch('BMenu', 'on-menu-item-select', name)

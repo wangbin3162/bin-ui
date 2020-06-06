@@ -7,6 +7,14 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.3.1</p>
+        <p class="time">2020-06-06</p>
+        <p class="content">修改菜单组件，新增横向滚动扩展</p>
+        <p class="content">新增折叠容器组件，可单独设置独立的容器，可以配置折叠模式，方便分组</p>
+        <p class="content">修改部分样式代码</p>
+      </b-timeline-item>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
         <p class="version">3.3.0</p>

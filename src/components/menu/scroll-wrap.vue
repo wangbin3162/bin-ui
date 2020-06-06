@@ -1,13 +1,5 @@
 <template>
   <div class="nav-wrap" :class="{'is-scrollable':isScrollable}">
-    <template v-if="!hideArrow&&isScrollable">
-      <span class="nav-prev" @click="handlePrev">
-        <b-icon name="ios-arrow-back"/>
-      </span>
-      <span class="nav-next" @click="handleNext">
-         <b-icon name="ios-arrow-forward"/>
-      </span>
-    </template>
     <div class="scroll-container"
          ref="scrollContainer" @wheel.prevent="handleScroll">
       <div class="scroll-wrapper" ref="scrollWrapper" :style="{ transform: `translateX(${left}px)`} ">
@@ -20,23 +12,18 @@
 <script>
   const padding = 15 // tag's padding
   export default {
-    name: 'ScrollPane',
-    props: {
-      hideArrow: {
-        type: Boolean
-      }
-    },
-    data() {
+    name: 'ScrollWrap',
+    data () {
       return {
         left: 0,
         isScrollable: false
       }
     },
-    mounted() {
+    mounted () {
       this.calcWidth()
     },
     methods: {
-      handleScroll(e) {
+      handleScroll (e) {
         const eventDelta = e.wheelDelta * 0.5 || -e.deltaY * 3
         const $container = this.$refs.scrollContainer
         const $containerWidth = $container.offsetWidth
@@ -44,14 +31,14 @@
         const $wrapperWidth = $wrapper.offsetWidth
         this.moveStep(eventDelta, $containerWidth, $wrapperWidth)
       },
-      calcWidth() {
+      calcWidth () {
         const $container = this.$refs.scrollContainer
         const $containerWidth = $container.offsetWidth
         const $wrapper = this.$refs.scrollWrapper
         const $wrapperWidth = $wrapper.offsetWidth
         this.isScrollable = $wrapperWidth > ($containerWidth - padding)
       },
-      moveToTarget($target) {
+      moveToTarget ($target) {
         const $container = this.$refs.scrollContainer
         const $containerWidth = $container.offsetWidth
         const $wrapper = this.$refs.scrollWrapper
@@ -71,7 +58,7 @@
           this.left = -($targetLeft - ($containerWidth - $targetWidth) + padding)
         }
       },
-      moveStep(step, containerWidth, wrapperWidth) {
+      moveStep (step, containerWidth, wrapperWidth) {
         if (step > 0) {
           this.left = Math.min(0, this.left + step)
         } else {
@@ -86,7 +73,7 @@
           }
         }
       },
-      handlePrev() {
+      handlePrev () {
         const $container = this.$refs.scrollContainer
         const $containerWidth = $container.offsetWidth
         const $wrapper = this.$refs.scrollWrapper
@@ -95,7 +82,7 @@
         let moveWidth = $containerWidth - padding * 0.5
         this.moveStep(moveWidth, $containerWidth, $wrapperWidth)
       },
-      handleNext() {
+      handleNext () {
         const $container = this.$refs.scrollContainer
         const $containerWidth = $container.offsetWidth
         const $wrapper = this.$refs.scrollWrapper

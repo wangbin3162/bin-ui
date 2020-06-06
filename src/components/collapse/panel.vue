@@ -9,7 +9,7 @@
     <collapse-transition v-if="mounted">
       <div :class="contentClasses" v-show="isActive">
         <div :class="boxClasses">
-            <slot></slot>
+          <slot></slot>
         </div>
       </div>
     </collapse-transition>
@@ -22,7 +22,7 @@
 
   export default {
     name: 'BCollapsePanel',
-    components: {CollapseTransition},
+    components: { CollapseTransition },
     props: {
       title: String,
       name: {
@@ -33,7 +33,7 @@
         default: false
       }
     },
-    data () {
+    data() {
       return {
         index: 0, // use index for default when name is null
         isActive: false,
@@ -41,7 +41,7 @@
       }
     },
     computed: {
-      itemClasses () {
+      itemClasses() {
         return [
           `${prefixCls}-item`,
           {
@@ -49,25 +49,25 @@
           }
         ]
       },
-      headerClasses () {
+      headerClasses() {
         return `${prefixCls}-header`
       },
-      contentClasses () {
+      contentClasses() {
         return `${prefixCls}-content`
       },
-      boxClasses () {
+      boxClasses() {
         return `${prefixCls}-content-box`
       }
     },
     methods: {
-      toggle () {
+      toggle() {
         this.$parent.toggle({
           name: this.name || this.index,
           isActive: this.isActive
         })
       }
     },
-    mounted () {
+    mounted() {
       this.mounted = true
     }
   }

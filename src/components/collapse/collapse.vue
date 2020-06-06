@@ -21,13 +21,13 @@
         default: false
       }
     },
-    data () {
+    data() {
       return {
         currentValue: this.value
       }
     },
     computed: {
-      classes () {
+      classes() {
         return [
           `${prefixCls}`,
           {
@@ -36,11 +36,11 @@
         ]
       }
     },
-    mounted () {
+    mounted() {
       this.setActive()
     },
     methods: {
-      setActive () {
+      setActive() {
         // 获取开启的key
         const activeKey = this.getActiveKey()
         // 循环设置
@@ -50,7 +50,7 @@
           child.index = index
         })
       },
-      getActiveKey () {
+      getActiveKey() {
         let activeKey = this.currentValue || []
         const accordion = this.accordion
         if (!Array.isArray(activeKey)) {
@@ -64,7 +64,7 @@
         }
         return activeKey
       },
-      toggle (data) {
+      toggle(data) {
         const name = data.name.toString()
         let newActiveKey = []
         if (this.accordion) {
@@ -92,10 +92,10 @@
       }
     },
     watch: {
-      value (val) {
+      value(val) {
         this.currentValue = val
       },
-      currentValue () {
+      currentValue() {
         this.setActive()
       }
     }

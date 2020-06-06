@@ -49,3 +49,71 @@
   background-color: #fff;
   border-radius: 0;
 }
+.bin-collapse-wrap {
+  background: #fff;
+  box-shadow: 0 1px 3px 1px #eeeeee;
+  .header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    color: #333333;
+    background: #fff;
+    transition: .3s;
+    &.is-collapse {
+      cursor: pointer;
+    }
+    .label {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 16px 24px;
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: #1890ff;
+        left: 0;
+        top: 18px;
+        bottom: 18px;
+        width: 3px;
+      }
+    }
+    .right {
+      padding-right: 24px;
+      &.can-collapse {
+        padding-right: 50px;
+      }
+    }
+    .arrow {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      transition: .3s;
+      .iconfont {
+        font-size: 20px;
+        vertical-align: -1px;
+      }
+    }
+  }
+  .content {
+    color: rgba(0, 0, 0, 0.65);
+    padding: 0 16px;
+    background-color: #fff;
+  }
+  .content-box {
+    padding: 16px 0;
+  }
+  &-active {
+    .header {
+      box-shadow: 0 1px 3px 1px #eeeeee;
+      .arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  + .bin-collapse-wrap {
+    margin-top: 16px;
+  }
+}

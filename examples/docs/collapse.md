@@ -6,6 +6,7 @@
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#shou-feng-qin-mo-shi" title="手风琴模式"></b-anchor-link>
         <b-anchor-link href="#jian-dan-mo-shi-he-zi-ding-yi-tou" title="简单模式和自定义头"></b-anchor-link>
+        <b-anchor-link href="#rong-qi-zu-jian" title="容器组件"></b-anchor-link>
         <b-anchor-link href="#api" title="API">
             <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
             <b-anchor-link href="#events" title="Events"></b-anchor-link>
@@ -119,6 +120,44 @@ simple 设置简单模式
 ```
 :::
 
+### 容器组件
+
+使用`b-collapse-wrap`组件可以单独使用独立的折叠面板
+
+:::demo 
+```html
+<template>
+   <div>
+       <b-collapse-wrap  title="标题栏" collapse>
+          <p v-for="i in 10" :key="i">我是内容我是内容...</p>
+       </b-collapse-wrap>
+       <b-collapse-wrap title="收起附加右侧操作" collapse>
+          <div slot="right">
+            <b-button type="primary" plain size="small">编辑</b-button>
+          </div>
+          <p v-for="i in 10" :key="i">我是内容我是内容...</p>
+       </b-collapse-wrap>
+       <b-collapse-wrap v-model="value4">
+          <div slot="title" style="font-size: 16px;padding: 10px;">自定义开关和标题</div>
+          <div slot="right">
+            <b-button type="text" @click="value4=!value4">{{ value4?'收起':'展开' }}</b-button>
+          </div>
+          <p v-for="i in 10" :key="i">我是内容我是内容...</p>
+       </b-collapse-wrap>
+    </div>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                value4: false
+            }
+        }
+    }
+</script>
+```
+:::
+
 ### API
 
 ### Attributes
@@ -135,10 +174,24 @@ simple 设置简单模式
 |---------- |-------- |---------- |
 | on-change     | 切换面板时触发，返回当前已展开的面板的 key，格式为数组   | Array[]  |
 
-
 ### Slot
 
 | 名称      | 说明    |
 |---------- |-------- |
 | title     | 面板头内容   |
+
+### collapse-wrap Props
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| value     | 是否展开   | Boolean  |    —       |   true    |
+| title     | 标题   | String  |    —       |   —     |
+| collapse  | 是否可以展开收起   | Boolean  |    —       |    false    |
+
+### collapse-wrap Slot
+
+| 名称      | 说明    |
+|---------- |-------- |
+| title     | 面板头内容   |
+| right     | 右侧插入内容区域   |
 
