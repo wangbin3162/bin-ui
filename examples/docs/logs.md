@@ -9,6 +9,12 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.3.2</p>
+        <p class="time">2020-06-09</p>
+        <p class="content">更新table组件，优化默认选中操作。</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.3.1</p>
         <p class="time">2020-06-06</p>
         <p class="content">修改菜单组件，新增横向滚动扩展</p>

@@ -230,7 +230,7 @@
         bodyHeight: 0,
         scrollBarWidth: getScrollBarWidth(),
         currentContext: this.context,
-        cloneData: deepCopy(this.data), // when Cell has a button to delete row data, clickCurrentRow will throw an error, so clone a data
+        cloneData: deepCopy(this.data), // 这里暂时不用异步来判定删除最后一条数据的报错行为
         showVerticalScrollBar: false,
         showHorizontalScrollBar: false,
         headerWidth: 0,
@@ -496,6 +496,9 @@
         this.handleCurrentRow('clear')
       },
       clickCurrentRow(_index) {
+        if (_index === this.cloneData.length) {
+          return
+        }
         this.highlightCurrentRow(_index)
         this.$emit('on-row-click', JSON.parse(JSON.stringify(this.cloneData[_index])), _index)
       },
@@ -865,10 +868,10 @@
           if (!oldDataLen) {
             this.fixedHeader()
           }
-          // here will trigger before clickCurrentRow, so use async
-          setTimeout(() => {
-            this.cloneData = deepCopy(this.data)
-          }, 0)
+          // 这里暂时不用异步来判定删除最后一条数据的报错行为
+          // setTimeout(() => {
+          this.cloneData = deepCopy(this.data)
+          // }, 0)
         },
         deep: true
       },

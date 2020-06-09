@@ -489,11 +489,23 @@ height 和maxHeight可以设置固定表头
   <b-table :columns="columns" ref="currentRowTable" :data="data" 
       highlight-row @on-current-change="currentRowChange"></b-table>
   <br>
-  <b-button @click="$refs.currentRowTable.clearCurrentRow();">清除单选</b-button>
+    <div>
+      <b-button @click="$refs.currentRowTable.clearCurrentRow();">清除单选</b-button>
+      <b-button @click="clickRow(0)">选中第一行</b-button> 
+    </div>
+    <br>
+  <b-table :columns="columns2" ref="currentRowTable2" :data="data2" 
+      highlight-row @on-current-change="currentRowChange">
+      <template #ctrl="{index}">
+        <b-button type="text" text-color="danger" @click="removeRow(index)">删除</b-button>
+      </template>
+  </b-table>
+    <br>
+  <b-button @click="init">初始化表格2并默认选中第一行</b-button>
 </div>
 </template>
 <script>
-  export default {
+export default {
     data () {
       return {
         columns: [
@@ -545,6 +557,29 @@ height 和maxHeight可以设置固定表头
             birthday: '1999-12-12',
             address: '南京市龙眠大道'
           }
+        ],
+        data2:[],
+        columns2: [
+          {
+            title: '姓名',
+            key: 'name'
+          },
+          {
+            title: '年龄',
+            key: 'age'
+          },
+          {
+            title: '出生日期',
+            key: 'birthday'
+          },
+          {
+            title: '地址',
+            key: 'address'
+          },
+          {
+            title: '操作',
+            slot: 'ctrl'
+          }
         ]
       }
     },
@@ -553,7 +588,20 @@ height 和maxHeight可以设置固定表头
         if(index){
           this.$message(`选中了第${index+1}行`)
         }
-      } 
+      },
+      // 选中某一行
+      clickRow(index){
+        this.$refs.currentRowTable.clickCurrentRow(index)
+      },
+      init(){
+        this.data2=JSON.parse(JSON.stringify(this.data))
+        this.$nextTick(()=>{
+          this.$refs.currentRowTable2.clickCurrentRow(0)
+        })
+      },
+      removeRow(index){
+        this.data2.splice(index,1)
+      }
     }
   }
 </script>
@@ -1317,6 +1365,7 @@ noDataText可以设置无数据状态
 | 方法名      | 说明    | 参数      |
 |---------- |-------- |---------- |
 | exportCsv     | 将数据导出为 .csv   | params(Object)|
+| clickCurrentRow     | 选中某一项  | index |
 | clearCurrentRow     | 清除高亮项，仅在开启  | 无 |
 | handleResize     | 刷新表格的宽高  | 无 |
 | getSelection     | 获取已经选中的行  | 无 |
