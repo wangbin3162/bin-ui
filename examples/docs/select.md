@@ -218,19 +218,27 @@ export default {
 ```html
 <template>
 <div>
-  <div>{{ cites }}</div>
-   <b-select style="width:300px" v-model="cites" multiple :max-tag-count="2">
-     <b-option value="beijing" label="北京"></b-option>
-     <b-option value="shanghai" label="上海"></b-option>
-     <b-option value="xuzhou" label="徐州"></b-option> 
-     <b-option value="nanjing" label="南京"></b-option> 
-   </b-select>
-   <b-select style="width:300px;margin-left: 20px;" v-model="cites" multiple :max-tag-count="2" :max-tag-placeholder="maxTagPlaceholder">
-     <b-option value="beijing" label="北京"></b-option>
-     <b-option value="shanghai" label="上海"></b-option>
-     <b-option value="xuzhou" label="徐州"></b-option> 
-     <b-option value="nanjing" label="南京"></b-option> 
-   </b-select>
+    <div>
+       <b-select style="width:200px" v-model="cites" multiple>
+         <b-option value="beijing" label="北京"></b-option>
+         <b-option value="shanghai" label="上海"></b-option>
+         <b-option value="xuzhou" label="徐州"></b-option> 
+         <b-option value="nanjing" label="南京"></b-option> 
+       </b-select>
+       <b-select style="width:300px" v-model="cites" multiple :max-tag-count="1">
+         <b-option value="beijing" label="北京"></b-option>
+         <b-option value="shanghai" label="上海"></b-option>
+         <b-option value="xuzhou" label="徐州"></b-option> 
+         <b-option value="nanjing" label="南京"></b-option> 
+       </b-select>
+       <b-select style="width:300px;margin-left: 20px;" v-model="cites" multiple :max-tag-count="2" :max-tag-placeholder="maxTagPlaceholder">
+         <b-option value="beijing" label="北京"></b-option>
+         <b-option value="shanghai" label="上海"></b-option>
+         <b-option value="xuzhou" label="徐州"></b-option> 
+         <b-option value="nanjing" label="南京"></b-option> 
+       </b-select>
+    </div>
+    <div class="mt-5">{{ cites }}</div>
 </div>
 </template>
 <script>

@@ -32,19 +32,17 @@
   }
 
   &-node {
-    display: flex;
-    align-items: center;
     height: 28px;
     padding: 0 0 4px 0;
     white-space: nowrap;
   }
   &-title {
+    display: inline-block;
     margin: 0;
     padding: 0 6px;
     line-height: 22px;
     border-radius: $border-base-radius;
     cursor: pointer;
-    vertical-align: middle;
     transition: all .2s ease-in-out;
     &:hover {
       background-color: $color-primary-light7;
@@ -56,6 +54,7 @@
   }
 
   &-arrow {
+    display: inline-block;
     cursor: pointer;
     width: 14px;
     text-align: center;
