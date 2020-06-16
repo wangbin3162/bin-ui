@@ -313,7 +313,8 @@
         if (this.labelInValue) {
           return this.multiple ? this.values : this.values[0]
         } else {
-          return this.multiple ? this.values.map(option => option.value) : (this.values[0] || {}).value
+          return this.multiple ? this.values.map(option => option.value)
+            : (this.values[0] ? this.values[0].value : '')
         }
       },
       canBeCleared() {

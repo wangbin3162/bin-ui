@@ -73,6 +73,12 @@
           "icon": "ios-fastforward",
           "name": "transition",
           "path": "/transition"
+        },
+        {
+          "desc": "Draggable 拖拽",
+          "icon": "ios-move",
+          "name": "sortablejs",
+          "path": "/sortablejs"
         }
       ]
     },
