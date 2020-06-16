@@ -1,9 +1,5 @@
 <template>
-  <tr :class="rowClasses(row._index)" :draggable="draggable" @dragstart="onDrag($event,row._index)"
-      @drop="onDrop($event,row._index)" @dragover="allowDrop($event)" v-if="draggable">
-    <slot></slot>
-  </tr>
-  <tr :class="rowClasses(row._index)" v-else>
+  <tr :class="rowClasses(row._index)">
     <slot></slot>
   </tr>
 </template>
@@ -15,23 +11,15 @@
       draggable: Boolean
     },
     computed: {
-      objData () {
+      objData() {
         return this.$parent.objData
       }
     },
     methods: {
-      onDrag (e, index) {
-        e.dataTransfer.setData('index', index)
-      },
-      onDrop (e, index) {
-        const dragIndex = e.dataTransfer.getData('index')
-        this.$parent.$parent.dragAndDrop(dragIndex, index)
-        e.preventDefault()
-      },
-      allowDrop (e) {
-        e.preventDefault()
-      },
-      rowClasses (_index) {
+      rowClasses(_index) {
+        if (this.draggable) {
+          return false
+        }
         return [
           `${this.prefixCls}-row`,
           this.rowClsName(_index),
@@ -41,7 +29,7 @@
           }
         ]
       },
-      rowClsName (_index) {
+      rowClsName(_index) {
         return this.$parent.$parent.rowClassName(this.objData[_index], _index)
       }
     }

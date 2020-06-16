@@ -15,6 +15,7 @@
         <b-anchor-link href="#ke-zhan-kai" title="可展开"></b-anchor-link>
         <b-anchor-link href="#xing-lie-he-bing" title="行列合并"></b-anchor-link>
         <b-anchor-link href="#pai-xu-biao-ge" title="排序表格"></b-anchor-link>
+        <b-anchor-link href="#tuo-zhuai-diao-zheng-shun-xu" title="拖拽调整顺序"></b-anchor-link>
         <b-anchor-link href="#loading-zhuang-tai" title="loading状态"></b-anchor-link>
         <b-anchor-link href="#da-xiao-zhuang-tai" title="大小状态"></b-anchor-link>
         <b-anchor-link href="#wu-shu-ju" title="无数据"></b-anchor-link>
@@ -1040,6 +1041,156 @@ export default {
 ```
 :::
 
+### 拖拽调整顺序
+
+可以设置draggable开启拖拽排序，这里需要设置row-key强制更新视图，注意，设置拖拽排序后，row的悬停效果失效，也可以设置handle来制定某个拖拽元素
+
+::: demo 
+```html
+<template>
+<div>
+    <div>
+      <p>默认拖拽</p>
+      <b-table :columns="columns1" :data="data1" row-key draggable></b-table>
+    </div>
+    <div>
+      <p>drag-handle</p>
+      <b-table 
+              :columns="columns2" :data="data2" 
+              draggable drag-handle=".drag-handle"
+              @on-drag-drop="handleDragDrop">
+              <template #handle="{row}">
+                <span class="drag-handle" style="cursor:grab;"><b-icon name="ios-move" size="20"/></span>
+              </template>
+              <template #ctrl="{row,index}">
+                <b-button @click="handleEdit(row,index)" type="text">编辑</b-button>
+              </template>
+      </b-table>
+      <div>{{ data2 }}</div>
+    </div>
+</div>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        columns1: [
+          {
+            title: '姓名',
+            key: 'name'
+          },
+          {
+            title: '年龄',
+            key: 'age'
+          },
+          {
+            title: '出生日期',
+            key: 'birthday'
+          },
+          {
+            title: '地址',
+            key: 'address'
+          }
+        ],
+        columns2: [
+          { slot: 'handle', width: 70 },
+          {
+            title: '姓名',
+            key: 'name'
+          },
+          {
+            title: '年龄',
+            key: 'age'
+          },
+          {
+            title: '出生日期',
+            key: 'birthday'
+          },
+          {
+            title: '地址',
+            key: 'address'
+          },
+          { title:'操作',slot: 'ctrl', width: 120 }
+        ],
+        data1: [
+          {
+            name: '王小明',
+            age: 18,
+            birthday: '1990-04-22',
+            address: '北京市朝阳区芍药居'
+          },
+          {
+            name: '张小刚',
+            age: 25,
+            birthday: '1990-11-11',
+            address: '北京市海淀区西二旗'
+          },
+          {
+            name: '李小红',
+            age: 30,
+            birthday: '1985-02-05',
+            address: '上海市浦东新区世纪大道'
+          },
+          {
+            name: '周小伟',
+            age: 26,
+            birthday: '1993-07-11',
+            address: '深圳市南山区深南大道'
+          },
+          {
+            name: '张小发',
+            age: 33,
+            birthday: '1999-12-12',
+            address: '南京市龙眠大道'
+          }
+        ],
+        data2: [
+           {
+             name: '王小明',
+             age: 18,
+             birthday: '1990-04-22',
+             address: '北京市朝阳区芍药居'
+           },
+           {
+             name: '张小刚',
+             age: 25,
+             birthday: '1990-11-11',
+             address: '北京市海淀区西二旗'
+           },
+           {
+             name: '李小红',
+             age: 30,
+             birthday: '1985-02-05',
+             address: '上海市浦东新区世纪大道'
+           },
+           {
+             name: '周小伟',
+             age: 26,
+             birthday: '1993-07-11',
+             address: '深圳市南山区深南大道'
+           },
+           {
+             name: '张小发',
+             age: 33,
+             birthday: '1999-12-12',
+             address: '南京市龙眠大道'
+           }
+         ]
+      }
+    },
+    methods:{
+      handleDragDrop(newIndex,oldIndex,newData){
+        this.data2=newData
+      },
+      handleEdit(row,index){
+        console.log(row,index)
+      } 
+    }   
+  }
+</script>
+```
+:::
+
 ### loading状态
 
 ::: demo 
@@ -1333,7 +1484,9 @@ noDataText可以设置无数据状态
 | highlight-row |  是否支持高亮选中的行，即单选 | Boolean	  | —     |  false    |
 | size |  表格尺寸 | string	  |  large / small    |  default    |
 | no-data-text |  空数据内容 | string	  |   —     |  暂无数据    |
-| draggable  | 开启拖拽调整行顺序，需配合 @on-drag-drop 事件使用 | Boolean	  |   —     | 	false |
+| draggable  | 开启拖拽调整行顺序，如需要更新数据源则需配合 @on-drag-drop 事件使用 | Boolean	  |   —     | 	false |
+| drag-handle  | 拖拽的handle图标 | String	  |   —     | 	 —   |
+| row-key  | 是否强制使用内置row-key刷新，配合拖拽排序使用 | Boolean	  |   —     | 	false   |
 | merge-method  | 表格合并行列的方法函数 | Function	  |   —     | 	false |
 
 ### Table events
@@ -1350,7 +1503,7 @@ noDataText可以设置无数据状态
 | on-row-click    | 单击某一行时触发	 | 当前行的数据,index |
 | on-row-dblclick   | 双击某一行时触发		 | 当前行的数据,index |
 | on-expand   | 展开或收起某一行时触		 | row：当前行的数据,status：当前的状态 |
-| on-drag-drop    | 拖拽排序松开时触发		 | 置换的两行数据索引	index1, index2 |
+| on-drag-drop    | 拖拽排序松开时触发		 | 置换的两行数据索引和更新后的数据	newIndex, oldIndex, newData |
 
 ### Table slot
 

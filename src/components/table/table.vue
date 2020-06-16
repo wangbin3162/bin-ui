@@ -115,6 +115,7 @@
   import ExportCsv from './main/export-csv'
   import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './main/util'
   import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
+  import Sortable from 'sortablejs'
 
   const prefixCls = 'bin-table'
 
@@ -197,6 +198,7 @@
         type: Boolean,
         default: false
       },
+      dragHandle: String,
       tooltipTheme: {
         validator(value) {
           return oneOf(value, ['dark', 'light'])
@@ -831,8 +833,8 @@
           ExportCsv.download(params.filename, data)
         }
       },
-      dragAndDrop(a, b) {
-        this.$emit('on-drag-drop', a, b)
+      dragAndDrop(newIndex, oldIndex, newData) {
+        this.$emit('on-drag-drop', newIndex, oldIndex, newData)
       }
     },
     created() {
@@ -853,6 +855,22 @@
           this.handleResize()
         }
       })
+
+      if (this.draggable) {
+        const table = this.$refs.tbody.$el.querySelector('.bin-table-tbody')
+        const self = this
+        Sortable.create(table, {
+          animation: 150,
+          ghostClass: 'bin-table-ghost-class',
+          handle: this.dragHandle,
+          onEnd({ newIndex, oldIndex }) {
+            let newData = deepCopy(self.data)
+            const targetRow = newData.splice(oldIndex, 1)[0]
+            newData.splice(newIndex, 0, targetRow)
+            self.dragAndDrop(newIndex, oldIndex, newData)
+          }
+        })
+      }
     },
     beforeDestroy() {
       off(window, 'resize', this.handleResize)
