@@ -16,6 +16,7 @@ import MainHeader from './components/header.vue'
 import MainFooter from './components/footer.vue'
 import SideNav from './components/side-nav.vue'
 import ColorBase from './components/color-base.vue'
+import DraggableDemo from './components/draggable-demo'
 
 Vue.use(BinUI)
 
@@ -24,6 +25,7 @@ Vue.component('MainHeader', MainHeader)
 Vue.component('MainFooter', MainFooter)
 Vue.component('SideNav', SideNav)
 Vue.component('ColorBase', ColorBase)
+Vue.component('DraggableDemo', DraggableDemo)
 Vue.component('BCollapseTransition', BCollapseTransition)
 
 Vue.prototype.$icon = icon // Icon 列表页用

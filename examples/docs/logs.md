@@ -9,6 +9,14 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.3.3</p>
+        <p class="time">2020-06-16</p>
+        <p class="content">编写Draggable基础模块api，新增sortable.js依赖，新增文档说明和示例</p>
+        <p class="content">表格拖拽排序，采用sortablejs实现，优化代码和效果</p>
+        <p class="content">优化tag标签，tree树形结构样式，多选下拉样式</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.3.2</p>
         <p class="time">2020-06-09</p>
         <p class="content">更新table组件，优化默认选中操作。</p>
