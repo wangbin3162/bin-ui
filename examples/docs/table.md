@@ -1056,7 +1056,7 @@ export default {
     <div>
       <p>drag-handle</p>
       <b-table 
-              :columns="columns2" :data="data2" 
+              :columns="columns2" :data="data2" row-key
               draggable drag-handle=".drag-handle"
               @on-drag-drop="handleDragDrop">
               <template #handle="{row}">
