@@ -14,6 +14,7 @@
               'is-transparent': transparent
             }
           ]"
+          v-click-animation
   >
     <b-icon class="button-loading icon-is-rotating"
             :name="loadingIcon?loadingIcon:'loading'" v-if="loading" :style="iconStyles"/>

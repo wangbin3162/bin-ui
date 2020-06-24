@@ -2,6 +2,7 @@ import config from '../../../package.json'
 // 指令
 import clickOutSide from '../../directive/clickoutside'
 import waves from '../../directive/waves'
+import clickAnimation from '../../directive/click-animation/click-animation'
 
 // 功能插件
 import util from '../../utils/util'
@@ -22,6 +23,7 @@ export default {
     // 全局指令
     Vue.directive('waves', waves)
     Vue.directive('clickOutSide', clickOutSide)
+    Vue.directive('clickAnimation', clickAnimation)
 
     Vue.prototype.$global = {
       zIndex: 2000
