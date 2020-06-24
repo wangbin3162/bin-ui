@@ -23,7 +23,7 @@
     border: $border-base;
     transition: all .2s ease-in-out;
     &:hover, &-focused {
-      border-color: $color-primary-light2;
+      border-color: $color-primary-light1;
       .bin-select-arrow {
         display: inline-block;
       }
@@ -293,7 +293,7 @@
     background: $color-select-hover;
   }
   &-selected, &-item &-selected:hover {
-    background: $color-primary-light6;
+    background: $color-primary-light5;
     font-weight: bold;
   }
   &-disabled {
@@ -324,14 +324,14 @@
 .bin-select-multiple .bin-select-item {
   position: relative;
   &-selected {
-    color: $color-primary-light2 !important;
+    color: $color-primary-light1 !important;
     background: $color-white;
   }
   &-focus, &-selected:hover {
     background: $color-select-hover;
   }
   &-selected&-focus {
-    color: $color-primary-light5;
+    color: $color-primary-light4;
     background: $color-white;
   }
   &-selected:after {
@@ -342,7 +342,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 20px;
     content: '\e820';
-    color: $color-primary-light2;
+    color: $color-primary-light1;
     position: absolute;
     top: 2px;
     right: 8px;

@@ -83,7 +83,7 @@
         const colorMap = {
           primary: '#0d85ff',
           success: '#52c41a',
-          info: '#25bbe3',
+          info: '#35495E',
           warning: '#fea638',
           danger: '#ff4d4f'
         }

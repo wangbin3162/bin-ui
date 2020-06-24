@@ -28,6 +28,24 @@ util.open = function (url, target = false) {
 }
 
 /**
+ * @description 拷贝到剪切板
+ * @param {String} content 内容
+ */
+util.copy = function (content) {
+  return new Promise(resolve => {
+    let copyInput = document.createElement('textarea')
+    copyInput.value = content
+    copyInput.setAttribute('id', 'b-copy-temp')
+    document.body.appendChild(copyInput)
+    copyInput.select() // 选择对象
+    let result = document.execCommand('Copy') // 执行浏览器复制命令
+    copyInput.style.display = 'none'
+    document.body.removeChild(document.getElementById('b-copy-temp'))
+    resolve(result)
+  })
+}
+
+/**
  * 时间格式化
  * @param time
  * @param cFormat

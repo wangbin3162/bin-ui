@@ -20,6 +20,7 @@
     Vue.prototype.$log = log
     Vue.prototype.$util = util
     Vue.prototype.$open = util.open
+    Vue.prototype.$copy = util.copy
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
     Vue.prototype.$resize = { addResizeListener, removeResizeListener }
@@ -31,6 +32,7 @@ util方法函数
 |---------- |-------- |---------- |
 | title | 更新标题   | title  |
 | open | 打开新页面   | url,target  |
+| copy | 复制内容至剪切板 ,返回一个promise用于判断是否复制成功 | content  |
 | parseTime | 时间格式化   | time,cFormat('{y}-{m}-{d} {h}:{i}:{s}')  |
 | debounce | 防抖函数   | func, wait = 50, immediate = true  |
 | shuffle | 洗牌函数   | arr  |

@@ -20,7 +20,7 @@ export function typeColor (type = 'default') {
       color = '#ff4d4f'
       break
     case 'default':
-      color = '#25bbe3'
+      color = '#35495E'
       break
     default:
       color = type

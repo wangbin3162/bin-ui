@@ -32,6 +32,7 @@ export default {
     Vue.prototype.$util = util
 
     Vue.prototype.$open = util.open
+    Vue.prototype.$copy = util.copy
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
     Vue.prototype.$resize = { addResizeListener, removeResizeListener }
