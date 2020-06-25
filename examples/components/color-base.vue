@@ -90,7 +90,8 @@
           'primary-light2',
           'primary-light3',
           'primary-light4',
-          'primary-light5'
+          'primary-light5',
+          'primary-light6'
         ],
         primary: [],
         successName: [
@@ -100,7 +101,8 @@
           'success-light2',
           'success-light3',
           'success-light4',
-          'success-light5'
+          'success-light5',
+          'success-light6'
         ],
         success: [],
         infoName: [
@@ -110,7 +112,8 @@
           'info-light2',
           'info-light3',
           'info-light4',
-          'info-light5'
+          'info-light5',
+          'info-light6'
         ],
         info: [],
         warningName: [
@@ -120,7 +123,8 @@
           'warning-light2',
           'warning-light3',
           'warning-light4',
-          'warning-light5'
+          'warning-light5',
+          'warning-light6'
         ],
         warning: [],
         dangerName: [
@@ -130,7 +134,8 @@
           'danger-light2',
           'danger-light3',
           'danger-light4',
-          'danger-light5'
+          'danger-light5',
+          'danger-light6'
         ],
         danger: [],
         cyanName: [
@@ -140,7 +145,8 @@
           'cyan-light2',
           'cyan-light3',
           'cyan-light4',
-          'cyan-light5'
+          'cyan-light5',
+          'cyan-light6'
         ],
         cyan: [],
         garyColor: [
