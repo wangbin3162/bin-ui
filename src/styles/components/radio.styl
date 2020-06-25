@@ -4,6 +4,7 @@
   display: inline-block;
   position: relative;
   white-space: nowrap;
+  line-height: $base-line-height;
   margin-right: 8px;
   cursor: pointer;
   &-disabled {
@@ -12,12 +13,13 @@
 }
 
 .bin-radio {
+  position: relative;
   display: inline-block;
   margin-right: 4px;
   white-space: nowrap;
-  position: relative;
-  line-height: 1;
   vertical-align: middle;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
   &-inner {
     position: relative;
@@ -54,11 +56,22 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;
     opacity: 0;
     cursor: pointer;
   }
 
+  &-checked:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    animation: radioEffect .36s ease-in-out;
+    animation-fill-mode: both;
+    content: '';
+  }
   &-checked &-inner {
     border-color: $color-primary
   }
@@ -70,8 +83,7 @@
     transition: all .2s ease-in-out;
   }
   &-focus {
-    box-shadow: 0 0 0 2px $color-input-shadow;
-    z-index: 1;
+    box-shadow: 0 0 0 3px $color-effect-shadow ;
   }
   &:hover {
     .bin-radio-inner {
@@ -92,6 +104,17 @@
 }
 
 .bin-radio-group .bin-radio-checked .bin-radio-focus {
-  box-shadow: 0 0 0 2px $color-input-shadow;
+  box-shadow: 0 0 0 3px $color-effect-shadow ;
   transition: all .2s ease-in-out;
+}
+
+@keyframes radioEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }

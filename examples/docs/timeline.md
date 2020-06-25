@@ -89,8 +89,8 @@
 ```html
 <template>
     <b-timeline>
-        <b-timeline-item color="success">
-          <b-icon name="ios-star" slot="dot" size="14"></b-icon>
+        <b-timeline-item color="success" dot-top="10px">
+          <b-icon name="ios-star" slot="dot" size="20"></b-icon>
           <span>正式版上线</span>
         </b-timeline-item>
         <b-timeline-item>发布2.0版本</b-timeline-item>
@@ -112,6 +112,7 @@
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | color     | 圆圈颜色 | String  |  primary,success,info,warning,danger,或者自定义颜色值  |  primary  |
+| dot-top   | dot顶部偏移 | String  |  自定义dot距离顶部的偏移量 | —  |
 
 ### TimelineItem  Slot
 

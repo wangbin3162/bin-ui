@@ -6,13 +6,8 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  line-height: $base-line-height;
   user-select: none;
-
-  &:focus .bin-checkbox-checked .bin-checkbox-inner {
-    border-color: $color-primary-light1;
-    outline: 0;
-    box-shadow: 0 0 0 2px $color-input-shadow;
-  }
 }
 
 .bin-checkbox {
@@ -20,7 +15,8 @@
   vertical-align: middle;
   white-space: nowrap;
   cursor: pointer;
-  line-height: 1;
+  width: 16px;
+  height: 16px;
   position: relative;
   margin-right: 5px;
   &-inner {
@@ -33,7 +29,7 @@
     border: $border-base;
     border-radius: $border-base-radius;
     background-color: $color-white;
-    transition: border-color .2s ease-in-out, background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
     &:after {
       content: "";
       position: absolute;
@@ -56,10 +52,18 @@
       border-color: $color-primary;
       background-color: $color-primary;
     }
-  }
-  &-focus {
-    box-shadow: 0 0 0 2px $color-input-shadow;
-    transition: all .2s ease-in-out;
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $color-primary;
+      border-radius: $border-base-radius;
+      animation: checkEffect .36s ease-in-out;
+      animation-fill-mode: both;
+      content: '';
+    }
   }
   &:hover {
     .bin-checkbox-inner {
@@ -106,6 +110,7 @@
 }
 .bin-checkbox + span, .bin-checkbox-wrapper + span {
   margin-right: 4px;
+  vertical-align: middle;
 }
 .bin-checkbox-disabled + span {
   color: #ccc;
@@ -135,7 +140,13 @@
 }
 
 
-.bin-checkbox-group .bin-checkbox-checked .bin-checkbox-focus {
-  box-shadow: 0 0 0 2px $color-input-shadow;
-  transition: all .2s ease-in-out;
+@keyframes checkEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }

@@ -1,7 +1,7 @@
 <template>
   <li :class="itemClasses">
     <div :class="tailClasses"></div>
-    <div :class="headClasses" :style="customColor" ref="dot">
+    <div :class="headClasses" :style="customStyle" ref="dot">
       <slot name="dot"></slot>
     </div>
     <div :class="contentClasses">
@@ -20,24 +20,25 @@
       color: {
         type: String,
         default: 'primary'
-      }
+      },
+      dotTop: String
     },
-    data () {
+    data() {
       return {
         dot: false
       }
     },
-    mounted () {
+    mounted() {
       this.dot = !!this.$refs.dot.innerHTML.length
     },
     computed: {
-      itemClasses () {
+      itemClasses() {
         return `${prefixCls}-item`
       },
-      tailClasses () {
+      tailClasses() {
         return `${prefixCls}-item-tail`
       },
-      headClasses () {
+      headClasses() {
         return [
           `${prefixCls}-item-head`,
           {
@@ -46,23 +47,28 @@
           }
         ]
       },
-      headColorShow () {
+      headColorShow() {
         return oneOf(this.color, ['primary', 'success', 'info', 'warning', 'danger'])
       },
-      customColor () {
+      customStyle() {
         let style = {}
         if (this.color) {
           if (!this.headColorShow) {
             style = {
               'color': this.color,
-              'border-color': this.color
+              'border-color': this.color,
+              top: this.dotTop
+            }
+          } else {
+            style = {
+              top: this.dotTop
             }
           }
         }
 
         return style
       },
-      contentClasses () {
+      contentClasses() {
         return `${prefixCls}-item-content`
       }
     }

@@ -3,14 +3,14 @@
     <span :class="radioClasses">
       <span :class="innerClasses"></span>
       <input
-        type="radio"
-        :class="inputClasses"
-        :disabled="disabled"
-        :checked="currentValue"
-        :name="groupName"
-        @change="change"
-        @focus="onFocus"
-        @blur="onBlur">
+          type="radio"
+          :class="inputClasses"
+          :disabled="disabled"
+          :checked="currentValue"
+          :name="groupName"
+          @change="change"
+          @focus="onFocus"
+          @blur="onBlur">
     </span>
     <slot>{{ label }}</slot>
   </label>
@@ -46,7 +46,7 @@
         default: false
       },
       size: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['small', 'large', 'default'])
         },
         default: 'default'
@@ -55,7 +55,7 @@
         type: String
       }
     },
-    data () {
+    data() {
       return {
         currentValue: this.value,
         group: false,
@@ -66,7 +66,7 @@
       }
     },
     computed: {
-      wrapClasses () {
+      wrapClasses() {
         return [
           `${prefixCls}-wrapper`,
           {
@@ -78,7 +78,7 @@
           }
         ]
       },
-      radioClasses () {
+      radioClasses() {
         return [
           `${prefixCls}`,
           {
@@ -87,7 +87,7 @@
           }
         ]
       },
-      innerClasses () {
+      innerClasses() {
         return [
           `${prefixCls}-inner`,
           {
@@ -95,11 +95,11 @@
           }
         ]
       },
-      inputClasses () {
+      inputClasses() {
         return `${prefixCls}-input`
       }
     },
-    mounted () {
+    mounted() {
       if (this.parent) {
         this.group = true
         if (this.name && this.name !== this.parent.name) {
@@ -120,7 +120,7 @@
       }
     },
     methods: {
-      change (event) {
+      change(event) {
         if (this.disabled) {
           return false
         }
@@ -143,14 +143,14 @@
           this.dispatch('BFormItem', 'on-form-change', value)
         }
       },
-      updateValue () {
+      updateValue() {
         this.currentValue = this.value === this.trueValue
       },
-      onBlur () {
+      onBlur() {
         this.focusWrapper = false
         this.focusInner = false
       },
-      onFocus () {
+      onFocus() {
         if (this.group && this.parent.type === 'button') {
           this.focusWrapper = true
         } else {
@@ -159,7 +159,7 @@
       }
     },
     watch: {
-      value (val) {
+      value(val) {
         if (val === this.trueValue || val === this.falseValue) {
           this.updateValue()
         } else {
