@@ -7,6 +7,15 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.4.0</p>
+        <p class="time">2020-06-25</p>
+        <p class="content">重新统一整理了色板值，过度更自然</p>
+        <p class="content">优化展开容器内边距，修改文档，整体样式优化</p>
+        <p class="content">新增按钮点击效果，优化按钮实现</p>
+        <p class="content">全组件样式优化，更新最新色值取值，优化组件显示，增加单选多选等点击反馈效果</p>
+      </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.3.3</p>
