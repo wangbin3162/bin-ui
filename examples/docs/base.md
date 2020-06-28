@@ -33,11 +33,55 @@ util方法函数
 | title | 更新标题   | title  |
 | open | 打开新页面   | url,target  |
 | copy | 复制内容至剪切板 ,返回一个promise用于判断是否复制成功 | content  |
-| parseTime | 时间格式化   | time,cFormat('{y}-{m}-{d} {h}:{i}:{s}')  |
+| parseTime | 时间格式化   | time,cFormat('{y}-{m}-{d} {h}:{i}:{s}'),weekArray：长度为7的显示数组 |
+| rangeTime | 获取日期区间，如如近一周，近三个月，后一个月等   | days, mode='{y}-{m}-{d}' days为负往前追加，为正时表示之后的天数 |
 | debounce | 防抖函数   | func, wait = 50, immediate = true  |
 | shuffle | 洗牌函数   | arr  |
 | getRandomInt | 在某个区间随机一个整数   | min, max  |
 | deepClone | 深拷贝函数   | obj/arr  |
+
+### 测试日期函数
+
+::: demo
+```html
+<template>
+<div>
+    <div flex="box:mean" class="mb-15">
+      <div><b-tag type="primary" size="mini">Date</b-tag>{{ show1 }}</div>
+      <div><b-tag type="primary" size="mini">时间戳</b-tag>{{ show2 }}</div>
+      <div><b-tag type="primary" size="mini">日期字符</b-tag>{{ show3 }}</div>
+    </div>
+    <div flex="box:mean" class="mb-15">
+      <div><b-tag type="primary" size="mini">format</b-tag>{{ show4 }}</div>
+      <div><b-tag type="primary" size="mini">周数组</b-tag>{{ show5 }}</div>
+      <div><b-tag type="primary" size="mini">自定义</b-tag>{{ show6 }}</div>
+    </div>
+    <div flex="box:mean">
+      <div><b-tag type="primary" size="mini">一周前</b-tag>{{ show7.startDateStr +' ~ '+ show7.endDateStr }}</div>
+      <div><b-tag type="primary" size="mini">三个月前</b-tag>{{ show8.startDateStr +' ~ '+ show8.endDateStr }}</div>
+      <div><b-tag type="primary" size="mini">10天后</b-tag>{{ show9.endDateStr }}</div>
+    </div>
+</div>
+</template>
+<script>
+export default {
+  data(){
+    return{
+      show1:this.$util.parseTime(new Date()),
+      show2:this.$util.parseTime(1593312574636),
+      show3:this.$util.parseTime('2020-06-28'),
+      show4:this.$util.parseTime(new Date(),'{y}年{m}月{d}日 {h}:{i}:{s}'),
+      show5:this.$util.parseTime('2020-06-28','{y}-{m}-{d} {a}',['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']),
+      show6:this.$util.parseTime(new Date(),'{y}-{m} 周{a}'),
+      show7:this.$util.rangeTime(-7,'{y}-{m}-{d} 周{a}'),
+      show8:this.$util.rangeTime(-90,'{y}-{m}-{d}'),
+      show9:this.$util.rangeTime(10,'{y}-{m}-{d}')
+    } 
+  }
+}
+</script>
+```
+:::
 
 
 扩展函数

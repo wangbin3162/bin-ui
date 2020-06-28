@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 const util = {}
 
 /**
@@ -49,19 +47,53 @@ util.copy = function (content) {
  * 时间格式化
  * @param time
  * @param cFormat
+ * @param weekArray
  * @returns {*}
  */
-util.parseTime = function (time, cFormat) {
+util.parseTime = parseTime
+
+/**
+ * 获取区间范围，如近一周，近三个月，后一个月等
+ * @param days 为负值时往前，正为之后的日期
+ * @param mode
+ * @returns {*}
+ */
+util.rangeTime = function (days, mode = '{y}-{m}-{d}') {
+  const startDate = new Date()
+  const endDate = new Date()
+  if (days < 0) {
+    startDate.setTime(startDate.getTime() + 3600 * 1000 * 24 * days)
+  } else {
+    endDate.setTime(endDate.getTime() + 3600 * 1000 * 24 * days)
+  }
+  const startDateStr = parseTime(startDate, mode)
+  const endDateStr = parseTime(endDate, mode)
+  return {
+    startDate,
+    endDate,
+    startDateStr,
+    endDateStr
+  }
+}
+
+function parseTime(time, cFormat = '{y}-{m}-{d} {h}:{i}:{s}', weekArray) {
   if (arguments.length === 0) {
     return null
   }
-  const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}'
+  let type = typeOf(time)
   let date
-  if (typeof time === 'object') {
-    date = time
-  } else {
-    if (('' + time).length === 10) time = parseInt(time) * 1000
-    date = new Date(time)
+  switch (type) {
+    case 'date':
+      date = time
+      break
+    case 'number':
+      date = new Date(time)
+      break
+    case 'string':
+      date = new Date(time.replace(/-/g, '/'))
+      break
+    default:
+      return null
   }
   const formatObj = {
     y: date.getFullYear(),
@@ -72,17 +104,19 @@ util.parseTime = function (time, cFormat) {
     s: date.getSeconds(),
     a: date.getDay()
   }
-  // eslint-disable-next-line
-  const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
+  return cFormat.replace(/{([ymdhisa])+}/g, (result, key) => {
     let value = formatObj[key]
-    if (key === 'a') return ['一', '二', '三', '四', '五', '六', '日'][value - 1]
-    if (result.length > 0 && value < 10) {
+    if (key === 'a') {
+      if (weekArray && weekArray.length === 7) {
+        return weekArray[value]
+      }
+      return ['日', '一', '二', '三', '四', '五', '六'][value]
+    }
+    if (result.length > 0 && value < 10) { // 补0
       value = '0' + value
     }
     return value || 0
   })
-  // eslint-disable-next-line
-  return time_str
 }
 
 /**
@@ -183,6 +217,10 @@ util.getWaterMark = function (str) {
 }
 
 util.deepClone = deepCopy
+
+util.onOf = oneOf
+
+util.typeOf = typeOf
 
 // 一个值是否在列表中
 export function oneOf(value, validList) {

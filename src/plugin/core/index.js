@@ -33,8 +33,8 @@ export default {
 
     Vue.prototype.$open = util.open
     Vue.prototype.$copy = util.copy
-    Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$print = log.print
+    Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$resize = { addResizeListener, removeResizeListener }
     log.pretty(`[${config.name}] ${config.version}`, `${baseUrl}/${config.name}`)
   }
