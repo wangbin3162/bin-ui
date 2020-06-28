@@ -69,6 +69,9 @@
       lockSelect: {
         type: Boolean,
         default: false
+      },
+      nowrap: { // 是否不进行换行显示
+        type: Boolean
       }
     },
     data() {

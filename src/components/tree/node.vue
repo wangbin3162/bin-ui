@@ -2,7 +2,7 @@
   <collapse-transition :appear="appear">
     <ul :class="classes">
       <li>
-        <div class="bin-tree-node">
+        <div class="bin-tree-node" :style="{whiteSpace:TreeInstance.nowrap?'nowrap':null}">
           <span :class="arrowClasses" @click="handleExpand">
           <b-icon v-if="showArrow" name="ios-arrow-forward"></b-icon>
           <b-icon v-if="showLoading" name="loading" class="bin-load-loop"></b-icon>

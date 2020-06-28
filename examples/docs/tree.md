@@ -391,6 +391,7 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
 | check-strictly   | 复选框的情况下，是否严格的遵循父子不互相关联的做法 | Boolean		  |  —   |   false   |
 | check-directly   | 开启后，在 show-checkbox 模式下，select 的交互也将转为 check | Boolean		  |  —   |   false   |
 | lock-select    | 锁定树选择，再部分业务中常用，比如开启弹窗后禁用树的选中操作   | Boolean  |  —   |  false  |
+| nowrap   | tree-node显示是否不换行（默认折行显示）   | Boolean  |  —   |  false  |
 
 ### Events
 
