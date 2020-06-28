@@ -21,7 +21,9 @@
 ::: demo
 ```html
 <template>
+<div style="width: 300px;border:1px solid #eeeeee;">
   <b-tree :data="data" show-checkbox></b-tree>
+</div>
 </template>
 
 <script>
@@ -38,7 +40,7 @@
                              expand: true,
                              children: [
                                  {
-                                     title: '三级 1-1-1三级 1-1-1',
+                                     title: '三级 1-1-1这个标题很长这个标题很长',
                                  },
                                  {
                                      title: '三级 1-1-2'

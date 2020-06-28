@@ -3,28 +3,28 @@
         <span :class="checkboxClasses">
             <span :class="innerClasses"></span>
             <input
-              v-if="group"
-              type="checkbox"
-              :class="inputClasses"
-              :disabled="disabled"
-              :value="label"
-              v-model="model"
-              :name="name"
-              @change="change"
-              @focus="onFocus"
-              @blur="onBlur">
+                v-if="group"
+                type="checkbox"
+                :class="inputClasses"
+                :disabled="disabled"
+                :value="label"
+                v-model="model"
+                :name="name"
+                @change="change"
+                @focus="onFocus"
+                @blur="onBlur">
             <input
-              v-else
-              type="checkbox"
-              :class="inputClasses"
-              :disabled="disabled"
-              :checked="currentValue"
-              :name="name"
-              @change="change"
-              @focus="onFocus"
-              @blur="onBlur">
+                v-else
+                type="checkbox"
+                :class="inputClasses"
+                :disabled="disabled"
+                :checked="currentValue"
+                :name="name"
+                @change="change"
+                @focus="onFocus"
+                @blur="onBlur">
         </span>
-    <slot><span v-if="showSlot">{{ label }}</span></slot>
+    <span v-if="showSlot"><slot>{{ label }}</slot></span>
   </label>
 </template>
 <script>
@@ -62,7 +62,7 @@
         default: false
       },
       size: {
-        validator (value) {
+        validator(value) {
           return oneOf(value, ['small', 'large', 'default'])
         },
         default: 'default'
@@ -71,7 +71,7 @@
         type: String
       }
     },
-    data () {
+    data() {
       return {
         model: [],
         currentValue: this.value,
@@ -82,7 +82,7 @@
       }
     },
     computed: {
-      wrapClasses () {
+      wrapClasses() {
         return [
           `${prefixCls}-wrapper`,
           {
@@ -93,7 +93,7 @@
           }
         ]
       },
-      checkboxClasses () {
+      checkboxClasses() {
         return [
           `${prefixCls}`,
           {
@@ -103,7 +103,7 @@
           }
         ]
       },
-      innerClasses () {
+      innerClasses() {
         return [
           `${prefixCls}-inner`,
           {
@@ -111,11 +111,11 @@
           }
         ]
       },
-      inputClasses () {
+      inputClasses() {
         return `${prefixCls}-input`
       }
     },
-    mounted () {
+    mounted() {
       this.parent = findComponentUpward(this, 'BCheckboxGroup')
       if (this.parent) {
         this.group = true
@@ -129,7 +129,7 @@
       }
     },
     methods: {
-      change (event) {
+      change(event) {
         if (this.disabled) {
           return false
         }
@@ -147,18 +147,18 @@
           this.dispatch('BFormItem', 'on-form-change', value)
         }
       },
-      updateModel () {
+      updateModel() {
         this.currentValue = this.value === this.trueValue
       },
-      onBlur () {
+      onBlur() {
         this.focusInner = false
       },
-      onFocus () {
+      onFocus() {
         this.focusInner = true
       }
     },
     watch: {
-      value (val) {
+      value(val) {
         if (val === this.trueValue || val === this.falseValue) {
           this.updateModel()
         } else {

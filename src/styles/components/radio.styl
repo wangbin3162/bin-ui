@@ -15,7 +15,6 @@
 .bin-radio {
   position: relative;
   display: inline-block;
-  margin-right: 4px;
   white-space: nowrap;
   vertical-align: middle;
   width: 16px;
@@ -90,6 +89,10 @@
       border-color: $color-primary-light1;
     }
   }
+}
+.bin-radio + span, .bin-radio-wrapper + span {
+  padding: 0 8px;
+  vertical-align: middle;
 }
 .bin-radio-disabled, .bin-radio-disabled .bin-radio-input {
   cursor: not-allowed;
