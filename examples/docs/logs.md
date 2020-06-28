@@ -9,10 +9,11 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.4.1</p>
+        <p class="version">3.4.2</p>
         <p class="time">2020-06-28</p>
         <p class="content">更新基础api，转换日期问题修复，新增日期区间获取</p>
         <p class="content">优化tag标签样式</p>
+        <p class="content">优化日期选择器字号大小样式</p>
       </b-timeline-item>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
