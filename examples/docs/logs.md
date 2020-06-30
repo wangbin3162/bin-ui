@@ -9,6 +9,14 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.4.4</p>
+        <p class="time">2020-06-30</p>
+        <p class="content">菜单移除横向滚动模式</p>
+        <p class="content">radio优化默认插槽显示</p>
+        <p class="content">tabs组件优化，箭头判定</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.4.3</p>
         <p class="time">2020-06-28</p>
         <p class="content">更新基础api，转换日期问题修复，新增日期区间获取</p>

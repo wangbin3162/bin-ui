@@ -1,10 +1,10 @@
 <template>
   <div class="nav-wrap" :class="{'is-scrollable':isScrollable}">
     <template v-if="!hideArrow&&isScrollable">
-      <span class="nav-prev" @click="handlePrev">
+      <span class="nav-prev" @click="handlePrev" v-if="!hidePrev">
         <b-icon name="ios-arrow-back"/>
       </span>
-      <span class="nav-next" @click="handleNext">
+      <span class="nav-next" @click="handleNext" v-if="!hideNext">
          <b-icon name="ios-arrow-forward"/>
       </span>
     </template>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  const padding = 15 // tag's padding
+  const padding = 16 // tag's padding
   export default {
     name: 'ScrollPane',
     props: {
@@ -35,6 +35,18 @@
     mounted() {
       this.calcWidth()
     },
+    computed: {
+      hidePrev() {
+        return this.left === 0
+      },
+      hideNext() {
+        const $container = this.$refs.scrollContainer
+        const $containerWidth = $container.offsetWidth
+        const $wrapper = this.$refs.scrollWrapper
+        const $wrapperWidth = $wrapper.offsetWidth
+        return this.left === $containerWidth - $wrapperWidth - padding
+      }
+    },
     methods: {
       handleScroll(e) {
         const eventDelta = e.wheelDelta * 0.5 || -e.deltaY * 3
@@ -50,6 +62,9 @@
         const $wrapper = this.$refs.scrollWrapper
         const $wrapperWidth = $wrapper.offsetWidth
         this.isScrollable = $wrapperWidth > ($containerWidth - padding)
+        if (!this.isScrollable) {
+          this.left = 0
+        }
       },
       moveToTarget($target) {
         const $container = this.$refs.scrollContainer
@@ -63,12 +78,23 @@
         if ($targetLeft < -this.left) {
           // tag in the left
           this.left = -$targetLeft + padding
+          console.log('tag in the left')
         } else if ($targetLeft + padding > -this.left && $targetLeft + $targetWidth < -this.left + $containerWidth - padding) {
           // tag in the current view
           // eslint-disable-line
         } else {
           // tag in the right
-          this.left = -($targetLeft - ($containerWidth - $targetWidth) + padding)
+          this.left = $containerWidth - $wrapperWidth - padding
+          console.log('tag in the right')
+          if (this.hidePrev) {
+            console.log('hide prev')
+          }
+          if (this.hideNext) {
+            console.log('hide next')
+          }
+        }
+        if (!this.isScrollable) {
+          this.left = 0
         }
       },
       moveStep(step, containerWidth, wrapperWidth) {
@@ -84,6 +110,12 @@
           } else {
             this.left = 0
           }
+        }
+        if (this.hidePrev) {
+          console.log('hide prev')
+        }
+        if (this.hideNext) {
+          console.log('hide next')
         }
       },
       handlePrev() {

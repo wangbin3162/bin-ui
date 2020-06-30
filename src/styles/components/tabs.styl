@@ -9,10 +9,11 @@
       .nav-next, .nav-prev {
         position: absolute;
         cursor: pointer;
-        line-height: 37px;
+        line-height: 36px;
+        width: 20px;
         font-size: $base-font-size;
         color: $color-text-default;
-        z-index: 2000;
+        z-index: 1;
       }
       .nav-prev {
         left: 0;
@@ -45,13 +46,15 @@
       padding: 0 18px;
       font-size: $base-font-size;
       transition: .3s;
-      .iconfont {
+      .iconfont:not(.icon-ios-close) {
         position: relative;
         top: -1px;
         font-size: 16px;
         height: 16px;
         line-height: 16px;
+        margin-right: 6px;
         color: $color-text-default;
+        transition: .3s;
       }
       .icon-ios-close {
         width: 0;
@@ -73,16 +76,22 @@
       }
       &:hover {
         color: $color-primary;
+        > i:not(.icon-ios-close) {
+          color: $color-primary;
+        }
         .icon-ios-close {
           width: 16px;
           margin-left: 5px;
         }
       }
       &.active {
+        color: $color-primary;
         &:hover {
           padding: 0 18px;
         }
-        color: $color-primary;
+        > i:not(.icon-ios-close) {
+          color: $color-primary;
+        }
         .icon-ios-close {
           width: 16px;
           margin-left: 5px;
@@ -158,7 +167,7 @@
       background: #fff;
       border-bottom: 1px solid #e4e7ed;
       border-left: 1px solid #e4e7ed;
-      transition: color .3s cubic-bezier(.645, .045, .355, 1), padding .3s cubic-bezier(.645, .045, .355, 1);
+      transition: color .3s, padding .3s;
       &:first-child {
         border-left: none;
       }

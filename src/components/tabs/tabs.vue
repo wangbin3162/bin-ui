@@ -97,7 +97,7 @@
       // 更新选中active
       emitInput () {
         this.$emit('input', this.selectedTag.key)
-        this.$emit('on-tab-select', this.selectedTag)
+        this.$emit('on-change', this.selectedTag)
       },
       // 是否是启用状态
       isActive (tab) {

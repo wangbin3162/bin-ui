@@ -41,7 +41,10 @@ export default {
       ],
       activeTab: 'tab1'
     } 
-  }
+  },
+  created(){
+      this.activeTab = 'tab3'
+  } 
 }
 </script>
 ```
@@ -272,5 +275,6 @@ export default {
 
 | 事件名      | 说明    | 返回值    |
 |---------- |-------- |---------- |
+| on-change | 绑定事件改变事件  | 当前选中的tab  |
 | on-tab-close   | 关闭一个tab事件  | 当前关闭的tab  |
 | on-tab-select  | 右键选中事件回调，用于配合右键系统缓存点击的tag   | 右键选中的tab  |
