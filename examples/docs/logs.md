@@ -9,7 +9,7 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.4.4</p>
+        <p class="version">3.4.5</p>
         <p class="time">2020-06-30</p>
         <p class="content">菜单移除横向滚动模式</p>
         <p class="content">radio优化默认插槽显示</p>
