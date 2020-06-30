@@ -78,20 +78,12 @@
         if ($targetLeft < -this.left) {
           // tag in the left
           this.left = -$targetLeft + padding
-          console.log('tag in the left')
         } else if ($targetLeft + padding > -this.left && $targetLeft + $targetWidth < -this.left + $containerWidth - padding) {
           // tag in the current view
           // eslint-disable-line
         } else {
           // tag in the right
           this.left = $containerWidth - $wrapperWidth - padding
-          console.log('tag in the right')
-          if (this.hidePrev) {
-            console.log('hide prev')
-          }
-          if (this.hideNext) {
-            console.log('hide next')
-          }
         }
         if (!this.isScrollable) {
           this.left = 0
@@ -110,12 +102,6 @@
           } else {
             this.left = 0
           }
-        }
-        if (this.hidePrev) {
-          console.log('hide prev')
-        }
-        if (this.hideNext) {
-          console.log('hide next')
         }
       },
       handlePrev() {
