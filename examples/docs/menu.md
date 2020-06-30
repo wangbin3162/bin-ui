@@ -4,8 +4,8 @@
     <div class="global-anchor">
       <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#chao-chu-gun-dong" title="超出滚动"></b-anchor-link>
         <b-anchor-link href="#shu-xiang-she-zhi" title="竖向设置"></b-anchor-link>
+        <b-anchor-link href="#wai-lian" title="外链"></b-anchor-link>
         <b-anchor-link href="#api" title="API">
             <b-anchor-link href="#menu-props" title="Menu props"></b-anchor-link>
             <b-anchor-link href="#menu-events" title="Menu events"></b-anchor-link>
@@ -40,57 +40,6 @@
              <b-menu-item name="2-3"><b-icon name="ios-cloud"></b-icon>选项3</b-menu-item>
            </b-submenu>
            <b-submenu name="3">
-                <template slot="title"><b-icon name="ios-bookmarks"></b-icon>统计分析</template>
-                <b-menu-group title="使用">
-                    <b-menu-item name="3-1">新增和启动</b-menu-item>
-                    <b-menu-item name="3-2">活跃分析</b-menu-item>
-                    <b-menu-item name="3-3">时段分析</b-menu-item>
-                </b-menu-group>
-           </b-submenu>
-           <b-menu-item name="4"><b-icon name="ios-cog"></b-icon>系统设置</b-menu-item>
-        </b-menu>
-    </div>
-    <br>
-     <b-radio-group v-model="theme1">
-         <b-radio label="light"></b-radio>
-         <b-radio label="dark"></b-radio>
-     </b-radio-group>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        theme1: 'light',  
-        theme2: 'light',
-        isCollapse: true
-      };
-    }
-  }
-</script>
-```
-:::
-
-### 超出滚动
-
-::: demo
-```html
-<template>
-    <div style="width: 400px;border: 1px solid #eee;">
-        <b-menu mode="horizontal" :theme="theme1" active-name="1" scrollable>
-           <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
-           <b-submenu name="2" transfer>
-             <template slot="title"><b-icon name="ios-apps"></b-icon>我的工作台</template>
-             <b-menu-item name="2-1"><b-icon name="ios-bowtie"></b-icon>选项1</b-menu-item>
-             <b-submenu name="2-2">
-                 <template slot="title">
-                     <b-icon name="ios-bulb"></b-icon>选项2
-                 </template>
-                 <b-menu-item name="2-2-1"><b-icon name="ios-color-fill"></b-icon>选项2-2-1</b-menu-item>
-                 <b-menu-item name="2-2-2"><b-icon name="ios-calendar"></b-icon>选项2-2-2</b-menu-item>
-              </b-submenu>
-             <b-menu-item name="2-3"><b-icon name="ios-cloud"></b-icon>选项3</b-menu-item>
-           </b-submenu>
-           <b-submenu name="3" transfer>
                 <template slot="title"><b-icon name="ios-bookmarks"></b-icon>统计分析</template>
                 <b-menu-group title="使用">
                     <b-menu-item name="3-1">新增和启动</b-menu-item>
@@ -168,6 +117,25 @@
 ```
 :::
 
+
+### 外链
+
+::: demo
+```html
+<template>
+<b-menu :theme="theme2" active-name="1" accordion>
+   <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
+   <b-menu-item name="2" to="https://wangbin3162.gitee.io/bin-code-editor/#/guide" target="_blank">
+      <b-icon name="ios-bookmarks"></b-icon>编辑器
+   </b-menu-item>
+   <b-menu-item name="3" to="https://wangbin3162.gitee.io/bin-code-editor/#/guide" target="_blank">
+      <b-icon name="ios-analytics"></b-icon>图表组件
+   </b-menu-item>
+</b-menu>
+</template>
+```
+:::
+
 ### API
 
 ### Menu props
@@ -181,7 +149,6 @@
 | expand-all  | 展开所有的 Submenu 的  | Boolean  | -  |  false |
 | accordion  | 是否开启手风琴模式  | Boolean	  | -  |  false |
 | width  | 导航菜单的宽度，只在 mode="vertical" 时有效  | String  | -  |  240px |
-| scrollable  | 是否可横向使用，只在 mode="horizontal" 时有效 如有下拉菜单，则可以设置transfer添加至body  | Boolean  | -  |  false |
 
 ### Menu events
 

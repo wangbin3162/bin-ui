@@ -1,26 +1,16 @@
 <template>
-  <div class="bin-menu-wrapper" v-if="scrollable&&mode==='horizontal'">
-    <scroll-pane hide-arrow>
-      <ul :class="classes" :style="styles">
-        <slot></slot>
-      </ul>
-    </scroll-pane>
-  </div>
-  <ul v-else :class="classes" :style="styles">
+  <ul :class="classes" :style="styles">
     <slot></slot>
   </ul>
 </template>
 <script>
   import { oneOf, findComponentsDownward, findComponentsUpward } from '../../utils/util'
   import Emitter from '../../mixins/emitter'
-  import ScrollWrap from './scroll-wrap'
-  import ScrollPane from '../tabs/scroll-pane'
 
   const prefixCls = 'bin-menu'
 
   export default {
     name: 'BMenu',
-    components: { ScrollPane },
     mixins: [Emitter],
     provide() {
       return {
@@ -59,10 +49,6 @@
       width: {
         type: String,
         default: '240px'
-      },
-      scrollable: {
-        type: Boolean,
-        default: false
       }
     },
     data() {

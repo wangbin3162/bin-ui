@@ -12,7 +12,7 @@
           @focus="onFocus"
           @blur="onBlur">
     </span>
-    <span v-if="$slots.default"><slot>{{ label }}</slot></span>
+    <span><slot>{{ label }}</slot></span>
   </label>
 </template>
 <script>
