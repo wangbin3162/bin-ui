@@ -2,8 +2,12 @@
   <div class="bin-anchor-wrapper">
     <div class="bin-anchor">
       <div class="bin-anchor-ink">
-        <b-icon v-if="icon" :name="icon" :style="{top: `${inkTop}px`}"></b-icon>
-        <span v-show="!icon&&showInk" class="bin-anchor-ink-ball" :style="{top: `${inkTop}px`}"></span>
+        <b-icon v-if="icon" :name="icon" :style="iconStyle" :color="activeColorStr"></b-icon>
+        <span v-show="!icon&&showInk" class="bin-anchor-ink-ball"
+              :style="{borderColor:activeColorStr, top: `${inkTop}px`}"></span>
+
+        <span v-show="!icon&&!showInk" class="bin-anchor-ink-line"
+              :style="{backgroundColor:activeColorStr, top: `${inkTop}px`}"></span>
       </div>
       <slot></slot>
     </div>
@@ -11,8 +15,8 @@
 </template>
 
 <script>
-  import { scrollTop, on, off } from '../../utils/dom'
-  import { findComponentUpward, findComponentsDownward } from '../../utils/util'
+  import { off, on, scrollTop } from '../../utils/dom'
+  import { findComponentsDownward, findComponentUpward } from '../../utils/util'
 
   export default {
     name: 'BAnchor',
@@ -31,6 +35,8 @@
     },
     props: {
       icon: String,
+      iconSize: Number,
+      activeColor: String,
       offsetTop: {
         type: Number,
         default: 0
@@ -41,11 +47,34 @@
       },
       showInk: {
         type: Boolean,
-        default: true
+        default: false
       },
       scrollOffset: {
         type: Number,
         default: 0
+      },
+      containerId: String
+    },
+    computed: {
+      iconStyle() {
+        let size = this.iconSize ? this.iconSize : 14
+        return {
+          width: `${size}px`,
+          height: `${size}px`,
+          fontSize: `${size}px`,
+          top: `${this.inkTop}px`,
+          transform: `translate(-${(size - 2) * 0.5}px, -${(size - 14) / 2}px)`
+        }
+      },
+      activeColorStr() {
+        const colorMap = {
+          primary: '#0d85ff',
+          success: '#52c41a',
+          info: '#35495E',
+          warning: '#fea638',
+          danger: '#ff4d4f'
+        }
+        return this.activeColor ? (colorMap[this.activeColor] ? colorMap[this.activeColor] : this.activeColor) : null
       }
     },
     methods: {
@@ -67,7 +96,7 @@
         })
       },
       handleSetInkTop() {
-        const currentLinkElementA = document.querySelector(`a[data-href="${this.currentLink}"]`)
+        const currentLinkElementA = this.$el.querySelector(`a[data-href="${this.currentLink}"]`)
         if (!currentLinkElementA) return
         const elementATop = currentLinkElementA.offsetTop
         this.inkTop = (elementATop < 0 ? this.offsetTop : elementATop)
@@ -118,8 +147,13 @@
       }
     },
     mounted() {
-      this.scroll = findComponentUpward(this, 'BScrollbar')
-      this.domEl = this.scroll ? this.scroll.$el.querySelector('.bin-scrollbar__wrap') : window
+      this.domEl = window
+      if (this.containerId) {
+        this.domEl = document.getElementById(this.containerId) || window
+      } else {
+        const scroll = findComponentUpward(this, 'BScrollbar')
+        this.domEl = scroll ? scroll.$el.querySelector('.bin-scrollbar__wrap') : window
+      }
 
       on(this.domEl, 'scroll', this.handleScroll)
       on(window, 'resize', this.handleScroll)

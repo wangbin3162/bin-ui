@@ -42,6 +42,7 @@
       <span class="bin-input-prefix" v-if="showPrefix">
         <slot name="prefix"><i class="iconfont" :class="['icon-' + prefix]" v-if="prefix"></i></slot>
       </span>
+      <span class="bin-input-word-count" v-if="showWordCount">{{ wordCount }}</span>
     </label>
     <label v-else>
       <textarea :id="elementId"
@@ -50,7 +51,7 @@
                 :spellcheck="spellcheck"
                 ref="textarea"
                 :class="textareaClasses"
-                :style="textareaStyles"
+                :style="textareaStyle"
                 :placeholder="placeholder"
                 :disabled="disabled"
                 :rows="rows"
@@ -69,6 +70,7 @@
                 @compositionupdate="handleComposition"
                 @compositionend="handleComposition"
                 @input="handleInput"></textarea>
+      <span class="bin-input-word-count" v-if="showWordCount">{{ wordCount }}</span>
     </label>
   </div>
 </template>
@@ -166,6 +168,14 @@
         default: ''
       },
       search: {
+        type: Boolean,
+        default: false
+      },
+      noResize: {
+        type: Boolean,
+        default: false
+      },
+      showWordCount: {
         type: Boolean,
         default: false
       }
@@ -291,7 +301,7 @@
           `${prefixCls}-wrapper`,
           {
             [`${prefixCls}-wrapper-${this.size}`]: !!this.size,
-            [`${prefixCls}-type`]: this.type,
+            [`${prefixCls}-type-${this.type}`]: this.type,
             [`${prefixCls}-group-with-prepend`]: this.prepend,
             [`${prefixCls}-group-with-append`]: this.append || this.search,
             [`${prefixCls}-hide-icon`]: this.append, // #554
@@ -313,6 +323,12 @@
       closeClasses() {
         return ['iconfont', 'icon-ios-close-circle', prefixCls + '-icon', prefixCls + '-icon-clear', prefixCls + '-icon-normal']
       },
+      textareaStyle() {
+        return {
+          resize: this.noResize ? 'none' : null,
+          ...this.textareaStyles
+        }
+      },
       textareaClasses() {
         return [
           `${prefixCls}`,
@@ -320,6 +336,9 @@
             [`${prefixCls}-disabled`]: this.disabled
           }
         ]
+      },
+      wordCount() {
+        return this.currentValue.length + (this.maxlength ? `/${this.maxlength}` : '')
       }
     },
     mounted() {

@@ -4,7 +4,7 @@
       <slot name="label">{{ label }}</slot>
     </label>
     <label :class="[prefixCls + '-label-empty']" v-else :style="labelStyles"/>
-    <div :class="[prefixCls + '-content']">
+    <div :class="[prefixCls + '-content']" :style="contentStyles">
       <slot></slot>
       <transition name="zoom-in-top">
         <div :class="[prefixCls + '-error-tip']" v-if="validateState === 'error' && showMessage && form.showMessage">{{
@@ -136,6 +136,11 @@
           style.width = `${labelWidth}px`
         }
         return style
+      },
+      contentStyles() {
+        return {
+          width: this.labelStyles.width === '0px' ? null : `calc(100% - ${this.labelStyles.width})`
+        }
       }
     },
     methods: {

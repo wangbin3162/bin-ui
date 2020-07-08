@@ -139,7 +139,7 @@
         </div>
         <div flex="box:mean">
             <b-form-item label="城市" prop="city">
-              <b-select v-model="formValidate.city" clearable>
+              <b-select v-model="formValidate.city" clearable multiple>
                 <b-option value="beijing" label="北京"></b-option>
                 <b-option value="shanghai" label="上海"></b-option>
                 <b-option value="xuzhou" label="徐州"></b-option> 

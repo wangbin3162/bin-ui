@@ -179,7 +179,6 @@
         let colors = []
         for (let i = 0; i < names.length; i++) {
           colors[i] = this.getColor(names[i])
-          console.log(colors[i])
         }
         return colors
       },

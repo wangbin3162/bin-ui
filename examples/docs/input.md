@@ -9,6 +9,7 @@
         <b-anchor-link href="#she-zhisearch" title="设置search"></b-anchor-link>
         <b-anchor-link href="#bu-tong-chi-cun" title="不同尺寸"></b-anchor-link>
         <b-anchor-link href="#she-zhitextarea" title="设置textarea"></b-anchor-link>
+        <b-anchor-link href="#zi-shu-tong-ji" title="字数统计"></b-anchor-link>
         <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
         <b-anchor-link href="#input-events" title="Input events"></b-anchor-link>
         <b-anchor-link href="#input-slot" title="Input slot"></b-anchor-link>
@@ -130,8 +131,33 @@
 ::: demo 
 ```html
 <template>
-<div class="input-item">
- <b-input type="textarea" :rows="4" placeholder="Enter something..." ></b-input>
+<div flex="box:mean">
+    <div class="input-item"> 
+     <b-input type="textarea" :autosize="{minRows:2,maxRows:6}" placeholder="自动大小，可拖动，最大行数6"></b-input>
+    </div>
+    <div class="input-item">
+     <b-input type="textarea" :rows="4" placeholder="禁用拖动，默认4行" no-resize></b-input>
+    </div>
+</div>
+</template>
+```
+:::
+
+
+### 字数统计
+
+可以设置 `show-word-count`开启字数统计
+
+::: demo 
+```html
+<template>
+<div flex="box:mean">
+    <div class="input-item">
+     <b-input :maxlength="10" show-word-count></b-input>
+    </div>
+    <div class="input-item">
+     <b-input type="textarea" :rows="2" no-resize show-word-count></b-input>
+    </div>
 </div>
 </template>
 ```
@@ -160,6 +186,8 @@
 | autocomplete     | 原生的自动完成功能，可选值为 off 和 on   | String	  |   —   |    off   |
 | element-id     | 给表单元素设置 id，详见 Form 用法。   | String	  |   —   |   —    |
 | wrap  | 原生的 wrap 属性，可选值为 hard 和 soft，仅在 textarea 下生效   | String	  |   —   |  	soft   |
+| no-resize   | 禁用文本域resize ，仅在 textarea 下生效 | Boolean	  |   —   |  	false   |
+| show-word-count  | 显示文本字数统计，仅在 textarea 下生效   | Boolean	  |   —   |  	false   |
 
 ### Input events
 

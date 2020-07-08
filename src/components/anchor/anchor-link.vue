@@ -1,6 +1,6 @@
 <template>
   <div :class="anchorLinkClasses">
-    <a :class="linkTitleClasses" :href="href" :data-href="href"
+    <a :class="linkTitleClasses" :href="href" :data-href="href" :style="activeColor"
        @click.prevent="goAnchor" :title="title">{{ title }}</a>
     <slot></slot>
   </div>
@@ -35,6 +35,11 @@
         return [
           `${this.prefix}-title`
         ]
+      },
+      activeColor() {
+        return {
+          color: this.anchorCom.currentLink === this.href ? this.anchorCom.activeColorStr : null
+        }
       }
     },
     methods: {

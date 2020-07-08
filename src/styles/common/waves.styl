@@ -5,23 +5,19 @@
   background-clip: padding-box;
   pointer-events: none;
   user-select: none;
-  transform: scale(0);
+  transform: scale3d(0, 0, 0);
   opacity: 1;
 }
 
 .waves-ripple.z-active {
   opacity: 0;
-  transform: scale(2);
-  transition: opacity 1.2s ease-out, transform .8s ease-out;
+  transform: scale3d(2, 2, 2);
+  transition: opacity 0.8s ease-out, transform .6s ease-out;
 }
-
 html {
   --bin-wave-shadow-color: #0d85ff;
 }
-[bin-click-animating='true'] {
-  position: relative;
-}
-[bin-click-animating='true']::after {
+.bin-click-animating-node {
   position: absolute;
   top: 0;
   right: 0;
@@ -29,11 +25,10 @@ html {
   left: 0;
   display: block;
   border-radius: inherit;
-  box-shadow: 0 0 0 0 #0d85ff;
-  opacity: 0.2;
-  animation: fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
-  animation-fill-mode: forwards;
-  content: '';
+  box-shadow: 0 0 0 0 var(--bin-wave-shadow-color);
+  opacity: .4;
+  animation: fadeEffect 1.2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.8s cubic-bezier(0.08, 0.82, 0.17, 1);
+  animation-fill-mode: backwards;
   pointer-events: none;
 }
 
@@ -44,7 +39,6 @@ html {
 }
 @keyframes waveEffect {
   100% {
-    box-shadow: 0 0 0 #0d85ff;
     box-shadow: 0 0 0 6px var(--bin-wave-shadow-color);
   }
 }

@@ -79,14 +79,22 @@
           ...this.iconStyle
         }
       },
-      textStyle() {
-        const colorMap = {
+      colorMap() {
+        return {
           primary: '#0d85ff',
           success: '#52c41a',
           info: '#35495E',
           warning: '#fea638',
           danger: '#ff4d4f'
         }
+      },
+      waveColor() {
+        let { type, plain, transparent, dashed } = this
+        return (type === 'default' || type === 'dashed' || plain || transparent || dashed)
+          ? 'rgba(0, 0, 0, 0.25)' : 'rgba(255, 255, 255, 0.3)'
+      },
+      textStyle() {
+        const { colorMap } = this
         let color = this.textColor ? (colorMap[this.textColor] ? colorMap[this.textColor] : this.textColor) : null
         if (color) {
           return {

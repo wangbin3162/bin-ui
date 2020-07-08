@@ -1,8 +1,8 @@
 .bin-anchor {
   &-wrapper {
     overflow: auto;
-    padding-left: 5px;
-    margin-left: -5px;
+    padding-left: 8px;
+    margin-left: -8px;
   }
 
   & {
@@ -33,7 +33,17 @@
         background-color: #fff;
         left: 50%;
         transition: top .3s ease;
-        transform: translate(-50%, 1px);
+        transform: translate(-50%, 2px);
+      }
+      &-line {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        height: 18px;
+        background-color: $color-primary;
+        transition: top .3s ease;
+        transform: translate(-50%, -2px);
       }
       .iconfont {
         position: absolute;
@@ -50,7 +60,6 @@
   &-link {
     padding: 8px 0 8px 16px;
     line-height: 1;
-
     &-title {
       display: block;
       position: relative;

@@ -133,7 +133,7 @@ export default {
        import 'flex.css/dist/data-flex.css';
     -->
    <!-- flex属性匹配，简单的子元素居中例子： -->
-     <div flex="main:center cross:center" style="height: 50px; border:1px solid #409eff">
+     <div flex="main:center cross:center" style="height: 80px; border:1px solid #409eff">
        <div style="background: #fff;padding: 15px;">看看我是不是居中的</div>
      </div>
 </template>

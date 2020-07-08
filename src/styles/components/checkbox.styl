@@ -33,10 +33,10 @@
       content: "";
       position: absolute;
       display: table;
-      width: 5.7px;
-      height: 9px;
-      top: 47%;
-      left: 22%;
+      width: 5.714px;
+      height: 9.142px;
+      top: 6px;
+      left: 3px;
       border: 2px solid #fff;
       border-top: 0;
       border-left: 0;
@@ -60,7 +60,7 @@
       border: 1px solid $color-primary;
       border-radius: $border-base-radius;
       animation: checkEffect .36s ease-in-out;
-      animation-fill-mode: both;
+      animation-fill-mode: backwards;
       content: '';
     }
   }
@@ -125,17 +125,17 @@
   background-color: #f3f3f3;
 }
 .bin-checkbox-indeterminate .bin-checkbox-inner {
-  background-color: $color-primary;
-  border-color: $color-primary;
 }
 .bin-checkbox-indeterminate .bin-checkbox-inner:after {
   content: "";
-  width: 9.1px;
-  height: 1px;
+  width: 8px;
+  height: 8px;
   transform: scale(1) translate(-50%, -50%);
   position: absolute;
   left: 50%;
   top: 50%;
+  border: none;
+  background-color: $color-primary;
 }
 
 
