@@ -10,6 +10,7 @@
         <b-anchor-link href="#an-niu-zu" title="按钮组"></b-anchor-link>
         <b-anchor-link href="#bu-tong-chi-cun" title="不同尺寸"></b-anchor-link>
         <b-anchor-link href="#jia-zai-zhuang-tai" title="加载状态"></b-anchor-link>
+        <b-anchor-link href="#dian-ji-dong-hua" title="点击动画"></b-anchor-link>
         <b-anchor-link href="#api" title="API">
             <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
         </b-anchor-link>
@@ -70,6 +71,7 @@
 ```
 
 :::
+
 ### 带图标的按钮
 
 使用`icon`给按钮配置图标
@@ -256,6 +258,23 @@ export default {
 ```
 :::
 
+### 点击动画
+
+可以设置两种不同的点击动画['click','waves'] ,默认为click
+
+::: demo
+```html
+<template>
+    <div class="demo-button">
+       <b-button>Click me!</b-button>
+       <b-button type="danger">Click me!</b-button>
+       <b-button animation-type="waves">Wave Click!</b-button>
+       <b-button type="success" animation-type="waves">Wave Click!</b-button>
+    </div>
+</template>
+```
+:::
+
 ### API
 
 ### Attributes
@@ -274,5 +293,6 @@ export default {
 | icon-style  | 图标样式,可设置图标大小，字体对其等，可依托text-color设置颜色，也可以自定义 | Object   |  —  |  —  |
 | autofocus  | 是否默认聚焦 | boolean   |  —  |  false  |
 | native-type | 原生 type 属性 | string | button / submit / reset | button |
+| animation-type | 点击动画 | string | click / waves | click |
 
 

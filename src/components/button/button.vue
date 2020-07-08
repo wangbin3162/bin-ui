@@ -1,5 +1,5 @@
 <template>
-  <button v-if="type!=='text'"
+  <button v-if="type!=='text'&&animationType==='click'"
           class="bin-button"
           @click="handleClick"
           :disabled="disabled || loading"
@@ -21,6 +21,28 @@
     <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading" :style="iconStyles"></i>
     <span v-if="$slots.default" :style="textStyle"><slot></slot></span>
   </button>
+  <button v-else-if="type!=='text'&&animationType==='waves'"
+          class="bin-button"
+          @click="handleClick"
+          :disabled="disabled || loading"
+          :type="nativeType"
+          :class="['bin-button--' + type , 'bin-button--' + size,
+            {
+              'is-disabled': disabled,
+              'is-loading': loading,
+              'is-plain': plain,
+              'is-round': round,
+              'is-dashed': dashed,
+              'is-transparent': transparent
+            }
+          ]"
+          v-waves="waveColor"
+  >
+    <b-icon class="button-loading icon-is-rotating"
+            :name="loadingIcon?loadingIcon:'loading'" v-if="loading" :style="iconStyles"/>
+    <i :class="['iconfont','icon-'+icon]" v-if="icon && !loading" :style="iconStyles"></i>
+    <span v-if="$slots.default" :style="textStyle"><slot></slot></span>
+  </button>
   <button v-else
           @click="handleClick"
           :disabled="disabled || loading"
@@ -36,6 +58,7 @@
 
 <script>
   import tinycolor from 'tinycolor2'
+  import { oneOf } from '../../utils/util'
 
   export default {
     name: 'BButton',
@@ -68,6 +91,12 @@
       round: Boolean,
       dashed: Boolean,
       transparent: Boolean,
+      animationType: {
+        validator(value) {
+          return oneOf(value, ['click', 'waves'])
+        },
+        default: 'click'
+      },
       textColor: {
         type: String
       }
