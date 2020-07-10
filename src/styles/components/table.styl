@@ -157,12 +157,9 @@
   }
   &-cell {
     padding: 4px 16px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    word-break: break-all;
     box-sizing: border-box;
     color: $color-text-default;
+    white-space: normal;
 
     &-ellipsis {
       word-break: keep-all;
@@ -173,7 +170,11 @@
 
     &-tooltip {
       width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       &-content {
+        word-break: break-all;
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;

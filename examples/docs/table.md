@@ -248,6 +248,7 @@
 ::: demo
 ```html
 <template>
+<b-table :columns="columns" :data="data" border></b-table>
 <b-table :columns="columns" :data="data" border tooltip-theme="dark"></b-table>
 </template>
 <script>
@@ -713,9 +714,15 @@ export default {
       <b-input type="text" v-model="editBirthday" v-if="editIndex ===  scope.index" size="small"></b-input>
       <span v-else>{{ scope.row.birthday }}</span>
     </template>
+    <template v-slot:hobby="scope">
+      <b-select v-model="editHobby" clearable v-if="editIndex ===  scope.index" size="small">
+        <b-option v-for="(val,key) in hobbyMap" :key="key" :value="key">{{ val }}</b-option>
+      </b-select>
+      <span v-else>{{ hobbyMap[scope.row.hobby] }}</span>
+    </template>
     <template v-slot:address="scope">
       <b-input type="text" v-model="editAddress" v-if="editIndex ===  scope.index" size="small"></b-input>
-      <span v-else>{{  scope.row.address }}</span>
+      <span v-else>{{ scope.row.address }}</span>
     </template>
     <template v-slot:action="scope">
       <div v-if="editIndex ===  scope.index">
@@ -746,6 +753,10 @@ export default {
             slot: 'birthday'
           },
           {
+            title: '爱好',
+            slot: 'hobby'
+          },
+          {
             title: '地址',
             slot: 'address'
           },
@@ -754,49 +765,57 @@ export default {
             slot: 'action'
           }
         ],
+        hobbyMap:{'1':'吃饭','2':'睡觉','3':'打豆豆'},
         data: [
           {
             name: '王小明',
             age: 18,
             birthday: '1990-04-22',
+            hobby: '1',
             address: '北京市朝阳区芍药居'
           },
           {
             name: '张小刚',
             age: 25,
             birthday: '1990-11-11',
+            hobby: '1',
             address: '北京市海淀区西二旗'
           },
           {
             name: '李小红',
             age: 30,
             birthday: '1985-02-05',
+            hobby: '3',
             address: '上海市浦东新区世纪大道'
           },
           {
             name: '周小伟',
             age: 26,
             birthday: '1993-07-11',
+            hobby: '1',
             address: '深圳市南山区深南大道'
           },
           {
             name: '张小发',
             age: 33,
             birthday: '1999-12-12',
+            hobby: '2',
             address: '南京市龙眠大道'
           }
         ],
-        editName: '', // 第一列输入框
-        editAge: '', // 第二列输入框
-        editBirthday: '', // 第三列输入框
-        editAddress: '', // 第四列输入框
-        editIndex: -1 // 当前聚焦的输入框的行数
+        editName: '',
+        editAge: '',
+        editBirthday: '', 
+        editHobby: '',
+        editAddress: '', 
+        editIndex: -1 
       }
     },
     methods: {
       handleEdit (row, index) {
         this.editName = row.name
         this.editAge = row.age
+        this.editHobby = row.hobby
         this.editAddress = row.address
         this.editBirthday = row.birthday
         this.editIndex = index
@@ -805,6 +824,7 @@ export default {
         this.data[index].name = this.editName
         this.data[index].age = this.editAge
         this.data[index].birthday = this.editBirthday
+        this.data[index].hobby = this.editHobby
         this.data[index].address = this.editAddress
         this.editIndex = -1
       }

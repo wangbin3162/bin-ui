@@ -9,9 +9,10 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.4.7</p>
+        <p class="version">3.4.8</p>
         <p class="time">2020-07-10</p>
         <p class="content">checkbox内样式优化</p>
+        <p class="content">表格优化样式</p>
       </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
