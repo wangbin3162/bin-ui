@@ -18,6 +18,10 @@
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.4.6</p>
         <p class="time">2020-07-08</p>
+        <p class="content">表单样式修改优化、checkbox内样式优化</p>
+        <p class="content">文本域增加定高和字数统计</p>
+        <p class="content">anchor锚点优化，支持指定容器，增加多种配置如图标大小，activeColor等</p>
+        <p class="content">优化v-waves水波纹指令和默认点击按钮效果，简化实现</p>
       </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
