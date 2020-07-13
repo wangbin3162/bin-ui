@@ -178,7 +178,7 @@ Modal.newInstance = properties => {
   return {
     show(props) {
       modal.$parent.showCancel = props.showCancel
-      modal.$parent.iconType = props.icon
+      modal.$parent.iconType = props.iconType || props.icon
 
       switch (props.icon) {
         case 'info':
@@ -196,7 +196,11 @@ Modal.newInstance = properties => {
         case 'confirm':
           modal.$parent.iconName = 'ios-help-circle'
           break
+        default:
+          modal.$parent.iconName = props.icon
+          break
       }
+      console.log(props.icon)
 
       if ('width' in props) {
         modal.$parent.width = props.width

@@ -213,6 +213,95 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ```
 :::
 
+### 嵌套
+
+弹窗嵌套一般情况下不推荐嵌套，但也可以这么使用
+
+::: demo
+```html
+<template>
+<div>
+    <b-button @click="modal1 = true">显示弹窗一</b-button>
+    <b-button @click="modal3 = true">显示全屏弹窗</b-button>
+    <b-button @click="openModal5">自定义弹窗</b-button>
+    <b-modal v-model="modal1" title="弹窗一" footer-hide width="600">
+        <p>我是弹窗内容...</p>
+        <p>我是弹窗内容...</p>
+        <p>我是弹窗内容...</p>
+        <b-button type="primary" @click="modal2 = true">打开嵌套弹窗</b-button>
+        <b-modal v-model="modal2" title="嵌套弹窗">
+          <p>我是弹窗内容...</p>
+          <p>我是弹窗内容...</p>
+          <p>我是弹窗内容...</p>
+        </b-modal>
+    </b-modal>
+    <b-modal v-model="modal3" title="全屏弹窗" footer-hide fullscreen>
+        <p>我是弹窗内容...</p>
+        <p>我是弹窗内容...</p>
+        <p>我是弹窗内容...</p>
+        <b-button type="primary" @click="modal4 = true">打开嵌套弹窗</b-button>
+        <b-modal v-model="modal4" title="全屏嵌套弹窗">
+          <p>我是弹窗内容...</p>
+          <p>我是弹窗内容...</p>
+          <p>我是弹窗内容...</p>
+        </b-modal>
+    </b-modal>
+
+  <transition name="fade-scale-move">
+    <div v-show="modal5" 
+        style="
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          box-sizing: border-box;
+          z-index: 1000;
+          background-color: #fff;">
+      自定义弹窗内容
+      <b-button @click="closeModal5">关闭自定义弹窗</b-button>
+        <b-button type="primary" @click="modal4 = true">打开嵌套弹窗</b-button>
+        <b-modal v-model="modal4" title="全屏嵌套弹窗" stop-remove-scroll>
+          <p>我是弹窗内容...</p>
+          <p>我是弹窗内容...</p>
+          <p>我是弹窗内容...</p>
+        </b-modal>
+    </div>
+  </transition>
+</div>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                modal1: false,
+                modal2: false,
+                modal3: false,
+                modal4: false,
+                modal5: false
+            }
+        },
+        methods:{
+          openModal5(){
+                this.modal5=true
+                // 模拟移除滚动条
+                document.body.style.paddingRight = '15px'
+                document.body.style.overflow = 'hidden'
+          }, 
+          closeModal5(){
+                this.modal5=false
+                  this.timer = setTimeout(() => {
+                    // 添加滚动条
+                    document.body.style.paddingRight = ''
+                    document.body.style.overflow = ''
+                  }, 300)
+          }
+        }
+    }
+</script>
+```
+:::
+
 ### 全屏
 
 设置属性 `fullscreen` 可以全屏显示。属性 `footer-hide` 可以隐藏底部内容。
@@ -221,7 +310,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ```html
 <template>
     <b-button @click="modal10 = true">显示全屏对话框</b-button>
-    <b-modal v-model="modal10" title="全屏标题" fullscreen>
+    <b-modal v-model="modal10" title="全屏标题" fullscreen footer-hide>
       <p style="text-align: center;">我是全屏的内容</p>
     </b-modal>
 </template>
@@ -287,6 +376,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | class-name    | 设置对话框容器的类名 | String  |      —      |  —  |
 | z-index    | 层级 | Number  |      —      |  2000  |
 | append-to-body    | 是否将对话框放置于 body 内 | Boolean  |      —      |  false  |
+| stop-remove-scroll | 是否阻止模态窗释放body滚动，多应用于多层嵌套 | Boolean  |      —      |  false  |
 
 ### Events
 

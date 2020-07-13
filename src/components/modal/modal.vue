@@ -1,9 +1,9 @@
 <template>
   <div class="bin-modal">
     <transition name="fade-in-linear">
-      <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click="handleMask"></div>
+      <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click.stop="handleMask"></div>
     </transition>
-    <div :class="wrapClasses" :style="wrapStyles" @click="handleWrapClick">
+    <div :class="wrapClasses" :style="wrapStyles" @click.stop="handleWrapClick">
       <transition name="fade-scale-move" @after-enter="animationEnter" @after-leave="animationFinish">
         <div :class="classes" :style="mainStyles" v-show="visible">
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
@@ -38,7 +38,7 @@
 
 <script>
   import { transferIndex as modalIndex, transferIncrease as modalIncrease } from '../../utils/transfer-queue'
-  import { on, off } from '../../utils/dom'
+  import { on, off, hasClass } from '../../utils/dom'
   import scrollbarMixin from '../../mixins/scrollbar-mixin'
 
   const prefixCls = 'bin-modal'
@@ -113,6 +113,9 @@
       appendToBody: {
         type: Boolean,
         default: false
+      },
+      stopRemoveScroll: {
+        type: Boolean
       }
     },
     data() {
@@ -150,7 +153,7 @@
       },
       classes() {
         return [
-          `${prefixCls}`,
+          `${prefixCls}-inner`,
           {
             [`${prefixCls}-fullscreen`]: this.fullscreen,
             [`${prefixCls}-fullscreen-no-header`]: this.fullscreen && !this.showHead,
@@ -319,13 +322,19 @@
           // 关闭内容显示
           this.timer = setTimeout(() => {
             this.wrapShow = false
-            this.removeScrollEffect()
+            // 如果父级组件为模态窗则不需要移除滚动效果
+            if (
+              (!hasClass(this.$parent.$el, 'bin-modal') && !this.stopRemoveScroll) ||
+              (this.$el === this.$parent.$el)
+            ) {
+              this.removeScrollEffect()
+            }
           }, 300)
         } else {
           this.modalIndex = this.handleGetModalIndex()
           if (this.timer) clearTimeout(this.timer)
           this.wrapShow = true
-          if (!this.scrollable) {
+          if (!this.scrollable && !this.draggable) {
             this.addScrollEffect()
           }
           if (this.appendToBody && !this.hasMoveOut) {

@@ -54,6 +54,10 @@
     <b-button type="default" 
       @click="$confirm({title: '标题',content: '我是弹窗内容'})">标准</b-button>
     <b-button type="default" 
+      @click="$confirm({iconName:'success',title: '标题',content: '我是弹窗内容'})">更换图标</b-button>
+    <b-button type="default" 
+      @click="$confirm({iconName:'heart',iconType:'danger',title: '标题',content: '我是弹窗内容'})">更换图标颜色</b-button>
+    <b-button type="default" 
       @click="$confirm({title: '标题',content: '改变按钮文字',okText: 'OK',okType: 'danger',cancelText: 'Cancel',cancelType: 'info'})">
       改变按钮样式
     </b-button>

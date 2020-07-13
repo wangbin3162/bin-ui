@@ -33,14 +33,16 @@
   font-size: $base-font-size;
   font-variant: tabular-nums;
   line-height: $base-line-height
+  p {
+    margin: 0;
+  }
+}
+.bin-modal-inner {
   width: auto;
   margin: 0 auto;
   position: relative;
   outline: 0;
   top: 100px;
-  p {
-    margin: 0;
-  }
 }
 .bin-modal-content {
   position: relative;
@@ -125,22 +127,27 @@
   top: 0;
   bottom: 0;
   position: absolute;
-  .bin-modal-content {
+  > .bin-modal-content {
     width: 100%;
     border-radius: 0;
     position: absolute;
     top: 0;
     bottom: 0;
   }
-  .bin-modal-body {
+  > .bin-modal-body {
     width: 100%;
     position: absolute;
     top: 50px;
     bottom: 60px;
+    overflow: auto;
   }
-  .bin-modal-footer {
+  > .bin-modal-footer {
     position: absolute;
     width: 100%;
+    bottom: 0;
+  }
+
+  &.bin-modal-fullscreen-no-footer > .bin-modal-body {
     bottom: 0;
   }
 }

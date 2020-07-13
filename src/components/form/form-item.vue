@@ -130,6 +130,9 @@
       },
       labelStyles() {
         let style = {}
+        if (this.form.labelPosition === 'top') {
+          return style
+        }
         const labelWidth = this.labelWidth === 0 || this.labelWidth ? this.labelWidth : this.form.labelWidth
 
         if (labelWidth || labelWidth === 0) {
@@ -139,7 +142,8 @@
       },
       contentStyles() {
         return {
-          width: this.labelStyles.width === '0px' ? null : `calc(100% - ${this.labelStyles.width})`
+          width: (this.form.labelPosition === 'top' || this.labelStyles.width === '0px')
+            ? null : `calc(100% - ${this.labelStyles.width})`
         }
       }
     },

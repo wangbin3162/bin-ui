@@ -2,7 +2,7 @@ import Modal from './confirm'
 
 let modalInstance
 
-function getModalInstance (render = undefined) {
+function getModalInstance(render = undefined) {
   modalInstance = modalInstance || Modal.newInstance({
     closable: false,
     maskClosable: false,
@@ -13,7 +13,7 @@ function getModalInstance (render = undefined) {
   return modalInstance
 }
 
-function confirm (options) {
+function confirm(options) {
   const render = ('render' in options) ? options.render : undefined
   let instance = getModalInstance(render)
 
@@ -58,7 +58,7 @@ Modal.alert.danger = function (props = {}) {
 }
 
 Modal.confirm = function (props = {}) {
-  props.icon = 'confirm'
+  props.icon = props.iconName || 'confirm'
   props.showCancel = true
   return confirm(props)
 }

@@ -9,6 +9,14 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.4.9</p>
+        <p class="time">2020-07-13</p>
+        <p class="content">modal弹窗优化，增加嵌套支持，优化嵌套弹窗样式，扩展释放滚动属性</p>
+        <p class="content">优化message-box组件，扩展confirm弹窗的图标及颜色设置。</p>
+        <p class="content">优化form表单样式，标题设置为top时不计算标题和内容宽度，默认撑满。</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.4.8</p>
         <p class="time">2020-07-10</p>
         <p class="content">checkbox内样式优化</p>
