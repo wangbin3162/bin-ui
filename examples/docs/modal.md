@@ -310,8 +310,8 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 ```html
 <template>
     <b-button @click="modal10 = true">显示全屏对话框</b-button>
-    <b-modal v-model="modal10" title="全屏标题" fullscreen footer-hide>
-      <p style="text-align: center;">我是全屏的内容</p>
+    <b-modal v-model="modal10" title="全屏标题" fullscreen>
+      <p  v-for="i in 100" :key="i">我是全屏的内容{{i}}...</p>
     </b-modal>
 </template>
 <script>

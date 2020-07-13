@@ -7,9 +7,9 @@
 <template>
 <div class="doc-update">
     <b-timeline>
-      <b-timeline-item color="warning">
-        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.4.9</p>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.5.0</p>
         <p class="time">2020-07-13</p>
         <p class="content">modal弹窗优化，增加嵌套支持，优化嵌套弹窗样式，扩展释放滚动属性</p>
         <p class="content">优化message-box组件，扩展confirm弹窗的图标及颜色设置。</p>

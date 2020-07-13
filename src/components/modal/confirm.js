@@ -200,7 +200,6 @@ Modal.newInstance = properties => {
           modal.$parent.iconName = props.icon
           break
       }
-      console.log(props.icon)
 
       if ('width' in props) {
         modal.$parent.width = props.width

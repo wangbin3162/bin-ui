@@ -88,6 +88,7 @@
 .bin-modal-header {
   border-bottom: $border-base-light;
   padding: 16px 24px;
+  height: 55px;
   .bin-modal-header-inner, .bin-modal-header p {
     width: 100%;
     font-size: $header-font-size;
@@ -133,21 +134,21 @@
     position: absolute;
     top: 0;
     bottom: 0;
-  }
-  > .bin-modal-body {
-    width: 100%;
-    position: absolute;
-    top: 50px;
-    bottom: 60px;
-    overflow: auto;
-  }
-  > .bin-modal-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    > .bin-modal-body {
+      width: 100%;
+      position: absolute;
+      top: 55px;
+      bottom: 53px;
+      overflow: auto;
+    }
+    > .bin-modal-footer {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
   }
 
-  &.bin-modal-fullscreen-no-footer > .bin-modal-body {
+  &.bin-modal-fullscreen-no-footer > .bin-modal-content > .bin-modal-body {
     bottom: 0;
   }
 }
