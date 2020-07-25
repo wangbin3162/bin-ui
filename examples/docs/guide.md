@@ -37,11 +37,11 @@ bin-ui 是一款基于 Vue.js 2.0 的前端 UI组件库，是个人在工作中�
 <a href="https://gitee.com/wangbin3162/bin-ui/" target="_blank">码云仓库</a> | 
 <a href="https://wangbin3162.gitee.io/bin-ui/" target="_blank">文档说明</a>
 
-***bin-code-editor*** 基于vue，代码编辑器
+***bin-ace-editor*** 基于vue，代码编辑器
 
-<a href="https://github.com/wangbin3162/bin-code-editor/" target="_blank">Github 仓库</a> | 
-<a href="https://gitee.com/wangbin3162/bin-code-editor/" target="_blank">码云仓库</a> | 
-<a href="https://wangbin3162.gitee.io/bin-code-editor/" target="_blank">文档说明</a>
+<a href="https://github.com/wangbin3162/bin-ace-editor/" target="_blank">Github 仓库</a> | 
+<a href="https://gitee.com/wangbin3162/bin-ace-editor/" target="_blank">码云仓库</a> | 
+<a href="https://wangbin3162.gitee.io/bin-ace-editor/" target="_blank">文档说明</a>
 
 ***bin-tree-org*** 树形组织图组件
 
