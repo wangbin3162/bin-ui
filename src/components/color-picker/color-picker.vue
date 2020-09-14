@@ -224,7 +224,7 @@
         dragging: false,
         visible: false,
         recommendedColor: [
-          '#0d85ff',
+          '#1089ff',
           '#52c41a',
           '#fea638',
           '#ff4d4f',

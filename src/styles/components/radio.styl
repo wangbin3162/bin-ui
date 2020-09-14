@@ -33,10 +33,10 @@
     transition: all .2s ease-in-out;
     &:after {
       position: absolute;
-      width: 8px;
-      height: 8px;
-      left: 3px;
-      top: 3px;
+      width: 10px;
+      height: 10px;
+      left: 2px;
+      top: 2px;
       border-radius: 6px;
       display: table;
       border-top: 0;
@@ -82,7 +82,7 @@
     transition: all .2s ease-in-out;
   }
   &-focus {
-    box-shadow: 0 0 0 3px $color-effect-shadow ;
+    box-shadow: 0 0 0 3px $color-effect-shadow;
   }
   &:hover {
     .bin-radio-inner {
@@ -107,10 +107,98 @@
 }
 
 .bin-radio-group .bin-radio-checked .bin-radio-focus {
-  box-shadow: 0 0 0 3px $color-effect-shadow ;
+  box-shadow: 0 0 0 3px $color-effect-shadow;
   transition: all .2s ease-in-out;
 }
 
+
+.bin-radio-group-button {
+  font-size: 0;
+  .bin-radio-wrapper {
+    position: relative;
+    margin: 0;
+    padding: 0 15px;
+    color: #515a6e;
+    transition: all .2s ease-in-out;
+    border: 1px solid #dcdee2;
+    background: #fff;
+    height: $default-height;
+    line-height: $default-height - 2;
+    &:hover {
+      color: $color-primary;
+      border-color: $color-primary;
+      z-index: 1;
+    }
+    > span {
+      margin-left: 0;
+      padding: 0;
+    }
+    .bin-radio {
+      display: none;
+      width: 0;
+      margin-right: 0;
+      &-checked:after {
+        content: unset;
+      }
+    }
+    .bin-radio-inner, input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    &:first-child {
+      border-radius: $border-base-radius 0 0 $border-base-radius;
+    }
+    &:last-child {
+      border-radius: 0 $border-base-radius $border-base-radius 0;
+    }
+    + .bin-radio-wrapper {
+      margin-left: -1px;
+    }
+  }
+  &.bin-radio-group-large .bin-radio-wrapper {
+    height: $large-height;
+    line-height: $large-height - 2;
+    padding: 0 16px;
+  }
+  &.bin-radio-group-small .bin-radio-wrapper {
+    height: $small-height;
+    line-height: $small-height - 2;
+    padding: 0 12px;
+  }
+  &.bin-radio-group-mini .bin-radio-wrapper {
+    height: $mini-height;
+    line-height: $mini-height - 2;
+    padding: 0 8px;
+  }
+  .bin-radio-wrapper-checked {
+    background: $color-primary;
+    border-color: $color-primary;
+    color: #fff;
+    z-index: 1;
+    &:hover {
+      color: #fff;
+      border-color: $color-primary;
+      z-index: 1;
+    }
+  }
+  .bin-radio-wrapper-disabled {
+    cursor: not-allowed;
+    border-color: #dcdee2;
+    background-color: #f7f7f7;
+    color: #ccc;
+    &:first-child, &:hover {
+      border-color: #dcdee2;
+      background-color: #f7f7f7;
+      color: #ccc;
+    }
+    &.bin-radio-wrapper-checked {
+      color: #fff;
+      background-color: #e6e6e6;
+      border-color: #dcdee2;
+    }
+  }
+}
 @keyframes radioEffect {
   0% {
     transform: scale(1);

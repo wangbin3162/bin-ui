@@ -2,7 +2,13 @@ import { typeColor } from '../../../utils/log'
 
 export default {
   name: 'BTag',
+  data() {
+    return {
+      checked: true
+    }
+  },
   props: {
+    name: '',
     closable: Boolean,
     type: String,
     dot: Boolean,
@@ -10,27 +16,42 @@ export default {
     color: String,
     tagStyle: {},
     size: String,
-    fontSize: String
+    fontSize: String,
+    dark: Boolean,
+    checkable: Boolean,
+    defaultValue: {
+      type: Boolean,
+      default: true
+    }
+  },
+  created() {
+    if (this.checkable) {
+      this.checked = this.defaultValue
+    }
   },
   methods: {
-    handleClose (event) {
+    handleClose(event) {
       event.stopPropagation()
       this.$emit('on-close', event)
     },
-    handleClick (event) {
+    handleClick(event) {
       event.stopPropagation()
+      if (this.checkable) {
+        this.checked = !this.checked
+        this.$emit('on-change', this.checked, this.name)
+      }
       this.$emit('on-click', event)
     }
   },
   computed: {
-    dotColor () {
+    dotColor() {
       // 获取type的颜色
       if (this.type) {
         return typeColor(this.type)
       }
       return this.color
     },
-    tagStyleBind () {
+    tagStyleBind() {
       return this.tagStyle ? this.tagStyle
         : this.dot ? {
             backgroundColor: 'transparent',
@@ -44,7 +65,7 @@ export default {
           }
     }
   },
-  render (h) {
+  render(h) {
     let $child = []
     const dotEl = h('span', {
       class: ['bin-dot'],
@@ -68,6 +89,9 @@ export default {
       class: ['bin-tag',
         this.type ? `is-${this.type}` : '',
         this.size ? `is-${this.size}` : '',
+        this.dark ? 'is-dark' : '',
+        this.checkable ? 'is-checkable' : '',
+        (this.checkable && this.checked) ? 'is-checked' : '',
         { 'no-border': this.noBorder }
       ],
       style: this.tagStyleBind,

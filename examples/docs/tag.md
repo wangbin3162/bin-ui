@@ -4,6 +4,8 @@
     <div class="global-anchor">
       <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
+        <b-anchor-link href="#duo-chong-yan-se" title="多种颜色"></b-anchor-link>
+        <b-anchor-link href="#ke-xuan-ze-biao-qian" title="可选择标签"></b-anchor-link>
         <b-anchor-link href="#ke-yi-chu-biao-qian" title="可移除标签"></b-anchor-link>
         <b-anchor-link href="#dot-mo-shi" title="dot 模式"></b-anchor-link>
         <b-anchor-link href="#zi-ding-yi-yang-shi" title="自定义样式"></b-anchor-link>
@@ -22,11 +24,73 @@
 ::: demo 
 ```html
 <template>
-    <b-tag type="primary">标签二</b-tag>
-    <b-tag type="success">标签二</b-tag>
-    <b-tag type="info">标签三</b-tag>
-    <b-tag type="warning">标签四</b-tag>
-    <b-tag type="danger">标签五</b-tag>
+<div>
+    <b-tag>default</b-tag>
+    <b-tag type="primary">primary</b-tag>
+    <b-tag type="success">success</b-tag>
+    <b-tag type="info">info</b-tag>
+    <b-tag type="warning">warning</b-tag>
+    <b-tag type="danger">danger</b-tag>
+</div>
+</template>
+```
+:::
+
+### 多种颜色
+
+由`dark`属性来设置深色模式,并可以设置更多颜色类型的标签
+
+::: demo 
+```html
+<template>
+<div>
+    <b-tag  size="mini">default</b-tag>
+    <b-tag type="primary" dark size="mini">primary</b-tag>
+    <b-tag type="success" dark size="mini">success</b-tag>
+    <b-tag type="info" dark size="mini">info</b-tag>
+    <b-tag type="warning" dark size="mini">warning</b-tag>
+    <b-tag type="danger" dark size="mini">danger</b-tag>
+    <b-tag type="magenta" size="mini">magenta</b-tag>
+    <b-tag type="red" size="mini">red</b-tag>
+    <b-tag type="volcano" size="mini">volcano</b-tag>
+    <b-tag type="orange" size="mini">orange</b-tag>
+    <b-tag type="gold" size="mini">gold</b-tag>
+    <b-tag type="yellow" size="mini">yellow</b-tag>
+    <b-tag type="lime" size="mini">lime</b-tag>
+    <b-tag type="green" size="mini">green</b-tag>
+    <b-tag type="cyan" size="mini">cyan</b-tag>
+    <b-tag type="blue" size="mini">blue</b-tag>
+    <b-tag type="geekblue" size="mini">geekblue</b-tag>
+    <b-tag type="purple" size="mini">purple</b-tag>
+</div>
+</template>
+```
+:::
+
+### 可选择标签
+
+ 设置`checkable`属性可以定义一个标签是否可可选择。
+
+::: demo
+```html
+<template>
+    <b-tag type="primary" dark size="mini" checkable><span>primary</span></b-tag>
+    <b-tag type="success" dark size="mini" checkable>success</b-tag>
+    <b-tag type="info" dark size="mini" checkable>info</b-tag>
+    <b-tag type="warning" dark size="mini" checkable>warning</b-tag>
+    <b-tag type="danger" dark size="mini" checkable>danger</b-tag>
+    <b-tag type="magenta" size="mini" dark checkable>magenta</b-tag>
+    <b-tag type="red" size="mini" dark checkable>red</b-tag>
+    <b-tag type="volcano" size="mini" dark checkable>volcano</b-tag>
+    <b-tag type="orange" size="mini" dark checkable>orange</b-tag>
+    <b-tag type="gold" size="mini" dark checkable>gold</b-tag>
+    <b-tag type="yellow" size="mini" dark checkable>yellow</b-tag>
+    <b-tag type="lime" size="mini" dark checkable>lime</b-tag>
+    <b-tag type="green" size="mini" dark checkable>green</b-tag>
+    <b-tag type="cyan" size="mini" dark checkable>cyan</b-tag>
+    <b-tag type="blue" size="mini" dark checkable>blue</b-tag>
+    <b-tag type="geekblue" size="mini" dark checkable>geekblue</b-tag>
+    <b-tag type="purple" size="mini" dark checkable>purple</b-tag>
 </template>
 ```
 :::
@@ -38,7 +102,7 @@
 ::: demo
 ```html
 <template>
-    <b-tag type="primary" closable>标签二</b-tag>
+    <b-tag type="primary" closable>标签一</b-tag>
     <b-tag type="success" closable>标签二</b-tag>
     <b-tag type="info" closable>标签三</b-tag>
     <b-tag type="warning" closable>标签四</b-tag>
@@ -131,10 +195,13 @@ dot 模式简单显示
 | size    |  尺寸   | String  |   medium / small / mini       |    —          |
 | fontSize    |  字体大小   | String  |    —      |    —          |
 | tag-style    |  标签样式(完全控制，尽量不要设置)   | String  |    —      |    —          |
+| checkable    |  是否可选中   | Boolean  |    —      |   false       |
+| default-value |  默认选中状态   | Boolean  |    —      |   true        |
 
 ### Events
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-close    | 关闭事件回调   | 无  |
-| on-click    | 点击事件回调   | 无  |
+| on-close    | 关闭事件回调   | event  |
+| on-click    | 点击事件回调   | event  |
+| on-change   | 选中事件回调,第二项需要设置name值   | checked,name  |

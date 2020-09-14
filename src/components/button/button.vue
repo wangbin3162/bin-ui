@@ -57,86 +57,86 @@
 </template>
 
 <script>
-  import tinycolor from 'tinycolor2'
-  import { oneOf } from '../../utils/util'
+import tinycolor from 'tinycolor2'
+import { oneOf } from '../../utils/util'
 
-  export default {
-    name: 'BButton',
-    props: {
-      type: {
-        type: String,
-        default: 'default'
+export default {
+  name: 'BButton',
+  props: {
+    type: {
+      type: String,
+      default: 'default'
+    },
+    size: {
+      type: String,
+      default: 'default'
+    },
+    icon: {
+      type: String,
+      default: ''
+    },
+    iconStyle: {
+      type: Object
+    },
+    nativeType: {
+      type: String,
+      default: 'button'
+    },
+    loading: Boolean,
+    loadingIcon: {
+      type: String
+    },
+    disabled: Boolean,
+    plain: Boolean,
+    round: Boolean,
+    dashed: Boolean,
+    transparent: Boolean,
+    animationType: {
+      validator(value) {
+        return oneOf(value, ['click', 'waves'])
       },
-      size: {
-        type: String,
-        default: 'default'
-      },
-      icon: {
-        type: String,
-        default: ''
-      },
-      iconStyle: {
-        type: Object
-      },
-      nativeType: {
-        type: String,
-        default: 'button'
-      },
-      loading: Boolean,
-      loadingIcon: {
-        type: String
-      },
-      disabled: Boolean,
-      plain: Boolean,
-      round: Boolean,
-      dashed: Boolean,
-      transparent: Boolean,
-      animationType: {
-        validator(value) {
-          return oneOf(value, ['click', 'waves'])
-        },
-        default: 'click'
-      },
-      textColor: {
-        type: String
+      default: 'click'
+    },
+    textColor: {
+      type: String
+    }
+  },
+  computed: {
+    iconStyles() {
+      return {
+        ...this.textStyle,
+        ...this.iconStyle
       }
     },
-    computed: {
-      iconStyles() {
-        return {
-          ...this.textStyle,
-          ...this.iconStyle
-        }
-      },
-      colorMap() {
-        return {
-          primary: '#0d85ff',
-          success: '#52c41a',
-          info: '#35495E',
-          warning: '#fea638',
-          danger: '#ff4d4f'
-        }
-      },
-      waveColor() {
-        let { type, plain, transparent, dashed } = this
-        return (type === 'default' || type === 'dashed' || plain || transparent || dashed)
+    colorMap() {
+      return {
+        primary: '#1089ff',
+        success: '#52c41a',
+        info: '#35495E',
+        warning: '#fea638',
+        danger: '#ff4d4f'
+      }
+    },
+    waveColor() {
+      let { type, plain, transparent, dashed } = this
+      return (type === 'default' || type === 'dashed' || plain || transparent || dashed)
           ? 'rgba(0, 0, 0, 0.25)' : 'rgba(255, 255, 255, 0.3)'
-      },
-      textStyle() {
-        const { colorMap } = this
-        let color = this.textColor ? (colorMap[this.textColor] ? colorMap[this.textColor] : this.textColor) : null
-        if (color) {
-          return {
-            color: this.disabled ? tinycolor(color).lighten(15).toString() : color
-          }
-        }
-        return null
-      }
     },
-    methods: {
-      handleClick(evt) {
-        this.$emit('click', evt)
+    textStyle() {
+      const { colorMap } = this
+      let color = this.textColor ? (colorMap[this.textColor] ? colorMap[this.textColor] : this.textColor) : null
+      if (color) {
+        return {
+          color: this.disabled ? tinycolor(color).lighten(15).toString() : color
+        }
       }
+      return null
+    }
+  },
+  methods: {
+    handleClick(evt) {
+      this.$emit('click', evt)
     }
   }
+}
 </script>

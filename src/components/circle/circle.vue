@@ -33,7 +33,7 @@
       },
       strokeColor: {
         type: String,
-        default: '#0d85ff'
+        default: '#1089ff'
       },
       strokeLinecap: {
         validator (value) {

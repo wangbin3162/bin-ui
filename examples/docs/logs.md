@@ -7,6 +7,15 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">3.5.1</p>
+        <p class="time">2020-09-14</p>
+        <p class="content">优化按钮,表单样式</p>
+        <p class="content">radio单选组件扩展按钮模式,优化样式显示</p>
+        <p class="content">tag标签优化样式显示,增加扩展选择功能,增加多色显示</p>
+        <p class="content">优化全局颜色设置</p>
+      </b-timeline-item>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
         <p class="version">3.5.0</p>

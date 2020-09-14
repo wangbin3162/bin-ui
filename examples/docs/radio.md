@@ -5,6 +5,7 @@
       <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#zu-he-shi-yong" title="组合使用"></b-anchor-link>
+        <b-anchor-link href="#an-niu-mo-shi" title="按钮模式"></b-anchor-link>
         <b-anchor-link href="#jin-yong" title="禁用"></b-anchor-link>
         <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
         <b-anchor-link href="#radio-events" title="Radio events"></b-anchor-link>
@@ -76,6 +77,62 @@ export default {
 ```
 :::
 
+
+### 按钮模式
+
+::: demo
+```html
+<template>
+<div flex>
+<div>
+   <b-radio-group v-model="fruit" type="button">
+       <b-radio label="香蕉"></b-radio>
+       <b-radio label="苹果"></b-radio>
+       <b-radio label="西瓜"></b-radio>
+   </b-radio-group>
+<br>
+   <b-radio-group v-model="fruit" type="button" size="small">
+       <b-radio label="香蕉"></b-radio>
+       <b-radio label="苹果"></b-radio>
+       <b-radio label="西瓜"></b-radio>
+   </b-radio-group>
+<br>
+   <b-radio-group v-model="fruit" type="button" size="mini">
+       <b-radio label="香蕉"></b-radio>
+       <b-radio label="苹果"></b-radio>
+       <b-radio label="西瓜"></b-radio>
+   </b-radio-group>
+</div>
+<div style="margin-left: 24px;">
+   <b-radio-group v-model="fruit" type="button">
+       <b-radio label="香蕉" disabled></b-radio>
+       <b-radio label="苹果"></b-radio>
+       <b-radio label="西瓜"></b-radio>
+   </b-radio-group>
+<br>
+   <b-radio-group v-model="fruit" type="button" disabled>
+       <b-radio label="香蕉" disabled></b-radio>
+       <b-radio label="苹果"></b-radio>
+       <b-radio label="西瓜"></b-radio>
+   </b-radio-group>
+</div>
+</div>
+
+
+   <span style="color:#ff4511;margin: 5px 0;">{{fruit}}</span>
+</template>
+<script>
+export default {
+    data () {
+        return {
+            fruit: ''
+        }
+    }
+}
+</script>
+```
+:::
+
 ### 禁用
 
 ::: demo
@@ -109,6 +166,7 @@ export default {
 | label     | 组合使用时有效。指定当前选项的 value 值，组合会自动判断是否选中   | String/Number/Boolean  |  —   |    —   |
 | disabled     | 是否禁用当前项  | Boolean  |  —   |   false  |
 | indeterminate     | 设置 indeterminate 状态，只负责样式控制  | Boolean  |  —   |   false  |
+| type     | 设置 单选项为按钮模式  | String  | button   |  —   |
 
 ### Radio events
 
@@ -122,6 +180,7 @@ export default {
 |---------- |-------- |---------- |--------- |
 | value   | 指定选中项目的集合，可以使用 v-model 双向绑定数据  | String/ Number  | ...  |
 | size   | 多选框组的尺寸，可选值为 large、small、default 或者不设置  |String  | — |
+| disabled     | 是否禁用所有选项  | Boolean  |  —   |   false  |
 
 ### RadioGroup  events
 

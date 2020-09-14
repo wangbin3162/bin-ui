@@ -69,12 +69,23 @@
         <b-radio label="right">right</b-radio>
       </b-radio-group>
     </div>
-      <b-form :model="formInline" ref="form" :label-position="type" :label-width="labelWidth">
+    <div class="mb-10">表单尺寸：
+      <b-radio-group v-model="size" style="display: inline-block;">
+        <b-radio label="large">large</b-radio>
+        <b-radio label="default">default</b-radio>
+        <b-radio label="small">small</b-radio>
+        <b-radio label="mini">mini</b-radio>
+      </b-radio-group>
+    </div>
+      <b-form :model="formInline" ref="form" 
+            :label-position="type" 
+            :label-width="labelWidth"
+            :size="size">
         <b-form-item label="用户名" prop="name">
-          <b-input v-model="formInline.name" placeholder="用户名"></b-input>
+          <b-input v-model="formInline.name" placeholder="用户名" :size="size"></b-input>
         </b-form-item>
         <b-form-item label="邮箱" prop="mail">
-          <b-input v-model="formInline.mail" placeholder="邮箱"></b-input>
+          <b-input v-model="formInline.mail" placeholder="邮箱" :size="size"></b-input>
         </b-form-item>
       </b-form>
    </div>
@@ -84,6 +95,7 @@
     data () {
       return {
         type: 'top',
+        size: 'default',
         formInline: {
           name: '',
           mail: ''

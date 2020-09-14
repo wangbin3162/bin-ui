@@ -68,7 +68,7 @@
       },
       activeColorStr() {
         const colorMap = {
-          primary: '#0d85ff',
+          primary: '#1089ff',
           success: '#52c41a',
           info: '#35495E',
           warning: '#fea638',
