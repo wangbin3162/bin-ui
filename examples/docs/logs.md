@@ -9,7 +9,7 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">3.5.2</p>
+        <p class="version">3.5.3</p>
         <p class="time">2020-09-15</p>
         <p class="content">优化按钮,表单样式</p>
         <p class="content">radio单选组件扩展按钮模式,优化样式显示</p>
