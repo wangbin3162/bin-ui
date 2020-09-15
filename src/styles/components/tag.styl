@@ -36,7 +36,7 @@
   }
   &.is-dark {
     line-height: 32px;
-    color: #fff;
+    color: #fff !important;
     border: 0;
     &.is-checkable:not(.is-checked) {
       background: transparent !important;
@@ -44,173 +44,175 @@
       color: #515a6e;
     }
   }
-}
-.is-primary {
-  background-color: $color-primary-light6;
-  color: $color-primary;
-  border: 1px solid $color-primary-light4;
-  &.is-dark {
-    background-color: $color-primary;
-  }
-}
-.is-success {
-  background-color: $color-success-light6;
-  border-color: $color-success-light4;
-  color: $color-success;
-  &.is-dark {
-    background-color: $color-success;
-  }
-}
-.is-info {
-  background-color: $color-info-light6;
-  border-color: $color-info-light4;
-  color: $color-info;
-  &.is-dark {
-    background-color: $color-info;
-  }
-}
-.is-warning {
-  background-color: $color-warning-light6;
-  border-color: $color-warning-light4;
-  color: $color-warning;
-  &.is-dark {
-    background-color: $color-warning;
-  }
-}
-.is-danger {
-  background-color: $color-danger-light6;
-  border-color: $color-danger-light4;
-  color: $color-danger;
-  &.is-dark {
-    background-color: $color-danger;
-  }
-}
-.no-border {
-  border: none;
-  height: auto;
-}
-.is-small {
-  height: $small-height
-  line-height: $small-height - 2
-  &.is-dark {
-    line-height: $small-height
-  }
-}
-.is-mini {
-  height: $mini-height - 2;
-  padding: 0 8px;
-  font-size: 12px;
-  line-height: $mini-height - 4;
-  &.is-dark {
-    line-height: $mini-height - 2;
-  }
-}
-.bin-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 5px;
-  border-radius: 50%;
-  background: $border-color-base;
-  position: relative;
-  top: 0;
-}
 
 
-// 多色
-.is-magenta {
-  background: #fff0f6;
-  border-color: #ffadd2;
-  color: #eb2f96;
-  &.is-dark {
-    background-color: #eb2f96;
+  &.is-primary {
+    background-color: $color-primary-light6;
+    color: $color-primary;
+    border: 1px solid $color-primary-light4;
+    &.is-dark {
+      background-color: $color-primary;
+    }
   }
-}
-.is-red {
-  background: #fff1f0;
-  border-color: #ffa39e;
-  color: #f5222d;
-  &.is-dark {
-    background-color: #f5222d;
+  &.is-success {
+    background-color: $color-success-light6;
+    border-color: $color-success-light4;
+    color: $color-success;
+    &.is-dark {
+      background-color: $color-success;
+    }
   }
-}
-.is-volcano {
-  background: #fff2e8;
-  border-color: #ffbb96;
-  color: #fa541c;
-  &.is-dark {
-    background-color: #fa541c;
+  &.is-info {
+    background-color: $color-info-light6;
+    border-color: $color-info-light4;
+    color: $color-info;
+    &.is-dark {
+      background-color: $color-info;
+    }
   }
-}
-.is-orange {
-  background: #fff7e6;
-  border-color: #ffd591;
-  color: #fa8c16;
-  &.is-dark {
-    background-color: #fa8c16;
+  &.is-warning {
+    background-color: $color-warning-light6;
+    border-color: $color-warning-light4;
+    color: $color-warning;
+    &.is-dark {
+      background-color: $color-warning;
+    }
   }
-}
-.is-gold {
-  background: #fffbe6;
-  border-color: #ffe58f;
-  color: #faad14;
-  &.is-dark {
-    background-color: #faad14;
+  &.is-danger {
+    background-color: $color-danger-light6;
+    border-color: $color-danger-light4;
+    color: $color-danger;
+    &.is-dark {
+      background-color: $color-danger;
+    }
   }
-}
-.is-yellow {
-  background: #feffe6;
-  border-color: #fffb8f;
-  color: #fadb14;
-  &.is-dark {
-    background-color: #fadb14;
+  &.no-border {
+    border: none;
+    height: auto;
   }
-}
-.is-lime {
-  background: #fcffe6;
-  border-color: #eaff8f;
-  color: #a0d911;
-  &.is-dark {
-    background-color: #a0d911;
+  &.is-small {
+    height: $small-height
+    line-height: $small-height - 2
+    &.is-dark {
+      line-height: $small-height
+    }
   }
-}
-.is-green {
-  background: #fcffe6;
-  border-color: #eaff8f;
-  color: #52c41a;
-  &.is-dark {
-    background-color: #52c41a;
+  &.is-mini {
+    height: $mini-height - 2;
+    padding: 0 8px;
+    font-size: 12px;
+    line-height: $mini-height - 4;
+    &.is-dark {
+      line-height: $mini-height - 2;
+    }
   }
-}
-.is-cyan {
-  background: #e6fffb;
-  border-color: #87e8de;
-  color: #13c2c2;
-  &.is-dark {
-    background-color: #13c2c2;
+  &.bin-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background: $border-color-base;
+    position: relative;
+    top: 0;
   }
-}
-.is-blue {
-  background: #e6f7ff;
-  border-color: #91d5ff;
-  color: #1890ff;
-  &.is-dark {
-    background-color: #1890ff;
+
+
+  // 多色
+  &.is-magenta {
+    background: #fff0f6;
+    border-color: #ffadd2;
+    color: #eb2f96;
+    &.is-dark {
+      background-color: #eb2f96;
+    }
   }
-}
-.is-geekblue {
-  background: #f0f5ff;
-  border-color: #adc6ff;
-  color: #2f54eb;
-  &.is-dark {
-    background-color: #2f54eb;
+  &.is-red {
+    background: #fff1f0;
+    border-color: #ffa39e;
+    color: #f5222d;
+    &.is-dark {
+      background-color: #f5222d;
+    }
   }
-}
-.is-purple {
-  background: #f9f0ff;
-  border-color: #d3adf7;
-  color: #722ed1;
-  &.is-dark {
-    background-color: #722ed1;
+  &.is-volcano {
+    background: #fff2e8;
+    border-color: #ffbb96;
+    color: #fa541c;
+    &.is-dark {
+      background-color: #fa541c;
+    }
+  }
+  &.is-orange {
+    background: #fff7e6;
+    border-color: #ffd591;
+    color: #fa8c16;
+    &.is-dark {
+      background-color: #fa8c16;
+    }
+  }
+  &.is-gold {
+    background: #fffbe6;
+    border-color: #ffe58f;
+    color: #faad14;
+    &.is-dark {
+      background-color: #faad14;
+    }
+  }
+  &.is-yellow {
+    background: #feffe6;
+    border-color: #fffb8f;
+    color: #fadb14;
+    &.is-dark {
+      background-color: #fadb14;
+    }
+  }
+  &.is-lime {
+    background: #fcffe6;
+    border-color: #eaff8f;
+    color: #a0d911;
+    &.is-dark {
+      background-color: #a0d911;
+    }
+  }
+  &.is-green {
+    background: #fcffe6;
+    border-color: #eaff8f;
+    color: #52c41a;
+    &.is-dark {
+      background-color: #52c41a;
+    }
+  }
+  &.is-cyan {
+    background: #e6fffb;
+    border-color: #87e8de;
+    color: #13c2c2;
+    &.is-dark {
+      background-color: #13c2c2;
+    }
+  }
+  &.is-blue {
+    background: #e6f7ff;
+    border-color: #91d5ff;
+    color: #1890ff;
+    &.is-dark {
+      background-color: #1890ff;
+    }
+  }
+  &.is-geekblue {
+    background: #f0f5ff;
+    border-color: #adc6ff;
+    color: #2f54eb;
+    &.is-dark {
+      background-color: #2f54eb;
+    }
+  }
+  &.is-purple {
+    background: #f9f0ff;
+    border-color: #d3adf7;
+    color: #722ed1;
+    &.is-dark {
+      background-color: #722ed1;
+    }
   }
 }
