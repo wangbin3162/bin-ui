@@ -1,14 +1,47 @@
-.bin-form{
-  &--large .bin-form-item-label {
-    height: $large-height;
+.bin-form {
+  &--large {
+    .bin-form-item-label {
+      height: $large-height;
+    }
+    .bin-form-item-content {
+      .bin-checkbox-group, .bin-radio-group {
+        height: $large-height;
+        line-height: $large-height - 2;
+      }
+      .bin-slider-wrap {
+        margin: 16px 0;
+      }
+    }
   }
-  &--small .bin-form-item-label {
-    height: $small-height;
+  &--small {
+    .bin-form-item-label {
+      height: $small-height;
+    }
+    .bin-form-item-content {
+      .bin-checkbox-group, .bin-radio-group {
+        height: $small-height;
+        line-height: $small-height - 2;
+      }
+      .bin-slider-wrap {
+        margin: 12px 0;
+      }
+    }
   }
-  &--mini .bin-form-item-label {
-    height: $mini-height;
-  }
+  &--mini {
+    .bin-form-item-label {
+      height: $mini-height;
+    }
 
+    .bin-form-item-content {
+      .bin-checkbox-group, .bin-radio-group {
+        height: $mini-height;
+        line-height: $mini-height - 2;
+      }
+      .bin-slider-wrap {
+        margin: 10px 0;
+      }
+    }
+  }
 }
 //item
 .bin-form-item {
@@ -36,7 +69,11 @@
     line-height: $base-line-height;
     font-size: $base-font-size;
     .bin-checkbox-group, .bin-radio-group {
+      height: $default-height;
       line-height: $default-height - 2;
+    }
+    .bin-slider {
+      margin: 0 4px;
     }
   }
 

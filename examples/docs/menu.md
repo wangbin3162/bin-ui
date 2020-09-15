@@ -123,7 +123,7 @@
 ::: demo
 ```html
 <template>
-<b-menu :theme="theme2" active-name="1" accordion>
+<b-menu active-name="1" accordion>
    <b-menu-item name="1"><b-icon name="ios-home"></b-icon>首页</b-menu-item>
    <b-menu-item name="2" to="https://wangbin3162.gitee.io/bin-ace-editor/#/guide" target="_blank">
       <b-icon name="ios-bookmarks"></b-icon>编辑器

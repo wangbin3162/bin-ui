@@ -13,11 +13,7 @@
     </div>
 </template>
 
-区隔内容的分割线。
-
-可以对对不同文本段落进行分割。
-
-可以对行内文字/链接进行分割，例如表格的操作列。
+区隔内容的分割线。可以对对不同文本段落进行分割。可以对行内文字/链接进行分割，例如表格的操作列。
 
 ### 水平分割线
 
@@ -60,11 +56,28 @@ align属性可以设置标题位置 使用 align="left" 设置为行内的垂直
 :::demo
 ```html
 <template>
-    <b-divider align="left">靠左标题</b-divider>
-    <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>
-    <b-divider align="right">靠右标题</b-divider>
-    <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>
+<b-divider :align="align">{{title}}</b-divider>
+<div flex="cross:center">
+    <span style="margin: 0 4px;">对齐方式</span>
+    <b-radio-group v-model="align" size="small" type="button">
+      <b-radio label="left">左对齐</b-radio>
+      <b-radio label="right">右对齐</b-radio>
+      <b-radio label="center">居中</b-radio>
+    </b-radio-group>
+    <span style="margin: 0 4px;">标题</span>
+    <b-input v-model="title" size="small" clearable style="width: 200px;"></b-input>
+</div>
 </template>
+<script>
+export default{
+  data(){
+    return {
+      title: '测试标题',
+      align: 'left'
+    }   
+  }
+}
+</script>
 ```
 :::
 
