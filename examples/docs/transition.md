@@ -130,6 +130,9 @@
         <transition name="fade-scale-move">
           <div v-show="show3" class="transition-box">fade-scale-move</div>
         </transition>
+        <transition name="fade-down">
+          <div v-show="show3" class="transition-box">fade-down</div>
+        </transition>
     </div>
    </div>
 </template>

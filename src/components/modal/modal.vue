@@ -4,7 +4,7 @@
       <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click.stop="handleMask"></div>
     </transition>
     <div :class="wrapClasses" :style="wrapStyles" @click.stop="handleWrapClick">
-      <transition name="fade-scale-move" @after-enter="animationEnter" @after-leave="animationFinish">
+      <transition name="fade-down" @after-enter="animationEnter" @after-leave="animationFinish">
         <div :class="classes" :style="mainStyles" v-show="visible">
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
             <a :class="[prefixCls + '-close']" v-if="closable" @click="close">

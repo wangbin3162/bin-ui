@@ -1,25 +1,20 @@
 //fade-in
-.fade-in-enter-active,
-.fade-in-leave-active {
+.fade-in-enter-active,.fade-in-leave-active {
   transition: all .3s cubic-bezier(.55, 0, .1, 1);
 }
-.fade-in-enter,
-.fade-in-leave-to {
+.fade-in-enter,.fade-in-leave-to {
   opacity: 0;
 }
 //  fade-in-linear
-.fade-in-linear-enter-active,
-.fade-in-linear-leave-active {
+.fade-in-linear-enter-active,.fade-in-linear-leave-active {
   transition: all .35s;
 }
-.fade-in-linear-enter,
-.fade-in-linear-leave,
-.fade-in-linear-leave-to {
+.fade-in-linear-enter,.fade-in-linear-leave,.fade-in-linear-leave-to {
   opacity: 0;
 }
 // move-left
 .move-left-enter-active, .move-left-leave-active {
-  transition: all .2s ease-in-out
+  transition: all .3s ease-in-out
   transform-origin: 0 0;
 }
 .move-left-enter, .move-left-leave-to {
@@ -28,19 +23,17 @@
 }
 // move-right
 .move-right-enter-active, .move-right-leave-active {
-  transition: all .2s ease-in-out
+  transition: all .3s ease-in-out
 }
 .move-right-enter, .move-right-leave-to {
   opacity: 0;
   transform: translateX(100%);
 }
 //  中间缩放zoom-in-center
-.zoom-in-center-enter-active,
-.zoom-in-center-leave-active {
+.zoom-in-center-enter-active,.zoom-in-center-leave-active {
   transition: all .3s cubic-bezier(.55, 0, .1, 1);
 }
 .zoom-in-center-enter,
-.zoom-in-center-leave-active
 .zoom-in-center-leave-to {
   opacity: 0;
   transform: scaleX(0);
@@ -50,37 +43,32 @@
 .zoom-in-bottom-leave-active {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s cubic-bezier(0.23, 1, 0.32, 1);
   transform-origin: center bottom;
 }
-.zoom-in-bottom-enter,
-.zoom-in-bottom-leave-to {
+.zoom-in-bottom-enter,.zoom-in-bottom-leave-to {
   opacity: 0;
   transform: scaleY(0);
 }
 //  顶部缩放zoom-in-top
-.zoom-in-top-enter-active,
-.zoom-in-top-leave-active {
+.zoom-in-top-enter-active,.zoom-in-top-leave-active {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s cubic-bezier(0.23, 1, 0.32, 1);
   transform-origin: center top;
 }
-.zoom-in-top-enter,
-.zoom-in-top-leave-to {
+.zoom-in-top-enter,.zoom-in-top-leave-to {
   opacity: 0;
   transform: scaleY(0);
 }
 //  左侧缩放zoom-in-left
-.zoom-in-enter-active,
-.zoom-in-leave-active {
+.zoom-in-enter-active,.zoom-in-leave-active {
   opacity: 1;
   transform: scale(1, 1);
-  transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s cubic-bezier(0.23, 1, 0.32, 1);
   transform-origin: left left;
 }
-.zoom-in-enter,
-.zoom-in-leave-to {
+.zoom-in-enter,.zoom-in-leave-to {
   opacity: 0;
   transform: scale(.45, .45);
 }
@@ -93,8 +81,7 @@
   transition: 0.3s width ease-in-out, 0.3s padding-left ease-in-out, 0.3s padding-right ease-in-out;
 }
 
-.list-enter-active,
-.list-leave-active {
+.list-enter-active,.list-leave-active {
   transition: all 1s;
 }
 .list-enter, .list-leave-to {
@@ -108,7 +95,7 @@
 // 过渡动画 横向渐变
 .fade-transverse-leave-active,
 .fade-transverse-enter-active {
-  transition: all .5s;
+  transition: all .3s;
 }
 .fade-transverse-enter {
   opacity: 0;
@@ -120,9 +107,8 @@
 }
 
 // 过渡动画 缩放渐变
-.fade-scale-leave-active,
-.fade-scale-enter-active {
-  transition: all .5s;
+.fade-scale-leave-active, .fade-scale-enter-active {
+  transition: all .3s;
 }
 .fade-scale-enter {
   opacity: 0;
@@ -134,15 +120,21 @@
 }
 
 // 过渡动画 缩放渐变
-.fade-scale-move-leave-active,
-.fade-scale-move-enter-active {
-  transition: all .35s;
+.fade-scale-move-leave-active, .fade-scale-move-enter-active {
+  transition: all .3s;
 }
 .fade-scale-move-enter, .fade-scale-move-leave-to {
   opacity: 0;
   transform: scale(.9) translateY(-30px);
 }
 
+.fade-down-leave-active, .fade-down-enter-active {
+  transition: all .3s;
+}
+.fade-down-enter, .fade-down-leave-to {
+  opacity: 0;
+  transform: translate3d(0, -20px, 0);
+}
 @keyframes rotating {
   0% {
     transform: rotateZ(0deg);

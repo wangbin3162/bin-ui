@@ -9,6 +9,12 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">3.5.6</p>
+        <p class="time">2020-09-16</p>
+        <p class="content">优化全局过度时间，优化模态窗动画</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">3.5.5</p>
         <p class="time">2020-09-15</p>
         <p class="content">优化按钮,表单样式</p>
