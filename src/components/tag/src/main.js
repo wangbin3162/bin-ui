@@ -19,14 +19,17 @@ export default {
     fontSize: String,
     dark: Boolean,
     checkable: Boolean,
-    defaultValue: {
+    value: {
       type: Boolean,
       default: true
     }
   },
-  created() {
-    if (this.checkable) {
-      this.checked = this.defaultValue
+  watch: {
+    value: {
+      handler(value) {
+        this.checked = value
+      },
+      immediate: true
     }
   },
   methods: {
@@ -38,6 +41,7 @@ export default {
       event.stopPropagation()
       if (this.checkable) {
         this.checked = !this.checked
+        this.$emit('input', this.checked)
         this.$emit('on-change', this.checked, this.name)
       }
       this.$emit('on-click', event)

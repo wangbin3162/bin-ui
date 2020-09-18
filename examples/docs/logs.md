@@ -9,9 +9,9 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <p class="version">3.5.7</p>
+        <p class="version">3.5.8</p>
         <p class="time">2020-09-18</p>
-        <p class="content">优化tag标签颜色，优化输入框清除按钮点击区域</p>
+        <p class="content">优化tag标签颜色,优化选中绑定事件，优化输入框清除按钮点击区域</p>
       </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>

@@ -4,13 +4,13 @@
   border: 1px solid #e8eaec;
   color: #515a6e;
   background: #f7f7f7;
-  font-size: $base-font-size;
+  font-size: 12px;
   vertical-align: middle;
   opacity: 1;
   overflow: hidden;
-  padding: 0 10px;
-  height: 32px;
-  line-height: 30px;
+  padding: 0 8px;
+  height: 30px;
+  line-height: 28px;
   border-radius: $border-base-radius + 1;
   box-sizing: border-box;
   white-space: nowrap;
@@ -35,12 +35,12 @@
     color: #515a6e !important;
   }
   &.is-dark {
-    line-height: 32px;
+    line-height: 28px;
     color: #fff !important;
-    border: 0;
+    border-color: transparent !important;
     &.is-checkable:not(.is-checked) {
       background: transparent !important;
-      border: 0;
+      border-color: transparent !important;
       color: #515a6e;
     }
   }
@@ -49,7 +49,7 @@
   &.is-primary {
     background-color: $color-primary-light6;
     color: $color-primary;
-    border: 1px solid $color-primary-light4;
+    border-color: $color-primary-light4;
     &.is-dark {
       background-color: $color-primary;
     }
@@ -91,19 +91,18 @@
     height: auto;
   }
   &.is-small {
-    height: $small-height
-    line-height: $small-height - 2
+    height: 26px;
+    line-height: 24px;
     &.is-dark {
-      line-height: $small-height
+      line-height: 24px;
     }
   }
   &.is-mini {
-    height: $mini-height - 2;
-    padding: 0 8px;
+    height: 22px;
+    line-height: 20px;
     font-size: 12px;
-    line-height: $mini-height - 4;
     &.is-dark {
-      line-height: $mini-height - 2;
+      line-height: 20px;
     }
   }
   &.bin-dot {
@@ -157,30 +156,6 @@
     color: #faad14;
     &.is-dark {
       background-color: #faad14;
-    }
-  }
-  &.is-yellow {
-    background: #feffe6;
-    border-color: #fffb8f;
-    color: #fadb14;
-    &.is-dark {
-      background-color: #fadb14;
-    }
-  }
-  &.is-lime {
-    background: #fcffe6;
-    border-color: #eaff8f;
-    color: #a0d911;
-    &.is-dark {
-      background-color: #a0d911;
-    }
-  }
-  &.is-green {
-    background: #fcffe6;
-    border-color: #eaff8f;
-    color: #52c41a;
-    &.is-dark {
-      background-color: #52c41a;
     }
   }
   &.is-cyan {
