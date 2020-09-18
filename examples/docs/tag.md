@@ -87,10 +87,10 @@
     <b-tag type="yellow" size="mini" dark checkable>yellow</b-tag>
     <b-tag type="lime" size="mini" dark checkable>lime</b-tag>
     <b-tag type="green" size="mini" dark checkable>green</b-tag>
-    <b-tag type="cyan" size="mini" dark checkable>cyan</b-tag>
-    <b-tag type="blue" size="mini" dark checkable>blue</b-tag>
-    <b-tag type="geekblue" size="mini" dark checkable>geekblue</b-tag>
-    <b-tag type="purple" size="mini" dark checkable>purple</b-tag>
+    <b-tag type="cyan" size="mini"  checkable>cyan</b-tag>
+    <b-tag type="blue" size="mini"  checkable>blue</b-tag>
+    <b-tag type="geekblue" size="mini"  checkable>geekblue</b-tag>
+    <b-tag type="purple" size="mini"  checkable>purple</b-tag>
 </template>
 ```
 :::

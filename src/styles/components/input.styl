@@ -26,9 +26,12 @@ placeholder() {
   }
   &:hover {
     .bin-input-icon-clear {
-      display: inline-block;
-      cursor: pointer;
+      display: block;
     }
+  }
+  .bin-input-icon-clear .icon-ios-close-circle {
+    vertical-align: baseline;
+    cursor: pointer;
   }
 }
 // 大小设置
@@ -41,10 +44,12 @@ placeholder() {
     i {
       font-size: 18px;
       line-height: $large-height;
+      height: $large-height;
     }
   }
   .bin-input-icon {
     line-height: $large-height;
+    height: $large-height;
   }
 }
 .bin-input-wrapper-small {
@@ -55,10 +60,12 @@ placeholder() {
     width: $small-height;
     i {
       line-height: $small-height;
+      height: $small-height;
     }
   }
   .bin-input-icon {
     line-height: $small-height;
+    height: $small-height;
   }
 }
 .bin-input-wrapper-mini {
@@ -69,10 +76,12 @@ placeholder() {
     width: $mini-height;
     i {
       line-height: $mini-height;
+      height: $mini-height;
     }
   }
   .bin-input-icon {
     line-height: $mini-height;
+    height: $mini-height;
   }
 }
 
@@ -200,10 +209,18 @@ textarea.bin-input {
   font-size: 12px;
 }
 
+
+.bin-input-type-text.bin-input-with-word-count .bin-input {
+  padding-right: 40px;
+}
+.bin-input-type-textarea.bin-input-with-word-count .bin-input {
+   padding-bottom: 16px;
+ }
 .bin-input-type-textarea .bin-input-word-count {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
   top: auto;
+  right: 17px;
 }
 
