@@ -2,8 +2,8 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  line-height: $base-line-height;
   height: $default-height;
+  line-height: $default-height - 2;
   white-space: nowrap;
   cursor: pointer;
   background: $color-white;
@@ -16,7 +16,7 @@
   margin: 0;
   transition: .3s;
   user-select: none;
-  padding: 4px 15px;
+  padding: 0 15px;
   font-size: $base-font-size;
   border-radius: $border-base-radius;
   .iconfont {
@@ -82,21 +82,24 @@
 
 .bin-button--large {
   height: $large-height;
-  padding: 4px 14px;
+  line-height: $large-height - 2;
+  padding: 0 14px;
   font-size: $header-font-size;
   &.is-round {
-    padding: 4px 14px;
+    padding: 0 14px;
   }
 }
 .bin-button--small {
   height: $small-height;
-  padding: 2px 11px;
+  line-height: $small-height - 2;
+  padding: 0 11px;
   &.is-round {
-    padding: 2px 11px;
+    padding: 0 11px;
   }
 }
 .bin-button--mini {
   height: $mini-height;
+  line-height: $mini-height - 2;
   padding: 0 7px;
   &.is-round {
     padding: 0 10px;
@@ -136,7 +139,7 @@
   &.is-plain {
     color: $color-primary;
     background: $color-primary-light5;
-    border-color: $color-primary-light4;
+    border-color: $color-primary-light3;
     &:hover, &:focus {
       border-color: $color-primary-light2;
     }
@@ -148,7 +151,7 @@
       cursor: not-allowed;
       color: $color-primary-light2;
       background-color: $color-primary-light5;
-      border-color: $color-primary-light4;
+      border-color: $color-primary-light3;
     }
   }
   &.is-dashed {
@@ -211,7 +214,7 @@
   &.is-plain {
     color: $color-success;
     background: $color-success-light5;
-    border-color: $color-success-light4;
+    border-color: $color-success-light3;
     &:hover, &:focus {
       border-color: $color-success-light2;
     }
@@ -223,7 +226,7 @@
       cursor: not-allowed;
       color: $color-success-light2;
       background-color: $color-success-light5;
-      border-color: $color-success-light4;
+      border-color: $color-success-light3;
     }
   }
   &.is-dashed {
@@ -286,7 +289,7 @@
   &.is-plain {
     color: $color-info;
     background: $color-info-light5;
-    border-color: $color-info-light4;
+    border-color: $color-info-light3;
     &:hover, &:focus {
       border-color: $color-info-light2;
     }
@@ -298,7 +301,7 @@
       cursor: not-allowed;
       color: $color-info-light2;
       background-color: $color-info-light5;
-      border-color: $color-info-light4;
+      border-color: $color-info-light3;
     }
   }
   &.is-dashed {
@@ -361,7 +364,7 @@
   &.is-plain {
     color: $color-warning;
     background: $color-warning-light5;
-    border-color: $color-warning-light4;
+    border-color: $color-warning-light3;
     &:hover, &:focus {
       border-color: $color-warning-light2;
     }
@@ -373,7 +376,7 @@
       cursor: not-allowed;
       color: $color-warning-light2;
       background-color: $color-warning-light5;
-      border-color: $color-warning-light4;
+      border-color: $color-warning-light3;
     }
   }
   &.is-dashed {
@@ -435,7 +438,7 @@
   &.is-plain {
     color: $color-danger;
     background: $color-danger-light5;
-    border-color: $color-danger-light4;
+    border-color: $color-danger-light3;
     &:hover, &:focus {
       border-color: $color-danger-light2;
     }
@@ -447,7 +450,7 @@
       cursor: not-allowed;
       color: $color-danger-light2;
       background-color: $color-danger-light5;
-      border-color: $color-danger-light4;
+      border-color: $color-danger-light3;
     }
   }
   &.is-dashed {
