@@ -22,6 +22,7 @@
 ```html
 <template>
     <b-input-number :max="10" :min="1" v-model="value1"></b-input-number>
+    <b-input-number :max="10" :min="1" v-model="value1" always></b-input-number>
 </template>
 <script>
     export default {
@@ -123,7 +124,12 @@
     <div>
       <b-input-number v-model="value6" disabled></b-input-number>&nbsp;&nbsp;
       <b-input-number v-model="value6" readonly></b-input-number>&nbsp;&nbsp;
-       <b-input-number v-model="value6" :editable="false"></b-input-number>
+      <b-input-number v-model="value6" :editable="false"></b-input-number>
+    </div>
+    <div>
+      <b-input-number v-model="value6" disabled always></b-input-number>&nbsp;&nbsp;
+      <b-input-number v-model="value6" readonly always></b-input-number>&nbsp;&nbsp;
+      <b-input-number v-model="value6" :editable="false" always></b-input-number>
     </div>
 </template>
 <script>
@@ -155,6 +161,7 @@
 |editable	|是否可编辑|	Boolean| |	true|
 |precision	|数值精度|	Number| |	-|
 |active-change|	是否实时响应数据|	Boolean| |	true|
+| always |	是否始终显示控制器 |	Boolean| true |	- |
 
 ### Events 
 

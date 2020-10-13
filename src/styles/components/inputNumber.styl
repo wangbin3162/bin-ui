@@ -8,7 +8,7 @@
   transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
   margin: 0;
   padding: 0;
-  width: 90px;
+  width: 100px;
   height: $default-height;
   line-height: $default-height;
   vertical-align: middle;
@@ -26,6 +26,65 @@
     border-color: $color-primary;
     outline: 0;
     box-shadow: 0 0 0 2px $color-input-shadow;
+  }
+  &-always {
+    width: 140px;
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 38px;
+    }
+    .bin-input-number-handler-minus, .bin-input-number-handler-plus {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      width: $default-height;
+      height: $default-height;
+      line-height: $default-height - 2px;
+      text-align: center;
+      background: #f5f7fa;
+      color: #606266;
+      cursor: pointer;
+    }
+    .bin-input-number-handler-minus {
+      cursor: pointer;
+      left: 0;
+      border-radius: $border-base-radius 0 0 $border-base-radius;
+      border-right: $border-base;
+      &-disabled {
+        color: #c0c4cc;
+        cursor: not-allowed;
+        &:hover {
+          .iconfont {
+            color: #c0c4cc;
+          }
+        }
+      }
+      &:hover {
+        .iconfont {
+          color: $color-primary;
+        }
+      }
+    }
+    .bin-input-number-handler-plus {
+      cursor: pointer;
+      right: 0;
+      border-radius: 0 $border-base-radius $border-base-radius 0;
+      border-left: $border-base;
+      &-disabled {
+        color: #c0c4cc;
+        cursor: not-allowed;
+        &:hover {
+          .iconfont {
+            color: #c0c4cc;
+          }
+        }
+      }
+      &:hover {
+        .iconfont {
+          color: $color-primary;
+        }
+      }
+    }
   }
 }
 .bin-input-number-input-wrap {
@@ -131,6 +190,27 @@
 .bin-input-number-disabled .bin-input-number-handler-wrap {
   display: none;
 }
+
+.bin-input-number-disabled.bin-input-number-always {
+  .bin-input-number-handler-minus {
+    color: #c0c4cc;
+    cursor: not-allowed;
+    &:hover {
+      .iconfont {
+        color: #c0c4cc;
+      }
+    }
+  }
+  .bin-input-number-handler-plus {
+    color: #c0c4cc;
+    cursor: not-allowed;
+    &:hover {
+      .iconfont {
+        color: #c0c4cc;
+      }
+    }
+  }
+}
 //不同尺寸
 .bin-input-number-mini {
   padding: 0;
@@ -143,6 +223,18 @@
   }
   .bin-input-number-input-wrap {
     height: $mini-height;
+  }
+  &.bin-input-number-always {
+    width: 100px;
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 $mini-height + 4px;
+    }
+    .bin-input-number-handler-minus, .bin-input-number-handler-plus {
+      width: $mini-height;
+      height: $mini-height;
+      line-height: $mini-height - 2px;
+    }
   }
 }
 .bin-input-number-small {
@@ -160,6 +252,18 @@
   .bin-input-number-input-wrap {
     height: $small-height;
   }
+  &.bin-input-number-always {
+    width: 120px;
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 $small-height + 4px;
+    }
+    .bin-input-number-handler-minus, .bin-input-number-handler-plus {
+      width: $small-height;
+      height: $small-height;
+      line-height: $small-height - 2px;
+    }
+  }
 }
 .bin-input-number-large {
   font-size: $header-font-size
@@ -175,6 +279,18 @@
   }
   .bin-input-number-input-wrap {
     height: $large-height;
+  }
+  &.bin-input-number-always {
+    width: 160px;
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 $large-height + 4px;
+    }
+    .bin-input-number-handler-minus, .bin-input-number-handler-plus {
+      width: $large-height;
+      height: $large-height;
+      line-height: $large-height - 4px;
+    }
   }
 }
 
