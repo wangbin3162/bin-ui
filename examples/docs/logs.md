@@ -9,6 +9,13 @@
     <b-timeline>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
+        <p class="version">3.5.10</p>
+        <p class="time">2020-10-15</p>
+        <p class="content">优化CheckBox，cascader组件样式和展开收起动画组件</p>
+        <p class="content">优化tree样式，展开收起菜单，扩展查询过滤函数功能</p>
+      </b-timeline-item>
+      <b-timeline-item color="primary">
+        <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
         <p class="version">3.5.9</p>
         <p class="time">2020-10-08</p>
         <p class="content">优化tag、table、tree、button部分样式显示。</p>

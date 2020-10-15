@@ -45,6 +45,9 @@
     border-radius: $border-base-radius;
     cursor: pointer;
     transition: background-color .2s ease-in-out;
+    span {
+      color: $color-danger;
+    }
     &:hover {
       background-color: $color-primary-light5;
     }
@@ -53,6 +56,21 @@
     }
   }
 
+  &-render-title {
+    width: 100%;
+    margin: 0;
+    padding: 0 6px;
+    line-height: 24px;
+    border-radius: $border-base-radius;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+    &:hover {
+      background-color: $color-primary-light5;
+    }
+    &-selected, &-selected:hover {
+      background-color: $color-primary-light4;
+    }
+  }
   &-arrow {
     flex: none;
     width: 24px;

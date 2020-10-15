@@ -21,7 +21,7 @@
 ::: demo
 ```html
 <template>
-<div style="width: 300px;border:1px solid #eeeeee;">
+<div>
   <b-tree :data="data" show-checkbox></b-tree>
 </div>
 </template>
@@ -231,6 +231,100 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
 ```
 :::
 
+### 可以筛选
+
+如果树结构层级较多，可配合过滤函数进行过滤筛选
+
+::: demo 
+```html
+<template>
+<div>
+  <b-input v-model="query" search placeholder="输入过滤条件后回车筛选" @on-search="handleFilter" style="width: 230px;"></b-input>
+  <b-divider style="margin: 14px 0;"></b-divider>
+  <b-tree :data="data" ref="tree" :filter-node-method="filterNode"></b-tree>
+</div>
+</template>
+<script>
+export default {
+  data () {
+    return {
+      query:'',
+      data: [
+        {
+          id: '1',
+          title: '江苏省',
+          children: [ 
+            {
+              id: '1-1', 
+              title: '南京市',
+              children: [
+                { id: '1-1-1', title: '玄武区'},
+                { id: '1-1-2', title: '鼓楼区'},
+                { id: '1-1-3', title: '建邺区'},
+                { id: '1-1-4', title: '秦淮区'}
+              ]
+            },
+            {
+              id: '1-2', 
+              title: '无锡市',
+              children: [
+                { id: '1-2-1', title: '锡山区'},
+                { id: '1-2-2', title: '惠山区'},
+                { id: '1-2-3', title: '滨湖区'},
+                { id: '1-2-4', title: '梁溪区'}
+              ]
+            },
+            {
+              id: '1-3', 
+              title: '徐州市',
+              children: [
+                { id: '1-3-1', title: '鼓楼区'},
+                { id: '1-3-2', title: '云龙区'},
+                { id: '1-3-3', title: '泉山区'},
+                { id: '1-3-4', title: '铜山区'},
+                { id: '1-3-5', title: '贾汪区'},
+                { id: '1-3-6', title: '沛县' },
+                { id: '1-3-7', title: '丰县' },
+                { id: '1-3-8', title: '睢宁县' },
+                { id: '1-3-9', title: '新沂市' },
+                { id: '1-3-10', title: '邳州市' }
+              ]
+            }
+          ]
+        },
+        {
+          id: '2',
+          title: '河北省',
+          children: [ 
+            {
+              id: '2-1', 
+              title: '石家庄',
+              children: [
+                { id: '2-1-1', title: '长安区'},
+                { id: '2-1-2', title: '新华区'},
+                { id: '2-1-3', title: '鼓楼区'}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  methods: {
+    handleFilter(value){
+      this.$refs.tree.filter(value)
+    },
+    filterNode(value, node) {
+        if (!value) return true;
+        // return node.title===value.trim()
+        return node.title.indexOf(value) !== -1;
+    }
+  }
+}
+</script>
+```
+:::
+
 ### render函数
 
 可以设置show-checkbox开启勾选，并可以设置数据格式中的默认选中
@@ -254,7 +348,8 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
                             return h('span', {
                                 style: {
                                     display: 'inline-block',
-                                    width: '100%'
+                                    width: '100%',
+                                    lineHeight: '24px'
                                 }
                             }, [
                                 h('span', [
@@ -271,8 +366,7 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
                                 h('span', {
                                     style: {
                                         display: 'inline-block',
-                                        float: 'right',
-                                        marginRight: '32px'
+                                        float: 'right'
                                     }
                                 }, [
                                     h('b-button', {
@@ -311,7 +405,8 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
                 return h('span', {
                     style: {
                         display: 'inline-block',
-                        width: '100%'
+                        width: '100%',
+                        lineHeight: '24px'
                     }
                 }, [
                     h('span', [
@@ -328,8 +423,7 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
                     h('span', {
                         style: {
                             display: 'inline-block',
-                            float: 'right',
-                            marginRight: '32px'
+                            float: 'right'
                         }
                     }, [
                         h('b-icon', {
@@ -359,9 +453,9 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
             },
             append (data) {
                 const children = data.children || [];
+                data.expand = true
                 children.push({
-                    title: 'new node',
-                    expand: true
+                    title: 'new node'
                 });
                 this.$set(data, 'children', children);
             },
@@ -391,7 +485,8 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
 | check-strictly   | 复选框的情况下，是否严格的遵循父子不互相关联的做法 | Boolean		  |  —   |   false   |
 | check-directly   | 开启后，在 show-checkbox 模式下，select 的交互也将转为 check | Boolean		  |  —   |   false   |
 | lock-select    | 锁定树选择，再部分业务中常用，比如开启弹窗后禁用树的选中操作   | Boolean  |  —   |  false  |
-| nowrap   | tree-node显示是否不换行（默认折行显示）   | Boolean  |  —   |  false  |
+| nowrap   | tree-node显示是否不换行（默认折行显示）   | Boolean  |  —   |  true  |
+| filter-node-method   | 筛选过滤树节点函数   | Function  |  —   |   —   |
 
 ### Events
 
@@ -408,6 +503,7 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
 | getCheckedNodes     | 获取被勾选的节点   | 无 |
 | getSelectedNodes     | 获取被选中的节点   | 无  |
 | getCheckedAndIndeterminateNodes     | 获取选中及半选节点   | 无  |
+| filter     | 树节点过滤函数，必须设置filter-node-method 过滤匹配函数   | 无  |
 
 ### Children 
 

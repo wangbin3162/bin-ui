@@ -1,7 +1,7 @@
 import { addClass, removeClass } from '../../utils/dom'
 
 const Transition = {
-  beforeEnter (el) {
+  beforeEnter(el) {
     addClass(el, 'collapse-transition')
     if (!el.dataset) el.dataset = {}
 
@@ -12,7 +12,7 @@ const Transition = {
     el.style.paddingTop = 0
     el.style.paddingBottom = 0
   },
-  enter (el) {
+  enter(el) {
     el.dataset.oldOverflow = el.style.overflow
     if (el.scrollHeight !== 0) {
       el.style.height = el.scrollHeight + 'px'
@@ -26,13 +26,13 @@ const Transition = {
 
     el.style.overflow = 'hidden'
   },
-  afterEnter (el) {
+  afterEnter(el) {
     // for safari: remove class then reset height is necessary
     removeClass(el, 'collapse-transition')
     el.style.height = ''
     el.style.overflow = el.dataset.oldOverflow
   },
-  beforeLeave (el) {
+  beforeLeave(el) {
     if (!el.dataset) el.dataset = {}
     el.dataset.oldPaddingTop = el.style.paddingTop
     el.dataset.oldPaddingBottom = el.style.paddingBottom
@@ -41,7 +41,7 @@ const Transition = {
     el.style.height = el.scrollHeight + 'px'
     el.style.overflow = 'hidden'
   },
-  leave (el) {
+  leave(el) {
     if (el.scrollHeight !== 0) {
       // for safari: add class after set height, or it will jump to zero height suddenly, weired
       addClass(el, 'collapse-transition')
@@ -50,7 +50,7 @@ const Transition = {
       el.style.paddingBottom = 0
     }
   },
-  afterLeave (el) {
+  afterLeave(el) {
     removeClass(el, 'collapse-transition')
     el.style.height = ''
     el.style.overflow = el.dataset.oldOverflow
@@ -62,15 +62,9 @@ const Transition = {
 export default {
   name: 'CollapseTransition',
   functional: true,
-  props: {
-    appear: Boolean
-  },
-  render (h, { children, props }) {
+  render(h, { children }) {
     const data = {
-      on: Transition,
-      props: {
-        appear: props.appear
-      }
+      on: Transition
     }
     return h('transition', data, children)
   }
