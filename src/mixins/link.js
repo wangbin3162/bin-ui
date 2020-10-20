@@ -11,7 +11,7 @@ export default {
     },
     target: {
       type: String,
-      validator (value) {
+      validator(value) {
         return oneOf(value, ['_blank', '_self', '_parent', '_top'])
       },
       default: '_self'
@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    linkUrl () {
+    linkUrl() {
       const type = typeof this.to
       if (type !== 'string') {
         return null
@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    handleClick (newWindow = false) {
+    handleClick(newWindow = false) {
       const router = this.$router
       if (newWindow) {
         let to = this.to
@@ -60,7 +60,7 @@ export default {
         }
       }
     },
-    handleCheckClick (event, new_window = false) {
+    handleCheckClick(event, new_window = false) {
       if (this.to) {
         if (this.target === '_blank') {
           return false

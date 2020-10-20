@@ -144,9 +144,9 @@
         :open="open"
         :value="value3"
         confirm
-        @on-change="handleChange"
-        @on-clear="handleClear"
-        @on-ok="handleOk">
+        @change="handleChange"
+        @clear="handleClear"
+        @ok="handleOk">
         <a href="javascript:void(0)" @click="handleClick">
             <template v-if="value3 === ''">Select time</template>
             <template v-else>{{ value3 }}</template>
@@ -210,7 +210,7 @@
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | type     | 显示类型   | string  |  time、timerange |  date  |
-| value    | 日期   | Date  |  JavaScript 的 Date，也可以是标准的日期格式,注意：value 使用 v-model 时，值是 Date 类型，可以配合 @on-change 使用  |  —  |
+| value    | 日期   | Date  |  JavaScript 的 Date，也可以是标准的日期格式,注意：value 使用 v-model 时，值是 Date 类型，可以配合 @change 使用  |  —  |
 | format   | 展示的时间格式   | Date  |  —  | HH:mm:ss |
 | steps   | 下拉列表的时间间隔，数组的三项分别对应小时、分钟、秒。例如设置为 [1, 15] 时，分钟会显示：00、15、30、45。  | Array  |  —  |[]|
 | placement| 日期选择器出现的位置   | string  |  top,top-start,top-end,bottom,bottom-start,bottom-end,left,left-start,left-end,right,right-start,right-end  |  bottom-start  |
@@ -230,10 +230,10 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-|  on-change     | 时间发生变化时触发   | 已经格式化后的时间，比如 09:41:00  |
-|  on-open-change| 弹出浮层和关闭浮层时触发  | true / false  |
-|  on-ok     | 点击确定按钮时触发  | —  |
-|  on-clear    | 清空日期时触发 | —  |
+|  change     | 时间发生变化时触发   | 已经格式化后的时间，比如 09:41:00  |
+|  open-change| 弹出浮层和关闭浮层时触发  | true / false  |
+|  ok     | 点击确定按钮时触发  | —  |
+|  clear    | 清空日期时触发 | —  |
 
 ### Slot
 

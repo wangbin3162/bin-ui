@@ -1,7 +1,7 @@
 import tinycolor from 'tinycolor2'
 import { oneOf } from '../../utils/util'
 
-function setAlpha (data, alpha) {
+function setAlpha(data, alpha) {
   const color = tinycolor(data)
   const { _a } = color
 
@@ -12,7 +12,7 @@ function setAlpha (data, alpha) {
   return color
 }
 
-function getColor (data, colorData) {
+function getColor(data, colorData) {
   const alpha = colorData && colorData.a
 
   if (colorData) {
@@ -29,7 +29,7 @@ function getColor (data, colorData) {
   return setAlpha(colorData, alpha)
 }
 
-export function changeColor (data, oldHue) {
+export function changeColor(data, oldHue) {
   const colorData = data === '' ? '#1089ff' : data
   const color = getColor(data, colorData)
   const hsl = color.toHsl()
@@ -64,7 +64,7 @@ export function changeColor (data, oldHue) {
   }
 }
 
-export function clamp (value, min, max) {
+export function clamp(value, min, max) {
   if (value < min) {
     return min
   }
@@ -76,25 +76,25 @@ export function clamp (value, min, max) {
   return value
 }
 
-export function getIncrement (key, keys, increment) {
+export function getIncrement(key, keys, increment) {
   return oneOf(key, keys) ? increment : 0
 }
 
-export function getTouches (e, prop) {
+export function getTouches(e, prop) {
   return e.touches ? e.touches[0][prop] : 0
 }
 
-export function toRGBAString (rgba) {
+export function toRGBAString(rgba) {
   const { r, g, b, a } = rgba
 
   return `rgba(${[r, g, b, a].join(',')})`
 }
 
-export function isValidHex (hex) {
+export function isValidHex(hex) {
   return tinycolor(hex).isValid()
 }
 
-function checkIteratee (data, counts, letter) {
+function checkIteratee(data, counts, letter) {
   let { checked, passed } = counts
   const value = data[letter]
 
@@ -111,7 +111,7 @@ function checkIteratee (data, counts, letter) {
 
 const keysToCheck = ['r', 'g', 'b', 'a', 'h', 's', 'l', 'v']
 
-export function simpleCheckForValidColor (data) {
+export function simpleCheckForValidColor(data) {
   const results = keysToCheck.reduce(checkIteratee.bind(null, data), { checked: 0, passed: 0 })
 
   return results.checked === results.passed ? data : undefined

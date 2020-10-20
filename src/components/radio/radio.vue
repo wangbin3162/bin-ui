@@ -156,8 +156,8 @@ export default {
           })
         }
       } else {
-        this.$emit('on-change', value)
-        this.dispatch('BFormItem', 'on-form-change', value)
+        this.$emit('change', value)
+        this.dispatch('BFormItem', 'form-change', value)
       }
     },
     updateValue() {

@@ -114,7 +114,7 @@ export default {
             :value="checkAll"
             @click.prevent.native="handleCheckAll">全选</b-checkbox>
     </div>
-    <b-checkbox-group v-model="checkAllGroup" @on-change="checkAllGroupChange">
+    <b-checkbox-group v-model="checkAllGroup" @change="checkAllGroupChange">
         <b-checkbox label="香蕉"></b-checkbox>
         <b-checkbox label="苹果"></b-checkbox>
         <b-checkbox label="西瓜"></b-checkbox>
@@ -176,7 +176,7 @@ export default {
 
 | 事件名      | 说明    | 返回值  |
 |---------- |-------- |---------- |
-| on-change     | 只在单独使用时有效。在选项状态发生改变时触发，通过修改外部的数据改变时不会触发  | true/false  |
+| change     | 只在单独使用时有效。在选项状态发生改变时触发，通过修改外部的数据改变时不会触发  | true/false  |
 
 ### CheckboxGroup props
 
@@ -189,4 +189,4 @@ export default {
 
 | 事件名      | 说明    | 返回值  |
 |---------- |-------- |---------- |
-| on-change     | 在选项状态发生改变时触发，返回已选中的数组。通过修改外部的数据改变时不会触发 | [...] |
+| change     | 在选项状态发生改变时触发，返回已选中的数组。通过修改外部的数据改变时不会触发 | [...] |

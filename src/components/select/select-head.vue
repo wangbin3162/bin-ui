@@ -36,188 +36,188 @@
 </template>
 
 <script>
-  import Emitter from '../../mixins/emitter'
+import Emitter from '../../mixins/emitter'
 
-  const prefixCls = 'bin-select'
+const prefixCls = 'bin-select'
 
-  export default {
-    name: 'BSelectHead',
-    mixins: [Emitter],
-    props: {
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      filterable: {
-        type: Boolean,
-        default: false
-      },
-      multiple: {
-        type: Boolean,
-        default: false
-      },
-      remote: {
-        type: Boolean,
-        default: false
-      },
-      initialLabel: {
-        type: [String, Number, Array]
-      },
-      values: {
-        type: Array,
-        default: () => []
-      },
-      clearable: {
-        type: [Function, Boolean],
-        default: false
-      },
-      inputElementId: {
-        type: String
-      },
-      placeholder: {
-        type: String
-      },
-      queryProp: {
-        type: String,
-        default: ''
-      },
-      prefix: {
-        type: String
-      },
-      maxTagCount: {
-        type: Number
-      },
-      maxTagPlaceholder: {
-        type: Function
-      }
+export default {
+  name: 'BSelectHead',
+  mixins: [Emitter],
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
     },
-    data() {
-      return {
-        prefixCls: prefixCls,
-        query: '',
-        inputLength: 20,
-        remoteInitialLabel: this.initialLabel,
-        preventRemoteCall: false
-      }
+    filterable: {
+      type: Boolean,
+      default: false
     },
-    computed: {
-      singleDisplayClasses() {
-        const { filterable, multiple, showPlaceholder } = this
-        return [{
-          [prefixCls + '-head-with-prefix']: this.$slots.prefix || this.prefix,
-          [prefixCls + '-placeholder']: showPlaceholder && !filterable,
-          [prefixCls + '-selected-value']: !showPlaceholder && !multiple && !filterable
-        }]
-      },
-      singleDisplayValue() {
-        if ((this.multiple && this.values.length > 0) || this.filterable) return ''
-        return `${this.selectedSingle}` || this.placeholder
-      },
-      showPlaceholder() {
-        let status = false
-        if (!this.multiple) {
-          const value = this.values[0]
-          if (typeof value === 'undefined' || String(value).trim() === '') {
-            status = !this.remoteInitialLabel
-          }
+    multiple: {
+      type: Boolean,
+      default: false
+    },
+    remote: {
+      type: Boolean,
+      default: false
+    },
+    initialLabel: {
+      type: [String, Number, Array]
+    },
+    values: {
+      type: Array,
+      default: () => []
+    },
+    clearable: {
+      type: [Function, Boolean],
+      default: false
+    },
+    inputElementId: {
+      type: String
+    },
+    placeholder: {
+      type: String
+    },
+    queryProp: {
+      type: String,
+      default: ''
+    },
+    prefix: {
+      type: String
+    },
+    maxTagCount: {
+      type: Number
+    },
+    maxTagPlaceholder: {
+      type: Function
+    }
+  },
+  data() {
+    return {
+      prefixCls: prefixCls,
+      query: '',
+      inputLength: 20,
+      remoteInitialLabel: this.initialLabel,
+      preventRemoteCall: false
+    }
+  },
+  computed: {
+    singleDisplayClasses() {
+      const { filterable, multiple, showPlaceholder } = this
+      return [{
+        [prefixCls + '-head-with-prefix']: this.$slots.prefix || this.prefix,
+        [prefixCls + '-placeholder']: showPlaceholder && !filterable,
+        [prefixCls + '-selected-value']: !showPlaceholder && !multiple && !filterable
+      }]
+    },
+    singleDisplayValue() {
+      if ((this.multiple && this.values.length > 0) || this.filterable) return ''
+      return `${this.selectedSingle}` || this.placeholder
+    },
+    showPlaceholder() {
+      let status = false
+      if (!this.multiple) {
+        const value = this.values[0]
+        if (typeof value === 'undefined' || String(value).trim() === '') {
+          status = !this.remoteInitialLabel
+        }
+      } else {
+        if (!this.values.length > 0) {
+          status = true
+        }
+      }
+      return status
+    },
+    resetSelect() {
+      return !this.showPlaceholder && this.clearable
+    },
+    inputStyle() {
+      let style = {}
+
+      if (this.multiple) {
+        if (this.showPlaceholder) {
+          style.width = '100%'
         } else {
-          if (!this.values.length > 0) {
-            status = true
-          }
+          style.width = `${this.inputLength}px`
         }
-        return status
-      },
-      resetSelect() {
-        return !this.showPlaceholder && this.clearable
-      },
-      inputStyle() {
-        let style = {}
+      }
 
-        if (this.multiple) {
-          if (this.showPlaceholder) {
-            style.width = '100%'
-          } else {
-            style.width = `${this.inputLength}px`
-          }
-        }
-
-        return style
-      },
-      selectedSingle() {
-        const selected = this.values[0]
-        return selected ? selected.label : (this.remoteInitialLabel || '')
-      },
-      selectedMultiple() {
-        return this.multiple ? this.values : []
-      },
-      // 使用 prefix 时，在 filterable
-      headCls() {
-        return [
-          { [`${prefixCls}-head-flex`]: this.filterable && (this.$slots.prefix || this.prefix) },
-          { 'head-multiple-wrap': this.multiple }
-        ]
+      return style
+    },
+    selectedSingle() {
+      const selected = this.values[0]
+      return selected ? selected.label : (this.remoteInitialLabel || '')
+    },
+    selectedMultiple() {
+      return this.multiple ? this.values : []
+    },
+    // 使用 prefix 时，在 filterable
+    headCls() {
+      return [
+        { [`${prefixCls}-head-flex`]: this.filterable && (this.$slots.prefix || this.prefix) },
+        { 'head-multiple-wrap': this.multiple }
+      ]
+    }
+  },
+  methods: {
+    onInputFocus() {
+      this.$emit('input-focus')
+    },
+    onInputBlur() {
+      if (!this.values.length) this.query = '' // #5155
+      this.$emit('input-blur')
+    },
+    removeTag(value) {
+      if (this.disabled) return false
+      this.dispatch('BSelect', 'select-selected', value)
+    },
+    resetInputState() {
+      this.inputLength = this.$refs.input.value.length * 12 + 20
+      this.$emit('keydown')
+    },
+    handleInputDelete() {
+      if (this.multiple && this.selectedMultiple.length && this.query === '') {
+        this.removeTag(this.selectedMultiple[this.selectedMultiple.length - 1])
       }
     },
-    methods: {
-      onInputFocus() {
-        this.$emit('on-input-focus')
-      },
-      onInputBlur() {
-        if (!this.values.length) this.query = '' // #5155
-        this.$emit('on-input-blur')
-      },
-      removeTag(value) {
-        if (this.disabled) return false
-        this.dispatch('BSelect', 'on-select-selected', value)
-      },
-      resetInputState() {
-        this.inputLength = this.$refs.input.value.length * 12 + 20
-        this.$emit('on-keydown')
-      },
-      handleInputDelete() {
-        if (this.multiple && this.selectedMultiple.length && this.query === '') {
-          this.removeTag(this.selectedMultiple[this.selectedMultiple.length - 1])
-        }
-      },
-      onHeaderClick(e) {
-        if (this.filterable && e.target === this.$el) {
-          this.$refs.input.focus()
-        }
-      },
-      onClear() {
-        this.$emit('on-clear')
+    onHeaderClick(e) {
+      if (this.filterable && e.target === this.$el) {
+        this.$refs.input.focus()
       }
     },
-    watch: {
-      values([value]) {
-        if (!this.filterable) return
-        this.preventRemoteCall = true
-        if (this.multiple) {
-          this.query = ''
-          this.preventRemoteCall = false // this should be after the query change setter above
-          return
-        }
-        // #982
-        if (typeof value === 'undefined' || value === '' || value === null) {
-          this.query = ''
-        } else {
-          this.query = value.label
-        }
-        this.$nextTick(() => {
-          this.preventRemoteCall = false
-        }) // this should be after the query change setter above
-      },
-      query(val) {
-        if (this.preventRemoteCall) {
-          this.preventRemoteCall = false
-          return
-        }
-
-        this.$emit('on-query-change', val)
-      },
-      queryProp(query) {
-        if (query !== this.query) this.query = query
+    onClear() {
+      this.$emit('clear')
+    }
+  },
+  watch: {
+    values([value]) {
+      if (!this.filterable) return
+      this.preventRemoteCall = true
+      if (this.multiple) {
+        this.query = ''
+        this.preventRemoteCall = false // this should be after the query change setter above
+        return
       }
+      // #982
+      if (typeof value === 'undefined' || value === '' || value === null) {
+        this.query = ''
+      } else {
+        this.query = value.label
+      }
+      this.$nextTick(() => {
+        this.preventRemoteCall = false
+      }) // this should be after the query change setter above
+    },
+    query(val) {
+      if (this.preventRemoteCall) {
+        this.preventRemoteCall = false
+        return
+      }
+
+      this.$emit('query-change', val)
+    },
+    queryProp(query) {
+      if (query !== this.query) this.query = query
     }
   }
+}
 </script>

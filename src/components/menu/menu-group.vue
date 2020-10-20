@@ -7,30 +7,30 @@
   </li>
 </template>
 <script>
-  import mixin from './mixin'
+import mixin from './mixin'
 
-  const prefixCls = 'bin-menu'
+const prefixCls = 'bin-menu'
 
-  export default {
-    name: 'BMenuGroup',
-    mixins: [mixin],
-    props: {
-      title: {
-        type: String,
-        default: ''
-      }
-    },
-    data () {
-      return {
-        prefixCls: prefixCls
-      }
-    },
-    computed: {
-      groupStyle () {
-        return this.hasParentSubmenu && this.mode !== 'horizontal' ? {
-          paddingLeft: 43 + (this.parentSubmenuNum - 1) * 28 + 'px'
-        } : {}
-      }
+export default {
+  name: 'BMenuGroup',
+  mixins: [mixin],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      prefixCls: prefixCls
+    }
+  },
+  computed: {
+    groupStyle() {
+      return this.hasParentSubmenu && this.mode !== 'horizontal' ? {
+        paddingLeft: 43 + (this.parentSubmenuNum - 1) * 28 + 'px'
+      } : {}
     }
   }
+}
 </script>

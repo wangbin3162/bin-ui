@@ -158,23 +158,23 @@
    <b-popover
       confirm
       title="确认删除此项吗?"
-      @on-ok="ok"
-      @on-cancel="cancel">
+      @ok="ok"
+      @cancel="cancel">
       <b-button type="danger" plain>删 除</b-button>
   </b-popover>&nbsp;&nbsp;
    <b-popover
       confirm
       title="Are you sure delete this item?"
       ok-text="Yes" cancel-text="No"
-      @on-ok="ok"
-      @on-cancel="cancel">
+      @ok="ok"
+      @cancel="cancel">
       <b-button type="danger" plain>自定义文字</b-button>
   </b-popover>&nbsp;&nbsp;
    <b-popover
       confirm icon-name="ios-trash" :icon-styles="{color:'#f5222d'}"
       title="Are you sure delete this item?"
-      @on-ok="ok"
-      @on-cancel="cancel">
+      @ok="ok"
+      @cancel="cancel">
       <b-button type="danger" plain>自定义图标</b-button>
   </b-popover>
 </div>
@@ -217,10 +217,10 @@
 
 | 名称      | 事件名    | 返回值    |
 |---------- |-------- |-------- |
-| on-popper-show     | 在提示框显示时触发   | 无    |
-| on-popper-hide    | 在提示框消失时触发   | 无    |
-| on-ok	 | 点击确定的回调 ,只在 confirm 模式下有效  | 无    |
-| on-cancel   | 点击取消的回调,只在 confirm 模式下有效   | 无    |
+| popper-show     | 在提示框显示时触发   | 无    |
+| popper-hide    | 在提示框消失时触发   | 无    |
+| ok	 | 点击确定的回调 ,只在 confirm 模式下有效  | 无    |
+| cancel   | 点击取消的回调,只在 confirm 模式下有效   | 无    |
 
 ### Slot
 

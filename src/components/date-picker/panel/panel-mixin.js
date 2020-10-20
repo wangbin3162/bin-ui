@@ -9,43 +9,43 @@ export default {
     }
   },
   methods: {
-    iconBtnCls (direction, type = '') {
+    iconBtnCls(direction, type = '') {
       return [
         `${prefixCls}-icon-btn`,
         `${datePrefixCls}-${direction}-btn`,
         `${datePrefixCls}-${direction}-btn-arrow${type}`
       ]
     },
-    handleShortcutClick (shortcut) {
-      if (shortcut.value) this.$emit('on-pick', shortcut.value())
+    handleShortcutClick(shortcut) {
+      if (shortcut.value) this.$emit('pick', shortcut.value())
       if (shortcut.onClick) shortcut.onClick(this)
     },
-    handlePickClear () {
+    handlePickClear() {
       this.resetView()
-      this.$emit('on-pick-clear')
+      this.$emit('pick-clear')
     },
-    handlePickSuccess () {
+    handlePickSuccess() {
       this.resetView()
-      this.$emit('on-pick-success')
+      this.$emit('pick-success')
     },
-    handlePickClick () {
-      this.$emit('on-pick-click')
+    handlePickClick() {
+      this.$emit('pick-click')
     },
-    resetView () {
+    resetView() {
       setTimeout(() => {
         this.currentView = this.selectionMode
       }, 500) // 500ms so the dropdown can close before changing
     },
-    handleClear () {
+    handleClear() {
       this.dates = this.dates.map(() => null)
       this.rangeState = {}
-      this.$emit('on-pick', this.dates)
+      this.$emit('pick', this.dates)
       this.handleConfirm()
     },
-    handleConfirm (visible, type) {
-      this.$emit('on-pick', this.dates, visible, type || this.type)
+    handleConfirm(visible, type) {
+      this.$emit('pick', this.dates, visible, type || this.type)
     },
-    onToggleVisibility (open) {
+    onToggleVisibility(open) {
       const { timeSpinner, timeSpinnerEnd } = this.$refs
       if (open && timeSpinner) timeSpinner.updateScroll()
       if (open && timeSpinnerEnd) timeSpinnerEnd.updateScroll()

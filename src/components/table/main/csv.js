@@ -19,7 +19,7 @@ const defaults = {
   quoted: false
 }
 
-export default function csv (columns, datas, options, noHeader = false) {
+export default function csv(columns, datas, options, noHeader = false) {
   options = Object.assign({}, defaults, options)
   let columnOrder
   const content = []

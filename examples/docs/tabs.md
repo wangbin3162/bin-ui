@@ -90,7 +90,7 @@ export default {
 <template>
   <div class="mb-15"><b-button type="primary" plain size="small" @click="handleAdd">add tab</b-button></div>
   <b-tabs v-model="activeTab" :data="tabs" type="card" closable
-    @on-tab-close="handleTabClose"></b-tabs>
+    @tab-close="handleTabClose"></b-tabs>
   <p>开启的tab：{{ activeTab }}</p>
 </template>
 <script>
@@ -126,13 +126,13 @@ export default {
 
 ### ContextMenu
 
-配合可以关闭，可以开启右键菜单实现更多的配置信息，开启右键菜单需要手动插入右键菜单的按钮列表标签为`<li>`,并需要配合`on-tab-select`事件
+配合可以关闭，可以开启右键菜单实现更多的配置信息，开启右键菜单需要手动插入右键菜单的按钮列表标签为`<li>`,并需要配合`tab-select`事件
 
 ::: demo 
 ```html
 <template>
   <b-tabs v-model="activeTab" :data="tabs" type="card" closable context-menu
-    ref="tabs" @on-tab-close="handleTabClose" @on-tab-select="handleSelect">
+    ref="tabs" @tab-close="handleTabClose" @tab-select="handleSelect">
     <template v-slot:menu>
         <li @click="refreshSelected">刷新</li>
         <li @click="closeSelected">关闭</li>
@@ -198,7 +198,7 @@ export default {
 <template>
   <div class="mb-15"><b-button type="primary" plain size="small" @click="handleAdd">add tab</b-button></div>
   <b-tabs v-model="activeTab" :data="tabs" type="tag" closable context-menu
-    ref="tabs" @on-tab-close="handleTabClose" @on-tab-select="handleSelect">
+    ref="tabs" @tab-close="handleTabClose" @tab-select="handleSelect">
     <template v-slot:menu>
         <li @click="refreshSelected">刷新</li>
         <li @click="closeSelected">关闭</li>
@@ -275,6 +275,6 @@ export default {
 
 | 事件名      | 说明    | 返回值    |
 |---------- |-------- |---------- |
-| on-change | 绑定事件改变事件  | 当前选中的tab  |
-| on-tab-close   | 关闭一个tab事件  | 当前关闭的tab  |
-| on-tab-select  | 右键选中事件回调，用于配合右键系统缓存点击的tag   | 右键选中的tab  |
+| change | 绑定事件改变事件  | 当前选中的tab  |
+| tab-close   | 关闭一个tab事件  | 当前关闭的tab  |
+| tab-select  | 右键选中事件回调，用于配合右键系统缓存点击的tag   | 右键选中的tab  |

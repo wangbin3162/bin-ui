@@ -308,9 +308,9 @@ export default {
          :value="value3"
          confirm
          type="date"
-         @on-change="handleChange"
-         @on-clear="handleClear"
-         @on-ok="handleOk">
+         @change="handleChange"
+         @clear="handleClear"
+         @ok="handleOk">
          <a href="javascript:void(0)" @click="handleClick">
              <template v-if="value3 === ''">Select date</template>
              <template v-else>{{ value3 }}</template>
@@ -393,7 +393,7 @@ type 为 `datetime` 或 `datetimerange` 可以选择时间。
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | type     | 显示类型   | string  |  date、daterange、datetime、datetimerange、year、month  |  date  |
-| value    | 日期   | Date  |  JavaScript 的 Date，也可以是标准的日期格式,注意：value 使用 v-model 时，值是 Date 类型，可以配合 @on-change 使用  |  —  |
+| value    | 日期   | Date  |  JavaScript 的 Date，也可以是标准的日期格式,注意：value 使用 v-model 时，值是 Date 类型，可以配合 @change 使用  |  —  |
 | format   | 日期的格式化   | Date  |  —  | date/daterange：yyyy-MM-dd, datetime/datetimerange：yyyy-MM-dd HH:mm:ss,year：yyyy,month：yyyy-MM |
 | placement| 日期选择器出现的位置   | string  |  top,top-start,top-end,bottom,bottom-start,bottom-end,left,left-start,left-end,right,right-start,right-end  |  bottom-start  |
 | placeholder | 提示文本   | string  |  —  |  — |
@@ -412,7 +412,7 @@ type 为 `datetime` 或 `datetimerange` 可以选择时间。
 | appendToBody | 是否将弹层放置于 body 内 | Boolean |  —  |false |
 | element-id | 给表单元素设置 id，详见 Form 用法。 | String |  —  |  —  |
 | time-picker-options | 可以在 type 为 datetime 和 datetimerange 下，配置 TimePicker 的属性，比如时间间隔 steps：:time-picker-options="{steps: [1, 10, 10]}"。 | Object	 |  —  |{}  |
-| separator | 两个日期间的分隔符 | String |  —  |  —  |
+| separator | 两个日期间的分隔符 | String |  —  |  ~  |
 
 ### Options
 
@@ -427,11 +427,11 @@ type 为 `datetime` 或 `datetimerange` 可以选择时间。
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-|  on-change     | 日期发生变化时触发   | 返回两个值，已经格式化后的日期，比如 2016-01-01，和当前的日期类型，比如 date  |
-|  on-open-change| 弹出日历和关闭日历时触发  | true / false  |
-|  on-ok     | 在 confirm 模式下有效，点击确定按钮时触发   | —  |
-|  on-clear    | 在 confirm 模式或 clearable = true 时有效，在清空日期时触发  | —  |
-|  on-clickoutside     | 点击外部关闭下拉菜单时触发   |event  |
+|  change     | 日期发生变化时触发   | 返回两个值，已经格式化后的日期，比如 2016-01-01，和当前的日期类型，比如 date  |
+|  open-change| 弹出日历和关闭日历时触发  | true / false  |
+|  ok     | 在 confirm 模式下有效，点击确定按钮时触发   | —  |
+|  clear    | 在 confirm 模式或 clearable = true 时有效，在清空日期时触发  | —  |
+|  click-outside     | 点击外部关闭下拉菜单时触发   |event  |
 
 ### Slot
 

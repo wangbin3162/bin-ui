@@ -286,20 +286,20 @@ export default {
       this.$nextTick(() => {
         this.currentValue = val
         this.$emit('input', val)
-        this.$emit('on-change', val)
-        this.dispatch('BFormItem', 'on-form-change', val)
+        this.$emit('change', val)
+        this.dispatch('BFormItem', 'form-change', val)
       })
     },
     focus(event) {
       this.focused = true
-      this.$emit('on-focus', event)
+      this.$emit('focus', event)
     },
     blur() {
       this.focused = false
-      this.$emit('on-blur')
+      this.$emit('blur')
 
       if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
-        this.dispatch('BFormItem', 'on-form-blur', this.currentValue)
+        this.dispatch('BFormItem', 'form-blur', this.currentValue)
       }
     },
     keyDown(e) {

@@ -305,9 +305,9 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-close     | 关闭抽屉触发   | 无  |
-| on-resize-width   | 调整宽度   | 无  |
-| on-visible-change    | 显示状态发生变化时触发   | true / false  |
+| close     | 关闭抽屉触发   | 无  |
+| resize-width   | 调整宽度   | 无  |
+| visible-change    | 显示状态发生变化时触发   | true / false  |
 
 ### Slot
 

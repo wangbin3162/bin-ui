@@ -32,25 +32,25 @@ export default {
     }
   },
   computed: {
-    dates () {
+    dates() {
       const { selectionMode, value, rangeState } = this
       const rangeSelecting = selectionMode === 'range' && rangeState.selecting
       return rangeSelecting ? [rangeState.from] : value
     }
   },
   methods: {
-    handleClick (cell) {
+    handleClick(cell) {
       if (cell.disabled || cell.type === 'weekLabel') return
       const newDate = new Date(clearHours(cell.date))
 
-      this.$emit('on-pick', newDate)
-      this.$emit('on-pick-click')
+      this.$emit('pick', newDate)
+      this.$emit('pick-click')
     },
-    handleMouseMove (cell) {
+    handleMouseMove(cell) {
       if (!this.rangeState.selecting) return
       if (cell.disabled) return
       const newDate = cell.date
-      this.$emit('on-change-range', newDate)
+      this.$emit('change-range', newDate)
     }
   }
 }

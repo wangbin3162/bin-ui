@@ -232,7 +232,7 @@ export default {
 <div>
     <div>{{ text }}</div>
     <div style="width:240px;">
-      <b-cascader :data="data" @on-change="handleChange">
+      <b-cascader :data="data" @change="handleChange">
         <a href="javascript:void(0)">选择</a>
       </b-cascader>
     </div>
@@ -798,8 +798,8 @@ export default {
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-change    | 选择完成后的回调，返回值 value 即已选值 value，selectedData 为已选项的具体数据   | value, selectedData  |
-| on-visible-change    |展开和关闭弹窗时触发   | 显示状态，Boolean  |
+| change    | 选择完成后的回调，返回值 value 即已选值 value，selectedData 为已选项的具体数据   | value, selectedData  |
+| visible-change    |展开和关闭弹窗时触发   | 显示状态，Boolean  |
 
 ### Slot
 

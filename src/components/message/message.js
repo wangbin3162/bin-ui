@@ -5,7 +5,7 @@ Message.newInstance = properties => {
   const _props = properties || {}
   // 创建一个实例
   const Instance = new Vue({
-    render (h) {
+    render(h) {
       return h(Message, {
         props: _props
       })
@@ -19,14 +19,14 @@ Message.newInstance = properties => {
   const message = Instance.$children[0]
   // 返回一个vnode对象
   return {
-    notice (noticeProps) {
+    notice(noticeProps) {
       message.add(noticeProps)
     },
-    remove (name) {
+    remove(name) {
       message.close(name)
     },
     component: message,
-    destroy (element) {
+    destroy(element) {
       message.closeAll()
       setTimeout(function () {
         document.body.removeChild(document.getElementsByClassName(element)[0])

@@ -6,7 +6,7 @@ LoadingBar.newInstance = properties => {
   // 创建一个实例
   const Instance = new Vue({
     data: _props,
-    render (h) {
+    render(h) {
       return h(LoadingBar, {
         props: _props
       })
@@ -20,7 +20,7 @@ LoadingBar.newInstance = properties => {
   const loadingBar = Instance.$children[0]
   // 返回一个vnode对象
   return {
-    update (options) {
+    update(options) {
       if ('percent' in options) {
         loadingBar.percent = options.percent
       }
@@ -32,7 +32,7 @@ LoadingBar.newInstance = properties => {
       }
     },
     component: loadingBar,
-    destroy () {
+    destroy() {
       document.body.removeChild(document.getElementsByClassName('bin-loading-bar')[0])
     }
   }

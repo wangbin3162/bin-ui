@@ -187,11 +187,11 @@ const RANGE_PARSER = function (text, format, RANGE_SEPARATOR) {
 
 export const TYPE_VALUE_RESOLVER_MAP = {
   default: {
-    formatter (value) {
+    formatter(value) {
       if (!value) return ''
       return '' + value
     },
-    parser (text) {
+    parser(text) {
       if (text === undefined || text === '') return null
       return text
     }
@@ -236,18 +236,19 @@ export const TYPE_VALUE_RESOLVER_MAP = {
       const values = typeof value === 'string' ? value.split(',') : value
       return values.map(value => {
         if (value instanceof Date) return value
-        if (typeof value === 'string') value = value.trim()
-        else if (typeof value !== 'number' && !value) value = ''
+        if (typeof value === 'string') {
+          value = value.trim()
+        } else if (typeof value !== 'number' && !value) value = ''
         return parseDate(value, format)
       })
     }
   },
   number: {
-    formatter (value) {
+    formatter(value) {
       if (!value) return ''
       return '' + value
     },
-    parser (text) {
+    parser(text) {
       let result = Number(text)
 
       if (!isNaN(text)) {

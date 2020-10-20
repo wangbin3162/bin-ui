@@ -44,16 +44,16 @@
 ```html
 <template>
 <div>
-    <b-tag  size="mini">default</b-tag>
-    <b-tag type="primary" dark size="mini">primary</b-tag>
-    <b-tag type="success" dark size="mini">success</b-tag>
-    <b-tag type="info" dark size="mini">info</b-tag>
-    <b-tag type="warning" dark size="mini">warning</b-tag>
-    <b-tag type="danger" dark size="mini">danger</b-tag>
-    <b-tag type="magenta" size="mini">magenta</b-tag>
-    <b-tag type="red" size="mini">red</b-tag>
-    <b-tag type="volcano" size="mini">volcano</b-tag>
-    <b-tag type="orange" size="mini">orange</b-tag>
+    <b-tag size="small">default</b-tag>
+    <b-tag type="primary" dark size="small">primary</b-tag>
+    <b-tag type="success" dark size="small">success</b-tag>
+    <b-tag type="info" dark size="small">info</b-tag>
+    <b-tag type="warning" dark size="small">warning</b-tag>
+    <b-tag type="danger" dark size="small">danger</b-tag>
+    <b-tag type="magenta" size="small">magenta</b-tag>
+    <b-tag type="red" size="small">red</b-tag>
+    <b-tag type="volcano" size="small">volcano</b-tag>
+    <b-tag type="orange" size="small">orange</b-tag>
     <b-tag type="gold" size="small">gold</b-tag>
     <b-tag type="cyan" size="small">cyan</b-tag>
     <b-tag type="blue" size="small">blue</b-tag>
@@ -150,7 +150,7 @@ dot 模式简单显示
               :key="tag"
               v-for="tag in dynamicTags"
               closable
-              @on-close="handleCloseTag(tag)">
+              @close="handleCloseTag(tag)">
               {{tag}}
             </b-tag>
         </p>
@@ -214,6 +214,6 @@ dot 模式简单显示
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-close    | 关闭事件回调   | event  |
-| on-click    | 点击事件回调   | event  |
-| on-change   | 选中事件回调,第二项需要设置name值   | checked,name  |
+| close    | 关闭事件回调   | event  |
+| click    | 点击事件回调   | event  |
+| change   | 选中事件回调,第二项需要设置name值   | checked,name  |

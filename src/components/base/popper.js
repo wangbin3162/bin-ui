@@ -56,9 +56,9 @@ export default {
       if (val) {
         if (this.handleIndexIncrease) this.handleIndexIncrease() // just use for PopTip
         this.updatePopper()
-        this.$emit('on-popper-show')
+        this.$emit('popper-show')
       } else {
-        this.$emit('on-popper-hide')
+        this.$emit('popper-hide')
       }
       this.$emit('input', val)
     }

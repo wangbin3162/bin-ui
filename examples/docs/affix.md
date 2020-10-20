@@ -48,7 +48,7 @@
 ::: demo
 ```html
 <template>
-    <b-affix :offset-top="200" @on-change="change">
+    <b-affix :offset-top="200" @change="change">
         <b-tag type="primary">固定状态触发事件</b-tag>
     </b-affix>
 </template>
@@ -76,7 +76,7 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-change    | 在固定状态发生改变时触发   | true/false  |
+| change    | 在固定状态发生改变时触发   | true/false  |
 
 ### Slot
 

@@ -201,29 +201,29 @@ export default {
   },
   methods: {
     handleEnter(event) {
-      this.$emit('on-enter', event)
-      if (this.search) this.$emit('on-search', this.currentValue)
+      this.$emit('enter', event)
+      if (this.search) this.$emit('search', this.currentValue)
     },
     handleKeydown(event) {
-      this.$emit('on-keydown', event)
+      this.$emit('keydown', event)
     },
     handleKeypress(event) {
-      this.$emit('on-keypress', event)
+      this.$emit('keypress', event)
     },
     handleKeyup(event) {
-      this.$emit('on-keyup', event)
+      this.$emit('keyup', event)
     },
     handleIconClick(event) {
-      this.$emit('on-click', event)
+      this.$emit('click', event)
     },
     handleFocus(event) {
-      this.$emit('on-focus', event)
+      this.$emit('focus', event)
     },
     handleBlur(event) {
-      this.$emit('on-blur', event)
+      this.$emit('blur', event)
       // 触发校验
       if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
-        this.dispatch('BFormItem', 'on-form-blur', this.currentValue)
+        this.dispatch('BFormItem', 'form-blur', this.currentValue)
       }
     },
     handleComposition(event) {
@@ -242,10 +242,10 @@ export default {
       if (this.number && value !== '') value = Number.isNaN(Number(value)) ? value : Number(value)
       this.$emit('input', value)
       this.setCurrentValue(value)
-      this.$emit('on-change', event)
+      this.$emit('change', event)
     },
     handleChange(event) {
-      this.$emit('on-input-change', event)
+      this.$emit('input-change', event)
     },
     setCurrentValue(value) {
       if (value === this.currentValue) return
@@ -255,7 +255,7 @@ export default {
       this.currentValue = value
       // 触发校验
       if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
-        this.dispatch('BFormItem', 'on-form-change', value)
+        this.dispatch('BFormItem', 'form-change', value)
       }
     },
     resizeTextarea() {
@@ -287,13 +287,13 @@ export default {
       const e = { target: { value: '' } }
       this.$emit('input', '')
       this.setCurrentValue('')
-      this.$emit('on-change', e)
-      this.$emit('on-clear')
+      this.$emit('change', e)
+      this.$emit('clear')
     },
     handleSearch() {
       if (this.disabled) return false
       this.$refs.input.focus()
-      this.$emit('on-search', this.currentValue)
+      this.$emit('search', this.currentValue)
     }
   },
   computed: {

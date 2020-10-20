@@ -60,7 +60,7 @@
 ```html
 <template>
 <div>
-   <b-dropdown @on-click="handleClick">
+   <b-dropdown @click="handleClick">
       <a href="javascript:void(0)">
          hover 触发
          <b-icon name="ios-arrow-down"></b-icon>
@@ -226,9 +226,9 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-click     | 点击菜单项时触发   | DropdownItem 的 name 值,需要设置name才可以统一监听  |
-| on-visible-change    | 菜单显示状态改变时调用   | visible  |
-| on-click-outside     | 点击外部关闭下拉菜单时触发   | event  |
+| click     | 点击菜单项时触发   | DropdownItem 的 name 值,需要设置name才可以统一监听  |
+| visible-change    | 菜单显示状态改变时调用   | visible  |
+| click-outside     | 点击外部关闭下拉菜单时触发   | event  |
 
 ### Dropdown Slot
 

@@ -28,7 +28,7 @@
 <template>
   <b-button type="primary" @click="modal1 = true">显示弹窗</b-button>
   <b-modal v-model="modal1" title="普通的模态框标题"
-    @on-ok="$log.print('ok click')"  @on-cancel="$log.print('cancel click','success')">
+    @ok="$log.print('ok click')"  @close="$log.print('close click','success')">
       <p>我是弹窗内容...</p>
       <p>我是弹窗内容...</p>
       <p>我是弹窗内容...</p>
@@ -104,7 +104,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
   <b-button type="primary" @click="showModal">显示弹窗</b-button>
   <b-modal v-model="modal5" title="普通的模态框标题"
           :loading="loading"
-          @on-ok="asyncOK">
+          @ok="asyncOK">
       <b-form :model="formInline" ref="form" :rules="ruleValidate" :label-width="80">
         <b-form-item label="用户名" prop="name">
           <b-input v-model="formInline.name" placeholder="请输入"></b-input>
@@ -247,7 +247,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
         </b-modal>
     </b-modal>
 
-  <transition name="fade-scale-move">
+  <transition name="move-right">
     <div v-show="modal5" 
         style="
           position: fixed;
@@ -382,11 +382,12 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-ok     | 点击确定的回调   | 无  |
-| on-cancel    | 点击取消的回调   | 无  |
-| on-visible-change    | 显示状态发生变化时触发   | true / false  |
-| on-opened    | 打开动画完成事件   | 无  |
-| on-hidden    | 关闭动画结束事件   | 无  |
+| ok     | 点击确定的回调   | 无  |
+| open    | modal打开回调   | 无  |
+| opened  | 打开动画完成回调   | 无  |
+| close   | modal关闭回调    | 无  |
+| closed  | 关闭动画结束回调    | 无  |
+| visible-change    | 显示状态发生变化时触发   | true / false  |
 
 ### Slot
 

@@ -35,16 +35,16 @@ export default {
   methods: {
     handleClose(event) {
       event.stopPropagation()
-      this.$emit('on-close', event)
+      this.$emit('close', event)
     },
     handleClick(event) {
       event.stopPropagation()
       if (this.checkable) {
         this.checked = !this.checked
         this.$emit('input', this.checked)
-        this.$emit('on-change', this.checked, this.name)
+        this.$emit('change', this.checked, this.name)
       }
-      this.$emit('on-click', event)
+      this.$emit('click', event)
     }
   },
   computed: {

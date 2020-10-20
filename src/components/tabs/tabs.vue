@@ -97,7 +97,7 @@
       // 更新选中active
       emitInput () {
         this.$emit('input', this.selectedTag.key)
-        this.$emit('on-change', this.selectedTag)
+        this.$emit('change', this.selectedTag)
       },
       // 是否是启用状态
       isActive (tab) {
@@ -123,7 +123,7 @@
         if (this.isActive(view)) {
           this.toLastView(visitedViews, view)
         }
-        this.$emit('on-tab-close', view)
+        this.$emit('tab-close', view)
       },
       // 移动焦点至后一个view
       toLastView (visitedViews, view) {
@@ -183,7 +183,7 @@
           this.selectedTag = tab
           this.left = e.clientX
           this.top = e.clientY
-          this.$emit('on-tab-select', tab)
+          this.$emit('tab-select', tab)
         }
       },
       closeMenu () {

@@ -157,7 +157,7 @@ export default {
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-change    | 当绑定值变化时触发   | 当前值  |
-| on-active-change   | 面板中当前显示的颜色发生改变时触发   | 当前显示的颜色值  |
-| on-open-change   | 下拉框展开或收起时触发   | true / false  |
+| change    | 当绑定值变化时触发   | 当前值  |
+| active-change   | 面板中当前显示的颜色发生改变时触发   | 当前显示的颜色值  |
+| open-change   | 下拉框展开或收起时触发   | true / false  |
 

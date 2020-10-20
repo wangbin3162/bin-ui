@@ -83,10 +83,10 @@
             <div :class="[prefixCls + '-confirm']">
                 <span :class="confirmColorClasses">
                     <template v-if="editable">
-                        <b-input :value="formatColor" size="mini" @on-enter="handleEditColor"
-                                 @on-blur="handleEditColor"></b-input>
+                        <b-input :value="formatColor" size="mini" @enter="handleEditColor"
+                                 @blur="handleEditColor"></b-input>
                     </template>
-                    <template v-else>{{formatColor}}</template>
+                    <template v-else>{{ formatColor }}</template>
                 </span>
               <b-button
                   ref="clear"
@@ -117,344 +117,344 @@
 </template>
 
 <script>
-  import tinycolor from 'tinycolor2'
-  import ClickOutside from '../../directive/clickoutside'
-  import TransferDom from '../../directive/transfer-dom'
-  import Drop from '../../components/select/drop.vue'
-  import RecommendColors from './recommend-colors.vue'
-  import Saturation from './saturation.vue'
-  import Hue from './hue.vue'
-  import Alpha from './alpha.vue'
-  import { oneOf } from '../../utils/util'
-  import Emitter from '../../mixins/emitter'
-  import Prefixes from './prefixMixin'
-  import { changeColor, toRGBAString } from './utils'
+import tinycolor from 'tinycolor2'
+import ClickOutside from '../../directive/clickoutside'
+import TransferDom from '../../directive/transfer-dom'
+import Drop from '../../components/select/drop.vue'
+import RecommendColors from './recommend-colors.vue'
+import Saturation from './saturation.vue'
+import Hue from './hue.vue'
+import Alpha from './alpha.vue'
+import { oneOf } from '../../utils/util'
+import Emitter from '../../mixins/emitter'
+import Prefixes from './prefixMixin'
+import { changeColor, toRGBAString } from './utils'
 
-  export default {
-    name: 'BColorPicker',
-    components: { Drop, RecommendColors, Saturation, Hue, Alpha },
-    directives: { ClickOutside, TransferDom },
-    mixins: [Emitter, Prefixes],
-    inject: {
-      FormInstance: {
-        default: ''
+export default {
+  name: 'BColorPicker',
+  components: { Drop, RecommendColors, Saturation, Hue, Alpha },
+  directives: { ClickOutside, TransferDom },
+  mixins: [Emitter, Prefixes],
+  inject: {
+    FormInstance: {
+      default: ''
+    }
+  },
+  props: {
+    value: {
+      type: String,
+      default: undefined
+    },
+    hue: {
+      type: Boolean,
+      default: true
+    },
+    alpha: {
+      type: Boolean,
+      default: false
+    },
+    recommend: {
+      type: Boolean,
+      default: false
+    },
+    format: {
+      type: String,
+      validator(value) {
+        return oneOf(value, ['hsl', 'hsv', 'hex', 'rgb'])
+      },
+      default: undefined
+    },
+    colors: {
+      type: Array,
+      default() {
+        return []
       }
     },
-    props: {
-      value: {
-        type: String,
-        default: undefined
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      validator(value) {
+        return oneOf(value, ['small', 'large', 'default', 'mini'])
       },
-      hue: {
-        type: Boolean,
-        default: true
+      default: 'default'
+    },
+    hideDropDown: {
+      type: Boolean,
+      default: false
+    },
+    placement: {
+      type: String,
+      validator(value) {
+        return oneOf(value, [
+          'top',
+          'top-start',
+          'top-end',
+          'bottom',
+          'bottom-start',
+          'bottom-end',
+          'left',
+          'left-start',
+          'left-end',
+          'right',
+          'right-start',
+          'right-end'
+        ])
       },
-      alpha: {
-        type: Boolean,
-        default: false
+      default: 'bottom'
+    },
+    appendToBody: {
+      type: Boolean,
+      default: false
+    },
+    name: {
+      type: String,
+      default: undefined
+    },
+    editable: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {
+      val: changeColor(this.value),
+      currentValue: this.value,
+      dragging: false,
+      visible: false,
+      recommendedColor: [
+        '#1089ff',
+        '#52c41a',
+        '#fea638',
+        '#ff4d4f',
+        '#2f54eb',
+        '#faad14',
+        '#722ed1',
+        '#eb2f96',
+        '#13c2c2',
+        '#fadb14',
+        '#a0d911',
+        '#fa541c',
+        '#eaff8f',
+        '#bae7ff',
+        '#efdbff',
+        '#ffd6e7',
+        '#ff1885',
+        '#fff506',
+        '#00bcd4',
+        '#f06292',
+        '#cb6c00',
+        '#607d8b',
+        '#000000',
+        '#ffffff'
+      ]
+    }
+  },
+  computed: {
+    transition() {
+      return oneOf(this.placement, ['bottom-start', 'bottom', 'bottom-end']) ? 'slide-up' : 'fade'
+    },
+    saturationColors: {
+      get() {
+        return this.val
       },
-      recommend: {
-        type: Boolean,
-        default: false
-      },
-      format: {
-        type: String,
-        validator (value) {
-          return oneOf(value, ['hsl', 'hsv', 'hex', 'rgb'])
-        },
-        default: undefined
-      },
-      colors: {
-        type: Array,
-        default () {
-          return []
+      set(newVal) {
+        this.val = newVal
+        this.$emit('active-change', this.formatColor)
+      }
+    },
+    classes() {
+      return [
+        `${this.prefixCls}`,
+        {
+          [`${this.prefixCls}-transfer`]: this.appendToBody
         }
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      size: {
-        validator (value) {
-          return oneOf(value, ['small', 'large', 'default', 'mini'])
-        },
-        default: 'default'
-      },
-      hideDropDown: {
-        type: Boolean,
-        default: false
-      },
-      placement: {
-        type: String,
-        validator (value) {
-          return oneOf(value, [
-            'top',
-            'top-start',
-            'top-end',
-            'bottom',
-            'bottom-start',
-            'bottom-end',
-            'left',
-            'left-start',
-            'left-end',
-            'right',
-            'right-start',
-            'right-end'
-          ])
-        },
-        default: 'bottom'
-      },
-      appendToBody: {
-        type: Boolean,
-        default: false
-      },
-      name: {
-        type: String,
-        default: undefined
-      },
-      editable: {
-        type: Boolean,
-        default: true
-      }
+      ]
     },
-    data () {
-      return {
-        val: changeColor(this.value),
-        currentValue: this.value,
-        dragging: false,
-        visible: false,
-        recommendedColor: [
-          '#1089ff',
-          '#52c41a',
-          '#fea638',
-          '#ff4d4f',
-          '#2f54eb',
-          '#faad14',
-          '#722ed1',
-          '#eb2f96',
-          '#13c2c2',
-          '#fadb14',
-          '#a0d911',
-          '#fa541c',
-          '#eaff8f',
-          '#bae7ff',
-          '#efdbff',
-          '#ffd6e7',
-          '#ff1885',
-          '#fff506',
-          '#00bcd4',
-          '#f06292',
-          '#cb6c00',
-          '#607d8b',
-          '#000000',
-          '#ffffff'
-        ]
-      }
-    },
-    computed: {
-      transition () {
-        return oneOf(this.placement, ['bottom-start', 'bottom', 'bottom-end']) ? 'slide-up' : 'fade'
-      },
-      saturationColors: {
-        get () {
-          return this.val
-        },
-        set (newVal) {
-          this.val = newVal
-          this.$emit('on-active-change', this.formatColor)
+    wrapClasses() {
+      return [
+        `${this.prefixCls}-rel`,
+        `${this.prefixCls}-${this.size}`,
+        `${this.inputPrefixCls}-wrapper`,
+        `${this.inputPrefixCls}-wrapper-${this.size}`,
+        {
+          [`${this.prefixCls}-disabled`]: this.itemDisabled
         }
-      },
-      classes () {
-        return [
-          `${this.prefixCls}`,
-          {
-            [`${this.prefixCls}-transfer`]: this.appendToBody
-          }
-        ]
-      },
-      wrapClasses () {
-        return [
-          `${this.prefixCls}-rel`,
-          `${this.prefixCls}-${this.size}`,
-          `${this.inputPrefixCls}-wrapper`,
-          `${this.inputPrefixCls}-wrapper-${this.size}`,
-          {
-            [`${this.prefixCls}-disabled`]: this.itemDisabled
-          }
-        ]
-      },
-      inputClasses () {
-        return [
-          `${this.prefixCls}-input`,
-          `${this.inputPrefixCls}`,
-          `${this.inputPrefixCls}-${this.size}`,
-          {
-            [`${this.prefixCls}-focused`]: this.visible,
-            [`${this.prefixCls}-disabled`]: this.itemDisabled
-          }
-        ]
-      },
-      dropClasses () {
-        return [
-          `${this.transferPrefixCls}-no-max-height`,
-          {
-            [`${this.prefixCls}-transfer`]: this.appendToBody,
-            [`${this.prefixCls}-hide-drop`]: this.hideDropDown
-          }
-        ]
-      },
-      displayedColorStyle () {
-        return { backgroundColor: toRGBAString(this.visible ? this.saturationColors.rgba : tinycolor(this.value).toRgb()) }
-      },
-      formatColor () {
-        const { format, saturationColors } = this
+      ]
+    },
+    inputClasses() {
+      return [
+        `${this.prefixCls}-input`,
+        `${this.inputPrefixCls}`,
+        `${this.inputPrefixCls}-${this.size}`,
+        {
+          [`${this.prefixCls}-focused`]: this.visible,
+          [`${this.prefixCls}-disabled`]: this.itemDisabled
+        }
+      ]
+    },
+    dropClasses() {
+      return [
+        `${this.transferPrefixCls}-no-max-height`,
+        {
+          [`${this.prefixCls}-transfer`]: this.appendToBody,
+          [`${this.prefixCls}-hide-drop`]: this.hideDropDown
+        }
+      ]
+    },
+    displayedColorStyle() {
+      return { backgroundColor: toRGBAString(this.visible ? this.saturationColors.rgba : tinycolor(this.value).toRgb()) }
+    },
+    formatColor() {
+      const { format, saturationColors } = this
 
-        if (format) {
-          if (format === 'hsl') {
-            return tinycolor(saturationColors.hsl).toHslString()
-          }
+      if (format) {
+        if (format === 'hsl') {
+          return tinycolor(saturationColors.hsl).toHslString()
+        }
 
-          if (format === 'hsv') {
-            return tinycolor(saturationColors.hsv).toHsvString()
-          }
+        if (format === 'hsv') {
+          return tinycolor(saturationColors.hsv).toHsvString()
+        }
 
-          if (format === 'hex') {
-            return saturationColors.hex
-          }
+        if (format === 'hex') {
+          return saturationColors.hex
+        }
 
-          if (format === 'rgb') {
-            return toRGBAString(saturationColors.rgba)
-          }
-        } else if (this.alpha) {
+        if (format === 'rgb') {
           return toRGBAString(saturationColors.rgba)
         }
+      } else if (this.alpha) {
+        return toRGBAString(saturationColors.rgba)
+      }
 
-        return saturationColors.hex
-      },
-      confirmColorClasses () {
-        return [
-          `${this.prefixCls}-confirm-color`,
-          {
-            [`${this.prefixCls}-confirm-color-editable`]: this.editable
-          }
-        ]
-      },
-      itemDisabled () {
-        let state = this.disabled
-        if (!state && this.FormInstance) state = this.FormInstance.disabled
-        return state
-      }
+      return saturationColors.hex
     },
-    watch: {
-      value (newVal) {
-        this.val = changeColor(newVal)
-      },
-      visible (val) {
-        this.val = changeColor(this.value)
-        this.$refs.drop[val ? 'update' : 'destroy']()
-        this.$emit('on-open-change', Boolean(val))
-      }
-    },
-    mounted () {
-      this.$on('on-escape-keydown', this.closer)
-      this.$on('on-dragging', this.setDragging)
-    },
-    methods: {
-      setDragging (value) {
-        this.dragging = value
-      },
-      handleClose (event) {
-        if (this.visible) {
-          if (this.dragging || (event && event.type === 'mousedown')) {
-            event.preventDefault()
-            return
-          }
-          if (this.appendToBody) {
-            this.visible = false
-            return
-          }
-          this.closer(event)
-          return
+    confirmColorClasses() {
+      return [
+        `${this.prefixCls}-confirm-color`,
+        {
+          [`${this.prefixCls}-confirm-color-editable`]: this.editable
         }
-        this.visible = false
-      },
-      toggleVisible () {
-        if (this.itemDisabled) {
-          return
-        }
-        this.visible = !this.visible
-        this.$refs.input.focus()
-      },
-      childChange (data) {
-        this.colorChange(data)
-      },
-      colorChange (data, oldHue) {
-        this.oldHue = this.saturationColors.hsl.h
-        this.saturationColors = changeColor(data, oldHue || this.oldHue)
-      },
-      closer (event) {
-        if (event) {
+      ]
+    },
+    itemDisabled() {
+      let state = this.disabled
+      if (!state && this.FormInstance) state = this.FormInstance.disabled
+      return state
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = changeColor(newVal)
+    },
+    visible(val) {
+      this.val = changeColor(this.value)
+      this.$refs.drop[val ? 'update' : 'destroy']()
+      this.$emit('open-change', Boolean(val))
+    }
+  },
+  mounted() {
+    this.$on('escape-keydown', this.closer)
+    this.$on('dragging', this.setDragging)
+  },
+  methods: {
+    setDragging(value) {
+      this.dragging = value
+    },
+    handleClose(event) {
+      if (this.visible) {
+        if (this.dragging || (event && event.type === 'mousedown')) {
           event.preventDefault()
-          event.stopPropagation()
+          return
         }
-
-        this.visible = false
-        this.$refs.input.focus()
-      },
-      handleButtons (event, value) {
-        this.currentValue = value
-        this.$emit('input', value)
-        this.$emit('on-change', value)
-        this.dispatch('BFormItem', 'on-form-change', value)
+        if (this.appendToBody) {
+          this.visible = false
+          return
+        }
         this.closer(event)
-      },
-      handleSuccess (event) {
-        this.handleButtons(event, this.formatColor)
-        this.$emit('on-pick-success')
-      },
-      handleClear (event) {
-        this.handleButtons(event, '')
-        this.$emit('on-pick-clear')
-      },
-      handleSelectColor (color) {
-        this.val = changeColor(color)
-        this.$emit('on-active-change', this.formatColor)
-      },
-      handleEditColor (event) {
-        const value = event.target.value
-        this.handleSelectColor(value)
-      },
-      handleFirstTab (event) {
-        if (event.shiftKey) {
-          event.preventDefault()
-          event.stopPropagation()
-          this.$refs.ok.$el.focus()
-        }
-      },
-      handleLastTab (event) {
-        if (!event.shiftKey) {
-          event.preventDefault()
-          event.stopPropagation()
-          this.$refs.saturation.$el.focus()
-        }
-      },
-      onTab (event) {
-        if (this.visible) {
-          event.preventDefault()
-        }
-      },
-      onEscape (event) {
-        if (this.visible) {
-          this.closer(event)
-        }
-      },
-      onArrow (event) {
-        if (!this.visible) {
-          event.preventDefault()
-          event.stopPropagation()
-          this.visible = true
-        }
+        return
+      }
+      this.visible = false
+    },
+    toggleVisible() {
+      if (this.itemDisabled) {
+        return
+      }
+      this.visible = !this.visible
+      this.$refs.input.focus()
+    },
+    childChange(data) {
+      this.colorChange(data)
+    },
+    colorChange(data, oldHue) {
+      this.oldHue = this.saturationColors.hsl.h
+      this.saturationColors = changeColor(data, oldHue || this.oldHue)
+    },
+    closer(event) {
+      if (event) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      this.visible = false
+      this.$refs.input.focus()
+    },
+    handleButtons(event, value) {
+      this.currentValue = value
+      this.$emit('input', value)
+      this.$emit('change', value)
+      this.dispatch('BFormItem', 'form-change', value)
+      this.closer(event)
+    },
+    handleSuccess(event) {
+      this.handleButtons(event, this.formatColor)
+      this.$emit('pick-success')
+    },
+    handleClear(event) {
+      this.handleButtons(event, '')
+      this.$emit('pick-clear')
+    },
+    handleSelectColor(color) {
+      this.val = changeColor(color)
+      this.$emit('active-change', this.formatColor)
+    },
+    handleEditColor(event) {
+      const value = event.target.value
+      this.handleSelectColor(value)
+    },
+    handleFirstTab(event) {
+      if (event.shiftKey) {
+        event.preventDefault()
+        event.stopPropagation()
+        this.$refs.ok.$el.focus()
+      }
+    },
+    handleLastTab(event) {
+      if (!event.shiftKey) {
+        event.preventDefault()
+        event.stopPropagation()
+        this.$refs.saturation.$el.focus()
+      }
+    },
+    onTab(event) {
+      if (this.visible) {
+        event.preventDefault()
+      }
+    },
+    onEscape(event) {
+      if (this.visible) {
+        this.closer(event)
+      }
+    },
+    onArrow(event) {
+      if (!this.visible) {
+        event.preventDefault()
+        event.stopPropagation()
+        this.visible = true
       }
     }
   }
+}
 </script>

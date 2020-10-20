@@ -8,7 +8,7 @@ let height = 2
 let timer
 
 // 获取loadingBar的实例
-function getLoadingBarInstance () {
+function getLoadingBarInstance() {
   // 初始化实例
   loadingBarInstance = loadingBarInstance || LoadingBar.newInstance({
     color: color,
@@ -19,13 +19,13 @@ function getLoadingBarInstance () {
 }
 
 // 更新进度并传入配置
-function update (options) {
+function update(options) {
   let instance = getLoadingBarInstance()
   instance.update(options)
 }
 
 // 隐藏加载进度
-function hide () {
+function hide() {
   setTimeout(() => {
     update({
       show: false
@@ -39,7 +39,7 @@ function hide () {
 }
 
 // 清除timer
-function clearTimer () {
+function clearTimer() {
   if (timer) {
     clearInterval(timer)
     timer = null
@@ -47,7 +47,7 @@ function clearTimer () {
 }
 
 export default {
-  start () {
+  start() {
     if (timer) return
     let percent = 0
     update({
@@ -68,7 +68,7 @@ export default {
       })
     }, 200)
   },
-  update (percent) {
+  update(percent) {
     clearTimer()
     update({
       percent: percent,
@@ -76,7 +76,7 @@ export default {
       show: true
     })
   },
-  done () {
+  done() {
     clearTimer()
     update({
       percent: 100,
@@ -85,7 +85,7 @@ export default {
     })
     hide()
   },
-  error () {
+  error() {
     clearTimer()
     update({
       percent: 100,
@@ -94,7 +94,7 @@ export default {
     })
     hide()
   },
-  config (options) {
+  config(options) {
     this.destroy()
     if (options.color) {
       color = options.color
@@ -109,7 +109,7 @@ export default {
       height = options.height
     }
   },
-  destroy () {
+  destroy() {
     clearTimer()
     let instance = getLoadingBarInstance()
     loadingBarInstance = null

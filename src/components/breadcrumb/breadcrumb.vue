@@ -4,28 +4,28 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'BBreadcrumb',
-    props: {
-      separator: {
-        type: String,
-        default: '/'
-      },
-      separatorIcon: {
-        type: String,
-        default: ''
-      }
+export default {
+  name: 'BBreadcrumb',
+  props: {
+    separator: {
+      type: String,
+      default: '/'
     },
-    provide () {
-      return {
-        bBreadcrumb: this
-      }
-    },
-    mounted () {
-      const items = this.$el.querySelectorAll('.bin-breadcrumb__item')
-      if (items.length) {
-        items[items.length - 1].setAttribute('aria-current', 'page')
-      }
+    separatorIcon: {
+      type: String,
+      default: ''
+    }
+  },
+  provide() {
+    return {
+      bBreadcrumb: this
+    }
+  },
+  mounted() {
+    const items = this.$el.querySelectorAll('.bin-breadcrumb__item')
+    if (items.length) {
+      items[items.length - 1].setAttribute('aria-current', 'page')
     }
   }
+}
 </script>

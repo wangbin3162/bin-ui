@@ -169,7 +169,7 @@ export default {
       if (this.TreeInstance.showCheckbox && this.TreeInstance.checkDirectly) {
         this.handleCheck()
       } else {
-        this.dispatch('BTree', 'on-selected', this.data.nodeKey)
+        this.dispatch('BTree', 'selected', this.data.nodeKey)
       }
     },
     handleCheck() {
@@ -178,7 +178,7 @@ export default {
         checked: !this.data.checked && !this.data.indeterminate,
         nodeKey: this.data.nodeKey
       }
-      this.dispatch('BTree', 'on-check', changes)
+      this.dispatch('BTree', 'check', changes)
     }
   }
 }

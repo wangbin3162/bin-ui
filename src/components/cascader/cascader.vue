@@ -9,7 +9,7 @@
             :readonly="!filterable"
             :disabled="disabled"
             :value="displayInputRender"
-            @on-change="handleInput"
+            @change="handleInput"
             :size="size"
             :placeholder="inputPlaceholder"></b-input>
         <div :class="[prefixCls + '-label']" v-show="filterable && query === ''" @click="handleFocus">
@@ -224,7 +224,7 @@ export default {
       this.currentValue = this.selected = this.tmpSelected = []
       this.handleClose()
       this.emitValue(this.currentValue, oldVal)
-      this.broadcast('CasPanel', 'on-clear')
+      this.broadcast('CasPanel', 'clear')
     },
     handleClose() {
       this.visible = false
@@ -240,7 +240,7 @@ export default {
     onFocus() {
       this.visible = true
       if (!this.currentValue.length) {
-        this.broadcast('CasPanel', 'on-clear')
+        this.broadcast('CasPanel', 'clear')
       }
     },
     updateResult(result) {
@@ -249,16 +249,16 @@ export default {
     updateSelected(init = false, changeOnSelectDataChange = false) {
       // #2793 当数据更改并设置值时，changeOnSelectDataChange用于changeOnSelect
       if (!this.changeOnSelect || init || changeOnSelectDataChange) {
-        this.broadcast('CasPanel', 'on-find-selected', {
+        this.broadcast('CasPanel', 'find-selected', {
           value: this.currentValue
         })
       }
     },
     emitValue(val, oldVal) {
       if (JSON.stringify(val) !== oldVal) {
-        this.$emit('on-change', this.currentValue, JSON.parse(JSON.stringify(this.selected)))
+        this.$emit('change', this.currentValue, JSON.parse(JSON.stringify(this.selected)))
         this.$nextTick(() => {
-          this.dispatch('BFormItem', 'on-form-change', {
+          this.dispatch('BFormItem', 'form-change', {
             value: this.currentValue,
             selected: JSON.parse(JSON.stringify(this.selected))
           })
@@ -276,7 +276,7 @@ export default {
       this.$refs.input.currentValue = ''
       const oldVal = JSON.stringify(this.currentValue)
       this.currentValue = item.value.split(',')
-      // use setTimeout for #4786, can not use nextTick, because @on-find-selected use nextTick
+      // use setTimeout for #4786, can not use nextTick, because @find-selected use nextTick
       setTimeout(() => {
         this.emitValue(this.currentValue, oldVal)
         this.handleClose()
@@ -309,7 +309,7 @@ export default {
   },
   created() {
     this.validDataStr = JSON.stringify(this.getValidData(this.data))
-    this.$on('on-result-change', (params) => {
+    this.$on('result-change', (params) => {
       // lastValue: is click the final val
       // fromInit: is this emit from update value
       const lastValue = params.lastValue
@@ -348,7 +348,7 @@ export default {
         if (this.transfer) {
           this.$refs.drop.update()
         }
-        this.broadcast('Drop', 'on-update-popper')
+        this.broadcast('Drop', 'update-popper')
       } else {
         if (this.filterable) {
           this.query = ''
@@ -357,9 +357,9 @@ export default {
         if (this.transfer) {
           this.$refs.drop.destroy()
         }
-        this.broadcast('Drop', 'on-destroy-popper')
+        this.broadcast('Drop', 'destroy-popper')
       }
-      this.$emit('on-visible-change', val)
+      this.$emit('visible-change', val)
     },
     value(val) {
       this.currentValue = val

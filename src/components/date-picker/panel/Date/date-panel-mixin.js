@@ -13,7 +13,7 @@ export default {
     },
     selectionMode: {
       type: String,
-      validator (value) {
+      validator(value) {
         return oneOf(value, ['year', 'month', 'date', 'time'])
       },
       default: 'date'
@@ -51,12 +51,12 @@ export default {
     }
   },
   computed: {
-    isTime () {
+    isTime() {
       return this.currentView === 'time'
     }
   },
   methods: {
-    handleToggleTime () {
+    handleToggleTime() {
       this.currentView = this.currentView === 'time' ? 'date' : 'time'
     }
   }

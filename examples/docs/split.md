@@ -31,7 +31,7 @@
 ```html
 <template>
 <div style="width: 100%;height: 300px;border:1px solid #ddd;">
-  <b-split split="horizontal" >
+  <b-split split="horizontal">
     <div slot="left" class="left-container">上边容器</div>
     <div slot="right" class="right-container">下面容器</div>
   </b-split>
@@ -76,7 +76,7 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-resize   | 重置大小   | percent  |
+| resize   | 重置大小   | percent  |
 
 ### Slot
 

@@ -27,63 +27,63 @@
 </template>
 
 <script>
-  import CollapseTransition from '../base/collapse-transition'
+import CollapseTransition from '../base/collapse-transition'
 
-  export default {
-    name: 'BCollapseWrap',
-    components: { CollapseTransition },
-    props: {
-      value: {
-        type: Boolean,
-        default: true
+export default {
+  name: 'BCollapseWrap',
+  components: { CollapseTransition },
+  props: {
+    value: {
+      type: Boolean,
+      default: true
+    },
+    title: String,
+    collapse: {
+      type: Boolean
+    }
+  },
+  watch: {
+    value: {
+      handler(val) {
+        this.isActive = val
       },
-      title: String,
-      collapse: {
-        type: Boolean
-      }
-    },
-    watch: {
-      value: {
-        handler(val) {
-          this.isActive = val
-        },
-        immediate: true
-      }
-    },
-    data() {
-      return {
-        isActive: true,
-        mounted: false
-      }
-    },
-    mounted() {
-      this.mounted = true
-    },
-    computed: {
-      itemClasses() {
-        return [
-          'bin-collapse-wrap',
-          {
-            'bin-collapse-wrap-active': this.isActive
-          }
-        ]
-      }
-    },
-    methods: {
-      toggle() {
-        // 可以收起且没有右侧功能插入时点击一行展开收起
-        if (this.collapse && !this.$slots.right) {
-          this.isActive = !this.isActive
-          this.$emit('input', this.isActive)
+      immediate: true
+    }
+  },
+  data() {
+    return {
+      isActive: true,
+      mounted: false
+    }
+  },
+  mounted() {
+    this.mounted = true
+  },
+  computed: {
+    itemClasses() {
+      return [
+        'bin-collapse-wrap',
+        {
+          'bin-collapse-wrap-active': this.isActive
         }
-      },
-      arrowToggle() {
-        // 可以收起且没有右侧功能插入时点击一行展开收起
-        if (this.collapse && this.$slots.right) {
-          this.isActive = !this.isActive
-          this.$emit('input', this.isActive)
-        }
+      ]
+    }
+  },
+  methods: {
+    toggle() {
+      // 可以收起且没有右侧功能插入时点击一行展开收起
+      if (this.collapse && !this.$slots.right) {
+        this.isActive = !this.isActive
+        this.$emit('input', this.isActive)
+      }
+    },
+    arrowToggle() {
+      // 可以收起且没有右侧功能插入时点击一行展开收起
+      if (this.collapse && this.$slots.right) {
+        this.isActive = !this.isActive
+        this.$emit('input', this.isActive)
       }
     }
   }
+}
 </script>

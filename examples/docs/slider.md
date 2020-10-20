@@ -146,14 +146,14 @@
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | value | 滑块选定的值，可以使用 v-model 双向绑定数据。   | Number/ Array  |  —   |   0  |
-|  min  | 最小值   | Number  |  —   |   0  |
-|  max  | 最大值   | Number  |  —   |   100  |
-|  step  | 步长，取值建议能被（max - min）整除   | Number  |  —   |   1  |
-|  disabled  | 是否禁用  | Boolean  |  —   |  false  |
-|  range  | 范围模式，绑定值为[num,num]  | Boolean  |  —   |  false  |
-|  show-input  | 显示数字输入框，range模式无效  | Boolean  |  —   |  false  |
-|  show-stops  | 显示断点,不密集时使用  | Boolean  |  —   |  false  |
-|  show-tip | 提示的显示控制 | String  |  hover（悬停，默认）、always（总是）、never（不可见）   |  hover  |
+| min  | 最小值   | Number  |  —   |   0  |
+| max  | 最大值   | Number  |  —   |   100  |
+| step  | 步长，取值建议能被（max - min）整除   | Number  |  —   |   1  |
+| disabled  | 是否禁用  | Boolean  |  —   |  false  |
+| range  | 范围模式，绑定值为[num,num]  | Boolean  |  —   |  false  |
+| show-input  | 显示数字输入框，range模式无效  | Boolean  |  —   |  false  |
+| show-stops  | 显示断点,不密集时使用  | Boolean  |  —   |  false  |
+| show-tip | 提示的显示控制 | String  |  hover（悬停，默认）、always（总是）、never（不可见）   |  hover  |
 | tip-format | tip格式化，函数，返回null隐藏tip | Function  |  -   |  value  |
 | input-size | 输入框尺寸 | String |  large,default,small,mini  |  default  |
 | marks | 标记点,key 的类型必须为 number 且取值在闭区间 [min, max] 内，每个标记可以单独设置样式 | Object |  -  |  -  |
@@ -162,6 +162,6 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-change    | 松开滑动时，当前只改变触发   | value |
-| on-input    |  滑动过程中实时触发  | value |
+| change    | 松开滑动时，当前只改变触发   | value |
+| input    |  滑动过程中实时触发  | value |
 

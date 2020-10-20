@@ -4,75 +4,75 @@
   </div>
 </template>
 <script>
-  import { oneOf, findComponentDownward, findBrothersComponents } from '../../utils/util'
+import { oneOf, findComponentDownward, findBrothersComponents } from '../../utils/util'
 
-  const prefixCls = 'bin-row'
+const prefixCls = 'bin-row'
 
-  export default {
-    name: 'BRow',
-    props: {
-      type: {
-        validator(value) {
-          return oneOf(value, ['flex'])
-        }
-      },
-      align: {
-        validator(value) {
-          return oneOf(value, ['top', 'middle', 'bottom'])
-        }
-      },
-      justify: {
-        validator(value) {
-          return oneOf(value, ['start', 'end', 'center', 'space-around', 'space-between'])
-        }
-      },
-      gutter: {
-        type: Number,
-        default: 0
-      },
-      className: String
-    },
-    computed: {
-      classes() {
-        return [
-          {
-            [`${prefixCls}`]: !this.type,
-            [`${prefixCls}-${this.type}`]: !!this.type,
-            [`${prefixCls}-${this.type}-${this.align}`]: !!this.align,
-            [`${prefixCls}-${this.type}-${this.justify}`]: !!this.justify,
-            [`${this.className}`]: !!this.className
-          }
-        ]
-      },
-      styles() {
-        let style = {}
-        if (this.gutter !== 0) {
-          style = {
-            marginLeft: this.gutter / -2 + 'px',
-            marginRight: this.gutter / -2 + 'px'
-          }
-        }
-        return style
+export default {
+  name: 'BRow',
+  props: {
+    type: {
+      validator(value) {
+        return oneOf(value, ['flex'])
       }
     },
-    methods: {
-      updateGutter(val) {
-        // 这里会嵌套寻找，把 Col 里的 Row 里的 Col 也找到，所以用 兄弟找
-        const Col = findComponentDownward(this, 'BCol')
-        const Cols = findBrothersComponents(Col, 'BCol', false)
-        if (Cols.length) {
-          Cols.forEach((child) => {
-            if (val !== 0) {
-              child.gutter = val
-            }
-          })
-        }
+    align: {
+      validator(value) {
+        return oneOf(value, ['top', 'middle', 'bottom'])
       }
     },
-    watch: {
-      gutter(val) {
-        this.updateGutter(val)
+    justify: {
+      validator(value) {
+        return oneOf(value, ['start', 'end', 'center', 'space-around', 'space-between'])
+      }
+    },
+    gutter: {
+      type: Number,
+      default: 0
+    },
+    className: String
+  },
+  computed: {
+    classes() {
+      return [
+        {
+          [`${prefixCls}`]: !this.type,
+          [`${prefixCls}-${this.type}`]: !!this.type,
+          [`${prefixCls}-${this.type}-${this.align}`]: !!this.align,
+          [`${prefixCls}-${this.type}-${this.justify}`]: !!this.justify,
+          [`${this.className}`]: !!this.className
+        }
+      ]
+    },
+    styles() {
+      let style = {}
+      if (this.gutter !== 0) {
+        style = {
+          marginLeft: this.gutter / -2 + 'px',
+          marginRight: this.gutter / -2 + 'px'
+        }
+      }
+      return style
+    }
+  },
+  methods: {
+    updateGutter(val) {
+      // 这里会嵌套寻找，把 Col 里的 Row 里的 Col 也找到，所以用 兄弟找
+      const Col = findComponentDownward(this, 'BCol')
+      const Cols = findBrothersComponents(Col, 'BCol', false)
+      if (Cols.length) {
+        Cols.forEach((child) => {
+          if (val !== 0) {
+            child.gutter = val
+          }
+        })
       }
     }
+  },
+  watch: {
+    gutter(val) {
+      this.updateGutter(val)
+    }
   }
+}
 </script>

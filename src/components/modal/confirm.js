@@ -104,7 +104,7 @@ Modal.newInstance = properties => {
           input: (status) => {
             this.visible = status
           },
-          'on-cancel': this.cancel
+          'cancel': this.cancel
         }
       }, [
         h('div', {

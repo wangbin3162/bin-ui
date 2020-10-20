@@ -154,7 +154,7 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-select    | 选择菜单（MenuItem）时触发   | name  |
+| select    | 选择菜单（MenuItem）时触发   | name  |
 | on-open-change    |  展开/收起 子菜单时触发  | 当前展开的 Submenu 的 name 值数组  |
 
 ### Menu methods

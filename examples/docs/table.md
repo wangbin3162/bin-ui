@@ -489,7 +489,7 @@ height 和maxHeight可以设置固定表头
 <template>
 <div>
   <b-table :columns="columns" ref="currentRowTable" :data="data" 
-      highlight-row @on-current-change="currentRowChange"></b-table>
+      highlight-row @current-change="currentRowChange"></b-table>
   <br>
     <div>
       <b-button @click="$refs.currentRowTable.clearCurrentRow();">清除单选</b-button>
@@ -497,7 +497,7 @@ height 和maxHeight可以设置固定表头
     </div>
     <br>
   <b-table :columns="columns2" ref="currentRowTable2" :data="data2" 
-      highlight-row @on-current-change="currentRowChange">
+      highlight-row @current-change="currentRowChange">
       <template #ctrl="{index}">
         <b-button type="text" text-color="danger" @click="removeRow(index)">删除</b-button>
       </template>
@@ -618,7 +618,7 @@ export default {
 
 给 data 项设置特殊 key _disabled: true 可以禁止选择当前项。
 
-@on-select，选中某一项触发，返回值为 selection 和 row，分别为已选项和刚选择的项。@on-select-all，点击全选时触发，返回值为 selection，已选项。 @on-selection-change，只要选中项发生变化时就会触发，返回值为 selection，已选项。
+@select，选中某一项触发，返回值为 selection 和 row，分别为已选项和刚选择的项。@select-all，点击全选时触发，返回值为 selection，已选项。 @selection-change，只要选中项发生变化时就会触发，返回值为 selection，已选项。
 
 ::: demo  
 ```html
@@ -1078,7 +1078,7 @@ export default {
       <b-table 
               :columns="columns2" :data="data2" row-key
               draggable drag-handle=".drag-handle"
-              @on-drag-drop="handleDragDrop">
+              @drag-drop="handleDragDrop">
               <template #handle="{row}">
                 <span class="drag-handle" style="cursor:grab;"><b-icon name="ios-move" size="20"/></span>
               </template>
@@ -1086,7 +1086,6 @@ export default {
                 <b-button @click="handleEdit(row,index)" type="text">编辑</b-button>
               </template>
       </b-table>
-      <div>{{ data2 }}</div>
     </div>
 </div>
 </template>
@@ -1504,7 +1503,7 @@ noDataText可以设置无数据状态
 | highlight-row |  是否支持高亮选中的行，即单选 | Boolean	  | —     |  false    |
 | size |  表格尺寸 | string	  |  large / small    |  default    |
 | no-data-text |  空数据内容 | string	  |   —     |  暂无数据    |
-| draggable  | 开启拖拽调整行顺序，如需要更新数据源则需配合 @on-drag-drop 事件使用 | Boolean	  |   —     | 	false |
+| draggable  | 开启拖拽调整行顺序，如需要更新数据源则需配合 @drag-drop 事件使用 | Boolean	  |   —     | 	false |
 | drag-handle  | 拖拽的handle图标 | String	  |   —     | 	 —   |
 | row-key  | 是否强制使用内置row-key刷新，配合拖拽排序使用 | Boolean	  |   —     | 	false   |
 | merge-method  | 表格合并行列的方法函数 | Function	  |   —     | 	false |
@@ -1513,17 +1512,17 @@ noDataText可以设置无数据状态
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-current-change     | 开启 highlight-row 后有效，当表格的当前行发生变化的时候会触   | currentRow, oldCurrentRow,index  |
-| on-select     | 在多选模式下有效，选中某一项时触发   | 已选项, 刚选择  |
-| on-select-cancel    | 在多选模式下有效，取消选中某一项时触发  | 已选项, 取消选择 |
-| on-select-all    | 全选时触发	 | 已选项 |
-| on-select-all-cancel    | 取消全选时触发		 | 已选项 |
-| on-selection-change    | 选中项发生变化时就会触发	 | 已选项 |
-| on-sort-change  | 排序时有效，当点击排序时触发		 | column：当前列数据  key：排序依据的指标 order(值为 asc 或 desc)|
-| on-row-click    | 单击某一行时触发	 | 当前行的数据,index |
-| on-row-dblclick   | 双击某一行时触发		 | 当前行的数据,index |
-| on-expand   | 展开或收起某一行时触		 | row：当前行的数据,status：当前的状态 |
-| on-drag-drop    | 拖拽排序松开时触发		 | 置换的两行数据索引和更新后的数据	newIndex, oldIndex, newData |
+| current-change     | 开启 highlight-row 后有效，当表格的当前行发生变化的时候会触   | currentRow, oldCurrentRow,index  |
+| select     | 在多选模式下有效，选中某一项时触发   | 已选项, 刚选择  |
+| select-cancel    | 在多选模式下有效，取消选中某一项时触发  | 已选项, 取消选择 |
+| select-all    | 全选时触发	 | 已选项 |
+| select-all-cancel    | 取消全选时触发		 | 已选项 |
+| selection-change    | 选中项发生变化时就会触发	 | 已选项 |
+| sort-change  | 排序时有效，当点击排序时触发		 | column：当前列数据  key：排序依据的指标 order(值为 asc 或 desc)|
+| row-click    | 单击某一行时触发	 | 当前行的数据,index |
+| row-dblclick   | 双击某一行时触发		 | 当前行的数据,index |
+| expand   | 展开或收起某一行时触		 | row：当前行的数据,status：当前的状态 |
+| drag-drop    | 拖拽排序松开时触发		 | 置换的两行数据索引和更新后的数据	newIndex, oldIndex, newData |
 
 ### Table slot
 

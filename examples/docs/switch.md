@@ -22,7 +22,7 @@
 ::: demo
 ```html
 <template>
-  <b-switch v-model="switch1" @on-change="change"></b-switch>
+  <b-switch v-model="switch1" @change="change"></b-switch>
 </template>
 <script>
 export default {
@@ -130,7 +130,7 @@ export default {
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-change     | 开关变化时触发，返回当前的状态   | true、false  |
+| change     | 开关变化时触发，返回当前的状态   | true、false  |
 
 ### Slot
 

@@ -3,21 +3,21 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      split: {
-        validator(value) {
-          return ['vertical', 'horizontal'].indexOf(value) >= 0
-        },
-        required: true
+export default {
+  props: {
+    split: {
+      validator(value) {
+        return ['vertical', 'horizontal'].indexOf(value) >= 0
       },
-      className: String
+      required: true
     },
-    computed: {
-      classes() {
-        const classes = ['bin-splitter-pane-resizer', this.split, this.className]
-        return classes.join(' ')
-      }
+    className: String
+  },
+  computed: {
+    classes() {
+      const classes = ['bin-splitter-pane-resizer', this.split, this.className]
+      return classes.join(' ')
     }
   }
+}
 </script>

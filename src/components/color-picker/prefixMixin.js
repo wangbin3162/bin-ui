@@ -1,5 +1,5 @@
 export default {
-  data () {
+  data() {
     return {
       prefixCls: 'bin-color-picker',
       inputPrefixCls: 'bin-input',

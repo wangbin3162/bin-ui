@@ -9,7 +9,7 @@ export default {
   mixins: [Picker],
   props: {
     type: {
-      validator (value) {
+      validator(value) {
         return oneOf(value, ['year', 'month', 'date', 'daterange', 'datetime', 'datetimerange'])
       },
       default: 'date'
@@ -17,11 +17,11 @@ export default {
   },
   components: { DatePickerPanel, RangeDatePickerPanel },
   computed: {
-    panel () {
+    panel() {
       const isRange = this.type === 'daterange' || this.type === 'datetimerange'
       return isRange ? 'RangeDatePickerPanel' : 'DatePickerPanel'
     },
-    ownPickerProps () {
+    ownPickerProps() {
       return this.options
     }
   }

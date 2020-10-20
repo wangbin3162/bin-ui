@@ -4,7 +4,7 @@
   </ul>
 </template>
 <script>
-  export default {
-    name: 'BDropdownMenu'
-  }
+export default {
+  name: 'BDropdownMenu'
+}
 </script>

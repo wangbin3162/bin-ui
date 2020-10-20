@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'BButtonGroup'
-  }
+export default {
+  name: 'BButtonGroup'
+}
 </script>

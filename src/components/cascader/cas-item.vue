@@ -6,29 +6,29 @@
   </li>
 </template>
 <script>
-  export default {
-    name: 'CasItem',
-    props: {
-      data: Object,
-      prefixCls: String,
-      tmpItem: Object
+export default {
+  name: 'CasItem',
+  props: {
+    data: Object,
+    prefixCls: String,
+    tmpItem: Object
+  },
+  computed: {
+    classes() {
+      return [
+        `${this.prefixCls}-menu-item`,
+        {
+          [`${this.prefixCls}-menu-item-active`]: this.tmpItem.value === this.data.value,
+          [`${this.prefixCls}-menu-item-disabled`]: this.data.disabled
+        }
+      ]
     },
-    computed: {
-      classes () {
-        return [
-          `${this.prefixCls}-menu-item`,
-          {
-            [`${this.prefixCls}-menu-item-active`]: this.tmpItem.value === this.data.value,
-            [`${this.prefixCls}-menu-item-disabled`]: this.data.disabled
-          }
-        ]
-      },
-      showArrow () {
-        return (this.data.children && this.data.children.length) || ('loading' in this.data && !this.data.loading)
-      },
-      showLoading () {
-        return 'loading' in this.data && this.data.loading
-      }
+    showArrow() {
+      return (this.data.children && this.data.children.length) || ('loading' in this.data && !this.data.loading)
+    },
+    showLoading() {
+      return 'loading' in this.data && this.data.loading
     }
   }
+}
 </script>

@@ -193,16 +193,16 @@
 
 | 方法名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-enter     | 按下回车键时触发   | 无  |
-| on-click    | 设置 icon 属性后，点击图标时触发   | 无  |
-|on-change	|数据改变时触发	|event|
-|on-focus	|输入框聚焦时触发	|无|
-|on-blur	|输入框失去焦点时触发|	无|
-|on-keyup	|原生的 keyup 事件	|event|
-|on-keydown	|原生的 keydown 事件	|event|
-|on-keypress|	原生的 keypress 事件	|event|
-|on-search	|开启 search 时可用，点击搜索或按下回车键时触发	|value|
-|on-clear |开启 clearable 时可用，点击清空按钮时触发|	无|
+| enter     | 按下回车键时触发   | 无  |
+| click    | 设置 icon 属性后，点击图标时触发   | 无  |
+| change	|数据改变时触发	|event|
+| focus	|输入框聚焦时触发	|无|
+| blur	|输入框失去焦点时触发|	无|
+| keyup	|原生的 keyup 事件	|event|
+| keydown	|原生的 keydown 事件	|event|
+| keypress|	原生的 keypress 事件	|event|
+| search	|开启 search 时可用，点击搜索或按下回车键时触发	|value|
+| clear |开启 clearable 时可用，点击清空按钮时触发|	无|
 
 ### Input slot 
 

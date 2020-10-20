@@ -1,4 +1,4 @@
-function has (browser) {
+function has(browser) {
   const ua = navigator.userAgent
   if (browser === 'ie') {
     const isIE = ua.indexOf('compatible') > -1 && ua.indexOf('MSIE') > -1
@@ -15,7 +15,7 @@ function has (browser) {
 }
 
 const csv = {
-  _isIE11 () {
+  _isIE11() {
     let iev = 0
     const ieold = (/MSIE (\d+\.\d+);/.test(navigator.userAgent))
     const trident = !!navigator.userAgent.match(/Trident\/7.0/)
@@ -34,11 +34,11 @@ const csv = {
     return iev === 11
   },
 
-  _isEdge () {
+  _isEdge() {
     return /Edge/.test(navigator.userAgent)
   },
 
-  _getDownloadUrl (text) {
+  _getDownloadUrl(text) {
     const BOM = '\uFEFF'
     // Add BOM to text for open in excel correctly
     if (window.Blob && window.URL && window.URL.createObjectURL) {
@@ -49,7 +49,7 @@ const csv = {
     }
   },
 
-  download (filename, text) {
+  download(filename, text) {
     if (has('ie') && has('ie') < 10) {
       // has module unable identify ie11 and Edge
       const oWin = window.top.open('about:blank', '_blank')

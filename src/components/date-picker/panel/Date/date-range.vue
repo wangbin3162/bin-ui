@@ -44,9 +44,9 @@
           :value="preSelecting.left ? [dates[0]] : dates"
           :focused-date="focusedDate"
 
-          @on-change-range="handleChangeRange"
-          @on-pick="panelPickerHandlers.left"
-          @on-pick-click="handlePickClick"
+          @change-range="handleChangeRange"
+          @pick="panelPickerHandlers.left"
+          @pick-click="handlePickClick"
         ></component>
       </div>
       <div :class="[prefixCls + '-content', prefixCls + '-content-right']" v-show="!isTime">
@@ -84,9 +84,9 @@
           :show-week-numbers="showWeekNumbers"
           :value="preSelecting.right ? [dates[dates.length - 1]] : dates"
           :focused-date="focusedDate"
-          @on-change-range="handleChangeRange"
-          @on-pick="panelPickerHandlers.right"
-          @on-pick-click="handlePickClick"></component>
+          @change-range="handleChangeRange"
+          @pick="panelPickerHandlers.right"
+          @pick-click="handlePickClick"></component>
       </div>
       <div :class="[prefixCls + '-content']" v-show="isTime">
         <time-picker
@@ -96,11 +96,11 @@
           :format="format"
           :time-disabled="timeDisabled"
           v-bind="timePickerOptions"
-          @on-pick="handleRangePick"
-          @on-pick-click="handlePickClick"
-          @on-pick-clear="handlePickClear"
-          @on-pick-success="handlePickSuccess"
-          @on-pick-toggle-time="handleToggleTime"
+          @pick="handleRangePick"
+          @pick-click="handlePickClick"
+          @pick-clear="handlePickClear"
+          @pick-success="handlePickSuccess"
+          @pick-toggle-time="handleToggleTime"
         ></time-picker>
       </div>
       <confirm
@@ -108,9 +108,9 @@
         :show-time="showTime"
         :is-time="isTime"
         :time-disabled="timeDisabled"
-        @on-pick-toggle-time="handleToggleTime"
-        @on-pick-clear="handlePickClear"
-        @on-pick-success="handlePickSuccess"></confirm>
+        @pick-toggle-time="handleToggleTime"
+        @pick-clear="handlePickClear"
+        @pick-success="handlePickSuccess"></confirm>
     </div>
   </div>
 </template>

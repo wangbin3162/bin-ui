@@ -4,7 +4,7 @@ const log = {}
  * @description 返回这个样式的颜色值
  * @param {String} type 样式名称 [ primary | success | warning | danger | text ]
  */
-export function typeColor (type = 'default') {
+export function typeColor(type = 'default') {
   let color = ''
   switch (type) {
     case 'primary':

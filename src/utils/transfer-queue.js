@@ -1,6 +1,6 @@
 let transferIndex = 0
 
-function transferIncrease () {
+function transferIncrease() {
   transferIndex++
 }
 

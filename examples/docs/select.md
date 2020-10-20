@@ -351,12 +351,12 @@ export default {
 
 ### Select events 
 
-| 事件名      | 说明    | 返回值      |
+| 事件名     | 说明    | 返回值      |
 |---------- |-------- |---------- |
-| on-change     | 选中的Option变化时触发，默认返回 value，如需返回 label，详见 label-in-value 属性   | 当前选中项  |
-| on-query-change   | 搜索词改变时触发   | query  |
-| on-clear   | 点击清空按钮时触发  | 无  |
-| on-open-change    | 下拉框展开或收起时触发   | true / false  |
+| change  | 选中的Option变化时触发，默认返回 value，如需返回 label，详见 label-in-value 属性   | 当前选中项  |
+| clear   | 点击清空按钮时触发  | 无  |
+| query-change   | 搜索词改变时触发   | query  |
+| open-change    | 下拉框展开或收起时触发   | true / false  |
 
 ### Select slot
 

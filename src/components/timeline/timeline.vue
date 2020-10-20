@@ -4,25 +4,25 @@
   </ul>
 </template>
 <script>
-  const prefixCls = 'bin-timeline'
+const prefixCls = 'bin-timeline'
 
-  export default {
-    name: 'BTimeline',
-    props: {
-      pending: {
-        type: Boolean,
-        default: false
-      }
-    },
-    computed: {
-      classes () {
-        return [
-          `${prefixCls}`,
-          {
-            [`${prefixCls}-pending`]: this.pending
-          }
-        ]
-      }
+export default {
+  name: 'BTimeline',
+  props: {
+    pending: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    classes() {
+      return [
+        `${prefixCls}`,
+        {
+          [`${prefixCls}-pending`]: this.pending
+        }
+      ]
     }
   }
+}
 </script>

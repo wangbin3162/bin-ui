@@ -243,7 +243,7 @@ export default {
       }
       this.$set(node, 'selected', !node.selected)
 
-      this.$emit('on-select-change', this.getSelectedNodes(), node)
+      this.$emit('select-change', this.getSelectedNodes(), node)
     },
     handleCheck({ checked, nodeKey }) {
       const node = this.flatState[nodeKey].node
@@ -253,7 +253,7 @@ export default {
       this.updateTreeUp(nodeKey) // propagate up
       this.updateTreeDown(node, { checked, indeterminate: false }) // reset `indeterminate` when going down
 
-      this.$emit('on-check-change', this.getCheckedNodes(), node)
+      this.$emit('check-change', this.getCheckedNodes(), node)
     }
   },
   created() {
@@ -261,9 +261,9 @@ export default {
     this.rebuildTree()
   },
   mounted() {
-    this.$on('on-check', this.handleCheck)
-    this.$on('on-selected', this.handleSelect)
-    this.$on('toggle-expand', node => this.$emit('on-toggle-expand', node))
+    this.$on('check', this.handleCheck)
+    this.$on('selected', this.handleSelect)
+    this.$on('toggle-expand', node => this.$emit('toggle-expand', node))
   }
 }
 </script>

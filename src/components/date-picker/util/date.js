@@ -7,33 +7,33 @@
    * Parse or format dates
    * @class fecha
    */
-  var fecha = {}
-  var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g
-  var twoDigits = /\d\d?/
-  var threeDigits = /\d{3}/
-  var fourDigits = /\d{4}/
-  var word = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i
-  var noop = function () {
+  let fecha = {}
+  let token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g
+  let twoDigits = /\d\d?/
+  let threeDigits = /\d{3}/
+  let fourDigits = /\d{4}/
+  let word = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i
+  let noop = function () {
   }
 
-  function shorten (arr, sLen) {
-    var newArr = []
-    for (var i = 0, len = arr.length; i < len; i++) {
+  function shorten(arr, sLen) {
+    let newArr = []
+    for (let i = 0, len = arr.length; i < len; i++) {
       newArr.push(arr[i].substr(0, sLen))
     }
     return newArr
   }
 
-  function monthUpdate (arrName) {
+  function monthUpdate(arrName) {
     return function (d, v, i18n) {
-      var index = i18n[arrName].indexOf(v.charAt(0).toUpperCase() + v.substr(1).toLowerCase())
+      let index = i18n[arrName].indexOf(v.charAt(0).toUpperCase() + v.substr(1).toLowerCase())
       if (~index) {
         d.month = index
       }
     }
   }
 
-  function pad (val, len) {
+  function pad(val, len) {
     val = String(val)
     len = len || 2
     while (val.length < len) {
@@ -42,10 +42,10 @@
     return val
   }
 
-  var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-  var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-  var monthNamesShort = shorten(monthNames, 3)
-  var dayNamesShort = shorten(dayNames, 3)
+  let dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  let monthNamesShort = shorten(monthNames, 3)
+  let dayNamesShort = shorten(dayNames, 3)
   fecha.i18n = {
     dayNamesShort: dayNamesShort,
     dayNames: dayNames,
@@ -55,12 +55,12 @@
     /**
      * @return {string}
      */
-    DoFn: function DoFn (D) {
+    DoFn: function DoFn(D) {
       return D + ['th', 'st', 'nd', 'rd'][D % 10 > 3 ? 0 : (D - D % 10 !== 10) * D % 10]
     }
   }
 
-  var formatFlags = {
+  let formatFlags = {
     /**
      * @return {number}
      */
@@ -161,12 +161,12 @@
      * @return {string}
      */
     ZZ: function (dateObj) {
-      var o = dateObj.getTimezoneOffset()
+      let o = dateObj.getTimezoneOffset()
       return (o > 0 ? '-' : '+') + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4)
     }
   }
 
-  var parseFlags = {
+  let parseFlags = {
     d: [twoDigits, function (d, v) {
       d.day = v
     }],
@@ -174,7 +174,7 @@
       d.month = v - 1
     }],
     yy: [twoDigits, function (d, v) {
-      var da = new Date(), cent = +('' + da.getFullYear()).substr(0, 2)
+      let da = new Date(), cent = +('' + da.getFullYear()).substr(0, 2)
       d.year = '' + (v > 68 ? cent - 1 : cent) + v
     }],
     h: [twoDigits, function (d, v) {
@@ -203,7 +203,7 @@
     MMM: [word, monthUpdate('monthNamesShort')],
     MMMM: [word, monthUpdate('monthNames')],
     a: [word, function (d, v, i18n) {
-      var val = v.toLowerCase()
+      let val = v.toLowerCase()
       if (val === i18n.amPm[0]) {
         d.isPm = false
       } else if (val === i18n.amPm[1]) {
@@ -211,7 +211,7 @@
       }
     }],
     ZZ: [/[\+\-]\d\d:?\d\d/, function (d, v) {
-      var parts = (v + '').match(/([\+\-]|\d\d)/gi), minutes
+      let parts = (v + '').match(/([\+\-]|\d\d)/gi), minutes
 
       if (parts) {
         minutes = +(parts[1] * 60) + parseInt(parts[2], 10)
@@ -227,7 +227,6 @@
   parseFlags.MM = parseFlags.M
   parseFlags.ss = parseFlags.s
   parseFlags.A = parseFlags.a
-
 
   // Some common format strings
   fecha.masks = {
@@ -248,7 +247,7 @@
    * @param {string} mask Format of the date, i.e. 'mm-dd-yy' or 'shortDate'
    */
   fecha.format = function (dateObj, mask, i18nSettings) {
-    var i18n = i18nSettings || fecha.i18n
+    let i18n = i18nSettings || fecha.i18n
 
     if (typeof dateObj === 'number') {
       dateObj = new Date(dateObj)
@@ -273,7 +272,7 @@
    * @returns {Date|boolean}
    */
   fecha.parse = function (dateStr, format, i18nSettings) {
-    var i18n = i18nSettings || fecha.i18n
+    let i18n = i18nSettings || fecha.i18n
 
     if (typeof format !== 'string') {
       throw new Error('Invalid format in fecha.parse')
@@ -287,12 +286,12 @@
       return false
     }
 
-    var isValid = true
-    var dateInfo = {}
+    let isValid = true
+    let dateInfo = {}
     format.replace(token, function ($0) {
       if (parseFlags[$0]) {
-        var info = parseFlags[$0]
-        var index = dateStr.search(info[0])
+        let info = parseFlags[$0]
+        let index = dateStr.search(info[0])
         if (!~index) {
           isValid = false
         } else {
@@ -311,14 +310,14 @@
       return false
     }
 
-    var today = new Date()
+    let today = new Date()
     if (dateInfo.isPm === true && dateInfo.hour != null && +dateInfo.hour !== 12) {
       dateInfo.hour = +dateInfo.hour + 12
     } else if (dateInfo.isPm === false && +dateInfo.hour === 12) {
       dateInfo.hour = 0
     }
 
-    var date
+    let date
     if (dateInfo.timezoneOffset != null) {
       dateInfo.minute = +(dateInfo.minute || 0) - +dateInfo.timezoneOffset
       date = new Date(Date.UTC(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1,

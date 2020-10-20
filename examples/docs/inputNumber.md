@@ -126,6 +126,7 @@
       <b-input-number v-model="value6" readonly></b-input-number>&nbsp;&nbsp;
       <b-input-number v-model="value6" :editable="false"></b-input-number>
     </div>
+    <b-divider></b-divider>
     <div>
       <b-input-number v-model="value6" disabled always></b-input-number>&nbsp;&nbsp;
       <b-input-number v-model="value6" readonly always></b-input-number>&nbsp;&nbsp;
@@ -167,6 +168,6 @@
 
 | 事件名      | 说明    | 返回值      |
 |---------- |-------- |---------- |
-|on-change|	数值改变时的回调|返回当前值	当前值|
-|on-focus|	聚焦时触发|	event|
-|on-blur|	失焦时触发|	-|
+| change |	数值改变时的回调|返回当前值	当前值|
+| focus |	聚焦时触发|	event|
+| blur |	失焦时触发|	-|

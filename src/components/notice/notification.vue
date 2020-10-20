@@ -20,96 +20,96 @@
   </div>
 </template>
 <script>
-  import Notice from '../base/notice/notice.vue'
+import Notice from '../base/notice/notice.vue'
 
-  import { transferIndex, transferIncrease } from '../../utils/transfer-queue'
+import { transferIndex, transferIncrease } from '../../utils/transfer-queue'
 
-  const prefixCls = 'bin-notification'
-  let seed = 0
-  const now = Date.now()
+const prefixCls = 'bin-notification'
+let seed = 0
+const now = Date.now()
 
-  function getUuid() {
-    return 'binNotification_' + now + '_' + (seed++)
-  }
+function getUuid() {
+  return 'binNotification_' + now + '_' + (seed++)
+}
 
-  export default {
-    components: { Notice },
-    props: {
-      prefixCls: {
-        type: String,
-        default: prefixCls
-      },
-      styles: {
-        type: Object,
-        default: function () {
-          return {
-            top: '65px',
-            left: '50%'
-          }
+export default {
+  components: { Notice },
+  props: {
+    prefixCls: {
+      type: String,
+      default: prefixCls
+    },
+    styles: {
+      type: Object,
+      default: function () {
+        return {
+          top: '65px',
+          left: '50%'
         }
-      },
-      content: {
-        type: String
-      },
-      className: {
-        type: String
       }
     },
-    data() {
-      return {
-        notices: [],
-        tIndex: this.handleGetIndex()
-      }
+    content: {
+      type: String
     },
-    computed: {
-      classes() {
-        return [
-          `${this.prefixCls}`,
-          {
-            [`${this.className}`]: !!this.className
-          }
-        ]
-      },
-      wrapStyles() {
-        let styles = Object.assign({}, this.styles)
-        styles['z-index'] = 2010 + this.tIndex
-
-        return styles
-      }
-    },
-    methods: {
-      add(notice) {
-        const name = notice.name || getUuid()
-
-        let _notice = Object.assign({
-          styles: {
-            right: '50%'
-          },
-          content: '',
-          duration: 1.5,
-          closable: false,
-          name: name
-        }, notice)
-
-        this.notices.push(_notice)
-        this.tIndex = this.handleGetIndex()
-      },
-      close(name) {
-        const notices = this.notices
-        for (let i = 0; i < notices.length; i++) {
-          if (notices[i].name === name) {
-            this.notices.splice(i, 1)
-            break
-          }
+    className: {
+      type: String
+    }
+  },
+  data() {
+    return {
+      notices: [],
+      tIndex: this.handleGetIndex()
+    }
+  },
+  computed: {
+    classes() {
+      return [
+        `${this.prefixCls}`,
+        {
+          [`${this.className}`]: !!this.className
         }
-      },
-      closeAll() {
-        this.notices = []
-      },
-      handleGetIndex() {
-        transferIncrease()
-        return transferIndex
-      },
+      ]
+    },
+    wrapStyles() {
+      let styles = Object.assign({}, this.styles)
+      styles['z-index'] = 2010 + this.tIndex
+
+      return styles
+    }
+  },
+  methods: {
+    add(notice) {
+      const name = notice.name || getUuid()
+
+      let _notice = Object.assign({
+        styles: {
+          right: '50%'
+        },
+        content: '',
+        duration: 1.5,
+        closable: false,
+        name: name
+      }, notice)
+
+      this.notices.push(_notice)
+      this.tIndex = this.handleGetIndex()
+    },
+    close(name) {
+      const notices = this.notices
+      for (let i = 0; i < notices.length; i++) {
+        if (notices[i].name === name) {
+          this.notices.splice(i, 1)
+          break
+        }
+      }
+    },
+    closeAll() {
+      this.notices = []
+    },
+    handleGetIndex() {
+      transferIncrease()
+      return transferIndex
     }
   }
+}
 </script>

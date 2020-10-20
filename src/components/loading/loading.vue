@@ -17,34 +17,34 @@
 </template>
 
 <script>
-  const prefixCls = 'bin-loading'
-  export default {
-    name: 'BLoading',
-    props: {
-      showIcon: String,
-      showText: String,
-      fix: {
-        type: Boolean,
-        default: false
-      },
-      size: String
+const prefixCls = 'bin-loading'
+export default {
+  name: 'BLoading',
+  props: {
+    showIcon: String,
+    showText: String,
+    fix: {
+      type: Boolean,
+      default: false
     },
-    computed: {
-      classes () {
-        return [
-          `${prefixCls}`,
-          {
-            [`${prefixCls}-fix`]: this.fix,
-            [`${prefixCls}-show-text`]: this.showText,
-            [`${prefixCls}-fullscreen`]: this.fullscreen
-          }
-        ]
-      },
-      textStyle () {
-        return {
-          fontSize: `${this.size}px`
+    size: String
+  },
+  computed: {
+    classes() {
+      return [
+        `${prefixCls}`,
+        {
+          [`${prefixCls}-fix`]: this.fix,
+          [`${prefixCls}-show-text`]: this.showText,
+          [`${prefixCls}-fullscreen`]: this.fullscreen
         }
+      ]
+    },
+    textStyle() {
+      return {
+        fontSize: `${this.size}px`
       }
     }
   }
+}
 </script>

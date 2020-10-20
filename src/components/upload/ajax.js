@@ -1,6 +1,6 @@
 // https://github.com/ElemeFE/element/blob/dev/packages/upload/src/ajax.js
 
-function getError (action, option, xhr) {
+function getError(action, option, xhr) {
   const msg = `fail to post ${action} ${xhr.status}`
   const err = new Error(msg)
   err.status = xhr.status
@@ -9,7 +9,7 @@ function getError (action, option, xhr) {
   return err
 }
 
-function getBody (xhr) {
+function getBody(xhr) {
   const text = xhr.responseText || xhr.response
   if (!text) {
     return text
@@ -22,7 +22,7 @@ function getBody (xhr) {
   }
 }
 
-export default function upload (option) {
+export default function upload(option) {
   if (typeof XMLHttpRequest === 'undefined') {
     return
   }
@@ -31,7 +31,7 @@ export default function upload (option) {
   const action = option.action
 
   if (xhr.upload) {
-    xhr.upload.onprogress = function progress (e) {
+    xhr.upload.onprogress = function progress(e) {
       if (e.total > 0) {
         e.percent = e.loaded / e.total * 100
       }
@@ -49,11 +49,11 @@ export default function upload (option) {
 
   formData.append(option.filename, option.file)
 
-  xhr.onerror = function error (e) {
+  xhr.onerror = function error(e) {
     option.onError(e)
   }
 
-  xhr.onload = function onload () {
+  xhr.onload = function onload() {
     if (xhr.status < 200 || xhr.status >= 300) {
       return option.onError(getError(action, option, xhr), getBody(xhr))
     }

@@ -113,7 +113,7 @@
             }
           }
         }
-        this.$emit('on-visible-change', val)
+        this.$emit('visible-change', val)
       }
     },
     methods: {

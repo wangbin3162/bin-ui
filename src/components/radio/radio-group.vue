@@ -73,8 +73,8 @@ export default {
       this.currentValue = data.value
       this.updateValue()
       this.$emit('input', data.value)
-      this.$emit('on-change', data.value)
-      this.dispatch('BFormItem', 'on-form-change', data.value)
+      this.$emit('change', data.value)
+      this.dispatch('BFormItem', 'form-change', data.value)
     }
   },
   watch: {
