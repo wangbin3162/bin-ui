@@ -265,8 +265,8 @@ export default {
 ::: demo
 ```html
 <template>
-<div>
-  <b-select style="width:200px" prefix="ios-home">
+<div style="width:200px">
+  <b-select prefix="ios-home">
     <b-option value="beijing" label="北京"></b-option>
     <b-option value="shanghai" label="上海"></b-option>
     <b-option value="xuzhou" label="徐州"></b-option> 

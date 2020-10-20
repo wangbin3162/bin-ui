@@ -263,7 +263,7 @@ export default {
   mounted() {
     this.$on('check', this.handleCheck)
     this.$on('selected', this.handleSelect)
-    this.$on('toggle-expand', node => this.$emit('toggle-expand', node))
+    this.$on('expand', node => this.$emit('toggle-expand', node))
   }
 }
 </script>

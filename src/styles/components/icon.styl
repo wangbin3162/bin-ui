@@ -1,0 +1,36 @@
+.bin-icon-select {
+  width: 100%;
+  display: inline-flex;
+  .bin-button {
+    left: -1px;
+  }
+  .icon-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #eaeefb;
+    border-radius: 4px;
+    width: 970px;
+    .icon-item {
+      cursor: pointer;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      font-size: 12px;
+      text-align: center;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      margin-right: -1px;
+      margin-bottom: -1px;
+      .iconfont {
+        font-size: 20px;
+        transition: .2s;
+      }
+      &:hover {
+        .iconfont {
+          font-size: 26px;
+          color: #0d85ff;
+        }
+      }
+    }
+  }
+}

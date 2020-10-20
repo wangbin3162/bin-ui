@@ -9,8 +9,8 @@
   opacity: 1;
   overflow: hidden;
   padding: 0 8px;
-  height: 30px;
-  line-height: 28px;
+  height: $default-height;
+  line-height: $default-height - 2px;
   border-radius: $border-base-radius + 1;
   box-sizing: border-box;
   white-space: nowrap;
@@ -35,7 +35,7 @@
     color: #515a6e !important;
   }
   &.is-dark {
-    line-height: 28px;
+    line-height: $default-height - 2px;
     color: #fff !important;
     border-color: transparent !important;
     &.is-checkable:not(.is-checked) {
@@ -91,18 +91,18 @@
     height: auto;
   }
   &.is-small {
-    height: 26px;
-    line-height: 24px;
+    height: $small-height;
+    line-height: $small-height - 2px;
     &.is-dark {
-      line-height: 24px;
+      line-height: $small-height - 2px;
     }
   }
   &.is-mini {
-    height: 22px;
-    line-height: 20px;
+    height: $mini-height;
+    line-height: $mini-height - 2px;
     font-size: 12px;
     &.is-dark {
-      line-height: 20px;
+      line-height: $mini-height - 2px;
     }
   }
   .bin-dot {

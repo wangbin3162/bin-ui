@@ -5,6 +5,7 @@ import CollapseTransition from './components/base/collapse-transition'
 import Row from './components/row'
 import Col from './components/col'
 import Icon from './components/icon'
+import IconSelect from './components/icon/icon-select'
 import Button from './components/button'
 import ButtonGroup from './components/button-group'
 import ScrollBar from './components/scrollbar'
@@ -72,7 +73,7 @@ import Message from './components/message'
 import Notice from './components/notice'
 
 const components = [
-  Row, Col, Icon, Button, ButtonGroup, ScrollBar,
+  Row, Col, Icon, IconSelect, Button, ButtonGroup, ScrollBar,
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
   CollapseTransition, Collapse, CollapsePanel, CollapseWrap, Badge, Breadcrumb, breadcrumbItem,
@@ -111,6 +112,7 @@ export default {
   Row,
   Col,
   Icon,
+  IconSelect,
   Button,
   ButtonGroup,
   ScrollBar,

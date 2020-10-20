@@ -4,15 +4,17 @@
     <div class="global-anchor">
       <b-anchor :scroll-offset="100">
         <b-anchor-link href="#shi-yong-fang-fa" title="使用方法"></b-anchor-link>
+        <b-anchor-link href="#tu-biao-xuan-ze-qi" title="图标选择器"></b-anchor-link>
         <b-anchor-link href="#tu-biao-ji-he" title="图标集合"></b-anchor-link>
         <b-anchor-link href="#huo-quicon-names" title="获取icon names"></b-anchor-link>
+        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
+        <b-anchor-link href="#events" title="events"></b-anchor-link>
       </b-anchor>
     </div>
 </template>
 
 图标这里使用了阿里[iconfont](https://www.iconfont.cn/)图标库生成了图标，图标来源于
 开源项目 ionicons，结合整理添加了一些其他的图标。
-
 
 ### 使用方法
 
@@ -25,6 +27,34 @@ i 标签可以直接设置样式类名为 `iconfont icon-xxx` 来使用即可。
     <b-button type="danger" icon="ios-trash" size="mini">删除</b-button>
     <b-icon name="loading2" class="icon-is-rotating"></b-icon>
   </div>
+```
+:::
+
+### 图标选择器
+
+默认提供一个icon图标选择器
+
+::: demo
+```html
+<template>
+<div flex="cross:center">
+  <b-icon-select style="width: 200px;" v-model="select"></b-icon-select>&nbsp;&nbsp;
+  <b-icon-select style="width: 200px;" 
+      v-model="select" placeholder="自定义图标集合"
+      :custom-icons="['heart','favorfill','md-star','ios-ribbon','ios-snow']"></b-icon-select>&nbsp;&nbsp;
+  <b-icon-select style="width: 230px;" v-model="select" modal></b-icon-select>
+  <span style="margin-left: 20px;">已选：<b-icon v-if="select" :name="select"></b-icon></span>
+</div>
+</template>
+<script>
+export default {
+  data(){
+    return{
+      select:''
+    }
+  }
+}
+</script>
 ```
 :::
 
@@ -53,3 +83,24 @@ i 标签可以直接设置样式类名为 `iconfont icon-xxx` 来使用即可。
     }
     console.log(iconList.join(','))
 
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| value     | 绑定的值，可使用 v-model 双向绑定   | String  |   —   |   —   |
+| modal     | 是否用弹框显示   | large、small、default、mini  |   —   |   default  |
+| filterable     | 是否可搜索，仅默认模式可用   | Boolean  |   —   |   false   |
+| clearable     | 是否显示清空按钮   | Boolean  |   —   |   false   |
+| clearable     | 禁用状态   | Boolean  |   —   |   false   |
+| placeholder     | 输入提示   | String  |   —   |    —    |
+| size     | 弹窗模式选择按钮和输入框大小   | Boolean  |   —   |   false   |
+| buttonType  | 弹窗模式选择按钮类型   | Number  |   —   |    —     |
+| stopRemoveScroll | 弹窗模式是否停止scroll计算   | String  |   —   |    —     |
+| icon     | 输入框尾部图标，仅在 text 类型下有效   | String  |   —   |    —     |
+| custom-icons | 自定义图标集合，如不在当前库包含，则需要额外引入自定义的图标后引入 | Array  |  —  |  — |
+
+### events
+
+| 方法名      | 说明    | 返回值      |
+|---------- |-------- |---------- |
+| change	|数据改变时触发	|event|

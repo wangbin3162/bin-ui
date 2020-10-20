@@ -197,6 +197,12 @@ export default {
   watch: {
     value(val) {
       this.setCurrentValue(val)
+    },
+    prefix(val) {
+      this.showPrefix = val !== '' || this.$slots.prefix !== undefined
+    },
+    suffix(val) {
+      this.showSuffix = val !== '' || this.$slots.suffix !== undefined
     }
   },
   methods: {

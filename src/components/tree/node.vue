@@ -161,7 +161,7 @@ export default {
 
       if (item[this.childrenKey] && item[this.childrenKey].length) {
         this.$set(this.data, 'expand', !this.data.expand)
-        this.dispatch('BTree', 'toggle-expand', this.data)
+        this.dispatch('BTree', 'expand', this.data)
       }
     },
     handleSelect() {

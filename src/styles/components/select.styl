@@ -188,11 +188,11 @@
     }
   }
   &-head-with-prefix {
-    display: inline-block !important;
-    vertical-align: middle;
+    display: flex !important;
+    align-items: center;
   }
   &-single &-prefix {
-    padding: 0 5px 0 6px;
+    padding-left: 8px;
   }
   &-single &-head-with-prefix, &-multiple &-head-with-prefix {
     padding-left: 0 !important;
@@ -286,6 +286,8 @@
   color: $color-text-default;
   font-size: $base-font-size !important;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   list-style: none;
   cursor: pointer;
   transition: background .2s ease-in-out;
