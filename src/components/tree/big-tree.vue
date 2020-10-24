@@ -357,6 +357,10 @@ export default {
         }
       })
     }
+  },
+  beforeDestroy() {
+    // 销毁清理内存
+    this.flattenTree = null
   }
 }
 </script>
