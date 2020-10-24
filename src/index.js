@@ -47,6 +47,7 @@ import Cascade from './components/cascader'
 import Table from './components/table'
 import Page from './components/page'
 import Tree from './components/tree'
+import BigTree from './components/tree-big'
 import Menu from './components/menu'
 import SubMenu from './components/submenu'
 import MenuItem from './components/menu-item'
@@ -80,7 +81,7 @@ const components = [
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
   Form, FormItem, Tabs, Calendar,
   Dropdown, DropdownItem, DropdownMenu,
-  Select, Option, OptionGroup, Table, Page, Tree, Cascade,
+  Select, Option, OptionGroup, Table, Page, Tree, BigTree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
   Timeline, TimelineItem, Affix, Anchor, AnchorLink, Carousel, CarouselItem, Popover,
   Empty, Split, Slider
@@ -158,6 +159,7 @@ export default {
   Table,
   Page,
   Tree,
+  BigTree,
   Menu,
   SubMenu,
   MenuItem,

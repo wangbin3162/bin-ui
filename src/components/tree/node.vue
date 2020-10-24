@@ -2,7 +2,7 @@
   <ul :class="classes">
     <li v-show="data.visible">
       <div class="bin-tree-node" :style="{whiteSpace:TreeInstance.nowrap?'nowrap':null}">
-          <span :class="arrowClasses" @click="handleExpand">
+        <span :class="arrowClasses" @click="handleExpand">
           <b-icon v-if="showArrow" name="ios-arrow-forward"></b-icon>
           <b-icon v-if="showLoading" name="loading" class="bin-load-loop"></b-icon>
         </span>

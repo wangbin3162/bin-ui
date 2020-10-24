@@ -71,6 +71,9 @@ export default {
       type: Boolean,
       default: false
     },
+    defaultExpand: {
+      type: Boolean
+    },
     nowrap: { // 是否不进行换行显示
       type: Boolean,
       default: true
@@ -106,11 +109,14 @@ export default {
   methods: {
     compileFlatState() { // 每个结点都有一个关系父结点/子结点
       let keyCounter = 0
-      let childrenKey = this.childrenKey
+      let { childrenKey, defaultExpand } = this
       const flatTree = []
 
       const flattenChildren = (node, parent) => {
         this.$set(node, 'nodeKey', keyCounter++)
+        if (typeof node.expand === 'undefined') {
+          this.$set(node, 'expand', defaultExpand)
+        }
         if (typeof node.visible === 'undefined') {
           this.$set(node, 'visible', true)
         }
@@ -173,6 +179,18 @@ export default {
     /* public API */
     getCheckedAndIndeterminateNodes() {
       return this.flatState.filter(obj => (obj.node.checked || obj.node.indeterminate)).map(obj => obj.node)
+    },
+    /* public API 折叠所有 */
+    collapseAll() {
+      this.flatState.forEach(node => {
+        node.node.expand = false
+      })
+    },
+    /* public API 展开所有 */
+    expandAll() {
+      this.flatState.forEach(node => {
+        node.node.expand = true
+      })
     },
     getMatchesNode(query) {
       return this.flatState.filter(obj => this.filterNodeMethod.call(obj.node, query, obj.node))

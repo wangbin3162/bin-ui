@@ -8,6 +8,7 @@
         <b-anchor-link href="#ke-yi-xuan-ze" title="可以选择"></b-anchor-link>
         <b-anchor-link href="#yi-bu-jia-zai-zi-jie-dian" title="异步加载子节点"></b-anchor-link>
         <b-anchor-link href="#render-han-shu" title="render函数"></b-anchor-link>
+        <b-anchor-link href="#big-tree-chao-da-shu-ju-liang-de-shu-jie-gou" title="超大数据量的树结构"></b-anchor-link>
         <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
         <b-anchor-link href="#events" title="Events"></b-anchor-link>
         <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
@@ -21,7 +22,7 @@
 ::: demo
 ```html
 <template>
-<div>
+<div> 
   <b-tree :data="data" show-checkbox></b-tree>
 </div>
 </template>
@@ -471,6 +472,70 @@ export default {
 ```
 :::
 
+### Big-Tree 超大数据量的树结构
+
+如果需要渲染超大数据量的属性结构，需要使用扩展组件`<b-big-tree>`,组件内部api基本复用树结构所有属性，对树形结构进行优化，利用可视区域位置来进行过滤筛选节点并进行操作，
+但为了性能的提示必然要牺牲部分体验，因此大数据量的树结构不提供动画展开缩放效果
+
+默认节点高度为`28px`，可通过`visible-count`指定树可是区域显示的节点个数，默认为15个 即`420px`因为是针对可视区域的滚动优化，因此必须指定容器高度
+
+::: demo
+```html
+<template>
+<div>
+  <div style="margin-bottom: 8px;">
+    数据条数：<b-input-number v-model="number"></b-input-number>
+    <b-button @click="init">渲染</b-button>
+  </div>
+  <div flex="main:justify">
+    <b-input v-model="query" search placeholder="输入过滤条件后回车筛选" @search="handleFilter" style="width: 230px;"></b-input>
+    <b-button-group>
+        <b-button @click="expandAll">展开所有</b-button>
+        <b-button @click="collapseAll">收起所有</b-button>
+    </b-button-group>
+  </div>
+  <b-divider style="margin: 14px 0;"></b-divider>
+  <b-big-tree ref="tree" :data="data" big-render :visible-count="10"
+     @select-change="handleSelected" :filter-node-method="filterNode"></b-big-tree>
+</div>
+</template>
+
+<script>
+export default {
+    data () {
+        return {
+            number: 5000,
+            query: '',
+            data: []
+        }
+    },
+    methods:{
+        init(){
+            this.data = this.$generateTree(this.number)
+        },
+        handleSelected(allSelected,node){
+          console.log(allSelected,node)
+        },
+        expandAll(){
+          this.$refs.tree.expandAll()
+        },
+        collapseAll(){
+          this.$refs.tree.collapseAll()
+        },
+        handleFilter(value){
+          this.$refs.tree.filter(value)
+        },
+        filterNode(value, node) {
+            if (!value) return true;
+            // return node.title===value.trim()
+            return node.title.indexOf(value) !== -1;
+        }
+    } 
+}
+</script>
+```
+:::
+
 ### Attributes
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
@@ -487,6 +552,9 @@ export default {
 | lock-select    | 锁定树选择，再部分业务中常用，比如开启弹窗后禁用树的选中操作   | Boolean  |  —   |  false  |
 | nowrap   | tree-node显示是否不换行（默认折行显示）   | Boolean  |  —   |  true  |
 | filter-node-method   | 筛选过滤树节点函数   | Function  |  —   |   —   |
+| timeout  | 刷新频率（`<b-big-tree>`扩展组件可用）   | Number  |  —   |  17   |
+| itemHeight  | 节点高度 （`<b-big-tree>`扩展组件可用）  | Number  |  —   |  28   |
+| visibleCount  | 显示区域个数（`<b-big-tree>`扩展组件可用）   | Number  |  —   |  15   |
 
 ### Events
 
@@ -504,6 +572,8 @@ export default {
 | getSelectedNodes     | 获取被选中的节点   | 无  |
 | getCheckedAndIndeterminateNodes     | 获取选中及半选节点   | 无  |
 | filter     | 树节点过滤函数，必须设置filter-node-method 过滤匹配函数   | 无  |
+| collapseAll   | 收起所有 | 无  |
+| expandAll     | 展开所有 | 无  |
 
 ### Children 
 
@@ -515,5 +585,6 @@ export default {
 | disableCheckbox    | 禁用单选框   | Boolean  | false  |
 | selected     | 是否选中子节点   | Boolean  | false  |
 | checked     | 是否勾选(如果勾选，子节点也会全部勾选)   | Boolean  | false  |
+| visible     | 是否显示节点(可通过操作节点visible属性隐藏节点)   | Boolean  | false  |
 | children     | 子节点属性数组，可以设置tree 组件children-key属性来自定义  | Array  |  —    |
 | render     | 自定义当前节点函数   | Function  | —  |
