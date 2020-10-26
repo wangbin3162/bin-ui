@@ -9,15 +9,16 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.5.14</p>
-        <p class="time">2020-10-24</p>
+        <p class="version">3.5.15</p>
+        <p class="time">2020-10-26</p>
         <p class="content">重要更新！！！，触发事件重命名，不向下兼容，升级时需替换以下变更项</p>
         <p class="content">1、所有触发事件统一，默认去掉所有事件前缀'on-'</p>
         <p class="content">2、page组件'on-page-size-change' 更新为'size-change'</p>
         <p class="content">3、modal组件'on-cancel' 更新为'close';'on-hidden' 更新为'closed';增加'open'回调</p>
         <p class="content">4、calendar组件'on-select-day' 更新为'selected'</p>
         <p class="content">优化icon组件，提供图标选择器</p>
-        <p class="content">扩展大数据属性结构组件`b-big-tree`用于超大数据量的树结构渲染</p>
+        <p class="content">扩展大数据树形结构组件`b-big-tree`用于超大数据量的树结构渲染，优化树形节点样式</p>
+        <p class="content">轮播图，优化dot指示器颜色扩展</p>
       </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
