@@ -41,7 +41,7 @@
                              expand: true,
                              children: [
                                  {
-                                     title: '三级 1-1-1这个标题很长这个标题很长',
+                                     title: '三级 1-1-1',
                                  },
                                  {
                                      title: '三级 1-1-2'
@@ -495,7 +495,7 @@ export default {
     </b-button-group>
   </div>
   <b-divider style="margin: 14px 0;"></b-divider>
-  <b-big-tree ref="tree" :data="data" big-render :visible-count="10"
+  <b-big-tree ref="tree" :data="data" :visible-count="10"
      @select-change="handleSelected" :filter-node-method="filterNode"></b-big-tree>
 </div>
 </template>
@@ -550,7 +550,6 @@ export default {
 | check-strictly   | 复选框的情况下，是否严格的遵循父子不互相关联的做法 | Boolean		  |  —   |   false   |
 | check-directly   | 开启后，在 show-checkbox 模式下，select 的交互也将转为 check | Boolean		  |  —   |   false   |
 | lock-select    | 锁定树选择，再部分业务中常用，比如开启弹窗后禁用树的选中操作   | Boolean  |  —   |  false  |
-| nowrap   | tree-node显示是否不换行（默认折行显示）   | Boolean  |  —   |  true  |
 | filter-node-method   | 筛选过滤树节点函数   | Function  |  —   |   —   |
 | timeout  | 刷新频率（`<b-big-tree>`扩展组件可用）   | Number  |  —   |  17   |
 | itemHeight  | 节点高度 （`<b-big-tree>`扩展组件可用）  | Number  |  —   |  28   |

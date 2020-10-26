@@ -21,7 +21,7 @@ const generateNode = function () {
   const id = generateId()
   return {
     id: id,
-    title: `${label}_${index}`
+    title: `${label}_${index}-id：${id}`
   }
 }
 const generateChild = function (tree, level = 1) {

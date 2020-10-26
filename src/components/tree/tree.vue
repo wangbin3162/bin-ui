@@ -74,10 +74,6 @@ export default {
     defaultExpand: {
       type: Boolean
     },
-    nowrap: { // 是否不进行换行显示
-      type: Boolean,
-      default: true
-    },
     filterNodeMethod: {
       type: Function
     }
