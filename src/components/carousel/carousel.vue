@@ -19,7 +19,9 @@
         <li :class="[n - 1 === currentIndex ? prefixCls + '-active' : '']" :key="n"
             @click="dotsEvent('click', n - 1)"
             @mouseover="dotsEvent('hover', n - 1)">
-          <button type="button" :class="[radiusDot ? 'radius' : '']"></button>
+          <button type="button" :class="[radiusDot ? 'radius' : '']"
+                  :style="{background:n - 1 === currentIndex ? activeColor : defaultColor}">
+          </button>
         </li>
       </template>
     </ul>
@@ -85,6 +87,12 @@ export default {
       validator(value) {
         return value === 'auto' || Object.prototype.toString.call(value) === '[object Number]'
       }
+    },
+    activeColor: {
+      type: String
+    },
+    defaultColor: {
+      type: String
     }
   },
   data() {

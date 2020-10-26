@@ -106,6 +106,21 @@
             <div class="demo-carousel-panel">4</div>
         </b-carousel-item>
     </b-carousel>
+    <b-divider></b-divider>
+    <b-carousel v-model="value1" dots="outside" loop active-color="#1089ff" default-color="#999999">
+        <b-carousel-item>
+            <div class="demo-carousel-panel">1</div>
+        </b-carousel-item>
+        <b-carousel-item>
+            <div class="demo-carousel-panel">2</div>
+        </b-carousel-item>
+        <b-carousel-item>
+            <div class="demo-carousel-panel">3</div>
+        </b-carousel-item>
+        <b-carousel-item>
+            <div class="demo-carousel-panel">4</div>
+        </b-carousel-item>
+    </b-carousel>
 </template>
 <script>
     export default {
@@ -133,6 +148,8 @@
 | trigger | 触发方式   | String |  click，hover  |   click  |
 | arrow | 切换箭头的显示时机   | String |  hover，always，never |   hover  |
 | easing | 动画效果   | String |  —  |   ease  |
+| active-color |  dot激活颜色   | String |  —  |    —   |
+| default-color |  dot默认颜色  | String |  —  |    —   |
 
 ### Events
 
