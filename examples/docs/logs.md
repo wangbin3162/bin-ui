@@ -9,8 +9,8 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.5.15</p>
-        <p class="time">2020-10-26</p>
+        <p class="version">3.6.0</p>
+        <p class="time">2020-11-10</p>
         <p class="content">重要更新！！！，触发事件重命名，不向下兼容，升级时需替换以下变更项</p>
         <p class="content">1、所有触发事件统一，默认去掉所有事件前缀'on-'</p>
         <p class="content">2、page组件'on-page-size-change' 更新为'size-change'</p>
