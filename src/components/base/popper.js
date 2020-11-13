@@ -1,7 +1,10 @@
 /**
  * https://github.com/freeze-component/vue-popper
  * */
-const Popper = require('popper.js/dist/umd/popper.js')  // eslint-disable-line
+import Vue from 'vue'
+
+const isServer = Vue.prototype.$isServer
+const Popper = isServer ? function () {} : require('popper.js/dist/umd/popper.js')  // eslint-disable-line
 
 export default {
   props: {
@@ -25,7 +28,7 @@ export default {
     transition: String,
     options: {
       type: Object,
-      default () {
+      default() {
         return {
           modifiers: {
             computeStyle: {
@@ -39,7 +42,7 @@ export default {
       }
     }
   },
-  data () {
+  data() {
     return {
       visible: this.value
     }
@@ -47,12 +50,12 @@ export default {
   watch: {
     value: {
       immediate: true,
-      handler (val) {
+      handler(val) {
         this.visible = val
         this.$emit('input', val)
       }
     },
-    visible (val) {
+    visible(val) {
       if (val) {
         if (this.handleIndexIncrease) this.handleIndexIncrease() // just use for PopTip
         this.updatePopper()
@@ -64,7 +67,7 @@ export default {
     }
   },
   methods: {
-    createPopper () {
+    createPopper() {
       if (!/^(top|bottom|left|right)(-start|-end)?$/g.test(this.placement)) {
         return
       }
@@ -91,19 +94,19 @@ export default {
       }
       this.popperJS = new Popper(reference, popper, options)
     },
-    updatePopper () {
+    updatePopper() {
       this.popperJS ? this.popperJS.update() : this.createPopper()
     },
-    doDestroy () {
+    doDestroy() {
       if (this.visible) return
       this.popperJS.destroy()
       this.popperJS = null
     }
   },
-  updated () {
+  updated() {
     this.$nextTick(() => this.updatePopper())
   },
-  beforeDestroy () {
+  beforeDestroy() {
     if (this.popperJS) {
       this.popperJS.destroy()
     }

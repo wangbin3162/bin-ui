@@ -9,6 +9,12 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.6.3</p>
+        <p class="time">2020-11-13</p>
+        <p class="content">修改优化部分代码，支持服务端SSR</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.6.0</p>
         <p class="time">2020-11-10</p>
         <p class="content">重要更新！！！，触发事件重命名，不向下兼容，升级时需替换以下变更项</p>

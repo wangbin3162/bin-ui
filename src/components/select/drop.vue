@@ -5,10 +5,14 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 import { getStyle } from '../../utils/dom'
 import { transferIndex, transferIncrease } from '../../utils/transfer-queue'
 
-const Popper = require('popper.js/dist/umd/popper.js')  // eslint-disable-line
+const isServer = Vue.prototype.$isServer
+const Popper = isServer ? function () {
+} : require('popper.js/dist/umd/popper.js')  // eslint-disable-line
 
 export default {
   name: 'Drop',

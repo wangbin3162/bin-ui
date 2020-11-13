@@ -1,22 +1,24 @@
 // 去除空格
 import Vue from 'vue'
 
+const isServer = Vue.prototype.$isServer
+
 const trim = function (string) {
   return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '')
 }
 
 // 监听事件
 export const on = (function () {
-  if (document.addEventListener) {
-    return function (el, event, handler) {
-      if (el && event && handler) {
-        el.addEventListener(event, handler, false)
+  if (!isServer && document.addEventListener) {
+    return function (element, event, handler) {
+      if (element && event && handler) {
+        element.addEventListener(event, handler, false)
       }
     }
   } else {
-    return function (el, event, handler) {
-      if (el && event && handler) {
-        el.attachEvent('on' + event, handler)
+    return function (element, event, handler) {
+      if (element && event && handler) {
+        element.attachEvent('on' + event, handler)
       }
     }
   }
@@ -24,16 +26,16 @@ export const on = (function () {
 
 // 移除事件
 export const off = (function () {
-  if (document.removeEventListener) {
-    return function (el, event, handler) {
-      if (el && event) {
-        el.removeEventListener(event, handler, false)
+  if (!isServer && document.removeEventListener) {
+    return function (element, event, handler) {
+      if (element && event) {
+        element.removeEventListener(event, handler, false)
       }
     }
   } else {
-    return function (el, event, handler) {
-      if (el && event) {
-        el.detachEvent('on' + event, handler)
+    return function (element, event, handler) {
+      if (element && event) {
+        element.detachEvent('on' + event, handler)
       }
     }
   }
@@ -121,7 +123,7 @@ export function getStyle(element, styleName) {
 // 获取浏览器滚动条宽度
 export function getScrollBarWidth() {
   let scrollBarWidth
-  if (Vue.prototype.$isServer) return 0
+  if (isServer) return 0
   if (scrollBarWidth !== undefined) return scrollBarWidth
 
   const outer = document.createElement('div')
