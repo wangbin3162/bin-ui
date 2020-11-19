@@ -173,6 +173,12 @@
           "path": "/anchor"
         },
         {
+          "desc": "Steps 步骤条",
+          "icon": "ios-checkmark-circle-outline",
+          "name": "steps",
+          "path": "/steps"
+        },
+        {
           "desc": "Loading 加载",
           "icon": "ios-hourglass",
           "name": "loading",

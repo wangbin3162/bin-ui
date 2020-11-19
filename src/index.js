@@ -24,7 +24,9 @@ import Collapse from './components/collapse'
 import CollapsePanel from './components/collapse-panel'
 import CollapseWrap from './components/collapse-wrap'
 import Breadcrumb from './components/breadcrumb'
-import breadcrumbItem from './components/breadcrumb-item'
+import BreadcrumbItem from './components/breadcrumb-item'
+import Steps from './components/steps'
+import Step from './components/step'
 import Badge from './components/badge'
 import Input from './components/input'
 import InputNumber from './components/input-number'
@@ -77,9 +79,9 @@ const components = [
   Row, Col, Icon, IconSelect, Button, ButtonGroup, ScrollBar,
   BackTop, Card, Divider, Modal, Drawer,
   Tag, Progress, Circle, Alert, Loading,
-  CollapseTransition, Collapse, CollapsePanel, CollapseWrap, Badge, Breadcrumb, breadcrumbItem,
+  CollapseTransition, Collapse, CollapsePanel, CollapseWrap, Badge, Breadcrumb, BreadcrumbItem,
   Input, InputNumber, Rate, Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Tooltip,
-  Form, FormItem, Tabs, Calendar,
+  Form, FormItem, Tabs, Calendar, Steps, Step,
   Dropdown, DropdownItem, DropdownMenu,
   Select, Option, OptionGroup, Table, Page, Tree, BigTree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
@@ -133,7 +135,9 @@ export default {
   CollapsePanel,
   CollapseWrap,
   Breadcrumb,
-  breadcrumbItem,
+  BreadcrumbItem,
+  Steps,
+  Step,
   LoadingBar,
   Message,
   Notice,

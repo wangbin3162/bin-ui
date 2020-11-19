@@ -148,7 +148,7 @@
         transition: .3s;
       }
       &:hover {
-        color: #409EFF;
+        color: #1089ff;
         background-color: #f9fafc;
       }
       & .text-slide-enter,

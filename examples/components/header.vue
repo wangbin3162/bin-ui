@@ -129,7 +129,7 @@
       margin: 0 auto;
       height: 80px;
       .logo {
-        color: #409EFF;
+        color: #1089ff;
         text-transform: uppercase;
         font-weight: bold;
         font-family: helvetica;
