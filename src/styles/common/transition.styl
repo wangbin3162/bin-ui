@@ -1,20 +1,20 @@
 //fade-in
 .fade-in-enter-active,.fade-in-leave-active {
-  transition: all .3s cubic-bezier(.55, 0, .1, 1);
+  transition: all $animation-duration-slow cubic-bezier(.55, 0, .1, 1);
 }
 .fade-in-enter,.fade-in-leave-to {
   opacity: 0;
 }
 //  fade-in-linear
 .fade-in-linear-enter-active,.fade-in-linear-leave-active {
-  transition: all .35s;
+  transition: all $animation-duration-slow;
 }
 .fade-in-linear-enter,.fade-in-linear-leave,.fade-in-linear-leave-to {
   opacity: 0;
 }
 // move-left
 .move-left-enter-active, .move-left-leave-active {
-  transition: all .3s ease-in-out
+  transition: all $animation-duration-slow ease-in-out
   transform-origin: 0 0;
 }
 .move-left-enter, .move-left-leave-to {
@@ -23,7 +23,7 @@
 }
 // move-right
 .move-right-enter-active, .move-right-leave-active {
-  transition: all .3s ease-in-out
+  transition: all $animation-duration-slow ease-in-out
 }
 .move-right-enter, .move-right-leave-to {
   opacity: 0;
@@ -31,7 +31,7 @@
 }
 //  中间缩放zoom-in-center
 .zoom-in-center-enter-active,.zoom-in-center-leave-active {
-  transition: all .3s cubic-bezier(.55, 0, .1, 1);
+  transition: all $animation-duration-slow cubic-bezier(.55, 0, .1, 1);
 }
 .zoom-in-center-enter,
 .zoom-in-center-leave-to {
@@ -43,7 +43,7 @@
 .zoom-in-bottom-leave-active {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform $animation-duration-slow cubic-bezier(0.23, 1, 0.32, 1), opacity $animation-duration-slow cubic-bezier(0.23, 1, 0.32, 1);
   transform-origin: center bottom;
 }
 .zoom-in-bottom-enter,.zoom-in-bottom-leave-to {
@@ -54,7 +54,7 @@
 .zoom-in-top-enter-active,.zoom-in-top-leave-active {
   opacity: 1;
   transform: scaleY(1);
-  transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform $animation-duration-slow cubic-bezier(0.23, 1, 0.32, 1), opacity $animation-duration-slow cubic-bezier(0.23, 1, 0.32, 1);
   transform-origin: center top;
 }
 .zoom-in-top-enter,.zoom-in-top-leave-to {
@@ -65,7 +65,7 @@
 .zoom-in-enter-active,.zoom-in-leave-active {
   opacity: 1;
   transform: scale(1, 1);
-  transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform $animation-duration-slow cubic-bezier(0.23, 1, 0.32, 1), opacity $animation-duration-slow cubic-bezier(0.23, 1, 0.32, 1);
   transform-origin: left left;
 }
 .zoom-in-enter,.zoom-in-leave-to {
@@ -75,10 +75,10 @@
 
 //  下拉动画
 .collapse-transition {
-  transition: 0.3s height ease-in-out, 0.3s padding-top ease-in-out, 0.3s padding-bottom ease-in-out;
+  transition: $animation-duration-slow height ease-in-out, $animation-duration-slow padding-top ease-in-out, $animation-duration-slow padding-bottom ease-in-out;
 }
 .horizontal-collapse-transition {
-  transition: 0.3s width ease-in-out, 0.3s padding-left ease-in-out, 0.3s padding-right ease-in-out;
+  transition: $animation-duration-slow width ease-in-out, $animation-duration-slow padding-left ease-in-out, $animation-duration-slow padding-right ease-in-out;
 }
 
 .list-enter-active,.list-leave-active {
@@ -90,12 +90,12 @@
 }
 
 .opacity-transition {
-  transition: opacity .3s cubic-bezier(.55, 0, .1, 1);
+  transition: opacity $animation-duration-slow cubic-bezier(.55, 0, .1, 1);
 }
 // 过渡动画 横向渐变
 .fade-transverse-leave-active,
 .fade-transverse-enter-active {
-  transition: all .3s;
+  transition: all $animation-duration-slow;
 }
 .fade-transverse-enter {
   opacity: 0;
@@ -108,7 +108,7 @@
 
 // 过渡动画 缩放渐变
 .fade-scale-leave-active, .fade-scale-enter-active {
-  transition: all .3s;
+  transition: all $animation-duration-slow;
 }
 .fade-scale-enter {
   opacity: 0;
@@ -121,7 +121,7 @@
 
 // 过渡动画 缩放渐变
 .fade-scale-move-leave-active, .fade-scale-move-enter-active {
-  transition: all .3s;
+  transition: all $animation-duration-slow;
 }
 .fade-scale-move-enter, .fade-scale-move-leave-to {
   opacity: 0;
@@ -129,7 +129,7 @@
 }
 
 .fade-down-leave-active, .fade-down-enter-active {
-  transition: all .3s;
+  transition: all $animation-duration-slow;
 }
 .fade-down-enter, .fade-down-leave-to {
   opacity: 0;

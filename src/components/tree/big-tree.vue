@@ -11,7 +11,7 @@
             :style="{ paddingLeft: 18 * (node.level - 1) + 'px', height: itemHeight + 'px' }"
         >
           <div :class="arrowClasses(node)" @click="handleExpand(node)">
-            <b-icon v-if="node[childrenKey] && node[childrenKey].length" name="ios-arrow-forward"></b-icon>
+            <b-icon v-if="node[childrenKey] && node[childrenKey].length" name="md-arrow-dropright"></b-icon>
           </div>
           <b-checkbox
               v-if="showCheckbox"

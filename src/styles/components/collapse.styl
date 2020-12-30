@@ -14,9 +14,9 @@
       cursor: pointer;
       position: relative;
       border-bottom: 1px solid transparent;
-      transition: all .2s ease-in-out;
+      transition: all $animation-duration-base ease-in-out;
       > i {
-        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+        transition: transform $animation-duration-base ease-in-out, -webkit-transform $animation-duration-base ease-in-out;
         margin-right: 10px;
         vertical-align: -1px;
       }
@@ -61,7 +61,7 @@
     font-size: 18px;
     color: #333333;
     background: #fff;
-    transition: .3s;
+    transition: $animation-duration-base;
     &.is-collapse {
       cursor: pointer;
     }
@@ -90,7 +90,7 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      transition: .3s;
+      transition: $animation-duration-base;
       .iconfont {
         font-size: 20px;
         vertical-align: -1px;

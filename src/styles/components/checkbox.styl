@@ -28,7 +28,7 @@
     border: $border-base;
     border-radius: $border-base-radius;
     background-color: $color-white;
-    transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
+    transition: border-color $animation-duration-base ease-in-out, background-color $animation-duration-base ease-in-out;
     &:after {
       content: "";
       position: absolute;
@@ -41,7 +41,7 @@
       border-top: 0;
       border-left: 0;
       transform: rotate(45deg) scale(1) translate(-50%, -50%);
-      transition: all .2s ease-in-out;
+      transition: all $animation-duration-base ease-in-out;
       border-top: 0;
       border-left: 0;
     }
@@ -59,7 +59,7 @@
       height: 100%;
       border: 1px solid $color-primary;
       border-radius: $border-base-radius;
-      animation: checkEffect .36s ease-in-out;
+      animation: checkEffect $animation-duration-slow ease-in-out;
       animation-fill-mode: backwards;
       content: '';
     }

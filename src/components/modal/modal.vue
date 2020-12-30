@@ -4,8 +4,8 @@
       <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click.stop="handleMask"></div>
     </transition>
     <div :class="wrapClasses" :style="wrapStyles" @click.stop="handleWrapClick">
-      <transition name="fade-down" @after-enter="animationEnter" @after-leave="animationFinish">
-        <div :class="classes" :style="mainStyles" v-show="visible">
+      <transition :name="animationModel" @after-enter="animationEnter" @after-leave="animationFinish">
+        <div :class="classes" v-if="visible" :style="mainStyles" ref="dialog">
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
             <a :class="[prefixCls + '-close']" v-if="closable" @click="close">
               <slot name="close">
@@ -40,8 +40,65 @@
 import { transferIndex as modalIndex, transferIncrease as modalIncrease } from '../../utils/transfer-queue'
 import { on, off, hasClass } from '../../utils/dom'
 import scrollbarMixin from '../../mixins/scrollbar-mixin'
+import { oneOf } from '../../utils/util'
 
 const prefixCls = 'bin-modal'
+
+function getScroll(w, top) {
+  let ret = w[`page${top ? 'Y' : 'X'}Offset`]
+  const method = `scroll${top ? 'Top' : 'Left'}`
+  if (typeof ret !== 'number') {
+    const d = w.document
+    ret = d.documentElement[method]
+    if (typeof ret !== 'number') {
+      ret = d.body[method]
+    }
+  }
+  return ret
+}
+
+function setTransformOrigin(node, value) {
+  const style = node.style;
+  ['Webkit', 'Moz', 'Ms', 'ms'].forEach(prefix => {
+    style[`${prefix}TransformOrigin`] = value
+  })
+  style[`transformOrigin`] = value
+}
+
+function offset(el) {
+  const rect = el.getBoundingClientRect()
+  const pos = {
+    left: rect.left,
+    top: rect.top
+  }
+  const doc = el.ownerDocument
+  const w = doc.defaultView || doc.parentWindow
+  pos.left += getScroll(w)
+  pos.top += getScroll(w, true)
+  return pos
+}
+
+function findDOMNode(instance) {
+  let node = instance && (instance.$el || instance)
+  while (node && !node.tagName) {
+    node = node.nextSibling
+  }
+  return node
+}
+
+let mousePosition = null
+// ref: https://github.com/ant-design/ant-design/issues/15795
+const getClickPosition = (e) => {
+  mousePosition = { x: e.pageX, y: e.pageY }
+  // 30ms 内发生过点击事件，则从点击位置动画展示
+  // 否则直接 zoom 展示
+  // 这样可以兼容非点击方式展开
+  setTimeout(() => (mousePosition = null), 30)
+}
+// 只有点击事件支持从鼠标位置动画展开
+if (typeof window !== 'undefined' && window.document && window.document.documentElement) {
+  on(document.documentElement, 'click', getClickPosition)
+}
 export default {
   name: 'BModal',
   mixins: [scrollbarMixin],
@@ -116,6 +173,12 @@ export default {
     },
     stopRemoveScroll: {
       type: Boolean
+    },
+    animationType: {
+      validator(value) {
+        return oneOf(value, ['fade', 'zoom'])
+      },
+      default: 'fade'
     }
   },
   data() {
@@ -170,7 +233,6 @@ export default {
       } : {
         width: width <= 100 ? `${width}%` : `${width}px`
       }
-
       const customStyle = this.styles ? this.styles : {}
 
       Object.assign(style, styleWidth, customStyle)
@@ -203,6 +265,9 @@ export default {
     },
     showMask() {
       return this.draggable ? false : this.mask
+    },
+    animationModel() {
+      return this.animationType === 'zoom' ? 'zoom' : 'fade-down'
     }
   },
   mounted() {
@@ -218,12 +283,38 @@ export default {
       showHead = false
     }
     this.showHead = showHead
+    this.zoomAnimation()
   },
   methods: {
     // 全局modal的索引
     handleGetModalIndex() {
       modalIncrease()
       return modalIndex
+    },
+    zoomAnimation() {
+      if (this.animationType === 'fade') return
+      this.$nextTick(() => {
+        // 20毫秒之内判断是否有点击事件，有则直接调动
+        setTimeout(() => (this.updatedCallback(false)), 20)
+      })
+    },
+    updatedCallback(visible) {
+      if (this.visible) {
+        // first show
+        if (!visible) {
+          this.openTime = Date.now()
+          const dialogNode = findDOMNode(this.$refs.dialog)
+          if (mousePosition) {
+            const elOffset = offset(dialogNode)
+            setTransformOrigin(
+                dialogNode,
+                `${mousePosition.x - elOffset.left}px ${mousePosition.y - elOffset.top}px`
+            )
+          } else {
+            setTransformOrigin(dialogNode, '')
+          }
+        }
+      }
     },
     handleWrapClick(event) {
       const className = event.target.getAttribute('class')
@@ -243,6 +334,10 @@ export default {
     },
     // 点击遮罩层
     handleMask() {
+      // android trigger click on open (fastclick??)
+      if (Date.now() - this.openTime < 300) {
+        return
+      }
       if (this.maskClosable && this.showMask) {
         this.close()
       }
@@ -344,6 +439,7 @@ export default {
         this.$emit('open')
       }
       this.$emit('visible-change', val)
+      this.zoomAnimation()
     },
     scrollable(val) {
       if (!val) {

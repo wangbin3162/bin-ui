@@ -72,7 +72,7 @@
     transform: translateY(-50%);
     font-size: 14px;
     color: #808695;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
   }
   &-visible &-arrow:nth-of-type(2) {
     transform: translateY(-50%) rotate(180deg);
@@ -95,7 +95,7 @@
     white-space: nowrap;
     list-style: none;
     cursor: pointer;
-    transition: background .2s ease-in-out;
+    transition: background $animation-duration-base ease-in-out;
 
     &:hover {
       background: #f3f3f3;
@@ -192,7 +192,7 @@
     & &-item {
       position: relative;
       padding-right: 36px;
-      transition: all .2s ease-in-out;
+      transition: all $animation-duration-base ease-in-out;
       i {
         position: absolute;
         right: 15px;
@@ -228,7 +228,7 @@
     white-space: nowrap;
     list-style: none;
     cursor: pointer;
-    transition: background .2s ease-in-out;
+    transition: background $animation-duration-base ease-in-out;
 
     &:hover {
       background: $color-select-hover;
@@ -280,7 +280,7 @@
     &-menu {
       &-item {
         padding-right: 24px;
-        transition: all .2s ease-in-out;
+        transition: all $animation-duration-base ease-in-out;
         &-active {
           background-color: $color-primary-light5;
           color: $color-text-primary;

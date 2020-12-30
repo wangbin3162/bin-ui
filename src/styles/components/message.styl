@@ -11,7 +11,7 @@
   box-sizing: border-box;
   padding: 8px;
   text-align: center;
-  transition: height .3s ease-in-out, padding .3s ease-in-out;
+  transition: height $animation-duration-base ease-in-out, padding $animation-duration-base ease-in-out;
 }
 
 .bin-message-notice-content {
@@ -43,7 +43,7 @@
   i {
     font-size: 22px;
     color: $color-info;
-    transition: color .2s ease;
+    transition: color $animation-duration-base ease;
     position: relative;
     top: -2px;
   }
@@ -71,7 +71,7 @@
 // move-up
 .move-up-enter-active,
 .move-up-leave-active {
-  transition: all .3s cubic-bezier(.55, 0, .1, 1);
+  transition: all $animation-duration-base cubic-bezier(.55, 0, .1, 1);
 }
 .move-up-enter,
 .move-up-leave-to {

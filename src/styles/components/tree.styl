@@ -45,7 +45,7 @@
     line-height: 24px;
     border-radius: $border-base-radius;
     cursor: pointer;
-    transition: background-color .2s ease-in-out;
+    transition: background-color $animation-duration-base ease-in-out;
     span {
       color: $color-danger;
     }
@@ -64,7 +64,7 @@
     line-height: 24px;
     border-radius: $border-base-radius;
     cursor: pointer;
-    transition: background-color .2s ease-in-out;
+    transition: background-color $animation-duration-base ease-in-out;
     &:hover {
       background-color: $color-primary-light5;
     }
@@ -79,20 +79,31 @@
     line-height: 24px;
     cursor: pointer;
     text-align: center;
-    .icon-ios-arrow-forward {
+    .icon-md-arrow-dropright {
       position: relative;
       top: -1px;
-      transition: transform .2s ease-in-out;
-      font-size: 14px;
+      transition: transform $animation-duration-base ease-in-out;
+      font-size: 18px;
       vertical-align: middle;
     }
+    .icon-loading {
+      position: relative;
+      top: -1px;
+      transition: transform $animation-duration-base ease-in-out;
+      font-size: 14px;
+      vertical-align: middle;
+      color: $color-primary;
+    }
     &-open {
-      .icon-ios-arrow-forward {
+      .icon-md-arrow-dropright {
         transform: rotateZ(90deg) translateZ(0);
       }
     }
     &-disabled {
       cursor: not-allowed;
+    }
+    &-noop {
+      cursor: default;
     }
   }
   .bin-checkbox-wrapper {

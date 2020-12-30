@@ -27,6 +27,9 @@
       <transition name="fade-in">
         <div v-show="show1" class="transition-box">fade-in</div>
       </transition>
+      <transition name="zoom">
+        <div v-show="show1" class="transition-box">zoom</div>
+      </transition>
     </div>
   </div>
 </template>

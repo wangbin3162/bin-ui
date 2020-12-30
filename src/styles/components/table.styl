@@ -115,7 +115,7 @@
   td {
     word-break: break-all;
     background-color: #fff;
-    transition: background-color .2s ease-in-out;
+    transition: background-color $animation-duration-base ease-in-out;
   }
   th&-column, td&-column {
     &-left {
@@ -192,7 +192,7 @@
 
     &-expand {
       cursor: pointer;
-      transition: transform .2s ease-in-out;
+      transition: transform $animation-duration-base ease-in-out;
       i {
         font-size: $base-font-size;
       }
@@ -350,7 +350,7 @@
       overflow: hidden;
       position: absolute;
       color: $btn-disable-color;
-      transition: color .2s ease-in-out;
+      transition: color $animation-duration-base ease-in-out;
       font-size: 16px;
       &:hover {
         color: inherit;

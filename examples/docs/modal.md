@@ -24,26 +24,29 @@
 最简单的使用方法，通过控制属性value来显示 / 隐藏对话框。
 
 ::: demo
+
 ```html
+
 <template>
   <b-button type="primary" @click="modal1 = true">显示弹窗</b-button>
   <b-modal v-model="modal1" title="普通的模态框标题"
-    @ok="$log.print('ok click')"  @close="$log.print('close click','success')">
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
+           @ok="$log.print('ok click')" @close="$log.print('close click','success')">
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
   </b-modal>
 </template>
 <script>
-    export default {
-      data () {
-            return {
-                modal1: false
-            }
-        }
+  export default {
+    data() {
+      return {
+        modal1: false
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### 自定义样式
@@ -51,108 +54,115 @@
 Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制整个 Modal 的各个组成部分，比如页头、页脚、关闭按钮。
 
 ::: demo 注：参数内容都包含在第一个示例中
+
 ```html
+
 <template>
-  <b-button  @click="modal2 = true">自定义页头页脚</b-button>
-  <b-button  @click="modal3 = true">不带标题栏和页脚</b-button>
-  <b-button  @click="modal4 = true">设置宽</b-button>
+  <b-button @click="modal2 = true">自定义页头页脚</b-button>
+  <b-button @click="modal3 = true">不带标题栏和页脚</b-button>
+  <b-button @click="modal4 = true">设置宽</b-button>
   <b-modal v-model="modal2">
-     <p slot="header" style="color:#f60;text-align:center">
-         <span>自定义页头</span>
-      </p>
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
-      <div slot="footer">
-          <b-button type="danger"  @click="$log.print('delete click','danger')" >Delete</b-button>
-      </div>
+    <p slot="header" style="color:#f60;text-align:center">
+      <span>自定义页头</span>
+    </p>
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
+    <div slot="footer">
+      <b-button type="danger" @click="$log.print('delete click','danger')">Delete</b-button>
+    </div>
   </b-modal>
   <b-modal v-model="modal3" footer-hide>
-        <p>我是弹窗内容...</p>
-        <p>我是弹窗内容...</p>
-        <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
   </b-modal>
   <b-modal v-model="modal4"
-   title="自定义宽度"
-          width="300">
-        <p> 自定义宽度，单位 px，默认 520px。
-           对话框的宽度是响应式的，当屏幕尺寸小于 768px 时，宽度会变为自动auto。</p>
-    </b-modal>
+           title="自定义宽度"
+           width="300">
+    <p> 自定义宽度，单位 px，默认 520px。
+      对话框的宽度是响应式的，当屏幕尺寸小于 768px 时，宽度会变为自动auto。</p>
+  </b-modal>
 </template>
 <script>
-    export default {
-      data () {
-            return {
-                modal2: false,
-                modal3: false,
-                modal4: false
-            }
-        }
+  export default {
+    data() {
+      return {
+        modal2: false,
+        modal3: false,
+        modal4: false
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### 异步关闭
 
-给Modal添加属性loading后，点击确定按钮对话框不会自动消失，并显示 loading 状态，
-需要手动关闭对话框，常用于表单提交。 这里建议自定义footer以达到更精确的按钮控制
+给Modal添加属性loading后，点击确定按钮对话框不会自动消失，并显示 loading 状态， 需要手动关闭对话框，常用于表单提交。 这里建议自定义footer以达到更精确的按钮控制
 
 ::: demo
+
 ```html
+
 <template>
   <b-button type="primary" @click="showModal">显示弹窗</b-button>
   <b-modal v-model="modal5" title="普通的模态框标题"
-          :loading="loading"
-          @ok="asyncOK">
-      <b-form :model="formInline" ref="form" :rules="ruleValidate" :label-width="80">
-        <b-form-item label="用户名" prop="name">
-          <b-input v-model="formInline.name" placeholder="请输入"></b-input>
-        </b-form-item>
-      </b-form>
+           :loading="loading"
+           @ok="asyncOK">
+    <b-form :model="formInline" ref="form" :rules="ruleValidate" :label-width="80">
+      <b-form-item label="用户名" prop="name">
+        <b-input v-model="formInline.name" placeholder="请输入"></b-input>
+      </b-form-item>
+    </b-form>
   </b-modal>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                modal5: false,
-                loading: true,
-                formInline: {
-                  name: ''
-                },
-                ruleValidate: {
-                   name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
-                }
-            }
+  export default {
+    data() {
+      return {
+        modal5: false,
+        loading: true,
+        formInline: {
+          name: ''
         },
-         methods: {
-            showModal(){
-              this.modal5 = true
+        ruleValidate: {
+          name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
+        }
+      }
+    },
+    methods: {
+      showModal() {
+        this.modal5 = true
+        this.loading = true
+        this.formInline.name = ''
+        this.$nextTick(() => {
+          this.$refs.form.resetFields();
+        })
+      },
+      asyncOK() {
+        this.$refs.form.validate((valid) => {
+          if (valid) {
+            setTimeout(() => {
+              this.$message({ type: 'success', content: '表单提交成功' });
+              this.modal5 = false;
+            }, 2000);
+          } else {
+            this.$message({ type: 'danger', content: '表单校验失败' });
+            this.loading = false
+            setTimeout(() => {
               this.loading = true
-              this.formInline.name=''
-              this.$refs.form.resetFields();
-            },
-            asyncOK () {
-                this.$refs.form.validate((valid) => {
-                  if (valid) {
-                    setTimeout(() => {
-                        this.$message({type:'success',content:'表单提交成功'});
-                        this.modal5 = false;
-                    }, 2000);
-                  } else {
-                    this.$message({type:'danger',content:'表单校验失败'});
-                    this.loading = false 
-                    setTimeout(() => {
-                        this.loading = true 
-                    }, 200);
-                  }
-                })
-            }
-         }
+            }, 200);
+          }
+        })
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### 禁用关闭
@@ -160,28 +170,31 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 可以禁用关闭和遮罩层关闭。
 
 ::: demo
+
 ```html
+
 <template>
-    <b-button @click="modal6 = true">禁用右上角关闭</b-button>
-    <b-button @click="modal7 = true">禁用mask关闭</b-button>
-    <b-modal v-model="modal6" title="普通的模态框标题" :closable="false">
-      <p>禁用右上角关闭</p>
-    </b-modal>
-    <b-modal v-model="modal7" title="普通的模态框标题"  :mask-closable="false">
-      <p>禁用mask关闭</p>
-    </b-modal>
+  <b-button @click="modal6 = true">禁用右上角关闭</b-button>
+  <b-button @click="modal7 = true">禁用mask关闭</b-button>
+  <b-modal v-model="modal6" title="普通的模态框标题" :closable="false">
+    <p>禁用右上角关闭</p>
+  </b-modal>
+  <b-modal v-model="modal7" title="普通的模态框标题" :mask-closable="false">
+    <p>禁用mask关闭</p>
+  </b-modal>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                modal6: false,
-                modal7: false
-            }
-        }
+  export default {
+    data() {
+      return {
+        modal6: false,
+        modal7: false
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### 自定义位置
@@ -189,28 +202,31 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 可以自定义对话框的位置。
 
 ::: demo
+
 ```html
+
 <template>
-    <b-button @click="modal8 = true">距离顶部200px</b-button>
-    <b-button @click="modal9 = true">垂直居中</b-button>
-    <b-modal v-model="modal8" title="距离顶部" :styles="{top: '200px'}">
-      <p>距离顶部200px</p>
-    </b-modal>
-    <b-modal v-model="modal9" title="垂直居中" class-name="vertical-center-modal">
-      <p>垂直居中的模态框</p>
-    </b-modal>
+  <b-button @click="modal8 = true">距离顶部200px</b-button>
+  <b-button @click="modal9 = true">垂直居中</b-button>
+  <b-modal v-model="modal8" title="距离顶部" :styles="{top: '200px'}">
+    <p>距离顶部200px</p>
+  </b-modal>
+  <b-modal v-model="modal9" title="垂直居中" class-name="vertical-center-modal">
+    <p>垂直居中的模态框</p>
+  </b-modal>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                modal8: false,
-                modal9: false
-            }
-        }
+  export default {
+    data() {
+      return {
+        modal8: false,
+        modal9: false
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### 嵌套
@@ -218,38 +234,40 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 弹窗嵌套一般情况下不推荐嵌套，但也可以这么使用
 
 ::: demo
+
 ```html
+
 <template>
-<div>
+  <div>
     <b-button @click="modal1 = true">显示弹窗一</b-button>
     <b-button @click="modal3 = true">显示全屏弹窗</b-button>
     <b-button @click="openModal5">自定义弹窗</b-button>
     <b-modal v-model="modal1" title="弹窗一" footer-hide width="600">
+      <p>我是弹窗内容...</p>
+      <p>我是弹窗内容...</p>
+      <p>我是弹窗内容...</p>
+      <b-button type="primary" @click="modal2 = true">打开嵌套弹窗</b-button>
+      <b-modal v-model="modal2" title="嵌套弹窗">
         <p>我是弹窗内容...</p>
         <p>我是弹窗内容...</p>
         <p>我是弹窗内容...</p>
-        <b-button type="primary" @click="modal2 = true">打开嵌套弹窗</b-button>
-        <b-modal v-model="modal2" title="嵌套弹窗">
-          <p>我是弹窗内容...</p>
-          <p>我是弹窗内容...</p>
-          <p>我是弹窗内容...</p>
-        </b-modal>
+      </b-modal>
     </b-modal>
     <b-modal v-model="modal3" title="全屏弹窗" footer-hide fullscreen>
+      <p>我是弹窗内容...</p>
+      <p>我是弹窗内容...</p>
+      <p>我是弹窗内容...</p>
+      <b-button type="primary" @click="modal4 = true">打开嵌套弹窗</b-button>
+      <b-modal v-model="modal4" title="全屏嵌套弹窗">
         <p>我是弹窗内容...</p>
         <p>我是弹窗内容...</p>
         <p>我是弹窗内容...</p>
-        <b-button type="primary" @click="modal4 = true">打开嵌套弹窗</b-button>
-        <b-modal v-model="modal4" title="全屏嵌套弹窗">
-          <p>我是弹窗内容...</p>
-          <p>我是弹窗内容...</p>
-          <p>我是弹窗内容...</p>
-        </b-modal>
+      </b-modal>
     </b-modal>
 
-  <transition name="move-right">
-    <div v-show="modal5" 
-        style="
+    <transition name="move-right">
+      <div v-show="modal5"
+           style="
           position: fixed;
           top: 0;
           right: 0;
@@ -258,48 +276,49 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
           box-sizing: border-box;
           z-index: 1000;
           background-color: #fff;">
-      自定义弹窗内容
-      <b-button @click="closeModal5">关闭自定义弹窗</b-button>
+        自定义弹窗内容
+        <b-button @click="closeModal5">关闭自定义弹窗</b-button>
         <b-button type="primary" @click="modal4 = true">打开嵌套弹窗</b-button>
         <b-modal v-model="modal4" title="全屏嵌套弹窗" stop-remove-scroll>
           <p>我是弹窗内容...</p>
           <p>我是弹窗内容...</p>
           <p>我是弹窗内容...</p>
         </b-modal>
-    </div>
-  </transition>
-</div>
+      </div>
+    </transition>
+  </div>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                modal1: false,
-                modal2: false,
-                modal3: false,
-                modal4: false,
-                modal5: false
-            }
-        },
-        methods:{
-          openModal5(){
-                this.modal5=true
-                // 模拟移除滚动条
-                document.body.style.paddingRight = '15px'
-                document.body.style.overflow = 'hidden'
-          }, 
-          closeModal5(){
-                this.modal5=false
-                  this.timer = setTimeout(() => {
-                    // 添加滚动条
-                    document.body.style.paddingRight = ''
-                    document.body.style.overflow = ''
-                  }, 300)
-          }
-        }
+  export default {
+    data() {
+      return {
+        modal1: false,
+        modal2: false,
+        modal3: false,
+        modal4: false,
+        modal5: false
+      }
+    },
+    methods: {
+      openModal5() {
+        this.modal5 = true
+        // 模拟移除滚动条
+        document.body.style.paddingRight = '15px'
+        document.body.style.overflow = 'hidden'
+      },
+      closeModal5() {
+        this.modal5 = false
+        this.timer = setTimeout(() => {
+          // 添加滚动条
+          document.body.style.paddingRight = ''
+          document.body.style.overflow = ''
+        }, 300)
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### 全屏
@@ -307,23 +326,26 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 设置属性 `fullscreen` 可以全屏显示。属性 `footer-hide` 可以隐藏底部内容。
 
 ::: demo
+
 ```html
+
 <template>
-    <b-button @click="modal10 = true">显示全屏对话框</b-button>
-    <b-modal v-model="modal10" title="全屏标题" fullscreen>
-      <p  v-for="i in 100" :key="i">我是全屏的内容{{i}}...</p>
-    </b-modal>
+  <b-button @click="modal10 = true">显示全屏对话框</b-button>
+  <b-modal v-model="modal10" title="全屏标题" fullscreen>
+    <p v-for="i in 100" :key="i">我是全屏的内容{{i}}...</p>
+  </b-modal>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                modal10: false
-            }
-        }
+  export default {
+    data() {
+      return {
+        modal10: false
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### 可拖拽
@@ -331,28 +353,31 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 设置属性 `draggable` 对话框可以进行拖拽移动。
 
 ::: demo
+
 ```html
+
 <template>
-    <b-button @click="modal11 = true">打开弹窗1</b-button>
-    <b-button @click="modal12 = true">打开弹窗2</b-button>
-    <b-modal v-model="modal11" title="弹窗1" draggable>
-      <p>弹窗1内容</p>
-    </b-modal>
-    <b-modal v-model="modal12" title="弹窗2" draggable>
-      <p>弹窗2内容</p>
-    </b-modal>
+  <b-button @click="modal11 = true">打开弹窗1</b-button>
+  <b-button @click="modal12 = true">打开弹窗2</b-button>
+  <b-modal v-model="modal11" title="弹窗1" draggable>
+    <p>弹窗1内容</p>
+  </b-modal>
+  <b-modal v-model="modal12" title="弹窗2" draggable>
+    <p>弹窗2内容</p>
+  </b-modal>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                modal11: false,
-                modal12: false
-            }
-        }
+  export default {
+    data() {
+      return {
+        modal11: false,
+        modal12: false
+      }
     }
+  }
 </script>
 ```
+
 :::
 
 ### Attributes
@@ -375,6 +400,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | body-styles    | 设置body的样式,多用于设置自定义内边距 | Object  |      —      |  —  |
 | class-name    | 设置对话框容器的类名 | String  |      —      |  —  |
 | z-index    | 层级 | Number  |      —      |  2000  |
+| animation-type   |  动画模式，两种动画模式，zoom模式会额外添加一个点击监听并延迟20ms来判定来源位置，默认为正常不带缩放模式 | String  |     fade，zoom     |  fade  |
 | append-to-body    | 是否将对话框放置于 body 内 | Boolean  |      —      |  false  |
 | stop-remove-scroll | 是否阻止模态窗释放body滚动，多应用于多层嵌套 | Boolean  |      —      |  false  |
 

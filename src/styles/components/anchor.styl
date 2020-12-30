@@ -32,7 +32,7 @@
         border: 1px solid $color-primary;
         background-color: #fff;
         left: 50%;
-        transition: top .3s ease;
+        transition: top $animation-duration-base ease;
         transform: translate(-50%, 2px);
       }
       &-line {
@@ -42,7 +42,7 @@
         width: 2px;
         height: 18px;
         background-color: $color-primary;
-        transition: top .3s ease;
+        transition: top $animation-duration-base ease;
         transform: translate(-50%, -2px);
       }
       .iconfont {
@@ -51,7 +51,7 @@
         height: 14px;
         font-size: 14px;
         color: $color-primary;
-        transition: top .3s ease;
+        transition: top $animation-duration-base ease;
         transform: translate(-6px, -1px);
       }
     }
@@ -63,7 +63,7 @@
     &-title {
       display: block;
       position: relative;
-      transition: all .3s;
+      transition: all $animation-duration-base;
       color: $color-text-default;
       white-space: nowrap;
       overflow: hidden;

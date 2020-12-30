@@ -7,9 +7,16 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.6.5</p>
+        <p class="time">2020-12-30</p>
+        <p class="content">fixed修复树结构异步加载的问题，增加叶子节点isLeaf标识</p>
+        <p class="content">扩展modal窗口动画模式，新增zoom扩展来源方式进行动画播放</p>
+        <p class="content">优化部分代码样式，优化全局动画事件统一</p>
+      </b-timeline-item>
       <b-timeline-item color="primary">
         <b-icon name="ios-leaf" slot="dot" size="20"></b-icon>
-        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.6.4</p>
         <p class="time">2020-11-19</p>
         <p class="content">修改部分样式冲突问题,新增steps步骤条组件</p>

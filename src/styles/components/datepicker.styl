@@ -25,7 +25,7 @@
     border-bottom: $border-base;
     &-label {
       cursor: pointer;
-      transition: color .2s ease-in-out;
+      transition: color $animation-duration-base ease-in-out;
       &:hover {
         color: $color-primary;
       }
@@ -68,7 +68,7 @@
         font-style: normal;
         border-radius: $border-base-radius;
         text-align: center;
-        transition: all .2s ease-in-out;
+        transition: all $animation-duration-base ease-in-out;
       }
     }
     &-header span {
@@ -224,7 +224,7 @@
       text-align: center;
       cursor: pointer;
       color: $btn-disable-color;
-      transition: color .2s ease-in-out;
+      transition: color $animation-duration-base ease-in-out;
       &:hover {
         color: $color-primary;
       }
@@ -249,7 +249,7 @@
     }
     &-shortcut {
       padding: 6px 8px;
-      transition: all .2s ease-in-out;
+      transition: all $animation-duration-base ease-in-out;
       cursor: pointer;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -274,7 +274,7 @@
       user-select: none;
       float: left;
       padding: 2px 0;
-      transition: all .2s ease-in-out;
+      transition: all $animation-duration-base ease-in-out;
       &:hover {
         color: tint($color-primary, 20%);
       }

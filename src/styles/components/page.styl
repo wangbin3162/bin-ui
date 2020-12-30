@@ -27,7 +27,7 @@
     font-family: Arial;
     border: $border-base;
     border-radius: $border-base-radius;
-    transition: border .2s ease-in-out, color .2s ease-in-out;
+    transition: border $animation-duration-base ease-in-out, color $animation-duration-base ease-in-out;
     a {
       font-family: Monospaced Number;
       margin: 0 6px;
@@ -87,7 +87,7 @@
     font-family: Arial;
     border: $border-base;
     border-radius: $border-base-radius;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
   }
 
   &-item-jump-prev, &-item-jump-next {
@@ -159,7 +159,7 @@
         background-image: none;
         position: relative;
         cursor: text;
-        transition: border .3s ease-in-out, background .3s ease-in-out, box-shadow .3s ease;
+        transition: border $animation-duration-base ease-in-out, background $animation-duration-base ease-in-out, box-shadow $animation-duration-base ease;
         placeholder()
         &:focus, &:hover {
           border-color: $color-primary;
@@ -201,7 +201,7 @@
       outline: none;
       border: $border-base;
       border-radius: $border-base-radius;
-      transition: border .3s ease-in-out, background .3s ease-in-out, box-shadow .3s ease;
+      transition: border $animation-duration-base ease-in-out, background $animation-duration-base ease-in-out, box-shadow $animation-duration-base ease;
       &:hover {
         border-color: $color-primary;
       }

@@ -14,13 +14,13 @@
       border-radius: 4px;
       line-height: 1.5em;
       font-size: 12px;
-      transition: background-color .2s ease-in-out;
+      transition: background-color $animation-duration-base ease-in-out;
       overflow: hidden;
       position: relative;
 
       & > span {
         cursor: pointer;
-        transition: color .2s ease-in-out;
+        transition: color $animation-duration-base ease-in-out;
         i {
           display: inline-block;
           vertical-align: baseline
@@ -51,7 +51,7 @@
       float: right;
       margin-right: 4px;
       color: #999;
-      transition: all .2s ease;
+      transition: all $animation-duration-base ease;
       &:hover {
         color: #444;
       }

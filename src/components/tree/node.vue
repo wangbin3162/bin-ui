@@ -3,8 +3,10 @@
     <li v-show="data.visible">
       <div class="bin-tree-node">
         <span :class="arrowClasses" @click="handleExpand">
-          <b-icon v-if="showArrow" name="ios-arrow-forward"></b-icon>
-          <b-icon v-if="showLoading" name="loading" class="bin-load-loop"></b-icon>
+          <template v-if="!isLeaf">
+            <b-icon v-if="showArrow" name="md-arrow-dropright"></b-icon>
+            <b-icon v-if="showLoading" name="loading" class="bin-load-loop"></b-icon>
+          </template>
         </span>
         <b-checkbox
             v-if="showCheckbox"
@@ -87,6 +89,7 @@ export default {
         `${prefixCls}-arrow`,
         {
           [`${prefixCls}-arrow-disabled`]: this.data.disabled,
+          [`${prefixCls}-arrow-noop`]: this.data.isLeaf,
           [`${prefixCls}-arrow-open`]: this.data.expand
         }
       ]
@@ -112,6 +115,9 @@ export default {
     },
     showLoading() {
       return 'loading' in this.data && this.data.loading
+    },
+    isLeaf() {
+      return 'isLeaf' in this.data && this.data.isLeaf
     },
     isParentRender() {
       const Tree = findComponentUpward(this, 'BTree')
@@ -142,6 +148,7 @@ export default {
     handleExpand() {
       const item = this.data
       if (item.disabled) return
+      if (item.isLeaf) return
 
       // async loading
       if (item[this.childrenKey].length === 0) {

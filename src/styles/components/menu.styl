@@ -15,8 +15,8 @@
     height: 100%;
     .scroll-wrapper {
       position: absolute;
-      -webkit-transition: 0.3s;
-      transition: 0.3s;
+      -webkit-transition: $animation-duration-base;
+      transition: $animation-duration-base;
     }
   }
 }
@@ -96,7 +96,7 @@
   }
 
   &-submenu-title-icon {
-    transition: transform .2s ease-in-out;
+    transition: transform $animation-duration-base ease-in-out;
   }
   &-horizontal &-item, &-horizontal &-submenu {
     float: left;
@@ -104,7 +104,7 @@
     position: relative;
     cursor: pointer;
     z-index: 3;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
   }
   &-horizontal > &-item, &-horizontal > &-submenu {
     float: none;
@@ -173,7 +173,7 @@
     position: relative;
     cursor: pointer;
     z-index: 1;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
     &:hover {
       color: $color-primary;
     }
@@ -316,7 +316,7 @@
     white-space: nowrap;
     list-style: none;
     cursor: pointer;
-    transition: background .2s ease-in-out;
+    transition: background $animation-duration-base ease-in-out;
 
     &:hover {
       color: $color-primary;
@@ -375,7 +375,7 @@
         right: 0;
         margin-top: -7px;
         font-size: $base-font-size;
-        transition: transform .2s;
+        transition: transform $animation-duration-base;
       }
     }
   }
@@ -438,7 +438,7 @@
     white-space: nowrap;
     list-style: none;
     cursor: pointer;
-    transition: background .2s ease-in-out;
+    transition: background $animation-duration-base ease-in-out;
 
     &:hover {
       color: $color-primary;
@@ -497,7 +497,7 @@
         right: 0;
         margin-top: -7px;
         font-size: $base-font-size;
-        transition: transform .2s;
+        transition: transform $animation-duration-base;
       }
     }
   }

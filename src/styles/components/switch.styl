@@ -13,7 +13,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: all .2s ease-in-out;
+  transition: all $animation-duration-base ease-in-out;
   &:after {
     content: "";
     width: 18px;
@@ -24,7 +24,7 @@
     left: 1px;
     top: 1px;
     cursor: pointer;
-    transition: left .2s ease-in-out, width .2s ease-in-out;
+    transition: left $animation-duration-base ease-in-out, width $animation-duration-base ease-in-out;
   }
   &:focus {
     box-shadow: 0 0 0 2px $color-input-shadow;

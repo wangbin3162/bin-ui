@@ -30,7 +30,7 @@
     background-color: #fff;
     border: $border-base;
     border-radius: 50%;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
     &:after {
       position: absolute;
       width: 10px;
@@ -44,7 +44,7 @@
       content: " ";
       background-color: $color-primary;
       opacity: 0;
-      transition: all .2s ease-in-out;
+      transition: all $animation-duration-base ease-in-out;
       -webkit-transform: scale(0);
       transform: scale(0);
     }
@@ -67,7 +67,7 @@
     height: 100%;
     border: 1px solid $color-primary;
     border-radius: 50%;
-    animation: radioEffect .36s ease-in-out;
+    animation: radioEffect $animation-duration-slow ease-in-out;
     animation-fill-mode: both;
     content: '';
   }
@@ -79,7 +79,7 @@
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
   }
   &-focus {
     box-shadow: 0 0 0 3px $color-effect-shadow;
@@ -108,7 +108,7 @@
 
 .bin-radio-group .bin-radio-checked .bin-radio-focus {
   box-shadow: 0 0 0 3px $color-effect-shadow;
-  transition: all .2s ease-in-out;
+  transition: all $animation-duration-base ease-in-out;
 }
 
 
@@ -119,7 +119,7 @@
     margin: 0;
     padding: 0 15px;
     color: #515a6e;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
     border: 1px solid #dcdee2;
     background: #fff;
     height: $default-height;

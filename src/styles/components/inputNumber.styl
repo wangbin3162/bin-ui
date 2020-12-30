@@ -5,7 +5,7 @@
   background-color: $color-white;
   background-image: none;
   position: relative;
-  transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
+  transition: border $animation-duration-base ease-in-out, background $animation-duration-base ease-in-out, box-shadow $animation-duration-base ease-in-out;
   margin: 0;
   padding: 0;
   width: 100px;
@@ -102,7 +102,7 @@
   color: $color-text-default;
   border: 0;
   border-radius: $border-base-radius;
-  transition: all .2s linear;
+  transition: all $animation-duration-base linear;
 }
 //  数字输入
 .bin-input-number-handler-wrap {
@@ -114,7 +114,7 @@
   border-left: $border-base;
   border-radius: 0 $border-base-radius $border-base-radius 0;
   background: $color-white;
-  transition: opacity .2s ease-in-out;
+  transition: opacity $animation-duration-base ease-in-out;
   opacity: 0;
   &:hover .bin-input-number-handler {
     height: 40%;
@@ -129,7 +129,7 @@
   overflow: hidden;
   color: $color-text-secondary;
   position: relative;
-  transition: .3s;
+  transition: $animation-duration-base;
 }
 .bin-input-number-handler-up {
   cursor: pointer;
@@ -162,7 +162,7 @@
   line-height: 12px;
   font-size: 12px;
   color: $color-text-secondary;
-  transition: all .2s linear;
+  transition: all $animation-duration-base linear;
 }
 
 .bin-input-number-disabled .bin-input-number-handler-down-inner,

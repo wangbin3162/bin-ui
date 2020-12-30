@@ -21,7 +21,7 @@
     background-color: $color-white;
     border-radius: $border-base-radius;
     border: $border-base;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
     &:hover, &-focused {
       border-color: $color-primary-light1;
       .bin-select-arrow {
@@ -39,7 +39,7 @@
     transform: translateY(-50%);
     font-size: $base-font-size;
     color: $color-text-secondary;
-    transition: all .2s ease-in-out;
+    transition: all $animation-duration-base ease-in-out;
   }
   &-visible {
     .bin-select-selection {
@@ -290,7 +290,7 @@
   text-overflow: ellipsis;
   list-style: none;
   cursor: pointer;
-  transition: background .2s ease-in-out;
+  transition: background $animation-duration-base ease-in-out;
   &:hover {
     background: $color-select-hover;
   }
@@ -363,7 +363,7 @@
     &-visible .bin-select-selection {
       border-color: $color-danger;
       outline: 0;
-      box-shadow: 0 0 0 3px $color-input-error-shadow;
+      box-shadow: 0 0 0 2px $color-input-error-shadow;
     }
   }
 }
