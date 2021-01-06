@@ -400,7 +400,6 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | body-styles    | 设置body的样式,多用于设置自定义内边距 | Object  |      —      |  —  |
 | class-name    | 设置对话框容器的类名 | String  |      —      |  —  |
 | z-index    | 层级 | Number  |      —      |  2000  |
-| animation-type   |  动画模式，两种动画模式，zoom模式会额外添加一个点击监听并延迟20ms来判定来源位置，默认为正常不带缩放模式 | String  |     fade，zoom     |  fade  |
 | append-to-body    | 是否将对话框放置于 body 内 | Boolean  |      —      |  false  |
 | stop-remove-scroll | 是否阻止模态窗释放body滚动，多应用于多层嵌套 | Boolean  |      —      |  false  |
 

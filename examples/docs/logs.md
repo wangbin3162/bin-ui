@@ -1,18 +1,15 @@
 ## 更新日志
 
-3.0版本来啦，现经过多个版本迭代，组件库已更新约50个组件，3.0版本前经过多个小版本测试，现已基本实现大部分组件样式重绘，规范参考阿里设计规范。
-
-版本更新日志
+版本更新
 
 <template>
 <div class="doc-update">
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.6.5</p>
-        <p class="time">2020-12-30</p>
+        <p class="version">3.6.6</p>
+        <p class="time">2021-01-06</p>
         <p class="content">fixed修复树结构异步加载的问题，增加叶子节点isLeaf标识</p>
-        <p class="content">扩展modal窗口动画模式，新增zoom扩展来源方式进行动画播放</p>
         <p class="content">优化部分代码样式，优化全局动画事件统一</p>
       </b-timeline-item>
       <b-timeline-item color="primary">

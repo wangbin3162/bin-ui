@@ -221,34 +221,3 @@
   text-align: right;
 }
 
-.zoom-enter-active {
-  animation: antZoomIn $animation-duration-slow ease;
-}
-.zoom-leave-active {
-  animation: antZoomOut $animation-duration-slow ease;
-}
-@keyframes antZoomIn {
-  0% {
-    transform: none;
-    opacity: 0;
-  }
-  5% {
-    transform: scale(0.2);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes antZoomOut {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.2);
-    opacity: 0;
-  }
-}
-
