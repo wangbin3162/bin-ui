@@ -283,10 +283,10 @@ export default {
         }
       }
 
+      this.currentValue = val
+      this.$emit('input', val)
+      this.$emit('change', val)
       this.$nextTick(() => {
-        this.currentValue = val
-        this.$emit('input', val)
-        this.$emit('change', val)
         this.dispatch('BFormItem', 'form-change', val)
       })
     },
@@ -298,9 +298,7 @@ export default {
       this.focused = false
       this.$emit('blur')
 
-      if (!findComponentUpward(this, ['DatePicker', 'TimePicker', 'Cascader', 'Search'])) {
-        this.dispatch('BFormItem', 'form-blur', this.currentValue)
-      }
+      this.dispatch('BFormItem', 'form-blur', this.currentValue)
     },
     keyDown(e) {
       if (e.keyCode === 38) {

@@ -7,8 +7,9 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
-        <p class="version">3.6.6</p>
-        <p class="time">2021-01-06</p>
+        <p class="version">3.6.7</p>
+        <p class="time">2021-01-07</p>
+        <p class="content">fixed修复表单重置时第一次不触发校验事件bug，修复日期选择器选择年月时冒泡点击事件关闭面板bug</p>
         <p class="content">fixed修复树结构异步加载的问题，增加叶子节点isLeaf标识</p>
         <p class="content">优化部分代码样式，优化全局动画事件统一</p>
       </b-timeline-item>

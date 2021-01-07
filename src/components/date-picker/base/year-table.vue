@@ -4,7 +4,7 @@
             :class="getCellCls(cell)"
             v-for="(cell,index) in cells"
             :key="index"
-            @click="handleClick(cell)"
+            @click.stop="handleClick(cell)"
             @mouseenter="handleMouseMove(cell)"
         >
             <em>{{ cell.date.getFullYear() }}</em>

@@ -85,7 +85,6 @@ export default {
       isRequired: false,
       validateState: '',
       validateMessage: '',
-      validateDisabled: false,
       validator: {}
     }
   },
@@ -206,7 +205,6 @@ export default {
 
         callback(this.validateMessage)
       })
-      this.validateDisabled = false
     },
     resetField() {
       this.validateState = ''
@@ -222,10 +220,8 @@ export default {
       let prop = getPropByPath(model, path)
 
       if (Array.isArray(value)) {
-        this.validateDisabled = true
         prop.o[prop.k] = [].concat(this.initialValue)
       } else {
-        this.validateDisabled = true
         prop.o[prop.k] = this.initialValue
       }
     },
@@ -233,11 +229,6 @@ export default {
       this.validate('blur')
     },
     onFieldChange() {
-      if (this.validateDisabled) {
-        this.validateDisabled = false
-        return
-      }
-
       this.validate('change')
     }
   },
