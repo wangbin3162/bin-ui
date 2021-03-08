@@ -4,7 +4,7 @@
       <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click.stop="handleMask"></div>
     </transition>
     <div :class="wrapClasses" :style="wrapStyles" @click.stop="handleWrapClick">
-      <transition name="fade-down" @after-enter="animationEnter" @after-leave="animationFinish">
+      <transition name="modal-fade" @after-enter="animationEnter" @after-leave="animationFinish">
         <div :class="classes" :style="mainStyles" v-show="visible">
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
             <a :class="[prefixCls + '-close']" v-if="closable" @click="close">
@@ -40,6 +40,94 @@
 import { transferIndex as modalIndex, transferIncrease as modalIncrease } from '../../utils/transfer-queue'
 import { on, off, hasClass } from '../../utils/dom'
 import scrollbarMixin from '../../mixins/scrollbar-mixin'
+
+let mousePosition = null
+// ref: https://github.com/ant-design/ant-design/issues/15795
+const getClickPosition = (e) => {
+  mousePosition = {
+    x: e.pageX,
+    y: e.pageY
+  }
+  // 100ms 内发生过点击事件，则从点击位置动画展示
+  // 否则直接 zoom 展示
+  // 这样可以兼容非点击方式展开
+  // eslint-disable-next-line no-unused-vars
+  setTimeout(() => (mousePosition = null), 100)
+}
+
+let supportsPassive = false
+try {
+  let opts = Object.defineProperty({}, 'passive', {
+    // eslint-disable-next-line getter-return
+    get() {
+      supportsPassive = true
+    }
+  })
+  window.addEventListener('testPassive', null, opts)
+  window.removeEventListener('testPassive', null, opts)
+// eslint-disable-next-line no-empty
+} catch (e) {
+}
+
+function addEventListenerWrap(target, eventType, cb, option) {
+  if (target.addEventListener) {
+    let opt = option
+    if (
+        opt === undefined &&
+        supportsPassive &&
+        (eventType === 'touchstart' || eventType === 'touchmove' || eventType === 'wheel')
+    ) {
+      opt = { passive: false }
+    }
+    target.addEventListener(eventType, cb, opt)
+  }
+  return {
+    remove: () => {
+      if (target.removeEventListener) {
+        target.removeEventListener(eventType, cb)
+      }
+    }
+  }
+}
+
+// 只有点击事件支持从鼠标位置动画展开
+if (typeof window !== 'undefined' && window.document && window.document.documentElement) {
+  addEventListenerWrap(document.documentElement, 'click', getClickPosition, true)
+}
+
+function getScroll(w, top) {
+  let ret = w[`page${top ? 'Y' : 'X'}Offset`]
+  const method = `scroll${top ? 'Top' : 'Left'}`
+  if (typeof ret !== 'number') {
+    const d = w.document
+    ret = d.documentElement[method]
+    if (typeof ret !== 'number') {
+      ret = d.body[method]
+    }
+  }
+  return ret
+}
+
+function setTransformOrigin(node, value) {
+  const style = node.style;
+  ['Webkit', 'Moz', 'Ms', 'ms'].forEach(prefix => {
+    style[`${prefix}TransformOrigin`] = value
+  })
+  style[`transformOrigin`] = value
+}
+
+function offset(el) {
+  const rect = el.getBoundingClientRect()
+  const pos = {
+    left: rect.left,
+    top: rect.top
+  }
+  const doc = el.ownerDocument
+  const w = doc.defaultView || doc.parentWindow
+  pos.left += getScroll(w, false)
+  pos.top += getScroll(w, true)
+  return pos
+}
 
 const prefixCls = 'bin-modal'
 export default {
@@ -218,8 +306,28 @@ export default {
       showHead = false
     }
     this.showHead = showHead
+    this.$nextTick(() => {
+      this.updateCallback(false)
+    })
   },
   methods: {
+    updateCallback(visible) {
+      if (this.value) {
+        // first show
+        if (!visible) {
+          const dialogNode = this.$refs.content
+          if (mousePosition) {
+            const elOffset = offset(dialogNode)
+            setTransformOrigin(
+                dialogNode,
+                `${mousePosition.x - elOffset.left}px ${mousePosition.y - elOffset.top}px`
+            )
+          } else {
+            setTransformOrigin(dialogNode, '')
+          }
+        }
+      }
+    },
     // 全局modal的索引
     handleGetModalIndex() {
       modalIncrease()
@@ -315,6 +423,9 @@ export default {
   watch: {
     value(val) {
       this.visible = val
+      this.$nextTick(() => {
+        this.updateCallback(!val)
+      })
     },
     visible(val) {
       if (val === false) {

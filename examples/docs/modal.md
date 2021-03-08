@@ -362,7 +362,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
   <b-modal v-model="modal11" title="弹窗1" draggable>
     <p>弹窗1内容</p>
   </b-modal>
-  <b-modal v-model="modal12" title="弹窗2" draggable>
+  <b-modal v-model="modal12" title="弹窗2" draggable :mask="false">
     <p>弹窗2内容</p>
   </b-modal>
 </template>

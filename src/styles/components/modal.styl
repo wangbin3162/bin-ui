@@ -113,6 +113,64 @@
   text-align: right;
 }
 
+
+.modal-fade-enter-active {
+  animation: modal-fade-in $animation-duration-slow;
+  .bin-modal-content {
+    animation: dialog-fade-in $animation-duration-slow;
+  }
+}
+
+.modal-fade-leave-active {
+  animation: modal-fade-out $animation-duration-slow;
+  .bin-modal-content {
+    animation: dialog-fade-out $animation-duration-slow;
+  }
+}
+
+@keyframes dialog-fade-in {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  5% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-fade-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 //  垂直居中
 .vertical-center-modal {
   display: flex;

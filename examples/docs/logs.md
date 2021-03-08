@@ -5,6 +5,13 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.7.0</p>
+        <p class="time">2021-03-08</p>
+        <p class="content">fixed修复click-outside指令在弹窗内点击外部不触发的问题</p>
+        <p class="content">优化modal框弹出动画效果</p>
+      </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.6.7</p>
