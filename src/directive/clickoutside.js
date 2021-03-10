@@ -6,12 +6,6 @@ const ctx = '@@clickoutsideContext'
 let startClick
 let seed = 0
 
-on(document, 'mousedown', e => (startClick = e))
-
-on(document, 'mouseup', e => {
-  nodeList.forEach(node => node[ctx].documentHandler(e, startClick))
-})
-
 function createDocumentHandler(el, binding, vnode) {
   return function (mouseup = {}, mousedown = {}) {
     if (!vnode ||
@@ -43,6 +37,11 @@ function createDocumentHandler(el, binding, vnode) {
  */
 export default {
   bind(el, binding, vnode) {
+    on(document, 'mousedown', e => (startClick = e))
+
+    on(document, 'mouseup', e => {
+      nodeList.forEach(node => node[ctx].documentHandler(e, startClick))
+    })
     nodeList.push(el)
     const id = seed++
     el[ctx] = {
