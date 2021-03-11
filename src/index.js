@@ -110,7 +110,8 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export {
+export default {
+  install,
   Row,
   Col,
   Icon,
@@ -183,8 +184,4 @@ export {
   Popover,
   Split,
   Slider
-}
-
-export default {
-  install
 }

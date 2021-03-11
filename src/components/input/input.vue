@@ -1,6 +1,6 @@
 <template>
   <div :class="wrapClasses">
-    <label v-if="type !== 'textarea'">
+    <template v-if="type !== 'textarea'">
       <span :class="[prefixCls + '-group-prepend']" v-if="prepend" v-show="slotReady">
         <slot name="prepend"></slot>
       </span>
@@ -44,8 +44,11 @@
         <slot name="prefix"><i class="iconfont" :class="['icon-' + prefix]" v-if="prefix"></i></slot>
       </span>
       <span class="bin-input-word-count" v-if="showWordCount">{{ wordCount }}</span>
-    </label>
-    <label v-else>
+      <span class="bin-input-group-append" v-if="$slots.append">
+        <slot name="append"></slot>
+      </span>
+    </template>
+    <template v-else>
       <textarea :id="elementId"
                 :wrap="wrap"
                 :autocomplete="autocomplete"
@@ -72,7 +75,7 @@
                 @compositionend="handleComposition"
                 @input="handleInput"></textarea>
       <span class="bin-input-word-count" v-if="showWordCount">{{ wordCount }}</span>
-    </label>
+    </template>
   </div>
 </template>
 
@@ -309,8 +312,8 @@ export default {
         {
           [`${prefixCls}-wrapper-${this.size}`]: !!this.size,
           [`${prefixCls}-type-${this.type}`]: this.type,
-          [`${prefixCls}-group-with-prepend`]: this.prepend,
-          [`${prefixCls}-group-with-append`]: this.append || this.search,
+          [`${prefixCls}-group-with-prepend`]: this.$slots.prepend,
+          [`${prefixCls}-group-with-append`]: this.$slots.append || this.search,
           [`${prefixCls}-hide-icon`]: this.append, // #554
           [`${prefixCls}-with-search`]: this.search,
           [`${prefixCls}-with-word-count`]: this.showWordCount

@@ -53,7 +53,7 @@ export default {
       type: Number,
       default: 0
     },
-    containerId: String
+    target: String
   },
   computed: {
     iconStyle() {
@@ -148,11 +148,8 @@ export default {
   },
   mounted() {
     this.domEl = window
-    if (this.containerId) {
-      this.domEl = document.getElementById(this.containerId) || window
-    } else {
-      const scroll = findComponentUpward(this, 'BScrollbar')
-      this.domEl = scroll ? scroll.$el.querySelector('.bin-scrollbar__wrap') : window
+    if (this.target) {
+      this.domEl = document.querySelector(this.target) || window
     }
 
     on(this.domEl, 'scroll', this.handleScroll)

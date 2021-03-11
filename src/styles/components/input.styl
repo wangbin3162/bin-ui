@@ -33,6 +33,21 @@ placeholder() {
     vertical-align: baseline;
     cursor: pointer;
   }
+  &.bin-input-group-with-prepend, &.bin-input-group-with-append {
+    display: inline-flex;
+  }
+  .bin-input-group-prepend, .bin-input-group-append {
+    position relative;
+  }
+  .bin-input-group-prepend {
+    z-index: 1;
+    right: -1px;
+  }
+
+  .bin-input-group-append {
+    z-index: 0;
+    left: -1px;
+  }
 }
 // 大小设置
 .bin-input-wrapper-large {
@@ -103,6 +118,7 @@ placeholder() {
   placeholder()
   &:focus, &:hover {
     border-color: $color-primary;
+    z-index: 1;
   }
   &:focus {
     outline: 0;
@@ -214,8 +230,8 @@ textarea.bin-input {
   padding-right: 40px;
 }
 .bin-input-type-textarea.bin-input-with-word-count .bin-input {
-   padding-bottom: 16px;
- }
+  padding-bottom: 16px;
+}
 .bin-input-type-textarea .bin-input-word-count {
   -webkit-box-align: end;
   -ms-flex-align: end;

@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import hljs from 'highlight.js'
-import { LoadingBar } from '../../src/index'
+import BinUI from '../../src/index'
 // 路由数据
 import routes from './routes'
+
+const { LoadingBar } = BinUI
 
 Vue.use(VueRouter)
 

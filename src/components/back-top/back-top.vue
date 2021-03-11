@@ -21,6 +21,10 @@ export default {
       type: Number,
       default: 400
     },
+    target: {
+      type: String,
+      default: '',
+    },
     bottom: {
       type: Number,
       default: 50
@@ -64,16 +68,9 @@ export default {
     }
   },
   mounted() {
-    this.domEl = window
-    // 父级元素是否设置了scroll-box
-    let parentScrollBox = this.$parent.$el.querySelector('.scroll-box')
-    if (parentScrollBox) {
-      this.domEl = parentScrollBox
-    } else {
-      // 如果父级是自定义滚动则绑定滚动为父级元素dom
-      this.domEl = this.$parent.$el.className === 'bin-scrollbar'
-          ? this.$parent.$el.querySelector('.bin-scrollbar__wrap')
-          : window
+    this.domEl = document.documentElement
+    if (this.target) {
+      this.domEl = document.querySelector(this.target)
     }
     this.scrollEvent = this.$util.debounce(this.handleScroll, 50, false)
     // 监听滚动事件
@@ -87,12 +84,10 @@ export default {
   methods: {
     // 滚动监听事件
     handleScroll() {
-      const sTop = this.domEl !== window ? (this.domEl.pageYOffset || this.domEl.scrollTop) : (document.documentElement.scrollTop || document.body.scrollTop)
-      this.backTop = sTop >= this.height
+      this.backTop = this.domEl.scrollTop >= this.height
     },
     back() {
-      const sTop = this.domEl !== window ? (this.domEl.pageYOffset || this.domEl.scrollTop) : (document.documentElement.scrollTop || document.body.scrollTop)
-      scrollTop(this.domEl, sTop, 0, this.duration)
+      scrollTop(this.domEl, this.domEl.scrollTop, 0, this.duration)
       this.$emit('click')
     }
   }
