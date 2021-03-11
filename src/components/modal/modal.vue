@@ -4,7 +4,9 @@
       <div class="bin-modal-mask" :style="wrapStyles" v-show="visible" v-if="showMask" @click.stop="handleMask"></div>
     </transition>
     <div :class="wrapClasses" :style="wrapStyles" @click.stop="handleWrapClick">
-      <transition name="modal-fade" @after-enter="animationEnter" @after-leave="animationFinish">
+      <transition :name="transitionName?transitionName:'modal-fade'"
+                  @after-enter="animationEnter"
+                  @after-leave="animationFinish">
         <div :class="classes" :style="mainStyles" v-show="visible">
           <div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
             <a :class="[prefixCls + '-close']" v-if="closable" @click="close">
@@ -204,6 +206,9 @@ export default {
     },
     stopRemoveScroll: {
       type: Boolean
+    },
+    transitionName: {
+      type: String
     }
   },
   data() {
@@ -312,6 +317,7 @@ export default {
   },
   methods: {
     updateCallback(visible) {
+      if (this.transitionName && this.transitionName !== 'modal-fade') return
       if (this.value) {
         // first show
         if (!visible) {

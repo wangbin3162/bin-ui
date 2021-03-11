@@ -2,7 +2,7 @@ import { on } from '../utils/dom'
 
 const nodeList = []
 const ctx = '@@clickoutsideContext'
-
+const isServer = typeof window === 'undefined'
 let startClick
 let seed = 0
 
@@ -31,17 +31,19 @@ function createDocumentHandler(el, binding, vnode) {
   }
 }
 
+if (!isServer) {
+  on(document, 'mousedown', e => (startClick = e))
+  on(document, 'mouseup', e => {
+    nodeList.forEach(node => node[ctx].documentHandler(e, startClick))
+  })
+}
+
 /**
  * v-clickoutside
  * @desc 点击元素外面才会触发的事件
  */
 export default {
   bind(el, binding, vnode) {
-    on(document, 'mousedown', e => (startClick = e))
-
-    on(document, 'mouseup', e => {
-      nodeList.forEach(node => node[ctx].documentHandler(e, startClick))
-    })
     nodeList.push(el)
     const id = seed++
     el[ctx] = {

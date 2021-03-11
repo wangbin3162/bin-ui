@@ -5,6 +5,7 @@
       <b-anchor :scroll-offset="100">
         <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
         <b-anchor-link href="#zi-ding-yi-yang-shi" title="自定义样式"></b-anchor-link>
+        <b-anchor-link href="#zi-ding-yi-dong-hua" title="自定义动画"></b-anchor-link>
         <b-anchor-link href="#yi-bu-guan-bi" title="异步关闭"></b-anchor-link>
         <b-anchor-link href="#jin-yong-guan-bi" title="禁用关闭"></b-anchor-link>
         <b-anchor-link href="#zi-ding-yi-wei-zhi" title="自定义位置"></b-anchor-link>
@@ -91,6 +92,45 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
         modal2: false,
         modal3: false,
         modal4: false
+      }
+    }
+  }
+</script>
+```
+
+:::
+
+### 自定义动画
+
+可以设置不同的弹窗动画，可以点击查看显示效果
+
+::: demo
+
+```html
+
+<template>
+  <b-button @click="openModal('fade-down')">fade-down</b-button>
+  <b-button @click="openModal('fade-in')">fade-in</b-button>
+  <b-button @click="openModal('zoom-in')">zoom-in</b-button>
+  <b-button @click="openModal('fade-transverse')">fade-transverse</b-button>
+  <b-modal v-model="visible" title="不同的modal弹出动画" :transition-name="transitionName">
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
+    <p>我是弹窗内容...</p>
+  </b-modal>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        visible: false,
+        transitionName:''
+      }
+    },
+    methods: {
+      openModal(name){
+        this.transitionName = name
+        this.visible = true
       }
     }
   }
@@ -402,6 +442,7 @@ Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制�
 | z-index    | 层级 | Number  |      —      |  2000  |
 | append-to-body    | 是否将对话框放置于 body 内 | Boolean  |      —      |  false  |
 | stop-remove-scroll | 是否阻止模态窗释放body滚动，多应用于多层嵌套 | Boolean  |      —      |  false  |
+| transition-name | 自定义动画名称，默认的modal-fade动画会自动追踪鼠标点击位置 | String  |      —      |  modal-fade  |
 
 ### Events
 
