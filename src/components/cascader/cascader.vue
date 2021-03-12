@@ -53,6 +53,7 @@
     </transition>
   </div>
 </template>
+
 <script>
 import Drop from '../select/drop.vue'
 import CasPanel from './cas-panel.vue'

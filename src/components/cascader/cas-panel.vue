@@ -59,7 +59,19 @@ export default {
       if (item.disabled) return
 
       const cascade = findComponentUpward(this, 'BCascader')
+      // return value back recursion  // 向上递归，设置临时选中值（并非真实选中）
+      const backItem = this.getBaseItem(item)
+
       if (item.loading !== undefined && !item.children.length) {
+        if (this.changeOnSelect) {
+          this.tmpItem = backItem
+          this.emitUpdate([backItem])
+          this.dispatch('BCascader', 'result-change', {
+            lastValue: false,
+            changeOnSelect: this.changeOnSelect,
+            fromInit: fromInit
+          })
+        }
         if (cascade && cascade.loadData) {
           cascade.loadData(item, () => {
             if (fromUser) {
@@ -67,14 +79,23 @@ export default {
             }
             if (item.children.length) {
               this.handleTriggerItem(item)
+            } else {
+              if (this.changeOnSelect) {
+                this.tmpItem = backItem
+                this.emitUpdate([backItem])
+                this.sublist = []
+                this.dispatch('BCascader', 'result-change', {
+                  lastValue: true,
+                  changeOnSelect: this.changeOnSelect,
+                  fromInit: fromInit
+                })
+              }
             }
           })
           return
         }
       }
 
-      // return value back recursion  // 向上递归，设置临时选中值（并非真实选中）
-      const backItem = this.getBaseItem(item)
       // #5021 for this.changeOnSelect，加 if 是因为 #4472
       if (
           this.changeOnSelect ||
@@ -93,7 +114,6 @@ export default {
           fromInit: fromInit
         })
 
-        // #1553
         if (this.changeOnSelect) {
           const CasPanel = findComponentDownward(this, 'CasPanel')
           if (CasPanel) {

@@ -7,11 +7,12 @@
     <b-timeline>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
-        <p class="version">3.7.3</p>
-        <p class="time">2021-03-11</p>
+        <p class="version">3.7.4</p>
+        <p class="time">2021-03-12</p>
         <p class="content">导出文件修改</p>
         <p class="content">修复部分样式，input，scrollbar等api增加target标记</p>
         <p class="content">扩展modal自定义动画名称，优化点击动效</p>
+        <p class="content">修复级联菜单项即可响应的bug</p>
       </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
