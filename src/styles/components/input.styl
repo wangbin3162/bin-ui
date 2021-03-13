@@ -35,6 +35,11 @@ placeholder() {
   }
   &.bin-input-group-with-prepend, &.bin-input-group-with-append {
     display: inline-flex;
+    .bin-input {
+      &:focus, &:hover {
+        z-index: 1;
+      }
+    }
   }
   .bin-input-group-prepend, .bin-input-group-append {
     position relative;
@@ -118,7 +123,6 @@ placeholder() {
   placeholder()
   &:focus, &:hover {
     border-color: $color-primary;
-    z-index: 1;
   }
   &:focus {
     outline: 0;
