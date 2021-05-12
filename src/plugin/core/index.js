@@ -5,7 +5,7 @@ import waves from '../../directive/waves'
 import clickAnimation from '../../directive/click-animation/click-animation'
 
 // 功能插件
-import util from '../../utils/util'
+import util, { debounce, throttle, isEqual } from '../../utils/util'
 import log from '../../utils/log'
 import { scrollTop } from '../../utils/dom'
 import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
@@ -33,6 +33,10 @@ export default {
 
     Vue.prototype.$open = util.open
     Vue.prototype.$copy = util.copy
+
+    Vue.prototype.$throttle = throttle
+    Vue.prototype.$debounce = debounce
+    Vue.prototype.$isEqual = isEqual
     Vue.prototype.$print = log.print
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$resize = { addResizeListener, removeResizeListener }

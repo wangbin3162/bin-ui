@@ -140,18 +140,16 @@ export default {
   },
   mounted () {
     if (this.normal) return
-
-    this.updateEvent = this.$util.debounce(this.update, 10, false)
     this.$nextTick(this.update)
     if (!this.noResize) {
-      on(window, 'resize', this.updateEvent)
+      on(window, 'resize', this.update)
       addResizeListener(this.$refs.resize, this.update) // 内容撑开的时候计算动态计算
     }
   },
   beforeDestroy () {
     if (this.normal) return
     if (!this.noResize) {
-      off(window, 'resize', this.updateEvent)
+      off(window, 'resize', this.update)
       removeResizeListener(this.$refs.resize, this.update)
     }
   }

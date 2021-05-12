@@ -120,47 +120,60 @@ function parseTime(time, cFormat = '{y}-{m}-{d} {h}:{i}:{s}', weekArray) {
 }
 
 /**
- * 防抖函数，返回函数连续调用时，空闲时间必须大于或等于 wait，func 才会执行
+ * 节流函数，(限制函数的执行频率)返回函数连续调用时，空闲时间必须大于或等于 wait，func 才会执行
  *
  * @param  {function} func        回调函数
  * @param  {number}   wait        表示时间窗口的间隔
- * @param  {boolean}  immediate   设置为ture时，是否立即调用函数
+ * @param immediate 是否立即执行 true 则先调用，false不先调用
  * @return {function}             返回客户调用函数
  */
-util.debounce = function (func, wait = 50, immediate = true) {
-  let timer, context, args
-  // 延迟执行函数
-  const later = () => setTimeout(() => {
-    // 延迟函数执行完毕，清空缓存的定时器序号
-    timer = null
-    // 延迟执行的情况下，函数会在延迟函数中执行
-    // 使用到之前缓存的参数和上下文
-    if (!immediate) {
-      func.apply(context, args)
-      context = args = null
-    }
-  }, wait)
+export function throttle(func, wait, immediate) {
+  let timeoutID
+  let lastExec = 0
 
-  // 这里返回的函数是每次实际调用的函数
-  return function (...params) {
-    // 如果没有创建延迟执行函数（later），就创建一个
-    if (!timer) {
-      timer = later()
-      // 如果是立即执行，调用函数
-      // 否则缓存参数和调用上下文
-      if (immediate) {
-        func.apply(this, params)
-      } else {
-        context = this
-        args = params
+  function wrapper() {
+    const self = this
+    const elapsed = Number(new Date()) - lastExec
+    const args = arguments
+
+    function clearExistingTimeout() {
+      if (timeoutID) {
+        clearTimeout(timeoutID)
       }
-      // 如果已有延迟执行函数（later），调用的时候清除原来的并重新设定一个
-      // 这样做延迟函数会重新计时
+    }
+
+    function clear() {
+      timeoutID = undefined
+    }
+
+    function exec() {
+      lastExec = Number(new Date())
+      func.apply(self, args)
+    }
+
+    if (immediate && !timeoutID) {
+      exec()
+    }
+    clearExistingTimeout()
+    if (immediate === undefined && elapsed > wait) {
+      exec()
     } else {
-      clearTimeout(timer)
-      timer = later()
+      timeoutID = setTimeout(immediate ? clear : exec, immediate === undefined ? wait - elapsed : wait)
     }
   }
+
+  return wrapper
+}
+
+/**
+ * 防抖函数，(限制函数的执行频率) 保证再一系列调用时间内，只调用一次
+ *
+ * @param  {function} func        回调函数
+ * @param  {number}   wait        表示时间窗口的间隔
+ * @return {function}             返回客户调用函数
+ */
+export function debounce(func, wait) {
+  return throttle(func, wait, false)
 }
 
 /**
@@ -221,6 +234,45 @@ util.deepClone = deepCopy
 util.onOf = oneOf
 
 util.typeOf = typeOf
+
+// 判断是否是对象或数组
+function isObject(obj) {
+  return typeof obj === 'object' && obj !== null
+}
+
+// 判定对象数组相等
+export function isEqual(obj1, obj2) {
+  // 两个数据有任何一个不是对象或数组
+  if (!isObject(obj1) || !isObject(obj2)) {
+    // 值类型(注意：参与equal的一般不会是函数)
+    return obj1 === obj2
+  }
+  // 如果传的两个参数都是同一个对象或数组
+  if (obj1 === obj2) {
+    return true
+  }
+
+  // 两个都是对象或数组，而且不相等
+  // 1.先比较obj1和obj2的key的个数，是否一样
+  const obj1Keys = Object.keys(obj1)
+  const obj2Keys = Object.keys(obj2)
+  if (obj1Keys.length !== obj2Keys.length) {
+    return false
+  }
+
+  // 如果key的个数相等,就是第二步
+  // 2.以obj1为基准，和obj2依次递归比较
+  for (let key in obj1) {
+    // 比较当前key的value  --- 递归
+    const res = isEqual(obj1[key], obj2[key])
+    if (!res) {
+      return false
+    }
+  }
+
+  // 3.全相等
+  return true
+}
 
 // 一个值是否在列表中
 export function oneOf(value, validList) {

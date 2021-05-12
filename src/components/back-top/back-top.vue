@@ -23,7 +23,7 @@ export default {
     },
     target: {
       type: String,
-      default: '',
+      default: ''
     },
     bottom: {
       type: Number,
@@ -68,26 +68,31 @@ export default {
     }
   },
   mounted() {
-    this.domEl = document.documentElement
+    this.container = document
+    this.el = document.documentElement
     if (this.target) {
-      this.domEl = document.querySelector(this.target)
+      this.el = document.querySelector(this.target)
+      if (!this.el) {
+        console.error(`target is not existed: ${this.target}`)
+      }
+      this.container = this.el
     }
-    this.scrollEvent = this.$util.debounce(this.handleScroll, 50, false)
+    this.scrollEvent = this.$throttle(this.handleScroll, 50)
     // 监听滚动事件
-    on(this.domEl, 'scroll', this.scrollEvent)
+    on(this.container, 'scroll', this.scrollEvent)
     on(window, 'resize', this.scrollEvent)
   },
   beforeDestroy() {
-    off(this.domEl, 'scroll', this.scrollEvent)
+    off(this.container, 'scroll', this.scrollEvent)
     off(window, 'resize', this.scrollEvent)
   },
   methods: {
     // 滚动监听事件
     handleScroll() {
-      this.backTop = this.domEl.scrollTop >= this.height
+      this.backTop = this.el.scrollTop >= this.height
     },
     back() {
-      scrollTop(this.domEl, this.domEl.scrollTop, 0, this.duration)
+      scrollTop(this.el, this.el.scrollTop, 0, this.duration)
       this.$emit('click')
     }
   }

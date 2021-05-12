@@ -192,7 +192,7 @@
     },
     mounted () {
       this.calcBar()
-      this.calcEvent = this.$util.debounce(this.calcScrollWidth, 10)
+      this.calcEvent = this.$throttle(this.calcScrollWidth, 10)
       on(window, 'resize', this.calcEvent)
       this.$nextTick(() => {
         this.calcScrollWidth()
