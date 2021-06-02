@@ -19,7 +19,7 @@ import ColorBase from './components/color-base.vue'
 import DraggableDemo from './components/draggable-demo'
 import generate from './generateTreeData'
 
-Vue.use(BinUI)
+Vue.use(BinUI, { disabledDoc: true })
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.component('MainHeader', MainHeader)

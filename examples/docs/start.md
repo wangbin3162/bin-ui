@@ -17,6 +17,7 @@ import BinUI from 'bin-ui'
 import 'bin-ui/lib/styles/index.css'
 
 Vue.use(BinUI)
+// Vue.use(BinUI,{disabledDoc:true}) // 可以设置禁用doc地址log
 
 new Vue({
   el: '#app',

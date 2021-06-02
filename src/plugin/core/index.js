@@ -40,6 +40,7 @@ export default {
     Vue.prototype.$print = log.print
     Vue.prototype.$scrollTop = scrollTop
     Vue.prototype.$resize = { addResizeListener, removeResizeListener }
+    if (options && options.disabledDoc) return
     log.pretty(`[${config.name}] ${config.version}`, `${baseUrl}/${config.name}`)
   }
 }

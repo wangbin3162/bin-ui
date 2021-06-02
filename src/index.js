@@ -89,7 +89,7 @@ const components = [
   Empty, Split, Slider
 ]
 
-const install = function (Vue) {
+const install = function (Vue, options) {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
@@ -102,7 +102,7 @@ const install = function (Vue) {
   Vue.prototype.$alert = Modal.alert
   Vue.prototype.$confirm = Modal.confirm
 
-  Vue.use(corePlugin)
+  Vue.use(corePlugin, options)
 }
 
 /* istanbul ignore if */
