@@ -7,6 +7,12 @@
     <b-timeline>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
+        <p class="version">3.7.8</p>
+        <p class="time">2021-06-07</p>
+        <p class="content">修改轮播图样式问题</p>
+      </b-timeline-item>
+      <b-timeline-item color="warning">
+        <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.7.7</p>
         <p class="time">2021-06-02</p>
         <p class="content">增加配置，可禁用文档log</p>

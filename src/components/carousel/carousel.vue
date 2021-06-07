@@ -291,9 +291,9 @@ export default {
     updateOffset() {
       this.$nextTick(() => {
         /* hack: revise copyTrack offset (1px) */
-        let ofs = this.copyTrackIndex > 0 ? -1 : 1
+        // let ofs = this.copyTrackIndex > 0 ? -1 : 1
         this.trackOffset = this.trackIndex * this.listWidth
-        this.trackCopyOffset = this.copyTrackIndex * this.listWidth + ofs
+        this.trackCopyOffset = this.copyTrackIndex * this.listWidth // + ofs
       })
     }
   },
