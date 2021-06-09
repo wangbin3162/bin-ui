@@ -1,0 +1,91 @@
+.bin-skeleton {
+  width: 100%
+  &__first-line, &__paragraph {
+    height: 16px;
+    margin-top: 16px;
+    background: #f2f2f2;
+  }
+  &.is-animated .bin-skeleton__item {
+    background: -webkit-gradient(linear, left top, right top, color-stop(25%, #f2f2f2), color-stop(37%, #e6e6e6), color-stop(63%, #f2f2f2));
+    background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
+    background-size: 400% 100%;
+    -webkit-animation: skeleton-loading 1.4s ease infinite;
+    animation: skeleton-loading 1.4s ease infinite
+  }
+  &__item {
+    background: #f2f2f2;
+    display: inline-block;
+    height: 16px;
+    border-radius: $border-base-radius;
+    width: 100%
+  }
+  &__p {
+    width: 100%
+    &.is-first {
+      width: 33%;
+    }
+    &.is-last {
+      width: 62%;
+    }
+  }
+  &__circle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 36px
+    &--lg {
+      width: 40px;
+      height: 40px;
+      line-height: 40px
+    }
+    &--md {
+      width: 28px;
+      height: 28px;
+      line-height: 28px
+    }
+  }
+  &__button {
+    height: 40px;
+    width: 64px;
+    border-radius: 4px
+  }
+  &__text {
+    width: 100%;
+    height: 13px;
+  }
+  &__caption {
+    height: 12px
+  }
+  &__h1 {
+    height: 20px;
+  }
+  &__h2 {
+    height: 18px;
+  }
+  &__h4 {
+    height: 16px;
+  }
+  &__image {
+    width: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    svg {
+      fill: #DCDDE0;
+      width: 22%;
+      height: 22%
+    }
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
+}

@@ -1,28 +1,5 @@
 ## DatePicker 日期选择器
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#kuai-jie-fang-shi" title="快捷方式"></b-anchor-link>
-        <b-anchor-link href="#bu-lian-dong-he-duo-xuan" title="不联动和多选"></b-anchor-link>
-        <b-anchor-link href="#xian-shi-xing-qi-shu" title="显示星期数"></b-anchor-link>
-        <b-anchor-link href="#qi-shi-ri-qi" title="起始日期"></b-anchor-link>
-        <b-anchor-link href="#nian-yue-xuan-ze" title="年月选择"></b-anchor-link>
-        <b-anchor-link href="#ri-qi-ge-shi" title="日期格式"></b-anchor-link>
-        <b-anchor-link href="#bu-ke-xuan-ri-qi" title="不可选日期"></b-anchor-link>
-        <b-anchor-link href="#dai-you-cao-zuo-lan-de-dan-chu" title="带有操作栏的弹出"></b-anchor-link>
-        <b-anchor-link href="#shou-dong-cha-ru-xuan-ze-zu-jian" title="手动插入选择组件"></b-anchor-link>
-        <b-anchor-link href="#bu-tong-chi-cun" title="不同尺寸"></b-anchor-link>
-        <b-anchor-link href="#ri-qi-shi-jian-xuan-ze" title="日期时间选择"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#options" title="Options"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 设置type 为 date 或 daterange 分别显示选择单日和选择范围类型。

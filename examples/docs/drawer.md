@@ -1,22 +1,5 @@
 ## Drawer 抽屉
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#zuo-ce-da-kai" title="左侧打开"></b-anchor-link>
-        <b-anchor-link href="#inner-mo-shi" title="inner模式"></b-anchor-link>
-        <b-anchor-link href="#xin-xi-yu-lan-kuang" title="信息预览框"></b-anchor-link>
-        <b-anchor-link href="#bian-ji-chou-ti" title="编辑抽屉"></b-anchor-link>
-        <b-anchor-link href="#qian-tao-chou-ti" title="嵌套抽屉"></b-anchor-link>
-        <b-anchor-link href="#ke-tuo-zhuai-kuan-du" title="可拖拽宽度"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 简易的抽屉用于展示或者快速弹出,可以根据是信息展示还是创建动态插入
 
 ### 基础用法

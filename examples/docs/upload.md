@@ -1,19 +1,5 @@
 ## Upload 上传
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#duo-xuan" title="多选"></b-anchor-link>
-        <b-anchor-link href="#shou-dong-shang-chuan" title="手动上传"></b-anchor-link>
-        <b-anchor-link href="#tuo-zhuai-shang-chuan" title="拖拽上传"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 文件选择上传按钮，实现简单的上传封装
 
 ### 基础用法

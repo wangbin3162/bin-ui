@@ -1,21 +1,5 @@
 ## Popover 气泡弹窗
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#duo-chong-xuan-ting-wei-zhi" title="多种悬停位置"></b-anchor-link>
-        <b-anchor-link href="#bu-tong-zhu-ti" title="不同主题"></b-anchor-link>
-        <b-anchor-link href="#duo-xing" title="多行"></b-anchor-link>
-        <b-anchor-link href="#chang-wen-ben" title="长文本"></b-anchor-link>
-        <b-anchor-link href="#ke-yi-yan-shi-he-guan-bi-ti-shi" title="可以延时和关闭提示"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 气泡类型的弹窗,用于放置更多信息或询问流程等
 
 ### 基础用法

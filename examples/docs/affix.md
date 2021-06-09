@@ -1,18 +1,5 @@
 ## Affix 图钉
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#ding-bu-pian-yi" title="顶部偏移"></b-anchor-link>
-        <b-anchor-link href="#gu-ding-zhuang-tai-shi-jian" title="固定状态事件"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 原生滚动相对于window窗口固定，也可以结合scrollbar进行配置

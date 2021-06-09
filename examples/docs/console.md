@@ -1,14 +1,5 @@
 ## 控制台优化
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#suo-you-shi-li" title="所有实例"></b-anchor-link>
-        <b-anchor-link href="#api" title="API"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 使用 `$log` 可以在控制台输出颜色信息
 
 打开控制台查看输出效果

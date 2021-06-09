@@ -1,23 +1,5 @@
 ## TimePicker 时间选择器
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#shi-jian-ge-shi" title="时间格式"></b-anchor-link>
-        <b-anchor-link href="#xuan-ze-shi-fen" title="选择时分"></b-anchor-link>
-        <b-anchor-link href="#shi-jian-jian-ge" title="时间间隔"></b-anchor-link>
-        <b-anchor-link href="#bu-ke-xuan-shi-jian" title="不可选时间"></b-anchor-link>
-        <b-anchor-link href="#dai-you-que-ren-cao-zuo" title="带有确认操作"></b-anchor-link>
-        <b-anchor-link href="#shou-dong-kong-zhi-zu-jian" title="手动控制组件"></b-anchor-link>
-        <b-anchor-link href="#bu-tong-chi-cun" title="不同尺寸"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 设置属性 type 为 time 或 timerange 分别显示选择单个时间和选择范围时间类型。

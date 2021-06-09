@@ -307,6 +307,12 @@
           "path": "/tree"
         },
         {
+          "desc": "Desc 描述列表",
+          "icon": "md-list",
+          "name": "desc",
+          "path": "/desc"
+        },
+        {
           "desc": "Progress 进度条",
           "icon": "ios-reorder",
           "name": "progress",
@@ -317,6 +323,12 @@
           "icon": "ios-radio-button-off",
           "name": "circle",
           "path": "/circle"
+        },
+        {
+          "desc": "Skeleton 骨架屏",
+          "icon": "md-list",
+          "name": "skeleton",
+          "path": "/skeleton"
         },
         {
           "desc": "Tag 标签",

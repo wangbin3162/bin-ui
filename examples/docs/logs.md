@@ -5,6 +5,14 @@
 <template>
 <div class="doc-update">
     <b-timeline>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.7.9</p>
+        <p class="time">2021-06-09</p>
+        <p class="content">优化文档锚点生成</p>
+        <p class="content">新增desc描述列表组件</p>
+        <p class="content">新增Skeleton骨架屏组件</p>
+      </b-timeline-item>
       <b-timeline-item color="warning">
         <b-icon name="ios-construct" slot="dot" size="20"></b-icon>
         <p class="version">3.7.8</p>

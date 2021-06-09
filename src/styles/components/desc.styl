@@ -1,0 +1,111 @@
+.bin-desc {
+  box-sizing: border-box;
+  font-size: $base-font-size;
+  color: $color-text-primary;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: $header-font-size;
+    font-weight: 700;
+  }
+
+  &__body {
+    color: #606266;
+    background-color: #fff;
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      border: none;
+
+      td, th {
+        background-color: #fff;
+        text-align: left;
+        font-weight: 400;
+        line-height: 1.5;
+        vertical-align: text-top;
+      }
+    }
+
+    :not(.is-bordered) td, :not(.is-bordered) th {
+      padding: 0 0 10px 0;
+      border: none;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    color: $color-text-regular;
+
+    &:not(.is-bordered-label) {
+      margin-right: 10px;
+    }
+
+    &.is-bordered-label {
+      font-weight: 500;
+      color: $color-text-regular;
+      background: #fafafa;
+    }
+  }
+
+  .is-bordered {
+    th, td {
+      border: $border-base;
+      padding: 10px;
+    }
+  }
+
+  .bin-desc--large {
+    font-size: 14px;
+
+    &.is-bordered {
+      th, td {
+        padding: 12px 10px;
+      }
+    }
+
+    &:not(.is-bordered) {
+      th, td {
+        padding-bottom: 12px;
+      }
+    }
+  }
+
+  .bin-desc--small {
+    font-size: 13px;
+
+    &.is-bordered {
+      th, td {
+        padding: 8px 10px;
+      }
+    }
+
+    &:not(.is-bordered) {
+      th, td {
+        padding-bottom: 8px;
+      }
+    }
+  }
+
+  .bin-desc--mini {
+    font-size: 12px;
+
+    &.is-bordered {
+      th, td {
+        padding: 6px 10px;
+      }
+    }
+
+    &:not(.is-bordered) {
+      th, td {
+        padding-bottom: 6px;
+      }
+    }
+  }
+}

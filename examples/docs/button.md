@@ -1,23 +1,5 @@
 ## Button 按钮
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#dai-tu-biao-de-an-niu" title="带图标"></b-anchor-link>
-        <b-anchor-link href="#jin-yong-an-niu" title="禁用按钮"></b-anchor-link>
-        <b-anchor-link href="#wen-zi-an-niu" title="文字按钮"></b-anchor-link>
-        <b-anchor-link href="#an-niu-zu" title="按钮组"></b-anchor-link>
-        <b-anchor-link href="#bu-tong-chi-cun" title="不同尺寸"></b-anchor-link>
-        <b-anchor-link href="#jia-zai-zhuang-tai" title="加载状态"></b-anchor-link>
-        <b-anchor-link href="#dian-ji-dong-hua" title="点击动画"></b-anchor-link>
-        <b-anchor-link href="#api" title="API">
-            <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        </b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 常用的操作按钮。
 
 ### 基础用法

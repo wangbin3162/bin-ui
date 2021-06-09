@@ -1,16 +1,5 @@
 ## 顶部加载
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#shuo-ming" title="说明"></b-anchor-link>
-        <b-anchor-link href="#dai-ma-shi-li" title="代码实例"></b-anchor-link>
-        <b-anchor-link href="#api" title="API"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 全局创建一个显示页面加载、异步请求、文件上传等的加载进度条。
 
 ### 说明

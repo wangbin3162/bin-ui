@@ -1,22 +1,5 @@
 ## Page 分页器
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#mei-ye-shu-liang" title="每页数量"></b-anchor-link>
-        <b-anchor-link href="#dian-ti" title="电梯"></b-anchor-link>
-        <b-anchor-link href="#zong-shu" title="总数"></b-anchor-link>
-        <b-anchor-link href="#mini-xing" title="mini型"></b-anchor-link>
-        <b-anchor-link href="#shang-yi-ye-xia-yi-ye-wen-zi" title="上一页下一页文字"></b-anchor-link>
-        <b-anchor-link href="#jian-ji-mo-shi" title="简洁模式"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 ::: demo

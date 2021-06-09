@@ -1,19 +1,5 @@
 ## Anchor 锚点
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#zi-ding-yi-tu-biao" title="自定义图标"></b-anchor-link>
-        <b-anchor-link href="#zi-ding-yi-yan-se" title="自定义颜色"></b-anchor-link>
-        <b-anchor-link href="#zhi-ding-gun-dong-rong-qi" title="指定滚动容器"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#anchorlink-props" title="AnchorLink Props"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 锚点主要应用于滚动导航，默认是window滚动，也可以设置滚动区域的 target，并且可以设置`b-affix`来固定

@@ -1,47 +1,20 @@
 ## Table 表格
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#ban-ma-wen" title="斑马纹"></b-anchor-link>
-        <b-anchor-link href="#bian-kuang" title="边框"></b-anchor-link>
-        <b-anchor-link href="#chao-chu-yin-cang" title="超出隐藏"></b-anchor-link>
-        <b-anchor-link href="#gu-ding-biao-tou" title="固定表头"></b-anchor-link>
-        <b-anchor-link href="#gu-ding-biao-tou-he-lie" title="固定表头和列"></b-anchor-link>
-        <b-anchor-link href="#dan-xuan-biao-ge" title="单选表格"></b-anchor-link>
-        <b-anchor-link href="#duo-xuan-biao-ge" title="多选表格"></b-anchor-link>
-        <b-anchor-link href="#ke-cao-zuo-biao-ge" title="可操作表格"></b-anchor-link>
-        <b-anchor-link href="#ke-zhan-kai" title="可展开"></b-anchor-link>
-        <b-anchor-link href="#xing-lie-he-bing" title="行列合并"></b-anchor-link>
-        <b-anchor-link href="#pai-xu-biao-ge" title="排序表格"></b-anchor-link>
-        <b-anchor-link href="#tuo-zhuai-diao-zheng-shun-xu" title="拖拽调整顺序"></b-anchor-link>
-        <b-anchor-link href="#loading-zhuang-tai" title="loading状态"></b-anchor-link>
-        <b-anchor-link href="#da-xiao-zhuang-tai" title="大小状态"></b-anchor-link>
-        <b-anchor-link href="#wu-shu-ju" title="无数据"></b-anchor-link>
-        <b-anchor-link href="#dao-chucsv" title="导出csv"></b-anchor-link>
-        <b-anchor-link href="#table-props" title="Table props"></b-anchor-link>
-        <b-anchor-link href="#table-events" title="Table events"></b-anchor-link>
-        <b-anchor-link href="#table-slot" title="Table slot"></b-anchor-link>
-        <b-anchor-link href="#table-methods" title="Table methods"></b-anchor-link>
-        <b-anchor-link href="#column" title="column"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 基本用法
 
 ::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns" :data="data"></b-table>
+  <b-table :columns="columns" :data="data"></b-table>
 </template>
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -98,6 +71,7 @@
   }
 </script>
 ```
+
 :::
 
 ### 斑马纹
@@ -105,13 +79,15 @@
 通过设置`stripe`来设置斑马纹显示
 
 ::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns" :data="data" stripe></b-table>
+  <b-table :columns="columns" :data="data" stripe></b-table>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -168,6 +144,7 @@
   }
 </script>
 ```
+
 :::
 
 ### 边框
@@ -175,13 +152,15 @@
 通过设置`border`来设置斑马纹显示
 
 ::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns" :data="data" border></b-table>
+  <b-table :columns="columns" :data="data" border></b-table>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -238,6 +217,7 @@
   }
 </script>
 ```
+
 :::
 
 ### 超出隐藏
@@ -246,14 +226,16 @@
 （注意：因表格单元格存在超出隐藏样式所以必须将tooltip标签插入至body元素，会成多余标签，如有多个表格缓存则会插入过多标签造成性能问题，所以是否开启需要根据需求确定）
 
 ::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns" :data="data" border></b-table>
-<b-table :columns="columns" :data="data" border tooltip-theme="dark"></b-table>
+  <b-table :columns="columns" :data="data" border></b-table>
+  <b-table :columns="columns" :data="data" border tooltip-theme="dark"></b-table>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -320,20 +302,23 @@
   }
 </script>
 ```
+
 :::
 
 ### 固定表头
 
 height 和maxHeight可以设置固定表头
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns" :data="data" height="200" border></b-table>
+  <b-table :columns="columns" :data="data" height="200" border></b-table>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -390,22 +375,25 @@ height 和maxHeight可以设置固定表头
   }
 </script>
 ```
+
 :::
 
 ### 固定表头和列
 
 可以同时固定表头和列
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div style="width: 600px;">
-  <b-table :columns="columns3" :data="data" height="200" border></b-table>
-</div>
+  <div style="width: 600px;">
+    <b-table :columns="columns3" :data="data" height="200" border></b-table>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns3: [
           {
@@ -433,13 +421,13 @@ height 和maxHeight可以设置固定表头
             fixed: 'right',
             width: 100,
             render: (h, params) => {
-                return h('b-button', {
-                   props: {
-                       type: 'primary',
-                       size: 'mini',
-                       plain: true
-                   }
-               }, '编辑');
+              return h('b-button', {
+                props: {
+                  type: 'primary',
+                  size: 'mini',
+                  plain: true
+                }
+              }, '编辑');
             }
           }
         ],
@@ -480,35 +468,38 @@ height 和maxHeight可以设置固定表头
   }
 </script>
 ```
+
 :::
 
 ### 单选表格
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div>
-  <b-table :columns="columns" ref="currentRowTable" :data="data" 
-      highlight-row @current-change="currentRowChange"></b-table>
-  <br>
+  <div>
+    <b-table :columns="columns" ref="currentRowTable" :data="data"
+             highlight-row @current-change="currentRowChange"></b-table>
+    <br>
     <div>
       <b-button @click="$refs.currentRowTable.clearCurrentRow();">清除单选</b-button>
-      <b-button @click="clickRow(0)">选中第一行</b-button> 
+      <b-button @click="clickRow(0)">选中第一行</b-button>
     </div>
     <br>
-  <b-table :columns="columns2" ref="currentRowTable2" :data="data2" 
-      highlight-row @current-change="currentRowChange">
+    <b-table :columns="columns2" ref="currentRowTable2" :data="data2"
+             highlight-row @current-change="currentRowChange">
       <template #ctrl="{index}">
         <b-button type="text" text-color="danger" @click="removeRow(index)">删除</b-button>
       </template>
-  </b-table>
+    </b-table>
     <br>
-  <b-button @click="init">初始化表格2并默认选中第一行</b-button>
-</div>
+    <b-button @click="init">初始化表格2并默认选中第一行</b-button>
+  </div>
 </template>
 <script>
-export default {
-    data () {
+  export default {
+    data() {
       return {
         columns: [
           {
@@ -560,7 +551,7 @@ export default {
             address: '南京市龙眠大道'
           }
         ],
-        data2:[],
+        data2: [],
         columns2: [
           {
             title: '姓名',
@@ -585,29 +576,30 @@ export default {
         ]
       }
     },
-    methods:{
-      currentRowChange(currentRow,oldRow,index){
-        if(index){
-          this.$message(`选中了第${index+1}行`)
+    methods: {
+      currentRowChange(currentRow, oldRow, index) {
+        if (index) {
+          this.$message(`选中了第${index + 1}行`)
         }
       },
       // 选中某一行
-      clickRow(index){
+      clickRow(index) {
         this.$refs.currentRowTable.clickCurrentRow(index)
       },
-      init(){
-        this.data2=JSON.parse(JSON.stringify(this.data))
-        this.$nextTick(()=>{
+      init() {
+        this.data2 = JSON.parse(JSON.stringify(this.data))
+        this.$nextTick(() => {
           this.$refs.currentRowTable2.clickCurrentRow(0)
         })
       },
-      removeRow(index){
-        this.data2.splice(index,1)
+      removeRow(index) {
+        this.data2.splice(index, 1)
       }
     }
   }
 </script>
 ```
+
 :::
 
 ### 多选表格
@@ -618,28 +610,31 @@ export default {
 
 给 data 项设置特殊 key _disabled: true 可以禁止选择当前项。
 
-@select，选中某一项触发，返回值为 selection 和 row，分别为已选项和刚选择的项。@select-all，点击全选时触发，返回值为 selection，已选项。 @selection-change，只要选中项发生变化时就会触发，返回值为 selection，已选项。
+@select，选中某一项触发，返回值为 selection 和 row，分别为已选项和刚选择的项。@select-all，点击全选时触发，返回值为 selection，已选项。
+@selection-change，只要选中项发生变化时就会触发，返回值为 selection，已选项。
 
-::: demo  
+::: demo
+
 ```html
+
 <template>
-<div>
-  <b-table :columns="columns4" ref="selection" :data="data" highlight-row></b-table>
-  <br>
+  <div>
+    <b-table :columns="columns4" ref="selection" :data="data" highlight-row></b-table>
+    <br>
     <b-button @click="$refs.selection.selectAll(true);">设置全选</b-button>
     <b-button @click="$refs.selection.selectAll(false);">取消全选</b-button>
-</div>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns4: [
-            {
-                type: 'selection',
-                width: 60,
-                align: 'center'
-            },
+          {
+            type: 'selection',
+            width: 60,
+            align: 'center'
+          },
           {
             title: '姓名',
             key: 'name'
@@ -694,14 +689,17 @@ export default {
   }
 </script>
 ```
+
 :::
 
 ### 可操作表格
 
 ::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns2" :data="data">
+  <b-table :columns="columns2" :data="data">
     <template v-slot:name="scope">
       <b-input type="text" v-model="editName" v-if="editIndex === scope.index" size="small"></b-input>
       <span v-else>{{ scope.row.name }}</span>
@@ -733,11 +731,11 @@ export default {
         <b-button @click="handleEdit( scope.row,  scope.index)" size="small">操作</b-button>
       </div>
     </template>
-</b-table>
+  </b-table>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns2: [
           {
@@ -765,7 +763,7 @@ export default {
             slot: 'action'
           }
         ],
-        hobbyMap:{'1':'吃饭','2':'睡觉','3':'打豆豆'},
+        hobbyMap: { '1': '吃饭', '2': '睡觉', '3': '打豆豆' },
         data: [
           {
             name: '王小明',
@@ -805,14 +803,14 @@ export default {
         ],
         editName: '',
         editAge: '',
-        editBirthday: '', 
+        editBirthday: '',
         editHobby: '',
-        editAddress: '', 
-        editIndex: -1 
+        editAddress: '',
+        editIndex: -1
       }
     },
     methods: {
-      handleEdit (row, index) {
+      handleEdit(row, index) {
         this.editName = row.name
         this.editAge = row.age
         this.editHobby = row.hobby
@@ -820,7 +818,7 @@ export default {
         this.editBirthday = row.birthday
         this.editIndex = index
       },
-      handleSave (index) {
+      handleSave(index) {
         this.data[index].name = this.editName
         this.data[index].age = this.editAge
         this.data[index].birthday = this.editBirthday
@@ -832,6 +830,7 @@ export default {
   }
 </script>
 ```
+
 :::
 
 ### 可展开
@@ -839,23 +838,25 @@ export default {
 通过给`columns` 数据设置一项，指定 `type: 'expand'`，即可开启扩展功能。
 
 ::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns" :data="data"></b-table>
+  <b-table :columns="columns" :data="data"></b-table>
 </template>
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
-            {
-                type: 'expand',
-                width: 50,
-                render: (h, params) => {
-                    return h('div', '详细地址：'+ params.row.address)
-                }
-            },
+          {
+            type: 'expand',
+            width: 50,
+            render: (h, params) => {
+              return h('div', '详细地址：' + params.row.address)
+            }
+          },
           {
             title: '姓名',
             key: 'name'
@@ -906,6 +907,7 @@ export default {
   }
 </script>
 ```
+
 :::
 
 ### 行列合并
@@ -914,20 +916,22 @@ export default {
 该方法返回一个包含两个元素的数组，第一个表示rowspan，第二个为colspan，用于合并单元格 合并表格最好是使用border模式
 
 ::: demo
+
 ```html
+
 <template>
-<b-table :columns="columns" :data="data" border :merge-method="handleSpan"></b-table>
+  <b-table :columns="columns" :data="data" border :merge-method="handleSpan"></b-table>
 </template>
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
-          { title: '姓名',key: 'name'},
-          { title: '年龄',key: 'age'},
-          { title: '出生日期',key: 'birthday'},
-          { title: '地址',key: 'address'}
+          { title: '姓名', key: 'name' },
+          { title: '年龄', key: 'age' },
+          { title: '出生日期', key: 'birthday' },
+          { title: '地址', key: 'address' }
         ],
         data: [
           {
@@ -964,44 +968,47 @@ export default {
       }
     },
     methods: {
-      handleSpan ({ row, column, rowIndex, columnIndex }) {
+      handleSpan({ row, column, rowIndex, columnIndex }) {
         // 获取相同姓名的行是，0，1
         if (rowIndex === 0 && columnIndex === 0) {
-            return {
-                rowspan: 2,
-                colspan: 1
-            };
+          return {
+            rowspan: 2,
+            colspan: 1
+          };
         } else if (rowIndex === 1 && columnIndex === 0) {
-            return {
-                rowspan: 0,
-                colspan: 1
-            };
+          return {
+            rowspan: 0,
+            colspan: 1
+          };
         }
         // 合并列，这里将第三行，周小伟的日期和地址合并
         if (rowIndex === 3 && columnIndex === 2) {
-            return [1, 2];
+          return [1, 2];
         } else if (rowIndex === 3 && columnIndex === 3) {
-            return [0,0];
+          return [0, 0];
         }
-      } 
+      }
     }
   }
 </script>
 ```
+
 :::
 
 ### 排序表格
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div>
-  <b-table :columns="columns1"  :data="data"></b-table>
-</div>
+  <div>
+    <b-table :columns="columns1" :data="data"></b-table>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns1: [
           {
@@ -1059,39 +1066,42 @@ export default {
   }
 </script>
 ```
+
 :::
 
 ### 拖拽调整顺序
 
 可以设置draggable开启拖拽排序，这里需要设置row-key强制更新视图，注意，设置拖拽排序后，row的悬停效果失效，也可以设置handle来制定某个拖拽元素
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div>
+  <div>
     <div>
       <p>默认拖拽</p>
       <b-table :columns="columns1" :data="data1" row-key draggable></b-table>
     </div>
     <div>
       <p>drag-handle</p>
-      <b-table 
-              :columns="columns2" :data="data2" row-key
-              draggable drag-handle=".drag-handle"
-              @drag-drop="handleDragDrop">
-              <template #handle="{row}">
-                <span class="drag-handle" style="cursor:grab;"><b-icon name="ios-move" size="20"/></span>
-              </template>
-              <template #ctrl="{row,index}">
-                <b-button @click="handleEdit(row,index)" type="text">编辑</b-button>
-              </template>
+      <b-table
+          :columns="columns2" :data="data2" row-key
+          draggable drag-handle=".drag-handle"
+          @drag-drop="handleDragDrop">
+        <template #handle="{row}">
+          <span class="drag-handle" style="cursor:grab;"><b-icon name="ios-move" size="20"/></span>
+        </template>
+        <template #ctrl="{row,index}">
+          <b-button @click="handleEdit(row,index)" type="text">编辑</b-button>
+        </template>
       </b-table>
     </div>
-</div>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns1: [
           {
@@ -1129,7 +1139,7 @@ export default {
             title: '地址',
             key: 'address'
           },
-          { title:'操作',slot: 'ctrl', width: 120 }
+          { title: '操作', slot: 'ctrl', width: 120 }
         ],
         data1: [
           {
@@ -1164,66 +1174,69 @@ export default {
           }
         ],
         data2: [
-           {
-             name: '王小明',
-             age: 18,
-             birthday: '1990-04-22',
-             address: '北京市朝阳区芍药居'
-           },
-           {
-             name: '张小刚',
-             age: 25,
-             birthday: '1990-11-11',
-             address: '北京市海淀区西二旗'
-           },
-           {
-             name: '李小红',
-             age: 30,
-             birthday: '1985-02-05',
-             address: '上海市浦东新区世纪大道'
-           },
-           {
-             name: '周小伟',
-             age: 26,
-             birthday: '1993-07-11',
-             address: '深圳市南山区深南大道'
-           },
-           {
-             name: '张小发',
-             age: 33,
-             birthday: '1999-12-12',
-             address: '南京市龙眠大道'
-           }
-         ]
+          {
+            name: '王小明',
+            age: 18,
+            birthday: '1990-04-22',
+            address: '北京市朝阳区芍药居'
+          },
+          {
+            name: '张小刚',
+            age: 25,
+            birthday: '1990-11-11',
+            address: '北京市海淀区西二旗'
+          },
+          {
+            name: '李小红',
+            age: 30,
+            birthday: '1985-02-05',
+            address: '上海市浦东新区世纪大道'
+          },
+          {
+            name: '周小伟',
+            age: 26,
+            birthday: '1993-07-11',
+            address: '深圳市南山区深南大道'
+          },
+          {
+            name: '张小发',
+            age: 33,
+            birthday: '1999-12-12',
+            address: '南京市龙眠大道'
+          }
+        ]
       }
     },
-    methods:{
-      handleDragDrop(newIndex,oldIndex,newData){
-        this.data2=newData
+    methods: {
+      handleDragDrop(newIndex, oldIndex, newData) {
+        this.data2 = newData
       },
-      handleEdit(row,index){
-        console.log(row,index)
-      } 
-    }   
+      handleEdit(row, index) {
+        console.log(row, index)
+      }
+    }
   }
 </script>
 ```
+
 :::
 
 ### loading状态
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div>
-  <b-table :columns="columns"  :data="data" :loading="loading" ></b-table>
-  <br>
-  <b-switch v-model="loading"></b-switch>
-</div>
+  <div>
+    <b-table :columns="columns" :data="data" :loading="loading"></b-table>
+    <br>
+    <b-switch v-model="loading"></b-switch>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -1243,7 +1256,7 @@ export default {
             key: 'address'
           }
         ],
-        loading:false,
+        loading: false,
         data: [
           {
             name: '王小明',
@@ -1281,34 +1294,38 @@ export default {
   }
 </script>
 ```
+
 :::
 
 ### 大小状态
 
 通过设置属性 `size` 为 `large` 或 `small` 可以调整表格尺寸为大或小，默认不填或填写 default 为中。
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div>
+  <div>
     <div style="display:flex;justify-content: flex-end;">
-       <b-dropdown trigger="click" style="margin-bottom: 20px;">
-          <a href="javascript:void(0)">
-             表格密度 <b-icon name="ios-apps"></b-icon>
-          </a>
-          <b-dropdown-menu slot="list">
-             <b-dropdown-item @click.native="tableSize='large'">松散</b-dropdown-item>
-             <b-dropdown-item @click.native="tableSize='default'">默认</b-dropdown-item>
-             <b-dropdown-item @click.native="tableSize='small'">紧凑</b-dropdown-item>
-          </b-dropdown-menu>
-       </b-dropdown> 
+      <b-dropdown trigger="click" style="margin-bottom: 20px;">
+        <a href="javascript:void(0)">
+          表格密度
+          <b-icon name="ios-apps"></b-icon>
+        </a>
+        <b-dropdown-menu slot="list">
+          <b-dropdown-item @click.native="tableSize='large'">松散</b-dropdown-item>
+          <b-dropdown-item @click.native="tableSize='default'">默认</b-dropdown-item>
+          <b-dropdown-item @click.native="tableSize='small'">紧凑</b-dropdown-item>
+        </b-dropdown-menu>
+      </b-dropdown>
     </div>
-  <b-table :columns="columns"  :data="data" :size="tableSize" ></b-table>
-</div>
+    <b-table :columns="columns" :data="data" :size="tableSize"></b-table>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         tableSize: 'default',
         columns: [
@@ -1366,22 +1383,25 @@ export default {
   }
 </script>
 ```
+
 :::
 
 ### 无数据
 
 noDataText可以设置无数据状态
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div>
-  <b-table :columns="columns"  :data="data" no-data-text="No Data"></b-table>
-</div>
+  <div>
+    <b-table :columns="columns" :data="data" no-data-text="No Data"></b-table>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -1407,27 +1427,30 @@ noDataText可以设置无数据状态
   }
 </script>
 ```
+
 :::
 
 ### 导出csv
 
 通过调用 exportCsv() 方法，可以将数据导出为 .csv 的表格文件，详见 API。
 
-::: demo 
+::: demo
+
 ```html
+
 <template>
-<div>
-  <b-table :columns="columns" :data="data" size="small" ref="table"></b-table>
-  <br>
-  <b-button type="primary" size="small" 
-     @click="$refs.table.exportCsv({filename: 'The original data' });">
-     导出csv
-     </b-button>                                                          
-</div>
+  <div>
+    <b-table :columns="columns" :data="data" size="small" ref="table"></b-table>
+    <br>
+    <b-button type="primary" size="small"
+              @click="$refs.table.exportCsv({filename: 'The original data' });">
+      导出csv
+    </b-button>
+  </div>
 </template>
 <script>
   export default {
-    data () {
+    data() {
       return {
         columns: [
           {
@@ -1484,6 +1507,7 @@ noDataText可以设置无数据状态
   }
 </script>
 ```
+
 :::
 
 ### Table props
@@ -1498,15 +1522,15 @@ noDataText可以设置无数据状态
 | width     | 表格宽度，单位 px | Number/String  | —     |   auto   |
 | height | 表格高度，单位 px，设置后，如果表格内容大于此值，会固定表头 | Number/String  | —     |   —     |
 | max-height |  最大表格高度 | Number/String  | —     |   —     |
-| loading |  表格加载状态 | Boolean	  | —     |  false    |
-| disabled-hover |  禁用悬停高亮 | Boolean	  | —     |  false    |
-| highlight-row |  是否支持高亮选中的行，即单选 | Boolean	  | —     |  false    |
-| size |  表格尺寸 | string	  |  large / small    |  default    |
-| no-data-text |  空数据内容 | string	  |   —     |  暂无数据    |
-| draggable  | 开启拖拽调整行顺序，如需要更新数据源则需配合 @drag-drop 事件使用 | Boolean	  |   —     | 	false |
-| drag-handle  | 拖拽的handle图标 | String	  |   —     | 	 —   |
-| row-key  | 是否强制使用内置row-key刷新，配合拖拽排序使用 | Boolean	  |   —     | 	false   |
-| merge-method  | 表格合并行列的方法函数 | Function	  |   —     | 	false |
+| loading |  表格加载状态 | Boolean      | —     |  false    |
+| disabled-hover |  禁用悬停高亮 | Boolean      | —     |  false    |
+| highlight-row |  是否支持高亮选中的行，即单选 | Boolean      | —     |  false    |
+| size |  表格尺寸 | string      |  large / small    |  default    |
+| no-data-text |  空数据内容 | string      |   —     |  暂无数据    |
+| draggable  | 开启拖拽调整行顺序，如需要更新数据源则需配合 @drag-drop 事件使用 | Boolean      |   —     |    false |
+| drag-handle  | 拖拽的handle图标 | String      |   —     |     —   |
+| row-key  | 是否强制使用内置row-key刷新，配合拖拽排序使用 | Boolean      |   —     |    false   |
+| merge-method  | 表格合并行列的方法函数 | Function      |   —     |    false |
 
 ### Table events
 
@@ -1515,14 +1539,14 @@ noDataText可以设置无数据状态
 | current-change     | 开启 highlight-row 后有效，当表格的当前行发生变化的时候会触   | currentRow, oldCurrentRow,index  |
 | select     | 在多选模式下有效，选中某一项时触发   | 已选项, 刚选择  |
 | select-cancel    | 在多选模式下有效，取消选中某一项时触发  | 已选项, 取消选择 |
-| select-all    | 全选时触发	 | 已选项 |
-| select-all-cancel    | 取消全选时触发		 | 已选项 |
-| selection-change    | 选中项发生变化时就会触发	 | 已选项 |
-| sort-change  | 排序时有效，当点击排序时触发		 | column：当前列数据  key：排序依据的指标 order(值为 asc 或 desc)|
-| row-click    | 单击某一行时触发	 | 当前行的数据,index |
-| row-dblclick   | 双击某一行时触发		 | 当前行的数据,index |
-| expand   | 展开或收起某一行时触		 | row：当前行的数据,status：当前的状态 |
-| drag-drop    | 拖拽排序松开时触发		 | 置换的两行数据索引和更新后的数据	newIndex, oldIndex, newData |
+| select-all    | 全选时触发     | 已选项 |
+| select-all-cancel    | 取消全选时触发         | 已选项 |
+| selection-change    | 选中项发生变化时就会触发     | 已选项 |
+| sort-change  | 排序时有效，当点击排序时触发         | column：当前列数据 key：排序依据的指标 order(值为 asc 或 desc)|
+| row-click    | 单击某一行时触发     | 当前行的数据,index |
+| row-dblclick   | 双击某一行时触发         | 当前行的数据,index |
+| expand   | 展开或收起某一行时触         | row：当前行的数据,status：当前的状态 |
+| drag-drop    | 拖拽排序松开时触发         | 置换的两行数据索引和更新后的数据 newIndex, oldIndex, newData |
 
 ### Table slot
 
@@ -1542,7 +1566,7 @@ noDataText可以设置无数据状态
 | handleResize     | 刷新表格的宽高  | 无 |
 | getSelection     | 获取已经选中的行  | 无 |
 
-### column 
+### column
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |

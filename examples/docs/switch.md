@@ -1,20 +1,5 @@
 ## Switch 开关
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#da-xiao-ji-yan-se" title="大小及颜色"></b-anchor-link>
-        <b-anchor-link href="#wen-zi-huo-tu-biao" title="文字或图标"></b-anchor-link>
-        <b-anchor-link href="#jin-yong" title="禁用"></b-anchor-link>
-        <b-anchor-link href="#qie-huan-qian-lan-jie" title="切换前拦截"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 在两种状态间切换时用到的开关选择器。
 
 ### 基础用法

@@ -69,6 +69,10 @@ import Calendar from './components/calendar'
 import Popover from './components/popover'
 import Split from './components/split'
 import Slider from './components/slider'
+import Desc from './components/desc'
+import DescItem from './components/desc-item'
+import BSkeleton from './components/skeleton'
+import BSkeletonItem from './components/skeleton-item'
 import Empty from './components/empty'
 // 全局注册的实例不需要放入components下
 import LoadingBar from './components/loadingbar'
@@ -86,7 +90,7 @@ const components = [
   Select, Option, OptionGroup, Table, Page, Tree, BigTree, Cascade,
   Menu, SubMenu, MenuItem, MenuItemGroup, Upload, DatePicker, TimePicker, ColorPicker,
   Timeline, TimelineItem, Affix, Anchor, AnchorLink, Carousel, CarouselItem, Popover,
-  Empty, Split, Slider
+  Empty, Split, Slider, Desc, DescItem, BSkeleton, BSkeletonItem
 ]
 
 const install = function (Vue, options) {
@@ -183,5 +187,9 @@ export default {
   Empty,
   Popover,
   Split,
-  Slider
+  Slider,
+  Desc,
+  DescItem,
+  BSkeleton,
+  BSkeletonItem
 }

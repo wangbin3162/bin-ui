@@ -1,19 +1,5 @@
 ## Form 表单
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#xing-nei-biao-dan" title="行内表单"></b-anchor-link>
-        <b-anchor-link href="#biao-dan-tou-dui-qi-fang-shi" title="表单头对齐方式"></b-anchor-link>
-        <b-anchor-link href="#ji-ben-xiao-yan" title="基本校验"></b-anchor-link>
-        <b-anchor-link href="#dan-ge-yuan-su-de-xiao-yan" title="单个元素的校验"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
-        <b-anchor-link href="#formitem-props" title="FormItem props"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 具有校验和提交功能的表单
 
 ### 行内表单

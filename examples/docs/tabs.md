@@ -1,19 +1,5 @@
 ## Tabs 标签页
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#qia-pian-mo-shi" title="卡片模式"></b-anchor-link>
-        <b-anchor-link href="#zeng-jia-he-yi-chu" title="增加和移除"></b-anchor-link>
-        <b-anchor-link href="#contextmenu" title="ContextMenu右键菜单"></b-anchor-link>
-        <b-anchor-link href="#biao-qian-mo-shi" title="标签模式"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 显示标签,由于标签内容定制化比较多，这里就预留给后续内容判定，这里只做标签的切换功能。内容可根据实际需求自行实现。
 
 ### 基础用法

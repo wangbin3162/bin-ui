@@ -1,16 +1,5 @@
 ## 内置过渡动画
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#dan-ru-dan-chu" title="淡入淡出"></b-anchor-link>
-        <b-anchor-link href="#suo-fang" title="缩放"></b-anchor-link>
-        <b-anchor-link href="#yi-dong-jian-bian" title="移动渐变"></b-anchor-link>
-        <b-anchor-link href="#zhan-kai-zhe-die" title="展开折叠"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 淡入淡出
 
 提供 2种 淡入淡出效果`fade-in-linear` 和 `fade-in`

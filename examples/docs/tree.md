@@ -1,22 +1,5 @@
 ## Tree 树结构
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#jin-yong-xuan-ze" title="禁用选择"></b-anchor-link>
-        <b-anchor-link href="#ke-yi-xuan-ze" title="可以选择"></b-anchor-link>
-        <b-anchor-link href="#yi-bu-jia-zai-zi-jie-dian" title="异步加载子节点"></b-anchor-link>
-        <b-anchor-link href="#render-han-shu" title="render函数"></b-anchor-link>
-        <b-anchor-link href="#big-tree-chao-da-shu-ju-liang-de-shu-jie-gou" title="超大数据量的树结构"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#methods" title="Methods"></b-anchor-link>
-        <b-anchor-link href="#children" title="Children"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 ::: demo

@@ -1,20 +1,5 @@
 ## b-step 步骤条
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#xiao-xing-bu-zou-tiao" title="小型步骤条"></b-anchor-link>
-        <b-anchor-link href="#zi-ding-yi-tu-biao" title="自定义图标"></b-anchor-link>
-        <b-anchor-link href="#shu-xing-bu-zou" title="竖型步骤"></b-anchor-link>
-        <b-anchor-link href="#she-zhi-zhuang-tai" title="设置状态"></b-anchor-link>
-        <b-anchor-link href="#steps-props" title="Steps Props"></b-anchor-link>
-        <b-anchor-link href="#step-props" title="Step Props"></b-anchor-link>
-        <b-anchor-link href="#step-slot" title="Step Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 提示某个任务的步骤
 
 ### 基础用法

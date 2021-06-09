@@ -1,19 +1,5 @@
 ## Timeline 时间线
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#ke-yi-she-zhi-bu-tong-lei-xing-huo-zhe-zi-ding-yi-yan-se" title="可以设置不同类型或者自定义颜色"></b-anchor-link>
-        <b-anchor-link href="#zui-hou-yi-ge-jie-dian-she-zhi" title="最后一个节点设置"></b-anchor-link>
-        <b-anchor-link href="#zi-ding-yi-jie-dian-tu-biao" title="自定义节点图标"></b-anchor-link>
-        <b-anchor-link href="#timeline-attributes" title="Timeline Attributes"></b-anchor-link>
-        <b-anchor-link href="#timelineitem-attributes" title="TimelineItem Attributes"></b-anchor-link>
-        <b-anchor-link href="#timelineitem-slots" title="TimelineItem  Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 时间线组件
 
 ### 基础用法

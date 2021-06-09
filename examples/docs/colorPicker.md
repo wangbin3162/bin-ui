@@ -1,19 +1,5 @@
 ## Color Picker 颜色选择器
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#dai-tou-ming-du" title="带透明度"></b-anchor-link>
-        <b-anchor-link href="#jin-yong-se-cai-tiao" title="禁用色彩条"></b-anchor-link>
-        <b-anchor-link href="#yan-se-yu-she" title="颜色预设"></b-anchor-link>
-        <b-anchor-link href="#chi-cun-she-zhi" title="尺寸设置"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 有无默认值的显示状态

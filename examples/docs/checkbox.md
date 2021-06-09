@@ -1,20 +1,5 @@
 ## Checkbox 多选框
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#zu-he-shi-yong" title="组合使用"></b-anchor-link>
-        <b-anchor-link href="#jin-yong" title="禁用"></b-anchor-link>
-        <b-anchor-link href="#quan-xuan" title="全选"></b-anchor-link>
-        <b-anchor-link href="#checkbox-props" title="Checkbox props"></b-anchor-link>
-        <b-anchor-link href="#checkbox-events" title="Checkbox events"></b-anchor-link>
-        <b-anchor-link href="#checkboxgroup-props" title="CheckboxGroup props"></b-anchor-link>
-        <b-anchor-link href="#checkboxgroup-events" title="CheckboxGroup events"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 基本组件-多选框。主要用于一组可选项多项选择，或者单独用于标记切换某种状态。
 
 ### 基础用法

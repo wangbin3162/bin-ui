@@ -1,16 +1,5 @@
 ## Notice 通知
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#dai-tu-biao" title="带图标"></b-anchor-link>
-        <b-anchor-link href="#render-han-shu-diao-yong" title="render函数调用"></b-anchor-link>
-        <b-anchor-link href="#api" title="API"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 ::: demo

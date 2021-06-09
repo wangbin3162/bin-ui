@@ -1,21 +1,5 @@
 ## Collapse 折叠面板
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#shou-feng-qin-mo-shi" title="手风琴模式"></b-anchor-link>
-        <b-anchor-link href="#jian-dan-mo-shi-he-zi-ding-yi-tou" title="简单模式和自定义头"></b-anchor-link>
-        <b-anchor-link href="#rong-qi-zu-jian" title="容器组件"></b-anchor-link>
-        <b-anchor-link href="#api" title="API">
-            <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-            <b-anchor-link href="#events" title="Events"></b-anchor-link>
-            <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-        </b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 需要进行分段显示时使用折叠面板
 
 ### 基础用法

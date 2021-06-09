@@ -1,19 +1,5 @@
 ## Slider 滑块组件
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#bu-chang-he-duan-dian" title="步长和断点"></b-anchor-link>
-        <b-anchor-link href="#shu-ru-kuang-he-ti-shi" title="输入框和提示"></b-anchor-link>
-        <b-anchor-link href="#dai-biao-ji" title="带标记"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-        <b-anchor-link href="#events" title="Events"></b-anchor-link>
-        <b-anchor-link href="#slot" title="Slot"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 ::: demo

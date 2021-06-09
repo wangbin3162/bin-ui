@@ -1,24 +1,5 @@
 ## Select 选择器
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#bu-tong-de-da-xiao" title="不同的大小"></b-anchor-link>
-        <b-anchor-link href="#qi-yong-jin-yong" title="启用禁用"></b-anchor-link>
-        <b-anchor-link href="#ke-yi-qing-kong-fen-zu-huo-zhe-zi-ding-yi-mo-ban" title="可以清空、分组或者自定义模板"></b-anchor-link>
-        <b-anchor-link href="#duo-xuan-he-zhe-die" title="多选和折叠"></b-anchor-link>
-        <b-anchor-link href="#qian-zhui-mo-shi" title="前缀模式"></b-anchor-link>
-        <b-anchor-link href="#sou-suo-mo-shi" title="搜索模式"></b-anchor-link>
-        <b-anchor-link href="#select-props" title="Select props"></b-anchor-link>
-        <b-anchor-link href="#select-events" title="Select events"></b-anchor-link>
-        <b-anchor-link href="#select-slot" title="Select slot"></b-anchor-link>
-        <b-anchor-link href="#option-props" title="Option props"></b-anchor-link>
-        <b-anchor-link href="#optiongroup-props" title="OptionGroup props"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 ### 基础用法
 
 基本用法。可以使用 v-model 双向绑定数据。

@@ -1,14 +1,5 @@
 ## ScrollBar 滚动
 
-
-<div class="global-anchor">
-  <b-anchor :scroll-offset="100">
-    <b-anchor-link href="#yong-fa" title="用法"></b-anchor-link>
-    <b-anchor-link href="#shi-yong-tie-shi" title="使用贴士"></b-anchor-link>
-    <b-anchor-link href="#props" title="Props"></b-anchor-link>
-  </b-anchor>
-</div>
-
 由于默认浏览器滚动条极为丑陋切不同浏览器之间样式不统一，故封装一个滚动组件用于实现滚动
 
 ### 用法

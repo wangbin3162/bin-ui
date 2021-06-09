@@ -1,17 +1,5 @@
 ## Card 卡片
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#mo-ren-biao-ti-he-fen-ge-xian" title="默认标题和分割线"></b-anchor-link>
-        <b-anchor-link href="#bian-kuang-he-yuan-jiao" title="边框和圆角"></b-anchor-link>
-        <b-anchor-link href="#shadow-yong-fa" title="shadow用法"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 按照一个区块来展示
 
 ### 基础用法

@@ -1,21 +1,5 @@
 ## Grid 栅格
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#ji-chu-yong-fa" title="基础用法"></b-anchor-link>
-        <b-anchor-link href="#jian-ge" title="间隔"></b-anchor-link>
-        <b-anchor-link href="#flex-gai-bian-zha-ge-shun-xu" title="flex改变栅格顺序"></b-anchor-link>
-        <b-anchor-link href="#zha-ge-shun-xu" title="栅格顺序"></b-anchor-link>
-        <b-anchor-link href="#zuo-you-pian-yi" title="左右偏移"></b-anchor-link>
-        <b-anchor-link href="#flex-bu-ju" title="flex布局"></b-anchor-link>
-        <b-anchor-link href="#xiang-ying-shi-bu-ju" title="响应式布局"></b-anchor-link>
-        <b-anchor-link href="#row-props" title="Row Props"></b-anchor-link>
-        <b-anchor-link href="#col-props" title="Col Props"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 我们采用了24栅格系统，将区域进行24等分，和大部分组件库类似，我们也引入两个组件，row和col，row表示行，col在row之内使用
 
 ### 基础用法

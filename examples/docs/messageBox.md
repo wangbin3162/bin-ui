@@ -1,17 +1,5 @@
 ## MessageBox 弹框
 
-<template>
-    <div class="global-anchor">
-      <b-anchor :scroll-offset="100">
-        <b-anchor-link href="#mo-nialert" title="模拟alert"></b-anchor-link>
-        <b-anchor-link href="#mo-niconfirm" title="模拟confirm"></b-anchor-link>
-        <b-anchor-link href="#ke-yi-zi-ding-yi-nei-rong" title="可以自定义内容"></b-anchor-link>
-        <b-anchor-link href="#api" title="API"></b-anchor-link>
-        <b-anchor-link href="#attributes" title="Attributes"></b-anchor-link>
-      </b-anchor>
-    </div>
-</template>
-
 弹窗是为了模拟快速创建模态框准备的，基于Modal框生成的窗口实例。
 
 ### 模拟alert
