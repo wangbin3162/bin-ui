@@ -32,7 +32,7 @@
               bin-keyframe-animation
             </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-admin')">
-              bin-admin-pro
+              bin-admin
             </b-dropdown-item>
             <b-dropdown-item @click.native="goTo('https://github.com/wangbin3162/bin-data')">
               bin-data

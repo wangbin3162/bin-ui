@@ -355,7 +355,7 @@ expand、selected、checked 和 disabled 可以设置展开，选中，勾选和
 
 ### render函数
 
-可以设置show-checkbox开启勾选，并可以设置数据格式中的默认选中
+可以搭配render函数实现更多定制化的功能
 
 ::: demo
 

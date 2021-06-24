@@ -7,6 +7,13 @@
     <b-timeline>
       <b-timeline-item color="success">
         <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
+        <p class="version">3.7.10</p>
+        <p class="time">2021-06-24</p>
+        <p class="content">优化文档</p>
+        <p class="content">优化tag标签样式</p>
+      </b-timeline-item>
+      <b-timeline-item color="success">
+        <b-icon name="ios-trophy" slot="dot" size="20"></b-icon>
         <p class="version">3.7.9</p>
         <p class="time">2021-06-09</p>
         <p class="content">优化文档锚点生成</p>
