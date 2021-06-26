@@ -11,7 +11,8 @@
               'is-plain': plain,
               'is-round': round,
               'is-dashed': dashed,
-              'is-transparent': transparent
+              'is-transparent': transparent,
+              'is-background': background,
             }
           ]"
           v-click-animation
@@ -33,7 +34,8 @@
               'is-plain': plain,
               'is-round': round,
               'is-dashed': dashed,
-              'is-transparent': transparent
+              'is-transparent': transparent,
+              'is-background': background,
             }
           ]"
           v-waves="waveColor"
@@ -91,6 +93,7 @@ export default {
     round: Boolean,
     dashed: Boolean,
     transparent: Boolean,
+    background: Boolean,
     animationType: {
       validator(value) {
         return oneOf(value, ['click', 'waves'])

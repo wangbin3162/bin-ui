@@ -68,6 +68,17 @@
       border-color: $color-primary-active;
     }
   }
+  &.is-background{
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f5f5f5), to(#fff));
+    background-image: linear-gradient(0deg, #f5f5f5, #fff);
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      color: #c0c4cc;
+      cursor: not-allowed;
+      background-image: none;
+      background: #f5f5f5;
+      border-color: #d9d9d9;
+    }
+  }
   &.is-loading {
     pointer-events: none;
   }
@@ -109,6 +120,7 @@
   color: $color-white;
   background-color: $color-primary;
   border-color: $color-primary;
+  background-image: none;
   &:hover, &:focus {
     background: $color-primary-light1;
     border-color: $color-primary-light1;
@@ -184,6 +196,7 @@
   color: #fff;
   background-color: $color-success;
   border-color: $color-success;
+  background-image: none;
   &:hover, &:focus {
     background: $color-success-light1;
     border-color: $color-success-light1;
@@ -259,6 +272,7 @@
   color: #fff;
   background-color: $color-info;
   border-color: $color-info;
+  background-image: none;
   &:hover, &:focus {
     background: $color-info-light1;
     border-color: $color-info-light1;
@@ -334,6 +348,7 @@
   color: #fff;
   background-color: $color-warning;
   border-color: $color-warning;
+  background-image: none;
   &:hover, &:focus {
     background: $color-warning-light1;
     border-color: $color-warning-light1;
@@ -408,6 +423,7 @@
   color: #fff;
   background-color: $color-danger;
   border-color: $color-danger;
+  background-image: none;
   &:hover, &:focus {
     background: $color-danger-light1;
     border-color: $color-danger-light1;
@@ -483,6 +499,7 @@
   border-color: transparent;
   color: $color-primary;
   background: transparent;
+  background-image: none;
   padding: 0;
   height: auto;
   &:focus, &:hover {
