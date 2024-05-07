@@ -10,7 +10,7 @@ import log from '../../utils/log'
 import { scrollTop } from '../../utils/dom'
 import { addResizeListener, removeResizeListener } from '../../utils/resize-event'
 
-let baseUrl = 'https://wangbin3162.gitee.io'
+let baseUrl = 'https://wangbin3162.github.io'
 
 export default {
   async install(Vue, options) {

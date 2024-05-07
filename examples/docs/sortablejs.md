@@ -5,9 +5,9 @@
 
 演示demo如下
 
-<a href="https://gitee.com/wangbin3162/Vue.Draggable" target="_blank">[vuedraggable]</a> | 
-<a href="https://wangbin3162.gitee.io/vue.draggable/#/simple" target="_blank">[vuedraggable Demo]</a> | 
-<a href=" https://wangbin3162.gitee.io/sortable" target="_blank">[Sortable Demo]</a> 
+<a href="https://github.com/wangbin3162/Vue.Draggable" target="_blank">[vuedraggable]</a> | 
+<a href="https://wangbin3162.github.io/vue.draggable/#/simple" target="_blank">[vuedraggable Demo]</a> | 
+<a href=" https://wangbin3162.github.io/sortable" target="_blank">[Sortable Demo]</a> 
 
 ### 安装
 

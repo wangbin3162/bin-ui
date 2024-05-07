@@ -97,7 +97,7 @@
         </p>
         <p flex="box:mean" class="mb-10">
           个人主页:
-          <a href="https://wangbin3162.gitee.io/web-doc/guide/" target="_blank">https://wangbin3162.gitee.io/web-doc/guide/</a>
+          <a href="https://wangbin3162.github.io/web-doc/guide/" target="_blank">https://wangbin3162.github.io/web-doc/guide/</a>
         </p>
      </div>
      <b-divider></b-divider>

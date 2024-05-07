@@ -23,7 +23,7 @@
     </div>
     <b-divider/>
     <div>
-      <a href="https://gitee.com/wangbin3162/bin-ui/blob/master/examples/components/draggable-demo.vue"
+      <a href="https://github.com/wangbin3162/bin-ui/blob/master/examples/components/draggable-demo.vue"
          target="_blank">示例代码</a>
     </div>
   </div>
